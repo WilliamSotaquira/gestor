@@ -1,0 +1,242 @@
+<%@ Page Language="C#" MasterPageFile="../_catalogs/masterpage/site.master" inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" meta:progid="SharePoint.WebPartPage.Document" %>
+
+<%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Import Namespace="Microsoft.SharePoint.ApplicationPages" %>
+<%@ Assembly Name="Microsoft.Web.CommandUI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+
+<asp:Content ID="ContentTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">
+    Fotos - Artes para la Paz
+</asp:Content>
+
+<asp:Content ID="ContentHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery-No-Gutters-baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+
+</asp:Content>
+
+<asp:Content ID="ContentMain" ContentPlaceHolderID="PlaceHolderMain" runat="server">
+
+    <main id="contenido-principal">
+<section id="fotos" style="background: var(--bs-secondary);padding-bottom: 35px;">
+        <div class="container">
+            <div class="d-flex d-xl-flex justify-content-between align-items-center" style="margin-top: 0px;padding-top: 16px;">
+                <h2 class="text-start" style="margin-top: 0px;color: var(--bs-primary);border-radius: 0;width: 14em;font-weight: bold;">GALERÍAS DE FOTOS</h2>
+            </div>
+            <div class="row gy-4">
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/VK5HUvmSzo8s8ekY8" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 1" class="card-img-top w-100 d-block" src="assets/img/newsimages/El%20proceso%20consolidó%20la%20dignificación%20del%20oficio%20artístico.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Certificaciones ETDH</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/eJ4NYHRP5wZ9Avbg8" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 2" class="card-img-top w-100 d-block" src="assets/img/newsimages/Recibieron%20títulos%20en%20Gestión%20Cultural%20Teatro%20y%20Diseño%20y%20Arte%20Gráfico.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">ETDH en Funza. Fotos por Saulón Guerrero</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/dxyw41KS1FY7SDhq7" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 3" class="card-img-top w-100 d-block" src="assets/img/newsimages/En%20Yumbo%20se%20certificaron%2040%20artistas.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">ETDH en Yumbo. Por Julián Serna</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/VUak8gXX4fEjvNveA" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 4" class="card-img-top w-100 d-block" src="assets/img/newsimages/Participaron%20creadores%20de%20música%20danza%20teatro%20y%20gestión%20cultural.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">ETDH en Villavicencio: Por Julián Serna</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/3BzawpywiLiVK5ao6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 5" class="card-img-top w-100 d-block" src="assets/img/newsimages/Se%20reconocieron%20trayectorias%20diversas%20del%20sector%20cultural.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Envigado, escenario del cierre nacional del proceso de certificación ETDH: Fotos por Lina Rozo</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/HVpWrjj94EKSVaGPA" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 6" class="card-img-top w-100 d-block" src="assets/img/newsimages/66%20creadores%20certificados%20en%20Armenia.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">ETDH en Armenia. Fotos por Paula Beltrán</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/8qDcrnnsmetkt9S68" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 7" class="card-img-top w-100 d-block" src="assets/img/newsimages/artes-al-aula%20(1).jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">En Colombia la educación artística deja de ser opcional y se convierte en mandato: nace la Ley Artes al Aula</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/MmTgmZDhkP71RC3R6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 8" class="card-img-top w-100 d-block" src="assets/img/newsimages/celebra_5.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Más de 1.200 jóvenes de Artes para la Paz participaron en Celebra la Música en Boyacá, Cesar, Norte de Santander y Santander</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/MmTgmZDhkP71RC3R6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 9" class="card-img-top w-100 d-block" src="assets/img/newsimages/vida-sabanera%20(3).jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Así vibró el Festival de la Vida Sabanera 2025 en Bogotá. Por Erick Morales</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/JuTEPTX74LK45Fjj6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 10" class="card-img-top w-100 d-block" src="assets/img/newsimages/Escuela-música-Pitalito%20(3).jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">El suroccidente colombiano recibió a Artes para la Paz y la inauguración de nueva escuela de música en Pitalito. Fotos por Lina Rozo</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/gUcfoz5mfBMfVexf6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 11" class="card-img-top w-100 d-block" src="assets/img/newsimages/batuta-28-11-2025%20(1).jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Con Batuta estamos transformando 12.040 vidas a través de la enseñanza de música en establecimientos educativos</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/6soEGLb92xR4WKXu9" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 12" class="card-img-top w-100 d-block" src="assets/img/newsimages/7_Son%20Callejero_Contrapulso.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Son Callejero: una orquesta de salsa con músicos de primer nivel que por vicisitudes de la vida se encontraron viviendo en las calles</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/bC7RgAFcnmavaFSd6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 13" class="card-img-top w-100 d-block" src="assets/img/newsimages/3_Residencia%20artística%20de%20la%20Nueva%20Filarmonía.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Residencia artística de la Nueva Filarmonía</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/h2hzEmj61aYWbuFJ7" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 14" class="card-img-top w-100 d-block" src="assets/img/newsimages/ausentes%20(1)-1200px.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Ausentes, en busca de las salas perdidas. Por: Casa de Cultura de Paz Betsabé Espinal</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/uktkKbKomSidAGHq8" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 15" class="card-img-top w-100 d-block" src="assets/img/newsimages/zona-artes-reencuentro%20(3).jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">El Reencuentro en el Corazón del Mundo cierra con éxito. La zona Artes para la Paz vibró con música, gastronomía y cine.</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/ib189CJDjKD2K4KP7" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 16" class="card-img-top w-100 d-block" src="assets/img/newsimages/armero-floreció%20(2).jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Armero floreció con arte, memoria y resiliencia en la Muestra Artística Regional de Artes para la Paz</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/bZdwouinbaNVtVSS8" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 17" class="card-img-top w-100 d-block" src="assets/img/newsimages/atención-a-medios%20(1)-Custom.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Atención a medios: reencuentro en el corazón del mundo</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/HtZzSnEtekyT4X2F7" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 18" class="card-img-top w-100 d-block" src="assets/img/newsimages/diálogo-con-la-justicia%20(2).jpeg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Artes para la Paz en diálogo con la justicia colombiana</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/V9nfzJWfQNqfpZD17" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 19" class="card-img-top w-100 d-block" src="assets/img/newsimages/casa-betsabé-espinal-%20(2)-Custom.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Música y poesía bajo las estrellas: encuentro cultural en la Casa de Cultura de Paz Betsabé Espinal, en Medellín</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/zN7hBLar3fRtziTn6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 20" class="card-img-top w-100 d-block" src="assets/img/newsimages/bandas-sinfónicas-3-Custom.jpeg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Bandas sinfónicas del país se fortalecen con la entrega de más de $1.000 millones en dotaciones</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/PCzRaz6P22Qi1MYq9" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 21" class="card-img-top w-100 d-block" src="assets/img/newsimages/batuta-putumayo-2-Custom.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Jóvenes músicos del Putumayo viajarán a República Checa. Por: Fundación Batuta</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/rEKsy3Kary5SFv9DA" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 22" class="card-img-top w-100 d-block" src="assets/img/newsimages/itsmina-tejiendo-paz-3.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Tejiendo paz desde el arte en Istmina. Por: Universidad de Antioquia</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/PrbC9rSfs9NA6JYLA" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 23" class="card-img-top w-100 d-block" src="assets/img/newsimages/rostros-2-Copy.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Rostros: así se ve Artes para la Paz. Por: Universidad de Caldas</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/moieYkuo1up8tkgY9" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 24" class="card-img-top w-100 d-block" src="assets/img/newsimages/cultura-para-a-libertad.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Cultura para la Libertad recibe el Premio Interamericano a la Innovación en Gestión Pública de la OEA</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/5NyPyCn1n4QyyLmV9" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 25" class="card-img-top w-100 d-block" src="assets/img/newsimages/Artes-paz-Bogotá.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Encuentro del equipo Artes para la Paz - Bogotá</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/3r33876rYLBogpXR9" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 26" class="card-img-top w-100 d-block" src="assets/img/newsimages/Lanzamiento-Istmina-Chocó-2-Custom.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Lanzamiento Istmina - Chocó</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/3ikFbdgecQwZfYDL9" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 27" class="card-img-top w-100 d-block" src="assets/img/newsimages/Lanzamiento-Ocaña-Norte-de-Santander-3-Custom.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Lanzamiento Ocaña - Norte de Santander</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/cx5CKViMQuBabkqg6" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 28" class="card-img-top w-100 d-block" src="assets/img/newsimages/Lanzamiento-Yopal-2-Custom.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Lanzamiento Yopal - Casanare</h4>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3" style="border-style: none;"><a href="https://photos.app.goo.gl/wL56N1pPtz2pZjyF9" target="_blank">
+                        <div class="card" style="margin-right: 5px;margin-left: 5px;background: var(--bs-secondary);color: var(--bs-primary);border-style: none;"><img loading="lazy" alt="Galería Artes para la Paz - Imagen 29" class="card-img-top w-100 d-block" src="assets/img/newsimages/6-Lanzamiento%20Artes%20para%20la%20Paz%20en%20Museo%20Nacional.jpg">
+                            <div class="card-body" style="background: var(--bs-primary);border-style: none;">
+                                <h4 class="card-title" style="color: var(--bs-secondary);font-size: 14px;margin-bottom: 0px;">Lanzamiento Museo Nacional</h4>
+                            </div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+</asp:Content>

@@ -1,0 +1,169 @@
+<!--
+  ACORDEONES GOV.CO v5
+  Clase base: .accordion-govco
+  
+  Tipos:
+  - Acordeon simple (texto)
+  - Acordeon con numero/icono
+  - Acordeon deshabilitado
+-->
+
+<!-- ======================================== -->
+<!-- ACORDEON SIMPLE                          -->
+<!-- ======================================== -->
+<div class="accordion-govco" id="acordeonSimple">
+  <!-- Item 1 -->
+  <div class="item-accordion-govco">
+    <div class="accordion-header">
+      <button class="button-accordion-govco collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="false"
+              aria-controls="collapse1">
+        <span class="text-button-accordion-govco">Primer elemento</span>
+      </button>
+    </div>
+    <div id="collapse1" class="collapse" data-bs-parent="#acordeonSimple">
+      <div class="body-accordion-govco">
+        <span class="title-one-accordion-govco">Subtitulo</span>
+        <span class="text-one-accordion-govco">
+          Contenido del primer elemento del acordeon. Aqui puede incluir texto, listas, 
+          enlaces u otros componentes segun la necesidad del contenido.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div class="item-accordion-govco">
+    <div class="accordion-header">
+      <button class="button-accordion-govco collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse2">
+        <span class="text-button-accordion-govco">Segundo elemento</span>
+      </button>
+    </div>
+    <div id="collapse2" class="collapse" data-bs-parent="#acordeonSimple">
+      <div class="body-accordion-govco">
+        <span class="title-one-accordion-govco">Subtitulo</span>
+        <span class="text-one-accordion-govco">
+          Contenido del segundo elemento. El acordeon permite mostrar y ocultar secciones
+          de contenido de manera progresiva.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 3 -->
+  <div class="item-accordion-govco">
+    <div class="accordion-header">
+      <button class="button-accordion-govco collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3">
+        <span class="text-button-accordion-govco">Tercer elemento</span>
+      </button>
+    </div>
+    <div id="collapse3" class="collapse" data-bs-parent="#acordeonSimple">
+      <div class="body-accordion-govco">
+        <span class="title-one-accordion-govco">Subtitulo</span>
+        <span class="text-one-accordion-govco">
+          Contenido del tercer elemento del acordeon con informacion adicional.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- ACORDEON CON NUMERACION                  -->
+<!-- ======================================== -->
+<div class="accordion-govco" id="acordeonNumerado">
+  <!-- Item 1 -->
+  <div class="item-accordion-govco">
+    <div class="accordion-header">
+      <button class="button-accordion-govco button-number-accordion-govco collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNum1"
+              aria-expanded="false"
+              aria-controls="collapseNum1">
+        <span class="icon-button-accordion-govco">1</span>
+        <span class="text-button-accordion-govco">Paso uno: Registro</span>
+      </button>
+    </div>
+    <div id="collapseNum1" class="collapse" data-bs-parent="#acordeonNumerado">
+      <div class="body-accordion-govco">
+        <span class="title-one-accordion-govco">Requisitos de registro</span>
+        <span class="text-one-accordion-govco">
+          Diligencie el formulario de registro con sus datos personales y adjunte los documentos solicitados.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div class="item-accordion-govco">
+    <div class="accordion-header">
+      <button class="button-accordion-govco button-number-accordion-govco collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNum2"
+              aria-expanded="false"
+              aria-controls="collapseNum2">
+        <span class="icon-button-accordion-govco">2</span>
+        <span class="text-button-accordion-govco">Paso dos: Verificacion</span>
+      </button>
+    </div>
+    <div id="collapseNum2" class="collapse" data-bs-parent="#acordeonNumerado">
+      <div class="body-accordion-govco">
+        <span class="title-one-accordion-govco">Proceso de verificacion</span>
+        <span class="text-one-accordion-govco">
+          Su solicitud sera revisada en un plazo de 5 dias habiles. Recibira notificacion al correo registrado.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 3 -->
+  <div class="item-accordion-govco">
+    <div class="accordion-header">
+      <button class="button-accordion-govco button-number-accordion-govco collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNum3"
+              aria-expanded="false"
+              aria-controls="collapseNum3">
+        <span class="icon-button-accordion-govco">3</span>
+        <span class="text-button-accordion-govco">Paso tres: Aprobacion</span>
+      </button>
+    </div>
+    <div id="collapseNum3" class="collapse" data-bs-parent="#acordeonNumerado">
+      <div class="body-accordion-govco">
+        <span class="title-one-accordion-govco">Resultado</span>
+        <span class="text-one-accordion-govco">
+          Una vez aprobada su solicitud, podra acceder al servicio desde su cuenta personal.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- ACORDEON DESHABILITADO                   -->
+<!-- ======================================== -->
+<div class="accordion-govco">
+  <div class="item-accordion-govco">
+    <div class="accordion-header">
+      <button class="button-accordion-govco" disabled>
+        <span class="text-button-accordion-govco">Elemento deshabilitado</span>
+      </button>
+    </div>
+  </div>
+</div>

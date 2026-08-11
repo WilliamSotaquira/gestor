@@ -1,0 +1,8 @@
+/* Estilos para Campaña Bici - Landing Page */
+
+.hero {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

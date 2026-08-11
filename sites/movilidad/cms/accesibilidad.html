@@ -1,0 +1,386 @@
+<!-- Estilos -->
+<style>
+  .accesibilidad-sdm {
+    --sdm-verde-principal: #A6B517;
+    --sdm-verde-oscuro: #4C531F;
+    --sdm-verde-hover: #3d4419;
+    --sdm-verde-open: #8a9a12;
+    --sdm-verde-heading: #4C531F;
+    --sdm-fondo-claro: #EFF2D8;
+    --sdm-texto: #1A1A1A;
+    --sdm-texto-secundario: #333333;
+    --sdm-blanco: #FFFFFF;
+    --sdm-negro: #000000;
+  }
+
+  .accesibilidad-sdm details {
+    margin-bottom: 2px;
+  }
+
+  .accesibilidad-sdm summary {
+    background-color: var(--sdm-verde-principal) !important;
+    color: var(--sdm-negro) !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    padding: 1rem 1.5rem !important;
+    min-height: 44px;
+    cursor: pointer;
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .accesibilidad-sdm summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accesibilidad-sdm summary::after {
+    content: "▼";
+    font-size: 0.75rem;
+    transition: transform 0.3s;
+  }
+
+  .accesibilidad-sdm details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .accesibilidad-sdm details[open] summary {
+    background-color: var(--sdm-verde-open) !important;
+  }
+
+  .accesibilidad-sdm .panel-body {
+    background-color: var(--sdm-blanco) !important;
+    color: var(--sdm-texto) !important;
+    padding: 2rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .accesibilidad-sdm .panel-body p,
+  .accesibilidad-sdm .panel-body ul,
+  .accesibilidad-sdm .panel-body ol,
+  .accesibilidad-sdm .panel-body li {
+    font-size: 0.9rem !important;
+    color: var(--sdm-texto) !important;
+    visibility: visible !important;
+  }
+
+  .accesibilidad-sdm .panel-body h4 {
+    color: var(--sdm-verde-heading) !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .accesibilidad-sdm .nav-tabs .nav-link.active {
+    background-color: var(--sdm-fondo-claro) !important;
+    color: var(--sdm-verde-heading) !important;
+    font-weight: 700;
+    border-color: var(--sdm-verde-principal) var(--sdm-verde-principal) var(--sdm-blanco) !important;
+  }
+
+  .accesibilidad-sdm .nav-tabs .nav-link {
+    color: var(--sdm-texto-secundario);
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+
+  .accesibilidad-sdm .nav-tabs .nav-link:hover:not(.active) {
+    color: var(--sdm-verde-heading);
+    border-color: transparent;
+  }
+
+  .accesibilidad-sdm .nav-tabs .nav-link:focus-visible {
+    outline: 3px solid var(--sdm-verde-oscuro);
+    outline-offset: 2px;
+  }
+
+  .accesibilidad-sdm .grid-herramientas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+    margin: 1.5rem 0;
+  }
+
+  .accesibilidad-sdm .grid-herramientas li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: var(--sdm-fondo-claro);
+    border-radius: 6px;
+    padding: 12px 16px;
+  }
+
+  .accesibilidad-sdm .grid-herramientas li i {
+    color: var(--sdm-verde-heading);
+    font-size: 1.2rem;
+    min-width: 24px;
+    text-align: center;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .accesibilidad-sdm .grid-herramientas li span {
+    font-size: 0.85rem;
+    color: var(--sdm-texto);
+    line-height: 1.5;
+  }
+
+  .accesibilidad-sdm .icon-inline {
+    color: var(--sdm-verde-heading) !important;
+    margin-right: 4px;
+  }
+
+  .accesibilidad-sdm a {
+    color: var(--sdm-verde-oscuro);
+    text-decoration: underline;
+  }
+
+  .accesibilidad-sdm a:hover,
+  .accesibilidad-sdm a:focus {
+    color: #3d4419;
+  }
+
+  .accesibilidad-sdm a:focus-visible {
+    outline: 3px solid var(--sdm-verde-oscuro);
+    outline-offset: 2px;
+  }
+
+  .accesibilidad-sdm details:focus-visible summary,
+  .accesibilidad-sdm summary:focus-visible {
+    outline: 3px solid var(--sdm-verde-oscuro);
+    outline-offset: 2px;
+  }
+</style>
+
+<div class="accesibilidad-sdm">
+
+  <!-- Introducción -->
+  <p style="color: #333333; margin-bottom: 1.5rem;">La Secretaría Distrital de Movilidad está comprometida con la accesibilidad digital para garantizar que todas las personas, incluyendo aquellas en situación de discapacidad, puedan acceder a la información, trámites y servicios disponibles en esta sede electrónica. A continuación encontrará la certificación de cumplimiento, las herramientas de accesibilidad disponibles y la descripción de los elementos de navegación del portal.</p>
+
+  <!-- Certificado de Accesibilidad -->
+  <div class="mb-4 p-4 rounded" role="region" aria-label="Certificación de accesibilidad de la sede electrónica"
+    style="background-color: #EFF2D8; border-left: 4px solid #4C531F;">
+    <h3 class="mb-2" style="font-size: 1.1rem; font-weight: 700; color: #4C531F;">Certificación de Cumplimiento de los Criterios de Accesibilidad de la Sede Electrónica</h3>
+    <p class="mb-3" style="color: #333333;">Esta sede electrónica cumple con las directrices de accesibilidad web establecidas en el Anexo 1 de la Resolución 1519 de 2020 y se encuentra alineada con el nivel de conformidad <strong>AA de las WCAG 2.1</strong>, conforme a la Ley 1712 de 2014 y el Decreto 1081 de 2015.</p>
+    <p class="mb-0" style="color: #333333;"><i class="fa-solid fa-file-pdf icon-inline" aria-hidden="true"></i> <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/certificacion_accesibilidad_movilidad_gov_co%20%281%29.pdf" target="_blank" rel="noopener noreferrer">Descargar certificado de accesibilidad</a> (PDF)</p>
+  </div>
+
+
+
+  <hr />
+
+  <!-- Tabs navs -->
+  <ul class="nav nav-tabs mb-3" id="tab-access" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="tab-espanol" data-bs-toggle="tab" data-bs-target="#espanol" type="button"
+        role="tab" aria-controls="espanol" aria-selected="true">Español</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="tab-lenguas" data-bs-toggle="tab" data-bs-target="#lenguas" type="button"
+        role="tab" aria-controls="lenguas" aria-selected="false">Lenguas nativas</button>
+    </li>
+  </ul>
+
+  <!-- Tabs content -->
+  <div class="tab-content" id="tab-access-content">
+
+    <!-- TAB ESPAÑOL -->
+    <div class="tab-pane fade show active" id="espanol" role="tabpanel" aria-labelledby="tab-espanol">
+      <h3 style="color: #1A1A1A;">Identificadores de acceso y accesibilidad</h3>
+      <p style="color: #333333;">La Secretaría Distrital de Movilidad dispone de herramientas en su página web para que cada persona pueda navegar con algunos ajustes según sus necesidades y preferencias. Cuando están disponibles, se debe hacer clic en el botón que identifica la herramienta para activarla, así:</p>
+
+      <ul class="grid-herramientas" role="list">
+        <li>
+          <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+          <span>Lee el contenido y las opciones disponibles, posibilitando la navegación sin necesidad de ver la pantalla.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-audio-description" aria-hidden="true"></i>
+          <span>Narra y describe detalladamente los elementos visuales que aparecen en pantalla.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-hands" aria-hidden="true"></i>
+          <span>Permite visualizar vídeos pregrabados en lengua de señas colombiana.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+          <span>Habilita la información en texto de lectura fácil para facilitar su comprensión.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-list" aria-hidden="true"></i>
+          <span>Permite ver el índice y las opciones de lectura.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-book" aria-hidden="true"></i>
+          <span>Presenta el significado de las palabras nuevas cuando está disponible.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-download" aria-hidden="true"></i>
+          <span>Permite descargar contenido.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-a" aria-hidden="true"></i>
+          <span>Permite ajustar el tamaño de las letras.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+          <span>Permite cambiar al contraste de la página.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+          <span>Permite navegar mediante comandos de voz, sin utilizar las manos.</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          <span>Permite ampliar la información del contenido.</span>
+        </li>
+      </ul>
+
+      <!-- ACORDEONES (details/summary) -->
+
+      <!-- Menú principal -->
+      <details>
+        <summary><i class="fa-solid fa-bars me-2" aria-hidden="true"></i> Menú principal</summary>
+        <div class="panel-body">
+          <p>El menú del portal de la Secretaría Distrital de Movilidad se compone de las siguientes secciones principales:</p>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li><strong>Inicio:</strong> Página principal de la sede electrónica.</li>
+            <li><strong>Transparencia y acceso información pública:</strong> Información de la entidad conforme a la Ley de Transparencia (1712 de 2014).</li>
+            <li><strong>Atención y Servicios a la ciudadanía:</strong> Trámites, servicios, canales de atención, PQRSD y temas de interés.</li>
+            <li><strong>Participa:</strong> Espacios de participación ciudadana, rendición de cuentas y control social.</li>
+            <li><strong>La Entidad:</strong> Información institucional de la Secretaría.</li>
+            <li><strong>Normatividad:</strong> Marco normativo aplicable.</li>
+            <li><strong>Portal Infantil:</strong> Contenido educativo dirigido a niños, niñas y adolescentes.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Atención y Servicios a la ciudadanía -->
+      <details>
+        <summary><i class="fa-solid fa-headset me-2" aria-hidden="true"></i> Atención y Servicios a la ciudadanía</summary>
+        <div class="panel-body">
+          <p>Esta sección agrupa los servicios de atención al ciudadano organizados en cuatro grupos:</p>
+
+          <h4>Trámites, servicios, consultas y otros procedimientos</h4>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Trámites y servicios</li>
+            <li>Inmovilización y salida de patios</li>
+            <li>Certificado siniestralidad / IPAT</li>
+            <li>Red de Seguridad Vial</li>
+            <li>Centro de conciliación para las personas involucradas en siniestros viales</li>
+          </ul>
+
+          <h4>Canales de atención y agendamiento de citas</h4>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Agendamiento de citas</li>
+            <li>Centro de contacto de movilidad</li>
+            <li>Puntos de atención</li>
+            <li>Centros locales de movilidad</li>
+          </ul>
+
+          <h4>Peticiones, quejas, reclamos (PQRSD)</h4>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Formulario de radicación</li>
+            <li>Bogotá te escucha</li>
+            <li>Preguntas frecuentes</li>
+            <li>Denuncia de actos de corrupción</li>
+          </ul>
+
+          <h4>Temas de interés para la ciudadanía</h4>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Defensor del ciudadano</li>
+            <li>Manual de servicio a la ciudadanía</li>
+            <li>Carta de compromiso con la ciudadanía</li>
+            <li>Subasta vehículos en abandono - Ley 1730</li>
+            <li>Guía de inmovilización</li>
+            <li>Encuesta de satisfacción de atención a la ciudadanía</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Participa -->
+      <details>
+        <summary><i class="fa-solid fa-users-line me-2" aria-hidden="true"></i> Participa</summary>
+        <div class="panel-body">
+          <p>Esta sección incluye los espacios de participación ciudadana de la Secretaría Distrital de Movilidad:</p>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li>Participación para la identificación de problemas y diagnóstico de necesidades</li>
+            <li>Planeación y/o presupuesto participativo</li>
+            <li>Participación y consulta ciudadana de planes institucionales y estratégicos</li>
+            <li>Participación y consulta ciudadana de normativas institucionales y estratégicas</li>
+            <li>Colaboración e innovación abierta – Conoce, Propone y Prioriza</li>
+            <li>Rendición de Cuentas</li>
+            <li>Espacios de participación ciudadana</li>
+            <li>Control social</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Herramientas de accesibilidad -->
+      <details>
+        <summary><i class="fa-solid fa-screwdriver-wrench me-2" aria-hidden="true"></i> Herramientas de accesibilidad</summary>
+        <div class="panel-body">
+          <p>En esta sección encontrará herramientas diseñadas por el gobierno nacional para <strong>garantizar que los usuarios puedan acceder y utilizar los contenidos digitales</strong> de manera efectiva. Estas herramientas facilitan la navegación y el uso de recursos disponibles, promoviendo una experiencia inclusiva.</p>
+
+          <h4>Canales de atención</h4>
+          <p>La Secretaría Distrital de Movilidad cuenta con los siguientes canales para registrar sus preguntas y realizar solicitudes, incluyendo atención en lengua de señas colombiana y lenguas nativas:</p>
+          <ul style="list-style-type: disc; padding-left: 1.5rem;">
+            <li><strong>Centro de Contacto de Movilidad:</strong> +57 (601) 364 9400, opción 2</li>
+            <li><strong>Radicación ciudadanía:</strong>
+              <a href="https://www.movilidadbogota.gov.co/web/formulario_radicacion" target="_blank"
+                rel="noopener noreferrer">Formulario de radicación de correspondencia</a>
+            </li>
+          </ul>
+
+          <h4>ConVertic</h4>
+          <p>El Ministerio de Tecnologías de la Información y las Comunicaciones, a través de la "Licencia País", brinda un <strong>software lector de pantalla y un software magnificador</strong> con descarga gratuita a nivel nacional, que busca beneficiar a colombianos que presentan discapacidad visual.</p>
+          <p><i class="fa-solid fa-download icon-inline" aria-hidden="true"></i> La descarga está disponible para personas naturales (presenten o no discapacidad visual) y para personas jurídicas públicas, privadas o mixtas. Los programas funcionan únicamente con sistema operativo Windows:
+            <a href="https://www.convertic.gov.co/641/w3-propertyvalue-15308.html" target="_blank" rel="noopener noreferrer">Descargar ConVertic</a>
+          </p>
+          <p><strong>Dentro de ConVertic se encuentran los softwares:</strong></p>
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 0.75rem;">
+              <i class="fa-solid fa-download icon-inline" aria-hidden="true"></i>
+              <strong> JAWS:</strong> Software que <strong>convierte a voz la información que se muestra en la pantalla</strong>, describiendo el entorno digital y permitiendo a las personas ciegas hacer un uso autónomo del computador.
+              <a href="https://www.convertic.gov.co/641/w3-propertyvalue-15339.html" target="_blank" rel="noopener noreferrer">Descargar JAWS</a>
+            </li>
+            <li style="margin-bottom: 0.75rem;">
+              <i class="fa-solid fa-download icon-inline" aria-hidden="true"></i>
+              <strong> ZoomText:</strong> Software que <strong>amplía hasta 16 veces el tamaño de las letras</strong> en pantalla y permite variar color y contraste, beneficiando a personas con baja visión.
+              <a href="https://www.convertic.gov.co/641/w3-propertyvalue-15340.html" target="_blank" rel="noopener noreferrer">Descargar ZoomText</a>
+            </li>
+          </ul>
+
+
+        </div>
+      </details>
+
+    </div>
+
+    <!-- TAB LENGUAS NATIVAS -->
+    <div class="tab-pane fade" id="lenguas" role="tabpanel" aria-labelledby="tab-lenguas">
+      <h3 style="color: #1A1A1A;">Información en lenguas nativas</h3>
+      <p style="color: #333333;">La Secretaría Distrital de Movilidad pone a disposición la siguiente información en lenguas nativas:</p>
+      <ul style="list-style-type: none; padding-left: 0;">
+        <li style="margin-bottom: 1rem;">
+          <i class="fa-solid fa-file-pdf icon-inline" aria-hidden="true"></i>
+          <a href="https://www.movilidadbogota.gov.co/sites/default/files/Paginas/27-11-2020/idioma_kichwa.pdf"
+            target="_blank" rel="noopener noreferrer">Información en idioma Kichwa</a> (PDF)
+        </li>
+        <li style="margin-bottom: 1rem;">
+          <i class="fa-solid fa-file-pdf icon-inline" aria-hidden="true"></i>
+          <a href="https://www.movilidadbogota.gov.co/sites/default/files/Paginas/02-12-2020/idioma-muisca.pdf"
+            target="_blank" rel="noopener noreferrer">Información en idioma Muisca</a> (PDF)
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

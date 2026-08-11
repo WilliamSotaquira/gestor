@@ -1,0 +1,420 @@
+<div class="set-wrapper rendicion-cuentas">
+    <style>
+            .rendicion-cuentas {
+              font-size: 0.95rem;
+              line-height: 1.7;
+            }
+            .rendicion-cuentas .seccion-rc {
+              padding: 1.5rem 0;
+              border-bottom: 1px solid #dee2e6;
+            }
+            .rendicion-cuentas .seccion-rc:last-child {
+              border-bottom: none;
+            }
+            .rendicion-cuentas .seccion-rc h5 {
+              font-size: 1.1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+            }
+            .rendicion-cuentas .intro-text {
+              padding: 1.5rem 0;
+              border-bottom: 1px solid #dee2e6;
+            }
+            .rendicion-cuentas details {
+              margin-bottom: 2px;
+            }
+            .rendicion-cuentas summary {
+              background-color: #A6B517 !important;
+              color: #000 !important;
+              font-weight: 600 !important;
+              font-size: 1rem !important;
+              padding: 0.85rem 1.25rem !important;
+              cursor: pointer;
+              list-style: none;
+              display: flex !important;
+              align-items: center;
+              justify-content: space-between;
+              visibility: visible !important;
+              opacity: 1 !important;
+            }
+            .rendicion-cuentas summary::-webkit-details-marker {
+              display: none;
+            }
+            .rendicion-cuentas summary::after {
+              content: "▼";
+              font-size: 0.7rem;
+              transition: transform 0.3s;
+            }
+            .rendicion-cuentas details[open] summary::after {
+              transform: rotate(180deg);
+            }
+            .rendicion-cuentas details[open] summary {
+              background-color: #8a9a12 !important;
+            }
+            .rendicion-cuentas .panel-body {
+              background-color: #fff !important;
+              color: #252525 !important;
+              padding: 1.5rem !important;
+              font-size: 0.9rem !important;
+              line-height: 1.7 !important;
+              border: 1px solid #dee2e6;
+              border-top: none;
+            }
+            .rendicion-cuentas .panel-body p,
+            .rendicion-cuentas .panel-body ul,
+            .rendicion-cuentas .panel-body ol,
+            .rendicion-cuentas .panel-body li {
+              font-size: 0.9rem !important;
+              color: #252525 !important;
+              visibility: visible !important;
+            }
+            .rendicion-cuentas .panel-body a {
+              color: #004884 !important;
+              font-weight: 600;
+              text-decoration: underline;
+            }
+            .rendicion-cuentas .panel-body a:hover {
+              color: #003366 !important;
+            }
+            .rendicion-cuentas .links-container {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.5rem;
+            }
+            .rendicion-cuentas .link-sdm {
+              background: #A6B517;
+              color: #000 !important;
+              font-weight: 600;
+              padding: 0.5rem 1rem;
+              border-radius: 30px;
+              text-decoration: none !important;
+              font-size: 0.8rem;
+              transition: background 0.3s ease, box-shadow 0.3s ease;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 36px;
+              min-width: 44px;
+              line-height: 1.4;
+            }
+            .rendicion-cuentas .link-sdm:hover {
+              background: #8a9a12;
+              color: #000 !important;
+            }
+            .rendicion-cuentas .link-sdm:focus-visible {
+              outline: 3px solid #004884;
+              outline-offset: 2px;
+              box-shadow: 0 0 0 3px rgba(0, 72, 132, 0.3);
+            }
+            .rendicion-cuentas .link-sdm:active {
+              background: #768f0f;
+            }
+            .rendicion-cuentas .videos-container {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1.25rem;
+              justify-content: center;
+            }
+            .rendicion-cuentas .video-item {
+              flex: 0 1 280px;
+              text-align: center;
+              transition: opacity 0.3s ease, filter 0.3s ease;
+            }
+            .rendicion-cuentas .video-item p {
+              font-weight: 600;
+              margin-bottom: 0.4rem;
+              font-size: 0.85rem;
+              color: #252525;
+            }
+            .rendicion-cuentas .video-item video,
+            .rendicion-cuentas .video-item img {
+              border-radius: 4px;
+              width: 100%;
+            }
+            .rendicion-cuentas .fecha-audiencia {
+              display: block;
+              font-size: 0.78rem;
+              font-weight: 500;
+              color: #555;
+              margin-top: -0.2rem;
+              margin-bottom: 0.5rem;
+            }
+            .rendicion-cuentas .video-item.vencido {
+              opacity: 0.55;
+              filter: grayscale(100%);
+            }
+            .rendicion-cuentas .video-item.vencido::after {
+              content: "Ya se realizó";
+              display: inline-block;
+              margin-top: 0.4rem;
+              padding: 0.2rem 0.6rem;
+              border-radius: 20px;
+              background-color: #6c757d;
+              color: #fff;
+              font-size: 0.72rem;
+              font-weight: 600;
+            }
+            .rendicion-cuentas .video-item.vencido.reproduciendo {
+              opacity: 1;
+              filter: none;
+            }
+            .rendicion-cuentas .video-item.vencido.reproduciendo::after {
+              content: "Reproduciendo";
+              background-color: #A6B517;
+              color: #000;
+            }
+            @media (max-width: 576px) {
+              .rendicion-cuentas .links-container {
+                gap: 0.4rem;
+              }
+              .rendicion-cuentas .link-sdm {
+                flex: 1 1 calc(50% - 0.4rem);
+                text-align: center;
+                font-size: 0.75rem;
+                padding: 0.5rem 0.75rem;
+              }
+              .rendicion-cuentas .video-item {
+                flex: 1 1 100%;
+              }
+            }
+        </style>
+    <div class="intro-text">
+        <p>
+            Teniendo presente que el proceso de Rendición de Cuentas es un ejercicio de Transparencia para fortalecer la confianza de la ciudadanía en las entidades que conforman el Nodo Sector Movilidad Distrital, en este espacio encontrará información correspondiente a este proceso por localidades.
+        </p>
+    </div>
+    <div class="seccion-rc">
+        <h5>
+            Rendición de Cuentas Locales
+        </h5>
+        <div class="links-container">
+            <a class="link-sdm" href="/rendicion-de-cuentas-locales-2026-gestion-2025" aria-label="Rendición de cuentas 2026, gestión 2025">2026 Gestión 2025</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2025-gestion-2024" aria-label="Rendición de cuentas 2025, gestión 2024">2025 Gestión 2024</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2024-gestion-2023" aria-label="Rendición de cuentas 2024, gestión 2023">2024 Gestión 2023</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2023" aria-label="Rendición de cuentas 2023">2023</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2023-gestion-2022" aria-label="Rendición de cuentas 2023, gestión 2022">2023 Gestión 2022</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2022" aria-label="Rendición de cuentas 2022">2022</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2021" aria-label="Rendición de cuentas 2021">2021</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2020" aria-label="Rendición de cuentas 2020">2020</a> <a class="link-sdm" href="/rendicion-de-cuentas-locales-2019" aria-label="Rendición de cuentas 2019">2019</a>
+        </div>
+    </div>
+    <div class="seccion-rc">
+        <h5>
+            Manual Único de Rendición de Cuentas
+        </h5>
+        <details>
+            <summary>Manual Único de Rendición de Cuentas</summary>
+            <div class="panel-body">
+                <ul>
+                    <li data-list-item-id="e9c2ba5d6e3a7957a9a8871da313fd5c1">
+                        <a href="https://www.movilidadbogota.gov.co/sites/default/files/Paginas/22-02-2022/manual_unico_de_rendicion_de_cuentas_-_version_2._capitulo_i_-_febrero_de_2019.pdf">Manual Único de Rendición de Cuentas - Versión 2. Capítulo I - Febrero de 2019</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+    <div class="seccion-rc">
+        <h5>
+            Videos Invitación Audiencia Pública
+        </h5>
+        <div class="videos-container" id="videos-audiencia">
+            <div class="video-item" data-fecha="2026-07-08">
+                <p>
+                    Santa Fe
+                </p>
+                <p>
+                    <span class="fecha-audiencia">8 de julio de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Santa Fe">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4">Descargar video Santa Fe</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-07-09">
+                <p>
+                    Mujeres
+                </p>
+                <p>
+                    <span class="fecha-audiencia">9 de julio de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Mujeres">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4">Descargar video Mujeres</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-07-22">
+                <p>
+                    Chapinero
+                </p>
+                <p>
+                    <span class="fecha-audiencia">22 de julio de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Chapinero">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4">Descargar video Chapinero</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-07-29">
+                <p>
+                    Fontibón
+                </p>
+                <p>
+                    <span class="fecha-audiencia">29 de julio de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Fontibón">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4">Descargar video Fontibón</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-07-15">
+                <p>
+                    Kennedy
+                </p>
+                <p>
+                    <span class="fecha-audiencia">15 de julio de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Kennedy">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4">Descargar video Kennedy</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-08-12">
+                <p>
+                    La Candelaria
+                </p>
+                <p>
+                    <span class="fecha-audiencia">12 de agosto de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - La Candelaria">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4">Descargar video La Candelaria</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-08-05">
+                <p>
+                    Tunjuelito
+                </p>
+                <p>
+                    <span class="fecha-audiencia">5 de agosto de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Tunjuelito">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/9.%20tunjuelito.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/9.%20tunjuelito.mp4">Descargar video Tunjuelito</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-04-24">
+                <p>
+                    Niños
+                </p>
+                <p>
+                    <span class="fecha-audiencia">24 de abril de 2026</span>
+                </p>
+                <p>
+                    <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/1.%20ninos.jpeg" alt="Imagen invitación audiencia pública - Niños" width="721" height="1280">
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-05-28">
+                <p>
+                    Jóvenes y bicicleta
+                </p>
+                <p>
+                    <span class="fecha-audiencia">28 de mayo de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Jóvenes y bicicleta">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4">Descargar video Jóvenes y bicicleta</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-06-24">
+                <p>
+                    Usaquén
+                </p>
+                <p>
+                    <span class="fecha-audiencia">24 de junio de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Usaquén">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4">Descargar video Usaquén</a>.
+                                        </video>
+                </p>
+            </div>
+            <div class="video-item" data-fecha="2026-07-01">
+                <p>
+                    Teusaquillo
+                </p>
+                <p>
+                    <span class="fecha-audiencia">1 de julio de 2026</span>
+                </p>
+                <p>
+                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Teusaquillo">
+                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4" type="video/mp4">
+                                            Tu navegador no soporta la reproducción de video.
+                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4">Descargar video Teusaquillo</a>.
+                                        </video>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const contenedor = document.getElementById("videos-audiencia");
+                if (!contenedor) return;
+                const hoy = new Date();
+                hoy.setHours(0, 0, 0, 0);
+                const items = Array.from(contenedor.querySelectorAll(".video-item"));
+                items.forEach(function (item) {
+                    const fechaTexto = item.getAttribute("data-fecha");
+                    const fecha = new Date(fechaTexto + "T00:00:00");
+                    if (fecha < hoy) {
+                        item.classList.add("vencido");
+                    } else {
+                        item.classList.remove("vencido");
+                    }
+                    const video = item.querySelector("video");
+                    if (video) {
+                        video.addEventListener("play", function () {
+                            item.classList.add("reproduciendo");
+                        });
+                        video.addEventListener("pause", function () {
+                            item.classList.remove("reproduciendo");
+                        });
+                        video.addEventListener("ended", function () {
+                            item.classList.remove("reproduciendo");
+                        });
+                    }
+                });
+                items.sort(function (a, b) {
+                    const fechaA = new Date(a.getAttribute("data-fecha") + "T00:00:00");
+                    const fechaB = new Date(b.getAttribute("data-fecha") + "T00:00:00");
+                    const aYaRealizado = fechaA < hoy;
+                    const bYaRealizado = fechaB < hoy;
+                    if (aYaRealizado !== bYaRealizado) {
+                        return aYaRealizado ? 1 : -1;
+                    }
+                    return fechaA - fechaB;
+                });
+                items.forEach(function (item) {
+                    contenedor.appendChild(item);
+                });
+            });
+        </script>
+</div>

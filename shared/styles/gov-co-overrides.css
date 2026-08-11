@@ -1,0 +1,39 @@
+/**
+ * Sobrecargas y ajustes al CDN GOV.CO
+ * Usar solo cuando sea necesario corregir o extender
+ * los estilos del CDN sin modificar los originales.
+ */
+
+/* === Variables CDN GOV.CO === */
+:root {
+  --gov-co-primary: #3366CC;
+  --gov-co-secondary: #004884;
+  --gov-co-accent: #F7C325;
+}
+
+/* === Ajustes de accesibilidad === */
+:focus-visible {
+  outline: 3px solid var(--gov-co-accent);
+  outline-offset: 2px;
+}
+
+/* Contraste mínimo para texto sobre fondos claros */
+.text-muted {
+  color: #595959 !important; /* Cumple ratio 4.5:1 sobre blanco */
+}
+
+/* === Skip to content (accesibilidad) === */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--gov-co-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}

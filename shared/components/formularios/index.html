@@ -1,0 +1,176 @@
+<!--
+  FORMULARIOS GOV.CO v5
+  
+  Componentes:
+  - Entrada de texto (.entradas-de-texto-govco)
+  - Desplegable / Select (.desplegable-govco)
+  - Checkbox (.checkbox-seleccion-govco)
+  - Radio button (.radio-seleccion-govco)
+  - Switch (.switch-seleccion-govco)
+  - Carga de archivos (.carga-archivo-govco)
+-->
+
+<!-- ======================================== -->
+<!-- ENTRADA DE TEXTO                         -->
+<!-- ======================================== -->
+<div class="entradas-de-texto-govco" style="max-width: 320px;">
+  <label for="input-nombre">Nombre completo</label>
+  <div class="input-container">
+    <input type="text" id="input-nombre" placeholder="Ingrese su nombre" value="" aria-invalid="false">
+    <span class="govco-svg govco-check-circle success"></span>
+    <span class="govco-svg govco-exclamation-circle error"></span>
+  </div>
+  <span class="success-text-govco" style="display:none;">Campo valido</span>
+  <span class="error-text-govco" style="display:none;">Este campo es obligatorio</span>
+</div>
+
+<!-- ======================================== -->
+<!-- ENTRADA DE TEXTO CON CONTRASENA          -->
+<!-- ======================================== -->
+<div class="entradas-de-texto-govco" style="max-width: 320px;">
+  <label for="input-password">Contrasena</label>
+  <div class="input-container">
+    <input type="password" id="input-password" placeholder="Ingrese su contrasena" value="" typedata="password">
+    <button type="button" class="govco-icon govco-eye" aria-label="Mostrar contrasena"></button>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- ENTRADA DESHABILITADA                    -->
+<!-- ======================================== -->
+<div class="entradas-de-texto-govco" style="max-width: 320px;">
+  <label for="input-disabled">Campo deshabilitado</label>
+  <div class="input-container">
+    <input type="text" id="input-disabled" placeholder="No editable" disabled>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- DESPLEGABLE / SELECT                     -->
+<!-- ======================================== -->
+<div class="desplegable-govco" style="max-width: 320px;">
+  <label>Tipo de documento</label>
+  <div class="container-dropdown">
+    <button class="btn-dropdown" aria-expanded="false" aria-haspopup="listbox">
+      Seleccione una opcion
+    </button>
+    <div class="input-group">
+      <span class="input-group-text govco-icon govco-angle-down"></span>
+    </div>
+    <div class="dropdown-options-govco" role="listbox" style="display:none;">
+      <ul>
+        <li><a class="dropdown-item" role="option">Cedula de ciudadania</a></li>
+        <li><a class="dropdown-item" role="option">Tarjeta de identidad</a></li>
+        <li><a class="dropdown-item" role="option">Cedula de extranjeria</a></li>
+        <li><a class="dropdown-item" role="option">Pasaporte</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- CHECKBOX                                 -->
+<!-- ======================================== -->
+<div class="checkbox-seleccion-govco">
+  <input type="checkbox" id="check1">
+  <label for="check1">Acepto los terminos y condiciones</label>
+</div>
+
+<div class="checkbox-seleccion-govco">
+  <input type="checkbox" id="check2" checked>
+  <label for="check2">Opcion seleccionada por defecto</label>
+</div>
+
+<div class="checkbox-seleccion-govco">
+  <input type="checkbox" id="check3" disabled>
+  <label for="check3">Opcion deshabilitada</label>
+</div>
+
+<!-- ======================================== -->
+<!-- RADIO BUTTONS                            -->
+<!-- ======================================== -->
+<div class="radio-seleccion-govco">
+  <input type="radio" id="radio1" name="grupo1">
+  <label for="radio1">Opcion A</label>
+</div>
+
+<div class="radio-seleccion-govco">
+  <input type="radio" id="radio2" name="grupo1" checked>
+  <label for="radio2">Opcion B (seleccionada)</label>
+</div>
+
+<div class="radio-seleccion-govco">
+  <input type="radio" id="radio3" name="grupo1" disabled>
+  <label for="radio3">Opcion C (deshabilitada)</label>
+</div>
+
+<!-- ======================================== -->
+<!-- SWITCH                                   -->
+<!-- ======================================== -->
+<div class="switch-seleccion-govco">
+  <input type="checkbox" role="switch" class="form-check-input" id="switch1">
+  <label for="switch1">Activar notificaciones</label>
+</div>
+
+<div class="switch-seleccion-govco">
+  <input type="checkbox" role="switch" class="form-check-input" id="switch2" checked>
+  <label for="switch2">Modo activo</label>
+</div>
+
+<div class="switch-seleccion-govco">
+  <input type="checkbox" role="switch" class="form-check-input" id="switch3" disabled>
+  <label for="switch3">Deshabilitado</label>
+</div>
+
+<!-- ======================================== -->
+<!-- EJEMPLO: FORMULARIO COMPLETO             -->
+<!-- ======================================== -->
+<form class="row g-4" style="max-width: 640px;">
+  <div class="col-md-6">
+    <div class="entradas-de-texto-govco">
+      <label for="form-nombre">Nombres</label>
+      <div class="input-container">
+        <input type="text" id="form-nombre" placeholder="Nombres" value="" aria-invalid="false">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="entradas-de-texto-govco">
+      <label for="form-apellido">Apellidos</label>
+      <div class="input-container">
+        <input type="text" id="form-apellido" placeholder="Apellidos" value="" aria-invalid="false">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="desplegable-govco">
+      <label>Departamento</label>
+      <div class="container-dropdown">
+        <button type="button" class="btn-dropdown" aria-expanded="false">Seleccione</button>
+        <div class="input-group">
+          <span class="input-group-text govco-icon govco-angle-down"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="entradas-de-texto-govco">
+      <label for="form-email">Correo electronico</label>
+      <div class="input-container">
+        <input type="text" id="form-email" placeholder="correo@ejemplo.com" value="" aria-invalid="false">
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="checkbox-seleccion-govco">
+      <input type="checkbox" id="form-terms">
+      <label for="form-terms">Acepto la politica de tratamiento de datos personales</label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="d-flex gap-3">
+      <button type="submit" class="btn-govco fill-btn-govco">Enviar</button>
+      <button type="reset" class="btn-govco outline-btn-govco">Limpiar</button>
+    </div>
+  </div>
+</form>

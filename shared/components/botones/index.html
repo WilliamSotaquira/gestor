@@ -1,0 +1,103 @@
+<!--
+  BOTONES GOV.CO v5
+  Referencia: https://cdn.www.gov.co/v4/home
+  Clases base: .btn-govco + variante
+
+  Variantes:
+  - .fill-btn-govco         → Boton relleno (primario)
+  - .outline-btn-govco      → Boton contorno (secundario)
+  - .fill-secundary-btn-govco   → Relleno blanco (para fondos oscuros)
+  - .outline-secundary-btn-govco → Contorno blanco (para fondos oscuros)
+  - .icon-btn-govco         → Boton con icono y texto
+  - .only-icon-btn-govco    → Solo icono
+  - .link-btn-govco         → Estilo enlace
+  - .fill-link-btn-govco    → Estilo enlace (fondos oscuros)
+
+  Estados: :hover, :focus-visible, :disabled / .disabled
+-->
+
+<!-- ======================================== -->
+<!-- BOTON RELLENO (Primario)                 -->
+<!-- ======================================== -->
+<button class="btn-govco fill-btn-govco">
+  Boton primario
+</button>
+
+<!-- ======================================== -->
+<!-- BOTON CONTORNO (Secundario)              -->
+<!-- ======================================== -->
+<button class="btn-govco outline-btn-govco">
+  Boton secundario
+</button>
+
+<!-- ======================================== -->
+<!-- BOTON RELLENO - FONDO OSCURO             -->
+<!-- ======================================== -->
+<button class="btn-govco fill-secundary-btn-govco">
+  Boton fondo oscuro
+</button>
+
+<!-- ======================================== -->
+<!-- BOTON CONTORNO - FONDO OSCURO            -->
+<!-- ======================================== -->
+<button class="btn-govco outline-secundary-btn-govco">
+  Boton contorno oscuro
+</button>
+
+<!-- ======================================== -->
+<!-- BOTON CON ICONO (Mixto)                  -->
+<!-- ======================================== -->
+<button class="btn-govco icon-btn-govco fill-btn-govco">
+  <span class="govco-svg govco-download"></span>
+  <span>Descargar</span>
+</button>
+
+<button class="btn-govco icon-btn-govco outline-btn-govco">
+  <span class="govco-svg govco-arrow-right"></span>
+  <span>Siguiente</span>
+</button>
+
+<!-- ======================================== -->
+<!-- BOTON SOLO ICONO                         -->
+<!-- ======================================== -->
+<button class="btn-govco only-icon-btn-govco fill-btn-govco" aria-label="Buscar">
+  <span class="govco-svg govco-search"></span>
+</button>
+
+<!-- ======================================== -->
+<!-- BOTON ENLACE                             -->
+<!-- ======================================== -->
+<button class="btn-govco link-btn-govco">
+  <span class="govco-svg govco-arrow-right"></span>
+  <span>Ver mas</span>
+</button>
+
+<!-- Para fondos oscuros -->
+<button class="btn-govco fill-link-btn-govco">
+  <span class="govco-svg govco-arrow-right"></span>
+  <span>Ver mas</span>
+</button>
+
+<!-- ======================================== -->
+<!-- BOTONES DESHABILITADOS                   -->
+<!-- ======================================== -->
+<button class="btn-govco fill-btn-govco" disabled>
+  Deshabilitado
+</button>
+
+<button class="btn-govco outline-btn-govco disabled">
+  Deshabilitado
+</button>
+
+<button class="btn-govco link-btn-govco" disabled>
+  <span class="govco-svg govco-arrow-right"></span>
+  <span>Enlace deshabilitado</span>
+</button>
+
+<!-- ======================================== -->
+<!-- EJEMPLO: GRUPO DE BOTONES               -->
+<!-- ======================================== -->
+<div class="d-flex gap-3 flex-wrap">
+  <button class="btn-govco fill-btn-govco">Aceptar</button>
+  <button class="btn-govco outline-btn-govco">Cancelar</button>
+</div>

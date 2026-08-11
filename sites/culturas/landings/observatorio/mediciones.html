@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="es-CO">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/_catalogs/masterpage/Gobierno/img/icons/favicon-white-32x32.png" sizes="32x32" type="image/png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SBQV6YKFY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7SBQV6YKFY');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mediciones | Observatorio de las economías en las culturas, las artes y los saberes</title>
+    <meta name="description" content="Mediciones del Observatorio: datos, indicadores y herramientas para el análisis del sector cultural en Colombia.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mediciones | Observatorio Minculturas">
+    <meta property="og:description" content="Consulta sistemas de información, indicadores, visualizaciones y herramientas de análisis relacionadas con las economías culturales.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --obs-primary: #1a2744;
+            --obs-primary-dark: #0f1a2e;
+            --obs-accent: #5a2a83;
+            --obs-accent-dark: #3f1d60;
+            --obs-yellow: #f4c542;
+            --obs-ink: #1f2937;
+            --obs-muted: #536171;
+            --obs-surface-soft: #f4f6f8;
+            --obs-surface-blue: #eef5fb;
+            --obs-border: #d7dde5;
+            --obs-success: #146c43;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Nunito Sans', Arial, Helvetica, sans-serif; color: var(--obs-ink); }
+        .bg-obs-govbar { background: #004884; }
+        .navbar-obs { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .navbar-obs .nav-link { color: var(--obs-primary); font-weight: 600; font-size: 0.9rem; }
+        .navbar-obs .nav-link:hover { color: var(--obs-accent); }
+        .navbar-obs .nav-link[aria-current="page"] { color: #fff; background: var(--obs-accent); border-radius: 6px; }
+        .text-obs-primary { color: var(--obs-primary); }
+        .footer-obs a:hover { color: #fff !important; }
+
+        .hero-obs {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            min-height: 480px;
+            max-height: 620px;
+            padding: 5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .hero-obs__img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+        .hero-obs__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(26,39,68,.82) 0%, rgba(90,42,131,.55) 45%, rgba(26,39,68,.35) 100%);
+        }
+        @media (max-width: 768px) {
+            .hero-obs { min-height: auto; padding: 3rem 0; }
+        }
+        .hero-obs .eyebrow { color: var(--obs-yellow); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
+        .hero-obs h1 { font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; }
+        .hero-obs .lead { color: #edf4fb; font-size: 1.1rem; }
+        .btn-obs-yellow { background: var(--obs-yellow); color: #1c2430; font-weight: 700; border-radius: 8px; }
+        .btn-obs-yellow:hover { background: #ffd869; color: #1c2430; }
+        .btn-obs-outline { border: 2px solid #fff; color: #fff; font-weight: 700; border-radius: 8px; background: transparent; }
+        .btn-obs-outline:hover { background: #fff; color: var(--obs-accent-dark); }
+        .btn-obs-secondary { color: var(--obs-accent); border: 2px solid var(--obs-accent); background: #fff; font-weight: 700; border-radius: 8px; }
+        .btn-obs-secondary:hover { background: var(--obs-accent); color: #fff; }
+        .section-obs { padding: 4rem 0; }
+        .section-obs-soft { background: var(--obs-surface-soft); }
+        .section-obs-blue { background: var(--obs-surface-blue); }
+        .section-heading h2 { font-weight: 800; color: var(--obs-primary); }
+        .section-heading p { color: var(--obs-muted); }
+
+        /* Resource cards */
+        .resource-card {
+            border: 1px solid var(--obs-border);
+            border-top: 6px solid var(--obs-accent);
+            border-radius: 16px;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(22,34,51,.07);
+            height: 100%;
+            display: flex; flex-direction: column;
+        }
+        .resource-card:nth-child(2) { border-top-color: #004884; }
+        .resource-card:nth-child(3) { border-top-color: var(--obs-yellow); }
+        .resource-card__number {
+            width: 44px; height: 44px;
+            display: grid; place-items: center;
+            border-radius: 10px;
+            color: #fff; background: var(--obs-accent);
+            font-weight: 900; font-size: 0.85rem;
+        }
+        .resource-card:nth-child(2) .resource-card__number { background: #004884; }
+        .resource-card:nth-child(3) .resource-card__number { color: #111; background: var(--obs-yellow); }
+        .resource-card h3 { font-size: 1.2rem; font-weight: 700; margin-top: 1rem; }
+        .resource-card p { color: var(--obs-muted); font-size: 0.92rem; }
+        .resource-card .btn { margin-top: auto; }
+        .resource-meta { list-style: none; padding: 0; margin: .5rem 0 1rem; font-size: 0.9rem; }
+        .resource-meta li { display: grid; grid-template-columns: 90px 1fr; gap: .5rem; padding: .35rem 0; border-top: 1px solid var(--obs-border); }
+        .resource-meta strong { color: var(--obs-ink); }
+        .status-badge {
+            display: inline-flex; align-items: center; gap: .4rem;
+            padding: .25rem .6rem; border-radius: 999px;
+            font-size: .82rem; font-weight: 700;
+            color: var(--obs-success); background: #e8f5ee;
+            margin-bottom: .6rem; width: fit-content;
+        }
+        .status-badge::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: currentColor; }
+        .status-badge--info { color: #00325c; background: var(--obs-surface-blue); }
+
+        /* Intro */
+        .purpose-box {
+            padding: 1.5rem; border-radius: 16px;
+            color: #fff; background: #00325c;
+            box-shadow: 0 8px 24px rgba(22,34,51,.1);
+        }
+        .purpose-box h3 { color: var(--obs-yellow); font-size: 1.15rem; margin-top: 0; }
+        .purpose-box ul { margin: 0; padding-left: 1.2rem; }
+        .purpose-box li + li { margin-top: .4rem; }
+
+        /* Guide steps */
+        .guide-step {
+            padding: 1.5rem 1.25rem; border-radius: 14px;
+            background: #fff; box-shadow: 0 6px 18px rgba(22,34,51,.06);
+            height: 100%; position: relative;
+            counter-increment: steps;
+        }
+        .guide-step::before {
+            content: counter(steps);
+            width: 34px; height: 34px;
+            display: grid; place-items: center;
+            margin-bottom: .75rem;
+            color: #fff; border-radius: 50%; background: var(--obs-accent);
+            font-weight: 900; font-size: 0.85rem;
+        }
+        .guide-step h3 { font-size: 1rem; font-weight: 700; margin: 0 0 .3rem; }
+        .guide-step p { margin: 0; color: var(--obs-muted); font-size: 0.9rem; }
+
+        /* Finance panel */
+        .finance-panel {
+            padding: 2rem; border: 1px solid var(--obs-border);
+            border-radius: 16px; background: #fff;
+            box-shadow: 0 8px 24px rgba(22,34,51,.07);
+        }
+        .finance-panel h2 { font-weight: 800; color: var(--obs-primary); margin-bottom: .5rem; }
+        .finance-panel p { color: var(--obs-muted); }
+        .finance-note {
+            padding: 1rem; border-left: 4px solid var(--obs-yellow);
+            border-radius: 8px; background: var(--obs-surface-soft);
+            font-size: 0.88rem;
+        }
+
+        /* Related */
+        .related-section {
+            color: #fff;
+            background: linear-gradient(115deg, var(--obs-accent), #004884);
+            padding: 3rem 0;
+        }
+        .related-section h2 { font-weight: 800; }
+        .related-section p { color: #edf4fb; }
+        .btn-obs-light { color: #00325c; background: #fff; font-weight: 700; border-radius: 8px; }
+        .btn-obs-light:hover { background: #edf4fb; }
+
+        a:focus-visible, button:focus-visible, summary:focus-visible {
+            outline: 3px solid var(--obs-yellow); outline-offset: 2px; border-radius: 4px;
+        }
+        @media print {
+            .bg-obs-govbar, .navbar-obs, .footer-obs, .related-section, [aria-label="Volver arriba"] { display: none !important; }
+            .hero-obs { color: #000; background: #fff !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; animation: none !important; }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header>
+        <a href="#contenido-principal" class="visually-hidden-focusable position-absolute top-0 start-0 p-2 bg-white text-dark fw-bold" style="z-index:9999;">Saltar al contenido principal</a>
+
+        <div class="bg-obs-govbar">
+            <div class="container d-flex align-items-center py-1">
+                <a href="https://www.gov.co/" rel="noopener noreferrer" aria-label="Ir al portal GOV.CO">
+                    <img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" width="90" alt="Logo GOV.CO" style="filter: brightness(2);">
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-obs sticky-top" aria-label="Navegación principal">
+            <div class="container">
+                <div class="d-flex align-items-center gap-4 py-2">
+                    <a href="https://www.mincultura.gov.co/" aria-label="Ir al sitio del Ministerio de las Culturas">
+                        <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/logo-ministerio-culturas.png" height="80" alt="Logo Ministerio de las Culturas, las Artes y los Saberes">
+                    </a>
+                    <span class="d-none d-md-block" style="width:1px;height:50px;background:#ccc;" aria-hidden="true"></span>
+                    <a href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/index.aspx" class="text-decoration-none">
+                        <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/logo-observatorio-economias-culturales-alto.png" height="50" class="my-2" alt="Logo Observatorio de las economías en las culturas, las artes y los saberes">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navObservatorio" aria-controls="navObservatorio" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navObservatorio">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/index.aspx">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx">Observatorio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/mediciones.aspx" aria-current="page">Mediciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/publicaciones.aspx">Publicaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/herramientas.aspx">Herramientas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- Hero -->
+        <section class="hero-obs" aria-labelledby="titulo-mediciones">
+            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/hero-inicio-mascara-observatorio.jpg" class="hero-obs__img" alt="Máscara ceremonial representativa de la diversidad cultural colombiana">
+            <div class="hero-obs__overlay"></div>
+            <div class="container position-relative" style="z-index:2;">
+                <p class="eyebrow mb-2">Datos, indicadores y medición cultural</p>
+                <h1 id="titulo-mediciones">Mediciones</h1>
+                <p class="lead mt-3">Consulta sistemas de información, indicadores, visualizaciones y herramientas de análisis relacionadas con las economías culturales, creativas y de los saberes en Colombia.</p>
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <a class="btn btn-lg btn-obs-yellow px-4" href="#recursos-de-medicion">Consultar mediciones</a>
+                    <a class="btn btn-lg btn-obs-outline px-4" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx">Volver al Observatorio</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ¿Qué es? -->
+        <section class="section-obs section-obs-soft" aria-labelledby="titulo-que-es">
+            <div class="container">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-8">
+                        <h2 id="titulo-que-es" class="fw-bold">¿Qué es?</h2>
+                        <p class="mt-3">Línea estratégica orientada a integrar sistemas de información, indicadores, visualizaciones y herramientas de análisis relacionadas con la medición de las economías culturales, creativas y de los saberes en Colombia.</p>
+                        <p>Este componente reúne contenidos asociados a la Cuenta Satélite de Economía Cultural y Creativa (CSECC), la Encuesta de Consumo Cultural (ECC) y otras mediciones estratégicas desarrolladas desde el Grupo de Gestión del Conocimiento, con el propósito de consolidar un espacio de consulta, análisis y visualización de información cultural de manera accesible, dinámica e interactiva.</p>
+                        <p>Asimismo, esta línea busca fortalecer la circulación de datos e indicadores que permitan comprender las dinámicas económicas, sociales y territoriales del sector cultural, facilitando la toma de decisiones, el análisis sectorial y la apropiación de información estratégica por parte de diferentes públicos.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside class="purpose-box">
+                            <h3>Objetivo</h3>
+                            <p>Fortalecer la comprensión y circulación de información sobre el impacto económico y social de las culturas, las artes y los saberes, integrando:</p>
+                            <ul>
+                                <li>Herramientas visuales</li>
+                                <li>Indicadores</li>
+                                <li>Sistemas de información</li>
+                                <li>Recursos analíticos</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuenta Satélite de Cultura y Economía Creativa -->
+        <section class="section-obs" id="csecc" aria-labelledby="titulo-csecc">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-csecc">Cuenta Satélite de Cultura y Economía Creativa (CSECC)</h2>
+                    <p>Medición económica de las actividades y productos asociados a la cultura y la economía creativa en Colombia.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <p>La cuenta de producción de la Cuenta Satélite de Economía Cultural y Creativa (CSECC) permite medir el valor agregado generado en el proceso productivo de las actividades económicas asociadas a la cultura y la economía creativa, agrupadas en tres áreas: artes y patrimonio, industrias culturales y creaciones funcionales.</p>
+                        <p>Funciona como una "radiografía" del sector cultural: organiza información sobre actividades como música, audiovisuales, artes escénicas, diseño, libros, patrimonio, publicidad, software creativo, contenidos digitales y otras expresiones culturales.</p>
+                        <p class="text-muted small">Fuente de la definición: <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/cuentas-nacionales/cuentas-satelite/cuenta-satelite-de-cultura-en-colombia/cuenta-satelite-de-economia-cultural-y-creativa-csecc-2022-2024pr" rel="external" target="_blank">DANE — CSECC 2022-2024pr <span aria-hidden="true">↗</span></a></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="purpose-box">
+                            <h3>Contenido proyectado</h3>
+                            <ul>
+                                <li>Indicadores destacados</li>
+                                <li>Visualizaciones de datos</li>
+                                <li>Dashboard Power BI</li>
+                                <li>Infografías de resultados</li>
+                                <li>Publicaciones y reportes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder Dashboard CSECC -->
+                <div class="mt-4 p-4 border rounded-3 bg-white text-center" role="region" aria-label="Espacio reservado para dashboard CSECC">
+                    <i class="bi bi-bar-chart-line" style="font-size:3rem;color:var(--obs-muted);"></i>
+                    <p class="mt-2 mb-0 fw-bold text-muted">Dashboard CSECC</p>
+                    <p class="text-muted small mb-0">Espacio reservado para la visualización Power BI de la Cuenta Satélite de Cultura y Economía Creativa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Encuesta de Consumo Cultural -->
+        <section class="section-obs section-obs-soft" id="ecc" aria-labelledby="titulo-ecc">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-ecc">Encuesta de Consumo Cultural (ECC)</h2>
+                    <p>Medición de prácticas y hábitos de consumo cultural de la población en Colombia.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <p>La Encuesta de Consumo Cultural es una medición que permite conocer las prácticas y hábitos de consumo cultural de la población en Colombia. A través de esta encuesta se identifica qué actividades culturales realizan las personas, a qué espacios asisten, qué contenidos consumen y cuáles son sus formas de participación en la vida cultural.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="purpose-box">
+                            <h3>Contenido proyectado</h3>
+                            <ul>
+                                <li>Resultados</li>
+                                <li>Indicadores</li>
+                                <li>Gráficas</li>
+                                <li>Descargas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder Dashboard ECC -->
+                <div class="mt-4 p-4 border rounded-3 bg-white text-center" role="region" aria-label="Espacio reservado para dashboard ECC">
+                    <i class="bi bi-pie-chart" style="font-size:3rem;color:var(--obs-muted);"></i>
+                    <p class="mt-2 mb-0 fw-bold text-muted">Dashboard / Infografía ECC</p>
+                    <p class="text-muted small mb-0">Espacio reservado para la visualización de resultados de la Encuesta de Consumo Cultural.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras mediciones -->
+        <section class="section-obs" id="otras-mediciones" aria-labelledby="titulo-otras">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-otras">Otras mediciones</h2>
+                    <p>Sistemas de información y mediciones adicionales asociadas al sector cultural.</p>
+                </div>
+                <div class="finance-note">
+                    <strong>Contenido en desarrollo:</strong> Esta sección se habilitará para integrar otros sistemas de información y mediciones estratégicas a medida que se validen los contenidos institucionales.
+                </div>
+            </div>
+        </section>
+
+        <!-- Recursos de consulta rápida -->
+        <section class="section-obs section-obs-soft" id="recursos-de-medicion" aria-labelledby="titulo-recursos">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-recursos">Acceso rápido</h2>
+                    <p>Selecciona el instrumento que corresponda a tu necesidad de consulta.</p>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <article class="resource-card">
+                            <span class="status-badge">Acceso de consulta</span>
+                            <div class="resource-card__number" aria-hidden="true">01</div>
+                            <h3>Cuenta Satélite de Cultura</h3>
+                            <p>Medición del valor agregado de actividades económicas asociadas a la cultura y la economía creativa.</p>
+                            <ul class="resource-meta">
+                                <li><strong>Tipo</strong><span>Medición económica</span></li>
+                                <li><strong>Áreas</strong><span>Artes y patrimonio, industrias culturales, creaciones funcionales</span></li>
+                                <li><strong>Sigla</strong><span>CSECC</span></li>
+                            </ul>
+                            <a class="btn btn-obs-secondary" href="#csecc">Consultar CSECC</a>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <article class="resource-card">
+                            <span class="status-badge">Acceso de consulta</span>
+                            <div class="resource-card__number" aria-hidden="true">02</div>
+                            <h3>Encuesta de Consumo Cultural</h3>
+                            <p>Prácticas, preferencias, acceso y participación de la población en bienes, servicios y actividades culturales.</p>
+                            <ul class="resource-meta">
+                                <li><strong>Tipo</strong><span>Encuesta</span></li>
+                                <li><strong>Ámbito</strong><span>Consumo cultural</span></li>
+                                <li><strong>Sigla</strong><span>ECC</span></li>
+                            </ul>
+                            <a class="btn btn-obs-secondary" href="#ecc">Consultar ECC</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Relacionados -->
+        <section class="related-section" aria-labelledby="titulo-relacionados">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <h2 id="titulo-relacionados">Continúa explorando el Observatorio</h2>
+                        <p>Consulta publicaciones editoriales y otros productos de conocimiento relacionados con las economías en las culturas, las artes y los saberes.</p>
+                    </div>
+                    <div class="col-lg-5 d-flex flex-wrap gap-2 justify-content-lg-end">
+                        <a class="btn btn-lg btn-obs-light px-4" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/publicaciones.aspx">Ir a Publicaciones</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-obs" aria-label="Pie de página del Ministerio de las Culturas">
+        <div style="background: var(--obs-primary); padding: 40px 0;">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-12 col-lg-3 text-center text-lg-start">
+                        <img loading="lazy" src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" alt="Logo GOV.CO" style="filter: brightness(2); margin-bottom: 15px;"><br>
+                        <img loading="lazy" src="https://cdn.www.gov.co/layout-govco-v5/assets/images/logo-colombia.svg" height="48" alt="Logo Colombia Potencia de la Vida">
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Ministerio de las Culturas,<br>las Artes y los Saberes</h6>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Dirección: Calle 9 No. 8 - 31 Bogotá</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Horario: 8:00 a.m. a 5:00 p.m. jornada continua</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Teléfono: <a href="tel:+576013424100" style="color:#aaa;text-decoration:underline;">+57 (601) 3424100</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;">Línea gratuita: <a href="tel:018000938081" style="color:#aaa;text-decoration:underline;">018000 938081</a></p>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="http://www.youtube.com/user/Mincultura" target="_blank" rel="noopener noreferrer" aria-label="YouTube MinCulturas (abre en nueva ventana)"><i class="bi bi-youtube" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="http://www.instagram.com/mincultura/" target="_blank" rel="noopener noreferrer" aria-label="Instagram MinCulturas (abre en nueva ventana)"><i class="bi bi-instagram" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="https://www.facebook.com/MinisterioCultura/" target="_blank" rel="noopener noreferrer" aria-label="Facebook MinCulturas (abre en nueva ventana)"><i class="bi bi-facebook" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="http://www.twitter.com/mincultura" target="_blank" rel="noopener noreferrer" aria-label="X MinCulturas (abre en nueva ventana)"><i class="bi bi-twitter-x" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="https://www.tiktok.com/@minculturas" target="_blank" rel="noopener noreferrer" aria-label="TikTok MinCulturas (abre en nueva ventana)"><i class="bi bi-tiktok" style="font-size:20px;color:#ccc;"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Contacto Correspondencia</h6>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Dirección: Calle 9 No. 8 - 31 Bogotá</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Lunes a viernes de 8:00 a.m. a 4:00 p.m.</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Correo: <a href="mailto:servicioalciudadano@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">servicioalciudadano@mincultura.gov.co</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;"><strong>Denuncias de corrupción:</strong> <a href="mailto:soytransparente@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">soytransparente@mincultura.gov.co</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;"><strong>Línea Exclusiva de Denuncias:</strong> <a href="tel:+576013816290" style="color:#aaa;text-decoration:underline;">(601) 381 6290</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;"><strong>Notificaciones judiciales:</strong> <a href="mailto:notificaciones@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">notificaciones@mincultura.gov.co</a></p>
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Servicios a la Ciudadanía</h6>
+                        <ul class="list-unstyled" style="font-size:0.85rem;">
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/atencion-y-servicio-a-la-ciudadania/Paginas/atencion-pqrs.aspx" style="color:#aaa;text-decoration:underline;">PQRSD</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/transparencia/Paginas/tramites/preguntas-frecuentes.aspx" style="color:#aaa;text-decoration:underline;">Preguntas Frecuentes</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/atencion-y-servicio-a-la-ciudadania/Paginas/tramites-y-servicios.aspx" style="color:#aaa;text-decoration:underline;">Trámites y servicios</a></li>
+                        </ul>
+                        <h6 class="text-white fw-bold mb-2 mt-3">Acerca del sitio</h6>
+                        <ul class="list-unstyled" style="font-size:0.85rem;">
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/transparencia/Paginas/transparencia.aspx#politicas" style="color:#aaa;text-decoration:underline;">Políticas</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/Paginas/mapa-del-sitio.aspx" style="color:#aaa;text-decoration:underline;">Mapa del sitio</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/Paginas/guia-del-usuario.aspx" style="color:#aaa;text-decoration:underline;">Accesibilidad</a></li>
+                        </ul>
+                        <p style="font-size:0.8rem;color:#666;margin-top:15px;">Copyright © 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="position-fixed bottom-0 end-0 m-4 btn rounded-circle d-flex align-items-center justify-content-center" style="width:44px;height:44px;background:var(--obs-accent);color:#fff;z-index:1000;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);" aria-label="Volver arriba"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

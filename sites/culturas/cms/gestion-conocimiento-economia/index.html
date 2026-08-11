@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estrategia, Desarrollo y Emprendimiento - Ministerio de las Culturas</title>
+  <meta name="description" content="Dirección de Estrategia, Desarrollo y Emprendimiento DEDE - Grupo de gestión del conocimiento para la economía cultural - Observatorio">
+  <link rel="stylesheet" href="https://cdn.gov.co/v3/css/gov-co-style.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Work Sans se carga del CDN GOV.CO -->
+  <style>
+    :root {
+      /* Colores institucionales - basados en CDN GOV.CO */
+      --gc-purple: #5b2a91;
+      --gc-purple-dark: #3d1a63;
+      --gc-purple-light: #7d2b83;
+      --gc-yellow: #e7c20a;
+      --gc-yellow-light: #f5d620;
+      --gc-gold: #c9a40a;
+      --gc-white: #ffffff;
+      --gc-black: #1a1a1a;
+      --gc-gray: #f4f4f4;
+      /* Fuente: Work Sans del CDN GOV.CO */
+      --gc-font: 'Work Sans', sans-serif;
+      --gc-font-display: 'Work Sans', sans-serif;
+    }
+
+    /* Respetar estilos base del CDN GOV.CO */
+    body {
+      font-family: var(--gc-font);
+      color: var(--gc-black);
+      margin: 0;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Títulos respetando jerarquía GOV.CO */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--gc-font);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* Botones base estilo GOV.CO */
+    .gc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.625rem 1.5rem;
+      border-radius: 4px;
+      font-family: var(--gc-font);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .gc-btn--primary {
+      background-color: var(--gc-purple);
+      color: var(--gc-white);
+    }
+
+    .gc-btn--primary:hover,
+    .gc-btn--primary:focus {
+      background-color: var(--gc-purple-dark);
+      color: var(--gc-white);
+    }
+
+    .gc-btn--secondary {
+      background-color: var(--gc-yellow);
+      color: var(--gc-black);
+    }
+
+    .gc-btn--secondary:hover,
+    .gc-btn--secondary:focus {
+      background-color: var(--gc-gold);
+      color: var(--gc-black);
+    }
+
+    /* Foco accesible estilo GOV.CO */
+    :focus-visible {
+      outline: 3px solid #3366CC;
+      outline-offset: 2px;
+    }
+
+    /* === HEADER === */
+    .gc-header {
+      background-color: var(--gc-white);
+      border-bottom: 1px solid #eee;
+      padding: 0.75rem 0;
+    }
+
+    .gc-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .gc-header__logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .gc-header__nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .gc-header__nav a {
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gc-black);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .gc-header__nav a.active {
+      background-color: var(--gc-purple);
+      color: var(--gc-white);
+    }
+
+    .gc-header__nav a:hover {
+      background-color: var(--gc-purple-light);
+      color: var(--gc-white);
+    }
+
+    /* === HERO CARRUSEL === */
+    .gc-hero {
+      position: relative;
+      min-height: 400px;
+      overflow: hidden;
+    }
+
+    .gc-hero__track {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+
+    .gc-hero__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .gc-hero__slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .gc-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1);
+      transition: transform 6s ease-out;
+    }
+
+    .gc-hero__slide.active .gc-hero__bg {
+      transform: scale(1.06);
+    }
+
+    .gc-hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(91, 42, 145, 0.7) 0%, rgba(125, 43, 131, 0.85) 100%);
+    }
+
+    .gc-hero__content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 400px;
+      padding: 3rem 1.5rem;
+    }
+
+    .gc-hero__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: var(--gc-white);
+      line-height: 1.1;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+    }
+
+    .gc-hero__controls {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 10;
+    }
+
+    .gc-hero__btn {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      color: var(--gc-white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .gc-hero__btn:hover,
+    .gc-hero__btn:focus {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.1);
+    }
+
+    .gc-hero__dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .gc-hero__dot {
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, width 0.2s, border-radius 0.2s;
+    }
+
+    .gc-hero__dot.active {
+      background: var(--gc-white);
+      width: 24px;
+      border-radius: 5px;
+    }
+
+    .gc-hero__dot:hover,
+    .gc-hero__dot:focus {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .gc-hero__pause {
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--gc-white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+    }
+
+    .gc-hero__pause:hover,
+    .gc-hero__pause:focus {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .gc-hero__pause svg { display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gc-hero__bg { transition: none; }
+      .gc-hero__slide.active .gc-hero__bg { transform: none; }
+      .gc-hero__slide { transition: opacity 0.01ms; }
+    }
+
+    /* === SUBTÍTULO === */
+    .gc-subtitle {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: var(--gc-white);
+    }
+
+    .gc-subtitle h2 {
+      font-family: var(--gc-font-display);
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      color: var(--gc-purple);
+      margin: 0;
+    }
+
+    /* === SECCIÓN AMARILLA (DEDE) === */
+    .gc-dede {
+      background: var(--gc-yellow);
+      padding: 3rem 0;
+    }
+
+    .gc-dede__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .gc-dede__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      color: var(--gc-purple-dark);
+      margin: 0 0 1rem;
+      line-height: 1.2;
+    }
+
+    .gc-dede__text p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--gc-black);
+      margin: 0 0 1rem;
+    }
+
+    .gc-dede__carousel {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      background: var(--gc-purple);
+    }
+
+    .gc-dede__carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gc-dede__link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--gc-purple);
+      font-weight: 700;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+
+    /* === MENÚ LATERAL === */
+    .gc-menu {
+      background: var(--gc-purple);
+      padding: 3rem 0;
+    }
+
+    .gc-menu__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .gc-menu__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .gc-menu__item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      color: var(--gc-white);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .gc-menu__item:hover,
+    .gc-menu__item:focus {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateX(4px);
+      color: var(--gc-white);
+    }
+
+    .gc-menu__icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gc-yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    /* === DIRECTORIO === */
+    .gc-directorio {
+      padding: 3rem 0;
+      background: var(--gc-white);
+    }
+
+    .gc-directorio__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--gc-purple);
+      text-align: center;
+      margin: 0 0 2rem;
+    }
+
+    .gc-directorio__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .gc-persona {
+      background: var(--gc-gray);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .gc-persona__img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      background: var(--gc-purple-light);
+    }
+
+    .gc-persona__nombre {
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 0 0.25rem;
+      color: var(--gc-purple);
+    }
+
+    .gc-persona__cargo {
+      font-size: 0.85rem;
+      color: #555;
+      margin: 0;
+    }
+
+    /* === FOOTER === */
+    .gc-footer {
+      background: var(--gc-purple);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 2.5rem 0;
+    }
+
+    .gc-footer__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      font-size: 0.8rem;
+    }
+
+    .gc-footer__col h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      color: var(--gc-yellow);
+    }
+
+    .gc-footer__col p {
+      margin: 0 0 0.5rem;
+      line-height: 1.5;
+    }
+
+    .gc-footer__col a {
+      color: var(--gc-white);
+      text-decoration: underline;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .gc-dede__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .gc-header__nav {
+        display: none;
+      }
+
+      .gc-directorio__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="contenido-cms">
+    <!-- === INICIO CONTENIDO PARA SHAREPOINT === -->
+
+    <!-- HEADER -->
+    <header class="gc-header">
+      <div class="gc-header__inner">
+        <a href="#" class="gc-header__logo" aria-label="Inicio">
+          <img src="https://cdn.gov.co/v3/images/logo-gov-co.svg" alt="Logo GOV.CO">
+        </a>
+        <nav class="gc-header__nav" aria-label="Navegación principal">
+          <a href="#" class="active">Inicio</a>
+          <a href="#">Grupo de gestión del conocimiento</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO CARRUSEL -->
+    <section class="gc-hero" aria-roledescription="carrusel" aria-label="Información destacada">
+      <div class="gc-hero__track" aria-live="off">
+        <div class="gc-hero__slide active" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
+          <div class="gc-hero__bg" style="background-image: url('https://via.placeholder.com/1920x600/5b2a91/ffffff?text=Slide+1');"></div>
+          <div class="gc-hero__content">
+            <h1 class="gc-hero__title">Estrategia, Desarrollo<br>y Emprendimiento</h1>
+          </div>
+        </div>
+        <div class="gc-hero__slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 3">
+          <div class="gc-hero__bg" style="background-image: url('https://via.placeholder.com/1920x600/7d2b83/ffffff?text=Slide+2');"></div>
+          <div class="gc-hero__content">
+            <h2 class="gc-hero__title">Observatorio de Economía Cultural</h2>
+          </div>
+        </div>
+        <div class="gc-hero__slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 3">
+          <div class="gc-hero__bg" style="background-image: url('https://via.placeholder.com/1920x600/3d1a63/ffffff?text=Slide+3');"></div>
+          <div class="gc-hero__content">
+            <h2 class="gc-hero__title">Gestión del Conocimiento<br>para la Economía Creativa</h2>
+          </div>
+        </div>
+      </div>
+      <div class="gc-hero__controls">
+        <button class="gc-hero__btn gc-hero__btn--prev" type="button" aria-label="Diapositiva anterior">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="gc-hero__dots" role="tablist" aria-label="Seleccionar diapositiva">
+          <button role="tab" aria-selected="true" aria-label="Diapositiva 1" class="gc-hero__dot active" data-slide="0"></button>
+          <button role="tab" aria-selected="false" aria-label="Diapositiva 2" class="gc-hero__dot" data-slide="1"></button>
+          <button role="tab" aria-selected="false" aria-label="Diapositiva 3" class="gc-hero__dot" data-slide="2"></button>
+        </div>
+        <button class="gc-hero__btn gc-hero__btn--next" type="button" aria-label="Diapositiva siguiente">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="gc-hero__pause" type="button" aria-label="Pausar rotación automática">
+          <svg class="gc-pause-icon" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1"/><rect x="8.5" y="1" width="3.5" height="12" rx="1"/></svg>
+          <svg class="gc-play-icon" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true" style="display:none;"><path d="M3 1.5v11l9-5.5L3 1.5z"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- SUBTÍTULO -->
+    <section class="gc-subtitle">
+      <h2>Micrositio Observatorio</h2>
+    </section>
+
+    <!-- SECCIÓN DEDE -->
+    <section class="gc-dede" aria-label="Dirección DEDE">
+      <div class="gc-dede__inner">
+        <div>
+          <h2 class="gc-dede__title">Dirección de Estrategia, Desarrollo y Emprendimiento DEDE</h2>
+          <div class="gc-dede__text">
+            <p>La misión de la Dirección de Estrategia, Desarrollo y Emprendimiento es promover el desarrollo de la economía cultural y creativa en Colombia, fortaleciendo las capacidades de los actores del sector y generando condiciones para su sostenibilidad.</p>
+            <p>A través del Grupo de gestión del conocimiento, se articula la generación de datos, estudios y análisis que permiten comprender las dinámicas del ecosistema cultural y creativo del país.</p>
+          </div>
+          <a href="#" class="gc-dede__link">Mapa del sitio →</a>
+        </div>
+        <div class="gc-dede__carousel">
+          <img src="https://via.placeholder.com/800x500/5b2a91/ffffff?text=Galería+DEDE" alt="Equipo de la Dirección de Estrategia, Desarrollo y Emprendimiento en actividad institucional">
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚ -->
+    <section class="gc-menu" aria-label="Navegación de contenidos">
+      <div class="gc-menu__inner">
+        <ul class="gc-menu__list">
+          <li>
+            <a href="#" class="gc-menu__item">
+              <span class="gc-menu__icon" aria-hidden="true">🏛️</span>
+              Oficinas y grupos
+            </a>
+          </li>
+          <li>
+            <a href="#" class="gc-menu__item">
+              <span class="gc-menu__icon" aria-hidden="true">📊</span>
+              Programas y proyectos
+            </a>
+          </li>
+          <li>
+            <a href="#" class="gc-menu__item">
+              <span class="gc-menu__icon" aria-hidden="true">📋</span>
+              Servicios e información
+            </a>
+          </li>
+          <li>
+            <a href="#" class="gc-menu__item">
+              <span class="gc-menu__icon" aria-hidden="true">📢</span>
+              Convocatorias
+            </a>
+          </li>
+          <li>
+            <a href="#" class="gc-menu__item">
+              <span class="gc-menu__icon" aria-hidden="true">📚</span>
+              Publicaciones
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DIRECTORIO -->
+    <section class="gc-directorio" aria-label="Directorio del equipo">
+      <h2 class="gc-directorio__title">Directorio</h2>
+      <div class="gc-directorio__grid">
+        <div class="gc-persona">
+          <img class="gc-persona__img" src="https://via.placeholder.com/200x200/7d2b83/ffffff?text=Foto" alt="Foto de integrante del equipo">
+          <p class="gc-persona__nombre">Nombre del funcionario</p>
+          <p class="gc-persona__cargo">Cargo institucional</p>
+        </div>
+        <div class="gc-persona">
+          <img class="gc-persona__img" src="https://via.placeholder.com/200x200/7d2b83/ffffff?text=Foto" alt="Foto de integrante del equipo">
+          <p class="gc-persona__nombre">Nombre del funcionario</p>
+          <p class="gc-persona__cargo">Cargo institucional</p>
+        </div>
+        <div class="gc-persona">
+          <img class="gc-persona__img" src="https://via.placeholder.com/200x200/7d2b83/ffffff?text=Foto" alt="Foto de integrante del equipo">
+          <p class="gc-persona__nombre">Nombre del funcionario</p>
+          <p class="gc-persona__cargo">Cargo institucional</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="gc-footer">
+      <div class="gc-footer__inner">
+        <div class="gc-footer__col">
+          <h4>Dirección de Estrategia, Desarrollo y Emprendimiento DEDE</h4>
+          <p>Ministerio de las Culturas, las Artes y los Saberes</p>
+          <p>Bogotá D.C., Colombia</p>
+        </div>
+        <div class="gc-footer__col">
+          <h4>Contacto</h4>
+          <p>Carrera 8 # 8-43</p>
+          <p>Conmutador: (601) 342 4100</p>
+          <p>Horario: L-V 8:00 a.m. – 5:00 p.m.</p>
+        </div>
+        <div class="gc-footer__col">
+          <h4>Enlaces</h4>
+          <p><a href="https://www.mincultura.gov.co">www.mincultura.gov.co</a></p>
+          <p><a href="https://www.gov.co">Portal GOV.CO</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- === FIN CONTENIDO PARA SHAREPOINT === -->
+  </div>
+
+  <script src="https://cdn.gov.co/v3/js/gov-co-script.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function() {
+      var carousel = document.querySelector('.gc-hero');
+      if (!carousel) return;
+
+      var slides = carousel.querySelectorAll('.gc-hero__slide');
+      var dots = carousel.querySelectorAll('.gc-hero__dot');
+      var prevBtn = carousel.querySelector('.gc-hero__btn--prev');
+      var nextBtn = carousel.querySelector('.gc-hero__btn--next');
+      var pauseBtn = carousel.querySelector('.gc-hero__pause');
+      var track = carousel.querySelector('.gc-hero__track');
+
+      var current = 0;
+      var timer = null;
+      var paused = false;
+      var INTERVAL = 5000;
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function goTo(i) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        dots[current].setAttribute('aria-selected', 'false');
+        current = (i + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        dots[current].setAttribute('aria-selected', 'true');
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      function start() {
+        if (paused || prefersReduced) return;
+        stop();
+        timer = setInterval(next, INTERVAL);
+        track.setAttribute('aria-live', 'off');
+      }
+
+      function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+        track.setAttribute('aria-live', 'polite');
+      }
+
+      prevBtn.addEventListener('click', function() { prev(); stop(); });
+      nextBtn.addEventListener('click', function() { next(); stop(); });
+
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() { goTo(i); stop(); });
+      });
+
+      pauseBtn.addEventListener('click', function() {
+        paused = !paused;
+        pauseBtn.setAttribute('aria-pressed', paused);
+        pauseBtn.setAttribute('aria-label', paused ? 'Reanudar rotación automática' : 'Pausar rotación automática');
+        pauseBtn.querySelector('.gc-pause-icon').style.display = paused ? 'none' : '';
+        pauseBtn.querySelector('.gc-play-icon').style.display = paused ? '' : 'none';
+        if (paused) stop(); else start();
+      });
+
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('focusin', stop);
+      carousel.addEventListener('mouseleave', function() { if (!paused) start(); });
+      carousel.addEventListener('focusout', function(e) {
+        if (!carousel.contains(e.relatedTarget) && !paused) start();
+      });
+
+      carousel.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') { prev(); stop(); }
+        if (e.key === 'ArrowRight') { next(); stop(); }
+      });
+
+      start();
+    })();
+  </script>
+</body>
+</html>

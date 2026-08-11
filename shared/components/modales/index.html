@@ -1,0 +1,185 @@
+<!--
+  MODALES GOV.CO v5
+  Clase base: .modal-container-govco
+  
+  Tipos:
+  - Modal de exito (success)
+  - Modal de confirmacion (info)
+  - Modal de error
+  - Modal de advertencia (warning)
+  - Modal informativo (con titulo y texto)
+  
+  Usa Bootstrap 5 Modal como base + estilos GOV.CO.
+-->
+
+<!-- ======================================== -->
+<!-- MODAL DE EXITO                           -->
+<!-- ======================================== -->
+<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="tituloModalExito" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-govco modal-dialog-centered">
+    <div class="modal-content modal-content-govco">
+      <div class="modal-header modal-header-govco modal-header-exit-govco">
+        <a href="#" class="close-btn-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+          <span class="govco-svg govco-times modal-close-govco"></span>
+        </a>
+      </div>
+      <div class="modal-body modal-body-govco center-elements-govco">
+        <div class="modal-icon">
+          <span class="govco-icon govco-check-circle"></span>
+        </div>
+        <h2 class="modal-title-govco" id="tituloModalExito">Operacion exitosa</h2>
+        <p class="modal-text-govco modal-text-center-govco">
+          Su solicitud ha sido procesada correctamente. Recibira una confirmacion en su correo electronico.
+        </p>
+      </div>
+      <div class="modal-footer modal-footer-govco justify-content-center">
+        <div class="modal-buttons-govco justify-content-center">
+          <button class="btn-modal-govco" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Boton para abrir modal de exito -->
+<button class="btn-govco fill-btn-govco" data-bs-toggle="modal" data-bs-target="#modalExito">
+  Abrir modal exito
+</button>
+
+<!-- ======================================== -->
+<!-- MODAL DE CONFIRMACION                    -->
+<!-- ======================================== -->
+<div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="tituloModalConfirm" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-govco modal-dialog-centered">
+    <div class="modal-content modal-content-govco">
+      <div class="modal-header modal-header-govco">
+        <a href="#" class="close-btn-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+          <span class="govco-svg govco-times modal-close-govco"></span>
+        </a>
+      </div>
+      <div class="modal-body modal-body-govco center-elements-govco container-modal-govco">
+        <div class="modal-icon">
+          <span class="govco-icon govco-info-circle"></span>
+        </div>
+        <h2 class="modal-title-govco" id="tituloModalConfirm">Confirmar accion</h2>
+        <p class="modal-text-govco modal-text-center-govco">
+          Esta seguro de que desea realizar esta accion? Esta operacion no se puede deshacer.
+        </p>
+      </div>
+      <div class="modal-footer modal-footer-govco">
+        <div class="modal-buttons-govco">
+          <button class="btn-modal-govco" data-bs-dismiss="modal">Confirmar</button>
+          <button class="btn-modal-govco btn-contorno" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Boton para abrir modal de confirmacion -->
+<button class="btn-govco outline-btn-govco" data-bs-toggle="modal" data-bs-target="#modalConfirmacion">
+  Abrir modal confirmacion
+</button>
+
+<!-- ======================================== -->
+<!-- MODAL DE ERROR                           -->
+<!-- ======================================== -->
+<div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="tituloModalError" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-govco modal-dialog-centered">
+    <div class="modal-content modal-content-govco">
+      <div class="modal-header modal-header-govco">
+        <a href="#" class="close-btn-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+          <span class="govco-svg govco-times modal-close-govco"></span>
+        </a>
+      </div>
+      <div class="modal-body modal-body-govco center-elements-govco container-modal-govco">
+        <div class="modal-icon">
+          <span class="govco-icon govco-times-cancel"></span>
+        </div>
+        <h2 class="modal-title-govco" id="tituloModalError">Error</h2>
+        <p class="modal-text-govco modal-text-center-govco">
+          No fue posible completar la operacion. Por favor verifique los datos e intente nuevamente.
+        </p>
+      </div>
+      <div class="modal-footer modal-footer-govco justify-content-center">
+        <div class="modal-buttons-govco justify-content-center">
+          <button class="btn-modal-govco" data-bs-dismiss="modal">Reintentar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Boton para abrir modal de error -->
+<button class="btn-govco fill-btn-govco" data-bs-toggle="modal" data-bs-target="#modalError">
+  Abrir modal error
+</button>
+
+<!-- ======================================== -->
+<!-- MODAL DE ADVERTENCIA                     -->
+<!-- ======================================== -->
+<div class="modal fade" id="modalAdvertencia" tabindex="-1" aria-labelledby="tituloModalWarn" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-govco modal-dialog-centered">
+    <div class="modal-content modal-content-govco">
+      <div class="modal-header modal-header-govco">
+        <a href="#" class="close-btn-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+          <span class="govco-svg govco-times modal-close-govco"></span>
+        </a>
+      </div>
+      <div class="modal-body modal-body-govco center-elements-govco container-modal-govco">
+        <div class="modal-icon">
+          <span class="govco-icon govco-exclamation-circle"></span>
+        </div>
+        <h2 class="modal-title-govco" id="tituloModalWarn">Atencion</h2>
+        <p class="modal-text-govco modal-text-center-govco">
+          Su sesion esta a punto de expirar. Desea continuar trabajando en el formulario?
+        </p>
+      </div>
+      <div class="modal-footer modal-footer-govco">
+        <div class="modal-buttons-govco">
+          <button class="btn-modal-govco" data-bs-dismiss="modal">Continuar</button>
+          <button class="btn-modal-govco btn-contorno" data-bs-dismiss="modal">Salir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Boton para abrir modal de advertencia -->
+<button class="btn-govco outline-btn-govco" data-bs-toggle="modal" data-bs-target="#modalAdvertencia">
+  Abrir modal advertencia
+</button>
+
+<!-- ======================================== -->
+<!-- MODAL INFORMATIVO (con contenido libre)  -->
+<!-- ======================================== -->
+<div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="tituloModalInfo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-govco modal-dialog-centered">
+    <div class="modal-content modal-content-govco">
+      <div class="modal-header modal-header-govco">
+        <a href="#" class="close-btn-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+          <span class="govco-svg govco-times modal-close-govco"></span>
+        </a>
+      </div>
+      <div class="modal-body modal-body-govco">
+        <h2 class="modal-title-govco" id="tituloModalInfo">Titulo del modal</h2>
+        <p class="modal-text-govco">
+          Este es un modal informativo donde puede incluir cualquier contenido: 
+          texto explicativo, listas, enlaces o instrucciones para el usuario. 
+          Utilicelo para informacion que no requiere una accion inmediata.
+        </p>
+      </div>
+      <div class="modal-footer modal-footer-govco">
+        <div class="modal-buttons-govco">
+          <button class="btn-modal-govco" data-bs-dismiss="modal">Entendido</button>
+          <button class="btn-modal-govco btn-contorno" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Boton para abrir modal informativo -->
+<button class="btn-govco fill-btn-govco" data-bs-toggle="modal" data-bs-target="#modalInfo">
+  Abrir modal informativo
+</button>

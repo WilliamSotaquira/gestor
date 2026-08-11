@@ -1,0 +1,377 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Nunito+Sans&amp;display=swap">
+
+<style type="text/css">
+#cf-wrapper{font-family:'Nunito','Nunito Sans',sans-serif;margin:0;padding:0;box-sizing:border-box}
+#cf-wrapper *,#cf-wrapper *::before,#cf-wrapper *::after{box-sizing:border-box}
+#cf-wrapper .cf-hero{position:relative;width:100%;height:100vh;min-height:500px;max-height:800px;overflow:hidden;display:flex;align-items:center}
+#cf-wrapper .cf-hero__video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;z-index:0}
+#cf-wrapper .cf-hero__content{position:relative;z-index:2;padding-left:clamp(2rem,8vw,8rem);display:flex;align-items:center;height:100%}
+#cf-wrapper .cf-hero__logo{max-width:clamp(200px,25vw,400px);height:auto;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.3))}
+#cf-wrapper .cf-hero__text{margin-top:1.25rem;font-size:clamp(1rem,2vw,1.4rem);font-weight:400;color:#1a0a4a;text-transform:uppercase;letter-spacing:0.02em;line-height:1.4;max-width:500px}
+#cf-wrapper .cf-hero__text strong{font-weight:800}
+#cf-wrapper .cf-hero__btn{display:inline-block;margin-top:1.5rem;padding:14px 40px;background:#4a0e9e;color:#c8e600;font-family:'Nunito',sans-serif;font-weight:600;font-size:1.1rem;font-style:italic;border-radius:30px;text-decoration:none;border:2px solid #3a0880;transition:background 0.3s,transform 0.2s;cursor:pointer}
+#cf-wrapper .cf-hero__btn:hover{background:#3a0880;color:#d4f000;transform:translateY(-2px)}
+#cf-wrapper .cf-hero__btn:focus-visible,#cf-wrapper .cf-card:focus-visible,#cf-wrapper .cf-news__close:focus-visible{outline:3px solid #c8e600;outline-offset:3px}
+#cf-wrapper .cf-news{padding:3rem 1.5rem;background:#f5f0ff;max-height:0;overflow:hidden;opacity:0;transition:max-height 0.8s cubic-bezier(0.4,0,0.2,1),opacity 0.6s ease,padding 0.6s ease;padding-top:0;padding-bottom:0}
+#cf-wrapper .cf-news.cf-visible{max-height:6000px;opacity:1;padding-top:3rem;padding-bottom:3rem}
+#cf-wrapper .cf-news__grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem;max-width:1100px;margin:0 auto}
+#cf-wrapper .cf-news__grid .cf-card{width:calc((100% - 2.5rem)/3)}
+#cf-wrapper .cf-card{background:#fff;border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 4px 16px rgba(0,0,0,0.08);transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column}
+#cf-wrapper .cf-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.14)}
+#cf-wrapper .cf-card__img{width:100%;height:150px;object-fit:cover}
+#cf-wrapper .cf-card__body{padding:1rem;flex:1;display:flex;flex-direction:column}
+#cf-wrapper .cf-card__title{font-size:1.2rem !important;font-weight:700 !important;color:#1a0a4a !important;line-height:1.35 !important;margin:0 0 0.75rem !important;flex:1}
+#cf-wrapper .cf-card__more{font-size:0.75rem;font-weight:700;color:#6b21a8}
+#cf-wrapper .cf-news__close{display:block;margin:2rem auto 0;padding:12px 32px;background:transparent;color:#6b21a8;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.95rem;border:2px solid #6b21a8;border-radius:30px;cursor:pointer;transition:background 0.3s,color 0.3s}
+#cf-wrapper .cf-news__close:hover{background:#6b21a8;color:#fff}
+#cf-wrapper .cf-news__video{max-width:800px;margin:0 auto 2.5rem}
+#cf-wrapper .cf-news__video-title{font-size:1.25rem;font-weight:700;color:#1a0a4a;text-align:center;margin:0 0 1rem;line-height:1.4}
+#cf-wrapper .cf-news__video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+#cf-wrapper .cf-news__video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+@media(max-width:992px){#cf-wrapper .cf-news__grid .cf-card{width:calc((100% - 1.25rem)/2)}}
+@media(max-width:768px){#cf-wrapper .cf-hero{min-height:400px;max-height:600px}#cf-wrapper .cf-hero__content{padding-left:1.5rem;justify-content:center}#cf-wrapper .cf-hero__logo{max-width:60vw}#cf-wrapper .cf-news__grid .cf-card{width:100%}#cf-wrapper .cf-news__video{max-width:100%}}
+@media(prefers-reduced-motion:reduce){#cf-wrapper .cf-news{transition:none}#cf-wrapper .cf-card{transition:none}#cf-wrapper .cf-hero__btn{transition:none}#cf-wrapper .cf-news__close{transition:none}}
+</style>
+
+<div id="cf-wrapper">
+    <section class="cf-hero" aria-label="Banner Cultura es Futuro">
+        <video class="cf-hero__video" autoplay muted loop playsinline aria-hidden="true">
+            <source src="https://www.mincultura.gov.co/resources/BannerSuperior_CulturaEsFuturo_Jul_02_1920x800px.mp4" type="video/mp4">
+        </video>
+        <div class="cf-hero__content">
+            <div>
+                <img class="cf-hero__logo" src="https://www.mincultura.gov.co/resources/BannerSuperior_CulturaEsFuturo_Jul_01_LOGO.png" alt="Cultura es Futuro">
+                <p class="cf-hero__text">LOS <strong>LEGADOS</strong> DEL MINISTERIO DE LAS CULTURAS, LAS ARTES Y LOS SABERES PARA COLOMBIA.</p>
+                <a href="#cf-news" class="cf-hero__btn" id="cf-btn-open" role="button" aria-expanded="false" aria-controls="cf-news">Conoce las noticias</a>
+            </div>
+        </div>
+    </section>
+    <section class="cf-news" id="cf-news" aria-label="Repositorio de noticias Cultura es Futuro">
+        <div class="cf-news__video">
+            <h2 class="cf-news__video-title">#CulturaEsFuturo | Los legados del Ministerio de las Culturas, las Artes y los Saberes (2022-2026)</h2>
+            <div class="cf-news__video-container">
+                <iframe src="https://www.youtube.com/embed/KykEJD94tMU" title="#CulturaEsFuturo | Los legados del Ministerio de las Culturas, las Artes y los Saberes (2022-2026)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="cf-news__grid">
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/la-economia-cultural-y-creativa-alcanzo-478-billones-en-2025-y-genero-mas-de-820000-empleos-en-colombia.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/resultados-cuenta-satelite.jpg" alt="La economía cultural y creativa alcanzó $47,8 billones en 2025" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">La economía cultural y creativa alcanzó $47,8 billones en 2025 y generó más de 820.000 empleos en Colombia</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-y-embajada-de-japon-inauguran-la-biblioteca-publica-de-rovira-tolima.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/biblioteca-publica-rovira-portada.jpg" alt="Biblioteca Pública de Rovira (Tolima)" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Minculturas y Embajada de Japón inauguran la Biblioteca Pública de Rovira (Tolima)</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/el-estado-colombiano-saldo-una-deuda-historica-declaro-como-area-arqueologica-protegida-al-sistema-hidraulico-prehispanico.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/las-mojanas-portada.jpg" alt="Área Arqueológica Protegida del Sistema Hidráulico Prehispánico del Bajo San Jorge y La Mojana" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">El Estado colombiano saldó una deuda histórica: declaró como Área Arqueológica Protegida al Sistema Hidráulico Prehispánico del Bajo San Jorge y La Mojana</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/artes-para-la-paz-el-sistema-de-educacion-artistica-para-todos-que-es-reconocido-con-el-premio-de-alta-gerencia-de-la-funci.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/artes-paz-premio-alta-gerencia-funcion-publica.jpg" alt="Artes para la Paz - Premio de Alta Gerencia" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Artes para la Paz: el sistema de educación artística para todos que es reconocido con el premio de Alta Gerencia de la Función Pública</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/colombia-reconoce-a-tres-territorios-que-mantienen-vivo-el-legado-del-bullerengue.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/evento-bullerengue-portada.jpg" alt="Territorios que mantienen vivo el legado del bullerengue" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Colombia reconoce a tres territorios que mantienen vivo el legado del bullerengue</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/el-gobierno-nacional-moderniza-el-incentivo-tributario-de-la-ley-de-cine-con-la-expedicion-del-decreto-876-de-2026.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/ley-de-cine.jpg" alt="Decreto 876 de 2026 - Ley de Cine" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">El Gobierno Nacional moderniza el incentivo tributario de la Ley de Cine con la expedición del Decreto 876 de 2026</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/francisco-pizarro-narino-recibe-nueva-biblioteca-publica.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/francisco-pizarro-biblioteca-portada.jpg" alt="Biblioteca pública de Francisco Pizarro (Nariño)" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Francisco Pizarro (Nariño) recibe nueva biblioteca pública</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-inaugura-la-primera-casa-para-el-pueblo-gitano-en-colombia-el-centro-cultural-rrom-de-sampues-sucre.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/centro-cultural-rrom-sampues-portada.jpg" alt="Centro cultural Rrom de Sampués (Sucre)" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Minculturas inaugura la primera casa para el pueblo gitano en Colombia: el Centro cultural Rrom, de Sampués (Sucre)</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/agora-virtual-abre-nuevas-inscripciones-para-cursos-gratuitos-de-formacion-artistica-y-cultural.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/agora-virtual-portada.jpg" alt="Ágora Virtual - Cursos gratuitos de formación artística" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Ágora Virtual abre nuevas inscripciones para cursos gratuitos de formación artística y cultural</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-entrega-un-estado-mas-fuerte-para-la-cultura-el-cuatrienio-deja-sistemas-nacionales-derechos-infraestructura.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/rendicion-cuentas-portada.jpg" alt="MinCulturas entrega un Estado más fuerte para la cultura" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">MinCulturas entrega un Estado más fuerte para la cultura: el cuatrienio deja sistemas nacionales, derechos, infraestructura y el mayor presupuesto de la historia del sector</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-presenta-investigacion-sobre-economias-culturales-de-las-fiestas-del-pais-e-instrumento-de-autodiagnostico-para.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/nuqui-balsada.jpg" alt="Economías Culturales de las Fiestas del país" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">MinCulturas presenta investigación sobre Economías Culturales de las Fiestas del país e instrumento de autodiagnóstico para la caracterización y fortalecimiento las economías culturales que las sostienen</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/gobierno-reglamenta-la-ley-no-mas-ole-y-fija-condiciones-para-eventos-taurinos-en-el-pais.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/ley-no-mas-ole-portada-.jpg" alt="Gobierno reglamenta la Ley No Más Olé" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Gobierno reglamenta la Ley No Más Olé y fija condiciones para eventos taurinos en el país</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/comunicado-a-la-opinion-publica-cine-colombia.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/mesa-productores.jpg" alt="Comunicado a la opinión pública - Cine Colombia" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Productores cinematográficos y Gobierno Nacional logran acuerdos para el desarrollo del cine colombiano</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/cartagena-de-indias-celebra-un-nuevo-hito-sus-fiestas-de-independencia-del-11-de-noviembre-son-patrimonio-cultural.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/Patrimonio-fiestas-11nov-cartagena-portada.jpg" alt="Fiestas de Independencia de Cartagena patrimonio cultural inmaterial" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Cartagena de Indias celebra un nuevo hito: sus Fiestas de Independencia del 11 de noviembre son patrimonio cultural inmaterial de la Nación</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-reconoce-a-las-mesas-nacionales-de-musica-como-espacios-de-participacion-del-ecosistema-musical-colombiano.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/mesas-nacionales-musica-portada.jpg" alt="Mesas Nacionales de Música" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">MinCulturas reconoce a las Mesas Nacionales de Música como espacios de participación del ecosistema musical colombiano</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/guaduas-da-un-paso-decisivo-para-proteger-su-centro-historico-consejo-nacional-de-patrimonio-emite-concepto-favorable.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/centro-historico-guaduas.jpg" alt="Centro histórico de Guaduas - PEMP" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Guaduas da un paso decisivo para proteger su centro histórico: Consejo Nacional de Patrimonio emite concepto favorable sobre su Plan Especial de Manejo y Protección</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/el-estado-pidio-perdon-a-bojaya-con-avances-concretos-en-memoria-cultura-y-reparacion-simbolica.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/acto-perdon-bojaya-1.jpg" alt="El Estado pidió perdón a Bojayá" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">El Estado pidió perdón a Bojayá con avances concretos en memoria, cultura y reparación simbólica</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/10000-jovenes-podran-reclamar-bonos-de-lectura-para-comprar-libros-y-comics-en-librerias-del-pais.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/jovenes-bonos-lectura.jpg" alt="Jóvenes con bonos de lectura" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Por primera vez en la historia, Colombia cuenta con un bono de lectura para jóvenes entre 18 y 28 años</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/la-politica-cultural-colombiana-incorpora-por-primera-vez-la-vision-de-los-pueblos-indigenas.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/capitulo-de-los-pueblos-indigenas-1.jpg" alt="Capítulo Indígena en el Plan Nacional de Cultura" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Por primera vez, Colombia cuenta con un Capítulo Indígena en su Plan Nacional de Cultura</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/la-primera-cohorte-del-servicio-social-para-la-paz-culmina-su-formacion-como-vigias-del-patrimonio-y-promotores-de-cultura.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/entrega-certificaciones-1.jpg" alt="Servicio social para la paz" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Servicio social para la paz: una alternativa al servicio militar que forma a jóvenes como Vigías del Patrimonio Cultural de la Nación</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/san-andres-consolida-un-modelo-de-turismo-biocultural-que-fortalece-las-economias-locales-desde-las-culturas-las-artes.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/turismo-biocultural-portada.jpg" alt="País Raíz - Turismo biocultural" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">País Raíz: El turismo biocultural hoy es una oportunidad para las comunidades en los territorios</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/el-cristo-mutilado-y-el-inmaculado-corazon-de-maria-de-bojaya-tienen-visto-bueno-para-ser-declarados-bienes-de-interes.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/cristo-bojaya-portada.jpg" alt="Cristo Mutilado de Bojayá" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">El Consejo Nacional de Patrimonio dio concepto favorable para la declaratoria del Cristo Mutilado como Bien de Interés Cultural del Ámbito Nacional</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/pasados-en-retorno-los-1194-bienes-arqueologicos-repatriados-por-el-gobierno-nacional-estaran-expuestos-en-el-museo-naciona.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/pasados-en-retorno-portada.jpg" alt="Pasados en retorno - Bienes arqueológicos" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">'Pasados en retorno': los 1.194 bienes arqueológicos repatriados por el Gobierno Nacional están expuestos en el Museo Nacional de Colombia</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/artes-para-la-paz-fortalece-las-casas-de-cultura-para-ampliar-el-acceso-a-la-formacion-artistica-en-los-territorios.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/artes-para-paz-casas-cultura.jpg" alt="Artes para la Paz - Casas de Cultura" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Artes para la Paz fortalece las Casas de Cultura para ampliar el acceso a la formación artística en los territorios</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/el-ministerio-de-las-culturas-alcanza-cifra-historica-en-mayo-con-mas-de-22-mil-millones-recaudados-por-la-ley-de-especta.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/recaudo-ley-espectaculos.jpg" alt="Cifra histórica en recaudo por Ley de Espectáculos" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">El Ministerio de las Culturas alcanza cifra histórica en mayo con más de $22 mil millones recaudados por la Ley de Espectáculos Públicos</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/colombia-sera-sede-de-la-cuarta-edicion-de-la-orquesta-juvenil-iberoamericana-2026-de-iberorquestas-juveniles.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/orquesta-juvenil-iberoamericana-2026.jpg" alt="Orquesta Juvenil Iberoamericana 2026" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Colombia será sede de la cuarta edición de la Orquesta Juvenil Iberoamericana 2026 de Iberorquestas Juveniles</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/el-centro-historico-de-cartagena-de-indias-ya-cuenta-con-un-plan-especial-de-manejo-y-proteccion.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/pemp-cartagena-portada.jpg" alt="PEMP Centro Histórico de Cartagena" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">El Centro Histórico de Cartagena de Indias ya cuenta con un Plan Especial de Manejo y Protección - PEMP</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/por-primera-vez-en-la-historia-colombia-tiene-un-plan-para-las-artes-plasticas-y-visuales.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/plan-internacional-artes-plasticas.jpg" alt="Plan para las artes plásticas y visuales" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Por primera vez en la historia, Colombia tiene un plan para las artes plásticas y visuales</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-y-la-universidad-javeriana-firman-memorando-de-entendimiento-para-el-fortalecimiento-academico-investigativo.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/memorando-entendimiento-javeriana-portada.jpg" alt="Memorando de entendimiento Minculturas - Universidad Javeriana" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Minculturas y la Universidad Javeriana firman memorando de entendimiento para el fortalecimiento académico, investigativo y cultural</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/unesco-selecciona-iniciativa-de-colombia-entre-mas-de-1000-propuestas-globales-para-fortalecer-la-proteccion-social.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/unesco.jpg" alt="UNESCO selecciona iniciativa de Colombia" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">UNESCO selecciona iniciativa de Colombia entre más de 1.000 propuestas globales para fortalecer la protección social de artistas y trabajadores culturales</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/gobierno-nacional-crea-comite-interinstitucional-para-prevenir-el-trafico-ilicito-y-apoyar-la-repatriacion-de-bienes-cultu.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/comite-interinstitucional-para-prevenir-el-trafico-ilicito.jpg" alt="Comité Interinstitucional contra tráfico ilícito de bienes culturales" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Gobierno nacional crea Comité Interinstitucional para prevenir el tráfico ilícito y apoyar la repatriación de bienes culturales muebles, geológicos y paleontológicos</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/ley-de-la-musica-es-una-realidad.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/aprobacion-ley-de-musica-portada.jpg" alt="Ley de la Música es una realidad" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">¡Ley de la Música es una realidad!</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/la-champeta-y-sus-expresiones-asociadas-son-patrimonio-vivo-de-la-nacion-minculturas-entrego-plan-especial-de-salvaguardia.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/plan-especial-de-salvaguardia-champeta-portada.jpg" alt="La champeta es patrimonio vivo de la Nación" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">La champeta y sus expresiones asociadas son patrimonio vivo de la Nación: MinCulturas entregó Plan Especial de Salvaguardia</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/iberoamerica-posiciona-la-educacion-artistica-como-uno-de-los-ejes-centrales-de-su-agenda-de-cooperacion-cultural.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/educacion-artistica-panel-ministra-portada.jpg" alt="Educación artística en agenda de cooperación cultural iberoamericana" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Iberoamérica posiciona la educación artística como uno de los ejes centrales de su agenda de cooperación cultural</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-lanza-la-plataforma-digital-circulaturas-para-que-las-culturas-artes-y-saberes-de-colombia-lleguen-a-todo.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/circulaturas-portada.jpg" alt="Plataforma digital Circulaturas" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Minculturas lanza la plataforma digital Circulaturas para que las culturas, artes y saberes de Colombia lleguen a todo el país y al mundo</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/el-museo-nacional-de-colombia-inaugura-cinco-nuevas-salas-inmersivas-con-experiencias-multisensoriales-y-audiovisuales.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/museo-nacional-nuevas-salas-portada.jpg" alt="Museo Nacional de Colombia - Nuevas salas inmersivas" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">El Museo Nacional de Colombia inaugura cinco nuevas salas inmersivas con experiencias multisensoriales y audiovisuales</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/zapatoca-primer-municipio-antitaurino-de-colombia-fue-escenario-de-la-presentacion-de-la-estrategia-nacional-de-reactivacio.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/zapatoca-plaza-toros-portada.jpg" alt="Zapatoca - Estrategia Nacional de Reactivación Cultural de Plazas de Toros" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Zapatoca, primer municipio antitaurino de Colombia, fue escenario de la presentación de la Estrategia Nacional de Reactivación Cultural de las Plazas de Toros</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/minculturas-destina-820-millones-a-traves-de-invitaciones-publicas-para-fortalecer-la-circulacion-de-las-economias.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/iniciativas-publicas.jpg" alt="MinCulturas destina $920 millones para circulación de economías culturales" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">MinCulturas destina $920 millones, a través de invitaciones públicas, para fortalecer la circulación de las economías culturales y creativas</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/gaceta-presenta-su-nuevo-numero-doble-12-y-13-lo-sagrado-universal.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/gaceta-lo-sagrado-universal.jpg" alt="GACETA número doble 12 y 13: Lo Sagrado Universal" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">GACETA presenta su nuevo número doble 12 y 13: Lo Sagrado Universal</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/artes-para-la-paz-fortalece-190-organizaciones-culturales-con-clanes.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/clanes-cultura.jpg" alt="Artes para la Paz fortalece 190 organizaciones culturales con CLANES" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Artes para la Paz fortalece 190 organizaciones culturales con CLANES</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+            <a class="cf-card" href="https://www.mincultura.gov.co/noticias/Paginas/historico-el-gobierno-nacional-adopta-la-politica-publica-de-culturas-campesinas.aspx" target="_blank" rel="noopener noreferrer">
+                <img class="cf-card__img" src="https://www.mincultura.gov.co/noticias/PublishingImages/Imagenes-noticias/decreto-culturas-campesinas.jpg" alt="Política pública de culturas campesinas" loading="lazy">
+                <div class="cf-card__body">
+                    <h3 class="cf-card__title">Histórico: El gobierno nacional adopta la política pública de culturas campesinas</h3>
+                    <span class="cf-card__more">Leer más →</span>
+                </div>
+            </a>
+        </div>
+        <button class="cf-news__close" id="cf-btn-close" aria-label="Cerrar noticias">Cerrar ✕</button>
+    </section>
+</div>
+
+<script type="text/javascript">
+(function(){
+    var news = document.getElementById('cf-news');
+    var btnOpen = document.getElementById('cf-btn-open');
+    var btnClose = document.getElementById('cf-btn-close');
+    if(!news||!btnOpen||!btnClose) return;
+    btnOpen.addEventListener('click',function(e){
+        e.preventDefault();
+        news.classList.toggle('cf-visible');
+        var isOpen = news.classList.contains('cf-visible');
+        btnOpen.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(isOpen){
+            setTimeout(function(){news.scrollIntoView({behavior:'smooth',block:'start'});},300);
+        }
+    });
+    btnClose.addEventListener('click',function(e){
+        e.preventDefault();
+        news.classList.remove('cf-visible');
+        btnOpen.setAttribute('aria-expanded','false');
+        news.addEventListener('transitionend',function handler(){
+            news.removeEventListener('transitionend',handler);
+            btnOpen.focus();
+            document.getElementById('cf-wrapper').scrollIntoView({behavior:'smooth',block:'start'});
+        });
+    });
+})();
+</script>
+
+

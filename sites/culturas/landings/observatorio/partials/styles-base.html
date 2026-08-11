@@ -1,0 +1,93 @@
+<!--
+  ESTILOS BASE - OBSERVATORIO
+  Variables de color y estilos compartidos por todas las vistas.
+  Se incluye dentro del <head> de cada página.
+-->
+<style>
+    :root {
+        --obs-primary: #1a2744;
+        --obs-primary-dark: #0f1a2e;
+        --obs-accent: #5a2a83;
+        --obs-accent-dark: #3f1d60;
+        --obs-yellow: #f4c542;
+        --obs-teal: #087e8b;
+        --obs-ink: #1f2937;
+        --obs-muted: #536171;
+        --obs-surface: #ffffff;
+        --obs-surface-soft: #f4f6f8;
+        --obs-border: #d7dde5;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+        color: var(--obs-ink);
+    }
+
+    /* Barra GOV.CO */
+    .bg-obs-govbar {
+        background: #004884;
+    }
+
+    /* Navbar */
+    .navbar-obs {
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .navbar-obs .nav-link {
+        color: var(--obs-primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.85rem;
+    }
+    .navbar-obs .nav-link:hover,
+    .navbar-obs .nav-link.active {
+        color: var(--obs-accent);
+    }
+    .navbar-obs .nav-link[aria-current="page"] {
+        color: #fff;
+        background: var(--obs-accent);
+        border-radius: 6px;
+    }
+    .text-obs-primary { color: var(--obs-primary); }
+
+    /* Footer */
+    .footer-obs {
+        padding: 0;
+    }
+    .footer-obs a:hover {
+        color: #fff !important;
+    }
+
+    /* Utilidades comunes */
+    .section-obs { padding: 4rem 0; }
+    .section-obs-soft { background: var(--obs-surface-soft); }
+
+    /* Focus visible */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    summary:focus-visible {
+        outline: 3px solid var(--obs-yellow);
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+
+    /* Print */
+    @media print {
+        .bg-obs-govbar, .navbar-obs, .footer-obs, [aria-label="Volver arriba"] {
+            display: none !important;
+        }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+</style>

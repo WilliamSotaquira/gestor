@@ -1,0 +1,37 @@
+<!--
+  CABECERA GOV.CO v5
+  Clase: .cabecera-govco
+  
+  Incluye barra superior + logos institucionales.
+  Los logos se cargan via CSS content desde el CDN.
+-->
+
+<!-- ======================================== -->
+<!-- CABECERA COMPLETA                        -->
+<!-- ======================================== -->
+<header class="cabecera-govco">
+  <!-- Barra superior azul -->
+  <div class="barra-superior-govco">
+    <a href="https://www.gov.co/" aria-label="Ir al portal GOV.CO"></a>
+    <button class="idioma-btn-barra-superior-govco" aria-label="Cambiar idioma a ingles"></button>
+  </div>
+
+  <!-- Barra inferior con logos -->
+  <div class="barra-inferior-govco border-bottom-govco">
+    <div class="barra-logos-govco">
+      <a href="#" class="logo_potencia" aria-label="Colombia Potencia de la Vida"></a>
+      <a href="#" class="logo_ministerio" aria-label="Logo del Ministerio"></a>
+    </div>
+  </div>
+</header>
+
+<!--
+  NOTA: Los logos .logo_potencia y .logo_ministerio se renderizan
+  desde el CSS del CDN usando la propiedad 'content: url(...)'.
+  No necesitas agregar <img> manualmente.
+  
+  Si necesitas cambiar el logo del ministerio, sobreescribe:
+  .cabecera-govco .barra-logos-govco .logo_ministerio {
+    content: url('ruta/al/logo.png');
+  }
+-->

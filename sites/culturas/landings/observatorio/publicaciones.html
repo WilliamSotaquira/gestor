@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="es-CO">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/_catalogs/masterpage/Gobierno/img/icons/favicon-white-32x32.png" sizes="32x32" type="image/png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SBQV6YKFY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7SBQV6YKFY');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Publicaciones | Observatorio de las economías en las culturas, las artes y los saberes</title>
+    <meta name="description" content="Publicaciones del Observatorio: Revista Faro, ABORDA, ABUNDANCIA y MAPAS. Productos de conocimiento sobre economías culturales.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Publicaciones | Observatorio Minculturas">
+    <meta property="og:description" content="Revista Faro: economías populares, culturales y comunitarias a través de historias, oficios y saberes.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --obs-primary: #1a2744;
+            --obs-accent: #5a2a83;
+            --obs-accent-dark: #3f1d60;
+            --obs-yellow: #f4c542;
+            --obs-ink: #1f2937;
+            --obs-muted: #536171;
+            --obs-surface-soft: #f4f6f8;
+            --obs-border: #d7dde5;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Nunito Sans', Arial, Helvetica, sans-serif; color: var(--obs-ink); }
+        .bg-obs-govbar { background: #004884; }
+        .navbar-obs { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .navbar-obs .nav-link { color: var(--obs-primary); font-weight: 600; font-size: 0.9rem; }
+        .navbar-obs .nav-link:hover { color: var(--obs-accent); }
+        .navbar-obs .nav-link[aria-current="page"] { color: #fff; background: var(--obs-accent); border-radius: 6px; }
+        .text-obs-primary { color: var(--obs-primary); }
+        .footer-obs a:hover { color: #fff !important; }
+
+        .hero-obs {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            min-height: 480px;
+            max-height: 620px;
+            padding: 5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .hero-obs__img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        .hero-obs__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(26,39,68,.82) 0%, rgba(90,42,131,.55) 45%, rgba(26,39,68,.35) 100%);
+        }
+        @media (max-width: 768px) {
+            .hero-obs { min-height: auto; padding: 3rem 0; }
+            .resource-card .btn { font-size: .82rem; padding: .4rem .7rem; }
+            .resource-card__visual { min-height: 160px; }
+        }
+        .hero-obs .eyebrow { color: var(--obs-yellow); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
+        .hero-obs h1 { font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; }
+        .hero-obs .lead { color: #edf4fb; font-size: 1.1rem; }
+        .btn-obs-yellow { background: var(--obs-yellow); color: #1c2430; font-weight: 700; border-radius: 8px; }
+        .btn-obs-yellow:hover { background: #ffd869; color: #1c2430; }
+        .btn-obs-outline { border: 2px solid #fff; color: #fff; font-weight: 700; border-radius: 8px; background: transparent; }
+        .btn-obs-outline:hover { background: #fff; color: var(--obs-accent-dark); }
+        .btn-obs-secondary { color: var(--obs-accent); border: 2px solid var(--obs-accent); background: #fff; font-weight: 700; border-radius: 8px; }
+        .btn-obs-secondary:hover { background: var(--obs-accent); color: #fff; }
+
+        .section-obs { padding: 4rem 0; }
+        .section-obs-soft { background: var(--obs-surface-soft); }
+        .section-heading h2 { font-weight: 800; color: var(--obs-primary); }
+        .section-heading p { color: var(--obs-muted); }
+        /* Fact box */
+        .fact-box {
+            padding: 1.5rem; border-left: 6px solid var(--obs-yellow);
+            border-radius: 0 16px 16px 0;
+            background: #fff9e8;
+            box-shadow: 0 8px 24px rgba(22,34,51,.07);
+        }
+        .fact-box h3 { color: var(--obs-accent-dark); font-size: 1.2rem; margin-top: 0; }
+        .fact-box ul { margin: 0; padding-left: 1.2rem; }
+
+        /* Faro edition cards */
+        .faro-card {
+            border: 1px solid var(--obs-border);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 6px 20px rgba(22,34,51,.07);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .faro-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(22,34,51,.12); }
+        .faro-card__cover {
+            position: relative;
+            min-height: 180px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 1rem;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .faro-card__cover strong {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1;
+            opacity: .25;
+        }
+        .faro-card__badge {
+            position: absolute;
+            top: .75rem;
+            left: .75rem;
+            padding: .25rem .6rem;
+            background: var(--obs-yellow);
+            color: #1c2430;
+            font-size: .72rem;
+            font-weight: 800;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+        .faro-card__body {
+            flex: 1;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .faro-card__body h3 { font-size: 1rem; font-weight: 700; margin: 0 0 .3rem; color: var(--obs-primary); }
+        .faro-card__body p { font-size: .82rem; color: var(--obs-muted); margin: 0 0 .8rem; }
+        .faro-card__body .btn { margin-top: auto; align-self: flex-start; }
+
+        /* Cover gradients per edition (replace with background-image when portadas available) */
+        .faro-cover--15 { background: linear-gradient(135deg, #5a2a83, #8b47b5); }
+        .faro-cover--14 { background: linear-gradient(135deg, #1a4068, #2d6ca8); }
+        .faro-cover--13 { background: linear-gradient(135deg, #087e8b, #0fb5a2); }
+        .faro-cover--12 { background: linear-gradient(135deg, #8b2f56, #c94a6e); }
+        .faro-cover--11 { background: linear-gradient(135deg, #2c5530, #4a9050); }
+        .faro-cover--10 { background: linear-gradient(135deg, #6b3a0a, #c47620); }
+        .faro-cover--9 { background: linear-gradient(135deg, #3a1d6e, #6d3fbf); }
+        .faro-cover--8 { background: linear-gradient(135deg, #004884, #1a6bc4); }
+        .faro-cover--7 { background: linear-gradient(135deg, #6b1a1a, #b83030); }
+        .faro-cover--6 { background: linear-gradient(135deg, #1a2744, #3a5080); }
+        .faro-cover--5 { background: linear-gradient(135deg, #4a2060, #7b3ea0); }
+        .faro-cover--4 { background: linear-gradient(135deg, #0a4a4a, #148080); }
+
+        /* Publication cards */
+        .pub-card {
+            border: 1px solid var(--obs-border);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 8px 22px rgba(22,34,51,.07);
+            display: flex; flex-direction: column;
+            height: 100%;
+        }
+        .pub-card__cover {
+            min-height: 200px; padding: 1.2rem;
+            display: flex; flex-direction: column; justify-content: space-between;
+            color: #fff; position: relative; overflow: hidden;
+        }
+        .pub-card__cover::after {
+            content: ""; position: absolute;
+            width: 120px; height: 120px;
+            right: -30px; bottom: -40px;
+            border: 20px solid rgba(255,255,255,.15); border-radius: 50%;
+        }
+        .pub-card__cover span { font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; position: relative; z-index: 1; }
+        .pub-card__cover strong { font-size: 2.2rem; line-height: .85; letter-spacing: -.04em; position: relative; z-index: 1; }
+        .pub-card__body { flex: 1; padding: 1.1rem; display: flex; flex-direction: column; }
+        .pub-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--obs-accent-dark); margin: 0 0 .4rem; }
+        .pub-card p { color: var(--obs-muted); font-size: 0.88rem; margin: 0 0 .8rem; }
+        .pub-card .status-pill {
+            display: inline-block; margin-top: auto;
+            padding: .3rem .55rem; color: #594d19;
+            border-radius: 999px; background: #fff1b7;
+            font-size: .78rem; font-weight: 700;
+        }
+
+        /* Related */
+        .related-card {
+            display: block; padding: 1.4rem;
+            border: 1px solid var(--obs-border); border-radius: 16px;
+            background: #fff; text-decoration: none; color: var(--obs-ink);
+            box-shadow: 0 8px 22px rgba(22,34,51,.06);
+            height: 100%; transition: transform .2s;
+        }
+        .related-card:hover { transform: translateY(-3px); border-color: var(--obs-accent); }
+        .related-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--obs-accent-dark); margin: 0 0 .4rem; }
+        .related-card p { color: var(--obs-muted); font-size: 0.9rem; margin: 0; }
+        .related-card span { display: block; margin-top: .8rem; color: #004884; font-weight: 700; }
+
+        /* Resource cards */
+        .resource-card {
+            border: 1px solid var(--obs-border);
+            border-radius: 16px; overflow: hidden;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(22,34,51,.07);
+            display: flex; flex-direction: column;
+            height: 100%;
+        }
+        .resource-card__visual {
+            min-height: 200px; padding: 1.4rem;
+            display: flex; flex-direction: column; justify-content: space-between;
+            color: #fff; position: relative; overflow: hidden;
+        }
+        .resource-card__visual::after {
+            content: ""; position: absolute;
+            width: 180px; height: 180px;
+            right: -70px; bottom: -80px;
+            border: 30px solid rgba(255,255,255,.14); border-radius: 50%;
+        }
+        .resource-card__visual span { position: relative; z-index: 1; padding: .25rem .55rem; border: 1px solid rgba(255,255,255,.6); border-radius: 999px; font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; width: fit-content; background: rgba(0,0,0,.1); }
+        .resource-card__visual strong { position: relative; z-index: 1; font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: .95; word-break: break-word; }
+        .visual--aborda { background: linear-gradient(145deg, #8b2f56, #df5b55); }
+        .visual--abundancia { background: linear-gradient(145deg, #50307e, #8f60b8); }
+        .visual--mapas { background: linear-gradient(145deg, #075f6b, #15927e); }
+        .visual--cultura-festiva { background: linear-gradient(145deg, #8b4513, #cd853f); }
+        .visual--autodiagnostico { background: linear-gradient(145deg, #146c43, #28a070); }
+        .resource-card__body { flex: 1; padding: 1.4rem; display: flex; flex-direction: column; overflow: hidden; }
+        .resource-card h3 { font-size: 1.2rem; font-weight: 800; margin: 0 0 .5rem; overflow-wrap: break-word; }
+        .resource-card p { color: var(--obs-muted); font-size: 0.92rem; overflow-wrap: break-word; }
+        .resource-meta { list-style: none; padding: 0; margin: .5rem 0 1rem; font-size: 0.9rem; }
+        .resource-meta li { display: grid; grid-template-columns: 7rem 1fr; gap: .5rem; padding: .35rem 0; border-bottom: 1px solid #e6eaf0; }
+        .resource-meta strong { color: var(--obs-ink); }
+        .resource-card .btn { margin-top: auto; align-self: flex-start; }
+        .external-note { display: block; margin-top: .5rem; color: var(--obs-muted); font-size: .82rem; }
+        .btn-obs-primary { color: #fff; background: #004884; font-weight: 700; border-radius: 8px; }
+        .btn-obs-primary:hover { background: #003568; color: #fff; }
+
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--obs-yellow); outline-offset: 2px; border-radius: 4px; }
+        @media print {
+            .bg-obs-govbar, .navbar-obs, .footer-obs, [aria-label="Volver arriba"] { display: none !important; }
+            .hero-obs { color: #000; background: #fff !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; animation: none !important; }
+            .related-card:hover, .faro-card:hover { transform: none; }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header>
+        <a href="#contenido-principal" class="visually-hidden-focusable position-absolute top-0 start-0 p-2 bg-white text-dark fw-bold" style="z-index:9999;">Saltar al contenido principal</a>
+
+        <div class="bg-obs-govbar">
+            <div class="container d-flex align-items-center py-1">
+                <a href="https://www.gov.co/" rel="noopener noreferrer" aria-label="Ir al portal GOV.CO">
+                    <img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" width="90" alt="Logo GOV.CO" style="filter: brightness(2);">
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-obs sticky-top" aria-label="Navegación principal">
+            <div class="container">
+                <div class="d-flex align-items-center gap-4 py-2">
+                    <a href="https://www.mincultura.gov.co/" aria-label="Ir al sitio del Ministerio de las Culturas">
+                        <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/logo-ministerio-culturas.png" height="80" alt="Logo Ministerio de las Culturas, las Artes y los Saberes">
+                    </a>
+                    <span class="d-none d-md-block" style="width:1px;height:50px;background:#ccc;" aria-hidden="true"></span>
+                    <a href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/index.aspx" class="text-decoration-none">
+                        <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/logo-observatorio-economias-culturales-alto.png" height="50" class="my-2" alt="Logo Observatorio de las economías en las culturas, las artes y los saberes">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navObservatorio" aria-controls="navObservatorio" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navObservatorio">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/index.aspx">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx">Observatorio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/mediciones.aspx">Mediciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/publicaciones.aspx" aria-current="page">Publicaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/herramientas.aspx">Herramientas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- Hero -->
+        <section class="hero-obs" aria-labelledby="titulo-pagina">
+            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/hero-publicaciones-mochila-wayuu.jpg" class="hero-obs__img" alt="Detalle de mochila wayúu tejida con patrones geométricos en rosa y crema">
+            <div class="hero-obs__overlay"></div>
+            <div class="container position-relative" style="z-index:2;">
+                <p class="eyebrow mb-2">Conocimiento editorial</p>
+                <h1 id="titulo-pagina">Publicaciones</h1>
+                <p class="lead mt-3">Consulta <strong>Revista Faro</strong>, una publicación que visibiliza las economías populares, culturales y comunitarias a través de historias, oficios, saberes y experiencias territoriales.</p>
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <a class="btn btn-lg btn-obs-yellow px-4" href="#revista-faro">Conocer Revista Faro</a>
+                    <a class="btn btn-lg btn-obs-outline px-4" href="#otros-recursos">Otros recursos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revista Faro -->
+        <section class="section-obs" id="revista-faro" aria-labelledby="titulo-revista">
+            <div class="container">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-7">
+                        <div class="section-heading">
+                            <p class="eyebrow mb-1" style="color:var(--obs-accent);font-size:.82rem;">Colección principal</p>
+                            <h2 id="titulo-revista">Revista Faro</h2>
+                        </div>
+                        <p>Revista Faro es una publicación impulsada por el Ministerio de las Culturas, las Artes y los Saberes en alianza con Gaceta. Su propósito es celebrar y hacer visibles las economías populares, culturales y comunitarias.</p>
+                        <p>La revista destaca historias de trabajo colectivo, sabedores, portadores de oficios y experiencias que muestran cómo la cultura produce conocimiento, identidad, bienestar y formas de sostenibilidad en los territorios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ediciones Revista Faro -->
+        <section class="section-obs section-obs-soft" id="ediciones" aria-labelledby="titulo-ediciones">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-ediciones">Ediciones</h2>
+                    <p>Explora las ediciones disponibles de Revista Faro. Descarga o visualiza cada número.</p>
+                </div>
+                <div class="row g-3" id="faro-grid">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--15">
+                                <span class="faro-card__badge">Nueva</span>
+                                <strong>15</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>15.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 15 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--14">
+                                <strong>14</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>14.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 14 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--13">
+                                <strong>13</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>13.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 13 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--12">
+                                <strong>12</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>12.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 12 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Ediciones ocultas -->
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--11">
+                                <strong>11</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>11.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 11 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--10">
+                                <strong>10</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>10.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 10 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--9">
+                                <strong>9</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>9.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 9 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--8">
+                                <strong>8</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>8.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 8 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--7">
+                                <strong>7</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>7.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 7 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--6">
+                                <strong>6</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>6.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 6 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--5">
+                                <strong>5</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>5.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 5 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 faro-hidden" hidden>
+                        <article class="faro-card">
+                            <div class="faro-card__cover faro-cover--4">
+                                <strong>4</strong>
+                            </div>
+                            <div class="faro-card__body">
+                                <h3>4.ª Edición</h3>
+                                <p>Contenido editorial pendiente.</p>
+                                <a class="btn btn-sm btn-obs-primary" href="#" aria-label="Descargar Revista Faro edición 4 en PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> PDF</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-obs-secondary px-4" id="btn-ver-mas" aria-expanded="false" aria-controls="faro-grid">
+                        <i class="bi bi-chevron-down me-1" aria-hidden="true"></i> Ver más ediciones
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Otros recursos del Observatorio -->
+        <section class="section-obs section-obs-soft" id="otros-recursos" aria-labelledby="titulo-recursos">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-recursos">Otros recursos del Observatorio</h2>
+                    <p>Productos de conocimiento derivados de investigaciones, ejercicios de observación y experiencias territoriales.</p>
+                </div>
+                <div class="row g-3">
+                    <div class="col-sm-6 col-md-4">
+                        <article class="resource-card">
+                            <div class="resource-card__visual visual--autodiagnostico" role="img" aria-label="Representación gráfica del Instrumento de Autodiagnóstico para Fiestas">
+                                <span>Excel descargable</span>
+                                <strong>AUTODIAGNÓSTICO</strong>
+                            </div>
+                            <div class="resource-card__body">
+                                <h3>Autodiagnóstico para Fiestas</h3>
+                                <p>Instrumento de autoevaluación para el fortalecimiento de fiestas y celebraciones culturales.</p>
+                                <ul class="resource-meta">
+                                    <li><strong>Tipo</strong><span>Instrumento descargable</span></li>
+                                    <li><strong>Formato</strong><span>Excel (.xlsx)</span></li>
+                                </ul>
+                                <a class="btn btn-obs-primary" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Documents/2026_07_14_Instrumento_Autodiagnostico_Fiestas1.xlsx" target="_blank"><i class="bi bi-file-earmark-excel me-1" aria-hidden="true"></i> Ver Excel</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <article class="resource-card">
+                            <div class="resource-card__visual visual--cultura-festiva" role="img" aria-label="Representación gráfica de la publicación Cultura Festiva">
+                                <span>Documento PDF</span>
+                                <strong>CULTURA FESTIVA</strong>
+                            </div>
+                            <div class="resource-card__body">
+                                <h3>Cultura Festiva</h3>
+                                <p>Publicación editorial sobre cultura festiva. Disponible en versión web y versión para impresión.</p>
+                                <ul class="resource-meta">
+                                    <li><strong>Tipo</strong><span>Documento descargable</span></li>
+                                    <li><strong>Formato</strong><span>PDF (web e impresión)</span></li>
+                                </ul>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a class="btn btn-obs-primary btn-sm" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Documents/Cultura%20Festiva%20Diagramaci%C3%B3n%20WEB_opt.pdf" target="_blank" rel="external">Ver PDF Web <span aria-hidden="true">↗</span></a>
+                                    <a class="btn btn-obs-primary btn-sm" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Documents/Cultura%20Festiva%20Diagramaci%C3%B3n%20%20%2B%20lineas%20de%20corte_opt.pdf" target="_blank" rel="external">Ver PDF Impresión <span aria-hidden="true">↗</span></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <article class="resource-card">
+                            <div class="resource-card__visual visual--aborda" role="img" aria-label="Representación gráfica del recurso ABORDA">
+                                <span>Sitio externo</span>
+                                <strong>ABORDA</strong>
+                            </div>
+                            <div class="resource-card__body">
+                                <h3>ABORDA</h3>
+                                <p>Recurso alojado en una plataforma externa de publicación visual.</p>
+                                <ul class="resource-meta">
+                                    <li><strong>Tipo</strong><span>Publicación web externa</span></li>
+                                    <li><strong>Plataforma</strong><span>Behance</span></li>
+                                    <li><strong>Metadatos</strong><span>Autoría y fecha pendientes</span></li>
+                                </ul>
+                                <a class="btn btn-obs-primary" href="https://www.behance.net/gallery/122143987/FABRICA-DE-LA-CULTURA" rel="external">Consultar ABORDA <span class="visually-hidden">en sitio externo</span> <span aria-hidden="true">↗</span></a>
+                                <span class="external-note">El enlace conduce a un sitio externo.</span>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <article class="resource-card">
+                            <div class="resource-card__visual visual--abundancia" role="img" aria-label="Representación gráfica del documento ABUNDANCIA">
+                                <span>Documento PDF</span>
+                                <strong>ABUNDANCIA</strong>
+                            </div>
+                            <div class="resource-card__body">
+                                <h3>ABUNDANCIA</h3>
+                                <p>Documento disponible en formato PDF.</p>
+                                <ul class="resource-meta">
+                                    <li><strong>Tipo</strong><span>Documento descargable</span></li>
+                                    <li><strong>Formato</strong><span>PDF</span></li>
+                                    <li><strong>Metadatos</strong><span>Año, tamaño y páginas pendientes</span></li>
+                                </ul>
+                                <a class="btn btn-obs-primary" href="https://6ae21364-2ec7-4513-8947-bdc856f454c1.filesusr.com/ugd/dc7cf3_916f823894e54cfa937121d4aad14f9b.pdf" target="_blank" rel="external">Ver ABUNDANCIA en PDF <span aria-hidden="true">↗</span></a>
+                                <span class="external-note">Documento alojado fuera del servidor del prototipo.</span>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <article class="resource-card">
+                            <div class="resource-card__visual visual--mapas" role="img" aria-label="Representación gráfica del recurso MAPAS">
+                                <span>Mapa interactivo</span>
+                                <strong>MAPAS</strong>
+                            </div>
+                            <div class="resource-card__body">
+                                <h3>MAPAS</h3>
+                                <p>Recurso cartográfico publicado mediante StoryMaps.</p>
+                                <ul class="resource-meta">
+                                    <li><strong>Tipo</strong><span>StoryMap externo</span></li>
+                                    <li><strong>Plataforma</strong><span>ArcGIS StoryMaps</span></li>
+                                    <li><strong>Accesibilidad</strong><span>Requiere alternativa textual</span></li>
+                                </ul>
+                                <a class="btn btn-obs-primary" href="https://storymaps.arcgis.com/stories/d6c4fa69899b480a9d061ac050593621" rel="external">Explorar MAPAS <span class="visually-hidden">en StoryMaps</span> <span aria-hidden="true">↗</span></a>
+                                <span class="external-note">Enlace a experiencia cartográfica externa.</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continúa consultando -->
+        <section class="section-obs" aria-labelledby="titulo-relacionados">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-relacionados">Continúa consultando</h2>
+                    <p>Accede a otras líneas de conocimiento del Observatorio.</p>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6"><a class="related-card" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx"><h3>Observatorio</h3><p>Regresa a la vista principal y conoce sus líneas de trabajo.</p><span>Volver al Observatorio →</span></a></div>
+                    <div class="col-md-6"><a class="related-card" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/mediciones.aspx"><h3>Mediciones</h3><p>Consulta datos, indicadores e instrumentos de medición cultural.</p><span>Consultar Mediciones →</span></a></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container py-4 border-top">
+            <a class="btn btn-obs-secondary" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx">← Volver al Observatorio</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-obs" aria-label="Pie de página del Ministerio de las Culturas">
+        <div style="background: var(--obs-primary); padding: 40px 0;">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-12 col-lg-3 text-center text-lg-start">
+                        <img loading="lazy" src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" alt="Logo GOV.CO" style="filter: brightness(2); margin-bottom: 15px;"><br>
+                        <img loading="lazy" src="https://cdn.www.gov.co/layout-govco-v5/assets/images/logo-colombia.svg" height="48" alt="Logo Colombia Potencia de la Vida">
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Ministerio de las Culturas,<br>las Artes y los Saberes</h6>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Dirección: Calle 9 No. 8 - 31 Bogotá</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Horario: 8:00 a.m. a 5:00 p.m. jornada continua</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Teléfono: <a href="tel:+576013424100" style="color:#aaa;text-decoration:underline;">+57 (601) 3424100</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;">Línea gratuita: <a href="tel:018000938081" style="color:#aaa;text-decoration:underline;">018000 938081</a></p>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="http://www.youtube.com/user/Mincultura" target="_blank" rel="noopener noreferrer" aria-label="YouTube MinCulturas (abre en nueva ventana)"><i class="bi bi-youtube" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="http://www.instagram.com/mincultura/" target="_blank" rel="noopener noreferrer" aria-label="Instagram MinCulturas (abre en nueva ventana)"><i class="bi bi-instagram" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="https://www.facebook.com/MinisterioCultura/" target="_blank" rel="noopener noreferrer" aria-label="Facebook MinCulturas (abre en nueva ventana)"><i class="bi bi-facebook" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="http://www.twitter.com/mincultura" target="_blank" rel="noopener noreferrer" aria-label="X MinCulturas (abre en nueva ventana)"><i class="bi bi-twitter-x" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="https://www.tiktok.com/@minculturas" target="_blank" rel="noopener noreferrer" aria-label="TikTok MinCulturas (abre en nueva ventana)"><i class="bi bi-tiktok" style="font-size:20px;color:#ccc;"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Contacto Correspondencia</h6>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Dirección: Calle 9 No. 8 - 31 Bogotá</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Lunes a viernes de 8:00 a.m. a 4:00 p.m.</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Correo: <a href="mailto:servicioalciudadano@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">servicioalciudadano@mincultura.gov.co</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;"><strong>Denuncias de corrupción:</strong> <a href="mailto:soytransparente@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">soytransparente@mincultura.gov.co</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;"><strong>Notificaciones judiciales:</strong> <a href="mailto:notificaciones@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">notificaciones@mincultura.gov.co</a></p>
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Servicios a la Ciudadanía</h6>
+                        <ul class="list-unstyled" style="font-size:0.85rem;">
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/atencion-y-servicio-a-la-ciudadania/Paginas/atencion-pqrs.aspx" style="color:#aaa;text-decoration:underline;">PQRSD</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/transparencia/Paginas/tramites/preguntas-frecuentes.aspx" style="color:#aaa;text-decoration:underline;">Preguntas Frecuentes</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/atencion-y-servicio-a-la-ciudadania/Paginas/tramites-y-servicios.aspx" style="color:#aaa;text-decoration:underline;">Trámites y servicios</a></li>
+                        </ul>
+                        <h6 class="text-white fw-bold mb-2 mt-3">Acerca del sitio</h6>
+                        <ul class="list-unstyled" style="font-size:0.85rem;">
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/transparencia/Paginas/transparencia.aspx#politicas" style="color:#aaa;text-decoration:underline;">Políticas</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/Paginas/mapa-del-sitio.aspx" style="color:#aaa;text-decoration:underline;">Mapa del sitio</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/Paginas/guia-del-usuario.aspx" style="color:#aaa;text-decoration:underline;">Accesibilidad</a></li>
+                        </ul>
+                        <p style="font-size:0.8rem;color:#666;margin-top:15px;">Copyright © 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" class="position-fixed bottom-0 end-0 m-4 btn rounded-circle d-flex align-items-center justify-content-center" style="width:44px;height:44px;background:var(--obs-accent);color:#fff;z-index:1000;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);" aria-label="Volver arriba"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('btn-ver-mas');
+            var items = document.querySelectorAll('.faro-hidden');
+            var expanded = false;
+
+            btn.addEventListener('click', function () {
+                expanded = !expanded;
+                items.forEach(function (el) {
+                    if (expanded) { el.removeAttribute('hidden'); }
+                    else { el.setAttribute('hidden', ''); }
+                });
+                btn.setAttribute('aria-expanded', String(expanded));
+                btn.innerHTML = expanded
+                    ? '<i class="bi bi-chevron-up me-1" aria-hidden="true"></i> Ver menos'
+                    : '<i class="bi bi-chevron-down me-1" aria-hidden="true"></i> Ver más ediciones';
+            });
+        })();
+    </script>
+</body>
+</html>

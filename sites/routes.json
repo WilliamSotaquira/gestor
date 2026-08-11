@@ -1,0 +1,156 @@
+{
+  "description": "Mapa de rutas públicas a archivos locales. Cuando se agrega contenido nuevo, registrar aquí.",
+  "sites": {
+    "movilidad": {
+      "baseUrl": "https://www.movilidadbogota.gov.co",
+      "localPrefix": "sites/movilidad",
+      "contents": [
+        {
+          "slug": "ejemplo-cms",
+          "type": "cms",
+          "localPath": "sites/movilidad/cms/ejemplo-cms/index.html",
+          "publicPath": "/ejemplo-cms",
+          "description": "Ejemplo de contenido CMS para Movilidad"
+        },
+        {
+          "slug": "tramites-y-servicios",
+          "type": "cms",
+          "localPath": "sites/movilidad/cms/tramites-y-servicios.html",
+          "publicPath": "/tramites-y-servicios",
+          "description": "Trámites y servicios - Movilidad"
+        },
+        {
+          "slug": "movilidad-segura",
+          "type": "cms",
+          "localPath": "sites/movilidad/cms/movilidad-segura.html",
+          "publicPath": "/movilidad-segura",
+          "description": "Movilidad Segura - Campañas de seguridad vial"
+        },
+        {
+          "slug": "organigrama",
+          "type": "cms",
+          "localPath": "sites/movilidad/cms/organigrama.html",
+          "publicPath": "/organigrama",
+          "description": "Organigrama - Estructura organizacional de la Secretaría"
+        },
+        {
+          "slug": "informes-de-gestion-y-evaluacion",
+          "type": "cms",
+          "localPath": "sites/movilidad/cms/informes-de-gestion-y-evaluacion/index.html",
+          "publicPath": "/informes-de-gestion-y-evaluacion",
+          "description": "Informes de Gestión y Evaluación - Secretaría Distrital de Movilidad"
+        },
+        {
+          "slug": "pico-y-placa",
+          "type": "cms",
+          "localPath": "sites/movilidad/cms/pico-y-placa/index.html",
+          "publicPath": "/pico-y-placa",
+          "description": "Pico y Placa - Restricción vehicular en Bogotá"
+        },
+        {
+          "slug": "ejemplo-landing",
+          "type": "landings",
+          "localPath": "sites/movilidad/landings/ejemplo-landing/index.html",
+          "publicPath": "/ejemplo-landing",
+          "description": "Ejemplo de landing page para Movilidad"
+        },
+        {
+          "slug": "sir",
+          "type": "landings",
+          "localPath": "sites/movilidad/landings/sir/index.html",
+          "publicPath": "/sir",
+          "description": "Sistema Interoperable de Recaudo de Bogotá (SIR)"
+        }
+      ]
+    },
+    "culturas": {
+      "baseUrl": "https://www.mincultura.gov.co",
+      "localPrefix": "sites/culturas",
+      "contents": [
+        {
+          "slug": "ejemplo-cms",
+          "type": "cms",
+          "localPath": "sites/culturas/cms/ejemplo-cms/index.html",
+          "publicPath": "/ejemplo-cms",
+          "description": "Ejemplo de contenido CMS para Culturas"
+        },
+        {
+          "slug": "escenario-del-mundo",
+          "type": "cms",
+          "localPath": "sites/culturas/cms/escenario-del-mundo.html",
+          "publicPath": "/escenario-del-mundo",
+          "description": "Escenario del Mundo - Circuitos Vivos, Sistema Nacional de Circulación Artística y Cultural"
+        },
+        {
+          "slug": "planes-de-las-artes",
+          "type": "cms",
+          "localPath": "sites/culturas/cms/planes-de-las-artes/index.html",
+          "publicPath": "/direcciones/artes/Paginas/programas-proyectos/planes-de-las-artes",
+          "description": "Planes de las Artes - Dirección de Artes, Programas y Proyectos"
+        },
+        {
+          "slug": "ejemplo-landing",
+          "type": "landings",
+          "localPath": "sites/culturas/landings/ejemplo-landing/index.html",
+          "publicPath": "/ejemplo-landing",
+          "description": "Ejemplo de landing page para Culturas"
+        }
+      ]
+    },
+    "fotodeteccion": {
+      "baseUrl": "https://www.movilidadbogota.gov.co/fotodeteccion",
+      "localPrefix": "sites/fotodeteccion",
+      "contents": [
+        {
+          "slug": "index",
+          "type": "landings",
+          "localPath": "sites/fotodeteccion/landings/fotodeteccion-landing/index.html",
+          "publicPath": "/fotodeteccion",
+          "description": "Página principal - Cámaras de Fotodetección Bogotá"
+        },
+        {
+          "slug": "entender-el-sistema",
+          "type": "landings",
+          "localPath": "sites/fotodeteccion/landings/fotodeteccion-landing/entender-el-sistema.html",
+          "publicPath": "/fotodeteccion/entender-el-sistema",
+          "description": "Entender el sistema de fotodetección"
+        },
+        {
+          "slug": "como-funciona",
+          "type": "landings",
+          "localPath": "sites/fotodeteccion/landings/fotodeteccion-landing/como-funciona.html",
+          "publicPath": "/fotodeteccion/como-funciona",
+          "description": "Cómo funciona el proceso de fotodetección"
+        },
+        {
+          "slug": "ubicacion-e-infracciones",
+          "type": "landings",
+          "localPath": "sites/fotodeteccion/landings/fotodeteccion-landing/ubicacion-e-infracciones.html",
+          "publicPath": "/fotodeteccion/ubicacion-e-infracciones",
+          "description": "Ubicación de cámaras e infracciones detectadas"
+        },
+        {
+          "slug": "comparendos",
+          "type": "landings",
+          "localPath": "sites/fotodeteccion/landings/fotodeteccion-landing/comparendos.html",
+          "publicPath": "/fotodeteccion/comparendos",
+          "description": "¿Recibiste un comparendo? Opciones de consulta, pago e impugnación"
+        },
+        {
+          "slug": "transparencia",
+          "type": "landings",
+          "localPath": "sites/fotodeteccion/landings/fotodeteccion-landing/transparencia.html",
+          "publicPath": "/fotodeteccion/transparencia",
+          "description": "Transparencia - Normativa, certificados y documentos técnicos"
+        },
+        {
+          "slug": "preguntas-frecuentes",
+          "type": "landings",
+          "localPath": "sites/fotodeteccion/landings/fotodeteccion-landing/preguntas-frecuentes.html",
+          "publicPath": "/fotodeteccion/preguntas-frecuentes",
+          "description": "Preguntas frecuentes sobre fotodetección"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview con Layout - GOV Sites Workspace</title>
+  <!-- CDN GOV.CO -->
+  <link rel="stylesheet" href="https://cdn.www.gov.co/layout-govco-v5/all.css">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/gov-co-overrides.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Barra de herramientas del preview */
+    .preview-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      background: #1a1a2e;
+      color: #fff;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      border-bottom: 3px solid var(--gov-co-accent, #F7C325);
+    }
+
+    .preview-toolbar a {
+      color: #F7C325;
+      text-decoration: none;
+    }
+
+    .preview-toolbar a:hover {
+      text-decoration: underline;
+    }
+
+    .preview-toolbar .badge-site {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-movilidad { background: #0d6efd; color: #fff; }
+    .badge-culturas { background: #6f42c1; color: #fff; }
+
+    /* Header GOV.CO simulado */
+    .gov-header {
+      background: #004884;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .gov-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .gov-header img {
+      height: 40px;
+    }
+
+    .gov-header nav a {
+      color: #fff;
+      margin-left: 16px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .gov-header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Barra superior GOV.CO */
+    .gov-top-bar {
+      background: #3366CC;
+      padding: 4px 0;
+      font-size: 12px;
+      color: #fff;
+      text-align: right;
+    }
+
+    .gov-top-bar a {
+      color: #fff;
+      margin-left: 12px;
+    }
+
+    /* Footer GOV.CO simulado */
+    .gov-footer {
+      background: #004884;
+      color: #fff;
+      padding: 32px 0 16px;
+      margin-top: 40px;
+    }
+
+    .gov-footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .gov-footer a:hover {
+      color: #fff;
+    }
+
+    /* Contenedor del contenido */
+    .preview-content {
+      min-height: 60vh;
+      padding: 24px 0;
+    }
+
+    /* Indicador visual de que es preview */
+    .preview-content::before {
+      content: '';
+      display: block;
+      border: 2px dashed #dee2e6;
+      border-radius: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .preview-content-wrapper {
+      position: relative;
+    }
+
+    .preview-content-wrapper:hover::before {
+      opacity: 1;
+    }
+
+    /* Iframe mode */
+    .preview-iframe {
+      width: 100%;
+      border: none;
+      min-height: 80vh;
+    }
+
+    .loading-msg {
+      text-align: center;
+      padding: 60px 20px;
+      color: #666;
+    }
+
+    .mode-toggle {
+      display: flex;
+      gap: 4px;
+    }
+
+    .mode-toggle button {
+      background: transparent;
+      border: 1px solid #fff4;
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .mode-toggle button.active {
+      background: var(--gov-co-accent, #F7C325);
+      color: #000;
+      border-color: var(--gov-co-accent, #F7C325);
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de herramientas preview -->
+  <div class="preview-toolbar">
+    <a href="/" aria-label="Volver al panel principal">← Panel</a>
+    <span id="toolbar-site-badge" class="badge-site"></span>
+    <span id="toolbar-title">Cargando...</span>
+    <div class="mode-toggle" style="margin-left:auto;">
+      <button id="btn-mode-layout" class="active" onclick="setMode('layout')" aria-label="Ver con layout envolvente">Con layout</button>
+      <button id="btn-mode-iframe" onclick="setMode('iframe')" aria-label="Ver en iframe sin layout">Solo contenido</button>
+    </div>
+  </div>
+
+  <!-- Modo Layout: header + contenido inyectado + footer -->
+  <div id="view-layout">
+    <!-- Barra superior GOV.CO -->
+    <div class="gov-top-bar">
+      <div class="container">
+        <a href="https://www.gov.co/" target="_blank" rel="noopener">GOV.CO</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="gov-header">
+      <div class="container">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://cdn.gov.co/v3/images/logo-gov-co-blanco.svg" alt="Logo GOV.CO" height="36"
+               onerror="this.alt='GOV.CO'; this.style.display='none';">
+          <strong id="header-entity-name">Entidad</strong>
+        </div>
+        <nav aria-label="Navegación principal simulada">
+          <a href="#">Inicio</a>
+          <a href="#">Trámites</a>
+          <a href="#">Atención</a>
+          <a href="#">Transparencia</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-current">Contenido</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Contenido inyectado -->
+    <div class="preview-content">
+      <div class="container">
+        <div id="injected-content" class="preview-content-wrapper">
+          <div class="loading-msg">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Cargando contenido...</span>
+            </div>
+            <p class="mt-3">Cargando contenido...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer GOV.CO -->
+    <div class="gov-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Sede principal</h5>
+            <p class="small">Dirección de la entidad<br>Bogotá D.C., Colombia</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Contacto</h5>
+            <p class="small">Línea gratuita: 01 8000<br>PBX: (601) 000 0000</p>
+          </div>
+          <div class="col-md-4 text-end">
+            <img src="https://cdn.gov.co/v3/images/logo-gov-co-blanco.svg" alt="Logo GOV.CO" height="30"
+                 onerror="this.alt='GOV.CO'; this.style.display='none';">
+            <p class="small mt-2">© 2026 Todos los derechos reservados</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modo Iframe: solo el archivo sin envolver -->
+  <div id="view-iframe" style="display:none;">
+    <iframe id="content-iframe" class="preview-iframe" title="Preview del contenido"></iframe>
+  </div>
+
+  <script src="https://cdn.www.gov.co/layout-govco-v5/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /**
+     * Preview System
+     * Lee parámetros de URL:
+     *  - src: ruta relativa al archivo HTML (desde la raíz del proyecto)
+     *  - site: movilidad | culturas
+     *  - type: cms | landings
+     *  - title: nombre descriptivo
+     */
+    const params = new URLSearchParams(window.location.search);
+    const src = params.get('src');
+    const site = params.get('site') || 'movilidad';
+    const type = params.get('type') || 'cms';
+    const title = params.get('title') || 'Contenido';
+
+    // Configurar toolbar
+    const badge = document.getElementById('toolbar-site-badge');
+    badge.textContent = site.charAt(0).toUpperCase() + site.slice(1);
+    badge.className = 'badge-site badge-' + site;
+
+    document.getElementById('toolbar-title').textContent = title;
+    document.title = title + ' - Preview';
+
+    // Configurar header según sitio
+    const entityNames = {
+      movilidad: 'Secretaría Distrital de Movilidad',
+      culturas: 'Ministerio de las Culturas'
+    };
+    document.getElementById('header-entity-name').textContent = entityNames[site] || site;
+    document.getElementById('breadcrumb-current').textContent = title;
+
+    /**
+     * Mapeo de rutas relativas de producción a URLs absolutas.
+     * Cuando el HTML copiado del CMS usa rutas como /sites/default/files/...,
+     * estas se reescriben para apuntar al servidor real.
+     */
+    const baseUrls = {
+      movilidad: 'https://www.movilidadbogota.gov.co',
+      culturas: 'https://www.mincultura.gov.co'
+    };
+
+    /**
+     * Reescribe rutas relativas del CMS a URLs absolutas de producción.
+     * Esto permite que imágenes y recursos carguen directamente desde el servidor real.
+     */
+    function rewriteProductionUrls(html, targetSite) {
+      const baseUrl = baseUrls[targetSite] || baseUrls.movilidad;
+
+      // Rutas que comienzan con /sites/default/ (recursos Drupal)
+      html = html.replace(/(["'(])\/sites\/default\//g, '$1' + baseUrl + '/sites/default/');
+
+      // Rutas relativas comunes que apuntan a páginas del sitio
+      // Solo reescribir las que están en src="" o href="" y comienzan con /
+      // pero NO las que son rutas del proyecto local (como /sites/movilidad/...)
+      html = html.replace(/(src|href)(=["'])\/(?!sites\/(movilidad|culturas))/g, '$1$2' + baseUrl + '/');
+
+      // Reescribir url() en CSS inline
+      html = html.replace(/url\(\s*['"]?\/sites\/default\//g, "url('" + baseUrl + "/sites/default/");
+
+      return html;
+    }
+
+    // Cargar contenido
+    if (src) {
+      // Ruta absoluta desde la raíz del servidor Vite
+      const contentUrl = '/' + src;
+
+      // Cargar para modo layout (inyectar HTML)
+      fetch(contentUrl)
+        .then(r => {
+          if (!r.ok) throw new Error('No se pudo cargar: ' + r.status);
+          return r.text();
+        })
+        .then(html => {
+          // Reescribir URLs de producción ANTES de parsear
+          html = rewriteProductionUrls(html, site);
+
+          // Extraer solo el body content o el contenido relevante
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+
+          // Intentar extraer #contenido-cms primero (archivos CMS)
+          let content = doc.querySelector('#contenido-cms');
+          if (!content) {
+            // Si no tiene #contenido-cms, usar todo el body
+            content = doc.body;
+          }
+
+          // Extraer estilos inline del documento
+          const styles = doc.querySelectorAll('style');
+          let stylesHtml = '';
+          styles.forEach(s => { stylesHtml += s.outerHTML; });
+
+          document.getElementById('injected-content').innerHTML = stylesHtml + content.innerHTML;
+        })
+        .catch(err => {
+          document.getElementById('injected-content').innerHTML =
+            '<div class="alert alert-danger">' +
+            '<strong>Error:</strong> ' + err.message +
+            '<br><small>Ruta: ' + contentUrl + '</small></div>';
+        });
+
+      // Configurar iframe para modo iframe
+      document.getElementById('content-iframe').src = contentUrl;
+    } else {
+      document.getElementById('injected-content').innerHTML =
+        '<div class="alert alert-warning">No se especificó un archivo para previsualizar. ' +
+        'Usa el parámetro <code>?src=ruta/al/archivo.html</code></div>';
+    }
+
+    // Alternar modos
+    function setMode(mode) {
+      const layoutView = document.getElementById('view-layout');
+      const iframeView = document.getElementById('view-iframe');
+      const btnLayout = document.getElementById('btn-mode-layout');
+      const btnIframe = document.getElementById('btn-mode-iframe');
+
+      if (mode === 'layout') {
+        layoutView.style.display = '';
+        iframeView.style.display = 'none';
+        btnLayout.classList.add('active');
+        btnIframe.classList.remove('active');
+      } else {
+        layoutView.style.display = 'none';
+        iframeView.style.display = '';
+        btnIframe.classList.add('active');
+        btnLayout.classList.remove('active');
+      }
+    }
+
+    // Auto-resize iframe
+    const iframe = document.getElementById('content-iframe');
+    iframe.addEventListener('load', () => {
+      try {
+        const h = iframe.contentDocument.body.scrollHeight;
+        iframe.style.height = (h + 40) + 'px';
+      } catch (e) {
+        // Cross-origin, mantener altura por defecto
+      }
+    });
+  </script>
+</body>
+</html>

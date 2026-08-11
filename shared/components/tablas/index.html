@@ -1,0 +1,214 @@
+<!--
+  TABLAS GOV.CO v5
+  Clase base: .tabla-govco
+  
+  Tipos:
+  - Tabla con scroll vertical
+  - Tabla responsive (.responsive-tabla-govco)
+  - Tabla con filas expandibles
+-->
+
+<!-- ======================================== -->
+<!-- TABLA BASICA CON SCROLL                  -->
+<!-- ======================================== -->
+<div class="tabla-govco">
+  <table>
+    <caption class="visually-hidden">Listado de tramites disponibles</caption>
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Solicitud de certificado</td>
+        <td>Tramite</td>
+        <td>Activo</td>
+        <td>15/07/2026</td>
+      </tr>
+      <tr>
+        <td>Registro de proyecto cultural</td>
+        <td>Servicio</td>
+        <td>En revision</td>
+        <td>10/07/2026</td>
+      </tr>
+      <tr>
+        <td>Consulta de patrimonio</td>
+        <td>Informacion</td>
+        <td>Disponible</td>
+        <td>01/07/2026</td>
+      </tr>
+      <tr>
+        <td>Inscripcion a convocatoria</td>
+        <td>Tramite</td>
+        <td>Cerrado</td>
+        <td>30/06/2026</td>
+      </tr>
+      <tr>
+        <td>Descarga de resoluciones</td>
+        <td>Servicio</td>
+        <td>Activo</td>
+        <td>28/06/2026</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Total: 5 registros</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- ======================================== -->
+<!-- TABLA CON ORDENAMIENTO                   -->
+<!-- ======================================== -->
+<div class="tabla-govco">
+  <table>
+    <caption class="visually-hidden">Directorio de funcionarios</caption>
+    <thead>
+      <tr>
+        <th scope="col">
+          <button class="sort" aria-sort="asc" aria-label="Ordenar por nombre"></button>
+          Nombre
+        </th>
+        <th scope="col">
+          <button class="sort" aria-label="Ordenar por cargo"></button>
+          Cargo
+        </th>
+        <th scope="col">Dependencia</th>
+        <th scope="col" class="text-center">Ext.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ana Maria Lopez</td>
+        <td>Directora</td>
+        <td>Direccion de Artes</td>
+        <td class="text-center">1234</td>
+      </tr>
+      <tr>
+        <td>Carlos Perez</td>
+        <td>Asesor</td>
+        <td>Despacho</td>
+        <td class="text-center">1235</td>
+      </tr>
+      <tr>
+        <td>Maria Gomez</td>
+        <td>Profesional</td>
+        <td>Patrimonio</td>
+        <td class="text-center">1236</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ======================================== -->
+<!-- TABLA RESPONSIVE (MOBILE)                -->
+<!-- ======================================== -->
+<div class="tabla-govco responsive-tabla-govco">
+  <!-- Cada <table> es una "fila" en mobile -->
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">Nombre</th>
+        <td>Solicitud de certificado</td>
+      </tr>
+      <tr>
+        <th scope="row">Tipo</th>
+        <td>Tramite</td>
+      </tr>
+      <tr>
+        <th scope="row">Estado</th>
+        <td>Activo</td>
+      </tr>
+      <tr>
+        <th scope="row">Fecha</th>
+        <td>15/07/2026</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <tbody>
+      <tr>
+        <th scope="row">Nombre</th>
+        <td>Registro cultural</td>
+      </tr>
+      <tr>
+        <th scope="row">Tipo</th>
+        <td>Servicio</td>
+      </tr>
+      <tr>
+        <th scope="row">Estado</th>
+        <td>En revision</td>
+      </tr>
+      <tr>
+        <th scope="row">Fecha</th>
+        <td>10/07/2026</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ======================================== -->
+<!-- TABLA CON FILAS EXPANDIBLES              -->
+<!-- ======================================== -->
+<div class="tabla-govco">
+  <table>
+    <caption class="visually-hidden">Detalle de proyectos</caption>
+    <thead>
+      <tr>
+        <th scope="col" class="text-center" style="width: 50px;"></th>
+        <th scope="col">Proyecto</th>
+        <th scope="col">Responsable</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center">
+          <button class="btn-collapse collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#detalle1"
+                  aria-expanded="false"
+                  aria-controls="detalle1"
+                  aria-label="Expandir detalle"></button>
+        </td>
+        <td>Biblioteca digital</td>
+        <td>Juan Torres</td>
+        <td>En ejecucion</td>
+      </tr>
+      <tr class="internal-table-container">
+        <td colspan="4">
+          <div id="detalle1" class="collapse">
+            <table class="internal-table">
+              <caption>
+                <span class="caption-1">Detalle del proyecto</span>
+                <span class="caption-2">Informacion complementaria del proyecto seleccionado.</span>
+              </caption>
+              <thead>
+                <tr>
+                  <th>Actividad</th>
+                  <th>Avance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Diseno de interfaz</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>Desarrollo backend</td>
+                  <td>75%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

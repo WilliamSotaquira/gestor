@@ -1,0 +1,52 @@
+<!--
+  HEADER OBSERVATORIO
+  Basado en el patrón de Artes para la Paz:
+  1. Barra GOV.CO (azul institucional)
+  2. Navbar principal (logo Minculturas + navegación)
+  
+  Variables de color del Observatorio:
+  --obs-primary: #1a2744 (azul oscuro institucional)
+  --obs-accent: #5a2a83 (morado marca)
+  --obs-yellow: #f4c542 (amarillo acento)
+-->
+
+<body>
+    <header>
+        <a href="#contenido-principal" class="visually-hidden-focusable position-absolute top-0 start-0 p-2 bg-white text-dark fw-bold" style="z-index:9999;">Saltar al contenido principal</a>
+
+        <!-- Barra GOV.CO -->
+        <div class="bg-obs-govbar">
+            <div class="container d-flex align-items-center py-1">
+                <a href="https://www.gov.co/" rel="noopener noreferrer" aria-label="Ir al portal GOV.CO">
+                    <img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" width="90" alt="Logo GOV.CO" style="filter: brightness(2);">
+                </a>
+            </div>
+        </div>
+
+        <!-- Navbar Principal -->
+        <nav class="navbar navbar-expand-lg navbar-obs sticky-top" aria-label="Navegación principal">
+            <div class="container">
+                <div class="d-flex align-items-center gap-4 py-2">
+                    <a href="https://www.mincultura.gov.co/" aria-label="Ir al sitio del Ministerio de las Culturas">
+                        <img src="assets/img/logo-ministerio-culturas.png" height="80" alt="Logo Ministerio de las Culturas, las Artes y los Saberes">
+                    </a>
+                    <span class="d-none d-md-block" style="width:1px;height:50px;background:#ccc;" aria-hidden="true"></span>
+                    <a href="index.html" class="text-decoration-none">
+                        <img src="assets/img/logo-observatorio-economias-culturales.png" height="65" alt="Logo Observatorio de las economías en las culturas, las artes y los saberes">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navObservatorio" aria-controls="navObservatorio" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navObservatorio">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="observatorio.html">Observatorio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mediciones.html">Mediciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="publicaciones.html">Publicaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="otras-publicaciones.html">Otras Publicaciones</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>

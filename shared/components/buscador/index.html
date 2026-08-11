@@ -1,0 +1,104 @@
+<!--
+  BUSCADOR GOV.CO v5
+  
+  Tipos:
+  - Buscador basico (.govco-search-basic)
+  - Buscador predictivo (.govco-search-predictive)
+  - Estados: activo, deshabilitado
+-->
+
+<!-- ======================================== -->
+<!-- BUSCADOR BASICO                          -->
+<!-- ======================================== -->
+<div class="govco-search-basic" style="max-width: 480px;">
+  <div class="container-govco d-flex">
+    <input type="text"
+           class="input-search-basic-govco"
+           placeholder="Buscar..."
+           aria-label="Campo de busqueda">
+    <button class="btn-clean-basic-govco" aria-label="Limpiar busqueda">
+      <span class="govco-svg govco-times"></span>
+    </button>
+    <span class="line-basic-govco"></span>
+    <button class="btn-search-basic-govco" aria-label="Buscar">
+      <span class="govco-svg govco-search"></span>
+    </button>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- BUSCADOR BASICO - DESHABILITADO          -->
+<!-- ======================================== -->
+<div class="govco-search-basic" style="max-width: 480px;">
+  <div class="container-govco disabled d-flex">
+    <input type="text"
+           class="input-search-basic-govco"
+           placeholder="Busqueda no disponible"
+           aria-label="Campo de busqueda deshabilitado"
+           disabled>
+    <button class="btn-search-basic-govco disabled" aria-label="Buscar" disabled>
+      <span class="govco-svg govco-search"></span>
+    </button>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- BUSCADOR PREDICTIVO                      -->
+<!-- ======================================== -->
+<div class="govco-search-predictive" style="max-width: 480px; position: relative;">
+  <div class="container-govco d-flex" style="position: relative; z-index: 2;">
+    <input type="text"
+           class="input-search-predictive-govco"
+           placeholder="Buscar tramite o servicio..."
+           aria-label="Campo de busqueda predictivo"
+           aria-autocomplete="list"
+           aria-controls="resultados-busqueda">
+    <button class="btn-clean-predictive-govco" aria-label="Limpiar busqueda">
+      <span class="govco-svg govco-times"></span>
+    </button>
+    <span class="line-predictive-govco"></span>
+    <button class="btn-search-predictive-govco" aria-label="Buscar">
+      <span class="govco-svg govco-search"></span>
+    </button>
+  </div>
+
+  <!-- Lista de sugerencias (mostrar con JS cuando hay resultados) -->
+  <div class="container-options-search-govco" style="display: none;">
+    <div class="options-search-govco" id="resultados-busqueda" role="listbox">
+      <ul>
+        <li><a href="#" class="dropdown-item" role="option">Certificado de existencia</a></li>
+        <li><a href="#" class="dropdown-item" role="option">Certificado de tradicion</a></li>
+        <li><a href="#" class="dropdown-item" role="option">Certificacion laboral</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- EJEMPLO: BUSCADOR EN CONTEXTO            -->
+<!-- ======================================== -->
+<section class="py-5" style="background-color: var(--govcolor-solitude);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center">
+        <h2 class="mb-3" style="color: var(--govcolor-cobalt);">Buscar tramites y servicios</h2>
+        <p class="text2-govco mb-4">Encuentre los tramites y servicios disponibles en la entidad.</p>
+        <div class="govco-search-basic">
+          <div class="container-govco d-flex">
+            <input type="text"
+                   class="input-search-basic-govco"
+                   placeholder="Escriba su busqueda..."
+                   aria-label="Buscar tramites">
+            <button class="btn-clean-basic-govco" aria-label="Limpiar">
+              <span class="govco-svg govco-times"></span>
+            </button>
+            <span class="line-basic-govco"></span>
+            <button class="btn-search-basic-govco" aria-label="Buscar">
+              <span class="govco-svg govco-search"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

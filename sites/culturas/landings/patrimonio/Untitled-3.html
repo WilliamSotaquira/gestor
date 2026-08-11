@@ -1,0 +1,2061 @@
+<%@ Page Language="C#" MasterPageFile="../_catalogs/masterpage/patrimoniomueble.master" inherits="Microsoft.SharePoint.WebPartPages.WebPartPage, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" meta:progid="SharePoint.WebPartPage.Document" meta:webpartpageexpansion="full"%>
+<%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> 
+<%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> 
+<%@ Import Namespace="Microsoft.SharePoint" %> 
+<%@ Assembly Name="Microsoft.Web.CommandUI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Import Namespace="Microsoft.SharePoint.ApplicationPages" %>
+<%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="PlaceHolderMain" runat="server">
+	
+	<section class=" secction-uno container-fluid m-0">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 pt-5 pt-md-0 pb-5 pb-md-0">
+            	<div class="banner">
+            		<div>
+						<img src="../SiteAssets1/img/Frame%2042.jpg" class="w-100" alt="Imagen 1"/>
+		                <div class="text-white text-end me-5">Vajilla colección Casa Museo Quinta de Bolívar</div>            
+            		</div>
+            		<div>
+						<img src="../SiteAssets1/img/Frame%2043.jpg" class="w-100" alt="Imagen 1"/>
+		                <div class="text-white text-end me-5">Puerta tallada y policromada Catedral Primada Bogotá</div>            
+            		</div>
+            	</div>
+            </div>
+
+            <div class="col-12 col-md-6 m-0 secction-one-content bg-image-png px-5">
+                <h1 class="mb-4 h1-home-titles">¿Qué es un bien<br><span>mueble?</span></h1>
+                <p class=" mb-4 ">
+                    Los bienes muebles son aquellos objetos tangibles que pueden ser trasladados o desplazados de un lugar para ser ubicados en otro. Pueden considerarse de forma individual, cuando se trata de un solo objeto. Pueden ser un conjunto, cuando se reúnen varios objetos de una misma tipología como, por ejemplo, las piezas que constituyen una vajilla. O ser una colección, donde se agrupan objetos de diferentes tipologías, como las colecciones de un museo donde se encuentran pinturas, esculturas, fotografías, entre otros bienes muebles.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="secction-dos  container-fluid  m-0 pt-5 pb-5 pe-0 bg-white ps-0">
+        <div class="row g-0 align-items-center d-flex justify-content-center w-100">
+            <div class="col-12 col-md-6  secction-one-content p-5 ">
+                <h1 class="mb-4 h1-home-titles font-color-purple">¿Cuándo un bien mueble<br><span class="font-color-yellow">es patrimonial?</span></h1>
+                <p class=" mb-4 ">
+					Los bienes de patrimonio cultural mueble son referentes de historias, memorias e identidades para las personas, sus familias y comunidades o para la nación. Así, se les atribuyen significados y valores colectivos de tipo histórico, estético o simbólico que los constituye en activos sociales que deben ser conservados, protegidos y transmitidos.
+                </p>
+                <p>
+                	El patrimonio cultural mueble puede contribuir al reconocimiento de la diversidad cultural, aportar al respeto de los derechos humanos, a la convivencia y la solidaridad como valores fundamentales de la sociedad.   Conocer el PCMu ayuda a entender la vida política, social, cultural y económica del país. Acceder a su conocimiento facilita su uso y disfrute desde un ejercicio libre de expresión de la identidad y la memoria como reconocimiento de las diferencias que construyen el relato conjunto de nuestra Nación.
+                </p>
+
+            </div>
+            <div class="col-12 col-md-6 p-0 m-0 d-flex justify-content-en">
+                <div class="container img-slider-full-w background-purple pe-0">
+                    <div class="row g-0 pe-0">
+                        <div class="col pe-0">
+                            <img src="../SiteAssets1/img/10_ESCULTURA_CABEZA_PLAZA_BOTERO,_FERNANDO_BOTERO_1.png" class="img-fluid h-98 w-100" alt="Escultura tallada y policromada de San Miguel Arcángel. Retablo mayor Catedral Ocaña"/>
+                            <p class="font-color-white text-end m-0 p-2">Escultura cabeza plaza de Botero, Fernando Botero</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid pb-5 bg-gray">
+        <div class="row justify-content-center py-5">
+            <div class="col-12 col-md-10">
+                <div class="embed-responsive justify-content-center">
+                    <div class="container-video">
+                    	<div id="video" class="w-100"></div>                      						                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-fluid background-purple backgrount-img-section  pb-5">
+
+        <div class="row">
+            <div class="col-12 text-center pt-5">
+                <h1 class="mb-4 h1-home-titles font-color-white">¿Cuándo <span class="font-color-yellow">reconocerlo y dónde </span>encontrarlo?</h1>
+
+            </div>
+        </div>
+        <div class="row lp">
+            <div class="col-12 col-md-6 text-left text-white">
+                <p class="px-0 px-md-5">Los bienes del patrimonio cultural mueble se pueden encontrar en muchas partes, por ejemplo, en los hogares: un reloj viejo heredado de los abuelos, o la vajilla que se usa cuando hay invitados especiales. Cuando se camina en la ciudad, o se transita en carretera, se pueden encontrar esculturas o imágenes religiosas, o placas que recuerdan a alguna persona o algún suceso. Pero también, en parques o plazas se pueden encontrar fuentes y mobiliario urbano.<br> <br>
+
+                    En los museos y dependiendo de su clase, se puede encontrar una variedad de patrimonio cultural mueble como cuadros, esculturas, bienes arqueológicos o paleontológicos. Al ingresar a un templo, también se puede encontrar imágenes religiosas, ornamentos y utensilios especiales para los rituales.<br> <br>
+
+                    Al visitar la biblioteca, se puede consultar patrimonio bibliográfico como revistas, libros antiguos, primeras ediciones, etc. </p>
+            </div>
+            <div class="col-12 col-md-6 text-left text-white">
+
+                <p class="">De la misma forma, en los archivos se pueden revisar bienes que cuentan la historia de las instituciones las personas y los territorios como actas, escrituras y planos.<br/> <br/>
+
+                    En las fiestas patronales y carnavales, las comunidades usan máscaras, atuendos, y otros objetos que son importantes para que las personas puedan vivir y disfrutar sus comparsas y bailes.
+                    Y si se observan las fachadas y detalles de los edificios, también se puede encontrar patrimonio cultural mueble como la pintura mural, yesería, ascensores antiguos, carpinterías, papel de colgadura, entre otros.<br/> <br/>
+
+                    El trabajo de custodiar, estudiar y divulgar el PCMu en Colombia se realiza por múltiples actores académicos y sociales, <b>con el apoyo y coordinación de varias entidades del estado, que son:</b></p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="container-fluid section-patrimonio">
+            <div class="row border-purple my-5 mx-0 br-2 border-1 p-3 mx-md-5">
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio artístico</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/patrimonio-artistico.png" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Objetos producto de la creatividad humana, como pinturas, esculturas, grabados, dibujos, artes gráficas, vitrales, murales, entre otros. Elaborados en cualquier soporte, técnica y material.</p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Ministerio de Cultura</li>
+                                        <li><a href="https://www.mincultura.gov.co/" target="_blank">www.mincultura.gov.co</a></li>
+                                        <li>Carrera 8 No. 8 - 55, Bogotá D.C</li>
+                                        <li>Teléfono: (601) 3424100</li>
+                                        <li><a href="mailto:programanacionalcti@mincultura.gov.co">programanacionalcti@mincultura.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio utilitario</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/PatrimonioUtilitario.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Objetos relacionados con la vida doméstica, militar, religiosa o secular. Como objetos científicos, uniformes, instrumentos musicales, armas, sellos, monedas, estampillas, mobiliario, entre otros.</p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Ministerio de Cultura</li>
+                                        <li><a href="https://www.mincultura.gov.co/" target="_blank">www.mincultura.gov.co</a></li>
+                                        <li>Carrera 8 No. 8 - 55, Bogotá D.C</li>
+                                        <li>Teléfono: (601) 3424100</li>
+                                        <li><a href="mailto:programanacionalcti@mincultura.gov.co">programanacionalcti@mincultura.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio en espacio público - <small class="font-18">Monumentos conmemorativos y artísticos</small> </h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/PatrimonioEnespacioPublico.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Bienes muebles que hacen parte del paisaje urbano de carácter conmemorativo o artístico, y representativos de la ciudadanía o una comunidad. </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Ministerio de Cultura</li>
+                                        <li><a href="https://www.mincultura.gov.co/" target="_blank">www.mincultura.gov.co</a></li>
+                                        <li>Carrera 8 No. 8 - 55, Bogotá D.C</li>
+                                        <li>Teléfono: (601) 3424100</li>
+                                        <li><a href="mailto:programanacionalcti@mincultura.gov.co">programanacionalcti@mincultura.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio audiovisual</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Patrimonioaudiovisual.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Obras y documento editados e inneditados, gráficos, fotográficos, sonoros, musicales, radiofónicos, cinematográficos, televisivos, videográficos, multimedia producidos en cualquier técnica, formato, soporte, medio inventado o por inventar de naturaleza análoga, electrónica, mecánica, electromagnética, óptica o digital.  </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Ministerio de Cultura</li>
+                                        <li><a href="https://www.mincultura.gov.co/" target="_blank">www.mincultura.gov.co</a></li>
+                                        <li>Carrera 8 No. 8 - 55, Bogotá D.C</li>
+                                        <li>Teléfono: (601) 3424100</li>
+                                        <li><a href="mailto:programanacionalcti@mincultura.gov.co">programanacionalcti@mincultura.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio cultural etnográfico</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Patrimonio_cultural_etnografico.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Son aquellos objetos y artefactos representativos de las culturas y tradiciones de grupos étnicos o comunidades como máscaras, trajes tradicionales, instrumentos musicales y herramientas agrícolas, entre otros. </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Ministerio de Cultura</li>
+                                        <li><a href="https://www.mincultura.gov.co/" target="_blank">www.mincultura.gov.co</a></li>
+                                        <li>Carrera 8 No. 8 - 55, Bogotá D.C</li>
+                                        <li>Teléfono: (601) 3424100</li>
+                                        <li><a href="mailto:programanacionalcti@mincultura.gov.co">programanacionalcti@mincultura.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio Cultural Inmaterial – PCI</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Patrimonio_Cultural_Inmaterial.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Son objetos o artefactos con los que las personas y comunidades desarrollan sus prácticas y manifestaciones de PCI. Pueden ser utilitarios como instrumentos de trabajo, utensilios, indumentaria, elementos de culto o rituales, objetos decorativos, elementos para el registro de la historia o la memoria de la manifestación y sus portadores. </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Ministerio de Cultura</li>
+                                        <li><a href="https://www.mincultura.gov.co/" target="_blank">www.mincultura.gov.co</a></li>
+                                        <li>Carrera 8 No. 8 - 55, Bogotá D.C</li>
+                                        <li>Teléfono: (601) 3424100</li>
+                                        <li><a href="mailto:programanacionalcti@mincultura.gov.co">programanacionalcti@mincultura.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Bienes asociados a inmuebles</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Bienes_asociados_a_inmuebles.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Los que complementan el diseño de los espacios arquitectónicos. Estos corresponden a elementos adosados, destinados a ese bien inmueble y que forman parte integral del mismo como los vitrales, esculturas decorativas, murales, yeserías, carpinterías y papel de colgadura. </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Ministerio de Cultura</li>
+                                        <li><a href="https://www.mincultura.gov.co/" target="_blank">www.mincultura.gov.co</a></li>
+                                        <li>Carrera 8 No. 8 - 55, Bogotá D.C</li>
+                                        <li>Teléfono: (601) 3424100</li>
+                                        <li><a href="mailto:programanacionalcti@mincultura.gov.co">programanacionalcti@mincultura.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio documental archivístico</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Patrimonio_documental_archivistico.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Objetos que contienen información. Documentos históricos como manuscritos, apuntes, cartas, diplomas, registros cédulas reales etc., archivos administrativos como documentos acumulados por una entidad pública o privada. Y otros como material gráfico, cartográfico, periódicos, revistas y recursos electrónicos. </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Archivo General de la Nación Jorge Palacio Preciado - AGN</li>
+                                        <li><a href="https://www.archivogeneral.gov.co" target="_blank">www.archivogeneral.gov.co</a></li>
+                                        <li>Carrera 6 No. 6 - 91, Bogotá D.C.</li>
+                                        <li>Teléfono: (601) 328 2888</li>
+                                        <li><a href="mailto:contacto@archivogeneral.gov.co">contacto@archivogeneral.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio bibliográfico</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Patrimonio_bibliografico.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Material bibliográfico y hemerográfico perteneciente a bibliotecas públicas y privadas, donde se destacan libros incunables, ediciones hechas entre la invención de la imprenta y principios del siglo XVI, primeras ediciones de material literario o académico, publicaciones seriadas y libros antiguos. </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Biblioteca Nacional de Colombia - BNC Archivo General de la Nación Jorge Palacio Preciado - AGN</li>
+                                        <li><a href="http://www.bibliotecanacional.gov.co" target="_blank">www.bibliotecanacional.gov.co</a></li>
+                                        <li>Calle 24 #5 - 60, Bogotá D.C.</li>
+                                        <li>Teléfono: (601) 3816464</li>
+                                        <li><a href="mailto:serviciosbnc@bibliotecanacional.gov.co">serviciosbnc@bibliotecanacional.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio arqueológico y sumergido</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Patrimonio_arqueologico-y-sumergido.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Bienes producto de la actividad de las personas que vivieron en el pasado, y hoy nos permiten interpretar su origen y forma de vida.  Por ejemplo, objetos de cerámica, metal, piedra y textiles o restos humanos, de fauna, vegetales, así como arte rupestre: pictografías y petroglifos.</p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Instituto Colombiano de Antropología e Historia - ICANH</li>
+                                        <li><a href="https://www.icanh.gov.co" target="_blank">www.icanh.gov.co</a></li>
+                                        <li>Calle 12 No. 2 - 41 La Candelaria, Bogotá D.C.</li>
+                                        <li>Teléfono: (601) 444 0544</li>
+                                        <li><a href="mailto:contactenos@icanh.gov.co">contactenos@icanh.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 border-bottom p-3">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="cart-info-banner">Patrimonio paleontológico</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-2 text-center">
+                                    <img src="../SiteAssets1/img/Patrimonio_paleontologico.jpg" class="img-fluid" alt="Imagen 1"/>
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center text-p mt-3 mt-md-0">
+                                    <p>Restos fósiles de organismos diferentes al hombre, que vivieron en el pasado, más de 10.000 años, que incluyen indicios de actividad biológica como huellas, madrigueras, coprolitos o residuos de heces, marcas de mordeduras, gastrolitos y nidos.  </p>
+                                </div>
+                                <div class="col-12 col-md-4 text-p">
+                                    <h4 class="font-color-purple bold font-22 font-800"><strong>Autoridad Competente</strong></h4>
+                                    <ul class="list-unstyled ">
+                                        <li>Servicio Geológico Colombiano - SGC</li>
+                                        <li><a href="https://www.sgc.gov.co" target="_blank">www.sgc.gov.co</a></li>
+                                        <li>Diagonal 53 No. 34 - 53, Bogotá D.C.</li>
+                                        <li>Teléfonos: (601) 220 0200 - (601) 220 0100</li>
+                                        <li>315 410 5384</li>
+                                        <li><a href="mailto:patrimonio@sgc.gov.co">patrimonio@sgc.gov.co</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+	<style type="text/css">
+
+		.maps{
+			border: 1px #737b7d52 solid;
+		}
+		
+		.maps li {
+			cursor: pointer;
+		}
+	
+		.maps li h2{
+			font-weight:900;
+			font-size:14px !important;
+			color: #4B3C8C;
+			word-wrap: break-word;
+			display:inline-block;
+			width:100%;
+			word-break: break-all;
+			text-overflow: ellipsis;
+		}
+		
+		.maps li p{
+			font-size:12px !important;
+			color: #898989;
+			margin-bottom: 0px;
+			word-wrap: break-word;
+			display:inline-block;
+			width:100%;
+    		word-break: break-all;
+    		text-overflow: ellipsis;
+		}
+		
+		.maps li .image-list{
+			width:84px;
+			height:84px;
+			background-position:center;
+			background-repeat:no-repeat;
+			background-size:cover;
+		}
+	
+		.activo{
+			background-color: #6c757d1f;
+		}
+
+		.aks-video video{
+			height:inherit !important;
+		}
+		.aks-vp-loading{
+			display:none !important;
+		}
+		
+		/* Small devices (landscape phones, 576px and up)*/
+		@media (max-width: 767.98px) { 
+			.list-group{
+			  max-height: 300px;
+			  overflow-y:scroll;
+			  overflow-x:hidden;
+			}
+		}
+		
+	</style>
+
+
+
+<!-- Leaflet CSS + JS (OpenStreetMap) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+<!-- =========================
+     MAPA (OpenStreetMap)
+========================= -->
+<section class="container-fluid maps py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+
+            <div class="row">
+                <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                    <div class="list-group"></div>
+                </div>
+
+                <div class="col-12 col-lg-7">
+                    <div class="map-wrapper">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<style>
+/* =========================
+   VIDEO
+========================= */
+
+.container-video {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+}
+
+#video video,
+#video iframe,
+#video .aks-video-player,
+#video .aks-video-player-content {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* =========================
+   MAPA
+========================= */
+
+.maps .list-group {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.maps .list-group-item {
+    cursor: pointer;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.maps .list-group-item:hover {
+    background-color: #f6f6f6;
+}
+
+.maps .list-group-item.activo {
+    background-color: #f1eef5;
+    border-left: 4px solid #7a1f5c;
+}
+
+.maps .list-group-item h2 {
+    font-size: 1rem !important;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: #333;
+}
+
+.maps .list-group-item p {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.25rem;
+    color: #555;
+}
+
+.maps .list-group-item a {
+    color: #7a1f5c;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.image-list {
+    width: 100%;
+    height: 95px;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    background-color: #e9e9e9;
+}
+
+.image-list.sin-imagen {
+    background-color: #e9e9e9;
+}
+
+.map-wrapper {
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    display: block;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+</style>
+
+
+<script type="text/javascript">
+(function ($) {
+    "use strict";
+
+    /*
+    =====================================================
+    CONFIGURACIÓN GENERAL
+    =====================================================
+    */
+
+    var VIDEO_URL = "https://www.mincultura.gov.co/nuestropatrimoniomueble/SiteAssets1/videos/pieza-debora-arango.mp4";
+
+
+    /*
+    =====================================================
+    BANNER
+    =====================================================
+    */
+
+    function iniciarBanner() {
+        var $banner = $(".banner");
+
+        if (!$banner.length) {
+            return;
+        }
+
+        if (typeof $.fn.slick !== "function") {
+            console.warn("Slick no está cargado.");
+            return;
+        }
+
+        $banner.not(".slick-initialized").slick({
+            dots: false,
+            autoplay: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: "linear",
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            variableWidth: false
+        });
+    }
+
+
+    /*
+    =====================================================
+    VIDEO
+    =====================================================
+    */
+
+    var videoInicializado = false;
+
+    function calcularMedidasVideo() {
+        var $contenedor = $(".container-video");
+        var $video = $("#video");
+
+        var ancho = $contenedor.outerWidth();
+
+        if (!ancho || ancho <= 0) {
+            ancho = $video.outerWidth();
+        }
+
+        if (!ancho || ancho <= 0) {
+            ancho = $video.parent().outerWidth();
+        }
+
+        var alto = ancho / (16 / 9);
+
+        return {
+            ancho: Math.round(ancho),
+            alto: Math.round(alto)
+        };
+    }
+
+    function ajustarVideo() {
+        var $video = $("#video");
+        var medidas = calcularMedidasVideo();
+
+        if (!$video.length || medidas.ancho <= 0) {
+            return;
+        }
+
+        $video.css({
+            width: "100%",
+            height: medidas.alto + "px"
+        });
+
+        $("#video video, #video iframe, #video .aks-video-player, #video .aks-video-player-content").css({
+            width: "100%",
+            height: "100%"
+        });
+    }
+
+    function iniciarVideo() {
+        var $video = $("#video");
+        var medidas = calcularMedidasVideo();
+
+        if (!$video.length) {
+            console.warn("No existe el contenedor #video.");
+            return;
+        }
+
+        if (typeof $video.aksVideoPlayer !== "function") {
+            console.error("aksVideoPlayer no está cargado.");
+            return;
+        }
+
+        if (medidas.ancho <= 0) {
+            setTimeout(iniciarVideo, 300);
+            return;
+        }
+
+        if (videoInicializado) {
+            ajustarVideo();
+            return;
+        }
+
+        videoInicializado = true;
+
+        $video.aksVideoPlayer({
+            file: [
+                {
+                    file: VIDEO_URL,
+                    label: "1080p"
+                }
+            ],
+            width: medidas.ancho,
+            height: medidas.alto,
+            poster: "",
+            autoplay: false,
+            muted: false,
+            loop: false,
+            preload: "metadata"
+        });
+
+        setTimeout(ajustarVideo, 300);
+    }
+
+
+    /*
+    =====================================================
+    DATA DEL MAPA
+    =====================================================
+
+    Aquí debes pegar tu arreglo completo actual.
+    Te dejo unos ejemplos para que veas la estructura.
+    Puedes reemplazar estos objetos por todos los tuyos.
+    */
+
+var json = [
+    {
+        "nombre": "Museo Nacional ",
+        "direccion": "Carrera 6 No. 24-79",
+        "ciudad": "Bogotá D.C.",
+        "uri": "www.museonacional.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPlhz9dDWej1GMLsGlfsAKuxgJD9Bvb1ZgVcV-B=w426-h240-k-no",
+        "latlong": "4.615950904625903, -74.06857501809705",
+        "placeid": "ChIJz3onhISZP44RI5mCru8jqzs"
+    },
+    {
+        "nombre": "Museo de la Independencia Casa del Florero",
+        "direccion": "Carrera 7 No 11 – 28",
+        "ciudad": "Bogotá D.C.",
+        "uri": "www.museoindependencia.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOxV6371aInBMo2unk3y8Ez9rbTUSH0XJs9n0Bw=w408-h306-k-no",
+        "latlong": "4.598452487109232, -74.07529526227425",
+        "placeid": "ChIJhSUkuaeZP44RsnyqrDPebeA"
+    },
+    {
+        "nombre": "Casa Museo Quinta de Bolívar",
+        "direccion": "Calle 21 No 4ª- 30",
+        "ciudad": "Bogotá D.C.",
+        "uri": "www.quintadebolivar.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMqXzSWrnnySOjSCKkGMDrEKkS8UcM5XEfwzlGc=w408-h306-k-no",
+        "latlong": "4.602562237772667, -74.06241391784557",
+        "placeid": "ChIJRWhokbyZP44ReHF-qDIy_tg"
+    },
+    {
+        "nombre": "Museo Santa Clara",
+        "direccion": "Carrera 8 # 8 – 91",
+        "ciudad": "Bogotá D.C.",
+        "uri": "www.museocolonial.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPaLDgWOyCjSqNLxxSpo9WUFSdMwuJmabhWBmKz=w408-h510-k-no",
+        "latlong": "4.597223764756682, -74.07733093262829",
+        "placeid": "ChIJT83p7geZP44RjlPTlCmwXmQ"
+    },
+    {
+        "nombre": "Museo Colonial",
+        "direccion": "Carrera 6 No 9 – 77",
+        "ciudad": "Bogotá D.C.",
+        "uri": "www.museocolonial.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipORPG6wm-j9URzWGj0xZHGVgRMjhh3bsD9BnRoJ=w408-h544-k-no",
+        "latlong": "4.596944769975976, -74.0751148806398",
+        "placeid": "ChIJuzCMc6iZP44RkyZkscgFB08"
+    },
+    {
+        "nombre": "Museo Antonio Nariño",
+        "direccion": "Carrera 9 #10-25",
+        "ciudad": "Villa de Leyva, Boyaca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOxA83NFItfVXz9hTfFiKJKhAiC9mRBD7A_HERK=w408-h306-k-no",
+        "latlong": "5.632416043309987, -73.52475477310806",
+        "placeid": "ChIJPynJUQzXQY4Ra5j6qnthEMc"
+    },
+    {
+        "nombre": "Museo Casa Natal del General Santander",
+        "direccion": "Autopista Internacional Vía San Antonio Km 6",
+        "ciudad": "Villa del Rosario, Norte de Santander",
+        "uri": "museocasageneralsantander@mincultura.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMpdU9KdH8fSGu2hRDyN6-OtvDuWvUgCoL1eZY1=w426-h240-k-no",
+        "latlong": "7.833859422854707, -72.46250781727805",
+        "placeid": "ChIJEaQWX4VGZo4R3NNdQRItRtU"
+    },
+    {
+        "nombre": "Museo Rafael Núñez",
+        "direccion": "Carrera 2 # 41-89, Barrio El Cabrero,",
+        "ciudad": "Cartagena de Indias, Bolívar",
+        "uri": "www.museoscolombianos.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPKpkgfnkh9DNkPfq424GDNNtAq6cWjPhmdFjiZ=w408-h306-k-no",
+        "latlong": "10.43138187158782, -75.54414061911055",
+        "placeid": "ChIJ-33kOJov9o4RbkyLyuoFKRE"
+    },
+    {
+        "nombre": "Museo Alfonso López",
+        "direccion": "Calle 11 #10-1,",
+        "ciudad": "Honda, Tolima",
+        "uri": "www.museoscolombianos.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNdNFBam63g7SWqD_w7HMHk6RwA61I9XhUj6NvO=w426-h240-k-no",
+        "latlong": "5.204226819694944, -74.73667509411624",
+        "placeid": "ChIJeWTZdn-4QI4Rqa8qzyfqjW4"
+    },
+    {
+        "nombre": "Museo de la Ciudad de Ocaña – Antón García de Bonilla",
+        "direccion": "Calle 11 #16 - 41",
+        "ciudad": "Ocaña, Norte de Santander",
+        "uri": "www.museoscolombianos.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOdlLneuD_QxLWr_o6shloqtyZ3PYd9N27OxE9l=w408-h272-k-no",
+        "latlong": "8.238422572346213, -73.35333590378237",
+        "placeid": "ChIJGRDWq-x7Z44Rj-oOI9PMrU4"
+    },
+    {
+        "nombre": "Museo de la Gran Convención",
+        "direccion": "Carrera 10 #10 -59",
+        "ciudad": "Ocaña, Norte de Santander",
+        "uri": "www.museoscolombianos.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPlUI5nZJgNk2MXa9t1IuuQwO7UA2PAlDQsme8K=w408-h544-k-no",
+        "latlong": "8.23241952087918, -73.35510133076994",
+        "placeid": "ChIJcwBQ7O57Z44RgY8-ET-69Cc"
+    },
+    {
+        "nombre": "Museo Guillermo León Valencia",
+        "direccion": "Calle 5 # 9- 82",
+        "ciudad": "Popayán, Cauca",
+        "uri": "www.museoscolombianos.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPBwJKCR9m-fLtncZ0wi2h6V5AE7wlW_bmk4Vnr=w408-h306-k-no",
+        "latlong": "2.442733002943355, -76.60924116146305",
+        "placeid": "ChIJwTstYxADMI4RsLq3lsEQCJE"
+    },
+    {
+        "nombre": "Museo Juan del Corral",
+        "direccion": "Calle de la Amargura 11 # 9-77",
+        "ciudad": "Santa Fe de Antioquia, Antioquia",
+        "uri": "www.museoscolombianos.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN_KFh7jk1FLHz-6JSAAo5_9Hz0uhmO1vrg_1qi=w408-h271-k-no",
+        "latlong": "6.557950766198025, -75.82729271728283",
+        "placeid": "ChIJ6aTnEhe2RY4RmrOcMtj_6MM"
+    },
+    {
+        "nombre": "Casa Museo Pedro Nel Gómez",
+        "direccion": "Carrera 51B 85-24",
+        "ciudad": "Medellín, Antioquia",
+        "uri": "Museo Pedronel Gómez (museopedronelgomez.org)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN7evoOyHmLyM5_8sAGMZ84xjsS7BVnfnAhqARl=w408-h272-k-no",
+        "latlong": "6.278781834735857, -75.562473834473",
+        "placeid": "ChIJc6TTU8UoRI4RXh8CPrtbYI4"
+    },
+    {
+        "nombre": "Cementerio de San Pedro",
+        "direccion": "Carrera 51 No. 68-68",
+        "ciudad": "Medellín, Antioquia",
+        "uri": "Inicio - Cementerio Museo San Pedro (cementeriosanpedro.org.co)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOmGucAFUukmtWw6oLWwUSr1pAh8CD_Blv1b7Di=w408-h305-k-no",
+        "latlong": "6.266191612217878, -75.56208044796686",
+        "placeid": "ChIJUWjAAuYoRI4R2MJWIhkYvLc"
+    },
+    {
+        "nombre": "Colección de obras de autoría de Débora Arango de propiedad del Museo de Arte Moderno",
+        "direccion": "Carrera 44 #17-46",
+        "ciudad": "Medellín, Antioquia",
+        "uri": "www.elmamm.org",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMeGMUnFmeYNzBlAUIQF53XgUugpPaEjJ0-fktD=w408-h306-k-no",
+        "latlong": "6.223918346562516, -75.57379708844827",
+        "placeid": "ChIJhx2DS8spRI4RqSwF7wfkjHk"
+    },
+    {
+        "nombre": "Obras artísticas de la colección personal del Maestro Enrique Grau Araújo",
+        "direccion": "",
+        "ciudad": "",
+        "uri": "",
+        "photo": "",
+        "latlong": "",
+        "placeid": ""
+    },
+    {
+        "nombre": "Puente de Occidente",
+        "direccion": "",
+        "ciudad": "Santafé de Antioquia, Antioquia",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPKKPvA1Rc8uE5z52Q5rEdSyfRpJJJ1tMM5v4wD=w408-h258-k-no",
+        "latlong": "6.578162808281239, -75.79844050877367",
+        "placeid": "EkBQdWVudGUgRGUgT2NjaWRlbnRlLCBTYW50YSBGw6kgZGUgQW50aW9xdWlhLCBBbnRpb3F1aWEsIENvbG9tYmlhIi4qLAoUChIJyebriHa2RY4RYmvhuAnZcAsSFAoSCYGcUQPyx0WOETXIKO59ZQwS"
+    },
+    {
+        "nombre": "Fuente Santafé de Antioquia",
+        "direccion": "",
+        "ciudad": "Plazoleta Principal de Santafé de Antioquia",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPwTUqBVgpYgLuYvU53LWtkrJOW2z7t3cYZQUEe=w425-h240-k-no",
+        "latlong": "6.564119820331044, -75.82516952815645",
+        "placeid": "ChIJF5iVhhe2RY4RWCkvEYsaUlI"
+    },
+    {
+        "nombre": "Museo de Arte Religioso Francisco Cristóbal Toro",
+        "direccion": "CALLE 11 8 12,",
+        "ciudad": "SANTAFE DE ANTIOQUIA, Antioquia",
+        "uri": "www.facebook.com/MuseoDeArteReligiosoFranciscoCristobalToro/",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOPQtrANJHPnn_YyrXzcuFMg_Y6D5iJSZ5hdmYH=w408-h306-k-no",
+        "latlong": "6.557175645359976, -75.82615617680153",
+        "placeid": "ChIJ4W6fbhe2RY4REBWA07Z8kUs"
+    },
+    {
+        "nombre": "Retablos de la Iglesia de Santa Bárbara",
+        "direccion": "Calle 11 # 8 - 53,",
+        "ciudad": "Santafé de Antioquia, Colombia",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOiADzH8TA-TqYk1d6SQ_POpkI1AIveg372JGcp=w408-h272-k-no",
+        "latlong": "9.236850392782788, -74.42033051727064",
+        "placeid": "ChIJMY4bQhe2RY4RuX84sYF4UkA"
+    },
+    {
+        "nombre": "Colección de sesenta y dos obras de arte donadas por el Maestro Fernando Botero Angulo Museo de Antioquia",
+        "direccion": "Calle 52 #52-43",
+        "ciudad": "Medellín, Antioquia",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOgYR_tYar80L1pvRlglLf8G9yp3s_TOAJ__hRX=w408-h305-k-no",
+        "latlong": "6.252667989097422, -75.56915256146065",
+        "placeid": "ChIJXZ8euP4oRI4Ri2vW-qFyOiE"
+    },
+    {
+        "nombre": "Colección de cuatrocientas setenta y nueve (479) obras de arte donadas por el maestro Fernando Botero Angulo",
+        "direccion": "Dirección Carrera 6 No. 24-79",
+        "ciudad": "Bogota D.C.",
+        "uri": "www.museonacional.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPlhz9dDWej1GMLsGlfsAKuxgJD9Bvb1ZgVcV-B=w426-h240-k-no",
+        "latlong": "4.615704941739726, -74.06852137310959",
+        "placeid": "ChIJz3onhISZP44RI5mCru8jqzs"
+    },
+    {
+        "nombre": "Telón de Boca del Teatro Amira de la Rosa",
+        "direccion": "Carrera 54 #53-37",
+        "ciudad": "Barranquilla, Atlántico",
+        "uri": "Teatro Amira Rosa | La Red Cultural del Banco de la República (banrepcultural.org)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOBlCB24GFChYu1OPvoVtv_w1wE4FI9WyhuB1RF=w408-h306-k-no",
+        "latlong": "10.993568144761511, -74.79003569027087",
+        "placeid": "ChIJCRM-j0Mt9I4RMWDrRJfyUfE"
+    },
+    {
+        "nombre": "Retablo y pintura mural del muro testero del Templo Parroquial de San Antonio de Padua",
+        "direccion": "Calle 15 entre Carreras 19 y 20, Plaza Central",
+        "ciudad": "Soledad, Atlántico",
+        "uri": "//www.facebook.com/parroquiasanantonios/",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipO9reAEk2iX9reVofnvfR4IR-x72yoUzRR9BryB=w408-h306-k-no",
+        "latlong": "10.916891924843666, -74.76392323193585",
+        "placeid": "ChIJwdMQs3bN9Y4R520PO1OgtP8"
+    },
+    {
+        "nombre": "Fondos documentales y archivísticos del Archivo General de la Nación",
+        "direccion": "Carrera 6 No. 6 - 91",
+        "ciudad": "Bogotá D.C.",
+        "uri": "www.archivogeneral.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPAM2jVjbR5Ygpl5lcl8SkQLRS95TkbXOTOMBdQ=w408-h306-k-no",
+        "latlong": "4.59435606574908, -74.07650438845123",
+        "placeid": "ChIJEb0sfO6YP44R4GD_BTAuufs"
+    },
+    {
+        "nombre": "Vitrales, pinturas de caballete, esculturas de la Basílica Menor del Sagrado Corazón de Jesús",
+        "direccion": "Carrera 15 # 10 – 63",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPFSOACRA93Yr1stdVp8HjKLeE2ebKG_FjNw0eX=w408-h509-k-no",
+        "latlong": "4.602557728365434, -74.08214824427432",
+        "placeid": "ChIJbfnU_AuZP44RzSi9k-3S1a8"
+    },
+    {
+        "nombre": "Colección bibliográfica de la Biblioteca Naciónal",
+        "direccion": "Calle 24 5-60",
+        "ciudad": "Bogotá D.C.",
+        "uri": "www.bibliotecanacional.gov.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNjvsAQy-x6KFXN2Sq1TvdHSEGipITnqQb26tH3=w408-h306-k-no",
+        "latlong": "4.6094884481703104, -74.06855993447611",
+        "placeid": "ChIJse4BBJmZP44RuaeeWG1Lwwc"
+    },
+    {
+        "nombre": "Fachada Capilla de La Bordadita",
+        "direccion": "Carrera 6 No. 13-49/ 13-65",
+        "ciudad": "Bogotá D.C.",
+        "uri": "Visita Capilla de La Bordadita de bogota (bogotadc.travel)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMLReofazhZHW-_I7_mS_q_0N4L6TltCklqqAxI=w408-h306-k-no",
+        "latlong": "4.599986938162097, -74.07315708845127",
+        "placeid": "ChIJJz9C8KaZP44RqnxY7LTj_fI"
+    },
+    {
+        "nombre": "Pintura Mural Templo de San Antonio de Padua",
+        "direccion": "Avenida Caracas # 8 - 33 sur",
+        "ciudad": "Bogotá D.C.",
+        "uri": "Arquidiócesis de Bogotá (arquibogota.org.co)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN9EjMFbZmkKOfBA-72CYcvNC_JUfpdjhrBwkGb=w408-h544-k-no",
+        "latlong": "4.592455710542513, -74.0916584745434",
+        "placeid": "ChIJH_uiCOKYP44RfZnTHDQFjY4"
+    },
+    {
+        "nombre": "Pintura mural pechinas de la Catedral Primada de Colombia",
+        "direccion": "Carrera 6 #10-65",
+        "ciudad": "Bogotá D.C.",
+        "uri": "catedral.arquibogota.org.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMkwTyuPkfAR6bd7NeDMYzz5UJTwzEUr6s8QHPq=w408-h306-k-no",
+        "latlong": "4.5983101700745035, -74.07537804612217",
+        "placeid": "ChIJj-XP7KeZP44RggthLR2n4rI"
+    },
+    {
+        "nombre": "Órgano tubular de la Catedral Primada de Colombia",
+        "direccion": "Carrera 6 #10-65",
+        "ciudad": "Bogotá D.C.",
+        "uri": "catedral.arquibogota.org.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMkwTyuPkfAR6bd7NeDMYzz5UJTwzEUr6s8QHPq=w408-h306-k-no",
+        "latlong": "4.616221400408946, -74.0684575185628",
+        "placeid": "ChIJj-XP7KeZP44RggthLR2n4rI"
+    },
+    {
+        "nombre": "Cementerio Central",
+        "direccion": "Avenida Calle 26 #18-71",
+        "ciudad": "Bogotá D.C.",
+        "uri": "/www.bogotadc.travel/es/atractivo/urbano-social/cementerio-central-59-176",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNYBQ90bMUMy6ZrrrwTD9qkyJHjn-nc6Vbsg3LO=w408-h306-k-no",
+        "latlong": "4.616541093867257, -74.0748077442741",
+        "placeid": "ChIJbSmHfCqaP44RiG7lK14yrAA"
+    },
+    {
+        "nombre": "Claustro de San Agustín. Museo de Artes y Tradiciones Populares",
+        "direccion": "Carrera 8 No 7 - 21",
+        "ciudad": "Bogotá D.C.",
+        "uri": "/www.facebook.com/ClaustroUnal/",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNGYQpFparwI81Q8AUQnfuEhe6Ccl8GU4-Vg1CP=w426-h240-k-no",
+        "latlong": "4.595388765391733, -74.07826625961597",
+        "placeid": "ChIJUwvolgeZP44R1-KVzmLgCNQ"
+    },
+    {
+        "nombre": "Museo del oro",
+        "direccion": "Carrera 6 #15-88",
+        "ciudad": "Bogotá D.C.",
+        "uri": "Museo del Oro | La Red Cultural del Banco de la República (banrepcultural.org)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNRRzvIETTlxQqNhSltjK1XQ1YG-YXd2uk_ibn-=w408-h306-k-no",
+        "latlong": "4.602189868788802, -74.07196534427433",
+        "placeid": "ChIJzXwPxqaZP44R7VGgkWDNj8E"
+    },
+    {
+        "nombre": "Colección del museo de la medicina Hospital San José",
+        "direccion": "Cl. 10 #18-75",
+        "ciudad": "Bogotá D.C.",
+        "uri": "hospitaldesanjose.org.co",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOhPBJaUkMUofjttGd9oPB3xJhevkocnbFXqp8O=w426-h240-k-no",
+        "latlong": "4.603788309337603, -74.0875765774386",
+        "placeid": "ChIJR4cl5A2ZP44RUNfolbSMNFM"
+    },
+    {
+        "nombre": "Colección de bienes muebles y esculturas Complejo Hospitalario San Juan de Dios e Instituto Materno Infantil",
+        "direccion": "Carrera 10 # 9-50",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMXiyLPv-PTlaxxpA5ovfw3sJ6zMrPlqLVqDnpj=w408-h544-k-no",
+        "latlong": "4.5894697345121145, -74.08638913445806",
+        "placeid": "ChIJWamZlb6ZP44R3PdD77NzON8"
+    },
+    {
+        "nombre": "Pintura mural Iglesia de Egipto",
+        "direccion": "Carrera 4 Este 10A-2, Bogota, D.C.",
+        "ciudad": "Bogotá D.C.",
+        "uri": "Iglesia de Nuestra Señora de Egipto - Bogota (bogotatravelguide.com)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPDOlDS_dMlwYl--eDJEADW8FAu5R0wbYk4a88u=w408-h305-k-no",
+        "latlong": "4.593673061623058, -74.06913856913447",
+        "placeid": "ChIJMeDr5a6ZP44Ra9juok68t1g"
+    },
+    {
+        "nombre": "Retablos Iglesia de San Agustín",
+        "direccion": "Carrera 7A # 6C-68",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN1i0DdRE2CNJrcagvv1y4FF62SfRN4GlavQguv=w408-h306-k-no",
+        "latlong": "4.594489588250696, -74.07760675776805",
+        "placeid": "ChIJxYHPcQeZP44R-k_4zHCDZzY"
+    },
+    {
+        "nombre": "Retablos Iglesia de San Diego",
+        "direccion": "Calle 26 No 7-30",
+        "ciudad": "Bogotá D.C.",
+        "uri": "Parroquia San Diego Bogotá | Bogotá | Facebook",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOz6kRahDepO4INAzmp4KhGoQ8HZcfyk1LGGAMD=w408-h306-k-no",
+        "latlong": "4.6131908243239605, -74.06978807310965",
+        "placeid": "ChIJnxr7hbuZP44RlptvnXt9xCU"
+    },
+    {
+        "nombre": "Retablos Iglesia de San Francisco",
+        "direccion": "Av. Jiménes Carrera 7,",
+        "ciudad": "Bogotá D.C.",
+        "uri": "Iglesia de San Francisco | Bogotá | Facebook",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMXkEssxx4gCH6KHxBAtDapTeMQ42IzkNpqzKAW=w408-h544-k-no",
+        "latlong": "4.602079897580948, -74.0732151866035",
+        "placeid": "ChIJrWmTMqGZP44RymsrzAQrfnc"
+    },
+    {
+        "nombre": "Restablo Iglesia de San Ignacio",
+        "direccion": "Calle 10 #6-35",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipP-ue0rPxraHgd3n0j9YlM2VnYY08-xizMHwqpw=w408-h270-k-no",
+        "latlong": "4.597178636389418, -74.07542194427425",
+        "placeid": "ChIJN7BFdaiZP44RR0TOf_PCjqg"
+    },
+    {
+        "nombre": "Pintura mural Iglesia de Santa Bárbara",
+        "direccion": "Carrera 7, Corner Carrera 7 and Calle 6B, Bogota · ~2,4 km",
+        "ciudad": "Bogotá D.C.",
+        "uri": "Arquidiócesis de Bogotá (arquibogota.org.co)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipND_EdDjx1KWeB95eKiE9y_ry6u4KPYiix7Je01=w408-h249-k-no",
+        "latlong": "4.593869091428454, -74.07928189928971",
+        "placeid": "ChIJn0wWSAeZP44RSHBzAjJNAjQ"
+    },
+    {
+        "nombre": "Isabel y Colon Estación de la Sabana",
+        "direccion": "Calle 13 No. 18 – 24",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPvw9Q038mWEhdNLz3lixSmX48GH4pm6ktsaspB=w426-h240-k-no",
+        "latlong": "4.606025334948234, -74.08157332652583",
+        "placeid": "ChIJG9moEj2ZP44RdYCTRBldY84"
+    },
+    {
+        "nombre": "Monumento a la Batalla de Ayacucho",
+        "direccion": "Calle 7, carrera 7",
+        "ciudad": "Bogotá D.C.",
+        "uri": "https://www.sdp.gov.co/gestion-territorial/patrimonio-y-renovacion-urbana/muebles-en-espacio-publico/monumento-a-la-batalla-de-ayacucho",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOdw3BFqRXAU2d8AwZ8NZjuyfT0FtRqNmbml0uq=w408-h545-k-no",
+        "latlong": "4.594907467156432, -74.0766995461221",
+        "placeid": "ChIJB_k8KaiZP44RkZii_ZmJDqk"
+    },
+    {
+        "nombre": "Bolivar Ecuestre Estación de la Sabana",
+        "direccion": "Calle 13 No. 18 – 24",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPvw9Q038mWEhdNLz3lixSmX48GH4pm6ktsaspB=w426-h240-k-no",
+        "latlong": "4.606025334948234, -74.08157332652583",
+        "placeid": "ChIJG9moEj2ZP44RdYCTRBldY84"
+    },
+    {
+        "nombre": "Mural titulado \"Tegonía de los Dioses Chibchas\"",
+        "direccion": "Carrera 10 # 27-51",
+        "ciudad": "Bogotá D.C.",
+        "uri": "https://www.tequendamasuites.com",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMqoW8kDzdAAsmL0kAkQCQbfbKMfzQ7LoGL5a3E=w408-h306-k-no",
+        "latlong": "4.613147971068859, -74.07071213262832",
+        "placeid": "ChIJkQzIGCeZP44RpRqYQ9tXhDw"
+    },
+    {
+        "nombre": "Obelisco de los Mártires",
+        "direccion": "Plaza de los Martires",
+        "ciudad": "Bogotá D.C.",
+        "uri": "https://www.sdp.gov.co/gestion-territorial/patrimonio-y-renovacion-urbana/muebles-en-espacio-publico/obelisco-a-los-martires",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNZrqk9FOVVpfnUkZ1HQoNOzpYdvaLrF8KZdLO6=w408-h306-k-no",
+        "latlong": "4.602016891819658, -74.081732304155",
+        "placeid": "ChIJV73eXgmZP44RrM24irNL2Pc"
+    },
+    {
+        "nombre": "Bolivar de Tenerani",
+        "direccion": "Plaza de Bolivar Cra. 7 #11-10",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNC5d4vpGfL0dHFFm5HFtouYfA9Wxb1UTArw17P=w408-h305-k-no",
+        "latlong": "4.598281009916947, -74.07598986182512",
+        "placeid": "ChIJj-XP7KeZP44RdhQ1NSu3nAk"
+    },
+    {
+        "nombre": "Bienes asociados al inmueble del Teatro Colon",
+        "direccion": "Cl. 10 # 5-32",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNLlcFZU3A79EiZxIJeNX1080eh-swM3gjMG9ez=w408-h287-k-no",
+        "latlong": "4.596794927271229, -74.07437719066033",
+        "placeid": "ChIJh-twfKiZP44R8KxnYB6zDHE"
+    },
+    {
+        "nombre": "Templete al libertador",
+        "direccion": "Calles 13 y 17 y entre las carreras 3ª y 4ª,",
+        "ciudad": "Bogotá D.C.",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipP7M1MFsIFP9SFySm6gxUgma8BNRcW13ut3C3f_=w426-h240-k-no",
+        "latlong": "4.601316897749605, -74.06925732134125",
+        "placeid": "ChIJCSZ1NUuZP44RyH2eW7P8nMI"
+    },
+    {
+        "nombre": "Parque Bolivar",
+        "direccion": "Carrera 4 No 33 -1",
+        "ciudad": "Cartagena de Indias",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPhuECtDoYC0qhNhRQyowGrB6w9QQEeaT5TT0Yz=w426-h240-k-no",
+        "latlong": "10.42300210766483, -75.55093656359395",
+        "placeid": "El5QYXJxdWUgZGUgQm9sw612YXIsIEVsIENlbnRybywgQ2FydGFnZW5hIGRlIEluZGlhcywgUHJvdmluY2lhIGRlIENhcnRhZ2VuYSwgQm9sw612YXIsIENvbG9tYmlhIi4qLAoUChIJK0OA9Z8v9o4RtrzWTrkcqAUSFAoSCS_9vN2fL_aOETftWTFTLZy6"
+    },
+    {
+        "nombre": "Colección de Obra Mueble de la Casa de la Cultura y de la Academia de Historia",
+        "direccion": "Calle Real del Medio o Carrera 2 16A-07 16A- 15",
+        "ciudad": "",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPsCF2h3TxQpN9qpjJUaj5JxwhFzOFwRyoVhFUS=w408-h544-k-no",
+        "latlong": "9.311250748289405, -74.41861996479804",
+        "placeid": "ChIJxYKfLXTtXo4Ru4ugXNRP66s"
+    },
+    {
+        "nombre": "Colección de obra mueble de la Fundación para la Conservación del Patriomonio Religioso de Mompox",
+        "direccion": "Calle Real del Medio No.17-07, Casa Bolivariana",
+        "ciudad": "",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPsCF2h3TxQpN9qpjJUaj5JxwhFzOFwRyoVhFUS=w408-h544-k-no",
+        "latlong": "9.311250748289405, -74.41861996479804",
+        "placeid": "ChIJxYKfLXTtXo4Ru4ugXNRP66s"
+    },
+    {
+        "nombre": "Colección de Obra Mueble de la iglesia de San Agustín",
+        "direccion": "Calle 16 A con carrera 2",
+        "ciudad": "Santa Cruz de Mompox, Bolívar",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNVCyJaokKk_vBk0DKgdfus89PLNsiKju031nmB=w426-h240-k-no",
+        "latlong": "9.23965036280301, -74.42278783662515",
+        "placeid": "ChIJB5L5byPtXo4RmWwtor95o1A"
+    },
+    {
+        "nombre": "Colección de Obra Mueble de la iglesia de San Francisco",
+        "direccion": "",
+        "ciudad": "Mompox, Bolívar",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPAJDh1QCsVwahHw3qiupFZ7j7MTMZiOn_ky5Kw=w408-h272-k-no",
+        "latlong": "9.243578438368445, -74.42542105565717",
+        "placeid": "ChIJAQqniHXtXo4RjIZKOxoSxSo"
+    },
+    {
+        "nombre": "Colección de Obra Mueble de la iglesia de San Juan de Dios",
+        "direccion": "",
+        "ciudad": "Mompox, Bolívar",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOY4AYPpX1vPJWFu6EhSAiIsKZpbqwGTp7zU84H=w408-h306-k-no",
+        "latlong": "9.243018187353204, -74.42554074827389",
+        "placeid": "ChIJuXbIn2btXo4RNVWeZHwBaao"
+    },
+    {
+        "nombre": "Colección de Obra Mueble de la iglesia de Santa Barbara",
+        "direccion": "",
+        "ciudad": "Mompox, Bolívar",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOiADzH8TA-TqYk1d6SQ_POpkI1AIveg372JGcp=w408-h272-k-no",
+        "latlong": "9.23683980301934, -74.42040562128477",
+        "placeid": "ChIJJUn_HnHtXo4RZBCDHRzAp7s"
+    },
+    {
+        "nombre": "Pintura mural Capilla Doctrinera Beteitiva",
+        "direccion": "Plaza principal",
+        "ciudad": "Beteitiva Boyaca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPk7w-he8LVSVhDJBkgEUyAi_0prECgMqI0dhQX=w408-h306-k-no",
+        "latlong": "5.911129327337485, -72.8089420614421",
+        "placeid": "ChIJD93RuXwxao4RDhMt-6CGxoQ"
+    },
+    {
+        "nombre": "Pintura mural y retablos Ermita de Chivatá",
+        "direccion": "",
+        "ciudad": "Chivata,Boyaca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNKyy2Gc4x7sotPIbUtBFYN43tAuoztWEmFUY97=w408-h305-k-no",
+        "latlong": "5.558003986083515, -73.28316908161563",
+        "placeid": "ChIJw5xFeLF8ao4RapCpQLVdkoc"
+    },
+    {
+        "nombre": "Retablo e imagen Capilla de San Antonio en Mongui",
+        "direccion": "Carrera 3 2-110",
+        "ciudad": "Mongui, Boyaca",
+        "uri": "SPOLIARIUM-MACELLUM BLOG DE MONCADA MEJÍA S.A.S.: BASÍLICA MENOR NUESTRA SEÑORA DE MONGUÍ - BOYACÁ-",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNHfAhO-xP36IQBC2HFXfLHgiOYteHFN6sf9eZN=w408-h725-k-no",
+        "latlong": "5.721194400550063, -72.84930444647433",
+        "placeid": "ChIJc1Xm_5RJao4Riai5k07UjRg"
+    },
+    {
+        "nombre": "Colección arte colonial La Basílica y Claustro de Nuestra Señora de Monguí",
+        "direccion": "",
+        "ciudad": "Mongui, Boyaca",
+        "uri": "SPOLIARIUM-MACELLUM BLOG DE MONCADA MEJÍA S.A.S.: BASÍLICA MENOR NUESTRA SEÑORA DE MONGUÍ - BOYACÁ-",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipML5RIhEcisk3PIkbgq541dIT9VtjVcsSGUmFfb=w408-h338-k-no",
+        "latlong": "5.721916424951093, -72.84920456550662",
+        "placeid": "ChIJC1DLUCpJao4Rozrlbl0DDCQ"
+    },
+    {
+        "nombre": "Capilla Doctrinera Siachoque",
+        "direccion": "",
+        "ciudad": "Siachoque, Boyaca",
+        "uri": "",
+        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=xrioRfkFWwLQagDu7u-Ghg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=96.133095&pitch=0&thumbfov=100",
+        "latlong": "5.496851993883039, -73.28010678583172",
+        "placeid": "ChIJC1DLUCpJao4Rozrlbl0DDCQ"
+    },
+    {
+        "nombre": "Museo diocesano de arte religioso Julio Franco Arango",
+        "direccion": "",
+        "ciudad": "Tibasosa, Boyaca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPFbJUR2K7BLHcAM4iDSTSc7VwD-SBG7ztzigSV=w408-h263-k-no",
+        "latlong": "5.792473833524076, -72.98845217603196",
+        "placeid": "ChIJE95R_ktHao4RV2H81shrbm8"
+    },
+    {
+        "nombre": "Restablo y arco toral Capilla Doctrinera Tópaga",
+        "direccion": "Plaza principal",
+        "ciudad": "Topaga, Boyaca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPnoT_fJ_oLz-7unZDH-gCokuMYLmc02MDyoK8v=w408-h725-k-no",
+        "latlong": "5.7689671116745505, -72.8330327501656",
+        "placeid": "ChIJh935TaNJao4RetuwWpLkIOM"
+    },
+    {
+        "nombre": "Monumento a Simón Bolívar, Puente de Boyacá.",
+        "direccion": "",
+        "ciudad": "Vetaquemada",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipM8MGII0Q04Cc9Z8xFGsjZ9xCA75enjBTrWAvXo=w408-h306-k-no",
+        "latlong": "5.44882738250045, -73.42997022559918",
+        "placeid": "ChIJGxP_PLKBao4RIsp_RLC76VY"
+    },
+    {
+        "nombre": "Monumento a Francisco de paula santander en Puente de Boyacá",
+        "direccion": "",
+        "ciudad": "Vetaquemada",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN__f-2kmdN8kEXPj4xYQEjATnbdWxhawa0nhAa=w408-h544-k-no",
+        "latlong": "5.450730799368391, -73.43017039249855",
+        "placeid": "ChIJsxoFfrKBao4RggIuJrBu8wk"
+    },
+    {
+        "nombre": "El altar de la patria Puente de Boyacá",
+        "direccion": "",
+        "ciudad": "Vetaquemada",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNx56b_4Ayzx_kJKcFnwuQQQ877N6Zfyq2OY8oI=w426-h240-k-no",
+        "latlong": "5.44719788070268, -73.43318909249864",
+        "placeid": "ChIJbwQzqgGBao4RGgWB9zcP0ww"
+    },
+    {
+        "nombre": "Puente de Boyaca",
+        "direccion": "",
+        "ciudad": "Vetaquemada",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipO-YigVBKDcNFun3yNjIRiJ7980keA_GpJ9Q7nZ=w408-h306-k-no",
+        "latlong": "5.450573832773887, -73.4303743729579",
+        "placeid": "ChIJD6_wErKBao4R6j-lnwfe_WM"
+    },
+    {
+        "nombre": "Arco del Triunfo",
+        "direccion": "",
+        "ciudad": "Vetaquemada",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPkrZVCtK3XyyUrgODcb2Zg3lKLf3Hp6_H6lJgd=w408-h306-k-no",
+        "latlong": "5.452065741431661, -73.43045764647715",
+        "placeid": "ChIJkWP2l7KBao4ROAiP6G-BxYM"
+    },
+    {
+        "nombre": "Monumento a Pedro Pascacio",
+        "direccion": "",
+        "ciudad": "Vetaquemada",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOeNKT4he2CXj8q6lDfcZ8UdIpNJ-6rZAhDp3gJ=w408-h306-k-no",
+        "latlong": "5.444770624855206, -73.43903557531233",
+        "placeid": "ChIJqbqZmLeBao4RD-xDyxQy3k0"
+    },
+    {
+        "nombre": "Obelisco",
+        "direccion": "",
+        "ciudad": "Vetaquemada",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNqZRDhmMfAIETA6-taY1zCDj9mxTSU-kUVt4WT=w408-h725-k-no",
+        "latlong": "5.453808251906354, -73.43009727346637",
+        "placeid": "ChIJeZgqUU2Aao4RBSlk1W-cBaQ"
+    },
+    {
+        "nombre": "Catedral Basilica de Nuestra Señora del Rosario de Manizales",
+        "direccion": "Plaza de Bolivar, Cra. 22 #24-13",
+        "ciudad": "Manizales, Caldas",
+        "uri": "https://arquidiocesisdemanizales.com/catedral-de-manizales/",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOjPfi9qkd-4tuelESvgbsjG9l7A99Ap4GBf4px=w408-h725-k-no",
+        "latlong": "5.06762474598766, -75.51710766182116",
+        "placeid": "ChIJpZQPFPpvR44R5zxSNsALgSU"
+    },
+    {
+        "nombre": "Estación El Cable",
+        "direccion": "Facultad de Arquitectura de la Universidad Nacional. Antigua Estación del Cable Aéreo. Carrera 27 # 64-60 Barrio el Cable",
+        "ciudad": "Manizales Caldas",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNvccII11eqh0r863FiAQ-oULA7pLoiSfSTNf7M=w408-h306-k-no",
+        "latlong": "5.0558907625872065, -75.48618599250219",
+        "placeid": "ChIJeb2Ksn5lR44RQJxEiY7mMeQ"
+    },
+    {
+        "nombre": "Estación del Ferrocarril Salamina",
+        "direccion": "",
+        "ciudad": "",
+        "uri": "",
+        "photo": "",
+        "latlong": "",
+        "placeid": ""
+    },
+    {
+        "nombre": "Fuente Salamina",
+        "direccion": "Parque principal",
+        "ciudad": "",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMVGYUSLpaiJ-Xej0-MkeQoaAgQvU9RMxbkbP1j=w408-h505-k-no",
+        "latlong": "5.4168941754836455, -75.48842314244861",
+        "placeid": "ChIJgdwdyI4XR44RVJdNlh5owSQ"
+    },
+    {
+        "nombre": "Restablos y pintra mural capilla doctrinera Oicata.",
+        "direccion": "Plaza principal Oicata Boyaca",
+        "ciudad": "",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNzKHCyXIMqetrNXk4e1yVcxqLXHfwa85LrKwEf=w408-h307-k-no",
+        "latlong": "5.5958880682587955, -73.3080102883923",
+        "placeid": "ChIJYy7c0BN7ao4Reqn3p0g4TZc"
+    },
+    {
+        "nombre": "Colección arte colonial monasterio Santo Ecce homo",
+        "direccion": "",
+        "ciudad": "Villa de Leyva, Boyaca",
+        "uri": "Convento de Santo Ecce Homo (Near Villa de Leyva) - Nomadic Niko",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipO-4-oq-Q3Ie2TCnwTaPQ19ppULOrP-FFIEtmyD=w408-h306-k-no",
+        "latlong": "5.678534260907625, -73.59557454036361",
+        "placeid": "ChIJa86SbGbaQY4Rq5lOBDUjP_E"
+    },
+    {
+        "nombre": "Colección arte colonial Claustro Santo Domingo",
+        "direccion": "",
+        "ciudad": "Tunja , Boyacá",
+        "uri": "http://tools.wmflabs.org/geohack/geohack.php?language=es&pagename=Iglesia_de_Santo_Domingo_(Tunja)&params=5.53527778_N_-73.36777778_E_type:forrest",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPeGfTT5Q3qIjlw90Br3cNipe2eUmIw9nv5DeYf=w408-h544-k-no",
+        "latlong": "5.533139077133814, -73.36313661948708",
+        "placeid": "ChIJXbrgwyx8ao4RhBOTHTglCHQ"
+    },
+    {
+        "nombre": "Colección arte colonial Claustro San Agustín",
+        "direccion": "",
+        "ciudad": "Tunja , Boyacá",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMwVO-v1Zt8JaRtfMCqN-G9P19eK6jLs-6l7wKU=w408-h306-k-no",
+        "latlong": "5.533203150205581, -73.36311516181684",
+        "placeid": "ChIJe-xAdTJ8ao4RMKKFgzJ782U"
+    },
+    {
+        "nombre": "Bolivar Ecuestre – plaza de Bolivar Tunja",
+        "direccion": "",
+        "ciudad": "Tunja , Boyacá",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNcWMMF8K_I7gm1fyhShw4CKO_Ib3kfK-hlXt4t=w408-h272-k-no",
+        "latlong": "5.532828429203666, -73.36157569249774",
+        "placeid": "ChIJO2QhLy18ao4R5xdQjHLqk1c"
+    },
+    {
+        "nombre": "Nuestra señora del Topo",
+        "direccion": "Carrera 15 No 17-79 centro de Tunja",
+        "ciudad": "Tunja ,Boyaca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNMdnzUlZf90PibSl67ru_GqeMQK2ATTb_a_9qR=w408-h306-k-no",
+        "latlong": "5.533611164162704, -73.36772366759959",
+        "placeid": "ChIJ5_OMKdV9ao4RidevSgCYXeo"
+    },
+    {
+        "nombre": "Museo Casa del Escribano don Juan de Vargas",
+        "direccion": "Calle 28 No 8- 52",
+        "ciudad": "Tunja ,Boyaca",
+        "uri": "Museo Casa del Escribano Don Juan de Vargas – Sistema de Información Turística de Boyacá (boyaca.gov.co)",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPRCaA6f_Sro4dq1XCQWOQXP6kBM-oySfTTye9c=w408-h341-k-no",
+        "latlong": "5.532899908029735, -73.36034840783822",
+        "placeid": "ChIJx4wdy9J9ao4R3Q1cWqgoIFg"
+    },
+    {
+        "nombre": "Casa del Fundador Gonzalo Suarez Rendón",
+        "direccion": "Carrera 9 # 19-56 Plaza De Bolivar, Tunja, Boyacá 776258",
+        "ciudad": "Tunja Boyaca",
+        "uri": "https://es.wikipedia.org/wiki/Casa_del_Fundador_Gonzalo_Su%C3%A1rez_Rend%C3%B3n",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMO-DMVpvzB0-DkkGpx0pZeC0WBjk-BPlSQ8Xdi=w408-h306-k-no",
+        "latlong": "5.532447104157778, -73.3609764483221",
+        "placeid": "ChIJtb4uMS18ao4R0GICV7XO0cY"
+    },
+    {
+        "nombre": "Museo Casa Juan de Castellanos",
+        "direccion": "Calle 20 # 8-52",
+        "ciudad": "Tunja Boyaca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOKH7D0xkKe9lLL6ObUHtvkEs097uiMnG4ZqTyn=w480-h240-k-no",
+        "latlong": "5.538206145043807, -73.35885152149771",
+        "placeid": ""
+    },
+    {
+        "nombre": "Parque Arqueológico de Tierradentro",
+        "direccion": "Vereda el parque- San Andres de Pisimbala",
+        "ciudad": "Cauca",
+        "uri": "Parque Arqueológico Tierradentro - ICANH - Instituto Colombiano de Antropología e Historia.",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPF6VHINIEu3HL9UdlT7YHBgWpBU1sOg9-Q4DVo=w408-h306-k-no",
+        "latlong": "2.574392753955378, -76.03793974770171",
+        "placeid": "ChIJQy7eMvnGOo4RO4GWmC7DCNw"
+    },
+    {
+        "nombre": "Capilla Paéz Suín",
+        "direccion": "Resguardo Indígena de SWÍN",
+        "ciudad": "Belarcazar - Cauca",
+        "uri": "",
+        "photo": "",
+        "latlong": "2.735545641902078, -76.0823560497656",
+        "placeid": "ChIJrfTSz_3rOo4R8HaTuQbRmt4"
+    },
+    {
+        "nombre": "Capilla Paéz Chinas",
+        "direccion": "Resguardo Indígena de SWÍN",
+        "ciudad": "Belarcazar - Cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN6YnJ_RVORRSdkYGQiTDxQHA-AsXW1xIHPfJmB=w408-h306-k-no",
+        "latlong": "2.7270673522044104, -76.06691669299774",
+        "placeid": "ChIJqc2WlcDqOo4RH2YwiMWeEV8"
+    },
+    {
+        "nombre": "Casa del Museo Arquidiocesano de Arte Religioso",
+        "direccion": "Calle 4 4-56 4-62",
+        "ciudad": "Popayan - cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOQqebw4lvp5V9OyOEDx94djf9I9spbvfFboySK=w408-h544-k-no",
+        "latlong": "2.4419956839263026, -76.60434741950881",
+        "placeid": "ChIJYefshw8DMI4RiBQg3ZYuACc"
+    },
+    {
+        "nombre": "Colección de Obra Mueble de la Ermita de Jesús Nazareno",
+        "direccion": "",
+        "ciudad": "Popayan- cauca",
+        "uri": "http://tools.wmflabs.org/geohack/geohack.php?language=es&pagename=Ermita_de_Jes%C3%BAs_Nazareno_(Popay%C3%A1n)&params=2.44322_N_-76.6085_E_type:forrest",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipP6aE4Hx8rT38jUEr2GM1Gn7zJAFRwMIXKg6Xgr=w426-h240-k-no",
+        "latlong": "2.4403883178697066, -76.60284197717905",
+        "placeid": "ChIJcRhjvAUDMI4RVUIKbDPn-e8"
+    },
+    {
+        "nombre": "Colección de Obra Mueble del Templo de La Encarnación",
+        "direccion": "Calle 5 #51, 5-109",
+        "ciudad": "Popayan- cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMU4Ka4HWjOb8HJiuBqwfSGaiU_b0tutKuFIrg=w408-h493-k-no",
+        "latlong": "2.4412976896137715, -76.60525147717901",
+        "placeid": "ChIJ9V_zQgUDMI4RvwyiSR-Rh4s"
+    },
+    {
+        "nombre": "Colección de Obra Mueble del Templo de San Francisco",
+        "direccion": "Carrera 9 con Calle 4",
+        "ciudad": "Popayan- cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipM2t5z2gnUS7fP4MhCIyK-Y5wR3Q5s_le5QW0bn=w408-h306-k-no",
+        "latlong": "2.4437073890152483, -76.60853273300337",
+        "placeid": "ChIJyaqOQxADMI4RD0J-cczoP0c"
+    },
+    {
+        "nombre": "Colección de Obra Mueble del Templo de San José o de La Compañía",
+        "direccion": "Carrera 8 con Calle 5",
+        "ciudad": "Popayan- cauca",
+        "uri": "http://tools.wmflabs.org/geohack/geohack.php?language=es&pagename=Iglesia_de_San_Jos%C3%A9_(Popay%C3%A1n) &params=2.44205_N_-76.60782_E_type:forrest",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMmu8qc6FPcv66vSgbKH1-kncDFjp1F211Hfuld=w426-h240-k-no",
+        "latlong": "2.4422216220835113, -76.60787515018976",
+        "placeid": "ChIJkfyZCxADMI4RRHbeFTx2ha4"
+    },
+    {
+        "nombre": "Colección de Obra Mueble del Templo de Santo Domingo",
+        "direccion": "Carrera 5 #4-08 y Calle 4 #4-70",
+        "ciudad": "Popayan- cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPFT2hi4hA-AxTi9U-8I9qQfsRFdl--hgBBxAHb=w408-h272-k-no",
+        "latlong": "2.4418338884707085, -76.60469516183856",
+        "placeid": "ChIJcTsQYgUDMI4RWC2AmxvMhQY"
+    },
+    {
+        "nombre": "Colección de Obra Mueble del Templo del Carmen",
+        "direccion": "Calle 4 #3-56",
+        "ciudad": "Popayan- cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipONOwr9X-88R_wfFdcz5kjJ760TI63anOMnPJIZ=w408-h306-k-no",
+        "latlong": "2.441868490107187, -76.6032409148661",
+        "placeid": "ChIJ70zUjRcDMI4RTUDhdH4h8ds"
+    },
+    {
+        "nombre": "Puente del Humilladero",
+        "direccion": "se encuentra en la Carrera 8, entre Calles 1 y 2, en pleno centro histórico de Popayán",
+        "ciudad": "",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPMf3BInhjyOSd7n5-H5dYNvnpFmJFwQbFLzU6c=w408-h272-k-no",
+        "latlong": "2.4442052218123282, -76.60505301950877",
+        "placeid": "ChIJh-zDdzsDMI4Rdk56xAYq7jM"
+    },
+    {
+        "nombre": "Fachada Teatro Municipal Guillermo Valencia",
+        "direccion": "Calle 3 carrera 7 esquina",
+        "ciudad": "Popayán, Cauca",
+        "uri": "https://teatromunicipal.com.co/",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPZcJSuKH18L9lB765RqN7beJtKXnwY1gwGHFQ0=w408-h279-k-no",
+        "latlong": "2.4433637845237, -76.60598638882784",
+        "placeid": "ChIJ8YaY3Q8DMI4RJ4IkBKub1Yk"
+    },
+    {
+        "nombre": "Amo Jesus Iglesia de Yanaconas",
+        "direccion": "Calle 28 parque principal barrio Yanaconas",
+        "ciudad": "Popayan Cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNgcbQiw_DfmS0b65Chvu3bFiiWbC5F4Fw4avni=w408-h306-k-no",
+        "latlong": "2.4548019013683464, -76.5861982060141",
+        "placeid": "ChIJNZiDC5kDMI4ROzNN3QmfZck"
+    },
+    {
+        "nombre": "Pintura Mural Iglesia de Yanaconas",
+        "direccion": "Calle 28 parque principal barrio Yanaconas",
+        "ciudad": "Popayan Cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNgcbQiw_DfmS0b65Chvu3bFiiWbC5F4Fw4avni=w408-h306-k-no",
+        "latlong": "2.4548019013683464, -76.5861982060141",
+        "placeid": "ChIJNZiDC5kDMI4ROzNN3QmfZck"
+    },
+    {
+        "nombre": "Escultura de san Francisco de Asis ubicada en la catedral",
+        "direccion": "",
+        "ciudad": "Quibdo - Choco",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN3lTlWEF3Lz-LPoGEZW7bbMydy-_yNB0RJgH4Q=w408-h544-k-no",
+        "latlong": "5.6925213729331485, -76.66077453102729",
+        "placeid": "ChIJrUj0Z3SPSI4RXqNTvqei9cA"
+    },
+    {
+        "nombre": "Pintura Mural Catedral de san Francisco de Asis",
+        "direccion": "",
+        "ciudad": "Quibdo - Choco",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN3lTlWEF3Lz-LPoGEZW7bbMydy-_yNB0RJgH4Q=w408-h544-k-no",
+        "latlong": "5.6925213729331485, -76.66077453102729",
+        "placeid": "ChIJrUj0Z3SPSI4RXqNTvqei9cA"
+    },
+    {
+        "nombre": "Colección Instituto Caro y cuervo (Hacienda Yerbabuena )",
+        "direccion": "",
+        "ciudad": "Sopo- Cundinamarca",
+        "uri": "Instituto Caro y Cuervo - Centro colombiano de altos estudios : Instituto Caro y Cuervo",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNMfxZAkL4zWNjyREHlwHkRgTP0ZBbbv1CoFIfY=w408-h306-k-no",
+        "latlong": "4.879915274436485, -74.01727619250367",
+        "placeid": "ChIJzSBgDu53QI4R3NnHUkKcfp4"
+    },
+    {
+        "nombre": "Colección Casa de Hacienda Hatogrande",
+        "direccion": "Vía Sopó kilómetro 35",
+        "ciudad": "Sopo- Cundinamarca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipO9xZdAkd7qeajuJLmIU7b50hixMIRKIGbUeufs=w408-h306-k-no",
+        "latlong": "4.92230693386399, -73.99803120784384",
+        "placeid": "ChIJF7zauEJ3QI4R8BgNxvB0rf0"
+    },
+    {
+        "nombre": "Colección de Obra Mueble denominada \"Los Ángeles de Sopo\" de la Iglesia y Casa Cural del Divino Salvador",
+        "direccion": "Cra. 2 Este #4-02, Sopo",
+        "ciudad": "Sopo- Cundinamarca",
+        "uri": "https://losarcangelesdesopo.com",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOnVxtZtTb2qUOiUYr6gFX94VOE0SOrS31Vr-3d=w408-h306-k-no",
+        "latlong": "4.908113058500229, -73.93987886366838",
+        "placeid": "ChIJlcl4Y4F2QI4R0xaPbTwAhls"
+    },
+    {
+        "nombre": "Pintura mural Capilla Doctrinera Nuestra Señora del Rosario",
+        "direccion": "",
+        "ciudad": "Suesca- Cundinamarca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNCqnBOGZLJZ36-1I9_qE009HlrrOtGIISgYtMl=w408-h306-k-no",
+        "latlong": "5.103680024373733, -73.79856710898991",
+        "placeid": "ChIJg4zfBGIVQI4R6ryrrXRjBFc"
+    },
+    {
+        "nombre": "Pitura mural Capilla Doctrinera Sutatausa",
+        "direccion": "",
+        "ciudad": "Sutatausa- Cundinamarca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipP8p-H9O9PZQlX45XyvsFYa3whANi42Xl0rnA2Y=w426-h240-k-no",
+        "latlong": "5.246631873055736, -73.85268299091507",
+        "placeid": "ChIJERBNrLxAQI4RVDLyAaJyKtU"
+    },
+    {
+        "nombre": "Parque Arqueológico de San Agustín",
+        "direccion": "Sierras de la Cordillera Central hasta el Valle de San Agustín (Alto Magdalena)",
+        "ciudad": "San Agustin- Huila",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOm7GCkkgK9HIBYmLn2HGYRs2xJ6_vz4froALcl=w408-h408-k-no",
+        "latlong": "1.8859275276667933, -76.29432839252156",
+        "placeid": "ChIJ3RYP1TZwJY4RTNNwct_2pYY"
+    },
+    {
+        "nombre": "Colección Quinta de San Pedro Alejandrino",
+        "direccion": "",
+        "ciudad": "Santa Marta- Magdalena",
+        "uri": "Fundación Museo Bolivariano Quinta de San Pedro Alejandrino | Santa Marta, Colombia.",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipOmJaX40mSuz_TQaPGoHcyzc57tRP3Mu2fofqiA=w427-h240-k-no",
+        "latlong": "1.8858202974199485, -76.2942425618406",
+        "placeid": "ChIJ2Wf8qan19I4R5yR8GDsSUvU"
+    },
+    {
+        "nombre": "Colección de Bienes Muebles del Templo Parroquial de San Sebastián de Tenerife",
+        "direccion": "",
+        "ciudad": "Tenerife - Magdalena",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNGxSrT-Z5QTdGkbRYN_GnMhgPxmNOAjTaeorpA=w408-h306-k-no",
+        "latlong": "9.897776834877657, -74.86202670408726",
+        "placeid": "ChIJK0SZLBA2X44RhwayXv4SaAY"
+    },
+    {
+        "nombre": "Catedral de San Juan de Pasto",
+        "direccion": "Centro Histórico. Plazoleta de San Francisco, esquina Calle 17, Carrera 26. Carrera 26 No 17-23",
+        "ciudad": "Pasto - Nariño",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMtBcO0QBVpRi1HBLOaHSziAc-G7YzhgCWB76Fc=w408-h277-k-no",
+        "latlong": "1.2159885271704898, -77.28010112135856",
+        "placeid": "ChIJ537IvIbULo4Rz8ruA7wznyU"
+    },
+    {
+        "nombre": "Columna de la Libertad de los Esclavos",
+        "direccion": "Plaza Mayor de Ocaña",
+        "ciudad": "Ocaña – Norte de Santander",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNGx8aAJkpDcA4TdQqfn6Qf2nObyC24vWhtnNb-=w408-h271-k-no",
+        "latlong": "8.235545143784025, -73.35388914165894",
+        "placeid": "ChIJ3Qi8cex7Z44RUwoq0waXeYc"
+    },
+    {
+        "nombre": "Museo Quimbaya",
+        "direccion": "Carretera Nacional norte de Armenia",
+        "ciudad": "",
+        "uri": "https://www.banrepcultural.org/armenia/museo-del-oro-quimbaya",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPgv2F-WuIGuX-38zperNNtspxgMWYDDrsKXYpv=w408-h306-k-no",
+        "latlong": "4.571375068362422, -75.64836039619797",
+        "placeid": "ChIJpxo4Icb0OI4Rxd8puZiolDk"
+    },
+    {
+        "nombre": "Restablo y Sagrario de la Iglesia Parroquial de Santa Lucía",
+        "direccion": "Inspección Departamental Guane. Plaza Principal",
+        "ciudad": "Barichara - Guane",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPOJYNg_knubhCVsIqsZsCTGTUGPG5tE5ebj7o=w408-h306-k-no",
+        "latlong": "6.678399709317735, -73.24004796929411",
+        "placeid": "ChIJAYFYy1HOaY4RiFBorxChItc"
+    },
+    {
+        "nombre": "Colección de Obra Mueble de la iglesia de Matanza",
+        "direccion": "Plaza Principal. Esquina Sur Occidental. Calle 6, Carrera 4",
+        "ciudad": "Matanza - Santander",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNiupZ-Z3qB7jSJWrJw07CHtd0RH8-JkiBSKIJ7=w408-h306-k-no",
+        "latlong": "7.323352345235064, -73.01569350498097",
+        "placeid": "ChIJ7apvDldzaI4ROu5bisR_iZo"
+    },
+    {
+        "nombre": "Puente Comuneros",
+        "direccion": "Antiguo paso de Ramírez sobre el Río Suárez. A 6 Km. de la población",
+        "ciudad": "Socorro – Santander",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNk4m-yfV9d-TMhRevZqNQCwJbdI5nXZK5UJCV6=w408-h306-k-no",
+        "latlong": "6.492836553965449, -73.28375392132264",
+        "placeid": "ChIJR4YerizdaY4Rmq-otgd4VlY"
+    },
+    {
+        "nombre": "Santa Lucia de Ambalema",
+        "direccion": "",
+        "ciudad": "Ambalema Tolima",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipMLB6u5saXZatAXZQb1TCMkJ5RjwKAEFjDN-Ny8=w408-h544-k-no",
+        "latlong": "4.781579608134897, -74.76508697716407",
+        "placeid": "ChIJ-YLozRJaP44RcxLcQrs-Tx4"
+    },
+    {
+        "nombre": "Colección de lienzos del Maestro Domingo Moreno Otero en el Salón Alberto Castilla",
+        "direccion": "Cra 3 #calle 11",
+        "ciudad": "Ibagué, Tolima",
+        "uri": "",
+        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=IQdW2XWID0m1ZCploT2Jhg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=214.88396&pitch=0&thumbfov=100",
+        "latlong": "4.444345647577201, -75.24146750415618",
+        "placeid": "ChIJk6-guEHFOI4R89zwHAR1npo"
+    },
+    {
+        "nombre": "Señor de los Milagros de Buga",
+        "direccion": "Basílica Menor Señor de Los Milagros Carrera 14 #3-62,",
+        "ciudad": "Guadalajara de Buga",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNir4kESU7vZtOckX67trNKD-_t-BhpU1QwlPtP=w499-h240-k-no",
+        "latlong": "3.897547208732025, -76.30229697901676",
+        "placeid": "ChIJ-6ytBkPmOY4R-fs5Tj_2aiM"
+    },
+    {
+        "nombre": "Colección Hacienda la Maria",
+        "direccion": "",
+        "ciudad": "Municipio el Cerrito- Valle del Cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipN1vISREVscrJNGti38UoKMUR2ktMeptepxi0HV=w408-h306-k-no",
+        "latlong": "3.640897596869431, -76.19769409251302",
+        "placeid": "ChIJnSfVsL_3OY4R_bkAY_gLCPg"
+    },
+    {
+        "nombre": "Pintura Mural Catedral de Palmira",
+        "direccion": "Cl. 30 #2979, Palmira, Valle del Cauca",
+        "ciudad": "Palmira – Valle del Cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipNmARtT2JgwGDmHutv39NPPdquQIit9EaIFZpNK=w408-h544-k-no",
+        "latlong": "3.5272523156077096, -76.30066860785425",
+        "placeid": "ChIJE8_70OUEOo4RbR74vYTDU7Q"
+    },
+    {
+        "nombre": "Museo Rayo",
+        "direccion": "Cl. 8 #8-53,",
+        "ciudad": "Roldanillo, Valle del Cauca",
+        "uri": "",
+        "photo": "https://lh5.googleusercontent.com/p/AF1QipPnSRvZ6b_aC1KT1jCqVZT_SfDgTQGPaMyqD2pD=w408-h306-k-no",
+        "latlong": "4.409878245813373, -76.15405223668314",
+        "placeid": "ChIJUYBERxU3OI4RLtmPBBnohbY"
+    }
+];
+
+
+
+    /*
+    =====================================================
+    FUNCIONES DEL MAPA
+    =====================================================
+    */
+
+    function obtenerCoordenadas(latlong) {
+        if (!latlong || typeof latlong !== "string") {
+            return null;
+        }
+
+        var partes = latlong.split(",");
+
+        if (partes.length < 2) {
+            return null;
+        }
+
+        var lat = parseFloat($.trim(partes[0]));
+        var lng = parseFloat($.trim(partes[1]));
+
+        if (isNaN(lat) || isNaN(lng)) {
+            return null;
+        }
+
+        return {
+            lat: lat,
+            lng: lng
+        };
+    }
+
+    function normalizarUrl(url) {
+        if (!url) {
+            return "";
+        }
+
+        url = $.trim(url);
+
+        if (
+            url.indexOf("http://") === 0 ||
+            url.indexOf("https://") === 0 ||
+            url.indexOf("//") === 0 ||
+            url.indexOf("mailto:") === 0
+        ) {
+            return url;
+        }
+
+        if (url.indexOf("@") > -1 && url.indexOf(" ") === -1) {
+            return "mailto:" + url;
+        }
+
+        return "https://" + url;
+    }
+
+    function crearItemMapa(item) {
+        var coordenadas = obtenerCoordenadas(item.latlong);
+
+        if (!coordenadas) {
+            return null;
+        }
+
+        var $li = $('<button type="button" class="list-group-item list-group-item-action"></button>');
+
+        $li.attr("data-place_id", item.placeid || "");
+        $li.attr("data-lat", coordenadas.lat);
+        $li.attr("data-lng", coordenadas.lng);
+
+        var $row = $('<div class="row align-items-center"></div>');
+        var $colTexto = $('<div class="col-8"></div>');
+        var $colImagen = $('<div class="col-4"></div>');
+
+        $("<h2></h2>").text(item.nombre || "").appendTo($colTexto);
+
+        if (item.direccion) {
+            $("<p></p>").text(item.direccion).appendTo($colTexto);
+        }
+
+        if (item.ciudad) {
+            $("<p></p>").text(item.ciudad).appendTo($colTexto);
+        }
+
+        if (item.uri) {
+            var href = normalizarUrl(item.uri);
+
+            $("<p></p>").append(
+                $("<a></a>")
+                    .attr("href", href)
+                    .attr("target", "_blank")
+                    .attr("rel", "noopener noreferrer")
+                    .text(item.uri)
+            ).appendTo($colTexto);
+        }
+
+        var $imagen = $('<div class="image-list"></div>');
+
+        if (item.photo) {
+            $imagen.css("background-image", "url('" + item.photo + "')");
+        } else {
+            $imagen.addClass("sin-imagen");
+        }
+
+        $colImagen.append($imagen);
+        $row.append($colTexto).append($colImagen);
+        $li.append($row);
+
+        return $li;
+    }
+
+    var leafletMap = null;
+    var leafletMarker = null;
+
+    function moverMapa(lat, lng, placeid) {
+        if (!leafletMap) {
+            console.warn("El mapa Leaflet no está inicializado.");
+            return;
+        }
+
+        leafletMap.setView([lat, lng], 16);
+
+        if (leafletMarker) {
+            leafletMarker.setLatLng([lat, lng]);
+        } else {
+            leafletMarker = L.marker([lat, lng]).addTo(leafletMap);
+        }
+    }
+
+    function iniciarMapa() {
+        var $lista = $(".maps .list-group");
+
+        if (!$lista.length) {
+            return;
+        }
+
+        // Inicializar mapa Leaflet con OpenStreetMap
+        leafletMap = L.map("map", {
+            scrollWheelZoom: false
+        }).setView([4.6158, -74.0686], 6);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(leafletMap);
+
+        leafletMarker = L.marker([4.6158, -74.0686]).addTo(leafletMap);
+
+        $lista.empty();
+
+        $.each(json, function (index, item) {
+            var $item = crearItemMapa(item);
+
+            if ($item) {
+                $lista.append($item);
+            }
+        });
+
+        $(".maps .list-group-item").off("click").on("click", function () {
+            $(".maps .list-group-item").removeClass("activo");
+            $(this).addClass("activo");
+
+            var placeid = $(this).data("place_id");
+            var lat = parseFloat($(this).data("lat"));
+            var lng = parseFloat($(this).data("lng"));
+
+            if (isNaN(lat) || isNaN(lng)) {
+                console.warn("Coordenadas inválidas.");
+                return;
+            }
+
+            moverMapa(lat, lng, placeid);
+        });
+
+        setTimeout(function () {
+            $(".maps .list-group-item:first").trigger("click");
+        }, 700);
+    }
+
+
+    /*
+    =====================================================
+    INICIO GENERAL
+    =====================================================
+    */
+
+    $(window).on("load", function () {
+        iniciarBanner();
+        iniciarVideo();
+        iniciarMapa();
+    });
+
+    var resizeTimer;
+
+    $(window).on("resize", function () {
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function () {
+            ajustarVideo();
+        }, 250);
+    });
+
+})(jQuery);
+</script>
+
+</asp:Content>
+
+
+
+
+

@@ -1,0 +1,296 @@
+<style>
+.pf-tramites {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: Verdana, sans-serif;
+}
+.pf-tramites h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+.pf-tramites h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.pf-tramites p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    margin-bottom: 1rem;
+}
+.pf-tramites ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+}
+.pf-tramites ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    margin-bottom: 0.5rem;
+}
+.pf-tramites a {
+    color: var(--govcolor-cobalt, #0943B5);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.pf-tramites a:hover {
+    color: var(--govcolor-havelock-lue, #4672C8);
+}
+.pf-tramites .highlight-box {
+    background: var(--govcolor-white-smoke, #F4F4F4);
+    border-left: 4px solid var(--govcolor-cobalt, #0943B5);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+}
+.pf-tramites .highlight-box p {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+}
+.pf-tramites .highlight-box p:last-child {
+    margin-bottom: 0;
+}
+/* Acordeón GOV.CO v5 */
+.pf-tramites .accordion-govco .item-accordion-govco {
+    margin-bottom: 4px;
+}
+.pf-tramites .accordion-govco .button-accordion-govco {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #7b2cbf;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+.pf-tramites .accordion-govco .button-accordion-govco:hover {
+    background-color: #6a24a6;
+}
+.pf-tramites .accordion-govco .button-accordion-govco::after {
+    content: '\25BC';
+    position: absolute;
+    right: 20px;
+    color: #fff;
+    font-size: 0.75rem;
+    transition: transform 0.3s;
+}
+.pf-tramites .accordion-govco .button-accordion-govco:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+.pf-tramites .accordion-govco .collapse:not(.show) {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+.pf-tramites .accordion-govco .collapse.show {
+    display: block;
+    max-height: 3000px;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in;
+}
+.pf-tramites .accordion-govco .body-accordion-govco {
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border: 1px solid #e0e7f4;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+.pf-tramites .accordion-govco .title-one-accordion-govco {
+    display: block;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--govcolor-cobalt, #0943B5);
+    margin-bottom: 0.75rem;
+}
+.pf-tramites .accordion-govco .text-one-accordion-govco {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+}
+</style>
+
+<div class="pf-tramites">
+    <p>Encuentra aquí las preguntas frecuentes sobre los trámites del Ministerio de las Culturas, las Artes y los Saberes.</p>
+
+    <!-- Acordeón: Trámites por Dirección -->
+    <div class="accordion-govco" id="acordeonTramites">
+
+        <!-- Trámites Dirección de Patrimonio -->
+        <div class="item-accordion-govco">
+            <div class="accordion-header">
+                <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapsePat" onclick="toggleAccordionPF(this, 'collapsePat', 'acordeonTramites')">
+                    <span class="text-button-accordion-govco">Trámites Dirección de Patrimonio</span>
+                </button>
+            </div>
+            <div id="collapsePat" class="collapse">
+                <div class="body-accordion-govco">
+                    <ul>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Declaratoria de inmueble o de un sector como bien de interés cultural del ámbito nacional</a></li>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Autorización para la aprobación de proyectos de intervención en bienes muebles de interés cultural de carácter nacional</a></li>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Autorización de intervención en bienes inmuebles de interés cultural del ámbito nacional</a></li>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Clasificación de películas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trámites Dirección de Audiovisuales, Cine y Medios Interactivos (DACMI) -->
+        <div class="item-accordion-govco">
+            <div class="accordion-header">
+                <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseDACMI" onclick="toggleAccordionPF(this, 'collapseDACMI', 'acordeonTramites')">
+                    <span class="text-button-accordion-govco">Trámites Dirección de Audiovisuales, Cine y Medios Interactivos (DACMI)</span>
+                </button>
+            </div>
+            <div id="collapseDACMI" class="collapse">
+                <div class="body-accordion-govco">
+                    <ul>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Reconocimiento como producto nacional de las obras cinematográficas colombianas</a></li>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Emisión de Certificados de Inversión Audiovisual-CINA</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trámites Dirección de Artes -->
+        <div class="item-accordion-govco">
+            <div class="accordion-header">
+                <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseArtes" onclick="toggleAccordionPF(this, 'collapseArtes', 'acordeonTramites')">
+                    <span class="text-button-accordion-govco">Trámites Dirección de Artes</span>
+                </button>
+            </div>
+            <div id="collapseArtes" class="collapse">
+                <div class="body-accordion-govco">
+                    <ul>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Registro de productor de espectáculos públicos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trámites Dirección de Fomento Regional -->
+        <div class="item-accordion-govco">
+            <div class="accordion-header">
+                <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseFomento" onclick="toggleAccordionPF(this, 'collapseFomento', 'acordeonTramites')">
+                    <span class="text-button-accordion-govco">Trámites Dirección de Fomento Regional</span>
+                </button>
+            </div>
+            <div id="collapseFomento" class="collapse">
+                <div class="body-accordion-govco">
+                    <ul>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Diplomado en gestión y formulación de proyectos culturales</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trámites Biblioteca Nacional -->
+        <div class="item-accordion-govco">
+            <div class="accordion-header">
+                <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseBiblio" onclick="toggleAccordionPF(this, 'collapseBiblio', 'acordeonTramites')">
+                    <span class="text-button-accordion-govco">Trámites Biblioteca Nacional</span>
+                </button>
+            </div>
+            <div id="collapseBiblio" class="collapse">
+                <div class="body-accordion-govco">
+                    <ul>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Certificado de depósito legal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Otros programas -->
+        <div class="item-accordion-govco">
+            <div class="accordion-header">
+                <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseOtros" onclick="toggleAccordionPF(this, 'collapseOtros', 'acordeonTramites')">
+                    <span class="text-button-accordion-govco">Otros programas</span>
+                </button>
+            </div>
+            <div id="collapseOtros" class="collapse">
+                <div class="body-accordion-govco">
+                    <ul>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Programa de rentas exentas</a></li>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Programa Sonidos de Esperanza</a></li>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20frecuentes%20Beneficios%20Econ%C3%B3micos%20Peri%C3%B3dicos%20BEPS%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Programa Beneficios Económicos Periódicos (BEPS)</a></li>
+                        <li><a href="https://www.mincultura.gov.co/transparencia/Documents/5-tramites/Preguntas%20generales%20tr%C3%A1mites%20Min%20Culturas.pdf" target="_blank" rel="noopener noreferrer">Estampilla Pro Cultura</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ¿Dónde puedo consultar todos los trámites? -->
+    <div class="accordion-govco" id="acordeonConsulta">
+        <div class="item-accordion-govco">
+            <div class="accordion-header">
+                <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseConsulta" onclick="toggleAccordionPF(this, 'collapseConsulta', 'acordeonConsulta')">
+                    <span class="text-button-accordion-govco">¿Dónde puedo consultar todos los trámites?</span>
+                </button>
+            </div>
+            <div id="collapseConsulta" class="collapse">
+                <div class="body-accordion-govco">
+                    <p><a href="https://www.mincultura.gov.co/atencion-y-servicio-a-la-ciudadania/Paginas/tramites-y-servicios.aspx" target="_blank" rel="noopener noreferrer">Consultar todos los trámites y servicios →</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Recomendaciones -->
+    <h3>Recomendaciones para hacer sus trámites</h3>
+    <ul>
+        <li><strong>Consultar siempre fuentes oficiales:</strong> Se recomienda realizar los trámites exclusivamente en las plataformas autorizadas por el Ministerio para evitar fraudes y asegurar la validez de los documentos emitidos.</li>
+        <li><strong>Verificar los requisitos actualizados:</strong> Algunos trámites pueden variar según cambios normativos, por lo que lo mejor siempre será revisar continuamente los canales oficiales para garantizar el cumplimiento de las condiciones vigentes.</li>
+        <li><strong>Solicitar acompañamiento cuando sea necesario:</strong> Las ciudadanías pueden acudir a los canales de atención del Grupo de Servicio al Ciudadano para resolver inquietudes o recibir asesoría personalizada, para esto es necesario el apoyo de todas las áreas dependiendo el tipo de solicitud del ciudadano.</li>
+        <li><strong>Hacer uso eficiente de los beneficios disponibles:</strong> Existen programas e incentivos tributarios que pueden ser aprovechados por gestores culturales, productores audiovisuales, entre otros.</li>
+    </ul>
+</div>
+
+<script>
+    function toggleAccordionPF(btn, panelId, parentId) {
+        var panel = document.getElementById(panelId);
+        var parent = document.getElementById(parentId);
+        var isOpen = panel.classList.contains('show');
+
+        // Cerrar todos los paneles del mismo grupo
+        var panels = parent.querySelectorAll('.collapse.show');
+        var buttons = parent.querySelectorAll('.button-accordion-govco');
+        for (var i = 0; i < panels.length; i++) {
+            panels[i].classList.remove('show');
+        }
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.add('collapsed');
+            buttons[i].setAttribute('aria-expanded', 'false');
+        }
+
+        // Si estaba cerrado, abrir este
+        if (!isOpen) {
+            panel.classList.add('show');
+            btn.classList.remove('collapsed');
+            btn.setAttribute('aria-expanded', 'true');
+            setTimeout(function() {
+                btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 50);
+        }
+    }
+</script>

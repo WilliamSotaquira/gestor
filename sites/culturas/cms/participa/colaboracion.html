@@ -1,0 +1,486 @@
+<style>
+    .participa-govco {
+        max-width: 1100px;
+        margin: 0 auto;
+        font-family: Verdana, sans-serif;
+    }
+
+    .participa-govco h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        color: var(--govcolor-cobalt, #0943B5);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    .participa-govco h4 {
+        font-family: 'Nunito Sans', sans-serif;
+        color: var(--govcolor-cobalt, #0943B5);
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .participa-govco p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--govcolor-matterhorn, #4C4C4C);
+        margin-bottom: 1rem;
+    }
+
+    .participa-govco ul {
+        padding-left: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .participa-govco ul li {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--govcolor-matterhorn, #4C4C4C);
+        margin-bottom: 0.5rem;
+    }
+
+    .participa-govco a {
+        color: var(--govcolor-cobalt, #0943B5);
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .participa-govco a:hover {
+        color: var(--govcolor-havelock-lue, #4672C8);
+    }
+
+    .participa-govco .highlight-box {
+        background: var(--govcolor-white-smoke, #F4F4F4);
+        border-left: 4px solid var(--govcolor-cobalt, #0943B5);
+        border-radius: 0 8px 8px 0;
+        padding: 1rem 1.25rem;
+        margin: 1.25rem 0;
+    }
+
+    .participa-govco .highlight-box p {
+        margin: 0 0 0.5rem;
+        font-size: 0.9rem;
+        color: var(--govcolor-matterhorn, #4C4C4C);
+    }
+
+    .participa-govco .highlight-box p:last-child {
+        margin-bottom: 0;
+    }
+
+    .participa-govco .noticias-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .participa-govco .noticia-card {
+        text-decoration: none;
+        color: inherit;
+        background: #fff;
+        border: 1px solid #e0e7f4;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .participa-govco .noticia-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(9, 67, 181, 0.12);
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .participa-govco .noticia-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .participa-govco .noticia-card .noticia-body {
+        padding: 1rem;
+    }
+
+    .participa-govco .noticia-card .noticia-body p {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--govcolor-cobalt, #0943B5);
+        line-height: 1.4;
+        margin: 0 0 0.5rem;
+    }
+
+    .participa-govco .noticia-card .noticia-body span {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--govcolor-cobalt, #0943B5);
+    }
+
+    .participa-govco .cp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+    }
+
+    .participa-govco .cp-card {
+        background: #fff;
+        border: 1px solid #e0e7f4;
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .participa-govco .cp-card:hover {
+        box-shadow: 0 4px 16px rgba(9, 67, 181, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .participa-govco .cp-card h4 {
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .participa-govco .cp-card p {
+        font-size: 0.9rem;
+        color: var(--govcolor-grey, #7E7E7E);
+        margin-bottom: 0.75rem;
+    }
+
+    .participa-govco .cp-card .btn-govco {
+        font-size: 0.85rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .participa-govco .noticia-card,
+        .participa-govco .cp-card {
+            transition: none;
+        }
+    }
+
+    /* Acordeón GOV.CO v5 - estilos forzados */
+    .participa-govco .accordion-govco .item-accordion-govco {
+        margin-bottom: 4px;
+    }
+
+    .participa-govco .accordion-govco .button-accordion-govco {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 14px 20px;
+        background-color: #7b2cbf;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        text-align: left;
+        transition: background-color 0.2s;
+    }
+
+    .participa-govco .accordion-govco .button-accordion-govco:hover {
+        background-color: #6a24a6;
+    }
+
+    .participa-govco .accordion-govco .button-accordion-govco::after {
+        content: '\25BC';
+        position: absolute;
+        right: 20px;
+        color: #fff;
+        font-size: 0.75rem;
+        transition: transform 0.3s;
+    }
+
+    .participa-govco .accordion-govco .button-accordion-govco:not(.collapsed)::after {
+        transform: rotate(180deg);
+    }
+
+    .participa-govco .accordion-govco .collapse:not(.show) {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+
+    .participa-govco .accordion-govco .collapse.show {
+        display: block;
+        max-height: 5000px;
+        overflow: hidden;
+        transition: max-height 0.6s ease-in;
+    }
+
+    .participa-govco .accordion-govco {
+        scroll-margin-top: 0;
+    }
+
+    .participa-govco .accordion-govco .item-accordion-govco {
+        scroll-margin-top: 0;
+    }
+
+    .participa-govco .accordion-govco .text-button-accordion-govco {
+        color: #fff;
+    }
+
+    .participa-govco .accordion-govco .body-accordion-govco {
+        padding: 1.25rem 1.5rem;
+        background: #fff;
+        border: 1px solid #e0e7f4;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .participa-govco .accordion-govco .title-one-accordion-govco {
+        display: block;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--govcolor-cobalt, #0943B5);
+        margin-bottom: 0.75rem;
+    }
+
+    .participa-govco .accordion-govco .text-one-accordion-govco {
+        display: block;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--govcolor-matterhorn, #4C4C4C);
+    }
+</style> 
+<div class="participa-govco"> 
+   <p>La colaboración e innovación abierta es la interacción con la ciudadanía para la búsqueda de soluciones a problemáticas públicas con el conocimiento de los grupos de valor. Permite resolver los desafíos de las entidades estableciendo redes de cooperación y sinergias para comprender las problemáticas o necesidades de una población particular, abrir canales para recibir ideas y propuestas de solución y lograr la selección final de las más viables.</p> 
+   <!-- Acordeón GOV.CO: Retos --> 
+      <div class="accordion-govco" id="acordeonRetos"> 
+         <div class="item-accordion-govco"> 
+            <div class="accordion-header"> 
+               <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseReto1" onclick="toggleAccordion(this, &#39;collapseReto1&#39;, &#39;acordeonRetos&#39;)"> 
+                  <span class="text-button-accordion-govco">Reto vigente</span> </button> </div> 
+            <div id="collapseReto1" class="collapse"> 
+               <div class="body-accordion-govco"> 
+                  <span class="title-one-accordion-govco" style="font-size: 1.3rem;">Modernización del Model​​​​​o de Ser​v​icio para el relacionamiento con la ciudadanía</span> 
+                  <span class="text-one-accordion-govco"> Transformación completa del modelo de servicio del Ministerio de las Culturas, las Artes y los Saberes hacia otro más moderno, centrado en el ciudadano, omnicanal y con mejor tecnología. La nueva apuesta que está en plena implementación constituye un salto fundamental en materia de servicio a las ciudadanías. 
+                     <br/> 
+                     <br/> Conoce los detalles del nuevo modelo que estamos implementando, los criterios aplicados, los principios establecidos, el plan de trabajo, el cronograma, los plazos y el estado de avance.<br/> 
+                     <a href="/transparencia/Documents/6-participa/Proyecto_Nuevo_Modelo_Servicio_MINCULTURASV_2026.pdf" target="_blank" rel="noopener noreferrer">Presentación del nuevo modelo de servicio →</a> 
+                     <br/> 
+                     <br/> 
+                     <h4 style="margin-top: 1.5rem;"> 
+                        <span style="color: #0943b5;">
+                           <span style="color: #0943b5;">Avance del nuevo Modelo s​egún el cronograma proyectado</span></span><span style="color: #0943b5;"> </span></h4> </span>
+                  <span style="color: #0943b5;"> </span>
+                  <!-- Gráfica 1: Diagnóstico y planeación 2025 -->
+                     <span style="color: #0943b5;"> </span>
+                     <div style="overflow-x: auto; margin: 1.5rem 0px;"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" role="img" aria-label="Cronograma de diagnóstico y planeación 2025 del nuevo modelo de servicio" style="width:100%;max-width:920px;height:auto;"> 
+                           <title>2025 – Diagnóstico y planeación</title> 
+                           <defs> 
+                              <marker id="arrow-diag" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"> 
+                                 <polygon points="0 0, 10 3.5, 0 7" fill="#4672C8"/> </marker> </defs> 
+                           <!-- Título --> 
+                              <text x="460" y="50" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="22" font-weight="700" fill="#3b0764">Diagnóstico y planeación</text> 
+                              <!-- ===== FASE 1: Consulta a la ciudadanía ===== --> 
+                                 <rect x="30" y="105" width="250" height="195" rx="12" fill="#fff" stroke="#4672C8" stroke-width="1.8"/> 
+                                 <circle cx="55" cy="140" r="5" fill="#333"/> 
+                                 <text x="68" y="145" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Diseño y aplicación de</text> 
+                                 <text x="68" y="163" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">encuestas</text> 
+                                 <circle cx="55" cy="195" r="5" fill="#333"/> 
+                                 <text x="68" y="200" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Consolidación y análisis de</text> 
+                                 <text x="68" y="218" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">la información</text> 
+                                 <!-- Etiqueta morada --> 
+                                    <rect x="45" y="320" width="220" height="48" rx="8" fill="#7b2cbf"/> 
+                                    <text x="155" y="340" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">Consulta a la ciudadanía</text> 
+                                    <text x="155" y="358" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="12" fill="#fff">Ago - Sep / 2025</text> 
+                                    <!-- Flecha curva 1→2 --> 
+                                       <path d="M 230 300 C 270 370, 320 370, 370 240" fill="none" stroke="#4672C8" stroke-width="2.8" marker-end="url(#arrow-diag)"/> 
+                                       <!-- ===== FASE 2: Diagnóstico ===== --> 
+                                          <!-- Etiqueta morada (arriba) --> 
+                                             <rect x="380" y="95" width="175" height="48" rx="8" fill="#7b2cbf"/> 
+                                             <text x="467" y="115" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">Diagnóstico</text> 
+                                             <text x="467" y="133" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="12" fill="#fff">Sep - Oct / 2025</text> 
+                                             <!-- Recuadro --> 
+                                                <rect x="340" y="170" width="255" height="195" rx="12" fill="#fff" stroke="#4672C8" stroke-width="1.8"/> 
+                                                <!-- Bullets --> 
+                                                   <circle cx="365" cy="205" r="5" fill="#333"/> 
+                                                   <text x="378" y="210" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Canales de atención</text> 
+                                                   <circle cx="365" cy="240" r="5" fill="#333"/> 
+                                                   <text x="378" y="245" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Trámites</text> 
+                                                   <circle cx="365" cy="275" r="5" fill="#333"/> 
+                                                   <text x="378" y="280" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Cifras interacciones</text> 
+                                                   <circle cx="365" cy="310" r="5" fill="#333"/> 
+                                                   <text x="378" y="315" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Limitaciones,</text> 
+                                                   <text x="378" y="333" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">oportunidades, desafíos</text> 
+                                                   <!-- Flecha curva 2→3 --> 
+                                                      <path d="M 545 170 C 590 100, 630 100, 670 145" fill="none" stroke="#4672C8" stroke-width="2.8" marker-end="url(#arrow-diag)"/> 
+                                                      <!-- ===== FASE 3: Diseño nuevo modelo ===== --> 
+                                                         <rect x="640" y="105" width="255" height="195" rx="12" fill="#fff" stroke="#4672C8" stroke-width="1.8"/> 
+                                                         <circle cx="665" cy="140" r="5" fill="#333"/> 
+                                                         <text x="678" y="145" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Definición principios</text> 
+                                                         <text x="678" y="163" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">orientadores</text> 
+                                                         <circle cx="665" cy="190" r="5" fill="#333"/> 
+                                                         <text x="678" y="195" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Componentes de la</text> 
+                                                         <text x="678" y="213" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">estrategia</text> 
+                                                         <circle cx="665" cy="240" r="5" fill="#333"/> 
+                                                         <text x="678" y="245" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Desarrollo del componente</text> 
+                                                         <!-- Etiqueta morada --> 
+                                                            <rect x="680" y="320" width="195" height="48" rx="8" fill="#7b2cbf"/> 
+                                                            <text x="777" y="340" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">Diseño nuevo modelo</text> 
+                                                            <text x="777" y="358" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="12" fill="#fff">Oct / 2025</text> </svg> </div> 
+                     <!-- Gráfica 2: Implementación 2025-2026 --> 
+                        <div style="overflow-x: auto; margin: 1.5rem 0px;"> 
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" role="img" aria-label="Cronograma de implementación 2025-2026 del nuevo modelo de servicio" style="width:100%;max-width:920px;height:auto;"> 
+                              <title>Cronograma 2025 – 2026 Implementación</title> 
+                              <defs> 
+                                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"> 
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4672C8"/> </marker> </defs> 
+                              <!-- Título --> 
+                                 <text x="460" y="50" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="22" font-weight="700" fill="#3b0764">Implementación</text> 
+                                 <!-- ===== FASE 1: Fortalecimiento institucional ===== --> 
+                                    <rect x="30" y="105" width="250" height="195" rx="12" fill="#fff" stroke="#4672C8" stroke-width="1.8"/> 
+                                    <!-- Bullets --> 
+                                       <circle cx="55" cy="140" r="5" fill="#333"/> 
+                                       <text x="68" y="145" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Formación recurso</text> 
+                                       <text x="68" y="163" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">humano</text> 
+                                       <circle cx="55" cy="190" r="5" fill="#333"/> 
+                                       <text x="68" y="195" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Socialización modelo</text> 
+                                       <circle cx="55" cy="222" r="5" fill="#333"/> 
+                                       <text x="68" y="227" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Documentación</text> 
+                                       <circle cx="55" cy="254" r="5" fill="#333"/> 
+                                       <text x="68" y="259" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Acompañamiento</text> 
+                                       <!-- Etiqueta morada --> 
+                                          <rect x="55" y="320" width="200" height="55" rx="8" fill="#7b2cbf"/> 
+                                          <text x="155" y="338" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">Fortalecimiento</text> 
+                                          <text x="155" y="355" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">institucional</text> 
+                                          <text x="155" y="372" text-anchor="middle" font-family="Verdana, sans-serif" font-size="11" fill="#fff">Nov - Dic / 2025</text> 
+                                          <!-- Flecha curva 1→2 --> 
+                                             <path d="M 230 300 C 270 370, 320 370, 370 240" fill="none" stroke="#4672C8" stroke-width="2.8" marker-end="url(#arrowhead)"/> 
+                                             <!-- ===== FASE 2: Modernización tecnológica ===== --> 
+                                                <!-- Etiqueta morada (arriba) --> 
+                                                   <rect x="370" y="95" width="195" height="55" rx="8" fill="#7b2cbf"/> 
+                                                   <text x="467" y="113" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">Modernización</text> 
+                                                   <text x="467" y="130" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">tecnológica</text> 
+                                                   <text x="467" y="146" text-anchor="middle" font-family="Verdana, sans-serif" font-size="11" fill="#fff">Ene - Jul / 2026</text> 
+                                                   <!-- Recuadro --> 
+                                                      <rect x="340" y="180" width="255" height="175" rx="12" fill="#fff" stroke="#4672C8" stroke-width="1.8"/> 
+                                                      <!-- Bullets --> 
+                                                         <circle cx="365" cy="215" r="5" fill="#333"/> 
+                                                         <text x="378" y="220" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Contratación solución</text> 
+                                                         <text x="378" y="238" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">tecnológica</text> 
+                                                         <circle cx="365" cy="263" r="5" fill="#333"/> 
+                                                         <text x="378" y="268" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Selección proveedor</text> 
+                                                         <circle cx="365" cy="298" r="5" fill="#333"/> 
+                                                         <text x="378" y="303" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Implementación</text> 
+                                                         <text x="378" y="321" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">tecnológica</text> 
+                                                         <!-- Flecha curva 2→3 --> 
+                                                            <path d="M 545 180 C 590 110, 630 110, 670 155" fill="none" stroke="#4672C8" stroke-width="2.8" marker-end="url(#arrowhead)"/> 
+                                                            <!-- ===== FASE 3: Experiencia ciudadana ===== --> 
+                                                               <rect x="640" y="105" width="255" height="195" rx="12" fill="#fff" stroke="#4672C8" stroke-width="1.8"/> 
+                                                               <!-- Bullets --> 
+                                                                  <circle cx="665" cy="140" r="5" fill="#333"/> 
+                                                                  <text x="678" y="145" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Mapeo ruta ciudadana</text> 
+                                                                  <text x="678" y="163" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">de trámites y servicios</text> 
+                                                                  <circle cx="665" cy="190" r="5" fill="#333"/> 
+                                                                  <text x="678" y="195" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Nueva oficina</text> 
+                                                                  <circle cx="665" cy="222" r="5" fill="#333"/> 
+                                                                  <text x="678" y="227" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Monitoreo indicadores</text> 
+                                                                  <circle cx="665" cy="254" r="5" fill="#333"/> 
+                                                                  <text x="678" y="259" font-family="Verdana, sans-serif" font-size="13.5" fill="#333">Mejora continua</text> 
+                                                                  <!-- Etiqueta morada --> 
+                                                                     <rect x="680" y="320" width="195" height="55" rx="8" fill="#7b2cbf"/> 
+                                                                     <text x="777" y="338" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-size="13" font-weight="700" fill="#fff">Experiencia ciudadana</text> 
+                                                                     <text x="777" y="355" text-anchor="middle" font-family="Verdana, sans-serif" font-size="11" fill="#fff">Dic / 2025</text> 
+                                                                     <text x="777" y="370" text-anchor="middle" font-family="Verdana, sans-serif" font-size="11" fill="#fff">Ene - Jul / 2026</text> </svg> </div> 
+                        <h4 style="margin-top: 1.5rem; color: var(--govcolor-cobalt, #0943b5);">
+                           <img src="/Style%20Library/Images/zWS83xkX6N.jpg" alt="Estado de avance del nuevo modelo de servicio: Diagnóstico 100%, Planeación 100%, Implementación 90%. Plazo final 31 agosto 2026." style="font-family: verdana, sans-serif; color: #212529; font-size: 16px; font-weight: 400; width: 100%; max-width: 920px; height: auto;"/>
+                        </h4> 
+                        <span class="text-one-accordion-govco">
+                           <br/></span>
+                        <span class="text-one-accordion-govco"> Te invitamos a&#160;contarnos&#160;cómo te ha parecido el nuevo modelo de servicio implementado por el Ministerio de las Culturas, las Artes y los Saberes para brindar una mejor atención a las ciudadanías.​</span> 
+                        <a href="https://forms.cloud.microsoft/r/u0cknJeVE7?origin=lprLink" target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco" aria-label="Participar en la encuesta sobre el nuevo modelo de servicio">Participa en el sondeo →</a> </div> 
+            </div> 
+         </div> 
+         <div class="item-accordion-govco"> 
+            <div class="accordion-header"> 
+               <button class="button-accordion-govco collapsed" type="button" aria-expanded="false" aria-controls="collapseReto2" onclick="toggleAccordion(this, &#39;collapseReto2&#39;, &#39;acordeonRetos&#39;)"> 
+                  <span class="text-button-accordion-govco">Retos anteriores</span> </button> </div> 
+            <div id="collapseReto2" class="collapse"> 
+               <div class="body-accordion-govco"> 
+                  <span class="title-one-accordion-govco" style="font-size: 1.3rem;">Sistema Nacional de Convocatorias Públicas, Artísticas y Culturales (SINAC)</span> 
+                  <span class="text-one-accordion-govco"> Plataforma única que por primera vez reúne en un solo lugar toda la oferta de estímulos e incentivos del Ministerio de las Culturas, las Artes y los Saberes, lo que facilita y democratiza el acceso a los recursos públicos del sector, fortalece las capacidades en los territorios y dignifica la labor de los cultores del país. SINAC recoge más de 28 años de experiencia del Ministerio con su oferta institucional y brinda herramientas como una guía metodológica para la formulación de proyectos culturales. </span> 
+                  <br/> 
+                  <br/> 
+                  <a href="https://sistemaconvocatorias.mincultura.gov.co/el_sistema" target="_blank" rel="noopener noreferrer">Conocer más sobre SINAC →</a> </div> 
+            </div> 
+         </div> 
+      </div> 
+      <!-- Noticias --> 
+         <div style="background: var(--govcolor-white-smoke, #f4f4f4); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;"> 
+            <h4 style="margin-top: 0px;">Noticias sobre colaboración e innovación y participación del sector cultural</h4> 
+            <div class="noticias-grid"> 
+               <a href="/noticias/Paginas/minculturas-lanza-el-sistema-nacional-de-convocatorias-publicas-artisticas-y-culturales-sinac-.aspx" target="_blank" rel="noopener noreferrer" class="noticia-card"> 
+                  <img src="/noticias/PublishingImages/Imagenes-noticias/sinac-portada.jpg" alt="Lanzamiento SINAC" loading="lazy"/> 
+                  <div class="noticia-body"> 
+                     <p>Minculturas lanza el Sistema Nacional de Convocatorias Públicas, Artísticas y Culturales (SINAC) </p> 
+                     <span>Leer más →</span> </div> </a> </div> 
+         </div> 
+         <hr style="margin: 2rem 0px; border-width: 1px medium medium; border-style: solid none none; border-color: #e0e7f4 currentcolor currentcolor; border-image: none;"/> 
+         <!-- Resultados --> 
+            <h4>Resultados procesos de colaboración e innovación 2026</h4> 
+            <p>Te compartiremos los resultados de este proceso de colaboración e innovación a final del año, cuando termine la implementación y pruebas del nuevo modelo de servicio y se cumpla el tiempo dispuesto para que las ciudadanías puedan contestar el sondeo diseñado para recopilar sus comentarios y aportes.</p> 
+            <h4>Resultados procesos de colaboración e innovación anteriores</h4> 
+            <ul> 
+               <li> 
+                  <a href="/despacho/ley-general-de-cultura/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Ley de Cultura</a> </li> 
+               <li> 
+                  <a href="/despacho/plan-nacional-de-cultura/Paginas/index.aspx" target="_blank" rel="noopener noreferrer">Plan Nacional de Cultura 2024-2038</a> </li> 
+               <li> 
+                  <a href="/noticias/Paginas/minculturas-lanza-el-sistema-nacional-de-convocatorias-publicas-artisticas-y-culturales-sinac-.aspx" target="_blank" rel="noopener noreferrer">SINAC – Sistema Nacional de Convocatorias Públicas, Artísticas y Culturales</a> </li> 
+            </ul> 
+            <hr style="margin: 2rem 0px; border-width: 1px medium medium; border-style: solid none none; border-color: #e0e7f4 currentcolor currentcolor; border-image: none;"/> 
+            <!-- Cronograma --> 
+               <h3>¿Cuál es el cronograma de participación para 2026?</h3> 
+               <p>Conoce las fechas de los espacios y acciones de participación programadas para este año:</p> 
+               <div class="cp-grid"> 
+                  <div class="cp-card"> 
+                     <h4>Cronograma de participación ciudadana 2026</h4> 
+                     <p>Consulta las actividades de participación ciudadana y rendición de cuentas programadas por el Ministerio para la vigencia 2026.</p> 
+                     <a href="/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco">Descargar cronograma →</a> </div> 
+                  <div class="cp-card"> 
+                     <h4>¿Dónde puedes inscribirte?</h4> 
+                     <p>A continuación, te compartimos el siguiente formulario en el que puedes registrar los temas de tu interés en actividades de participación ciudadana.</p> 
+                     <a href="https://forms.office.com/pages/responsepage.aspx?id=Tovyk1yTFEyIrOSGl8H8l1uVjwLt4XBDnr9BgvR7wHJUQUJEVVhSM1AwN1pFV1lFR0tWTFM4WkI2NC4u&amp;route=shorturl" target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco">Inscribirme →</a> </div> 
+               </div> 
+</div> 
+<script>
+    function toggleAccordion(btn, panelId, parentId) {
+        var panel = document.getElementById(panelId);
+        var parent = document.getElementById(parentId);
+        var isOpen = panel.classList.contains('show');
+
+        // Cerrar todos los paneles del mismo grupo
+        var panels = parent.querySelectorAll('.collapse.show');
+        var buttons = parent.querySelectorAll('.button-accordion-govco');
+        for (var i = 0; i < panels.length; i++) {
+            panels[i].classList.remove('show');
+        }
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.add('collapsed');
+            buttons[i].setAttribute('aria-expanded', 'false');
+        }
+
+        // Si estaba cerrado, abrir este
+        if (!isOpen) {
+            panel.classList.add('show');
+            btn.classList.remove('collapsed');
+            btn.setAttribute('aria-expanded', 'true');
+            // Mantener el botón visible sin salto brusco
+            setTimeout(function() {
+                btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 50);
+        }
+    }
+</script> ​<br/><br/>

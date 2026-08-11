@@ -1,0 +1,297 @@
+<style>
+.participa-govco {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: Verdana, sans-serif;
+}
+.participa-govco h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+.participa-govco h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.participa-govco p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    margin-bottom: 1rem;
+}
+.participa-govco ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+}
+.participa-govco ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    margin-bottom: 0.5rem;
+}
+.participa-govco a {
+    color: var(--govcolor-cobalt, #0943B5);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.participa-govco a:hover {
+    color: var(--govcolor-havelock-lue, #4672C8);
+}
+.participa-govco .cp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+.participa-govco .cp-card {
+    background: #fff;
+    border: 1px solid #e0e7f4;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.participa-govco .cp-card:hover {
+    box-shadow: 0 4px 16px rgba(9, 67, 181, 0.1);
+    transform: translateY(-2px);
+}
+.participa-govco .cp-card h4 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.participa-govco .cp-card p {
+    font-size: 0.9rem;
+    color: var(--govcolor-grey, #7E7E7E);
+    margin-bottom: 0.75rem;
+}
+.participa-govco .cp-card .btn-govco {
+    font-size: 0.85rem;
+}
+.participa-govco .dp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .participa-govco .dp-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .participa-govco .dp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.participa-govco .dp-card {
+    background: var(--govcolor-cobalt, #0943B5);
+    color: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    border: 2px solid transparent;
+    outline: none;
+}
+
+.participa-govco .dp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(9, 67, 181, 0.3);
+}
+
+.participa-govco .dp-card:focus-visible {
+    border-color: #FDAA29;
+    box-shadow: 0 0 0 3px rgba(253, 170, 41, 0.4);
+}
+
+.participa-govco .dp-card.active {
+    background: #7b2cbf;
+    border-color: #FDAA29;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(123, 44, 191, 0.35);
+}
+
+.participa-govco .dp-detail {
+    display: none;
+    background: #fff;
+    border-left: 5px solid #7b2cbf;
+    border-radius: 0 10px 10px 0;
+    padding: 1.25rem 1.5rem;
+    margin-top: 16px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    animation: dpFadeIn 0.3s ease;
+}
+
+.participa-govco .dp-detail.visible {
+    display: block;
+}
+
+.participa-govco .dp-detail-title {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    color: #7b2cbf;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+@keyframes dpFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .participa-govco .dp-card,
+    .participa-govco .cp-card {
+        transition: none;
+    }
+    .participa-govco .dp-detail {
+        animation: none;
+    }
+}
+</style>
+
+<div class="participa-govco">
+
+    <h4>¿Qué caja de herramientas tienes a disposición para participar?</h4>
+    <p>A continuación, encuentras las herramientas que puedes utilizar para revisar y participar en los procesos de control social:</p>
+
+    <div class="dp-grid" role="tablist" aria-label="Herramientas para el control social">
+        <div class="dp-card" data-dp="0" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail-ctrl">Curso virtual para veedurías ciudadanas</div>
+        <div class="dp-card" data-dp="1" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail-ctrl">Plan Nacional de Formación para el Control Social a la Gestión Pública</div>
+        <div class="dp-card" data-dp="2" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail-ctrl">Guía de diálogo social para el control social</div>
+        <div class="dp-card" data-dp="3" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail-ctrl">Compilación Jurídica del Ministerio</div>
+        <div class="dp-card" data-dp="4" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail-ctrl">Plan Anual de Adquisiciones del Ministerio</div>
+    </div>
+    <div class="dp-detail" id="dp-detail-ctrl" role="tabpanel" aria-live="polite"></div>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+
+    <!-- Cronograma de participación -->
+    <h3>¿Cuál es el cronograma de participación para 2026?</h3>
+    <p>Conoce los espacios y acciones de participación programadas para este año, con sus plazos, metodologías y todos sus detalles, sobre los cuales puedes expresar tu interés de realizar seguimiento y veeduría ciudadana:</p>
+    <a href="https://www.mincultura.gov.co/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" rel="noopener noreferrer" class="btn-govco link-btn-govco">Descargar cronograma →</a>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Mecanismos de interacción -->
+    <h3>¿Cuáles son los mecanismos de interacción para efectuar control social?</h3>
+    <p>A continuación encuentras los canales dispuestos para que nos compartas las acciones y/o temas sobre los que deseas efectuar observaciones en ejercicio del control social:</p>
+    <ul>
+        <li><strong>Formulario virtual para control social</strong><br>
+            <a href="https://forms.office.com/pages/responsepage.aspx?id=Tovyk1yTFEyIrOSGl8H8l1uVjwLt4XBDnr9BgvR7wHJUQUJEVVhSM1AwN1pFV1lFR0tWTFM4WkI2NC4u&route=shorturl" target="_blank" rel="noopener noreferrer">Acceder al formulario →</a>
+        </li>
+        <li><strong>Correo electrónico</strong><br>
+            <a href="mailto:servicioalciudadano@mincultura.gov.co?subject=Control social / veeduría ciudadana">servicioalciudadano@mincultura.gov.co</a><br>
+            <em>Importante: Escribir en el asunto "Control social / veeduría ciudadana"</em>
+        </li>
+    </ul>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Observaciones recibidas y respuestas -->
+    <h3>Observaciones recibidas y respuestas</h3>
+    <p>En este espacio encontrarás las observaciones realizadas por las ciudadanías y veedurías una vez estas sean remitidas al Ministerio, así como la respuesta que se brinden a sus comentarios y sugerencias.</p>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Informes del interventor -->
+    <h3>Informes del interventor</h3>
+    <p>Estos informes se incluirán próximamente en este espacio, cuando se desarrollen los procesos de participación respectivos.</p>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Encuesta veeduría -->
+    <h3>¿Cómo te parecen estos espacios para el control social de las veedurías?</h3>
+    <p>Tus opiniones son fundamentales para mejorar continuamente este espacio de veeduría ciudadana. Por eso, diseñamos el siguiente formulario para que nos puedas compartir tus comentarios y propuestas acerca del proceso de control social adelantado.</p>
+    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=IsMMfMMgWU23UbWi8X2Y8S3iLpCVTEVKqrGXQHKG6v5UOEsyNU85M1pXV0pFSTJHQTcxSzFDWEE5Wi4u&origin=QRCode" target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco">Compartir mi opinión →</a>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Cómo podemos mejorar -->
+    <h3>¿Cómo podemos mejorar?</h3>
+    <p>Incluiremos próximamente las acciones de mejora que introduzcamos en nuestra gestión, una vez se desarrollen las actividades de participación y se reciban los comentarios de las veedurías acerca de las mismas.</p>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Cronograma -->
+    <h3>¿Cuál es el cronograma de participación para 2026?</h3>
+    <p>Conoce los espacios y acciones de participación programadas para este año, con sus plazos, metodologías y todos sus detalles, sobre los cuales puedes expresar tu interés de realizar seguimiento y veeduría ciudadana:</p>
+
+    <div class="cp-grid">
+        <div class="cp-card">
+            <h4>Cronograma de participación ciudadana 2026</h4>
+            <p>Consulta las actividades de participación ciudadana y rendición de cuentas programadas por el Ministerio para la vigencia 2026.</p>
+            <a href="https://www.mincultura.gov.co/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco">Descargar cronograma →</a>
+        </div>
+
+        <div class="cp-card">
+            <h4>¿Dónde puedes inscribirte?</h4>
+            <p>A continuación, te compartimos el siguiente formulario en el que puedes registrar los temas de tu interés en actividades de participación ciudadana.</p>
+            <a href="https://forms.office.com/pages/responsepage.aspx?id=Tovyk1yTFEyIrOSGl8H8l1uVjwLt4XBDnr9BgvR7wHJUQUJEVVhSM1AwN1pFV1lFR0tWTFM4WkI2NC4u&route=shorturl" target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco">Inscribirme →</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        var datos = [
+            { t: "Curso virtual para veedurías ciudadanas", d: "Se trata de una Guía Metodológica para la Evaluación de la Gestión Pública con Enfoque Basado en Derechos Humanos, diseñada por el Departamento Administrativo de la Función Pública en forma de curso virtual. Su acceso es gratuito, utiliza la metodología de autoaprendizaje, tiene la posibilidad de autoevaluación y otorga una certificación en línea cuando la persona toma el curso completo.", l: "https://www.funcionpublica.gov.co/web/guest/eva_/curso-para-veedurias-ciudadanas" },
+            { t: "Plan Nacional de Formación para el Control Social a la Gestión Pública", d: "Está constituido por 19 módulos de capacitación para preparar a la ciudadanía en el ejercicio del control social a la gestión pública, con el propósito de fortalecer sus competencias y construir confianza de las ciudadanías en el Estado y la Democracia.", l: "https://www1.funcionpublica.gov.co/web/murc/control-social" },
+            { t: "Guía de diálogo social para el control social y su articulación con el sistema de control interno institucional", d: "Es un documento que contiene orientaciones para facilitar el ejercicio del control ciudadano a los temas y problemáticas de su interés, articulado con el sistema de control interno institucional.", l: "https://www.funcionpublica.gov.co/detalle-publicacion?entryId=769189" },
+            { t: "Compilación Jurídica del Ministerio de las Culturas, las Artes y los Saberes", d: "Plataforma en la que se recopilan las principales normas, jurisprudencia y herramientas de consulta del sector cultural en Colombia, información relevante para poder ejercer un control social efectivo.", l: "https://normograma.mincultura.gov.co/mincultura/" },
+            { t: "Plan Anual de Adquisiciones del Ministerio de las Culturas, las Artes y los Saberes", d: "Histórico de los planes de adquisiciones del Ministerio desde 2016 hasta 2026.", l: "https://www.mincultura.gov.co/transparencia/Paginas/planeacion-presupuesto-e-informes/plan-anual-de-adquisiciones.aspx" }
+        ];
+        var cards = document.querySelectorAll('.participa-govco .dp-card');
+        var detail = document.getElementById('dp-detail-ctrl');
+
+        function activateCard(card) {
+            var idx = parseInt(card.getAttribute('data-dp'));
+            var wasActive = card.classList.contains('active');
+            cards.forEach(function (c) {
+                c.classList.remove('active');
+                c.setAttribute('aria-selected', 'false');
+            });
+            if (wasActive) {
+                detail.classList.remove('visible');
+                detail.innerHTML = '';
+            } else {
+                card.classList.add('active');
+                card.setAttribute('aria-selected', 'true');
+                detail.innerHTML = '<p class="dp-detail-title">' + datos[idx].t + '</p><p>' + datos[idx].d + '</p><p><a href="' + datos[idx].l + '" target="_blank" rel="noopener noreferrer">Visitar recurso →</a></p>';
+                detail.classList.add('visible');
+                setTimeout(function () { detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
+            }
+        }
+
+        cards.forEach(function (card) {
+            card.addEventListener('click', function () { activateCard(card); });
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activateCard(card);
+                }
+            });
+        });
+    })();
+</script>

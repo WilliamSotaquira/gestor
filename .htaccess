@@ -1,0 +1,13 @@
+AddDefaultCharset UTF-8
+
+# Archivos CMS sueltos → servir con CDN via PHP wrapper
+RewriteEngine On
+
+# Recursos de Drupal → redirigir al servidor de producción
+RewriteCond %{REQUEST_URI} ^/sites/default/files/ [NC]
+RewriteRule ^(.*)$ https://www.movilidadbogota.gov.co/$1 [R=302,L]
+
+# Archivos .html sueltos en /cms/ → wrapper PHP que inyecta CDN
+RewriteCond %{REQUEST_URI} ^/sites/(movilidad|culturas)/cms/[^/]+\.html$ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.*)$ /cms-wrapper.php?file=$1 [L,QSA]

@@ -1,0 +1,105 @@
+<!--
+  ALERTAS Y NOTIFICACIONES GOV.CO v5
+  
+  Tipos:
+  - Alerta informativa (info)
+  - Alerta de exito (success)
+  - Alerta de error (error)
+  - Notificacion tipo tostada (toast)
+-->
+
+<!-- ======================================== -->
+<!-- ALERTA INFORMATIVA                       -->
+<!-- ======================================== -->
+<div class="container-alerta-govco">
+  <div class="alerta-govco notificacion-info-govco d-flex align-items-center px-3">
+    <span class="govco-svg govco-info-circle fs-mr" style="filter: var(--govcolor-svg-cobalt);"></span>
+    <p>Este es un mensaje informativo para el usuario. <a href="#">Enlace de accion</a></p>
+    <a href="#" class="ms-auto" aria-label="Cerrar alerta">
+      <span class="govco-svg govco-times info"></span>
+    </a>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- ALERTA DE EXITO                          -->
+<!-- ======================================== -->
+<div class="container-alerta-govco">
+  <div class="alerta-govco notificacion-success-govco d-flex align-items-center px-3">
+    <span class="govco-svg govco-check-circle fs-mr"></span>
+    <p>La operacion se realizo exitosamente. <a href="#">Ver detalle</a></p>
+    <a href="#" class="ms-auto" aria-label="Cerrar alerta">
+      <span class="govco-svg govco-times success"></span>
+    </a>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- ALERTA DE ERROR                          -->
+<!-- ======================================== -->
+<div class="container-alerta-govco">
+  <div class="alerta-govco notificacion-error-govco d-flex align-items-center px-3">
+    <span class="govco-svg govco-exclamation-circle fs-mr" style="filter: var(--govcolor-svg-red);"></span>
+    <p>Ha ocurrido un error al procesar su solicitud. <a href="#">Reintentar</a></p>
+    <a href="#" class="ms-auto" aria-label="Cerrar alerta">
+      <span class="govco-svg govco-times error"></span>
+    </a>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- NOTIFICACION TOAST - INFO                -->
+<!-- ======================================== -->
+<div class="container-toast-govco info">
+  <div class="toast-header-info-govco d-flex align-items-center justify-content-between px-3 py-2">
+    <div class="d-flex align-items-center">
+      <span class="govco-svg govco-info-circle fs-mr" style="filter: var(--govcolor-svg-cobalt);"></span>
+      <span class="toast-small-govco info">Hace 2 minutos</span>
+    </div>
+    <a href="#" aria-label="Cerrar notificacion">
+      <span class="govco-svg govco-times info"></span>
+    </a>
+  </div>
+  <div class="toast-body-govco p-3">
+    <span class="toast-title-govco">Titulo de notificacion</span>
+    <p>Descripcion del mensaje informativo que se muestra al usuario con detalles relevantes.</p>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- NOTIFICACION TOAST - EXITO               -->
+<!-- ======================================== -->
+<div class="container-toast-govco success">
+  <div class="toast-header-success-govco d-flex align-items-center justify-content-between px-3 py-2">
+    <div class="d-flex align-items-center">
+      <span class="govco-svg govco-check-circle fs-mr"></span>
+      <span class="toast-small-govco success">Ahora</span>
+    </div>
+    <a href="#" aria-label="Cerrar notificacion">
+      <span class="govco-svg govco-times success"></span>
+    </a>
+  </div>
+  <div class="toast-body-govco p-3">
+    <span class="toast-title-govco">Operacion exitosa</span>
+    <p>Su formulario fue enviado correctamente. Recibira confirmacion en su correo electronico.</p>
+  </div>
+</div>
+
+<!-- ======================================== -->
+<!-- NOTIFICACION TOAST - ERROR               -->
+<!-- ======================================== -->
+<div class="container-toast-govco error">
+  <div class="toast-header-error-govco d-flex align-items-center justify-content-between px-3 py-2">
+    <div class="d-flex align-items-center">
+      <span class="govco-svg govco-exclamation-circle fs-mr" style="filter: var(--govcolor-svg-red);"></span>
+      <span class="toast-small-govco error">Error</span>
+    </div>
+    <a href="#" aria-label="Cerrar notificacion">
+      <span class="govco-svg govco-times error"></span>
+    </a>
+  </div>
+  <div class="toast-body-govco p-3">
+    <span class="toast-title-govco">Error en el proceso</span>
+    <p>No fue posible completar la solicitud. Por favor intente nuevamente o contacte soporte.</p>
+  </div>
+</div>

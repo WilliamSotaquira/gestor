@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preguntas frecuentes sobre el sistema de fotodetección en Bogotá. Respuestas agrupadas por categoría: velocidad, precisión, motos, comparendos y proceso legal.">
+  <title>Preguntas frecuentes - Cámaras Salvavidas Bogotá</title>
+  <link rel="icon" href="/sites/default/files/logo_bogota_favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/styles_0.css">
+  <style>
+    /* === BUSCADOR FAQ === */
+    .faq-search-wrapper {
+      position: relative;
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      background: #f4f7fb;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--fd-border, #dee2e6);
+    }
+    .faq-search-wrapper .search-hint {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--fd-primary, #1a3a5c);
+      margin-bottom: 0.5rem;
+    }
+    .faq-search-wrapper .input-wrap {
+      position: relative;
+    }
+    .faq-search-wrapper input {
+      width: 100%;
+      padding: 0.85rem 1.25rem 0.85rem 3rem;
+      border: 2px solid var(--fd-border, #dee2e6);
+      border-radius: 50px;
+      font-size: 1rem;
+      min-height: 44px;
+      transition: border-color .2s ease, box-shadow .2s ease;
+      background: #fff;
+    }
+    .faq-search-wrapper input:focus {
+      outline: none;
+      border-color: var(--fd-accent, #3466a3);
+      box-shadow: 0 0 0 3px rgba(52,102,163,.15);
+    }
+    .faq-search-wrapper .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--fd-accent, #3466a3);
+      pointer-events: none;
+    }
+    .faq-no-results {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--fd-text-muted, #2b2b2b);
+      font-size: 1rem;
+    }
+    .faq-no-results.visible {
+      display: block;
+    }
+    .accordion-item.faq-hidden {
+      display: none;
+    }
+    /* Resaltar coincidencia */
+    .faq-highlight {
+      background-color: rgba(52,102,163,.15);
+      border-radius: 2px;
+      padding: 0 2px;
+    }
+
+    /* === ACORDEÓN FAQ MEJORADO === */
+    .accordion-fd {
+      border: none;
+    }
+    .faq-category {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--fd-primary, #1a3a5c);
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--fd-accent, #3466a3);
+    }
+    .faq-category:first-of-type {
+      margin-top: 0;
+    }
+    .faq-category svg,
+    .faq-category img {
+      flex-shrink: 0;
+      color: var(--fd-accent, #3466a3);
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    /* Hero ajuste para pantallas FullHD+ */
+    @media (min-width: 1920px) {
+      .faq-hero-bg {
+        background-position: center -380px !important;
+      }
+    }
+    .accordion-fd .accordion-item {
+      border: none;
+      border-radius: 12px !important;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(26, 58, 92, 0.06);
+      transition: box-shadow 0.3s ease;
+    }
+    .accordion-fd .accordion-item:hover {
+      box-shadow: 0 4px 16px rgba(26, 58, 92, 0.12);
+    }
+    .accordion-fd .accordion-button {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--fd-primary, #1a3a5c);
+      background: #f8fafd;
+      border-radius: 12px !important;
+      padding: 1.1rem 1.5rem;
+      min-height: 56px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .accordion-fd .accordion-button:not(.collapsed) {
+      background: var(--fd-primary, #1a3a5c);
+      color: #fff;
+      box-shadow: none;
+    }
+    .accordion-fd .accordion-button:not(.collapsed)::after {
+      filter: brightness(0) invert(1);
+    }
+    .accordion-fd .accordion-button:focus {
+      box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.2);
+    }
+    .accordion-fd .accordion-body {
+      padding: 1.25rem 1.5rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      background: #fff;
+    }
+    .accordion-fd .accordion-body p {
+      margin-bottom: 0.75rem;
+    }
+    .accordion-fd .accordion-body ul {
+      padding-left: 1.25rem;
+    }
+    .accordion-fd .accordion-body a {
+      color: var(--fd-accent, #3466a3);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner container">
+      <a class="site-brand" href="/sitio/camaras-de-fotodeteccion-bogota" aria-label="Ir al inicio">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-05-20/logo.png" alt="Alcaldía Mayor de Bogotá D.C. y Secretaría de Movilidad">
+      </a>
+      <nav class="site-nav" id="site-primary-menu" aria-label="Navegación principal">
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-entender-el-sistema">¿Qué son?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-como-funciona">¿Cómo funcionan?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-ubicacion-e-infracciones">¿Dónde están?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Normatividad</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-resultados">Más vidas protegidas</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-preguntas-frecuentes">Resuelva sus dudas</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="header-cta" href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" target="_blank" rel="noopener noreferrer" aria-label="Consultar comparendo (abre en nueva pestaña)">
+          <span>Consultar comparendo</span>
+          <span class="btn-icon-circle" aria-hidden="true">→</span>
+        </a>
+        <button class="site-menu-toggle" type="button" aria-controls="site-primary-menu" aria-expanded="false" aria-label="Abrir menú principal">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+      <div class="hero-banner__bg faq-hero-bg" style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/cs%20-%20secretaria%20de%20movilidad-6.jpg'); background-position: center -150px;"></div>
+      <div class="hero-banner__fade" aria-hidden="true"></div>
+      <div class="hero-banner__content">
+        <div class="container">
+          <nav class="breadcrumb-fd" aria-label="Ruta de navegación">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/sitio/camaras-de-fotodeteccion-bogota">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Preguntas frecuentes</li>
+            </ol>
+          </nav>
+          <h1 class="hero-banner__title">Preguntas frecuentes</h1>
+          <p class="hero-banner__description">Respuestas rápidas a las dudas más comunes sobre el sistema de cámaras de fotodetección en Bogotá.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: PREGUNTAS FRECUENTES -->
+    <section class="section-fd">
+      <div class="container">
+        <div class="content-block">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <p class="mb-4">Las cámaras de fotodetección generan inquietudes sobre su funcionamiento, ubicación, proceso de validación, normatividad y el destino de los recursos. En esta sección encontrará respuestas claras, oficiales y de fácil comprensión para resolver las dudas más comunes y conocer cómo este sistema contribuye a prevenir conductas de riesgo y proteger la vida en las vías de Bogotá.</p>
+            
+            <!-- Buscador de preguntas -->
+            <div class="faq-search-wrapper" role="search" aria-label="Filtrar preguntas frecuentes">
+              <label for="faqSearch" class="search-hint">Filtre por palabra clave</label>
+              <div class="input-wrap">
+                <span class="search-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <input type="search" id="faqSearch" placeholder="Ej: velocidad, moto, pago, impugnar..." autocomplete="off">
+              </div>
+            </div>
+            <div class="faq-no-results" id="faqNoResults" aria-live="polite">No se encontraron preguntas que coincidan con su búsqueda.</div>
+
+            <div class="accordion accordion-fd" id="accordionFAQ" aria-label="Preguntas frecuentes sobre fotodetección">
+
+              <!-- CATEGORÍA: Velocidad y funcionamiento -->
+              <h4 class="faq-category"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/iconos_velocidad%20y%20funcionamiento.png" alt="" aria-hidden="true"> Velocidad y funcionamiento</h4>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ1"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">¿A qué velocidad me multan?</button></h3>
+                <div id="faq1" class="accordion-collapse collapse" aria-labelledby="hQ1" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>La multa se genera cuando supera el límite de velocidad establecido para cada vía:</p><ul><li><strong>50 km/h:</strong> Vías arteriales principales, secundarias y zonas residenciales.</li><li><strong>30 km/h:</strong> Zonas escolares y áreas de alta concentración peatonal.</li></ul></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">¿Las cámaras de velocidad tienen margen de tolerancia?</button></h3>
+                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="hQ2" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Sí, los equipos cuentan con un margen técnico certificado conforme a los estándares de metrología, evitando detecciones por variaciones mínimas del velocímetro.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">¿Las cámaras están calibradas?</button></h3>
+                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="hQ3" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Sí, todas cuentan con certificación vigente emitida por laboratorios acreditados ante el ONAC. Los certificados se renuevan periódicamente.</p><p>Más información en <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Normatividad</a>.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ4"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">¿Puede fallar una cámara de fotodetección?</button></h3>
+                <div id="faq4" class="accordion-collapse collapse" aria-labelledby="hQ4" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>El sistema cuenta con múltiples controles. Cada evidencia es revisada por un funcionario que verifica claridad, identificación del vehículo y validez de la infracción. Si no es concluyente, se descarta.</p></div></div>
+              </div>
+
+              <!-- CATEGORÍA: Motos -->
+              <h4 class="faq-category"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/iconos_moto.png" alt="" aria-hidden="true"> Motos</h4>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ5"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">¿Las motos también son detectadas por las cámaras?</button></h3>
+                <div id="faq5" class="accordion-collapse collapse" aria-labelledby="hQ5" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Sí, las cámaras identifican todo tipo de vehículos, incluyendo motocicletas, mediante la lectura de la placa.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">¿Me pueden multar si la placa de mi moto no es visible?</button></h3>
+                <div id="faq6" class="accordion-collapse collapse" aria-labelledby="hQ6" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Si la placa no es visible o legible, no se genera comparendo por fotodetección. Sin embargo, circular con placa obstruida es una infracción independiente sancionable por un agente de tránsito.</p></div></div>
+              </div>
+
+              <!-- CATEGORÍA: Pagos y comparendos -->
+              <h4 class="faq-category"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/iconos_pago%20y%20comparendos.png" alt="" aria-hidden="true"> Pagos y comparendos</h4>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ7"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">¿Qué hago si recibo un comparendo de fotodetección?</button></h3>
+                <div id="faq7" class="accordion-collapse collapse" aria-labelledby="hQ7" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Tiene varias opciones: pagarlo con descuento por pronto pago, tomar un curso pedagógico, o impugnarlo si considera que no cometió la infracción.</p><p>Consulte en el portal del <a href="https://www.simit.org.co" target="_blank" rel="noopener noreferrer">SIMIT</a>.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ8"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">¿Puedo pagar mi comparendo en línea?</button></h3>
+                <div id="faq8" class="accordion-collapse collapse" aria-labelledby="hQ8" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Sí, a través del portal del <a href="https://www.simit.org.co" target="_blank" rel="noopener noreferrer">SIMIT</a>. Solo necesita su número de placa o documento de identidad.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ9"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">¿Existe descuento por pronto pago?</button></h3>
+                <div id="faq9" class="accordion-collapse collapse" aria-labelledby="hQ9" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Sí, si realiza el pago dentro de los <strong>5 días hábiles</strong> siguientes a la notificación, obtiene un descuento del <strong>50%</strong> sobre el valor total de la multa.</p></div></div>
+              </div>
+
+              <!-- CATEGORÍA: Proceso legal -->
+              <h4 class="faq-category"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/iconos_proceso%20legal.png" alt="" aria-hidden="true"> Proceso legal</h4>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ10"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">¿Cómo impugno un comparendo de fotodetección?</button></h3>
+                <div id="faq10" class="accordion-collapse collapse" aria-labelledby="hQ10" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Tiene derecho a impugnar dentro de los <strong>6 meses</strong> siguientes a la notificación. Presente solicitud escrita ante la Secretaría Distrital de Movilidad.</p><p>Más información en <a href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" target="_blank" rel="noopener noreferrer">consulta de comparendos</a>.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="hQ11"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11" aria-expanded="false" aria-controls="faq11">¿Cuál es el soporte legal del sistema?</button></h3>
+                <div id="faq11" class="accordion-collapse collapse" aria-labelledby="hQ11" data-bs-parent="#accordionFAQ"><div class="accordion-body"><p>Está respaldado por la <strong>Ley 1843 de 2017</strong>, que regula la instalación y operación de sistemas automáticos y semiautomáticos para la detección de infracciones de tránsito.</p><p>Consulte la normativa en <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Normatividad</a>.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER NAVEGACIÓN SECUENCIAL -->
+    <nav class="footer-nav-fd" aria-label="Navegación secuencial entre páginas">
+      <div class="container">
+        <div class="nav-sequential">
+          <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia" class="nav-link-prev" aria-label="Ir a la página anterior: Normativo">Anterior</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota" class="nav-link-home" aria-label="Volver a la página de inicio">Volver al inicio</a>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <div class="site-footer__top">
+        <nav class="footer-links" aria-label="Enlaces de pie de página">
+          <a href="https://www.movilidadbogota.gov.co/manual-y-politicas-de-seguridad-de-la-informacion">Políticas de privacidad</a>
+          <a href="#">Términos y condiciones</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota">Mapa del sitio</a>
+          <a href="https://www.movilidadbogota.gov.co/atencion-servicios/puntos-atencion">Atención a la ciudadanía</a>
+        </nav>
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/SectorMovilidad" aria-label="Facebook" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+          <a href="https://twitter.com/SectorMovilidad" aria-label="X" title="X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/saboramovilidad" aria-label="Instagram" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@SecretariaMovilidadBogota" aria-label="YouTube" title="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p><strong>Secretaría Distrital de Movilidad</strong> · Alcaldía Mayor de Bogotá D.C.</p>
+        <p>Calle 13 # 37-35, Bogotá · Línea de atención: (601) 195</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filtrado de preguntas frecuentes
+    (function() {
+      var input = document.getElementById('faqSearch');
+      var noResults = document.getElementById('faqNoResults');
+      var accordion = document.getElementById('accordionFAQ');
+      if (!input || !accordion) return;
+
+      var items = accordion.querySelectorAll('.accordion-item');
+
+      input.addEventListener('input', function() {
+        var query = this.value.toLowerCase().trim();
+        var visibleCount = 0;
+
+        items.forEach(function(item) {
+          var button = item.querySelector('.accordion-button');
+          var body = item.querySelector('.accordion-body');
+          var textToSearch = (button ? button.textContent : '') + ' ' + (body ? body.textContent : '');
+
+          if (!query || textToSearch.toLowerCase().indexOf(query) !== -1) {
+            item.classList.remove('faq-hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('faq-hidden');
+          }
+        });
+
+        if (noResults) {
+          noResults.classList.toggle('visible', visibleCount === 0 && query.length > 0);
+        }
+      });
+    })();
+  </script>
+  <script>
+function highlightActiveNav(){const c=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.site-nav a').forEach(l=>{l.classList.remove('active');l.removeAttribute('aria-current');if(l.getAttribute('href')===c){l.classList.add('active');l.setAttribute('aria-current','page')}})}
+function setupMenuToggle(){const t=document.querySelector('.site-menu-toggle'),n=document.querySelector('.site-nav'),h=document.querySelector('.site-header');if(!t||!n)return;t.addEventListener('click',()=>{const o=n.classList.toggle('is-open');t.setAttribute('aria-expanded',o);if(h)h.classList.toggle('is-menu-open',o)});n.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{n.classList.remove('is-open');t.setAttribute('aria-expanded','false');if(h)h.classList.remove('is-menu-open')})})}
+document.addEventListener('DOMContentLoaded',()=>{highlightActiveNav();setupMenuToggle()});
+  </script>
+
+<script>
+  (function(){"use strict";if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(window.innerWidth<768)return;var BASE="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/";var sprites=["prudencia_1.png","prudencia_2.png","prudencia_3.png","prudencia-1.gif","prudencia-2.gif","prudencia-3.gif"];var positions=[{top:"15%",right:"3%"},{bottom:"10%",left:"2%"},{top:"40%",left:"3%"},{bottom:"20%",right:"4%"},{top:"25%",right:"5%"},{bottom:"35%",left:"4%"},{top:"55%",right:"2%"},{bottom:"5%",left:"3%"}];function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}shuffle(sprites);shuffle(positions);var sections=[];var current=0;var MAX=4;function init(){var all=document.querySelectorAll(".section-fd");sections=shuffle(Array.prototype.slice.call(all)).slice(0,MAX)}function appear(){if(current>=MAX||current>=sections.length)return;var section=sections[current];var sprite=sprites[current%sprites.length];var pos=positions[current%positions.length];current++;var img=document.createElement("img");img.src=BASE+sprite;img.alt="";img.setAttribute("aria-hidden","true");img.style.cssText="position:absolute;z-index:2;pointer-events:none;max-width:220px;height:auto;opacity:0;transition:opacity 0.8s ease,transform 0.8s ease;transform:translateY(10px)";img.style.top=pos.top||"auto";img.style.bottom=pos.bottom||"auto";img.style.left=pos.left||"auto";img.style.right=pos.right||"auto";section.appendChild(img);setTimeout(function(){img.style.opacity="0.9";img.style.transform="translateY(0)"},50);var stay=14000+Math.random()*6000;setTimeout(function(){img.style.opacity="0";img.style.transform="translateY(-10px)";setTimeout(function(){if(img.parentNode)img.parentNode.removeChild(img);scheduleNext()},900)},stay)}function scheduleNext(){if(current>=MAX)return;var delay=8000+Math.random()*12000;setTimeout(appear,delay)}window.addEventListener("DOMContentLoaded",function(){init();setTimeout(appear,2000)})})();
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="800" viewBox="0 0 1920 800">
+  <rect width="1920" height="800" fill="#1a3a5c"/>
+  <!-- Camera body -->
+  <rect x="860" y="280" width="200" height="140" rx="10" ry="10" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <!-- Camera lens (circle) -->
+  <circle cx="960" cy="350" r="40" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <!-- Camera lens inner circle -->
+  <circle cx="960" cy="350" r="20" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <!-- Camera flash -->
+  <rect x="920" y="270" width="30" height="12" rx="3" ry="3" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <!-- Camera viewfinder -->
+  <rect x="980" y="270" width="20" height="12" rx="2" ry="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <!-- Placeholder text -->
+  <text x="960" y="500" font-family="Arial, sans-serif" font-size="32" fill="#ffffff" text-anchor="middle" font-weight="bold">HERO — Cámara de Fotodetección (1920×800)</text>
+  <text x="960" y="550" font-family="Arial, sans-serif" font-size="20" fill="#cccccc" text-anchor="middle">Imagen placeholder — Reemplazar por fotografía real</text>
+</svg>

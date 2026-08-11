@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mitos y realidades sobre las cámaras de fotodetección en Bogotá. Conozca cómo funciona el sistema y por qué hace parte de la estrategia de seguridad vial.">
+  <title>Mitos y realidades - Cámaras Salvavidas Bogotá</title>
+  <link rel="icon" href="/sites/default/files/logo_bogota_favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/styles_0.css">
+  <style>
+    /* === CARRUSEL LIBRO === */
+    .mv-book {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      background: transparent;
+      box-shadow: 0 4px 24px rgba(26,58,92,.10);
+    }
+    .mv-book__viewport {
+      overflow: hidden;
+      border-radius: 16px 16px 0 0;
+      background: #fff;
+      line-height: 0;
+      font-size: 0;
+    }
+    .mv-book__track {
+      display: flex;
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .mv-book__slide {
+      width: 100%;
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+    .mv-book__slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      vertical-align: bottom;
+    }
+
+    /* Flechas — min 48×48 (WCAG 2.5.8 Target Size) */
+    .mv-book__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      min-width: 48px;
+      min-height: 48px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      background: rgba(26,58,92,.88);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s ease, box-shadow .2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .mv-book__btn:hover { background: rgba(26,58,92,1); }
+    .mv-book__btn:focus-visible {
+      outline: 3px solid #3466a3;
+      outline-offset: 3px;
+    }
+    .mv-book__btn--prev { left: 12px; }
+    .mv-book__btn--next { right: 12px; }
+    .mv-book__btn[disabled] {
+      opacity: .25;
+      cursor: not-allowed;
+    }
+
+    /* Footer: dots + contador */
+    .mv-book__footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      padding: .85rem 1rem;
+      background: #f8fafd;
+      border-top: 1px solid #e8edf4;
+      border-radius: 0 0 16px 16px;
+    }
+    .mv-book__dots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    /* Dots: min 24×24 touch target (WCAG 2.5.8) */
+    .mv-book__dot {
+      width: 14px;
+      height: 14px;
+      padding: 0;
+      border-radius: 50%;
+      background: #c8d6e5;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      /* 24px touch target via padding trick */
+      position: relative;
+    }
+    .mv-book__dot::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+    }
+    .mv-book__dot[aria-selected="true"] {
+      background: var(--fd-primary, #1a3a5c);
+      transform: scale(1.25);
+    }
+    .mv-book__dot:focus-visible {
+      outline: 3px solid #3466a3;
+      outline-offset: 3px;
+    }
+    .mv-book__counter {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--fd-primary, #1a3a5c);
+    }
+    /* Visually hidden helper for screen reader announcements */
+    .mv-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Cierre */
+    .mv-cierre {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2a5a8c 100%);
+      color: #fff;
+      border: none;
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      margin-top: 1.5rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .mv-cierre p { color: #fff; }
+    .mv-cierre__headline {
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .mv-cierre__headline strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: .3rem;
+    }
+    .mv-cierre__cta {
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-top: 1px solid rgba(255,255,255,.2);
+      padding-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 575.98px) {
+      .mv-book__btn { width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
+      .mv-book__btn--prev { left: 6px; }
+      .mv-book__btn--next { right: 6px; }
+      .mv-book { border-radius: 10px; }
+      .mv-book__viewport { border-radius: 10px 10px 0 0; }
+      .mv-book__footer { padding: .6rem .75rem; gap: .5rem; border-radius: 0 0 10px 10px; }
+      .mv-cierre { padding: 1.25rem 1rem; border-radius: 10px; margin-top: 1.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mv-book__track { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip link (WCAG 2.4.1) -->
+  <a href="#main-content" class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-white text-primary fw-bold" style="z-index:9999;">Saltar al contenido principal</a>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader" role="banner">
+    <div class="site-header__inner container">
+      <a class="site-brand" href="/sitio/camaras-de-fotodeteccion-bogota" aria-label="Ir al inicio">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-05-20/logo.png" alt="Alcaldía Mayor de Bogotá D.C. y Secretaría de Movilidad">
+      </a>
+      <nav class="site-nav" id="site-primary-menu" aria-label="Navegación principal">
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-entender-el-sistema">¿Qué son?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-como-funciona">¿Cómo funcionan?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-ubicacion-e-infracciones">¿Dónde están?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Normatividad</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-resultados">Más vidas protegidas</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-preguntas-frecuentes">Resuelva sus dudas</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="header-cta" href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" target="_blank" rel="noopener noreferrer" aria-label="Consultar comparendo (abre en nueva pestaña)">
+          <span>Consultar comparendo</span>
+          <span class="btn-icon-circle" aria-hidden="true">→</span>
+        </a>
+        <button class="site-menu-toggle" type="button" aria-controls="site-primary-menu" aria-expanded="false" aria-label="Abrir menú principal">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+      <div class="hero-banner__bg" style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/hero-b.png'); background-position: center center;"></div>
+      <div class="hero-banner__fade" aria-hidden="true"></div>
+      <div class="hero-banner__content">
+        <div class="container">
+          <nav class="breadcrumb-fd" aria-label="Ruta de navegación">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/sitio/camaras-de-fotodeteccion-bogota">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Mitos y realidades</li>
+            </ol>
+          </nav>
+          <h1 class="hero-banner__title">Mitos y realidades sobre las cámaras salvavidas</h1>
+          <p class="hero-banner__description">Las cámaras de fotodetección generan muchas preguntas. Aquí resolvemos algunos de los mitos más comunes para que conozca cómo funciona el sistema y por qué hace parte de la estrategia de seguridad vial de Bogotá.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARRUSEL LIBRO (WCAG: roledescription, aria-live, tabindex mgmt) -->
+    <section class="section-fd" aria-labelledby="mv-heading">
+      <div class="container">
+        <h2 id="mv-heading" class="mv-sr-only">Carrusel de mitos y realidades</h2>
+
+        <div class="mv-book" role="region" aria-roledescription="carrusel" aria-label="10 mitos y realidades sobre fotodetección" tabindex="0">
+
+          <!-- Flechas -->
+          <button class="mv-book__btn mv-book__btn--prev" type="button" aria-label="Mito anterior" disabled>
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="mv-book__btn mv-book__btn--next" type="button" aria-label="Siguiente mito">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <!-- Viewport + Track -->
+          <div class="mv-book__viewport">
+            <div class="mv-book__track" id="mvTrack">
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide0" aria-label="Mito 1 de 10"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_1.png" alt="Mito 1: Las cámaras están para recaudar dinero. Realidad: el objetivo principal es prevenir conductas de riesgo y reducir siniestros viales."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide1" aria-label="Mito 2 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_2.png" alt="Mito 2: Las cámaras están ubicadas al azar. Realidad: cada punto está autorizado por la ANSV con criterios técnicos."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide2" aria-label="Mito 3 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_3.png" alt="Mito 3: Las cámaras ponen comparendos automáticamente. Realidad: todas las evidencias tienen validación humana."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide3" aria-label="Mito 4 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_4.png" alt="Mito 4: Las cámaras están escondidas. Realidad: todos los puntos cuentan con señalización visible."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide4" aria-label="Mito 5 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_5.png" alt="Mito 5: Solo funcionan para exceso de velocidad. Realidad: detectan múltiples infracciones."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide5" aria-label="Mito 6 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_6.png" alt="Mito 6: Las cámaras funcionan solo de día. Realidad: operan 24/7."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide6" aria-label="Mito 7 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_7.png" alt="Mito 7: Miden la velocidad sin precisión. Realidad: cuentan con certificados de calibración vigentes."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide7" aria-label="Mito 8 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_8.png" alt="Mito 8: Reemplazan a los Agentes de Tránsito. Realidad: son herramienta de apoyo, el Agente siempre valida."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide8" aria-label="Mito 9 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_9.png" alt="Mito 9: Solo benefician al Distrito. Realidad: contribuyen a la seguridad vial de todos."></div>
+              <div class="mv-book__slide" role="tabpanel" id="mvSlide9" aria-label="Mito 10 de 10" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/mitos%20cem_10.png" alt="Mito 10: No ayudan a reducir siniestros. Realidad: la evidencia muestra reducción donde operan."></div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="mv-book__footer">
+            <div class="mv-book__dots" role="tablist" aria-label="Seleccionar mito"></div>
+            <span class="mv-book__counter" aria-live="polite" aria-atomic="true">1 / 10</span>
+          </div>
+        </div>
+
+        <!-- CIERRE -->
+        <div class="mv-cierre" role="note">
+          <p class="mv-cierre__headline"><strong>Las cámaras salvavidas no toman decisiones.</strong> Registran posibles infracciones. Quien decide respetar el límite de velocidad, detenerse ante un semáforo en rojo o conducir con los documentos al día es cada conductor.</p>
+          <p class="mv-cierre__cta">Cumplir la norma no le cuesta y es la mejor manera de salvar vidas y evitar un comparendo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN SECUENCIAL -->
+    <nav class="footer-nav-fd" aria-label="Navegación secuencial entre páginas">
+      <div class="container">
+        <div class="nav-sequential">
+          <a href="/sitio/camaras-de-fotodeteccion-bogota-preguntas-frecuentes" class="nav-link-prev" aria-label="Ir a la página anterior: Resuelva sus dudas">Anterior</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota" class="nav-link-home" aria-label="Volver a la página de inicio">Volver al inicio</a>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner container">
+      <div class="site-footer__top">
+        <nav class="footer-links" aria-label="Enlaces de pie de página">
+          <a href="https://www.movilidadbogota.gov.co/manual-y-politicas-de-seguridad-de-la-informacion">Políticas de privacidad</a>
+          <a href="#">Términos y condiciones</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota">Mapa del sitio</a>
+          <a href="https://www.movilidadbogota.gov.co/atencion-servicios/puntos-atencion">Atención a la ciudadanía</a>
+        </nav>
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/SectorMovilidad" aria-label="Facebook" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+          <a href="https://twitter.com/SectorMovilidad" aria-label="X" title="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.instagram.com/saboramovilidad" aria-label="Instagram" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://www.youtube.com/@SecretariaMovilidadBogota" aria-label="YouTube" title="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p><strong>Secretaría Distrital de Movilidad</strong> · Alcaldía Mayor de Bogotá D.C.</p>
+        <p>Calle 13 # 37-35, Bogotá · Línea de atención: (601) 195</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // === CARRUSEL LIBRO (WCAG 2.2 compliant) ===
+  (function() {
+    'use strict';
+    var book = document.querySelector('.mv-book');
+    if (!book) return;
+
+    var track = book.querySelector('.mv-book__track');
+    var slides = Array.prototype.slice.call(book.querySelectorAll('.mv-book__slide'));
+    var prevBtn = book.querySelector('.mv-book__btn--prev');
+    var nextBtn = book.querySelector('.mv-book__btn--next');
+    var dotsWrap = book.querySelector('.mv-book__dots');
+    var counter = book.querySelector('.mv-book__counter');
+    var total = slides.length;
+    var current = 0;
+
+    // Generar dots con role="tab" y aria-controls
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'mv-book__dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', 'Ir al mito ' + (i + 1));
+      dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+      dot.setAttribute('aria-controls', 'mvSlide' + i);
+      dot.setAttribute('tabindex', i === 0 ? '0' : '-1');
+      dot.dataset.idx = i;
+      dotsWrap.appendChild(dot);
+    }
+    var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.mv-book__dot'));
+
+    function goTo(idx) {
+      if (idx < 0 || idx >= total) return;
+      current = idx;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+
+      // Slides: aria-hidden + inert para ocultas
+      slides.forEach(function(s, si) {
+        var visible = si === current;
+        s.setAttribute('aria-hidden', visible ? 'false' : 'true');
+        if (visible) s.removeAttribute('inert');
+        else s.setAttribute('inert', '');
+      });
+
+      // Dots
+      dots.forEach(function(d, di) {
+        var active = di === current;
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+        d.setAttribute('tabindex', active ? '0' : '-1');
+      });
+
+      // Counter
+      counter.textContent = (current + 1) + ' / ' + total;
+
+      // Buttons state
+      prevBtn.disabled = current === 0;
+      prevBtn.setAttribute('aria-disabled', current === 0 ? 'true' : 'false');
+      nextBtn.disabled = current === total - 1;
+      nextBtn.setAttribute('aria-disabled', current === total - 1 ? 'true' : 'false');
+    }
+
+    // Events: flechas
+    prevBtn.addEventListener('click', function() { goTo(current - 1); });
+    nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+    // Events: dots click
+    dotsWrap.addEventListener('click', function(e) {
+      var d = e.target.closest('.mv-book__dot');
+      if (d) goTo(parseInt(d.dataset.idx, 10));
+    });
+
+    // Roving tabindex en dots (flechas dentro del tablist)
+    dotsWrap.addEventListener('keydown', function(e) {
+      var idx = dots.indexOf(document.activeElement);
+      if (idx === -1) return;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        var next = (idx + 1) % total;
+        goTo(next);
+        dots[next].focus();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var prev = (idx - 1 + total) % total;
+        goTo(prev);
+        dots[prev].focus();
+      } else if (e.key === 'Home') {
+        e.preventDefault(); goTo(0); dots[0].focus();
+      } else if (e.key === 'End') {
+        e.preventDefault(); goTo(total - 1); dots[total - 1].focus();
+      }
+    });
+
+    // Teclado en el contenedor del carrusel
+    book.addEventListener('keydown', function(e) {
+      if (e.target.closest('.mv-book__dots')) return; // ya manejado arriba
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+    });
+
+    // Swipe táctil
+    var startX = 0, startY = 0, dragging = false;
+    track.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      dragging = true;
+    }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      if (!dragging) return;
+      dragging = false;
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+        if (dx < 0) goTo(current + 1);
+        else goTo(current - 1);
+      }
+    }, { passive: true });
+
+    // Init
+    goTo(0);
+  })();
+  </script>
+  <script>
+function highlightActiveNav(){const c=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.site-nav a').forEach(l=>{l.classList.remove('active');l.removeAttribute('aria-current');if(l.getAttribute('href')===c){l.classList.add('active');l.setAttribute('aria-current','page')}})}
+function setupMenuToggle(){const t=document.querySelector('.site-menu-toggle'),n=document.querySelector('.site-nav'),h=document.querySelector('.site-header');if(!t||!n)return;t.addEventListener('click',()=>{const o=n.classList.toggle('is-open');t.setAttribute('aria-expanded',o);if(h)h.classList.toggle('is-menu-open',o)});n.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{n.classList.remove('is-open');t.setAttribute('aria-expanded','false');if(h)h.classList.remove('is-menu-open')})})}
+document.addEventListener('DOMContentLoaded',()=>{highlightActiveNav();setupMenuToggle()});
+  </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!-- Estilos -->
+<style>
+  .nav-link.active {
+    background-color: #EAEAFE !important;
+    border-radius: 5px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  ul li i {
+    margin-right: 8px;
+    color: #663399;
+  }
+
+  ul li i {
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .icono-clase {
+    transition: color 0.3s ease;
+  }
+
+  .icono-clase:hover {
+    color: #fff !important;
+  }
+</style>
+<!-- Certificado de Accesibilidad -->
+<div class="mb-4 p-4 rounded" role="region" aria-label="Certificación de accesibilidad de la sede electrónica"
+  style="background-color: #EDF5FF; border-left: 4px solid #0943B5;">
+  <h3 class="mb-2" style="font-size: 1.1rem; font-weight: 700; color: #0943B5;">Certificación de Cumplimiento de los
+    Criterios de Accesibilidad de la Sede Electrónica</h3>
+  <p class="mb-3" style="color: #4C4C4C;">Esta sede electrónica cumple con las directrices de accesibilidad web
+    establecidas en el Anexo 1 de la Resolución 1519 de 2020 y se encuentra alineada con el nivel de conformidad
+    <strong>AA de las WCAG 2.1</strong>, conforme a la Ley 1712 de 2014 y el Decreto 1081 de 2015.</p>
+  <a href="https://www.mincultura.gov.co/Documents/Certificaci%C3%B3n%20ITA.pdf" target="_blank"
+    rel="noopener noreferrer" class="btn-govco icon-btn-govco fill-btn-govco">
+    <span class="govco-svg govco-download"></span>
+    <span>Consultar y descargar certificado</span>
+  </a>
+</div>
+<hr />
+<!-- Tabs navs -->
+<ul class="nav nav-tabs mb-3" id="tab-access" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link show active" id="tab-espanol" data-bs-toggle="tab" data-bs-target="#espanol" type="button"
+      role="tab" aria-controls="espanol" aria-selected="true">Español</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link disabled" id="tab-senas" data-bs-toggle="tab" data-bs-target="#senas" type="button"
+      role="tab" aria-controls="senas" aria-selected="false" aria-disabled="true" tabindex="-1">Lengua de señas colombiana</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link disabled" id="tab-lenguas" data-bs-toggle="tab" data-bs-target="#lenguas" type="button"
+      role="tab" aria-controls="lenguas" aria-selected="false" aria-disabled="true" tabindex="-1">Lenguas nativas</button>
+  </li>
+</ul>
+<!-- Tabs content -->
+<div class="tab-content" id="tab-access-content">
+  <div class="tab-pane fade active show" id="espanol" role="tabpanel" aria-labelledby="tab-espanol">
+    <h3>Identificadores de acceso y accesibilidad</h3>
+    <p>Dispone de herramientas en la página web necesarias para que cada persona&#160;pueda navegar con algunos ajustes
+      según sus necesidades&#160;y preferencias, &#160;cuando está disponible se debe&#160;hacer clic&#160;en el botón
+      que identifica la herramienta para activarlas, así:</p>
+    <ul style="list-style-type: none;">
+      <li>
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i> Lee el contenido y las opciones disponibles, lo que
+        posibilita el acceso a los contenidos y la navegación sin necesidad de ver la pantalla
+      </li>
+      <li>
+        <i class="fa-solid fa-audio-description" aria-hidden="true"></i> Realiza una descripción de audio, es decir
+        narra y describe detalladamente los elementos visuales que aparecen en pantalla
+      </li>
+      <li>
+        <i class="fa-solid fa-hands" aria-hidden="true"></i> Permite visualizar vídeos pregrabados en lengua de señas
+        colombiana
+      </li>
+      <li>
+        <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i> Habilita la información en un texto de lectura
+        fácil, el cual facilita la comprensión de la información
+      </li>
+      <li>
+        <span style="color: #663399;">&lt;&lt;</span> &#160;&#160; Permite ir hacia atrás
+      </li>
+      <li>
+        <span style="color: #663399;">&gt;&gt;</span> &#160;&#160; Permite ir hacia adelante
+      </li>
+      <li>
+        <i class="fa-solid fa-list" aria-hidden="true"></i> Permite ver el índice y las opciones de lectura
+      </li>
+      <li>
+        <i class="fa-solid fa-book" aria-hidden="true"></i> Cuando está disponible, presenta el significado de las
+        palabras nuevas
+      </li>
+      <li>
+        <i class="fa-solid fa-download" aria-hidden="true" style="color: #663399;"></i> Permite descargar contenido
+      </li>
+      <li>
+        <i class="fa-solid fa-a" aria-hidden="true"></i> Permite ajustar el tamaño de las letras
+      </li>
+      <li>
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Permite cambiar al contraste de la página
+      </li>
+      <li>
+        <i class="fa-solid fa-microphone" aria-hidden="true"></i> Permite hablarle a la página para navegar mediante
+        sencillos comandos, sin utilizar las manos
+      </li>
+      <li>
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Permite ampliar la información del contenido
+      </li>
+    </ul>
+    <!-- ACORDEONES -->
+    <div class="accordion" id="accordionExample">
+      <!-- ACORDEÓN MENÚ -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i
+              class="fa-solid fa-bars me-2 icono-clase" aria-hidden="true"></i> Menús principales</button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>El menú del portal del Ministerio de las Culturas, las Artes y los Saberes,se divide en tres grupos
+              principales:</p>
+            <br />
+            <div class="row row-cols-1 row-cols-md-2 pb-2 border-bottom">
+              <div class="col d-flex flex-column align-items-center">
+                <h4 style="color: var(--morado, #4b3c8c); text-align: center;">MINISTERIO</h4>
+                <img class="my-4" src="/SiteCollectionImages/guia-de-usuario/menu-ministerio.jpg"
+                  alt="Imagen del menú desplegable del Ministerio" unlockratio="true"
+                  style="width: 600px; height: 500px;" />
+                <p>Esta sección contiene la estructura organizacional de la entidad. Presenta las
+                  <strong>principales Direcciones y Grupos</strong>. Permite navegar en el organigrama del Ministerio de
+                  las Culturas.
+                </p>
+              </div>
+              <div class="col d-flex flex-column align-items-center">
+                <h4 style="color: var(--morado, #4b3c8c); text-align: center;">TRANSPARENCIA</h4>
+                <img class="my-4" src="/SiteCollectionImages/guia-de-usuario/transparencia.jpg"
+                  alt="Imagen del menú desplegable de transparencia" unlockratio="true"
+                  style="width: 581px; height: 200px;" />
+                <p>Esta sección agrupa los elementos requeridos en la
+                  <strong>Ley de Transparencia (1712 de 2014)</strong> que busca garantizar a la ciudadanía el acceso a
+                  la información de la entidad. Aquí podrá acceder al contenidos como
+                  <strong>&quot;Participa&quot;, y &quot;Transparencia&quot;</strong>, en estos encontrará documentos e
+                  informes de interés de la ciudadanía presentados también a entes de control. En la sección
+                  <strong> &quot;Atención y servicio a la ciudadanía&quot;</strong> se informan los canales de atención
+                  y de relacionamiento entre el Ministerio y sus grupos de valor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ACORDEÓN Ciudadanía -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4"
+            aria-expanded="false" aria-controls="collapse4"><i class="fa-solid fa-users-line me-2 icono-clase"
+              aria-hidden="true"></i> Ciudadanía</button>
+        </h2>
+        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="row row-cols-1 row-cols-md-2 pt-2">
+              <div class="col">
+                <h4 style="color: var(--morado, #4b3c8c); text-align: center;">CIUDADANÍA</h4>
+                <img class="my-4" src="/SiteCollectionImages/guia-de-usuario/menu-ciudadania.jpg"
+                  alt="Imagen del menú desplegable de las secciones para la ciudadanía"
+                  style="width: 100%; height: 300px;" />
+              </div>
+              <div class="col">
+                <p>Esta sección incluye dos elementos del menú:
+                  <strong>&quot;Lo más buscado&quot;</strong> y
+                  <strong>&quot;Direcciones&quot;</strong>. Allí están los contenidos más buscados y facilita la
+                  navegación a las personas que no tienen conocimientos técnicos de la estructura y el funcionamiento de
+                  la entidad.<br /><br /> En el menú
+                  <strong>&quot;Lo más buscado&quot;</strong> encontrará un acceso directo a las secciones más
+                  consultadas por las personas:
+                </p>
+                <p>
+                  <br />
+                  <b>- Noticias:</b> Conozca las novedades del Ministerio en un sólo lugar con actualización a diario.
+                  <br /><b>- Convocatorias:</b> Acceda a todas las convocatorias y procesos de formación de la entidad.
+                  <br /><b>- Agenda:</b> Conozca los eventos y actividades culturales del Ministerio, de sus unidades
+                  administrativas y de las entidades adscritas.
+                  <br /><b>- Programas y proyectos:</b> Revise la lista de los principales proyectos de todas las
+                  direcciones del Ministerio.
+                  <br /><b>- Portales y sistemas de información:</b> Ingrese el listado de las plataformas del
+                  Ministerio, micrositios externos y portales de las unidades administrativas, así como accesos a los
+                  principales aplicativos de la entidad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ACORDEÓN Herramientas de accesibilidad -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5"
+            aria-expanded="false" aria-controls="collapse5"><i class="fa-solid fa-screwdriver-wrench me-3 icono-clase"
+              aria-hidden="true"></i> Herramientas de accesibilidad</button>
+        </h2>
+        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>En esta sección encontrarás herramientas diseñadas por el gobierno nacional para
+              <strong>garantizar que &#160;los usuarios puedan acceder y utilizar nuestros contenidos digitales</strong>
+              de manera efectiva, estas herramientas facilitan la navegación y el uso de recursos disponibles,
+              promoviendo una experiencia inclusiva.
+            </p>
+            <p>
+              <strong class="ms-rteStyle-IntenseEmphasis">El Ministerio de las Culturas, las Artes y los Saberes cuenta
+                con el canal virtual</strong><span class="ms-rteStyle-IntenseEmphasis"> que le permite registrar sus
+                preguntas y realizar sus solicitudes en lenguas nativas y en lengua de señas colombiana, la cual podrá
+                realizarla en videos a través del </span>
+              <a href="whatsapp://send?phone=3165227487&amp;text=Hola%20Ministerio%20de%20las%20Culturas,%20las%20artes%20y%20los%20saberes%22"
+                target="_blank">
+                <span class="ms-rteStyle-IntenseEmphasis">
+                  <strong>Canal de whatsapp</strong>​</span></a><span class="ms-rteStyle-IntenseEmphasis">.<br /></span>
+            </p>
+            <h2 class="ms-rteElement-H2B">
+              <a href="whatsapp://send?phone=3165227487&amp;text=Hola%20Ministerio%20de%20las%20Culturas,%20las%20artes%20y%20los%20saberes%22"
+                target="_blank">
+                <span class="ms-rteThemeForeColor-1-0" style="text-decoration: #ffffff;">Ingresa aquí</span></a>
+            </h2>
+            <p>Asimismo, el gobierno nacional a través del Ministerio de Tecnologías de la Información y las
+              Comunicaciones cuenta con dos iniciativas que promueve la inclusión digital y el derecho&#160; a la
+              comunicación en las personas con discapacidad visual y auditiva, así:</p>
+            <p>
+              <strong>ConVertic</strong>, es un proyecto a través de la &quot;Licencia País&quot; brinda un
+              <strong>software lector de pantalla y un software magnificador</strong>, con descarga gratuita a nivel
+              nacional, que busca beneficiar a colombianos que presentan discapacidad visual en el país.
+              <br />
+            </p>
+            <p>
+              <i class="fa-solid fa-download" aria-hidden="true" style="color: #663399;"></i> La descarga está
+              disponible para personas naturales, presenten o no una discapacidad visual y para personas jurídicas
+              públicas, privadas o mixtas, los programas funcionan únicamente con sistema operativo Windows
+              <a href="https://www.convertic.gov.co/641/w3-propertyvalue-15308.html"
+                target="_blank">https://www.convertic.gov.co/641/w3-propertyvalue-15308.html</a><br /><b><br /></b>
+            </p>
+            <p>
+              <b>Dentro de ConVertic&#160; se encuentran los softwares:</b>
+            </p>
+            <p>
+              <i class="fa-solid fa-download" aria-hidden="true" style="color: #663399;"></i>
+              <strong> JAWS</strong> es un software que
+              <strong>convierte a voz la información que se muestra en la pantalla</strong>, es decir, describe lo que
+              hay en el entorno digital, permitiendo a las personas ciegas hacer un uso autónomo e integral del
+              computador y sus aplicaciones:
+              <a href="https://www.convertic.gov.co/641/w3-propertyvalue-15339.html"
+                target="_blank">https://www.convertic.gov.co/641/w3-propertyvalue-15339.html</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-download" aria-hidden="true" style="color: #663399;"></i><strong>&#160;ZoomText
+              </strong>es un software que
+              <strong>amplía hasta 16 veces el tamaño de las letras</strong> en pantalla y permite variar color y
+              contraste, beneficiando a personas con baja visión para que puedan utilizar un computador de forma
+              independiente y sin fatigar sus ojos, o puede beneficiar a personas que estén empezando a experimentar
+              dificultades visuales:
+              <a href="https://www.convertic.gov.co/641/w3-propertyvalue-15340.html"
+                target="_blank">https://www.convertic.gov.co/641/w3-propertyvalue-15340.html</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-download" aria-hidden="true" style="color: #663399;"></i> También cuenta con el
+              <strong>Centro de Relevo</strong> el cual es un servicio gratuito para
+              <strong>uso exclusivo de las </strong>
+              <strong>personas con discapacidad auditiva</strong>, que facilita la comunicación bidireccional entre
+              personas sordas y oyentes a través de una plataforma tecnológica, este le brinda a este grupo poblacional
+              usuarios de la lengua de señas colombiana la posibilidad de utilizar el servicio de relevo de llamadas,
+              videomensajes por WhatsApp, servicio de interpretación en línea SIEL:
+              <a href="https://centroderelevo.gov.co/" target="_blank">https://centroderelevo.gov.co/</a><br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="senas" role="tabpanel" aria-labelledby="tab-senas">
+    <p>Proceso en construcción</p>
+  </div>
+  <div class="tab-pane fade" id="lenguas" role="tabpanel" aria-labelledby="tab-lenguas">
+    <p>Proceso en construcción<br /><br /></p>
+  </div>
+</div>

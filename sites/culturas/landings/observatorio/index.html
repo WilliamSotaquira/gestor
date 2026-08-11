@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="es-CO">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/_catalogs/masterpage/Gobierno/img/icons/favicon-white-32x32.png" sizes="32x32" type="image/png" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SBQV6YKFY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7SBQV6YKFY');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Inicio | Dirección de Estrategia, Desarrollo y Emprendimiento | Minculturas</title>
+    <meta name="description" content="Dirección de Estrategia, Desarrollo y Emprendimiento del Ministerio de las Culturas, las Artes y los Saberes de Colombia.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dirección de Estrategia, Desarrollo y Emprendimiento">
+    <meta property="og:description" content="Impulsamos el reconocimiento, el fortalecimiento, la asociatividad y la sostenibilidad de las economías culturales, populares y comunitarias en Colombia.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --obs-primary: #1a2744;
+            --obs-primary-dark: #0f1a2e;
+            --obs-accent: #5a2a83;
+            --obs-accent-dark: #3f1d60;
+            --obs-yellow: #f4c542;
+            --obs-teal: #087e8b;
+            --obs-ink: #1f2937;
+            --obs-muted: #536171;
+            --obs-surface: #ffffff;
+            --obs-surface-soft: #f4f6f8;
+            --obs-border: #d7dde5;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Nunito Sans', Arial, Helvetica, sans-serif; color: var(--obs-ink); }
+        .bg-obs-govbar { background: #004884; }
+        .navbar-obs { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .navbar-obs .nav-link { color: var(--obs-primary); font-weight: 600; font-size: 0.9rem; }
+        .navbar-obs .nav-link:hover { color: var(--obs-accent); }
+        .navbar-obs .nav-link[aria-current="page"] { color: #fff; background: var(--obs-accent); border-radius: 6px; }
+        .text-obs-primary { color: var(--obs-primary); }
+        .footer-obs a:hover { color: #fff !important; }
+        /* Hero */
+        .hero-obs {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            min-height: 480px;
+            max-height: 620px;
+            padding: 5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .hero-obs__img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+        .hero-obs__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(26,39,68,.82) 0%, rgba(90,42,131,.55) 45%, rgba(26,39,68,.35) 100%);
+        }
+        @media (max-width: 768px) {
+            .hero-obs { min-height: auto; padding: 3rem 0; }
+        }
+        .hero-obs .eyebrow {
+            color: var(--obs-yellow);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            font-size: .85rem;
+        }
+        .hero-obs h1 { font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; }
+        .hero-obs .lead { color: #edf4fb; font-size: 1.1rem; }
+        .btn-obs-yellow { background: var(--obs-yellow); color: #1c2430; font-weight: 700; border-radius: 8px; }
+        .btn-obs-yellow:hover { background: #ffd869; color: #1c2430; }
+        .btn-obs-outline { border: 2px solid #fff; color: #fff; font-weight: 700; border-radius: 8px; background: rgba(0,0,0,0.35); }
+        .btn-obs-outline:hover { background: #fff; color: var(--obs-accent-dark); }
+        .btn-obs-outline:active { background: #e0e0e0; color: var(--obs-accent-dark); }
+        /* Section styles */
+        .section-obs { padding: 4rem 0; }
+        .section-obs-soft { background: var(--obs-surface-soft); }
+        .section-heading h2 { font-weight: 800; color: var(--obs-primary); }
+        .section-heading p { color: var(--obs-muted); }
+
+        /* Service cards */
+        .service-card {
+            border: 1px solid var(--obs-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(22,34,51,.07);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card__number {
+            width: 44px; height: 44px;
+            display: grid; place-items: center;
+            border-radius: 10px;
+            color: #fff;
+            background: var(--obs-accent);
+            font-weight: 900;
+            font-size: 0.85rem;
+        }
+        .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-top: 1rem; }
+        .service-card p { color: var(--obs-muted); font-size: 0.92rem; }
+        .service-card .mt-auto { margin-top: auto !important; }
+        .status-badge {
+            padding: .5rem .75rem;
+            color: #614a00;
+            border: 1px solid #e7c85c;
+            border-radius: 8px;
+            background: #fff8d8;
+            font-size: .85rem;
+            font-weight: 600;
+        }
+        /* Mission */
+        .mission-panel {
+            padding: 1.5rem;
+            color: #fff;
+            border-radius: 16px;
+            background: linear-gradient(145deg, var(--obs-accent), #004884);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .mission-panel span { color: var(--obs-yellow); font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+        .mission-panel strong { display: block; margin-top: .6rem; font-size: 1.5rem; line-height: 1.25; }
+
+        /* Cifras animadas */
+        .cifras-panel li {
+            padding: .5rem 0;
+        }
+        .cifras-panel li + li {
+            border-left: 1px solid rgba(255,255,255,.2);
+        }
+        .cifra-counter {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--obs-yellow);
+            display: block;
+            line-height: 1;
+        }
+        .cifras-panel small {
+            font-size: 1.2rem;
+            color: #edf4fb;
+            font-weight: 400;
+        }
+
+        /* Groups */
+        .group-card {
+            padding: 1.5rem;
+            border-top: 5px solid var(--obs-accent);
+            border-radius: 0 0 16px 16px;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(22,34,51,.07);
+            height: 100%;
+        }
+        .group-card:nth-child(2) { border-color: #004884; }
+        .group-card:nth-child(3) { border-color: var(--obs-teal); }
+        .group-card h3 { font-size: 1.05rem; font-weight: 700; }
+        .group-card p { color: var(--obs-muted); font-size: 0.92rem; }
+
+        /* Callout */
+        .obs-callout {
+            padding: 2rem;
+            color: #fff;
+            border-radius: 20px;
+            background: linear-gradient(120deg, var(--obs-accent-dark), #004884);
+            box-shadow: 0 12px 30px rgba(22,34,51,.10);
+        }
+        .obs-callout h2 { font-weight: 800; }
+        .obs-callout p { color: #edf4fb; }
+        /* Person cards */
+        .person-card {
+            padding: 1.5rem;
+            border: 1px solid var(--obs-border);
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(22,34,51,.07);
+            height: 100%;
+        }
+        .person-card__initials {
+            width: 52px; height: 52px;
+            display: grid; place-items: center;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--obs-accent);
+            font-weight: 900;
+        }
+        .person-card h3 { font-size: 1rem; font-weight: 700; margin-top: .8rem; }
+        .person-card p { color: var(--obs-muted); font-size: 0.9rem; margin: 0; }
+
+        /* Focus */
+        a:focus-visible, button:focus-visible, summary:focus-visible {
+            outline: 3px solid var(--obs-yellow);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        @media print {
+            .bg-obs-govbar, .navbar-obs, .footer-obs, [aria-label="Volver arriba"] { display: none !important; }
+            .hero-obs { color: #000; background: #fff !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; animation: none !important; }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header>
+        <a href="#contenido-principal" class="visually-hidden-focusable position-absolute top-0 start-0 p-2 bg-white text-dark fw-bold" style="z-index:9999;">Saltar al contenido principal</a>
+
+        <!-- Barra GOV.CO -->
+        <div class="bg-obs-govbar">
+            <div class="container d-flex align-items-center py-1">
+                <a href="https://www.gov.co/" rel="noopener noreferrer" aria-label="Ir al portal GOV.CO">
+                    <img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" width="90" alt="Logo GOV.CO" style="filter: brightness(2);">
+                </a>
+            </div>
+        </div>
+
+        <!-- Navbar Principal -->
+        <nav class="navbar navbar-expand-lg navbar-obs sticky-top" aria-label="Navegación principal">
+            <div class="container">
+                <div class="d-flex align-items-center gap-4 py-2">
+                    <a href="https://www.mincultura.gov.co/" aria-label="Ir al sitio del Ministerio de las Culturas">
+                        <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/logo-ministerio-culturas.png" height="80" alt="Logo Ministerio de las Culturas, las Artes y los Saberes">
+                    </a>
+                    <span class="d-none d-md-block" style="width:1px;height:50px;background:#ccc;" aria-hidden="true"></span>
+                    <a href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/index.aspx" class="text-decoration-none">
+                        <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/logo-observatorio-economias-culturales-alto.png" height="50" class="my-2" alt="Logo Observatorio de las economías en las culturas, las artes y los saberes">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navObservatorio" aria-controls="navObservatorio" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navObservatorio">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/index.aspx" aria-current="page">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx">Observatorio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/mediciones.aspx">Mediciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/publicaciones.aspx">Publicaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/herramientas.aspx">Herramientas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- Hero -->
+        <section class="hero-obs" aria-labelledby="titulo-inicio">
+            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/hero-inicio-mascara-bandera.png" class="hero-obs__img" alt="Máscara ceremonial con plumas rojas y negras, colmillos y pintura facial dorada, expresión de la diversidad cultural colombiana">
+            <div class="hero-obs__overlay"></div>
+            <div class="container position-relative" style="z-index:2;">
+                <h1 id="titulo-inicio">Dirección de Estrategia, Desarrollo y Emprendimiento — DEDE</h1>
+                <p class="lead mt-3">Impulsamos el reconocimiento, el fortalecimiento, la asociatividad y la sostenibilidad de las economías culturales, populares y comunitarias en Colombia.</p>
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <a class="btn btn-lg btn-obs-yellow px-4" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx">Ir al Observatorio</a>
+                    <a class="btn btn-lg btn-obs-outline px-4" href="#mision">Conocer la Dirección</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Misión -->
+        <section class="section-obs section-obs-soft" id="mision" aria-labelledby="titulo-mision">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-8">
+                        <h2 id="titulo-mision" class="fw-bold">Misión de la Dirección</h2>
+                        <p class="mt-3">La misión de la Dirección de Estrategia, Desarrollo y Emprendimiento es promover el reconocimiento, el fortalecimiento, la asociatividad y sostenibilidad de las economías culturales, populares y comunitarias, para potenciar las dinámicas propias de los sistemas de vida de gentes y pueblos de la geografía nacional, en perspectiva de equidad, reducción de brechas sociales, garantía de derechos culturales y justicia económica y ambiental, mediante alianzas público-comunitarias y público-privadas.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside class="mission-panel" aria-label="Cifras destacadas de la Dirección">
+                            <span>Cifras destacadas</span>
+                            <ul class="cifras-panel list-unstyled d-flex gap-3 mt-2 mb-0">
+                                <li class="text-center flex-fill">
+                                    <strong class="cifra-counter" data-target="32">0</strong>
+                                    <small>departamentos</small>
+                                </li>
+                                <li class="text-center flex-fill">
+                                    <strong class="cifra-counter" data-target="150">0</strong>
+                                    <small>municipios</small>
+                                </li>
+                                <li class="text-center flex-fill">
+                                    <strong class="cifra-counter" data-target="12000">0</strong>
+                                    <small>agentes</small>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de la Dirección -->
+        <section class="section-obs" aria-labelledby="titulo-accesos">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-accesos">Información de la Dirección</h2>
+                    <p>Accesos organizados en seis líneas de contenido institucional.</p>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="service-card">
+                            <span class="service-card__number">01</span>
+                            <h3>Equipos y directorio</h3>
+                            <p>Conoce los grupos de trabajo de la Dirección y las personas responsables de su coordinación.</p>
+                            <a href="#equipos" class="fw-bold mt-auto">Ver equipos</a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="service-card">
+                            <span class="service-card__number">02</span>
+                            <h3>Observatorio</h3>
+                            <p>Accede a la información estratégica y a los productos de conocimiento disponibles para la ciudadanía.</p>
+                            <a href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/observatorio.aspx" class="fw-bold mt-auto">Consultar el Observatorio</a>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="service-card">
+                            <span class="service-card__number">03</span>
+                            <h3>Publicaciones</h3>
+                            <p>Consulta productos editoriales y recursos de conocimiento vinculados al Observatorio.</p>
+                            <a href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/publicaciones.aspx" class="fw-bold mt-auto">Consultar publicaciones</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipos de la Dirección -->
+        <section class="section-obs section-obs-soft" id="equipos" aria-labelledby="titulo-grupos">
+            <div class="container">
+                <div class="section-heading mb-4">
+                    <h2 id="titulo-grupos">Equipos de la Dirección</h2>
+                    <p>Coordinación y grupos de trabajo que articulan las líneas estratégicas de la DEDE en territorio.</p>
+                </div>
+
+                <!-- Director -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6 mx-auto">
+                        <article class="person-card text-center">
+                            <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3" style="width:100px;height:100px;background:var(--obs-primary);color:#fff;font-weight:900;font-size:1.5rem;">AG</div>
+                            <h3>Dirección de Estrategia, Desarrollo y Emprendimiento</h3>
+                            <p><strong>Alfredo Goenaga Linero</strong></p>
+                            <p>Director</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Grupos de trabajo -->
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <article class="person-card text-center">
+                            <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3" style="width:100px;height:100px;background:var(--obs-accent);color:#fff;font-weight:900;font-size:1.5rem;">AL</div>
+                            <h3>Grupo Escuelas Taller de Colombia</h3>
+                            <p><strong>Andrés López Narvaez</strong></p>
+                            <p>Coordinador</p>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="person-card text-center">
+                            <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3" style="width:100px;height:100px;background:var(--obs-accent);color:#fff;font-weight:900;font-size:1.5rem;">DS</div>
+                            <h3>Grupo de territorios creativos, bioculturales y de los saberes</h3>
+                            <p><strong>Daniela Sierra Navarrete</strong></p>
+                            <p>Coordinadora</p>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="person-card text-center">
+                            <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3" style="width:100px;height:100px;background:var(--obs-accent);color:#fff;font-weight:900;font-size:1.5rem;">DV</div>
+                            <h3>Grupo de Gestión del Conocimiento para la Economía Cultural</h3>
+                            <p><strong>Diana Cristina Vargas Quintero</strong></p>
+                            <p>Coordinadora</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-obs" aria-label="Pie de página del Ministerio de las Culturas">
+        <div style="background: var(--obs-primary); padding: 40px 0;">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-12 col-lg-3 text-center text-lg-start">
+                        <img loading="lazy" src="https://cdn.www.gov.co/assets/images/logo.svg" height="30" alt="Logo GOV.CO" style="filter: brightness(2); margin-bottom: 15px;"><br>
+                        <img loading="lazy" src="https://cdn.www.gov.co/layout-govco-v5/assets/images/logo-colombia.svg" height="48" alt="Logo Colombia Potencia de la Vida">
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Ministerio de las Culturas,<br>las Artes y los Saberes</h6>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Dirección: Calle 9 No. 8 - 31 Bogotá</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Horario: 8:00 a.m. a 5:00 p.m. jornada continua</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Teléfono: <a href="tel:+576013424100" style="color:#aaa;text-decoration:underline;">+57 (601) 3424100</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;">Línea gratuita: <a href="tel:018000938081" style="color:#aaa;text-decoration:underline;">018000 938081</a></p>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="http://www.youtube.com/user/Mincultura" target="_blank" rel="noopener noreferrer" aria-label="YouTube MinCulturas (abre en nueva ventana)"><i class="bi bi-youtube" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="http://www.instagram.com/mincultura/" target="_blank" rel="noopener noreferrer" aria-label="Instagram MinCulturas (abre en nueva ventana)"><i class="bi bi-instagram" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="https://www.facebook.com/MinisterioCultura/" target="_blank" rel="noopener noreferrer" aria-label="Facebook MinCulturas (abre en nueva ventana)"><i class="bi bi-facebook" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="http://www.twitter.com/mincultura" target="_blank" rel="noopener noreferrer" aria-label="X MinCulturas (abre en nueva ventana)"><i class="bi bi-twitter-x" style="font-size:20px;color:#ccc;"></i></a>
+                            <a href="https://www.tiktok.com/@minculturas" target="_blank" rel="noopener noreferrer" aria-label="TikTok MinCulturas (abre en nueva ventana)"><i class="bi bi-tiktok" style="font-size:20px;color:#ccc;"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Contacto Correspondencia</h6>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Dirección: Calle 9 No. 8 - 31 Bogotá</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Lunes a viernes de 8:00 a.m. a 4:00 p.m.</p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;">Correo: <a href="mailto:servicioalciudadano@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">servicioalciudadano@mincultura.gov.co</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;"><strong>Denuncias de corrupción:</strong> <a href="mailto:soytransparente@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">soytransparente@mincultura.gov.co</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;margin-bottom:4px;"><strong>Línea Exclusiva de Denuncias:</strong> <a href="tel:+576013816290" style="color:#aaa;text-decoration:underline;">(601) 381 6290</a></p>
+                        <p style="font-size:0.85rem;color:#ccc;"><strong>Notificaciones judiciales:</strong> <a href="mailto:notificaciones@mincultura.gov.co" style="color:#aaa;text-decoration:underline;">notificaciones@mincultura.gov.co</a></p>
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <h6 class="text-white fw-bold mb-3">Servicios a la Ciudadanía</h6>
+                        <ul class="list-unstyled" style="font-size:0.85rem;">
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/atencion-y-servicio-a-la-ciudadania/Paginas/atencion-pqrs.aspx" style="color:#aaa;text-decoration:underline;">PQRSD</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/transparencia/Paginas/tramites/preguntas-frecuentes.aspx" style="color:#aaa;text-decoration:underline;">Preguntas Frecuentes</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/atencion-y-servicio-a-la-ciudadania/Paginas/tramites-y-servicios.aspx" style="color:#aaa;text-decoration:underline;">Trámites y servicios</a></li>
+                        </ul>
+                        <h6 class="text-white fw-bold mb-2 mt-3">Acerca del sitio</h6>
+                        <ul class="list-unstyled" style="font-size:0.85rem;">
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/transparencia/Paginas/transparencia.aspx#politicas" style="color:#aaa;text-decoration:underline;">Políticas</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/Paginas/mapa-del-sitio.aspx" style="color:#aaa;text-decoration:underline;">Mapa del sitio</a></li>
+                            <li class="mb-1"><a href="https://www.mincultura.gov.co/Paginas/guia-del-usuario.aspx" style="color:#aaa;text-decoration:underline;">Accesibilidad</a></li>
+                        </ul>
+                        <p style="font-size:0.8rem;color:#666;margin-top:15px;">Copyright © 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#top" class="position-fixed bottom-0 end-0 m-4 btn rounded-circle d-flex align-items-center justify-content-center" style="width:44px;height:44px;background:var(--obs-accent);color:#fff;z-index:1000;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);" aria-label="Volver arriba"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animación de cifras con IntersectionObserver
+        (function () {
+            const counters = document.querySelectorAll('.cifra-counter');
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function animateCounter(el) {
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                if (prefersReduced) { el.textContent = target.toLocaleString('es-CO'); return; }
+                const duration = 1600;
+                const start = performance.now();
+                function step(now) {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.floor(target * ease).toLocaleString('es-CO');
+                    if (progress < 1) requestAnimationFrame(step);
+                    else el.textContent = target.toLocaleString('es-CO');
+                }
+                requestAnimationFrame(step);
+            }
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            animateCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                counters.forEach(function (c) { observer.observe(c); });
+            } else {
+                counters.forEach(animateCounter);
+            }
+        })();
+    </script>
+</body>
+</html>

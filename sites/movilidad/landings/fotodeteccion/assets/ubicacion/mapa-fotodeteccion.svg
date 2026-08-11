@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f0f0f0" stroke="#cccccc" stroke-width="2"/>
+  <!-- City outline (simplified Bogotá shape) -->
+  <path d="M300 100 L350 80 L420 90 L480 120 L520 180 L530 260 L510 340 L490 400 L460 450 L420 500 L370 530 L320 520 L280 480 L260 420 L250 350 L260 280 L270 200 L280 150 Z" fill="#e8e8e8" stroke="#999999" stroke-width="2"/>
+  <!-- Camera location dots -->
+  <circle cx="350" cy="200" r="8" fill="#e74c3c"/>
+  <circle cx="400" cy="250" r="8" fill="#e74c3c"/>
+  <circle cx="380" cy="320" r="8" fill="#e74c3c"/>
+  <circle cx="420" cy="380" r="8" fill="#e74c3c"/>
+  <circle cx="340" cy="400" r="8" fill="#e74c3c"/>
+  <circle cx="450" cy="300" r="8" fill="#e74c3c"/>
+  <circle cx="360" cy="150" r="8" fill="#e74c3c"/>
+  <circle cx="310" cy="350" r="8" fill="#e74c3c"/>
+  <circle cx="430" cy="180" r="8" fill="#e74c3c"/>
+  <circle cx="470" cy="250" r="8" fill="#e74c3c"/>
+  <!-- Legend -->
+  <rect x="580" y="450" width="180" height="100" fill="#ffffff" stroke="#999999" stroke-width="1" rx="5" ry="5"/>
+  <circle cx="600" cy="480" r="6" fill="#e74c3c"/>
+  <text x="615" y="485" font-family="Arial, sans-serif" font-size="12" fill="#333333">Cámara de fotodetección</text>
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="10" fill="#666666">10 ubicaciones</text>
+  <text x="600" y="535" font-family="Arial, sans-serif" font-size="10" fill="#666666">marcadas</text>
+  <!-- Title text -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="18" fill="#333333" text-anchor="middle" font-weight="bold">Mapa de ubicación de cámaras</text>
+  <text x="400" y="65" font-family="Arial, sans-serif" font-size="14" fill="#666666" text-anchor="middle">de fotodetección en Bogotá</text>
+  <!-- Placeholder notice -->
+  <text x="400" y="580" font-family="Arial, sans-serif" font-size="12" fill="#999999" text-anchor="middle">Imagen placeholder (800×600) — Reemplazar por mapa real</text>
+</svg>

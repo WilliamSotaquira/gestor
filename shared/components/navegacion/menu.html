@@ -1,0 +1,78 @@
+<!--
+  MENU DE NAVEGACION GOV.CO v5
+  Clase: .menu-govco
+  
+  Tipos de menu:
+  - Simple (enlaces directos)
+  - Con dropdown (submenu)
+  - Megamenu (2/3 columnas)
+  - Responsive (hamburguesa)
+-->
+
+<!-- ======================================== -->
+<!-- MENU BASICO CON DROPDOWN                 -->
+<!-- ======================================== -->
+<nav class="menu-govco navbar navbar-expand-md">
+  <div class="container-fluid">
+    <!-- Boton hamburguesa (mobile) -->
+    <button class="btn-menu-govco navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Menu de navegacion">
+      <span class="icon-menu-govco"></span>
+    </button>
+
+    <!-- Items del menu -->
+    <div class="collapse navbar-collapse" id="menuPrincipal">
+      <ul class="navbar-nav">
+        <!-- Enlace simple -->
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Inicio</a>
+        </li>
+
+        <!-- Enlace con dropdown -->
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+            <span>La entidad</span>
+          </button>
+          <ul class="dropdown-menu col-2-menu-govco dropdown-menu-center-govco">
+            <li><a class="dropdown-item" href="#">Mision y vision</a></li>
+            <li><a class="dropdown-item" href="#">Estructura organizacional</a></li>
+            <li><a class="dropdown-item" href="#">Directorio</a></li>
+            <li><a class="dropdown-item" href="#">Normatividad</a></li>
+          </ul>
+        </li>
+
+        <!-- Otro dropdown -->
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+            <span>Tramites y servicios</span>
+          </button>
+          <ul class="dropdown-menu col-2-menu-govco dropdown-menu-center-govco">
+            <li><a class="dropdown-item" href="#">Tramite 1</a></li>
+            <li><a class="dropdown-item" href="#">Tramite 2</a></li>
+            <li><a class="dropdown-item" href="#">Servicio 1</a></li>
+            <li><a class="dropdown-item" href="#">Servicio 2</a></li>
+          </ul>
+        </li>
+
+        <!-- Enlace simple -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Transparencia</a>
+        </li>
+
+        <!-- Enlace simple -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

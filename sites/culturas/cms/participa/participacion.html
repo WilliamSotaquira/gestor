@@ -1,0 +1,421 @@
+<style>
+    .participa-govco {
+        max-width: 1100px;
+        margin: 0 auto;
+        font-family: Verdana, sans-serif;
+    }
+
+    .participa-govco>h3,
+    .participa-govco>.cp-grid h3 {
+        font-family: 'Nunito Sans', sans-serif;
+        color: var(--govcolor-cobalt, #0943B5);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    .participa-govco>h4,
+    .participa-govco>.cp-grid h4,
+    .participa-govco .cp-card h4 {
+        font-family: 'Nunito Sans', sans-serif;
+        color: var(--govcolor-cobalt, #0943B5);
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .participa-govco>p,
+    .participa-govco .cp-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--govcolor-matterhorn, #4C4C4C);
+        margin-bottom: 1rem;
+    }
+
+    .participa-govco>ul>li,
+    .participa-govco .cp-card li {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--govcolor-matterhorn, #4C4C4C);
+        margin-bottom: 0.5rem;
+    }
+
+    .participa-govco .cp-card a,
+    .participa-govco>a,
+    .participa-govco>p a {
+        color: var(--govcolor-cobalt, #0943B5);
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .participa-govco .cp-card a:hover,
+    .participa-govco>a:hover,
+    .participa-govco>p a:hover {
+        color: var(--govcolor-havelock-lue, #4672C8);
+    }
+
+    .participa-govco .dp-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .participa-govco .dp-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .participa-govco .dp-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .participa-govco .dp-card {
+        background: var(--govcolor-cobalt, #0943B5);
+        color: #fff;
+        border-radius: 10px;
+        padding: 14px 16px;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 70px;
+        border: 2px solid transparent;
+        outline: none;
+    }
+
+    .participa-govco .dp-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(9, 67, 181, 0.3);
+    }
+
+    .participa-govco .dp-card:focus-visible {
+        border-color: #FDAA29;
+        box-shadow: 0 0 0 3px rgba(253, 170, 41, 0.4);
+    }
+
+    .participa-govco .dp-card.active {
+        background: #7b2cbf;
+        border-color: #FDAA29;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(123, 44, 191, 0.35);
+    }
+
+    .participa-govco .dp-detail {
+        display: none;
+        background: #fff;
+        border-left: 5px solid #7b2cbf;
+        border-radius: 0 10px 10px 0;
+        padding: 1.25rem 1.5rem;
+        margin-top: 16px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--govcolor-matterhorn, #4C4C4C);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        animation: dpFadeIn 0.3s ease;
+    }
+
+    .participa-govco .dp-detail.visible {
+        display: block;
+    }
+
+    .participa-govco .dp-detail-title {
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 700;
+        color: #7b2cbf;
+        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+    }
+
+    @keyframes dpFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .participa-govco .cp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+    }
+
+    .participa-govco .cp-card {
+        background: #fff;
+        border: 1px solid #e0e7f4;
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .participa-govco .cp-card:hover {
+        box-shadow: 0 4px 16px rgba(9, 67, 181, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .participa-govco .cp-card h4 {
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .participa-govco .cp-card p {
+        font-size: 0.9rem;
+        color: var(--govcolor-grey, #7E7E7E);
+        margin-bottom: 0.75rem;
+    }
+
+    .participa-govco .cp-card .btn-govco {
+        font-size: 0.85rem;
+    }
+
+    .participa-govco .cp-card--pending {
+        background: var(--govcolor-white-smoke, #F4F4F4);
+        border-style: dashed;
+    }
+
+    .participa-govco .cp-card--pending .cp-pending {
+        font-style: italic;
+        color: var(--govcolor-grey, #7E7E7E);
+        font-size: 0.85rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .participa-govco .dp-card,
+        .participa-govco .cp-card {
+            transition: none;
+        }
+
+        .participa-govco .dp-detail {
+            animation: none;
+        }
+    }
+</style>
+
+<div class="participa-govco">
+    <h3>Instrumentos para el diagnóstico participativo</h3>
+    <div class="dp-grid" role="tablist" aria-label="Instrumentos para el diagnóstico participativo">
+        <div class="dp-card" data-dp="0" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Mesas de participación ciudadana</div>
+        <div class="dp-card" data-dp="1" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Mesas de trabajo</div>
+        <div class="dp-card" data-dp="2" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Foros</div>
+        <div class="dp-card" data-dp="3" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Audiencia pública participativa</div>
+        <div class="dp-card" data-dp="4" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Formulario web</div>
+        <div class="dp-card" data-dp="5" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Encuestas deliberativas</div>
+        <div class="dp-card" data-dp="6" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Líneas de tiempo</div>
+        <div class="dp-card" data-dp="7" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Observación participante</div>
+        <div class="dp-card" data-dp="8" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Investigación acción participativa (IAP)</div>
+        <div class="dp-card" data-dp="9" role="tab" tabindex="0" aria-selected="false" aria-controls="dp-detail">Cartografía social</div>
+    </div>
+    <div class="dp-detail" id="dp-detail" role="tabpanel" aria-live="polite"></div>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+</div>
+
+<script>
+    (function () {
+        var datos = [
+            { t: "Mesas de participación ciudadana", d: "Espacios de diálogo con líderes comunitarios, gremios, mujeres, jóvenes y otros grupos sociales para participar activamente en la creación, diseño, ejecución y control de políticas públicas." },
+            { t: "Mesas de trabajo", d: "Espacios de encuentro para promover la discusión y construcción colectiva de estrategias y políticas públicas en el sector de las culturas, las artes y los saberes." },
+            { t: "Foros", d: "Espacios físicos o virtuales donde se intercambian ideas, opiniones y experiencias sobre temas de interés común para la ciudadanía." },
+            { t: "Audiencia pública participativa", d: "Acto público de diálogo entre organizaciones sociales, ciudadanía y servidores públicos para evaluar la gestión gubernamental y garantizar los derechos ciudadanos." },
+            { t: "Formulario web", d: "Herramienta virtual que permite a la ciudadanía enviar información en tiempo real sobre temas de su interés, sistematizable por el Ministerio para la toma de decisiones." },
+            { t: "Encuestas deliberativas", d: "Proceso metodológico que da voz a la ciudadanía en decisiones públicas a través de consulta y cogestión. Se realizan de manera presencial en grupos de 15 a 40 personas." },
+            { t: "Líneas de tiempo", d: "Herramienta de representación visual que organiza cronológicamente los hitos más importantes de un tema, proceso o periodo histórico." },
+            { t: "Observación participante", d: "Metodología en la que la persona investigadora se sumerge en las actividades de una comunidad para registrar comportamientos, hábitos y dinámicas cotidianas con fines investigativos." },
+            { t: "Investigación acción participativa (IAP)", d: "Metodología que involucra a las personas participantes como agentes de cambio. Investigadores y comunidad construyen conocimiento colectivo mediante un diálogo de saberes." },
+            { t: "Cartografía social", d: "Metodología que permite entender el entorno comunitario mediante mapas elaborados colectivamente, donde se ubican caminos, recursos y elementos que reflejan el saber local." }
+        ];
+        var cards = document.querySelectorAll('.participa-govco .dp-card');
+        var detail = document.getElementById('dp-detail');
+
+        function activateCard(card) {
+            var idx = parseInt(card.getAttribute('data-dp'));
+            var wasActive = card.classList.contains('active');
+            cards.forEach(function (c) {
+                c.classList.remove('active');
+                c.setAttribute('aria-selected', 'false');
+            });
+            if (wasActive) {
+                detail.classList.remove('visible');
+                detail.innerHTML = '';
+            } else {
+                card.classList.add('active');
+                card.setAttribute('aria-selected', 'true');
+                detail.innerHTML = '<p class="dp-detail-title">' + datos[idx].t + '</p><p>' + datos[idx].d + '</p>';
+                detail.classList.add('visible');
+                setTimeout(function () { detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
+            }
+        }
+
+        cards.forEach(function (card) {
+            card.addEventListener('click', function () { activateCard(card); });
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activateCard(card);
+                }
+            });
+        });
+    })();
+</script>
+
+<div class="participa-govco">
+    <h3>¿Qué caja de herramientas tienes a disposición para participar?</h3>
+    <p>A continuación, encuentras algunas de las herramientas que puedes utilizar para revisar, acceder a información y
+        participar de manera incidente en los procesos de consulta ciudadana del Ministerio:</p>
+
+    <div class="row">
+        <div class="col-md-6 p-3">
+            <div class="accordion" id="accordionHerr1">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collSinic" aria-expanded="false" aria-controls="collSinic">
+                            Sistema Nacional de Información Cultural – SINIC
+                        </button>
+                    </h2>
+                    <div id="collSinic" class="accordion-collapse collapse" data-bs-parent="#accordionHerr1">
+                        <div class="accordion-body">
+                            <p>Es un componente del Sistema Nacional de Cultura (SNCu) del Ministerio de las Culturas, las Artes y los Saberes que brinda información sobre el sector cultural a la ciudadanía relacionada con:</p>
+                            <ul>
+                                <li>La inversión realizada por el ministerio en el territorio nacional.</li>
+                                <li>Caracterización de los agentes del sector registrados en la plataforma Soy Cultura.</li>
+                                <li>Espacios y equipamientos culturales identificados por el ministerio en el territorio nacional.</li>
+                                <li>Fuentes de financiación del sector cultura a nivel territorial.</li>
+                                <li>Estudios, mediciones y publicaciones sobre el sector cultura realizados por el Ministerio y por otras entidades del Gobierno Nacional.</li>
+                            </ul>
+                            <a href="https://www.sinic.gov.co/" target="_blank" rel="noopener noreferrer">Visitar SINIC →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collSoyCultura" aria-expanded="false" aria-controls="collSoyCultura">
+                            Soy Cultura
+                        </button>
+                    </h2>
+                    <div id="collSoyCultura" class="accordion-collapse collapse" data-bs-parent="#accordionHerr1">
+                        <div class="accordion-body">
+                            <p>Es una plataforma para el Registro Único Nacional de Agentes Culturales. Se trata de un instrumento para la inscripción, caracterización y actualización de la información de los gestores y creadores culturales a nivel nacional, donde se pueden inscribir personas naturales así:</p>
+                            <ul>
+                                <li>Colombianos mayores de edad, que sean agentes culturales.</li>
+                                <li>Extranjeros mayores de 18 años, con residencia continua en Colombia por cinco (5) años.</li>
+                            </ul>
+                            <p>Soy Cultura ofrece datos relevantes, caracterización, infografías y repositorio de publicaciones sobre el sector cultural de Colombia.</p>
+                            <a href="https://soycultura.mincultura.gov.co/#/home" target="_blank" rel="noopener noreferrer">Visitar Soy Cultura →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collConecta" aria-expanded="false" aria-controls="collConecta">
+                            Conecta Cultura
+                        </button>
+                    </h2>
+                    <div id="collConecta" class="accordion-collapse collapse" data-bs-parent="#accordionHerr1">
+                        <div class="accordion-body">
+                            <p>Es una plataforma que sirve como espacio de encuentro y diálogo de experiencias, expresiones, colectivos culturales comunitarios, populares y alternativos alrededor de la comunicación, la cultura y las narrativas digitales, que se entretejen desde los territorios colombianos, con voz propia y mirada local.</p>
+                            <a href="https://conectacultura.co/" target="_blank" rel="noopener noreferrer">Visitar Conecta Cultura →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 p-3">
+            <div class="accordion" id="accordionHerr2">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collBanco" aria-expanded="false" aria-controls="collBanco">
+                            Banco de Contenidos
+                        </button>
+                    </h2>
+                    <div id="collBanco" class="accordion-collapse collapse" data-bs-parent="#accordionHerr2">
+                        <div class="accordion-body">
+                            <p>Es una plataforma que reúne la producción audiovisual, sonora y multimedia apoyada y/o producida por el Ministerio de las Culturas, las Artes y los Saberes desde 1989 hasta el presente.</p>
+                            <a href="https://bancodecontenidos.mincultura.gov.co/" target="_blank" rel="noopener noreferrer">Visitar Banco de Contenidos →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collGuia" aria-expanded="false" aria-controls="collGuia">
+                            Guía de Bolsillo – Cruce de Miradas
+                        </button>
+                    </h2>
+                    <div id="collGuia" class="accordion-collapse collapse" data-bs-parent="#accordionHerr2">
+                        <div class="accordion-body">
+                            <p>Es una guía cuyo contenido, historias y reflexiones giran en torno a cómo reducir las brechas de género en las producciones audiovisuales y la manera de generar ambientes seguros y que generen confianza.</p>
+                            <a href="https://guiasdebolsillo.conectacultura.co/cruce-de-miradas/subportada" target="_blank" rel="noopener noreferrer">Visitar Guía Cruce de Miradas →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collPortales" aria-expanded="false" aria-controls="collPortales">
+                            Portales y sistemas de información
+                        </button>
+                    </h2>
+                    <div id="collPortales" class="accordion-collapse collapse" data-bs-parent="#accordionHerr2">
+                        <div class="accordion-body">
+                            <p>Encuentra la lista de todos los portales web y sistemas de información de todas las entidades adscritas al Ministerio de las Culturas, las Artes y los Saberes.</p>
+                            <a href="https://mincultura.gov.co/Paginas/portales-y-sistemas-de-informacion.aspx" target="_blank" rel="noopener noreferrer">Ver portales y sistemas →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cp-grid">
+
+        <div class="cp-card">
+            <h4>Resultados participación en diagnóstico 2026</h4>
+            <p><a href="https://www.mincultura.gov.co/despacho/plan-nacional-de-cultura/Documents/20.%20Capitulo%20de%20los%20pueblos%20indigenas%20-%20Digital%2030-06-2026.pdf"
+                    target="_blank" rel="noopener noreferrer">Capítulo de los pueblos indígenas - Plan Nacional de Cultura</a></p>
+            <p><a href="https://www.mincultura.gov.co/direcciones/artes/Documents/planes-de-las-artes/PNAPV_2026_1_opt.pdf"
+                    target="_blank" rel="noopener noreferrer">Plan Nacional de Artes Plásticas y Visuales - 2023 a 2026</a></p>
+        </div>
+
+        <div class="cp-card">
+            <h4>Resultados participación en diagnóstico 2025</h4>
+            <p><a href="https://www.mincultura.gov.co/despacho/ley-general-de-cultura/Paginas/index.aspx#carousel-4"
+                    target="_blank" rel="noopener noreferrer">Fortalecimiento Ley General de Cultura</a></p>
+            <p><a href="https://www.mincultura.gov.co/despacho/plan-nacional-de-cultura/Documents/AnalisisEnfoqueBiocultural_DG.pdf"
+                    target="_blank" rel="noopener noreferrer">Análisis del Enfoque Biocultural de la Acción Climática, en el marco de la política cultural - 2025</a></p>
+        </div>
+
+        <div class="cp-card">
+            <h4>Resultados participación en diagnóstico 2024</h4>
+            <p><a href="https://www.mincultura.gov.co/despacho/plan-nacional-de-cultura/Documents/Informe%20Fase%20de%20Revisi%C3%B3n_compressed.pdf"
+                    target="_blank" rel="noopener noreferrer">Plan Nacional de Cultura 2024-2038</a></p>
+        </div>
+    </div>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e0e7f4;">
+
+    <!-- Cronograma -->
+    <h3>¿Cuál es el cronograma de participación para 2026?</h3>
+    <p>Conoce las fechas de los espacios y acciones de participación programadas para este año:</p>
+    <a href="https://www.mincultura.gov.co/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf"
+        target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco">Descargar cronograma →</a>
+    <br>
+    <h4>¿Dónde puedes inscribirte?</h4>
+    <p>Registra los temas de tu interés en actividades de participación ciudadana a través de este formulario.</p>
+    <a href="https://forms.office.com/pages/responsepage.aspx?id=Tovyk1yTFEyIrOSGl8H8l1uVjwLt4XBDnr9BgvR7wHJUQUJEVVhSM1AwN1pFV1lFR0tWTFM4WkI2NC4u&route=shorturl"
+        target="_blank" rel="noopener noreferrer" class="btn-govco fill-btn-govco">Inscribirme →</a>
+</div>

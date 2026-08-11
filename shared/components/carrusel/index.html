@@ -1,0 +1,121 @@
+<!--
+  CARRUSEL GOV.CO v5
+  Clase base: .carrusel-govco
+  
+  Tipos:
+  - Carrusel simple (imagen + caption)
+  - Carrusel multiple (imagen + texto lateral)
+  - Con controles de pausa/play
+  
+  IMPORTANTE: Incluir script.js del CDN para funcionalidad completa.
+-->
+
+<!-- ======================================== -->
+<!-- CARRUSEL SIMPLE                          -->
+<!-- ======================================== -->
+<div id="carruselSimple" class="carrusel-govco carousel slide" data-bs-ride="carousel">
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carruselSimple" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+    <button type="button" data-bs-target="#carruselSimple" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+    <button type="button" data-bs-target="#carruselSimple" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="#">
+        <img src="https://via.placeholder.com/1920x500/0943B5/ffffff" alt="Banner principal - Descripcion del contenido">
+        <div class="carousel-caption">
+          <h5>Titulo del banner</h5>
+          <p>Subtitulo o descripcion breve</p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="#">
+        <img src="https://via.placeholder.com/1920x500/4672C8/ffffff" alt="Segundo banner - Descripcion del contenido">
+        <div class="carousel-caption">
+          <h5>Segundo banner</h5>
+          <p>Informacion relevante</p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="#">
+        <img src="https://via.placeholder.com/1920x500/158361/ffffff" alt="Tercer banner - Descripcion del contenido">
+        <div class="carousel-caption">
+          <h5>Tercer banner</h5>
+          <p>Mas informacion</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Control pausa/play -->
+  <div class="control-start-pause">
+    <button class="pause active" aria-label="Pausar carrusel">
+      <span>Pausar</span>
+    </button>
+    <button class="start" aria-label="Reproducir carrusel">
+      <span>Reproducir</span>
+    </button>
+  </div>
+
+  <!-- Controles prev/next -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carruselSimple" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carruselSimple" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+<!-- ======================================== -->
+<!-- CARRUSEL MULTIPLE (imagen + texto)       -->
+<!-- ======================================== -->
+<div id="carruselMultiple" class="carrusel-govco carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carruselMultiple" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+    <button type="button" data-bs-target="#carruselMultiple" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item multiple-carrusel-govco active">
+      <a href="#">
+        <img src="https://via.placeholder.com/960x400/0943B5/ffffff" alt="Imagen del slide 1" style="width: 55%; object-fit: cover;">
+        <div class="carousel-caption">
+          <p>Texto descriptivo del primer slide que acompana a la imagen lateral.</p>
+        </div>
+      </a>
+    </div>
+    <div class="carousel-item multiple-carrusel-govco">
+      <a href="#">
+        <img src="https://via.placeholder.com/960x400/4672C8/ffffff" alt="Imagen del slide 2" style="width: 55%; object-fit: cover;">
+        <div class="carousel-caption">
+          <p>Texto del segundo slide con informacion complementaria relevante.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev carousel-multiple-prev" type="button" data-bs-target="#carruselMultiple" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next carousel-multiple-next" type="button" data-bs-target="#carruselMultiple" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+<!--
+  NOTA: Para el control de pausa/play, el script.js del CDN GOV.CO
+  maneja la logica. Si necesitas control manual, usa:
+  
+  const carousel = bootstrap.Carousel.getInstance(element);
+  carousel.pause(); // pausar
+  carousel.cycle(); // reanudar
+-->

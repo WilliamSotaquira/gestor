@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Evidencia técnica del impacto de las cámaras de fotodetección en la reducción de siniestros viales en Bogotá.">
+  <title>Menos velocidad, más vidas protegidas - Cámaras Salvavidas Bogotá</title>
+  <link rel="icon" href="/sites/default/files/logo_bogota_favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/styles_0.css">
+  <style>
+    /* === ESTADÍSTICAS === */
+    .stat-card {
+      background: linear-gradient(135deg, #1a3a6b 0%, #2d5aa0 100%);
+      border-radius: 16px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(26,58,107,.2);
+      transition: transform .3s ease, box-shadow .3s ease;
+      height: 100%;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(26,58,107,.3);
+    }
+    .stat-card .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: .5rem;
+      color: #fff;
+    }
+    .stat-card .stat-label {
+      font-size: .85rem;
+      opacity: .9;
+      line-height: 1.4;
+    }
+    .stat-animate {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition-delay: calc(var(--stat-delay, 0) * 0.15s);
+    }
+    .stat-animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner container">
+      <a class="site-brand" href="/sitio/camaras-de-fotodeteccion-bogota" aria-label="Ir al inicio">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-05-20/logo.png" alt="Alcaldía Mayor de Bogotá D.C. y Secretaría de Movilidad">
+      </a>
+      <nav class="site-nav" id="site-primary-menu" aria-label="Navegación principal">
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-entender-el-sistema">¿Qué son?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-como-funciona">¿Cómo funcionan?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-ubicacion-e-infracciones">¿Dónde están?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Normatividad</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-resultados">Más vidas protegidas</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-preguntas-frecuentes">Resuelva sus dudas</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="header-cta" href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" target="_blank" rel="noopener noreferrer" aria-label="Consultar comparendo (abre en nueva pestaña)">
+          <span>Consultar comparendo</span>
+          <span class="btn-icon-circle" aria-hidden="true">→</span>
+        </a>
+        <button class="site-menu-toggle" type="button" aria-controls="site-primary-menu" aria-expanded="false" aria-label="Abrir menú principal">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+      <div class="hero-banner__bg" style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/hero-3a.jpg');"></div>
+      <div class="hero-banner__fade" aria-hidden="true"></div>
+      <div class="hero-banner__content">
+        <div class="container">
+          <nav class="breadcrumb-fd" aria-label="Ruta de navegación">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/sitio/camaras-de-fotodeteccion-bogota">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Menos velocidad, más vidas protegidas</li>
+            </ol>
+          </nav>
+          <h1 class="hero-banner__title">Menos velocidad, más vidas protegidas</h1>
+          <p class="hero-banner__description">Reducir la velocidad es una de las formas más efectivas de prevenir siniestros viales</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: INTRODUCCIÓN -->
+    <section class="section-fd">
+      <div class="container">
+        <div class="content-block">
+          <p style="font-size: 1.1rem; line-height: 1.8; color: var(--fd-text);">El exceso de velocidad reduce el tiempo para reaccionar ante un imprevisto, aumenta la distancia de frenado y hace que cualquier choque tenga consecuencias mucho más graves. Por eso, respetar el límite de velocidad es una de las medidas más efectivas para prevenir siniestros viales y proteger la vida en las vías de la ciudad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: ESTADÍSTICAS DE IMPACTO -->
+    <section class="section-fd" id="stats-section">
+      <div class="container">
+        <div class="content-block mb-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+              <h2>La evidencia técnica demuestra que las cámaras de fotodetección contribuyen a reducir siniestros viales y a proteger la vida en las vías de Bogotá.</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-5">
+            <div class="stat-fd text-center p-4 h-100" style="background: var(--fd-white); border-radius: var(--fd-card-radius); border: 1px solid var(--fd-border); display: flex; flex-direction: column; justify-content: center; min-height: 160px;">
+              <div class="stat-number stat-counter" data-target="9" data-suffix=" % más" style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: var(--fd-accent);">9 % más</div>
+              <p class="stat-label mt-2 mb-0">de vidas salvadas por año desde el 2022</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="stat-fd text-center p-4 h-100" style="background: var(--fd-white); border-radius: var(--fd-card-radius); border: 1px solid var(--fd-border); display: flex; flex-direction: column; justify-content: center; min-height: 160px;">
+              <div class="stat-number stat-counter" data-target="28" data-suffix=" %" style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: var(--fd-accent);">28 %</div>
+              <p class="stat-label mt-2 mb-0">menos de siniestros viales con personas lesionadas en tramos de hasta <strong>500 metros</strong> alrededor de las cámaras de fotodetección.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center mt-3">
+          <div class="col-sm-6 col-lg-4">
+            <div class="stat-card stat-animate" style="--stat-delay: 0">
+              <div class="stat-number" data-target="30" data-suffix="%">30%</div>
+              <div class="stat-label">Reducción de fallecidos en tramos con cámaras en los últimos tres años.</div>
+              <small style="opacity:.85; display:block; margin-top:.5rem;">WRI, 2025</small>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="stat-card stat-animate" style="--stat-delay: 1">
+              <div class="stat-number" data-target="33" data-suffix="%">33%</div>
+              <div class="stat-label">Reducción en siniestros viales fatales en el área de influencia.</div>
+              <small style="opacity:.85; display:block; margin-top:.5rem;">ITDP, 2025</small>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="stat-card stat-animate" style="--stat-delay: 2">
+              <div class="stat-number" data-target="27" data-suffix="%">27%</div>
+              <div class="stat-label">Reducción promedio de siniestros con fatalidades estimada internamente.</div>
+              <small style="opacity:.85; display:block; margin-top:.5rem;">SDM, 2024</small>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-muted mt-4"><em>(ITDP, 2025; WRI, 2025).</em></p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: VIDEO -->
+    <section class="section-fd bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="ratio ratio-16x9">
+              <!-- Video placeholder: reemplazar src cuando esté disponible en servidor público -->
+              <video controls preload="metadata" style="object-fit: cover;" poster="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-08/cs%20-%20secretaria%20de%20movilidad-34.jpg">
+                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07/factos%20por%20la%20vida%20en%20las%20vias.mp4" type="video/mp4">
+                Su navegador no soporta la reproducción de video.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: ESTUDIO -->
+    <section class="section-fd bg-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Efecto del Sistema de Cámaras Salvavidas en Bogotá</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <p>Este estudio, desarrollado por el Grupo SUR de la Universidad de los Andes, el Instituto de Políticas para el Transporte y el Desarrollo (ITDP) y el Automóvil Club de Colombia, tuvo como objetivo evaluar el impacto de las cámaras de fotodetección en la seguridad vial y en la circulación vehicular, y está fundamentado en el análisis técnico de evidencias internacionales y locales del sistema de cámaras en la ciudad, a través de cuatro dimensiones fundamentales: gobernanza, tecnologías, cobertura y aceptabilidad.</p>
+            <p><strong>El estudio se dividió en cuatro componentes claves:</strong></p>
+            <ol>
+              <li>Diagnóstico integral del sistema actual</li>
+              <li>Estrategia y migración tecnológica</li>
+              <li>Modelo de optimización matemática con IA</li>
+              <li>Gobernanza y hoja de ruta (2025-2035).</li>
+            </ol>
+            <p>Cuyos análisis le permiten a Bogotá saber dónde, cuándo, cómo y por qué modernizar su control vial para que las cámaras dejen de ser vistas como multas de recaudo y se conviertan en herramientas de protección para la vida en las vías.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: CONCLUSIONES -->
+    <section class="section-fd">
+      <div class="container">
+        <div class="section-title">
+          <h2>Las principales conclusiones del estudio son:</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <ul>
+              <li class="mb-3">Las cámaras son efectivas para reducir siniestros graves y fatalidades, especialmente en corredores con más dispositivos: disminución promedio de hasta 30 % en fallecidos en tramos con cámaras, con un 9 % más de vidas salvadas por año desde 2022; reducción del 28 % en siniestros con lesionados en segmentos de 500 m alrededor de cámaras y disminución del 27 % en promedio de siniestros con fatalidades.</li>
+              <li class="mb-3">No generan congestión ni aumentan significativamente los tiempos de viaje.</li>
+              <li class="mb-3">Son clave para cumplir metas del Plan Distrital de Seguridad Vial 2023–2032 (-50% fatalidades) y del Plan Distrital de Desarrollo 2024–2027 (-15% víctimas fatales al 2027).</li>
+              <li class="mb-3">Se recomienda ampliar y fortalecer el sistema, priorizando corredores con alta siniestralidad vial y horas críticas.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER: MENSAJE FINAL -->
+    <section class="section-fd bg-light" id="proposito">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-auto d-none d-md-block">
+            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-08/politica-de-privacidad.png" loading="lazy" alt="" aria-hidden="true" width="72" height="72" style="margin: 0 1.5rem;">
+          </div>
+          <div class="col-auto d-none d-md-block" aria-hidden="true">
+            <div style="width: 1px; height: 80px; background-color: var(--fd-border);"></div>
+          </div>
+          <div class="col" style="padding-left: 1.5rem;">
+            <h2 class="mb-2">Cada decisión en la vía puede salvar una vida, porque prevenir siempre será mejor que sancionar.</h2>
+            <p class="mb-0" style="max-width: 640px;">Conducir con responsabilidad reduce los riesgos y protege la vida de todas las personas que se mueven por Bogotá.</p>
+          </div>
+          <div class="col-md-4 d-none d-md-flex align-items-center justify-content-end">
+            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-08/path2.png" loading="lazy" alt="" aria-hidden="true" style="width: 100%; max-width: 400px; height: auto;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER NAVEGACIÓN SECUENCIAL -->
+    <nav class="footer-nav-fd" aria-label="Navegación secuencial entre páginas">
+      <div class="container">
+        <div class="nav-sequential">
+          <a href="/sitio/camaras-de-fotodeteccion-bogota-ubicacion-e-infracciones" class="nav-link-prev" aria-label="Ir a la página anterior: ¿Dónde están?">Anterior</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota" class="nav-link-home" aria-label="Volver a la página de inicio">Volver al inicio</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota-preguntas-frecuentes" class="nav-link-next" aria-label="Ir a la página siguiente: Resuelva sus dudas">Siguiente</a>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <div class="site-footer__top">
+        <nav class="footer-links" aria-label="Enlaces de pie de página">
+          <a href="https://www.movilidadbogota.gov.co/manual-y-politicas-de-seguridad-de-la-informacion">Políticas de privacidad</a>
+          <a href="#">Términos y condiciones</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota">Mapa del sitio</a>
+          <a href="https://www.movilidadbogota.gov.co/atencion-servicios/puntos-atencion">Atención a la ciudadanía</a>
+        </nav>
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/SectorMovilidad" aria-label="Facebook" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+          <a href="https://twitter.com/SectorMovilidad" aria-label="X" title="X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/saboramovilidad" aria-label="Instagram" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@SecretariaMovilidadBogota" aria-label="YouTube" title="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p><strong>Secretaría Distrital de Movilidad</strong> · Alcaldía Mayor de Bogotá D.C.</p>
+        <p>Calle 13 # 37-35, Bogotá · Línea de atención: (601) 195</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Animación de contadores y tarjetas estadísticas
+    (function() {
+      var counters = document.querySelectorAll('.stat-counter');
+      var cards = document.querySelectorAll('.stat-card-animate');
+      var animated = false;
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Si el usuario prefiere movimiento reducido, mostrar valores finales sin animación
+      if (prefersReduced) {
+        counters.forEach(function(counter) {
+          var target = counter.getAttribute('data-target');
+          var suffix = counter.getAttribute('data-suffix') || '';
+          counter.textContent = target + suffix;
+        });
+        return;
+      }
+
+      // Hover effect en tarjetas
+      cards.forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+          card.style.transform = 'translateY(-8px) scale(1.02)';
+          card.style.boxShadow = '0 12px 32px rgba(26, 58, 107, 0.15)';
+        });
+        card.addEventListener('mouseleave', function() {
+          card.style.transform = 'translateY(0) scale(1)';
+          card.style.boxShadow = 'none';
+        });
+      });
+
+      function animateCounters() {
+        if (animated) return;
+        animated = true;
+        counters.forEach(function(counter) {
+          var target = parseInt(counter.getAttribute('data-target'), 10);
+          var suffix = counter.getAttribute('data-suffix') || '';
+          var duration = 1500;
+          var startTime = null;
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(eased * target);
+            counter.textContent = current + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            }
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              animateCounters();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+
+        cards.forEach(function(card) { observer.observe(card); });
+      } else {
+        animateCounters();
+      }
+    })();
+  </script>
+  <script>
+function highlightActiveNav(){const c=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.site-nav a').forEach(l=>{l.classList.remove('active');l.removeAttribute('aria-current');if(l.getAttribute('href')===c){l.classList.add('active');l.setAttribute('aria-current','page')}})}
+function setupMenuToggle(){const t=document.querySelector('.site-menu-toggle'),n=document.querySelector('.site-nav'),h=document.querySelector('.site-header');if(!t||!n)return;t.addEventListener('click',()=>{const o=n.classList.toggle('is-open');t.setAttribute('aria-expanded',o);if(h)h.classList.toggle('is-menu-open',o)});n.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{n.classList.remove('is-open');t.setAttribute('aria-expanded','false');if(h)h.classList.remove('is-menu-open')})})}
+document.addEventListener('DOMContentLoaded',()=>{highlightActiveNav();setupMenuToggle()});
+  </script>
+  <script>
+    // Animación stat-animate con IntersectionObserver
+    (function() {
+      var section = document.getElementById('stats-section');
+      if (!section) return;
+      var stats = section.querySelectorAll('.stat-animate');
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) { stats.forEach(function(s){ s.classList.add('is-visible'); }); return; }
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) { stats.forEach(function(s){ s.classList.add('is-visible'); }); obs.disconnect(); }
+          });
+        }, { threshold: 0.3 });
+        obs.observe(section);
+      } else { stats.forEach(function(s){ s.classList.add('is-visible'); }); }
+    })();
+  </script>
+
+<script>
+  (function(){"use strict";if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(window.innerWidth<768)return;var BASE="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/";var sprites=["prudencia_1.png","prudencia_2.png","prudencia_3.png","prudencia-1.gif","prudencia-2.gif","prudencia-3.gif"];var positions=[{top:"15%",right:"3%"},{bottom:"10%",left:"2%"},{top:"40%",left:"3%"},{bottom:"20%",right:"4%"},{top:"25%",right:"5%"},{bottom:"35%",left:"4%"},{top:"55%",right:"2%"},{bottom:"5%",left:"3%"}];function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}shuffle(sprites);shuffle(positions);var sections=[];var current=0;var MAX=4;function init(){var all=document.querySelectorAll(".section-fd");sections=shuffle(Array.prototype.slice.call(all)).slice(0,MAX)}function appear(){if(current>=MAX||current>=sections.length)return;var section=sections[current];var sprite=sprites[current%sprites.length];var pos=positions[current%positions.length];current++;var img=document.createElement("img");img.src=BASE+sprite;img.alt="";img.setAttribute("aria-hidden","true");img.style.cssText="position:absolute;z-index:2;pointer-events:none;max-width:220px;height:auto;opacity:0;transition:opacity 0.8s ease,transform 0.8s ease;transform:translateY(10px)";img.style.top=pos.top||"auto";img.style.bottom=pos.bottom||"auto";img.style.left=pos.left||"auto";img.style.right=pos.right||"auto";section.appendChild(img);setTimeout(function(){img.style.opacity="0.9";img.style.transform="translateY(0)"},50);var stay=14000+Math.random()*6000;setTimeout(function(){img.style.opacity="0";img.style.transform="translateY(-10px)";setTimeout(function(){if(img.parentNode)img.parentNode.removeChild(img);scheduleNext()},900)},stay)}function scheduleNext(){if(current>=MAX)return;var delay=8000+Math.random()*12000;setTimeout(appear,delay)}window.addEventListener("DOMContentLoaded",function(){init();setTimeout(appear,2000)})})();
+  </script>
+</body>
+</html>

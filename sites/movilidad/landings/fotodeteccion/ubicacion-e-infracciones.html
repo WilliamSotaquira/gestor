@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce dónde están instaladas las cámaras de fotodetección en Bogotá, los criterios de ubicación y los tipos de infracciones que detectan.">
+  <title>Ubicación e infracciones - Cámaras Salvavidas Bogotá</title>
+  <link rel="icon" href="/sites/default/files/logo_bogota_favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/styles_0.css">
+  <style>
+    /* === ANIMACIONES DE ENTRADA === */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .stagger-animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === TARJETAS DE CRITERIOS === */
+    .criteria-card {
+      background: #eaf1fb;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+      height: 100%;
+    }
+    .criteria-card:hover {
+      transform: translateY(-6px);
+      background: #d6e4f7;
+      box-shadow: 0 8px 24px rgba(9,67,181,.15);
+    }
+    .criteria-card__icon {
+      margin-bottom: 1rem;
+    }
+    .criteria-card__icon img {
+      transition: transform .3s ease;
+    }
+    .criteria-card:hover .criteria-card__icon img {
+      transform: scale(1.08);
+    }
+    .criteria-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+      color: var(--fd-accent, #1a3a6b);
+    }
+    .criteria-card__description {
+      font-size: .9rem;
+      color: #2b2b2b;
+      margin-bottom: 0;
+    }
+
+    /* === ITEMS DE INFRACCIONES === */
+    .infraction-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: .75rem 1rem;
+      transition: background .25s ease, transform .2s ease, box-shadow .25s ease;
+    }
+    .infraction-item:hover {
+      background: #eaf1fb;
+      transform: translateX(4px);
+      box-shadow: 0 2px 8px rgba(9,67,181,.08);
+    }
+    .infraction-item img {
+      transition: transform .3s ease;
+    }
+    .infraction-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* === TABS INFRACCIONES === */
+    .tabs-fd .nav-tabs {
+      justify-content: center;
+      border-bottom: none;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .tabs-fd .nav-link {
+      background: #eaf1fb;
+      border: 2px solid transparent;
+      border-radius: 50px;
+      padding: 0.75rem 1.75rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--fd-primary, #1a3a5c);
+      transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .tabs-fd .nav-link:hover,
+    .tabs-fd .nav-link:focus {
+      background: #d6e4f7;
+      border-color: var(--fd-accent, #3466a3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(9,67,181,.12);
+    }
+    .tabs-fd .nav-link.active {
+      background: var(--fd-primary, #1a3a5c);
+      color: #fff;
+      border-color: var(--fd-primary, #1a3a5c);
+      box-shadow: 0 4px 16px rgba(26,58,92,.25);
+    }
+
+    /* === MAPA === */
+    .map-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    }
+    .map-wrapper iframe {
+      display: block;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner container">
+      <a class="site-brand" href="/sitio/camaras-de-fotodeteccion-bogota" aria-label="Ir al inicio">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-05-20/logo.png" alt="Alcaldía Mayor de Bogotá D.C. y Secretaría de Movilidad">
+      </a>
+      <nav class="site-nav" id="site-primary-menu" aria-label="Navegación principal">
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-entender-el-sistema">¿Qué son?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-como-funciona">¿Cómo funcionan?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-ubicacion-e-infracciones">¿Dónde están?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Normatividad</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-resultados">Más vidas protegidas</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-preguntas-frecuentes">Resuelva sus dudas</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="header-cta" href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" target="_blank" rel="noopener noreferrer" aria-label="Consultar comparendo (abre en nueva pestaña)">
+          <span>Consultar comparendo</span>
+          <span class="btn-icon-circle" aria-hidden="true">→</span>
+        </a>
+        <button class="site-menu-toggle" type="button" aria-controls="site-primary-menu" aria-expanded="false" aria-label="Abrir menú principal">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+      <div class="hero-banner__bg" style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/cs%20-%20secretaria%20de%20movilidad-17.jpg');"></div>
+      <div class="hero-banner__fade" aria-hidden="true"></div>
+      <div class="hero-banner__content">
+        <div class="container">
+          <nav class="breadcrumb-fd" aria-label="Ruta de navegación">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/sitio/camaras-de-fotodeteccion-bogota">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Ubicación e infracciones</li>
+            </ol>
+          </nav>
+          <h1 class="hero-banner__title">Ubicación e infracciones</h1>
+          <p class="hero-banner__description">Conoce dónde están instaladas las cámaras de fotodetección en Bogotá y qué tipo de infracciones detectan en cada punto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: CRITERIOS DE INSTALACIÓN -->
+    <section class="section-fd">
+      <div class="container">
+        <div class="content-block">
+          <div class="section-title text-center mb-5">
+            <h2>¿Dónde están ubicadas y por qué?</h2>
+            <p class="mt-3"><strong>Las cámaras no están ubicadas al azar.</strong></p>
+            <p class="mt-2">Cada punto de fotodetección está autorizado por la <strong><a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Agencia Nacional de Seguridad Vial (ANSV)</a></strong> con base en análisis técnicos que consideran uno de estos criterios:</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4 stagger-animate" style="transition-delay:.1s">
+            <div class="criteria-card">
+              <div class="criteria-card__icon" aria-hidden="true">
+                <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_historial%20de%20siniestros%20viales.png" loading="lazy" alt="" width="100" height="100">
+              </div>
+              <h3 class="criteria-card__title">Historial de siniestros viales</h3>
+              <p class="criteria-card__description">Puntos con personas lesionadas y fallecidas.</p>
+            </div>
+          </div>
+          <div class="col-md-4 stagger-animate" style="transition-delay:.2s">
+            <div class="criteria-card">
+              <div class="criteria-card__icon" aria-hidden="true">
+                <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_nivel%20de%20riesgo%20en%20la%20zona.png" loading="lazy" alt="" width="100" height="100">
+              </div>
+              <h3 class="criteria-card__title">Nivel de riesgo en la zona</h3>
+              <p class="criteria-card__description">Lugares con alta circulación de peatones y ciclistas o donde se presentan conflictos viales.</p>
+            </div>
+          </div>
+          <div class="col-md-4 stagger-animate" style="transition-delay:.3s">
+            <div class="criteria-card">
+              <div class="criteria-card__icon" aria-hidden="true">
+                <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_recurrencia%20de%20infracciones.png" loading="lazy" alt="" width="100" height="100">
+              </div>
+              <h3 class="criteria-card__title">Recurrencia de infracciones de tránsito</h3>
+              <p class="criteria-card__description">Para priorizar la protección de la vida.</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-block mt-4">
+          <p class="text-center">Así se garantiza que las cámaras estén ubicadas donde más se necesita prevenir conductas de riesgo y proteger la vida en las vías de Bogotá.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: MAPA INTERACTIVO -->
+    <section class="section-fd bg-light">
+      <div class="container">
+        <div class="content-block">
+          <div class="section-title">
+            <h2>Mapa de ubicación</h2>
+            <p>Consulte la ubicación de las cámaras de fotodetección en Bogotá y conozca los puntos donde el control contribuye a prevenir conductas de riesgo y proteger la vida.</p>
+          </div>
+        </div>
+        <div class="map-wrapper fade-in-up">
+          <iframe src="https://datos.movilidadbogota.gov.co/datasets/movilidadbogota::camaras-salvavidas-bogota/explore?location=4.666172%2C-74.116817%2C12" width="100%" height="550" frameborder="0" allowfullscreen allow="geolocation" title="Mapa de ubicacion de camaras de fotodeteccion en Bogota"></iframe>
+        </div>
+        <p class="text-muted text-center mt-3"><em>Mapa interactivo. Usa los controles para acercar y explorar la ubicación de las cámaras.</em></p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: INFRACCIONES POR CATEGORÍA -->
+    <section class="section-fd">
+      <div class="container">
+        <div class="content-block">
+          <div class="section-title">
+            <h2>Tipos de infracciones detectadas</h2>
+            <p>Las cámaras de fotodetección ayudan a identificar diferentes conductas que ponen en riesgo la seguridad vial. La capacidad de detección de cada dispositivo depende de su tecnología y de la autorización otorgada para el punto donde está instalado.</p>
+          </div>
+        </div>
+
+        <div class="tabs-fd fade-in-up">
+          <ul class="nav nav-tabs" id="tabInfracciones" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="automaticas-tab" data-bs-toggle="tab" data-bs-target="#automaticas" type="button" role="tab" aria-controls="automaticas" aria-selected="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/icono%20cem_camaras%20automaticas.png" alt="" width="100" height="100" style="display: block; margin: 0 auto 0.5rem;"> Cámaras automáticas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="semiautomaticas-tab" data-bs-toggle="tab" data-bs-target="#semiautomaticas" type="button" role="tab" aria-controls="semiautomaticas" aria-selected="false"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/icono%20cem_camaras%20semiautomaticas.png" alt="" width="100" height="100" style="display: block; margin: 0 auto 0.5rem;"> Cámaras semiautomáticas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="preferencial-tab" data-bs-toggle="tab" data-bs-target="#preferencial" type="button" role="tab" aria-controls="preferencial" aria-selected="false"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/icono%20cem_carril%20preferencial.png" alt="" width="100" height="100" style="display: block; margin: 0 auto 0.5rem;"> Carril preferencial</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="tabInfraccionesContent">
+            <!-- PESTAÑA: AUTOMÁTICAS -->
+            <div class="tab-pane fade show active" id="automaticas" role="tabpanel" aria-labelledby="automaticas-tab" tabindex="0">
+              <div class="p-4">
+                <p>A través de estos dispositivos se sancionan infracciones como:</p>
+                <ul class="list-unstyled">
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_exceso%20de%20velocidad.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Exceso de velocidad</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_pico%20y%20placa.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Pico y placa</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_revision%20tecnico-mecanica.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Revisión técnico-mecánica</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_soat.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>SOAT</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_cruces%20de%20semaforo%20en%20luz%20roja.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Cruces de semáforo en luz roja</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- PESTAÑA: SEMIAUTOMÁTICAS -->
+            <div class="tab-pane fade" id="semiautomaticas" role="tabpanel" aria-labelledby="semiautomaticas-tab" tabindex="0">
+              <div class="p-4">
+                <p>Mediante estos dispositivos, las autoridades identifican:</p>
+                <ul class="list-unstyled">
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_mal%20parqueo.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Mal parqueo</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_bloqueo%20de%20calzadas%20o%20intersecciones.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Bloqueo de calzadas o intersecciones</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_pico%20y%20placa.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Pico y placa</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_dejar%20o%20recoger%20pasajeros%20en%20zonas%20no%20permitidas.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Dejar o recoger pasajeros en zonas no permitidas</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_no%20acatar%20senales.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>No acatar señales</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_bloqueos%20a%20cruces%20peatonales.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Bloqueos a cruces peatonales</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_revision%20tecnico-mecanica.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Revisión técnico-mecánica</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_soat.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>SOAT</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- PESTAÑA: CARRIL PREFERENCIAL -->
+            <div class="tab-pane fade" id="preferencial" role="tabpanel" aria-labelledby="preferencial-tab" tabindex="0">
+              <div class="p-4">
+                <p>En corredores como la Carrera 7 y la Carrera 13, hay cámaras instaladas en la vía y en los buses del sistema TransMiZonal, con el fin de garantizar que quienes utilizan el transporte público puedan hacerlo de manera eficiente. Allí, se sancionan conductas como:</p>
+                <ul class="list-unstyled">
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_invadir%20o%20bloquear%20el%20carril.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Invadir o bloquear el carril</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_circular%20de%20manera%20continua%20sobre%20el%20carril.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Circular de manera continua sobre el carril</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3 infraction-item">
+                    <span class="me-3" aria-hidden="true"><img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-22/iconos_realizar%20cargue%20y%20descargue.png" loading="lazy" alt="" width="40" height="40"></span>
+                    <span>Realizar cargue y descargue de mercancías en horarios no permitidos</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER NAVEGACIÓN SECUENCIAL -->
+    <nav class="footer-nav-fd" aria-label="Navegación secuencial entre páginas">
+      <div class="container">
+        <div class="nav-sequential">
+          <a href="/sitio/camaras-de-fotodeteccion-bogota-como-funciona" class="nav-link-prev" aria-label="Ir a la página anterior: Cómo funciona">Anterior</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota" class="nav-link-home" aria-label="Volver a la página de inicio">Volver al inicio</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia" class="nav-link-next" aria-label="Ir a la página siguiente: Normativo">Siguiente</a>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <div class="site-footer__top">
+        <nav class="footer-links" aria-label="Enlaces de pie de página">
+          <a href="https://www.movilidadbogota.gov.co/manual-y-politicas-de-seguridad-de-la-informacion">Políticas de privacidad</a>
+          <a href="#">Términos y condiciones</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota">Mapa del sitio</a>
+          <a href="https://www.movilidadbogota.gov.co/atencion-servicios/puntos-atencion">Atención a la ciudadanía</a>
+        </nav>
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/SectorMovilidad" aria-label="Facebook" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+          <a href="https://twitter.com/SectorMovilidad" aria-label="X" title="X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/saboramovilidad" aria-label="Instagram" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@SecretariaMovilidadBogota" aria-label="YouTube" title="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p><strong>Secretaría Distrital de Movilidad</strong> · Alcaldía Mayor de Bogotá D.C.</p>
+        <p>Calle 13 # 37-35, Bogotá · Línea de atención: (601) 195</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Animaciones de entrada con IntersectionObserver
+    document.addEventListener('DOMContentLoaded', function() {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var animElements = document.querySelectorAll('.fade-in-up, .stagger-animate');
+
+      if (prefersReduced) {
+        animElements.forEach(function(el) { el.classList.add('is-visible'); });
+        return;
+      }
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        animElements.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        animElements.forEach(function(el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+  <script>
+function highlightActiveNav(){const c=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.site-nav a').forEach(l=>{l.classList.remove('active');l.removeAttribute('aria-current');if(l.getAttribute('href')===c){l.classList.add('active');l.setAttribute('aria-current','page')}})}
+function setupMenuToggle(){const t=document.querySelector('.site-menu-toggle'),n=document.querySelector('.site-nav'),h=document.querySelector('.site-header');if(!t||!n)return;t.addEventListener('click',()=>{const o=n.classList.toggle('is-open');t.setAttribute('aria-expanded',o);if(h)h.classList.toggle('is-menu-open',o)});n.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{n.classList.remove('is-open');t.setAttribute('aria-expanded','false');if(h)h.classList.remove('is-menu-open')})})}
+document.addEventListener('DOMContentLoaded',()=>{highlightActiveNav();setupMenuToggle()});
+  </script>
+
+<script>
+  (function(){"use strict";if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(window.innerWidth<768)return;var BASE="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/";var sprites=["prudencia_1.png","prudencia_2.png","prudencia_3.png","prudencia-1.gif","prudencia-2.gif","prudencia-3.gif"];var positions=[{top:"15%",right:"3%"},{bottom:"10%",left:"2%"},{top:"40%",left:"3%"},{bottom:"20%",right:"4%"},{top:"25%",right:"5%"},{bottom:"35%",left:"4%"},{top:"55%",right:"2%"},{bottom:"5%",left:"3%"}];function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}shuffle(sprites);shuffle(positions);var sections=[];var current=0;var MAX=4;function init(){var all=document.querySelectorAll(".section-fd");sections=shuffle(Array.prototype.slice.call(all)).slice(0,MAX)}function appear(){if(current>=MAX||current>=sections.length)return;var section=sections[current];var sprite=sprites[current%sprites.length];var pos=positions[current%positions.length];current++;var img=document.createElement("img");img.src=BASE+sprite;img.alt="";img.setAttribute("aria-hidden","true");img.style.cssText="position:absolute;z-index:2;pointer-events:none;max-width:220px;height:auto;opacity:0;transition:opacity 0.8s ease,transform 0.8s ease;transform:translateY(10px)";img.style.top=pos.top||"auto";img.style.bottom=pos.bottom||"auto";img.style.left=pos.left||"auto";img.style.right=pos.right||"auto";section.appendChild(img);setTimeout(function(){img.style.opacity="0.9";img.style.transform="translateY(0)"},50);var stay=14000+Math.random()*6000;setTimeout(function(){img.style.opacity="0";img.style.transform="translateY(-10px)";setTimeout(function(){if(img.parentNode)img.parentNode.removeChild(img);scheduleNext()},900)},stay)}function scheduleNext(){if(current>=MAX)return;var delay=8000+Math.random()*12000;setTimeout(appear,delay)}window.addEventListener("DOMContentLoaded",function(){init();setTimeout(appear,2000)})})();
+  </script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<style>
+.participa-govco {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: Verdana, sans-serif;
+}
+.participa-govco h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+.participa-govco h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+.participa-govco h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.participa-govco p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    margin-bottom: 1rem;
+}
+.participa-govco ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+}
+.participa-govco ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    margin-bottom: 0.5rem;
+}
+.participa-govco a {
+    color: var(--govcolor-cobalt, #0943B5);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.participa-govco a:hover {
+    color: var(--govcolor-havelock-lue, #4672C8);
+}
+.participa-govco .pasos-participa {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    flex-wrap: nowrap;
+}
+.participa-govco .paso-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    flex: 0 1 220px;
+    box-shadow: 0 2px 12px rgba(9, 67, 181, 0.08);
+    border: 1px solid #e0e7f4;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+.participa-govco .paso-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(9, 67, 181, 0.15);
+    border-color: var(--govcolor-cobalt, #0943B5);
+    color: inherit;
+    text-decoration: none;
+}
+.participa-govco .paso-card__numero {
+    display: block;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--govcolor-cobalt, #0943B5);
+    margin-bottom: 0.75rem;
+}
+.participa-govco .paso-card__icono {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    background: var(--govcolor-cobalt, #0943B5);
+}
+.participa-govco .paso-card--2 .paso-card__icono {
+    background: var(--govcolor-tulip, #E8A045);
+}
+.participa-govco .paso-card--3 .paso-card__icono {
+    background: var(--govcolor-green, #158361);
+}
+.participa-govco .paso-card__titulo {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--govcolor-cobalt, #0943B5);
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+}
+.participa-govco .paso-card__desc {
+    font-size: 0.875rem;
+    color: var(--govcolor-grey, #636363);
+    line-height: 1.5;
+    margin: 0;
+}
+.participa-govco .pasos-conector {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--govcolor-cobalt, #0943B5);
+    font-size: 1.2rem;
+}
+.participa-govco .pasos-conector svg {
+    width: 24px;
+    height: 24px;
+}
+@media (max-width: 768px) {
+    .participa-govco .pasos-participa {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+    }
+    .participa-govco .pasos-conector {
+        transform: rotate(90deg);
+    }
+    .participa-govco .paso-card {
+        flex: 1 1 100%;
+        max-width: 280px;
+    }
+}
+.participa-govco .dp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.participa-govco .dp-card {
+    background: var(--govcolor-cobalt, #0943B5);
+    color: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+}
+.participa-govco .dp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(9, 67, 181, 0.3);
+}
+.participa-govco .dp-card.active {
+    background: var(--govcolor-havelock-lue, #4672C8);
+}
+.participa-govco .dp-detail {
+    display: none;
+    background: var(--govcolor-white-smoke, #F4F4F4);
+    border: 1px solid #e0e7f4;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 12px;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--govcolor-matterhorn, #4C4C4C);
+    animation: dpFadeIn 0.3s ease;
+}
+.participa-govco .dp-detail.visible {
+    display: block;
+}
+.participa-govco .dp-detail-title {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    color: var(--govcolor-cobalt, #0943B5);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+@keyframes dpFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .participa-govco .paso-card,
+    .participa-govco .dp-card {
+        transition: none;
+    }
+    .participa-govco .dp-detail {
+        animation: none;
+    }
+}
+</style>
+
+<div class="participa-govco">
+    <h2>¿Cómo puedes participar?</h2>
+    <p>Existen diversos mecanismos, instancias y espacios que hemos diseñado para la participación ciudadana en nuestra gestión con el fin de poder escuchar tu voz y entablar un diálogo constructivo en torno a nuestra gestión. Los mecanismos programados para 2026 son:</p>
+
+    <div class="dp-grid">
+        <div class="dp-card" data-dp="0">Mesas de participación ciudadana</div>
+        <div class="dp-card" data-dp="1">Mesas de trabajo</div>
+        <div class="dp-card" data-dp="2">Foros</div>
+        <div class="dp-card" data-dp="3">Audiencia pública participativa</div>
+        <div class="dp-card" data-dp="4">Formulario web</div>
+    </div>
+    <div class="dp-detail" id="dp-detail-general"></div>
+
+    <h2>¿Cuál es el cronograma de participación para 2026?</h2>
+    <p>Conoce las fechas de los espacios y acciones programadas para este año:</p>
+    <p style="margin-left: 2.5rem;"><a href="/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf">Ver cronograma</a></p>
+
+    <h2>¿En qué acciones puedes participar?</h2>
+    <p>Consulta las acciones abiertas actualmente en las que puedes participar en los siguientes tres pasos.</p>
+
+    <div class="pasos-participa" role="list" aria-label="Tres pasos para participar">
+        <a href="https://www.mincultura.gov.co/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" rel="noopener noreferrer" class="paso-card paso-card--1" role="listitem">
+            <span class="paso-card__numero">Paso 1</span>
+            <div class="paso-card__icono" aria-hidden="true">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7" stroke="#fff" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <b class="paso-card__titulo">Consulta y conoce</b>
+            <p class="paso-card__desc">Explora las actividades disponibles en las que puedes involucrarte</p>
+        </a>
+        <div class="pasos-conector" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+        <a href="https://www.mincultura.gov.co/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" rel="noopener noreferrer" class="paso-card paso-card--2" role="listitem">
+            <span class="paso-card__numero">Paso 2</span>
+            <div class="paso-card__icono" aria-hidden="true">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="3" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <b class="paso-card__titulo">Selecciona e inscríbete</b>
+            <p class="paso-card__desc">Elige la actividad de tu interés y regístrate para participar</p>
+        </a>
+        <div class="pasos-conector" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+        <a href="https://www.mincultura.gov.co/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" rel="noopener noreferrer" class="paso-card paso-card--3" role="listitem">
+            <span class="paso-card__numero">Paso 3</span>
+            <div class="paso-card__icono" aria-hidden="true">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 2L15 8.5 22 9.5 17 14.5 18 21.5 12 18.5 6 21.5 7 14.5 2 9.5 9 8.5Z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <b class="paso-card__titulo">Participa</b>
+            <p class="paso-card__desc">Haz parte del proceso mediante los mecanismos dispuestos</p>
+        </a>
+    </div>
+
+    <h2>¿Dónde puedes registrar tus temas de interés para participar?</h2>
+    <p>A continuación, te compartimos el siguiente formulario en el que puedes registrar los temas de tu interés en actividades de participación ciudadana.</p>
+    <p><a href="https://forms.office.com/pages/responsepage.aspx?id=Tovyk1yTFEyIrOSGl8H8l1uVjwLt4XBDnr9BgvR7wHJUQUJEVVhSM1AwN1pFV1lFR0tWTFM4WkI2NC4u&amp;route=shorturl" target="_blank" rel="noopener noreferrer">Ir al formulario</a></p>
+
+    <h2>¿Cuáles son los documentos estratégicos de participación 2026?</h2>
+    <ul>
+        <li>Estrategia de Participación Ciudadana</li>
+        <li><a href="/transparencia/Documents/6-participa/Estrategia%20de%20Rendicio%CC%81n%20de%20Cuentas%202026.pdf">Estrategia anual de rendición de cuentas</a></li>
+        <li><a href="https://www.mincultura.gov.co/transparencia/Paginas/planeacion-presupuesto-e-informes/rendicion-de-cuentas-resultados-y-publicaciones.aspx" target="_blank" rel="noopener noreferrer">Histórico de informes de rendición de cuentas</a></li>
+        <li><a href="/transparencia/plan-anticorrupcion-de-servicio-al-ciudadano-paac">Plan Anticorrupción y de Atención al Ciudadano (PAAC)</a></li>
+        <li><a href="https://www.mincultura.gov.co/transparencia/Paginas/programa-de-transparencia-de-etica-publica-ptep.aspx" target="_blank" rel="noopener noreferrer">Programa de Transparencia y Ética Pública (PTEP)</a></li>
+
+    </ul>
+</div>
+
+<script>
+(function(){
+    var datos = [
+        {t:"Mesas de participación ciudadana", d:"Son espacios de diálogo y encuentro con diferentes grupos sociales como líderes comunitarios, gremios, mujeres, jóvenes, adultos, entre otros, que promueve la participación e activamente en la creación, diseño, ejecución y control de políticas públicas."},
+        {t:"Mesas de trabajo", d:"Son espacios de diálogo y encuentro con diferentes grupos sociales como líderes comunitarios, gremios, mujeres, jóvenes, adultos, entre otros, para promover la discusión, participación y construcción colectiva de estrategias y políticas públicas en el sector de las culturas, las artes y lo saberes."},
+        {t:"Foros", d:"Son espacios físicos o virtuales donde los participantes intercambian ideas, opiniones y experiencias sobre un tema de interés común."},
+        {t:"Audiencia pública participativa", d:"Es un acto público de diálogo entre organizaciones sociales, ciudadanos y servidores públicos para evaluar la gestión gubernamental en cumplimiento de las responsabilidades, políticas y planes ejecutados en un periodo para garantizar los derechos ciudadanos."},
+        {t:"Formulario web", d:"Es una herramienta virtual muy útil y práctica para interactuar con las ciudadanías que les permite ingresar y enviar información en tiempo real sobre temas de su interés y cuya información puede ser sistematizada por el Ministerio para la toma de decisiones relacionadas con la ciudadanía."}
+    ];
+    var cards = document.querySelectorAll('.participa-govco .dp-card');
+    var detail = document.getElementById('dp-detail-general');
+    cards.forEach(function(card){
+        card.addEventListener('click', function(){
+            var idx = parseInt(card.getAttribute('data-dp'));
+            var wasActive = card.classList.contains('active');
+            cards.forEach(function(c){c.classList.remove('active');});
+            if(wasActive){
+                detail.classList.remove('visible');
+                detail.innerHTML = '';
+            } else {
+                card.classList.add('active');
+                detail.innerHTML = '<p class="dp-detail-title">'+datos[idx].t+'</p><p>'+datos[idx].d+'</p>';
+                detail.classList.add('visible');
+                setTimeout(function(){detail.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
+            }
+        });
+    });
+})();
+</script>

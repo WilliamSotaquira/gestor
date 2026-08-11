@@ -1,0 +1,78 @@
+<h2>¿En qué acciones puedes participar?</h2> 
+<p>Consulta las acciones abiertas actualmente en las que puedes participar en los siguientes tres pasos.<br/></p> 
+<style>
+.pasos-pc{display:flex;align-items:stretch;justify-content:center;gap:1.5rem;padding:2.5rem 1rem;flex-wrap:nowrap}
+.paso-pc{background:#fff;border-radius:16px;padding:1.75rem 1.25rem 1.5rem;text-align:center;flex:0 1 220px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:2px solid #e8f0fe;transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease}
+.paso-pc:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(42,98,196,0.18);border-color:#2a62c4}
+.paso-pc__numero{display:block;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a62c4;margin-bottom:0.75rem}
+.paso-pc__icono{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;transition:transform 0.3s ease}
+.paso-pc:hover .paso-pc__icono{transform:scale(1.1)}
+.paso-pc--1 .paso-pc__icono{background:#2a62c4}
+.paso-pc--2 .paso-pc__icono{background:#f5a623}
+.paso-pc--3 .paso-pc__icono{background:#27ae60}
+.paso-pc:hover.paso-pc--2{border-color:#f5a623}
+.paso-pc:hover.paso-pc--3{border-color:#27ae60}
+.paso-pc__titulo{font-size:1.15rem;font-weight:700;color:#2a62c4;margin:0 0 0.5rem;line-height:1.3}
+.paso-pc__desc{font-size:0.85rem;color:#555;line-height:1.5;margin:0}
+.pasos-pc__conector{display:flex;align-items:center;flex-shrink:0;color:#2a62c4;font-size:1.2rem}
+.pasos-pc__conector svg{width:24px;height:24px}
+.pasos-pc__footer{text-align:center;padding:0.5rem 1rem 2rem}
+.pasos-pc__btn{display:inline-block;padding:0.85rem 2rem;background:#2a62c4;color:#fff !important;font-weight:700;font-size:0.95rem;border-radius:30px;text-decoration:none !important;box-shadow:0 4px 14px rgba(42,98,196,0.25);transition:transform 0.2s ease,box-shadow 0.2s ease}
+.pasos-pc__btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(42,98,196,0.35);background:#1a4fa0;color:#fff !important}
+.pasos-pc__btn:focus-visible{outline:3px solid #f5a623;outline-offset:3px}
+@media(max-width:768px){.pasos-pc{flex-direction:column;align-items:center;gap:1.25rem}.pasos-pc__conector{transform:rotate(90deg)}.paso-pc{flex:1 1 100%;max-width:280px}}
+@media(prefers-reduced-motion:reduce){.paso-pc,.paso-pc__icono,.pasos-pc__btn{transition:none}}
+</style> 
+<div class="pasos-pc" role="list" aria-label="Tres pasos para participar"> 
+   <a href="/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" class="paso-pc paso-pc--1" role="listitem" style="text-decoration: none; color: inherit;"> 
+      <span class="paso-pc__numero">Paso 1</span> 
+      <div class="paso-pc__icono" aria-hidden="true"> 
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <circle cx="10.5" cy="10.5" r="7" stroke="#fff" stroke-width="2"/>
+            <path d="M15.5 15.5L21 21" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg> &#160;</div> 
+      <b class="paso-pc__titulo">Consulta y conoce</b> 
+      <p class="paso-pc__desc">Explora las actividades disponibles en las que puedes involucrarte</p> </a> 
+   <div class="pasos-pc__conector" aria-hidden="true"> 
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+         <path d="M5 12h14M13 5l7 7-7 7"/></svg> &#160;</div> 
+   <a href="/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" class="paso-pc paso-pc--2" role="listitem" style="text-decoration: none; color: inherit;"> 
+      <span class="paso-pc__numero">Paso 2</span> 
+      <div class="paso-pc__icono" aria-hidden="true"> 
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="3" y="5" width="18" height="14" rx="3" stroke="#fff" stroke-width="2"/></svg> &#160;</div> 
+      <b class="paso-pc__titulo">Selecciona e inscríbete</b> 
+      <p class="paso-pc__desc">Elige la actividad de tu interés y regístrate para participar</p> </a> 
+   <div class="pasos-pc__conector" aria-hidden="true"> 
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+         <path d="M5 12h14M13 5l7 7-7 7"/></svg> &#160;</div> 
+   <a href="/transparencia/Documents/6-participa/2026_06_23_Cronograma_Actividades_Participacion_Ciudadana_Y_Rendicion_Cuentas-2026_Para_Web.pdf" target="_blank" class="paso-pc paso-pc--3" role="listitem" style="text-decoration: none; color: inherit;"> 
+      <span class="paso-pc__numero">Paso 3</span> 
+      <div class="paso-pc__icono" aria-hidden="true"> 
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path d="M12 2L15 8.5 22 9.5 17 14.5 18 21.5 12 18.5 6 21.5 7 14.5 2 9.5 9 8.5Z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg> &#160;</div> 
+      <b class="paso-pc__titulo">Participa</b> 
+      <p class="paso-pc__desc">Haz parte del proceso mediante los mecanismos dispuestos</p> </a> </div> 
+<p> 
+   <br/> 
+</p> 
+<h2>¿Dónde puedes registrar tus temas de interés para participar?</h2> 
+<p>A continuación, te compartimos el siguiente formulario en el que puedes registrar los temas de tu interés en actividades de participación ciudadana.&#160;</p> 
+<blockquote style="margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;"> 
+   <p>​​<a href="https://forms.office.com/pages/responsepage.aspx?id=Tovyk1yTFEyIrOSGl8H8l1uVjwLt4XBDnr9BgvR7wHJUQUJEVVhSM1AwN1pFV1lFR0tWTFM4WkI2NC4u&amp;route=shorturl">Ir&#160;al formulario</a><br/></p> 
+</blockquote> 
+<p> 
+   <br/> 
+</p> 
+<p style="color: #000000; font-family: &quot;times new roman&quot;; font-size: medium;"> 
+</p> 
+<h2>¿Cuáles son los documentos estratégicos de participación 2026?<br/></h2> 
+<ul> 
+   <li>Estrategia de Participación Ciudadana<br/></li> 
+   <li> 
+      <a href="/transparencia/Paginas/participa/rendicion-de-cuentas.aspx">Estrategia anual de rendición de cuentas​</a><br/></li> 
+   <li>​<a href="/transparencia/plan-anticorrupcion-de-servicio-al-ciudadano-paac">Plan Anticorrupción y de Atención al Ciudadano (PAAC)</a>​</li> 
+   <li>
+      <a href="/transparencia/Paginas/planeacion-presupuesto-e-informes/rendicion-de-cuentas-resultados-y-publicaciones.aspx">Histórico de informes de rendición de cuentas</a></li> 
+</ul> 
+<br/>​<br/>

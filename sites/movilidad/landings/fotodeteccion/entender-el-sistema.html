@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce qué son las cámaras de fotodetección, los tipos de sistemas y su impacto en la seguridad vial de Bogotá.">
+  <title>¿Qué son? - Cámaras Salvavidas Bogotá</title>
+  <link rel="icon" href="/sites/default/files/logo_bogota_favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/styles_0.css">
+  <style>
+    /* === ANIMACIONES DE ENTRADA === */
+    .fade-in-left,
+    .fade-in-right,
+    .fade-in-up {
+      opacity: 0;
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in-left { transform: translateX(-40px); }
+    .fade-in-right { transform: translateX(40px); }
+    .fade-in-up { transform: translateY(30px); }
+    .fade-in-left.is-visible,
+    .fade-in-right.is-visible,
+    .fade-in-up.is-visible {
+      opacity: 1;
+      transform: translate(0);
+    }
+
+    /* === LISTA CON ICONOS CHECK === */
+    .check-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .check-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: .75rem;
+      line-height: 1.6;
+    }
+    .check-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .3rem;
+      width: 20px;
+      height: 20px;
+      background: var(--fd-accent, #1a3a6b);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center;
+      mask-size: contain;
+      -webkit-mask-size: contain;
+    }
+
+    /* === TARJETAS MEJORADAS === */
+    .card-fd-enhanced {
+      background: #eaf1fb;
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+      height: 100%;
+    }
+    .card-fd-enhanced:hover {
+      transform: translateY(-6px);
+      background: #d6e4f7;
+      box-shadow: 0 8px 24px rgba(9,67,181,.15);
+    }
+    .card-fd-enhanced .card-img-top {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .card-fd-enhanced:hover .card-img-top {
+      transform: scale(1.03);
+    }
+    .card-fd-enhanced .card-body {
+      padding: 1.25rem 1.5rem;
+    }
+    .card-fd-enhanced .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .card-fd-enhanced .card-text {
+      font-size: .9rem;
+      color: #2b2b2b;
+    }
+
+    /* === ESTADÍSTICAS MEJORADAS === */
+    .stat-card {
+      background: linear-gradient(135deg, #1a3a6b 0%, #2d5aa0 100%);
+      border-radius: 16px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(26,58,107,.2);
+      transition: transform .3s ease, box-shadow .3s ease;
+      height: 100%;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(26,58,107,.3);
+    }
+    .stat-card .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: .5rem;
+      color: #fff;
+    }
+    .stat-card .stat-label {
+      font-size: .85rem;
+      opacity: .9;
+      line-height: 1.4;
+    }
+
+    /* === ANIMACIÓN ESCALONADA GENÉRICA === */
+    .stagger-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .stagger-animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === REDUCED MOTION === */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in-left, .fade-in-right, .fade-in-up, .stagger-animate {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .card-fd-enhanced, .card-fd-enhanced .card-img-top, .stat-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip link para accesibilidad -->
+  <a href="#main-content" class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-white text-primary fw-bold" style="z-index:9999;">Saltar al contenido principal</a>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader" role="banner">
+    <div class="site-header__inner container">
+      <a class="site-brand" href="/sitio/camaras-de-fotodeteccion-bogota" aria-label="Ir al inicio">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-05-20/logo.png" alt="Alcaldía Mayor de Bogotá D.C. y Secretaría de Movilidad">
+      </a>
+      <nav class="site-nav" id="site-primary-menu" aria-label="Navegación principal">
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-entender-el-sistema">¿Qué son?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-como-funciona">¿Cómo funcionan?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-ubicacion-e-infracciones">¿Dónde están?</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">Normatividad</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-resultados">Más vidas protegidas</a>
+        <a href="/sitio/camaras-de-fotodeteccion-bogota-preguntas-frecuentes">Resuelva sus dudas</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="header-cta" href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" target="_blank" rel="noopener noreferrer" aria-label="Consultar comparendo (abre en nueva pestaña)">
+          <span>Consultar comparendo</span>
+          <span class="btn-icon-circle" aria-hidden="true">→</span>
+        </a>
+        <button class="site-menu-toggle" type="button" aria-controls="site-primary-menu" aria-expanded="false" aria-label="Abrir menú principal">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO BANNER -->
+    <section class="hero-banner" aria-label="Encabezado de la página ¿Qué son?">
+      <div class="hero-banner__bg" aria-hidden="true" style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-03/hero-a.jpg');"></div>
+      <div class="hero-banner__fade" aria-hidden="true"></div>
+      <div class="hero-banner__content">
+        <div class="container">
+          <nav class="breadcrumb-fd" aria-label="Ruta de navegación">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/sitio/camaras-de-fotodeteccion-bogota">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">¿Qué son?</li>
+            </ol>
+          </nav>
+          <h1 class="hero-banner__title">¿Qué son?</h1>
+          <p class="hero-banner__description">Conoce qué son las cámaras de fotodetección, por qué existen y cómo contribuyen a la seguridad vial en Bogotá.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: QUÉ SON LAS CÁMARAS -->
+    <section class="section-fd">
+      <div class="container">
+        <div class="content-block">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7 fade-in-left">
+            <h2>¿Qué son las cámaras salvavidas?</h2>
+            <p>Son dispositivos electrónicos que apoyan el control del tránsito mediante el registro de posibles infracciones en puntos estratégicos de la ciudad. Capturan evidencias, como fotografías y videos, que posteriormente son revisados por un Agente Civil de Tránsito antes de generar una orden de comparendo.</p>
+            <p>Su propósito es prevenir conductas de riesgo y proteger la vida de quienes se mueven por Bogotá.</p>
+            <p style="margin-bottom:0.25rem;text-align:center;"><span style="font-size:clamp(2.5rem,5vw,3.5rem);font-weight:800;color:var(--fd-accent);line-height:1;">24/7</span></p>
+            <p style="margin-top:0;margin-bottom:1.25rem;font-size:0.95rem;color:var(--fd-text-muted);text-align:center;">Operan <strong>24 horas</strong>, los 7 días de la semana:</p>
+            <ul class="check-list">
+              <li>Las cámaras cuentan con tecnología que permite precisión en la captura de imágenes sin importar si es de día, de noche o si está lloviendo.</li>
+              <li>Todos los equipos de fotodetección que realizan detección de exceso de velocidad, cuentan con certificado de calibración vigente que verifica la precisión técnica de las mediciones, realizadas por laboratorios especializados como Asimetric, el cual se encuentra acreditado por el Organismo Nacional de Acreditación de Colombia (ONAC).</li>
+              <li>Estos dispositivos operan bajo la <a href="/sitio/camaras-de-fotodeteccion-bogota-transparencia">normativa nacional y distrital</a>.</li>
+              <li>Se ubican en zonas donde existe mayor riesgo de siniestros viales, con base en estudios técnicos.</li>
+            </ul>
+            <p><strong>Su objetivo es prevenir conductas de riesgo para reducir los siniestros viales y proteger la vida en las vías.</strong></p>
+          </div>
+          <div class="col-lg-5 text-center fade-in-right">
+            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-06-25/hero-camara.png" loading="lazy" class="img-fluid" alt="Cámara de fotodetección instalada en una vía principal de Bogotá" style="max-height: 360px;">
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: CÓMO IDENTIFICAR LAS CÁMARAS -->
+    <section class="section-fd bg-light">
+      <div class="container">
+        <div class="content-block">
+          <div class="section-title">
+            <h2>¿Cómo identificar las cámaras?</h2>
+            <p>Cada punto de fotodetección está debidamente señalizado de manera progresiva desde aproximadamente <strong>500 metros antes del dispositivo</strong> y demarcado para advertir su presencia antes de ingresar a la zona de control.</p>
+            <p>Su propósito es promover el cumplimiento de las normas de tránsito y prevenir conductas de riesgo que puedan poner en peligro la vida de los diferentes usuarios de las vías.</p>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4 stagger-animate" style="transition-delay:.1s">
+            <div class="card-fd-enhanced">
+              <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-06-25/automatica.jpg" loading="lazy" class="card-img-top img-zoomable" alt="Cámara automática de fotodetección" role="button" tabindex="0" aria-label="Ampliar imagen: Cámara automática">
+              <div class="card-body">
+                <h3 class="card-title">Cámara automática</h3>
+                <p class="card-text">Registra automáticamente posibles infracciones y captura fotografías y videos como evidencia utilizando tecnología de sensores o video analítica, que posteriormente son revisados por un Agente de Tránsito antes de generar un comparendo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 stagger-animate" style="transition-delay:.2s">
+            <div class="card-fd-enhanced">
+              <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-06-25/semiautomatica.jpg" loading="lazy" class="card-img-top img-zoomable" alt="Cámara semiautomática de fotodetección" role="button" tabindex="0" aria-label="Ampliar imagen: Cámara semiautomática">
+              <div class="card-body">
+                <h3 class="card-title">Cámara semiautomática</h3>
+                <p class="card-text">Puede estar instalada en postes o sobre semáforos. El registro de la posible infracción inicia cuando un operador identifica visualmente una conducta de riesgo y captura las evidencias, que posteriormente son revisadas por un Agente de Tránsito antes de continuar con el proceso de validación.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 stagger-animate" style="transition-delay:.25s">
+            <div class="card-fd-enhanced">
+              <div class="card-body">
+                <h3 class="card-title">Cámara móvil</h3>
+                <p class="card-text">Es un SAST diseñado para la detección y registro de presuntas infracciones de tránsito mediante equipos portátiles de captura de evidencia. Su principal característica es la flexibilidad operativa, que permite su despliegue temporal en corredores o puntos críticos autorizados para el uso de este tipo de cámaras.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 stagger-animate" style="transition-delay:.3s">
+            <div class="card-fd-enhanced">
+              <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-08/blanca.jpg" loading="lazy" class="card-img-top img-zoomable" alt="Señal vertical preventiva de zona de fotodetección" role="button" tabindex="0" aria-label="Ampliar imagen: Señal vertical preventiva">
+              <div class="card-body">
+                <h3 class="card-title">Señal vertical preventiva</h3>
+                <p class="card-text">Anuncia la presencia de una zona de detección electrónica con cámaras.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 stagger-animate" style="transition-delay:.4s">
+            <div class="card-fd-enhanced">
+              <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-08/azul.jpg" loading="lazy" class="card-img-top img-zoomable" alt="Señal vertical informativa de zona de control electrónico" role="button" tabindex="0" aria-label="Ampliar imagen: Señal vertical informativa">
+              <div class="card-body">
+                <h3 class="card-title">Señal vertical informativa</h3>
+                <p class="card-text">Indica el comienzo de una zona de control por detección electrónica que se realiza en el corredor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 stagger-animate" style="transition-delay:.5s">
+            <div class="card-fd-enhanced">
+              <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-06-25/demarcacion.jpg" loading="lazy" class="card-img-top img-zoomable" alt="Demarcación en la vía indicando zona de fotodetección" role="button" tabindex="0" aria-label="Ampliar imagen: Demarcación en la vía">
+              <div class="card-body">
+                <h3 class="card-title">Demarcación en la vía</h3>
+                <p class="card-text">Refuerza visualmente la presencia de la zona de control para alertar a los conductores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER NAVEGACIÓN SECUENCIAL -->
+    <nav class="footer-nav-fd" aria-label="Navegación secuencial entre páginas">
+      <div class="container">
+        <div class="nav-sequential">
+          <a href="/sitio/camaras-de-fotodeteccion-bogota" class="nav-link-home" aria-label="Volver a la página de inicio">Volver al inicio</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota-como-funciona" class="nav-link-next" aria-label="Ir a la página siguiente: Cómo funciona">Siguiente</a>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner container">
+      <div class="site-footer__top">
+        <nav class="footer-links" aria-label="Enlaces de pie de página">
+          <a href="https://www.movilidadbogota.gov.co/manual-y-politicas-de-seguridad-de-la-informacion">Políticas de privacidad</a>
+          <a href="#" aria-label="Términos y condiciones (próximamente)">Términos y condiciones</a>
+          <a href="/sitio/camaras-de-fotodeteccion-bogota">Mapa del sitio</a>
+          <a href="https://www.movilidadbogota.gov.co/atencion-servicios/puntos-atencion">Atención a la ciudadanía</a>
+        </nav>
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="https://www.facebook.com/SectorMovilidad" aria-label="Facebook" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+          <a href="https://twitter.com/SectorMovilidad" aria-label="X" title="X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/saboramovilidad" aria-label="Instagram" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@SecretariaMovilidadBogota" aria-label="YouTube" title="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p><strong>Secretaría Distrital de Movilidad</strong> · Alcaldía Mayor de Bogotá D.C.</p>
+        <p>Calle 13 # 37-35, Bogotá · Línea de atención: (601) 195</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Lightbox para ampliar imágenes -->
+  <div class="modal fade" id="imgLightbox" tabindex="-1" aria-labelledby="imgLightboxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0 shadow-none">
+        <div class="modal-header border-0 pb-0">
+          <h2 class="modal-title visually-hidden" id="imgLightboxLabel">Imagen ampliada</h2>
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Cerrar imagen ampliada"></button>
+        </div>
+        <div class="modal-body text-center p-0">
+          <img src="" class="img-fluid rounded lightbox-img" id="lightboxImage" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Animaciones de entrada con IntersectionObserver
+    document.addEventListener('DOMContentLoaded', function() {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var animElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up, .stagger-animate');
+
+      if (prefersReduced) {
+        animElements.forEach(function(el) { el.classList.add('is-visible'); });
+        return;
+      }
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        animElements.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        animElements.forEach(function(el) { el.classList.add('is-visible'); });
+      }
+    });
+  </script>
+  <script>
+    // Lightbox: ampliar imágenes al hacer clic
+    document.addEventListener('DOMContentLoaded', function() {
+      var lightboxImg = document.getElementById('lightboxImage');
+      var modalEl = document.getElementById('imgLightbox');
+      if (!lightboxImg || !modalEl) return;
+
+      var modal = new bootstrap.Modal(modalEl);
+      var zoomables = document.querySelectorAll('.img-zoomable');
+
+      zoomables.forEach(function(img) {
+        img.addEventListener('click', function() {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          modal.show();
+        });
+
+        img.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            modal.show();
+          }
+        });
+      });
+
+      modalEl.addEventListener('hidden.bs.modal', function() {
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+        // Limpiar backdrop que puede quedar atrapado
+        document.querySelectorAll('.modal-backdrop').forEach(function(el) { el.remove(); });
+        document.body.classList.remove('modal-open');
+        document.body.style.removeProperty('overflow');
+        document.body.style.removeProperty('padding-right');
+      });
+    });
+  </script>
+  <script>
+    // Animación de estadísticas: counter + fade-in escalonado
+    document.addEventListener('DOMContentLoaded', function() {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var statsSection = document.getElementById('stats-section');
+      if (!statsSection) return;
+
+      var stats = statsSection.querySelectorAll('.stat-animate');
+      var counters = statsSection.querySelectorAll('.stat-number[data-target]');
+      var animated = false;
+
+      function animateCounter(el) {
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1500;
+        var startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          // Ease-out cubic
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(eased * target);
+          el.textContent = current + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      function onVisible() {
+        if (animated) return;
+        animated = true;
+
+        // Fade-in escalonado
+        stats.forEach(function(stat) {
+          stat.classList.add('is-visible');
+        });
+
+        // Counter animado (con delay acorde al fade)
+        counters.forEach(function(counter, i) {
+          var delay = i * 150 + 300;
+          setTimeout(function() {
+            animateCounter(counter);
+          }, delay);
+        });
+      }
+
+      // Si prefiere movimiento reducido, mostrar todo sin animación
+      if (prefersReduced) {
+        stats.forEach(function(stat) { stat.classList.add('is-visible'); });
+        return;
+      }
+
+      // IntersectionObserver para activar al hacer scroll
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              onVisible();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+
+        observer.observe(statsSection);
+      } else {
+        // Fallback si no hay IntersectionObserver
+        onVisible();
+      }
+    });
+  </script>
+  <script>
+function highlightActiveNav(){const c=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.site-nav a').forEach(l=>{l.classList.remove('active');l.removeAttribute('aria-current');if(l.getAttribute('href')===c){l.classList.add('active');l.setAttribute('aria-current','page')}})}
+function setupMenuToggle(){const t=document.querySelector('.site-menu-toggle'),n=document.querySelector('.site-nav'),h=document.querySelector('.site-header');if(!t||!n)return;t.addEventListener('click',()=>{const o=n.classList.toggle('is-open');t.setAttribute('aria-expanded',o);if(h)h.classList.toggle('is-menu-open',o)});n.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{n.classList.remove('is-open');t.setAttribute('aria-expanded','false');if(h)h.classList.remove('is-menu-open')})})}
+function setupLightbox(){const img=document.getElementById('lightboxImage'),el=document.getElementById('imgLightbox');if(!img||!el)return;const modal=new bootstrap.Modal(el);document.querySelectorAll('.img-zoomable').forEach(z=>{z.addEventListener('click',()=>{img.src=z.src;img.alt=z.alt;modal.show()});z.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();img.src=z.src;img.alt=z.alt;modal.show()}})});el.addEventListener('hidden.bs.modal',()=>{img.src='';img.alt=''})}
+document.addEventListener('DOMContentLoaded',()=>{highlightActiveNav();setupMenuToggle();setupLightbox()});
+  </script>
+
+<script>
+  (function(){"use strict";if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(window.innerWidth<768)return;var BASE="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/";var sprites=["prudencia_1.png","prudencia_2.png","prudencia_3.png","prudencia-1.gif","prudencia-2.gif","prudencia-3.gif"];var positions=[{top:"15%",right:"3%"},{bottom:"10%",left:"2%"},{top:"40%",left:"3%"},{bottom:"20%",right:"4%"},{top:"25%",right:"5%"},{bottom:"35%",left:"4%"},{top:"55%",right:"2%"},{bottom:"5%",left:"3%"}];function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}shuffle(sprites);shuffle(positions);var sections=[];var current=0;var MAX=4;function init(){var all=document.querySelectorAll(".section-fd");sections=shuffle(Array.prototype.slice.call(all)).slice(0,MAX)}function appear(){if(current>=MAX||current>=sections.length)return;var section=sections[current];var sprite=sprites[current%sprites.length];var pos=positions[current%positions.length];current++;var img=document.createElement("img");img.src=BASE+sprite;img.alt="";img.setAttribute("aria-hidden","true");img.style.cssText="position:absolute;z-index:2;pointer-events:none;max-width:220px;height:auto;opacity:0;transition:opacity 0.8s ease,transform 0.8s ease;transform:translateY(10px)";img.style.top=pos.top||"auto";img.style.bottom=pos.bottom||"auto";img.style.left=pos.left||"auto";img.style.right=pos.right||"auto";section.appendChild(img);setTimeout(function(){img.style.opacity="0.9";img.style.transform="translateY(0)"},50);var stay=14000+Math.random()*6000;setTimeout(function(){img.style.opacity="0";img.style.transform="translateY(-10px)";setTimeout(function(){if(img.parentNode)img.parentNode.removeChild(img);scheduleNext()},900)},stay)}function scheduleNext(){if(current>=MAX)return;var delay=8000+Math.random()*12000;setTimeout(appear,delay)}window.addEventListener("DOMContentLoaded",function(){init();setTimeout(appear,2000)})})();
+  </script>
+</body>
+</html>

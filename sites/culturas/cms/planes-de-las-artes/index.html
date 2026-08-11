@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes de las Artes - Ministerio de las Culturas</title>
+  <meta name="description"
+    content="Dirección de Artes - Programas y Proyectos - Planes de las Artes del Ministerio de las Culturas, las Artes y los Saberes">
+  <link rel="stylesheet" href="https://cdn.gov.co/v3/css/gov-co-style.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --gc-purple: #5b2a91;
+      --gc-purple-dark: #3d1a63;
+      --gc-purple-light: #7d2b83;
+      --gc-yellow: #e7c20a;
+      --gc-yellow-light: #f5d620;
+      --gc-gold: #c9a40a;
+      --gc-white: #ffffff;
+      --gc-black: #1a1a1a;
+      --gc-gray: #f4f4f4;
+      --gc-font: 'Work Sans', sans-serif;
+      --gc-font-display: 'Work Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--gc-font);
+      color: var(--gc-black);
+      margin: 0;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--gc-font);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    :focus-visible {
+      outline: 3px solid #3366CC;
+      outline-offset: 2px;
+    }
+
+    /* === HERO === */
+    .pa-hero {
+      background: linear-gradient(135deg, var(--gc-purple) 0%, var(--gc-purple-light) 100%);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pa-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 50%;
+    }
+
+    .pa-hero__breadcrumb {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 1.5rem;
+    }
+
+    .pa-hero__breadcrumb a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: underline;
+    }
+
+    .pa-hero__breadcrumb a:hover,
+    .pa-hero__breadcrumb a:focus {
+      color: var(--gc-white);
+    }
+
+    .pa-hero__breadcrumb span {
+      margin: 0 0.5rem;
+    }
+
+    .pa-hero__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--gc-white);
+      margin: 0 0 1rem;
+      text-transform: uppercase;
+    }
+
+    .pa-hero__subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* === INTRO === */
+    .pa-intro {
+      padding: 3rem 0;
+      background: var(--gc-white);
+    }
+
+    .pa-intro__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .pa-intro__text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .pa-intro__text p {
+      margin-bottom: 1rem;
+    }
+
+    /* === PLANES GRID === */
+    .pa-planes {
+      padding: 3rem 0;
+      background: var(--gc-gray);
+    }
+
+    .pa-planes__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .pa-planes__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--gc-purple);
+      text-align: center;
+      margin: 0 0 2.5rem;
+    }
+
+    .pa-planes__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pa-plan-card {
+      background: var(--gc-white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pa-plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(91, 42, 145, 0.12);
+    }
+
+    .pa-plan-card__icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gc-yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+
+    .pa-plan-card__title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gc-purple);
+      margin: 0 0 0.75rem;
+    }
+
+    .pa-plan-card__desc {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+      flex-grow: 1;
+    }
+
+    .pa-plan-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gc-purple);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .pa-plan-card__link:hover,
+    .pa-plan-card__link:focus {
+      color: var(--gc-purple-dark);
+      text-decoration: underline;
+    }
+
+    /* === OBJETIVOS === */
+    .pa-objetivos {
+      padding: 3rem 0;
+      background: var(--gc-white);
+    }
+
+    .pa-objetivos__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .pa-objetivos__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--gc-purple);
+      margin: 0 0 2rem;
+      text-align: center;
+    }
+
+    .pa-objetivos__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pa-objetivos__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--gc-gray);
+      border-radius: 10px;
+      border-left: 4px solid var(--gc-purple);
+    }
+
+    .pa-objetivos__item-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--gc-purple);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gc-white);
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .pa-objetivos__item-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* === DOCUMENTOS === */
+    .pa-documentos {
+      padding: 3rem 0;
+      background: var(--gc-gray);
+    }
+
+    .pa-documentos__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .pa-documentos__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--gc-purple);
+      text-align: center;
+      margin: 0 0 2rem;
+    }
+
+    .pa-doc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .pa-doc-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: var(--gc-white);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--gc-black);
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .pa-doc-item:hover,
+    .pa-doc-item:focus {
+      background: rgba(91, 42, 145, 0.05);
+      transform: translateX(4px);
+      color: var(--gc-black);
+    }
+
+    .pa-doc-item__icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gc-purple);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pa-doc-item__icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gc-white);
+    }
+
+    .pa-doc-item__info {
+      flex-grow: 1;
+    }
+
+    .pa-doc-item__name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--gc-purple);
+    }
+
+    .pa-doc-item__meta {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 0.15rem;
+    }
+
+    /* === CONTACTO === */
+    .pa-contacto {
+      padding: 3rem 0;
+      background: var(--gc-purple);
+      color: var(--gc-white);
+    }
+
+    .pa-contacto__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .pa-contacto__title {
+      font-family: var(--gc-font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--gc-yellow);
+      margin: 0 0 1.5rem;
+    }
+
+    .pa-contacto__info {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .pa-contacto__info a {
+      color: var(--gc-yellow);
+      text-decoration: underline;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .pa-planes__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="contenido-cms">
+    <!-- === INICIO CONTENIDO PARA SHAREPOINT === -->
+
+    <div class="container mt-5">
+      <div class="row">
+        <!--INICIO TARJETA-->
+        <div class="col-md-6 col-12 col-xl-3">
+          <div class="p-3">
+            <div class="card card-news">
+              <a href="/direcciones/artes/Documents/planes-de-las-artes/PNAPV_2026_1_opt.pdf"
+                target="_blank">
+                <img src="/direcciones/artes/PublishingImages/planes/PNAPV_2026_1_001.jpg" alt="Plan Nacional de Artes Visuales"
+                  style="width: 100%; height: auto;" /></a>
+              <div class="card-body">
+                <h4 class="card-temas">PLAN NACIONAL DE ARTES VISUALES<br /></h4>
+                <p class="txt-card-temas" style="-webkit-line-clamp: 15;">
+                  <strong>Objetivo:</strong> Plantea un alcance institucional que dialoga con los marcos del Plan
+                  Nacional de Cultura y responde a la deuda histórica con el sector de consolidar una política pública
+                  que favorezca su sostenibilidad en el tiempo, dé continuidad a los programas, proyectos y acciones de
+                  inversión, atienda las múltiples dimensiones que conforman este ecosistema y sea acorde con las
+                  dinámicas y transformaciones de sus agentes y sus territorios.&#160;
+                </p>
+                <a href="/direcciones/artes/Documents/planes-de-las-artes/PNAPV_2026_1_opt.pdf"
+                  class="btn-main" target="_blank">leer el plan</a><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIN TARJETA--><!--INICIO TARJETA-->
+        <div class="col-md-6 col-12 col-xl-3">
+          <div class="p-3">
+            <div class="card card-news">
+              <a href="/direcciones/artes/Documents/planes-de-las-artes/PNC_Teatro%2007-05-2025%20baja.pdf"
+                target="_blank">
+                <img src="/direcciones/artes/PublishingImages/planes/plan-teatro.jpg" alt="Plan Nacional de Teatro"
+                  style="width: 100%; height: auto;" /></a>
+              <div class="card-body">
+                <h4 class="card-temas">PLAN NACIONAL DE TEATRO<br /></h4>
+                <p class="txt-card-temas" style="-webkit-line-clamp: 12;">
+                  <strong>Objetivo:</strong> Generar condiciones para el fortalecimiento de la gobernanza y el fomento
+                  del sector del teatro, en sus diversas manifest​aciones, priorizando el enfoque territorial,
+                  poblacional, biocultural y de género, para el ejercicio efectivo de los derechos culturales.&#160;
+                </p>
+                <a href="/direcciones/artes/Documents/planes-de-las-artes/PN_Teatro_Digital_MiCASa_02-07-2025.pdf"
+                  class="btn-main">leer el plan</a><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIN TARJETA--><!--INICIO TARJETA-->
+        <div class="col-md-6 col-12 col-xl-3">
+          <div class="p-3">
+            <div class="card card-news">
+              <a href="/direcciones/artes/Documents/planes-de-las-artes/PNC_Circo%2007-05-2025%20baja.pdf"
+                target="_blank">
+                <img src="/direcciones/artes/PublishingImages/planes/plan-circo.jpg" alt="Plan Nacional de Circo"
+                  style="width: 100%; height: auto;" /></a>
+              <div class="card-body">
+                <h4 class="card-temas">PLAN NACIONAL DE CIRCO<br /></h4>
+                <p class="txt-card-temas" style="-webkit-line-clamp: 12;">
+                  <strong>Objetivo:</strong> Promover mejores condiciones técnicas, institucionales, normativas y
+                  socioeconómicas para el sector del circo en Colombia, propiciando su reconocimiento y valoración como
+                  práctica artística, cultural y social en todo el país y fuera de él.&#160;
+                </p>
+                <a href="/direcciones/artes/Documents/planes-de-las-artes/PN_Circo_Digital_MiCASa_02-07-2025.pdf"
+                  class="btn-main" target="_blank">leer el plan</a><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIN TARJETA--><!--INICIO TARJETA-->
+        <div class="col-md-6 col-12 col-xl-3">
+          <div class="p-3">
+            <div class="card card-news">
+              <a href="/direcciones/artes/Documents/planes-de-las-artes/PNC_M%C3%9ASICA_DOC%2016-05-2025.pdf"><img
+                  src="/direcciones/artes/PublishingImages/planes/plan-musica.jpg" alt="Plan Nacional de Música"
+                  style="width: 100%; height: auto;" />​</a>
+              <div class="card-body">
+                <h4 class="card-temas">PLAN NACIONAL DE MÚSICA<br /></h4>
+                <p class="txt-card-temas" style="-webkit-line-clamp: 15;">
+                  <strong>Objetivo:</strong> Consolidar la equidad de condiciones y oportunidades en el campo musical,
+                  garantizando la participación y el ejercicio pleno de los derechos culturales d​e la ciudadanía y los
+                  agentes del sector, como base para la sostenibilidad cultural, ambiental y económica de las
+                  manifestaciones musicales y sonoras en todos los territorios del país.&#160;
+                </p>
+                <a href="/direcciones/artes/Documents/planes-de-las-artes/PN_M%C3%BAsica_Digital_MiCASa_02-07-2025.pdf"
+                  class="btn-main">leer el plan<br /></a><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIN TARJETA--><!--INICIO TARJETA-->
+        <div class="col-md-6 col-12 col-xl-3">
+          <div class="p-3">
+            <div class="card card-news">
+              <a href="/direcciones/artes/Documents/planes-de-las-artes/PNC_Danza_%20VFdigital_09-05.pdf"
+                target="_blank"><img src="/direcciones/artes/PublishingImages/planes/plan-danza.jpg"
+                  alt="Plan Nacional de Danza" style="width: 100%; height: auto;" />​</a>
+              <div class="card-body">
+                <h4 class="card-temas">PLAN NACIONAL DE DANZA<br /></h4>
+                <p class="txt-card-temas" style="-webkit-line-clamp: 20;">
+                  <strong>Objetivo:</strong> Contribuir al acceso efectivo a los derechos culturales asociados con la
+                  práctica de la danza en Colombia mediante el fomento de su valoración social, el mejoramiento de las
+                  condiciones para la creación, investigación, circulación, el desarrollo profesional y la efectiva
+                  articulación interinstitucional, reconociendo las particularidades territoriales, promoviendo la
+                  descentralización y la sostenibilidad económica del sector.​&#160;<br />
+                </p>
+                <a href="/direcciones/artes/Documents/planes-de-las-artes/PN_Danza_Digital_MiCASa_02-07-2025.pdf"
+                  class="btn-main" target="_blank">LEER EL PLAN<br /></a><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIN TARJETA-->​<br />
+      </div>
+    </div>
+
+    <!-- === FIN CONTENIDO PARA SHAREPOINT === -->
+  </div>
+
+  <script src="https://cdn.gov.co/v3/js/gov-co-script.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
