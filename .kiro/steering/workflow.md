@@ -9,7 +9,7 @@ inclusion: auto
 Este proyecto administra contenidos para dos portales institucionales:
 
 1. **Secretaría Distrital de Movilidad (SDM)** — CMS Drupal, Bootstrap 5, CDN GOV.CO
-2. **Ministerio de las Culturas** — Granja SharePoint, archivos .aspx, Bootstrap, CDN GOV.CO
+2. **Ministerio de las Culturas** — CMS SharePoint, Bootstrap, CDN GOV.CO
 
 ## Cómo trabaja el usuario
 
@@ -39,14 +39,13 @@ William (administrador web) normalmente proporciona:
 - Usar componentes de Bootstrap 5 y CDN GOV.CO
 - Cumplir accesibilidad: atributos `alt`, `aria-label`, roles semánticos, contraste
 - Para Movilidad: el HTML resultante se pega en un campo de texto en Drupal
-- Para Culturas: el HTML se convierte a .aspx (mismo contenido, diferente extensión)
+- Para Culturas: el HTML resultante se pega en el gestor de SharePoint
 
 ### Para landing pages (ambos sitios)
 - Son páginas completas con HTML, CSS y JS propios
 - Estructura fija: navbar + contenido libre + footer
 - Se puede usar cualquier recurso (imágenes, videos, etc.) dentro de la carpeta `assets/`
 - Cada landing es una carpeta autocontenida
-- Para Culturas: siempre que se termine, ejecutar `npm run build:aspx` para generar el .aspx
 
 ### Convenciones generales
 - Nombres de carpetas en **slug** (minúsculas, guiones): `semana-movilidad`, `festival-musica`
@@ -63,4 +62,3 @@ Cuando William proporcione una ruta y una descripción:
 3. Si es nuevo: crear la estructura con `scripts/new-content.js` o directamente
 4. Si es existente: leer el archivo, entender el estado actual, aplicar cambios
 5. Mostrar brevemente qué se hizo
-6. Si es Culturas: recordar ejecutar `npm run build:aspx` al final

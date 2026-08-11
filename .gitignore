@@ -14,3 +14,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Archivos grandes
+*.7z
+*.mp4

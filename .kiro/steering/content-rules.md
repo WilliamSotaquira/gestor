@@ -10,8 +10,8 @@ fileMatchPattern: "sites/**/*.html"
 Al abrir/editar un archivo en `sites/`:
 - `sites/movilidad/cms/*` → Contenido que se pega en Drupal (campo de texto)
 - `sites/movilidad/landings/*` → Landing page completa para servidor de Movilidad
-- `sites/culturas/cms/*` → Contenido para plantilla SharePoint (salida .aspx)
-- `sites/culturas/landings/*` → Landing page completa para SharePoint (salida .aspx)
+- `sites/culturas/cms/*` → Contenido para SharePoint
+- `sites/culturas/landings/*` → Landing page completa para SharePoint
 
 ## Repositorio de componentes GOV.CO v5
 
@@ -79,5 +79,4 @@ Al abrir/editar un archivo en `sites/`:
 
 ## Al finalizar una edición
 
-- Si el archivo está en `sites/culturas/`: recordar que se necesita `npm run build:aspx`
 - Si el contenido es tipo CMS: indicar que el HTML dentro de `#contenido-cms` es lo que se copia al gestor

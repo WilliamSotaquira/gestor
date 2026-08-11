@@ -7,13 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:aspx": "node scripts/build-aspx.js",
     "build:cms": "node scripts/build-cms.js",
     "lint:a11y": "node scripts/lint-accessibility.js",
     "new:content": "node scripts/new-content.js"
   },
   "devDependencies": {
     "axe-core": "^4.9.0",
+    "jsdom": "^29.1.1",
     "sharp": "^0.35.3",
     "vite": "^5.4.0"
   },
