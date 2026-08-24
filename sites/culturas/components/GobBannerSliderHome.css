@@ -1,0 +1,490 @@
+/* === GobBannerSliderHome.css — Slider Principal GOV.CO === */
+/* Versión corregida: responsive, accesible, controles circulares */
+
+.ms-rtestate-field p {
+    margin: 0px 0px 0px;
+}
+
+/* === Reset SharePoint corev15.css para botones del slider === */
+#carouselPrincipal button:not(.carousel-pause-btn):not(#toggleButton):not([data-bs-slide-to]) {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    font-size: inherit !important;
+    line-height: normal !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+/* Contenedor */
+#carouselPrincipal {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+}
+
+/* Imagen */
+#carouselPrincipal .slider-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: right;
+    display: block;
+}
+
+/* Caption */
+#carouselPrincipal .carousel-inner .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    color: #fff;
+    text-align: left;
+    line-height: 110%;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 2.5rem 5%;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
+}
+
+#carouselPrincipal .carousel-inner .carousel-caption .h1-slider {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 0.25rem;
+    color: #fff;
+}
+
+#carouselPrincipal .carousel-inner .carousel-caption .h4-slider {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: normal;
+    margin: 0 0 0.5rem;
+    color: rgba(255,255,255,0.9);
+}
+
+#carouselPrincipal .carousel-inner .carousel-caption .text-content {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 600;
+    max-width: 600px;
+    margin: 0 0 1rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+}
+
+#carouselPrincipal .carousel-inner .carousel-caption .linkdestino {
+    background: #4B3C8C;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 18px;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    line-height: 24px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+#carouselPrincipal .carousel-inner .carousel-caption .linkdestino:hover,
+#carouselPrincipal .carousel-inner .carousel-caption .linkdestino:focus {
+    background: #5e4da6;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+#carouselPrincipal .carousel-inner .carousel-caption .div-button-logo {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#carouselPrincipal .carousel-inner .carousel-caption .linklogo {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+/* === Indicadores === */
+#carouselPrincipal .carousel-indicators {
+    bottom: 10px;
+    margin-bottom: 0;
+    z-index: 10;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#carouselPrincipal .carousel-indicators [data-bs-target],
+#carouselPrincipal .carousel-indicators button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    border: 2px solid rgba(255,255,255,0.7) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+}
+
+#carouselPrincipal .carousel-indicators .active {
+    background-color: #FFB800 !important;
+    background: #FFB800 !important;
+    border-color: #FFB800 !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+}
+
+/* === Controles prev/next === */
+#carouselPrincipal .carousel-control-prev,
+#carouselPrincipal .carousel-control-next {
+    width: 44px !important;
+    height: 44px !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    opacity: 1 !important;
+    background: rgba(0,0,0,0.5) !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: absolute !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+}
+
+#carouselPrincipal .carousel-control-prev {
+    left: 1rem !important;
+    right: auto !important;
+}
+
+#carouselPrincipal .carousel-control-next {
+    right: 1rem !important;
+    left: auto !important;
+}
+
+#carouselPrincipal .carousel-control-prev:hover,
+#carouselPrincipal .carousel-control-prev:focus,
+#carouselPrincipal .carousel-control-next:hover,
+#carouselPrincipal .carousel-control-next:focus {
+    background: rgba(0,0,0,0.8) !important;
+    border-color: #fff !important;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+#carouselPrincipal .carousel-control-prev-icon,
+#carouselPrincipal .carousel-control-next-icon {
+    width: 18px !important;
+    height: 18px !important;
+    background-size: contain !important;
+}
+
+/* === Botón pausar === */
+#carouselPrincipal .carousel-pause-btn,
+#carouselPrincipal #toggleButton {
+    color: #fff;
+    background: rgba(0,0,0,0.5) !important;
+    border: 1px solid rgba(255,255,255,0.6) !important;
+    border-radius: 50% !important;
+    width: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    cursor: pointer;
+    position: absolute;
+    bottom: 6px;
+    right: 1.5rem;
+    left: auto;
+    z-index: 15;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+#carouselPrincipal .carousel-pause-btn:hover,
+#carouselPrincipal .carousel-pause-btn:focus,
+#carouselPrincipal #toggleButton:hover,
+#carouselPrincipal #toggleButton:focus {
+    background: rgba(0,0,0,0.8) !important;
+    border-color: #fff !important;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* === Responsive === */
+
+/* Móvil pequeño — Layout dos bloques: imagen arriba, caption con fondo sólido abajo */
+@media (max-width: 575px) {
+    #cf-wrapper .cf-hero {
+        max-height: 400px;
+    }
+    #carouselPrincipal .carousel-pause-btn,
+    #carouselPrincipal #toggleButton {
+        position: absolute !important;
+        bottom: auto !important;
+        top: auto !important;
+        right: 1rem !important;
+        left: auto !important;
+        order: 3;
+        margin: 0 !important;
+        flex-shrink: 0;
+    }
+    /* Indicadores: fila con espacio para el botón de pausa a la derecha */
+    #carouselPrincipal .carousel-indicators {
+        order: 3;
+        position: relative !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        padding: 0.6rem 3rem 0.6rem 1rem;
+        background: #0f0636;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Flex column en el contenedor del carrusel para reordenar */
+    #carouselPrincipal {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
+    #carouselPrincipal .carousel-inner {
+        order: 1;
+    }
+    #carouselPrincipal .carousel-indicators {
+        order: 3;
+    }
+    #carouselPrincipal .carousel-control-prev,
+    #carouselPrincipal .carousel-control-next {
+        order: 2;
+    }
+    /* Solo el item activo y los de transición usan flex column */
+    #carouselPrincipal .carousel-item.active,
+    #carouselPrincipal .carousel-item-next,
+    #carouselPrincipal .carousel-item-prev {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    #carouselPrincipal .carousel-item {
+        height: auto !important;
+    }
+    #carouselPrincipal .slider-img {
+        height: 160px;
+        object-position: right top;
+        flex-shrink: 0;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption {
+        position: static !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        background: linear-gradient(135deg, #3b1f6e 0%, #1a0a5c 100%) !important;
+        padding: 1rem 1.25rem;
+        display: block;
+        flex-direction: unset;
+        justify-content: unset;
+        min-height: 160px;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .h1-slider {
+        font-size: 1.05rem;
+        margin-bottom: 0.2rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .h4-slider,
+    #carouselPrincipal .carousel-inner .carousel-caption .text-content {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 0.85rem;
+        margin: 0 0 0.25rem;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .linkdestino {
+        font-size: 12px;
+        padding: 5px 12px;
+        min-height: 34px;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .linklogo {
+        display: none !important;
+    }
+    /* Controles prev/next circulares centrados sobre la zona de imagen */
+    #carouselPrincipal .carousel-control-prev,
+    #carouselPrincipal .carousel-control-next {
+        width: 32px !important;
+        height: 32px !important;
+        top: 140px !important;
+        transform: translateY(-50%) !important;
+    }
+    #carouselPrincipal .carousel-control-prev { left: 0.5rem !important; }
+    /* Botón siguiente: separarlo de la barra de accesibilidad */
+    #carouselPrincipal .carousel-control-next { right: 3.5rem !important; }
+}
+
+/* Móvil medio — Misma lógica de dos bloques */
+@media (min-width: 576px) and (max-width: 767px) {
+    #carouselPrincipal {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
+    #carouselPrincipal .carousel-inner {
+        order: 1;
+    }
+    #carouselPrincipal .carousel-indicators {
+        order: 3;
+    }
+    #carouselPrincipal .carousel-control-prev,
+    #carouselPrincipal .carousel-control-next {
+        order: 2;
+    }
+    #carouselPrincipal .carousel-item.active,
+    #carouselPrincipal .carousel-item-next,
+    #carouselPrincipal .carousel-item-prev {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    #carouselPrincipal .carousel-item {
+        height: auto !important;
+    }
+    #carouselPrincipal .slider-img {
+        height: 180px;
+        object-position: right top;
+        flex-shrink: 0;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption {
+        position: static !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        background: linear-gradient(135deg, #3b1f6e 0%, #1a0a5c 100%) !important;
+        padding: 1.25rem 1.5rem;
+        min-height: 150px;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .h4-slider,
+    #carouselPrincipal .carousel-inner .carousel-caption .text-content {
+        display: block;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .linklogo {
+        display: none !important;
+    }
+    /* Controles sobre la zona de imagen */
+    #carouselPrincipal .carousel-control-prev,
+    #carouselPrincipal .carousel-control-next {
+        width: 36px !important;
+        height: 36px !important;
+        top: 140px !important;
+        transform: translateY(-50%) !important;
+    }
+    #carouselPrincipal .carousel-control-prev { left: 0.5rem !important; }
+    #carouselPrincipal .carousel-control-next { right: 3.5rem !important; }
+    /* Indicadores: fila con botón de pausa integrado */
+    #carouselPrincipal .carousel-indicators {
+        position: relative !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        padding: 0.6rem 3rem 0.6rem 1rem;
+        background: #0f0636;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+    #carouselPrincipal .carousel-pause-btn,
+    #carouselPrincipal #toggleButton {
+        position: absolute !important;
+        right: 1rem !important;
+        left: auto !important;
+        bottom: auto !important;
+        top: auto !important;
+        order: 3;
+        margin: 0 !important;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #carouselPrincipal .slider-img {
+        height: 290px;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .text-content {
+        display: none;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1280px) {
+    #carouselPrincipal .slider-img {
+        height: 300px;
+    }
+    #carouselPrincipal .carousel-inner .carousel-caption .linklogo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #carouselPrincipal .slider-img {
+        height: 320px;
+    }
+}
+
+/* ==========================================================================
+   Barra de accesibilidad GOV.CO — Reubicar en móvil
+   Evita que tape los controles del carrusel
+   ========================================================================== */
+@media (max-width: 767.98px) {
+    .barra-accesibilidad-govco {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 1rem !important;
+        right: 0 !important;
+        z-index: 1050 !important;
+        width: 2.5rem !important;
+        height: auto !important;
+        padding: 0.4rem 0 !important;
+        border-radius: 0.5rem 0 0 0.5rem !important;
+        opacity: 0.85;
+        transition: opacity 0.3s ease;
+    }
+    .barra-accesibilidad-govco:hover,
+    .barra-accesibilidad-govco:focus-within {
+        opacity: 1;
+    }
+    .barra-accesibilidad-govco button {
+        width: 2.5rem !important;
+        height: 2rem !important;
+    }
+}

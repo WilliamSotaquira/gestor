@@ -12,11 +12,11 @@
         gtag('config', 'G-7SBQV6YKFY');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Herramientas | Observatorio de las economías en las culturas, las artes y los saberes</title>
-    <meta name="description" content="Guías prácticas de Fuentes de Financiación y Propiedad Intelectual para agentes del sector cultural en Colombia.">
+    <title>Investigaciones y Estudios | Observatorio de las economías en las culturas, las artes y los saberes</title>
+    <meta name="description" content="Investigaciones, estudios y documentos técnicos del Grupo de Gestión del Conocimiento sobre economías culturales en Colombia.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Herramientas | Observatorio Minculturas">
-    <meta property="og:description" content="Instrumentos de gestión para agentes culturales: financiación y propiedad intelectual.">
+    <meta property="og:title" content="Investigaciones y Estudios | Observatorio Minculturas">
+    <meta property="og:description" content="Consulta investigaciones, diagnósticos, evaluaciones y producción de conocimiento sobre economías culturales, creativas y de los saberes.">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,9 +26,11 @@
     <style>
         :root {
             --obs-primary: #1a2744;
+            --obs-primary-dark: #0f1a2e;
             --obs-accent: #5a2a83;
             --obs-accent-dark: #3f1d60;
             --obs-yellow: #f4c542;
+            --obs-teal: #087e8b;
             --obs-ink: #1f2937;
             --obs-muted: #536171;
             --obs-surface-soft: #f4f6f8;
@@ -42,7 +44,13 @@
         .navbar-obs .nav-link:hover { color: var(--obs-accent); }
         .navbar-obs .nav-link[aria-current="page"] { color: #fff; background: var(--obs-accent); border-radius: 6px; }
         .footer-obs a:hover { color: #fff !important; }
-        .hero-obs { position: relative; overflow: hidden; color: #fff; min-height: 420px; max-height: 560px; padding: 4.5rem 0; display: flex; align-items: center; background: url('https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/IMG_2162.JPG') center/cover no-repeat; }
+
+        .hero-obs {
+            position: relative; overflow: hidden; color: #fff;
+            min-height: 420px; max-height: 560px;
+            padding: 4.5rem 0; display: flex; align-items: center;
+        }
+        .hero-obs__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
         .hero-obs__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,39,68,.85) 0%, rgba(90,42,131,.65) 100%); }
         .hero-obs .eyebrow { color: var(--obs-yellow); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
         .hero-obs h1 { font-weight: 800; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.1; }
@@ -55,50 +63,61 @@
         .btn-obs-secondary:hover { background: var(--obs-accent); color: #fff; }
         .btn-obs-primary { color: #fff; background: #004884; font-weight: 700; border-radius: 8px; }
         .btn-obs-primary:hover { background: #003568; color: #fff; }
+
         .section-obs { padding: 4rem 0; }
         .section-obs-soft { background: var(--obs-surface-soft); }
         .section-heading h2 { font-weight: 800; color: var(--obs-primary); }
         .section-heading p { color: var(--obs-muted); }
-        /* Tool cards */
-        .tool-card {
+
+        /* Purpose box */
+        .purpose-box {
+            padding: 1.5rem; border-radius: 16px;
+            color: #fff; background: #00325c;
+            box-shadow: 0 8px 24px rgba(22,34,51,.1);
+        }
+        .purpose-box h3 { color: var(--obs-yellow); font-size: 1.15rem; margin-top: 0; }
+        .purpose-box ul { margin: 0; padding-left: 1.2rem; }
+        .purpose-box li + li { margin-top: .4rem; }
+
+        /* Research cards */
+        .research-card {
             border: 1px solid var(--obs-border);
-            border-radius: 16px;
-            overflow: hidden;
+            border-radius: 16px; overflow: hidden;
             background: #fff;
             box-shadow: 0 8px 24px rgba(22,34,51,.07);
-            display: flex; flex-direction: column;
-            height: 100%;
+            display: flex; flex-direction: column; height: 100%;
         }
-        .tool-card__header {
-            padding: 1.5rem;
-            color: #fff;
-            position: relative;
+        .research-card__header {
+            padding: 1.5rem; color: #fff; position: relative;
         }
-        .tool-card__header--financiacion { background: linear-gradient(135deg, #004884, #1a6bc4); }
-        .tool-card__header--propiedad { background: linear-gradient(135deg, #5a2a83, #8b47b5); }
-        .tool-card__header h3 { font-size: 1.3rem; font-weight: 800; margin: 0; position: relative; z-index: 1; }
-        .tool-card__header p { font-size: .88rem; margin: .4rem 0 0; opacity: .85; position: relative; z-index: 1; }
-        .tool-card__header::after {
+        .research-card__header--escuelas { background: linear-gradient(135deg, #004884, #1a6bc4); }
+        .research-card__header--fiesta { background: linear-gradient(135deg, #8b4513, #cd853f); }
+        .research-card__header--otras { background: linear-gradient(135deg, #087e8b, #0fb5a2); }
+        .research-card__header h3 { font-size: 1.3rem; font-weight: 800; margin: 0; position: relative; z-index: 1; }
+        .research-card__header p { font-size: .88rem; margin: .4rem 0 0; opacity: .85; position: relative; z-index: 1; }
+        .research-card__header::after {
             content: ""; position: absolute;
             width: 140px; height: 140px;
             right: -40px; bottom: -60px;
             border: 24px solid rgba(255,255,255,.1); border-radius: 50%;
         }
-        .tool-card__body {
+        .research-card__body {
             flex: 1; padding: 1.5rem;
             display: flex; flex-direction: column;
         }
-        .tool-card__body p { color: var(--obs-muted); font-size: .92rem; }
-        .tool-card__body .btn { margin-top: auto; align-self: flex-start; }
-        .qr-placeholder {
-            margin-top: 1rem; padding: 1rem;
-            border: 2px dashed var(--obs-border);
-            border-radius: 12px;
-            text-align: center;
-            color: var(--obs-muted);
-            font-size: .85rem;
+        .research-card__body p { color: var(--obs-muted); font-size: .92rem; }
+        .research-card__body .btn { margin-top: auto; align-self: flex-start; }
+
+        /* Case study cards */
+        .case-card {
+            padding: 1.2rem; border-radius: 12px;
+            border: 1px solid var(--obs-border);
+            background: #fff; height: 100%;
+            box-shadow: 0 4px 12px rgba(22,34,51,.05);
         }
-        .qr-placeholder i { font-size: 2rem; display: block; margin-bottom: .5rem; }
+        .case-card h4 { font-size: .95rem; font-weight: 700; color: var(--obs-primary); margin-bottom: .3rem; }
+        .case-card p { font-size: .85rem; color: var(--obs-muted); margin: 0; }
+
         /* Related */
         .related-section {
             color: #fff;
@@ -109,6 +128,7 @@
         .related-section p { color: #edf4fb; }
         .btn-obs-light { color: #00325c; background: #fff; font-weight: 700; border-radius: 8px; }
         .btn-obs-light:hover { background: #edf4fb; }
+
         a:focus-visible, button:focus-visible { outline: 3px solid var(--obs-yellow); outline-offset: 2px; border-radius: 4px; }
         @media (max-width: 768px) { .hero-obs { min-height: auto; padding: 3rem 0; } }
         @media print {
@@ -154,10 +174,10 @@
                         <li class="nav-item"><a class="nav-link" href="observatorio.html">Observatorio</a></li>
                         <li class="nav-item"><a class="nav-link" href="mediciones.html">Mediciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="publicaciones.html">Publicaciones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="investigaciones.html">Investigaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="investigaciones.html">Investigaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="otras-publicaciones.html">Otras Publicaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="repositorio.html">Repositorio</a></li>
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="herramientas.html">Herramientas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="herramientas.html">Herramientas</a></li>
                     </ul>
                 </div>
             </div>
@@ -166,111 +186,170 @@
 
     <main id="contenido-principal">
         <!-- Hero -->
-        <section class="hero-obs" aria-labelledby="titulo-herramientas">
+        <section class="hero-obs" aria-labelledby="titulo-investigaciones">
+            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/hero-inicio-mascara-observatorio.jpg" class="hero-obs__img" alt="Expresión de la diversidad cultural colombiana">
             <div class="hero-obs__overlay"></div>
             <div class="container position-relative" style="z-index:2;">
-                <p class="eyebrow mb-2">Instrumentos de gestión cultural</p>
-                <h1 id="titulo-herramientas">Herramientas</h1>
-                <p class="lead mt-3">Guías prácticas para agentes culturales sobre financiación y propiedad intelectual, orientadas al fortalecimiento y la sostenibilidad de las economías culturales.</p>
+                <p class="eyebrow mb-2">Producción de conocimiento</p>
+                <h1 id="titulo-investigaciones">Investigaciones y Estudios</h1>
+                <p class="lead mt-3">Documentos técnicos, diagnósticos, evaluaciones y producción de conocimiento del Grupo de Gestión del Conocimiento de la Dirección de Estrategia, Desarrollo y Emprendimiento.</p>
                 <div class="d-flex flex-wrap gap-2 mt-4">
-                    <a class="btn btn-lg btn-obs-yellow px-4" href="#propiedad-intelectual">Propiedad Intelectual</a>
-                    <a class="btn btn-lg btn-obs-outline px-4" href="#financiacion">Fuentes de Financiación</a>
+                    <a class="btn btn-lg btn-obs-yellow px-4" href="#escuelas-taller">Escuelas Taller</a>
+                    <a class="btn btn-lg btn-obs-outline px-4" href="#cultura-festiva">Economías de la Fiesta</a>
                 </div>
             </div>
         </section>
 
-        <!-- Fuentes de Financiación -->
-        <section class="section-obs" id="financiacion" aria-labelledby="titulo-financiacion">
+        <!-- ¿Qué es? -->
+        <section class="section-obs section-obs-soft" aria-labelledby="titulo-que-es">
+            <div class="container">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-8">
+                        <h2 id="titulo-que-es" class="fw-bold">¿Qué es?</h2>
+                        <p class="mt-3">Línea estratégica orientada a consolidar, organizar y visibilizar los procesos de investigación, análisis, evaluación y producción de conocimiento desarrollados desde el Grupo de Gestión del Conocimiento de la Dirección de Estrategia, Desarrollo y Emprendimiento (DEDE).</p>
+                        <p>Este componente integra estudios, documentos técnicos, publicaciones investigativas, diagnósticos sectoriales, entrevistas, sistematizaciones y procesos de análisis relacionados con las dinámicas culturales, creativas, populares y comunitarias del país.</p>
+                        <p>Asimismo, esta línea busca fortalecer la circulación y apropiación del conocimiento producido desde el Observatorio, permitiendo una consulta más organizada, accesible y visual de las investigaciones desarrolladas en temas asociados a cultura festiva, economías culturales, procesos territoriales, escuelas taller y otros ejercicios estratégicos.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside class="purpose-box">
+                            <h3>Objetivo</h3>
+                            <p>Consolidar un espacio digital de consulta y divulgación que permita organizar y presentar de manera estructurada los contenidos investigativos, facilitando el acceso a:</p>
+                            <ul>
+                                <li>Documentos estratégicos</li>
+                                <li>Diagnósticos sectoriales</li>
+                                <li>Evaluaciones</li>
+                                <li>Publicaciones investigativas</li>
+                                <li>Recursos de análisis</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluación Escuelas Taller -->
+        <section class="section-obs" id="escuelas-taller" aria-labelledby="titulo-escuelas">
             <div class="container">
                 <div class="section-heading mb-4">
-                    <h2 id="titulo-financiacion">Fuentes de Financiación</h2>
-                    <p>Guía práctica para orientar a los agentes del sector cultural en la identificación y acceso a fuentes de financiación disponibles en Colombia.</p>
+                    <h2 id="titulo-escuelas">Evaluación Escuelas Taller</h2>
+                    <p>Preservación, cuidado y salvaguarda de los oficios culturales, las artes y los saberes vinculados con el patrimonio cultural.</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-8">
-                        <p>Esta guía es una herramienta práctica diseñada para orientar a los agentes del sector cultural en la identificación y acceso a las diferentes fuentes de financiación disponibles en Colombia para el desarrollo de proyectos, iniciativas, emprendimientos y organizaciones culturales.</p>
-                        <p>Su propósito es brindar información clara, actualizada y organizada sobre los mecanismos de apoyo financiero existentes, facilitando la toma de decisiones y la estructuración de estrategias de sostenibilidad económica.</p>
-                        <p>El documento reúne y analiza las principales alternativas de financiación del ecosistema cultural, incluyendo convocatorias públicas, incentivos tributarios, líneas de crédito, fondos de inversión, cooperación internacional, mecanismos de financiación colectiva y otras oportunidades de acceso a recursos.</p>
-                        <p>Dirigida a artistas, gestores culturales, emprendedores creativos, organizaciones culturales, colectivos, fundaciones, empresas del sector y entidades territoriales.</p>
+                        <p>El Grupo de Escuelas Taller es responsable de asesorar a la Dirección en la preservación, cuidado y salvaguarda de los oficios culturales, las artes y los saberes vinculados con el patrimonio cultural; impulsar la articulación con otras entidades que contribuyan a su fortalecimiento sostenible; y promover la implementación de políticas y marcos normativos que favorezcan la Red Nacional de Escuelas Taller de Colombia.</p>
+                        <p>Estas Escuelas se cimientan en principios basados en la transformación social a partir de la capacitación técnica e inserción sociolaboral de colectivos marginados y víctimas de la violencia.</p>
+                        <p>Desde este Grupo se reconoce la diversidad cultural, étnica, lingüística y territorial del país como fuente de riqueza, oportunidad para el desarrollo humano, comunitario y la posibilidad de repercutir en la salvaguarda de los oficios y saberes tradicionales, para contribuir al desarrollo local y a la sostenibilidad de los patrimonios culturales materiales e inmateriales, integrados e integradores.</p>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="text-center">
-                            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/GUIA%20DE%20FINANCIACION_online_001.jpg" alt="Portada Guia de Fuentes de Financiacion para el sector cultural en Colombia" class="img-fluid rounded shadow" loading="lazy" style="border-radius: 12px; max-width: 240px; height: 340px; object-fit: cover;">
-                        </div>
-                        <div class="mt-3 text-center">
-                            <a class="btn btn-obs-primary" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/GUIA%20DE%20FINANCIACION_online.pdf" target="_blank" rel="noopener noreferrer" aria-label="Descargar guía de Fuentes de Financiación en PDF"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Descargar PDF</a>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
         </section>
 
-        <!-- Propiedad Intelectual -->
-        <section class="section-obs section-obs-soft" id="propiedad-intelectual" aria-labelledby="titulo-propiedad">
+        <!-- Economías Culturales de la Fiesta -->
+        <section class="section-obs section-obs-soft" id="cultura-festiva" aria-labelledby="titulo-fiesta">
             <div class="container">
                 <div class="section-heading mb-4">
-                    <h2 id="titulo-propiedad">Propiedad Intelectual</h2>
-                    <p>Guía práctica para proteger y valorar la creación en las culturas, las artes y los saberes.</p>
+                    <h2 id="titulo-fiesta">Economías Culturales de la Fiesta</h2>
+                    <p>Investigación sobre las prácticas económicas vinculadas a las fiestas y carnavales en Colombia.</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-8">
-                        <p>La propiedad intelectual constituye una herramienta estratégica para el reconocimiento, la protección y el aprovechamiento justo de las creaciones, conocimientos, expresiones culturales y activos intangibles que surgen de las culturas, las artes y los saberes.</p>
-                        <p>El Ministerio de las Culturas, las Artes y los Saberes pone a disposición esta <em>"Guía práctica de propiedad intelectual para las culturas, las artes y los saberes"</em>, una publicación orientada a acercar de manera sencilla y pedagógica los principales conceptos, figuras y mecanismos de protección relacionados con el derecho de autor, los signos distintivos, las denominaciones de origen, las marcas colectivas y otras herramientas de gestión de activos intangibles.</p>
-                        <p>Esta guía busca apoyar a los agentes culturales en la identificación, gestión, protección, negociación y aprovechamiento de los derechos asociados a sus creaciones y saberes, promoviendo decisiones informadas que contribuyan a su sostenibilidad económica y al reconocimiento de sus aportes culturales.</p>
-                        <p>Incorpora reflexiones sobre la importancia de proteger las expresiones culturales tradicionales, los conocimientos colectivos y las creaciones comunitarias desde enfoques de derechos culturales, diversidad cultural y desarrollo territorial.</p>
+                        <p>Colombia es un país de fiestas y carnavales. En todo el territorio nacional se celebran más de 1.400 festividades, entre fiestas religiosas, patronales, cívicas y celebraciones relacionadas con las cosechas, los ríos, el mar y otros elementos de la naturaleza.</p>
+                        <p>Estas fiestas han sido estudiadas principalmente desde sus dimensiones artísticas, simbólicas y patrimoniales. Sin embargo, sabemos mucho menos sobre todo aquello que hace posible que una fiesta exista.</p>
+                        <p>Detrás de cada celebración hay personas que organizan actividades, preparan alimentos, confeccionan vestuarios, construyen escenarios, gestionan recursos, cuidan a los participantes y realizan múltiples labores que permiten que la fiesta ocurra. Estas actividades también hacen parte de la cultura festiva y generan dinámicas económicas que, en muchos casos, no han sido suficientemente reconocidas ni documentadas.</p>
+                        <p>Con el fin de comprender mejor estas dinámicas, el Ministerio de las Culturas, las Artes y los Saberes emprendió una investigación sobre las prácticas económicas vinculadas a las fiestas y carnavales en Colombia.</p>
                     </div>
                     <div class="col-lg-4">
-                        <div class="text-center">
-                            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/HERRAMIENTAS%20PARA%20UN%20CREADOR_online_001.jpg" alt="Portada Herramientas para un creador - guia practica de propiedad intelectual para agentes culturales" class="img-fluid rounded shadow" loading="lazy" style="border-radius: 12px; max-width: 240px; height: 340px; object-fit: cover;">
+                        <aside class="purpose-box">
+                            <h3>Dimensiones de análisis</h3>
+                            <ul>
+                                <li>El territorio y su contexto biocultural</li>
+                                <li>La fiesta como expresión viva de identidad y memoria</li>
+                                <li>La gobernanza del ecosistema festivo</li>
+                                <li>Las economías culturales que sostienen la celebración</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+
+                <!-- Casos de estudio -->
+                <div class="mt-4">
+                    <h3 class="fw-bold mb-3" style="color:var(--obs-primary);">Casos de estudio piloto</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6 col-lg-3">
+                            <article class="case-card">
+                                <h4>Fiesta de la Afrocolombianidad</h4>
+                                <p>San Miguel, Putumayo</p>
+                            </article>
                         </div>
-                        <div class="mt-3 text-center">
-                            <a class="btn btn-obs-primary" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/HERRAMIENTAS%20PARA%20UN%20CREADOR_online.pdf" target="_blank" rel="noopener noreferrer" aria-label="Descargar guía de Propiedad Intelectual en PDF"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Descargar PDF</a>
+                        <div class="col-md-6 col-lg-3">
+                            <article class="case-card">
+                                <h4>Festival de la Expresión Cultural del Mar y del Volcán</h4>
+                                <p>Arboletes, Antioquia</p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <article class="case-card">
+                                <h4>Festival del Mango</h4>
+                                <p>Los Pendales, Luruaco, Atlántico</p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <article class="case-card">
+                                <h4>Día del Pescador Artesanal</h4>
+                                <p>Nuquí, Chocó</p>
+                            </article>
                         </div>
                     </div>
+                </div>
+
+                <!-- Recursos pendientes -->
+                <div class="mt-4 p-3 border rounded-3 bg-white" style="border-left:4px solid var(--obs-yellow) !important;">
+                    <p class="mb-0 text-muted small"><i class="bi bi-clock me-1" aria-hidden="true"></i> <strong>Recursos en desarrollo:</strong> PDF final de la investigación, video sobre investigación e imágenes destacadas de cada caso de estudio (proyectados para julio 2026).</p>
                 </div>
             </div>
         </section>
 
-        <!-- Herramientas para fortalecer la gestión cultural -->
-        <section class="section-obs section-obs-soft" aria-labelledby="titulo-fortalecer">
+        <!-- Otras investigaciones -->
+        <section class="section-obs" id="otras-investigaciones" aria-labelledby="titulo-otras">
             <div class="container">
                 <div class="section-heading mb-4">
-                    <h2 id="titulo-fortalecer">Herramientas para fortalecer la gestión cultural</h2>
-                    <p>Materiales prácticos para orientar decisiones, reconocer oportunidades y fortalecer proyectos culturales desde la información.</p>
+                    <h2 id="titulo-otras">Otras investigaciones asociadas</h2>
+                    <p>Investigaciones complementarias desarrolladas desde el Grupo de Gestión del Conocimiento.</p>
                 </div>
-                <div class="row g-4">
+                <div class="row g-3">
                     <div class="col-md-4">
-                        <div class="tool-card h-100">
-                            <div class="tool-card__header tool-card__header--propiedad text-center" style="padding:1.2rem;">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle text-white fw-bold" style="width:52px;height:52px;background:rgba(255,255,255,.2);font-size:1.4rem;border:2px solid rgba(255,255,255,.5);">1</span>
+                        <article class="research-card">
+                            <div class="research-card__header research-card__header--otras">
+                                <h3>Churo Cósmico</h3>
                             </div>
-                            <div class="tool-card__body text-center">
-                                <h3 class="h6 fw-bold">Identifica oportunidades</h3>
-                                <p>Reconoce rutas y fuentes de financiación para impulsar iniciativas culturales.</p>
+                            <div class="research-card__body">
+                                <p>Investigación asociada a procesos territoriales y cosmovisiones de las comunidades.</p>
+                                <span class="text-muted small"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
                             </div>
-                        </div>
+                        </article>
                     </div>
                     <div class="col-md-4">
-                        <div class="tool-card h-100">
-                            <div class="tool-card__header tool-card__header--propiedad text-center" style="padding:1.2rem;">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle text-white fw-bold" style="width:52px;height:52px;background:rgba(255,255,255,.2);font-size:1.4rem;border:2px solid rgba(255,255,255,.5);">2</span>
+                        <article class="research-card">
+                            <div class="research-card__header research-card__header--escuelas">
+                                <h3>Territorios Bioculturales</h3>
                             </div>
-                            <div class="tool-card__body text-center">
-                                <h3 class="h6 fw-bold">Protege tus creaciones</h3>
-                                <p>Conoce herramientas para valorar obras, saberes, marcas y activos culturales.</p>
+                            <div class="research-card__body">
+                                <p>Estudio sobre las dinámicas bioculturales y sus relaciones con las economías de los territorios.</p>
+                                <span class="text-muted small"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
                             </div>
-                        </div>
+                        </article>
                     </div>
                     <div class="col-md-4">
-                        <div class="tool-card h-100">
-                            <div class="tool-card__header text-center" style="padding:1.2rem; background: linear-gradient(135deg, #c9960c, #f4c542);">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle fw-bold" style="width:52px;height:52px;background:rgba(255,255,255,.25);font-size:1.4rem;border:2px solid rgba(255,255,255,.5);color:#1c2430;">3</span>
+                        <article class="research-card">
+                            <div class="research-card__header research-card__header--fiesta">
+                                <h3>Plan Nacional de Cultura 2024–2038</h3>
                             </div>
-                            <div class="tool-card__body text-center">
-                                <h3 class="h6 fw-bold">Fortalece tus proyectos</h3>
-                                <p>Aplica la información para orientar procesos y proyectar iniciativas sostenibles.</p>
+                            <div class="research-card__body">
+                                <p>Documento de política cultural con horizonte a 2038 que orienta las acciones del sector.</p>
+                                <span class="text-muted small"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -282,11 +361,11 @@
                 <div class="row align-items-center g-4">
                     <div class="col-lg-7">
                         <h2 id="titulo-relacionados">Continúa explorando el Observatorio</h2>
-                        <p>Consulta datos, indicadores y publicaciones editoriales del Observatorio.</p>
+                        <p>Consulta mediciones, publicaciones y herramientas de gestión cultural.</p>
                     </div>
                     <div class="col-lg-5 d-flex flex-wrap gap-2 justify-content-lg-end">
-                        <a class="btn btn-lg btn-obs-light px-4" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/mediciones.aspx">Ir a Mediciones</a>
-                        <a class="btn btn-lg btn-obs-light px-4" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/publicaciones.aspx">Ir a Publicaciones</a>
+                        <a class="btn btn-lg btn-obs-light px-4" href="mediciones.html">Ir a Mediciones</a>
+                        <a class="btn btn-lg btn-obs-light px-4" href="publicaciones.html">Ir a Publicaciones</a>
                     </div>
                 </div>
             </div>

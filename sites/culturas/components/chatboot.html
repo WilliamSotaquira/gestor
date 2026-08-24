@@ -1,0 +1,23 @@
+<div id="my-widget-root"></div>
+<script>!function () { const e = _spPageContextInfo.webAbsoluteUrl; fetch(e + "/_api/web/lists/getbytitle('ChatWidgetConfig')/items?$top=1&$orderby=Id desc&$select=Title,ScriptBaseUrl,ScriptFileName,WidgetId,ContentType0,InitialMessage,EnablePreChat,PreChatTitle,PreChatPlaceholder,PreChatScheduleTitle,PreChatScheduleLines,IsOpen", { headers: { Accept: "application/json;odata=verbose" } }).then(e => e.json()).then(e => { const t = e.d.results[0]; t ? function (e) { const t = e.ScriptBaseUrl + e.ScriptFileName, n = document.createElement("script"); n.src = t, n.onload = function () { !function (e) { const t = (e.PreChatScheduleLines || "").split("\n").map(e => e.trim()).filter(Boolean); window.MindxChatWidget.render({ id: "my-widget-root", widgetId: e.WidgetId, content: e.ContentType0 || "widget", initialMessage: e.InitialMessage, enablePreChat: !!e.EnablePreChat, isOpen: !!e.IsOpen, preChat: { title: e.PreChatTitle, placeholder: e.PreChatPlaceholder, scheduleTitle: e.PreChatScheduleTitle, scheduleLines: t } }) }(e), function () { const e = setInterval(function () { const e = document.querySelector("#my-widget-root .floating-button"); e && "button" !== e.type && (e.type = "button", console.log("&#128736; Floating button corregido")) }, 500); setTimeout(() => clearInterval(e), 1e4) }() }, document.body.appendChild(n) }(t) : console.error("No se encontró configuración en la lista ChatWidgetConfig") }).catch(e => console.error("Error consultando ChatWidgetConfig:", e)) }();</script>
+<style>
+  .floating-button {
+    min-width: inherit !important
+  }
+
+  .floating-button.use-css-icon.is-open {
+    background-color: #ffffff00
+  }
+
+  .floating-button.use-css-icon:hover {
+    background-color: inherit
+  }
+
+  .floating-button.use-css-icon.is-closed {
+    background-color: transparent !important
+  }
+
+  .chat-wrapper.widget {
+    height: 0 !important;
+  }
+</style>

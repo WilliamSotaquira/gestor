@@ -12,11 +12,11 @@
         gtag('config', 'G-7SBQV6YKFY');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Herramientas | Observatorio de las economías en las culturas, las artes y los saberes</title>
-    <meta name="description" content="Guías prácticas de Fuentes de Financiación y Propiedad Intelectual para agentes del sector cultural en Colombia.">
+    <title>Repositorio | Observatorio de las economías en las culturas, las artes y los saberes</title>
+    <meta name="description" content="Informes estratégicos, anuarios estadísticos, reportes institucionales e indicadores de seguimiento del sector cultural en Colombia.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Herramientas | Observatorio Minculturas">
-    <meta property="og:description" content="Instrumentos de gestión para agentes culturales: financiación y propiedad intelectual.">
+    <meta property="og:title" content="Repositorio | Observatorio Minculturas">
+    <meta property="og:description" content="Informes, anuarios, reportes sectoriales y documentos de seguimiento de las dinámicas culturales y las economías creativas.">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,7 @@
             --obs-accent: #5a2a83;
             --obs-accent-dark: #3f1d60;
             --obs-yellow: #f4c542;
+            --obs-teal: #087e8b;
             --obs-ink: #1f2937;
             --obs-muted: #536171;
             --obs-surface-soft: #f4f6f8;
@@ -42,7 +43,13 @@
         .navbar-obs .nav-link:hover { color: var(--obs-accent); }
         .navbar-obs .nav-link[aria-current="page"] { color: #fff; background: var(--obs-accent); border-radius: 6px; }
         .footer-obs a:hover { color: #fff !important; }
-        .hero-obs { position: relative; overflow: hidden; color: #fff; min-height: 420px; max-height: 560px; padding: 4.5rem 0; display: flex; align-items: center; background: url('https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/IMG_2162.JPG') center/cover no-repeat; }
+
+        .hero-obs {
+            position: relative; overflow: hidden; color: #fff;
+            min-height: 420px; max-height: 560px;
+            padding: 4.5rem 0; display: flex; align-items: center;
+        }
+        .hero-obs__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
         .hero-obs__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,39,68,.85) 0%, rgba(90,42,131,.65) 100%); }
         .hero-obs .eyebrow { color: var(--obs-yellow); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
         .hero-obs h1 { font-weight: 800; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.1; }
@@ -53,52 +60,52 @@
         .btn-obs-outline:hover { background: #fff; color: var(--obs-accent-dark); }
         .btn-obs-secondary { color: var(--obs-accent); border: 2px solid var(--obs-accent); background: #fff; font-weight: 700; border-radius: 8px; }
         .btn-obs-secondary:hover { background: var(--obs-accent); color: #fff; }
-        .btn-obs-primary { color: #fff; background: #004884; font-weight: 700; border-radius: 8px; }
-        .btn-obs-primary:hover { background: #003568; color: #fff; }
+
         .section-obs { padding: 4rem 0; }
         .section-obs-soft { background: var(--obs-surface-soft); }
         .section-heading h2 { font-weight: 800; color: var(--obs-primary); }
         .section-heading p { color: var(--obs-muted); }
-        /* Tool cards */
-        .tool-card {
+
+        /* Purpose box */
+        .purpose-box {
+            padding: 1.5rem; border-radius: 16px;
+            color: #fff; background: #00325c;
+            box-shadow: 0 8px 24px rgba(22,34,51,.1);
+        }
+        .purpose-box h3 { color: var(--obs-yellow); font-size: 1.15rem; margin-top: 0; }
+        .purpose-box ul { margin: 0; padding-left: 1.2rem; }
+        .purpose-box li + li { margin-top: .4rem; }
+
+        /* Repo cards */
+        .repo-card {
             border: 1px solid var(--obs-border);
+            border-top: 6px solid var(--obs-accent);
             border-radius: 16px;
-            overflow: hidden;
+            padding: 1.5rem;
             background: #fff;
             box-shadow: 0 8px 24px rgba(22,34,51,.07);
-            display: flex; flex-direction: column;
             height: 100%;
-        }
-        .tool-card__header {
-            padding: 1.5rem;
-            color: #fff;
-            position: relative;
-        }
-        .tool-card__header--financiacion { background: linear-gradient(135deg, #004884, #1a6bc4); }
-        .tool-card__header--propiedad { background: linear-gradient(135deg, #5a2a83, #8b47b5); }
-        .tool-card__header h3 { font-size: 1.3rem; font-weight: 800; margin: 0; position: relative; z-index: 1; }
-        .tool-card__header p { font-size: .88rem; margin: .4rem 0 0; opacity: .85; position: relative; z-index: 1; }
-        .tool-card__header::after {
-            content: ""; position: absolute;
-            width: 140px; height: 140px;
-            right: -40px; bottom: -60px;
-            border: 24px solid rgba(255,255,255,.1); border-radius: 50%;
-        }
-        .tool-card__body {
-            flex: 1; padding: 1.5rem;
             display: flex; flex-direction: column;
         }
-        .tool-card__body p { color: var(--obs-muted); font-size: .92rem; }
-        .tool-card__body .btn { margin-top: auto; align-self: flex-start; }
-        .qr-placeholder {
-            margin-top: 1rem; padding: 1rem;
-            border: 2px dashed var(--obs-border);
+        .repo-card:nth-child(2) { border-top-color: #004884; }
+        .repo-card:nth-child(3) { border-top-color: var(--obs-teal); }
+        .repo-card:nth-child(4) { border-top-color: var(--obs-yellow); }
+        .repo-card:nth-child(5) { border-top-color: #8b4513; }
+        .repo-card__icon {
+            width: 48px; height: 48px;
+            display: grid; place-items: center;
             border-radius: 12px;
-            text-align: center;
-            color: var(--obs-muted);
-            font-size: .85rem;
+            color: #fff; background: var(--obs-accent);
+            font-size: 1.2rem;
         }
-        .qr-placeholder i { font-size: 2rem; display: block; margin-bottom: .5rem; }
+        .repo-card:nth-child(2) .repo-card__icon { background: #004884; }
+        .repo-card:nth-child(3) .repo-card__icon { background: var(--obs-teal); }
+        .repo-card:nth-child(4) .repo-card__icon { background: #8b6914; }
+        .repo-card:nth-child(5) .repo-card__icon { background: #8b4513; }
+        .repo-card h3 { font-size: 1.15rem; font-weight: 700; margin-top: 1rem; }
+        .repo-card p { color: var(--obs-muted); font-size: 0.92rem; }
+        .repo-card .status { margin-top: auto; font-size: .85rem; color: var(--obs-muted); }
+
         /* Related */
         .related-section {
             color: #fff;
@@ -109,6 +116,7 @@
         .related-section p { color: #edf4fb; }
         .btn-obs-light { color: #00325c; background: #fff; font-weight: 700; border-radius: 8px; }
         .btn-obs-light:hover { background: #edf4fb; }
+
         a:focus-visible, button:focus-visible { outline: 3px solid var(--obs-yellow); outline-offset: 2px; border-radius: 4px; }
         @media (max-width: 768px) { .hero-obs { min-height: auto; padding: 3rem 0; } }
         @media print {
@@ -156,8 +164,8 @@
                         <li class="nav-item"><a class="nav-link" href="publicaciones.html">Publicaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="investigaciones.html">Investigaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="otras-publicaciones.html">Otras Publicaciones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="repositorio.html">Repositorio</a></li>
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="herramientas.html">Herramientas</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="repositorio.html">Repositorio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="herramientas.html">Herramientas</a></li>
                     </ul>
                 </div>
             </div>
@@ -166,112 +174,98 @@
 
     <main id="contenido-principal">
         <!-- Hero -->
-        <section class="hero-obs" aria-labelledby="titulo-herramientas">
+        <section class="hero-obs" aria-labelledby="titulo-repositorio">
+            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/PublishingImages/hero-inicio-mascara-observatorio.jpg" class="hero-obs__img" alt="Expresión de la diversidad cultural colombiana">
             <div class="hero-obs__overlay"></div>
             <div class="container position-relative" style="z-index:2;">
-                <p class="eyebrow mb-2">Instrumentos de gestión cultural</p>
-                <h1 id="titulo-herramientas">Herramientas</h1>
-                <p class="lead mt-3">Guías prácticas para agentes culturales sobre financiación y propiedad intelectual, orientadas al fortalecimiento y la sostenibilidad de las economías culturales.</p>
+                <p class="eyebrow mb-2">Informes e indicadores estratégicos</p>
+                <h1 id="titulo-repositorio">Repositorio</h1>
+                <p class="lead mt-3">Informes estratégicos, reportes institucionales y documentos de seguimiento sectorial para fortalecer la circulación de información y el acceso a contenidos de análisis cultural.</p>
                 <div class="d-flex flex-wrap gap-2 mt-4">
-                    <a class="btn btn-lg btn-obs-yellow px-4" href="#propiedad-intelectual">Propiedad Intelectual</a>
-                    <a class="btn btn-lg btn-obs-outline px-4" href="#financiacion">Fuentes de Financiación</a>
+                    <a class="btn btn-lg btn-obs-yellow px-4" href="#contenidos">Explorar contenidos</a>
+                    <a class="btn btn-lg btn-obs-outline px-4" href="observatorio.html">Volver al Observatorio</a>
                 </div>
             </div>
         </section>
 
-        <!-- Fuentes de Financiación -->
-        <section class="section-obs" id="financiacion" aria-labelledby="titulo-financiacion">
+        <!-- ¿Qué es? -->
+        <section class="section-obs section-obs-soft" aria-labelledby="titulo-que-es">
             <div class="container">
-                <div class="section-heading mb-4">
-                    <h2 id="titulo-financiacion">Fuentes de Financiación</h2>
-                    <p>Guía práctica para orientar a los agentes del sector cultural en la identificación y acceso a fuentes de financiación disponibles en Colombia.</p>
-                </div>
-                <div class="row g-4">
+                <div class="row g-4 align-items-start">
                     <div class="col-lg-8">
-                        <p>Esta guía es una herramienta práctica diseñada para orientar a los agentes del sector cultural en la identificación y acceso a las diferentes fuentes de financiación disponibles en Colombia para el desarrollo de proyectos, iniciativas, emprendimientos y organizaciones culturales.</p>
-                        <p>Su propósito es brindar información clara, actualizada y organizada sobre los mecanismos de apoyo financiero existentes, facilitando la toma de decisiones y la estructuración de estrategias de sostenibilidad económica.</p>
-                        <p>El documento reúne y analiza las principales alternativas de financiación del ecosistema cultural, incluyendo convocatorias públicas, incentivos tributarios, líneas de crédito, fondos de inversión, cooperación internacional, mecanismos de financiación colectiva y otras oportunidades de acceso a recursos.</p>
-                        <p>Dirigida a artistas, gestores culturales, emprendedores creativos, organizaciones culturales, colectivos, fundaciones, empresas del sector y entidades territoriales.</p>
+                        <h2 id="titulo-que-es" class="fw-bold">¿Qué es?</h2>
+                        <p class="mt-3">Línea estratégica orientada a consolidar informes, anuarios, reportes sectoriales y documentos de seguimiento relacionados con las dinámicas culturales, las economías creativas y los procesos de gestión desarrollados desde el Grupo de Gestión del Conocimiento.</p>
+                        <p>Este componente busca facilitar la consulta y visualización de información estratégica mediante recursos gráficos, indicadores y documentos de análisis que permitan fortalecer la comprensión de resultados, avances y comportamientos del sector cultural.</p>
                     </div>
                     <div class="col-lg-4">
-                        <div class="text-center">
-                            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/GUIA%20DE%20FINANCIACION_online_001.jpg" alt="Portada Guia de Fuentes de Financiacion para el sector cultural en Colombia" class="img-fluid rounded shadow" loading="lazy" style="border-radius: 12px; max-width: 240px; height: 340px; object-fit: cover;">
-                        </div>
-                        <div class="mt-3 text-center">
-                            <a class="btn btn-obs-primary" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/GUIA%20DE%20FINANCIACION_online.pdf" target="_blank" rel="noopener noreferrer" aria-label="Descargar guía de Fuentes de Financiación en PDF"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Descargar PDF</a>
-                        </div>
+                        <aside class="purpose-box">
+                            <h3>Objetivo</h3>
+                            <p>Organizar y visibilizar informes estratégicos mediante una experiencia de navegación más visual, accesible e interactiva, fortaleciendo:</p>
+                            <ul>
+                                <li>Circulación de información</li>
+                                <li>Acceso a contenidos de análisis</li>
+                                <li>Monitoreo cultural</li>
+                                <li>Comprensión de resultados sectoriales</li>
+                            </ul>
+                        </aside>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Propiedad Intelectual -->
-        <section class="section-obs section-obs-soft" id="propiedad-intelectual" aria-labelledby="titulo-propiedad">
+        <!-- Contenidos del Repositorio -->
+        <section class="section-obs" id="contenidos" aria-labelledby="titulo-contenidos">
             <div class="container">
                 <div class="section-heading mb-4">
-                    <h2 id="titulo-propiedad">Propiedad Intelectual</h2>
-                    <p>Guía práctica para proteger y valorar la creación en las culturas, las artes y los saberes.</p>
+                    <h2 id="titulo-contenidos">Contenidos del Repositorio</h2>
+                    <p>Documentos y recursos organizados por tipología de contenido.</p>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-8">
-                        <p>La propiedad intelectual constituye una herramienta estratégica para el reconocimiento, la protección y el aprovechamiento justo de las creaciones, conocimientos, expresiones culturales y activos intangibles que surgen de las culturas, las artes y los saberes.</p>
-                        <p>El Ministerio de las Culturas, las Artes y los Saberes pone a disposición esta <em>"Guía práctica de propiedad intelectual para las culturas, las artes y los saberes"</em>, una publicación orientada a acercar de manera sencilla y pedagógica los principales conceptos, figuras y mecanismos de protección relacionados con el derecho de autor, los signos distintivos, las denominaciones de origen, las marcas colectivas y otras herramientas de gestión de activos intangibles.</p>
-                        <p>Esta guía busca apoyar a los agentes culturales en la identificación, gestión, protección, negociación y aprovechamiento de los derechos asociados a sus creaciones y saberes, promoviendo decisiones informadas que contribuyan a su sostenibilidad económica y al reconocimiento de sus aportes culturales.</p>
-                        <p>Incorpora reflexiones sobre la importancia de proteger las expresiones culturales tradicionales, los conocimientos colectivos y las creaciones comunitarias desde enfoques de derechos culturales, diversidad cultural y desarrollo territorial.</p>
+                <div class="row g-3">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="repo-card">
+                            <div class="repo-card__icon" aria-hidden="true"><i class="bi bi-journal-richtext"></i></div>
+                            <h3>Anuarios estadísticos</h3>
+                            <p>Compilaciones anuales de datos estadísticos del sector cultural con indicadores de gestión y resultados.</p>
+                            <span class="status"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
+                        </article>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="text-center">
-                            <img src="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/HERRAMIENTAS%20PARA%20UN%20CREADOR_online_001.jpg" alt="Portada Herramientas para un creador - guia practica de propiedad intelectual para agentes culturales" class="img-fluid rounded shadow" loading="lazy" style="border-radius: 12px; max-width: 240px; height: 340px; object-fit: cover;">
-                        </div>
-                        <div class="mt-3 text-center">
-                            <a class="btn btn-obs-primary" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/assets/img/HERRAMIENTAS%20PARA%20UN%20CREADOR_online.pdf" target="_blank" rel="noopener noreferrer" aria-label="Descargar guía de Propiedad Intelectual en PDF"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i> Descargar PDF</a>
-                        </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="repo-card">
+                            <div class="repo-card__icon" aria-hidden="true"><i class="bi bi-file-earmark-bar-graph"></i></div>
+                            <h3>Informes sectoriales</h3>
+                            <p>Documentos de análisis sobre las dinámicas económicas, sociales y territoriales del sector cultural.</p>
+                            <span class="status"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="repo-card">
+                            <div class="repo-card__icon" aria-hidden="true"><i class="bi bi-trophy"></i></div>
+                            <h3>Informe Estímulos 2022–2026</h3>
+                            <p>Resultados y seguimiento del programa de estímulos al sector cultural durante el periodo 2022–2026.</p>
+                            <span class="status"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="repo-card">
+                            <div class="repo-card__icon" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h3>Indicadores estratégicos</h3>
+                            <p>Datos destacados y métricas clave para comprender el comportamiento y avance del sector cultural.</p>
+                            <span class="status"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="repo-card">
+                            <div class="repo-card__icon" aria-hidden="true"><i class="bi bi-building"></i></div>
+                            <h3>Reportes institucionales</h3>
+                            <p>Documentos de gestión, informes de seguimiento y reportes de avance institucional.</p>
+                            <span class="status"><i class="bi bi-clock me-1" aria-hidden="true"></i> Contenido en desarrollo</span>
+                        </article>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Herramientas para fortalecer la gestión cultural -->
-        <section class="section-obs section-obs-soft" aria-labelledby="titulo-fortalecer">
-            <div class="container">
-                <div class="section-heading mb-4">
-                    <h2 id="titulo-fortalecer">Herramientas para fortalecer la gestión cultural</h2>
-                    <p>Materiales prácticos para orientar decisiones, reconocer oportunidades y fortalecer proyectos culturales desde la información.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="tool-card h-100">
-                            <div class="tool-card__header tool-card__header--propiedad text-center" style="padding:1.2rem;">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle text-white fw-bold" style="width:52px;height:52px;background:rgba(255,255,255,.2);font-size:1.4rem;border:2px solid rgba(255,255,255,.5);">1</span>
-                            </div>
-                            <div class="tool-card__body text-center">
-                                <h3 class="h6 fw-bold">Identifica oportunidades</h3>
-                                <p>Reconoce rutas y fuentes de financiación para impulsar iniciativas culturales.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="tool-card h-100">
-                            <div class="tool-card__header tool-card__header--propiedad text-center" style="padding:1.2rem;">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle text-white fw-bold" style="width:52px;height:52px;background:rgba(255,255,255,.2);font-size:1.4rem;border:2px solid rgba(255,255,255,.5);">2</span>
-                            </div>
-                            <div class="tool-card__body text-center">
-                                <h3 class="h6 fw-bold">Protege tus creaciones</h3>
-                                <p>Conoce herramientas para valorar obras, saberes, marcas y activos culturales.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="tool-card h-100">
-                            <div class="tool-card__header text-center" style="padding:1.2rem; background: linear-gradient(135deg, #c9960c, #f4c542);">
-                                <span class="d-inline-flex align-items-center justify-content-center rounded-circle fw-bold" style="width:52px;height:52px;background:rgba(255,255,255,.25);font-size:1.4rem;border:2px solid rgba(255,255,255,.5);color:#1c2430;">3</span>
-                            </div>
-                            <div class="tool-card__body text-center">
-                                <h3 class="h6 fw-bold">Fortalece tus proyectos</h3>
-                                <p>Aplica la información para orientar procesos y proyectar iniciativas sostenibles.</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Nota informativa -->
+                <div class="mt-4 p-3 border rounded-3 bg-white" style="border-left:4px solid var(--obs-yellow) !important;">
+                    <p class="mb-0 text-muted small"><i class="bi bi-info-circle me-1" aria-hidden="true"></i> <strong>Nota:</strong> Los contenidos de esta sección se habilitarán progresivamente a medida que se validen los recursos documentales (PDFs, portadas, imágenes e indicadores) por parte del equipo institucional.</p>
                 </div>
             </div>
         </section>
@@ -282,11 +276,11 @@
                 <div class="row align-items-center g-4">
                     <div class="col-lg-7">
                         <h2 id="titulo-relacionados">Continúa explorando el Observatorio</h2>
-                        <p>Consulta datos, indicadores y publicaciones editoriales del Observatorio.</p>
+                        <p>Consulta mediciones, investigaciones y publicaciones del Observatorio.</p>
                     </div>
                     <div class="col-lg-5 d-flex flex-wrap gap-2 justify-content-lg-end">
-                        <a class="btn btn-lg btn-obs-light px-4" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/mediciones.aspx">Ir a Mediciones</a>
-                        <a class="btn btn-lg btn-obs-light px-4" href="https://www.mincultura.gov.co/observatorio-de-las-economias-en-las-culturas-artes-y-saberes/Paginas/publicaciones.aspx">Ir a Publicaciones</a>
+                        <a class="btn btn-lg btn-obs-light px-4" href="mediciones.html">Ir a Mediciones</a>
+                        <a class="btn btn-lg btn-obs-light px-4" href="investigaciones.html">Investigaciones</a>
                     </div>
                 </div>
             </div>
