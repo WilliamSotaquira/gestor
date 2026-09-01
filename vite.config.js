@@ -38,13 +38,38 @@ function discoverPages() {
   return pages;
 }
 
+// Ruta pública que ahora actúa como vista principal del proyecto.
+const HOME_ROUTE = '/sites/culturas/landings/observatorio/observatorio.html';
+
+/**
+ * Redirige la raíz "/" hacia el Observatorio, que pasa a ser la vista
+ * principal. El panel de administración (index.html raíz) queda desvinculado
+ * pero se conserva y sigue accesible en su propia ruta si se solicita directo.
+ */
+function homeRedirectPlugin() {
+  return {
+    name: 'home-redirect-observatorio',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url === '/' || req.url === '/index.html') {
+          res.writeHead(302, { Location: HOME_ROUTE });
+          res.end();
+          return;
+        }
+        next();
+      });
+    }
+  };
+}
+
 export default defineConfig({
   root: '.',
-  plugins: [],
+  plugins: [homeRedirectPlugin()],
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        // El panel de administración (index.html raíz) queda desvinculado del
+        // build. El archivo se conserva; solo deja de ser una entrada.
         preview: resolve(__dirname, 'shared/preview/index.html'),
         ...discoverPages()
       }

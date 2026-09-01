@@ -1,0 +1,48 @@
+OBSERVATORIO DE LAS ECONOMÍAS EN LAS CULTURAS, LAS ARTES Y LOS SABERES
+Paquete para revisión previa a producción
+=======================================================================
+
+CÓMO REVISAR
+------------
+1. Descomprime este archivo ZIP en cualquier carpeta.
+2. Abre el archivo "observatorio.html" con tu navegador (doble clic).
+   Esa es la vista PRINCIPAL del sitio.
+3. Navega usando el menú superior. Todas las páginas están enlazadas
+   entre sí (Observatorio, Mediciones, Publicaciones, Investigaciones,
+   Otras Publicaciones, Repositorio, Herramientas).
+
+REQUISITOS
+----------
+- Solo necesitas un navegador web moderno (Chrome, Edge, Firefox).
+- Conexión a internet: las imágenes institucionales, los logos y los
+  estilos (Bootstrap / GOV.CO) se cargan desde los servidores oficiales.
+  No hace falta instalar nada ni levantar un servidor.
+
+PÁGINAS INCLUIDAS
+-----------------
+- observatorio.html        -> Vista principal (inicio)
+- mediciones.html
+- publicaciones.html
+- investigaciones.html
+- otras-publicaciones.html
+- repositorio.html
+- herramientas.html
+
+NOTAS PARA EL REVISOR
+---------------------
+- El archivo "index.html" quedó DESCARTADO como página de inicio. Ya no
+  está enlazado desde el menú ni desde el logo. Se conserva solo como
+  referencia histórica; puede ignorarse para la revisión.
+- El logo del observatorio y el menú "Observatorio" llevan a la vista
+  principal (observatorio.html).
+- Para dejar comentarios o ajustes, responde el correo indicando la
+  página (archivo) y la sección a modificar.
+
+CÓMO DEJAR OBSERVACIONES
+------------------------
+Indica por cada ajuste:
+  1. Archivo (ej: publicaciones.html)
+  2. Sección o texto de referencia
+  3. Cambio solicitado
+
+Gracias por la revisión.
