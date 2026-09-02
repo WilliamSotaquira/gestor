@@ -2259,6 +2259,186 @@
     </div>
     </main>
 
+    <!-- Modal de bienvenida: banner promocional SIR -->
+    <style>
+        .sir-welcome {
+            width: min(96vw, 950px);
+            max-width: none;
+            border: 0;
+            border-radius: 12px;
+            padding: 0;
+            background: #ffffff;
+            box-shadow: 0 18px 40px rgba(15, 35, 60, 0.28);
+            overflow: hidden;
+        }
+
+        .sir-welcome::backdrop {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .sir-welcome__shell {
+            position: relative;
+        }
+
+        .sir-welcome__close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            min-height: 44px;
+            padding: 0;
+            border: 2px solid #1f2328;
+            border-radius: 999px;
+            background: #FFC107;
+            color: #1f2328;
+            font-size: 1.4rem;
+            line-height: 1;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .sir-welcome__close:hover {
+            background: #e0a800;
+            transform: scale(1.05);
+        }
+
+        .sir-welcome__close:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 3px;
+        }
+
+        .sir-welcome__link {
+            display: block;
+            line-height: 0;
+        }
+
+        .sir-welcome__link:focus-visible {
+            outline: 3px solid #123a63;
+            outline-offset: -3px;
+        }
+
+        .sir-welcome__banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .sir-welcome__banner--desktop {
+            display: none;
+        }
+
+        .sir-welcome__banner--mobile {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .sir-welcome__banner--desktop {
+                display: block;
+            }
+
+            .sir-welcome__banner--mobile {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sir-welcome__close {
+                transition: none;
+            }
+
+            .sir-welcome__close:hover {
+                transform: none;
+            }
+        }
+    </style>
+
+    <dialog class="sir-welcome" id="sir-welcome-dialog" aria-labelledby="sir-welcome-title">
+        <div class="sir-welcome__shell">
+            <button type="button" class="sir-welcome__close" id="sir-welcome-close"
+                aria-label="Cerrar ventana de bienvenida">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 id="sir-welcome-title" class="sr-only">Información destacada del Sistema Interoperable de Recaudo de Bogotá</h2>
+            <a class="sir-welcome__link" id="sir-welcome-link"
+                href="https://youtu.be/E5c5n7WGROg?si=zG7ysHDWkr26TmWg"
+                target="_blank" rel="noopener noreferrer"
+                aria-label="Ver el video del Sistema Interoperable de Recaudo de Bogotá (SIR) en YouTube (se abre en una nueva pestaña)">
+                <img class="sir-welcome__banner sir-welcome__banner--desktop"
+                    src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09/banner%20principal%20web%20sir%20-%20950x300.png"
+                    alt="Banner principal del Sistema Interoperable de Recaudo de Bogotá (SIR). Clic para ver el video en YouTube."
+                    width="950" height="300" decoding="async">
+                <img class="sir-welcome__banner sir-welcome__banner--mobile"
+                    src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09/banner%20principal%20web%20sir%20-%20340x300.png"
+                    alt="Banner principal del Sistema Interoperable de Recaudo de Bogotá (SIR). Clic para ver el video en YouTube."
+                    width="340" height="300" decoding="async">
+            </a>
+        </div>
+    </dialog>
+
+    <script>
+        (function() {
+            const dialog = document.getElementById('sir-welcome-dialog');
+            const closeBtn = document.getElementById('sir-welcome-close');
+            const bannerLink = document.getElementById('sir-welcome-link');
+
+            if (!dialog || !closeBtn || typeof dialog.showModal !== 'function') {
+                return;
+            }
+
+            // El modal se muestra en cada carga de la página.
+            let lastFocused = null;
+
+            function openDialog() {
+                lastFocused = document.activeElement;
+                dialog.showModal();
+                closeBtn.focus();
+            }
+
+            function closeDialog() {
+                dialog.close();
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            }
+
+            closeBtn.addEventListener('click', closeDialog);
+
+            // Al abrir el video, cerrar el modal
+            if (bannerLink) {
+                bannerLink.addEventListener('click', () => {
+                    dialog.close();
+                });
+            }
+
+            // Cerrar al hacer clic fuera del contenido (sobre el backdrop)
+            dialog.addEventListener('click', (event) => {
+                if (event.target === dialog) {
+                    closeDialog();
+                }
+            });
+
+            // <dialog> cierra con Escape de forma nativa; garantizamos el retorno de foco
+            dialog.addEventListener('cancel', () => {
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            });
+
+            // Mostrar el modal una vez que la página esté lista
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', openDialog);
+            } else {
+                openDialog();
+            }
+        })();
+    </script>
+
     <!-- utils.js BDC -->
     <script src="https://cdn.www.gov.co/layout/v4/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
