@@ -22,3 +22,10 @@ docs/Gestion web 2026 - Q1.xlsx
 docs/Gestion web 2026 - Q2.xlsx
 docs/Gestion web 2026 - Q3.xlsx
 docs/informe-gerencial-contrato-0813-2026.md
+
+# --- ltm-power ---
+ltm/store/*.jsonl
+ltm/runtime/*
+ltm/reports/*
+ltm/snapshots/*
+# --- /ltm-power ---

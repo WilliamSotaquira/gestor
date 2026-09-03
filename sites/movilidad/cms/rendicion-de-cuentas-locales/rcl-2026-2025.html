@@ -1,354 +1,4 @@
 <div class="set-wrapper rendicion-cuentas">
-    <style>
-                            .rendicion-cuentas {
-                              font-size: 0.95rem;
-                              line-height: 1.7;
-                            }
-                            .rendicion-cuentas .seccion-rc {
-                              padding: 1.5rem 0;
-                              border-bottom: 1px solid #dee2e6;
-                            }
-                            .rendicion-cuentas .seccion-rc:last-child {
-                              border-bottom: none;
-                            }
-                            .rendicion-cuentas .seccion-rc h5 {
-                              font-size: 1.1rem;
-                              font-weight: 700;
-                              margin-bottom: 1rem;
-                            }
-                            .rendicion-cuentas .intro-text {
-                              padding: 1.5rem 0;
-                              border-bottom: 1px solid #dee2e6;
-                            }
-                            .rendicion-cuentas details {
-                              margin-bottom: 2px;
-                            }
-                            .rendicion-cuentas summary {
-                              background-color: #A6B517 !important;
-                              color: #000 !important;
-                              font-weight: 600 !important;
-                              font-size: 1rem !important;
-                              padding: 0.85rem 1.25rem !important;
-                              cursor: pointer;
-                              list-style: none;
-                              display: flex !important;
-                              align-items: center;
-                              justify-content: space-between;
-                              visibility: visible !important;
-                              opacity: 1 !important;
-                            }
-                            .rendicion-cuentas summary::-webkit-details-marker {
-                              display: none;
-                            }
-                            .rendicion-cuentas summary::after {
-                              content: "▼";
-                              font-size: 0.7rem;
-                              transition: transform 0.3s;
-                            }
-                            .rendicion-cuentas details[open] summary::after {
-                              transform: rotate(180deg);
-                            }
-                            .rendicion-cuentas details[open] summary {
-                              background-color: #8a9a12 !important;
-                            }
-                            .rendicion-cuentas .panel-body {
-                              background-color: #fff !important;
-                              color: #252525 !important;
-                              padding: 1.5rem !important;
-                              font-size: 0.9rem !important;
-                              line-height: 1.7 !important;
-                              border: 1px solid #dee2e6;
-                              border-top: none;
-                            }
-                            .rendicion-cuentas .panel-body p,
-                            .rendicion-cuentas .panel-body ul,
-                            .rendicion-cuentas .panel-body ol,
-                            .rendicion-cuentas .panel-body li {
-                              font-size: 0.9rem !important;
-                              color: #252525 !important;
-                              visibility: visible !important;
-                            }
-                            .rendicion-cuentas .panel-body a {
-                              color: #004884 !important;
-                              font-weight: 600;
-                              text-decoration: underline;
-                            }
-                            .rendicion-cuentas .panel-body a:hover {
-                              color: #003366 !important;
-                            }
-                            .rendicion-cuentas .links-container {
-                              display: flex;
-                              flex-wrap: wrap;
-                              gap: 0.5rem;
-                            }
-                            .rendicion-cuentas .link-sdm {
-                              background: #A6B517;
-                              color: #000 !important;
-                              font-weight: 600;
-                              padding: 0.5rem 1rem;
-                              border-radius: 30px;
-                              text-decoration: none !important;
-                              font-size: 0.8rem;
-                              transition: background 0.3s ease, box-shadow 0.3s ease;
-                              display: inline-flex;
-                              align-items: center;
-                              justify-content: center;
-                              min-height: 36px;
-                              min-width: 44px;
-                              line-height: 1.4;
-                            }
-                            .rendicion-cuentas .link-sdm:hover {
-                              background: #8a9a12;
-                              color: #000 !important;
-                            }
-                            .rendicion-cuentas .link-sdm:focus-visible {
-                              outline: 3px solid #004884;
-                              outline-offset: 2px;
-                              box-shadow: 0 0 0 3px rgba(0, 72, 132, 0.3);
-                            }
-                            .rendicion-cuentas .link-sdm:active {
-                              background: #768f0f;
-                            }
-                            .rendicion-cuentas .videos-container {
-                              display: flex;
-                              flex-wrap: wrap;
-                              gap: 1.25rem;
-                              justify-content: center;
-                            }
-                            .rendicion-cuentas .video-item {
-                              flex: 0 1 280px;
-                              text-align: center;
-                              transition: opacity 0.3s ease, filter 0.3s ease;
-                            }
-                            .rendicion-cuentas .video-item p {
-                              font-weight: 600;
-                              margin-bottom: 0.4rem;
-                              font-size: 0.85rem;
-                              color: #252525;
-                            }
-                            .rendicion-cuentas .video-item video,
-                            .rendicion-cuentas .video-item img {
-                              border-radius: 4px;
-                              width: 100%;
-                            }
-                            .rendicion-cuentas .fecha-audiencia {
-                              display: block;
-                              font-size: 0.78rem;
-                              font-weight: 500;
-                              color: #555;
-                              margin-top: -0.2rem;
-                              margin-bottom: 0.5rem;
-                            }
-                            .rendicion-cuentas .video-item.vencido {
-                              opacity: 0.55;
-                              filter: grayscale(100%);
-                            }
-                            .rendicion-cuentas .video-item.vencido::after {
-                              content: "Ya se realizó";
-                              display: inline-block;
-                              margin-top: 0.4rem;
-                              padding: 0.2rem 0.6rem;
-                              border-radius: 20px;
-                              background-color: #6c757d;
-                              color: #fff;
-                              font-size: 0.72rem;
-                              font-weight: 600;
-                            }
-                            .rendicion-cuentas .video-item.vencido.reproduciendo {
-                              opacity: 1;
-                              filter: none;
-                            }
-                            .rendicion-cuentas .video-item.vencido.reproduciendo::after {
-                              content: "Reproduciendo";
-                              background-color: #A6B517;
-                              color: #000;
-                            }
-                            @media (max-width: 576px) {
-                              .rendicion-cuentas .links-container {
-                                gap: 0.4rem;
-                              }
-                              .rendicion-cuentas .link-sdm {
-                                flex: 1 1 calc(50% - 0.4rem);
-                                text-align: center;
-                                font-size: 0.75rem;
-                                padding: 0.5rem 0.75rem;
-                              }
-                              .rendicion-cuentas .video-item {
-                                flex: 1 1 100%;
-                              }
-                            }
-                        </style>
-    <details>
-        <summary>Cronograma</summary>
-        <div class="panel-body">
-            <ul>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-04-08/cronograma_de_audiencias_publicas_de_rendicion_de_cuentas_locales_2026_gestion_2025_nodo_sector_movilidad_distrital_0.pdf">Cronograma de Audiencias Públicas de Rendición de Cuentas Locales - 2026 Gestión 2025 - Nodo Sector Movilidad Distrital</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-04-08/cronograma_de_dialogos_ciudadanos_de_rendicion_de_cuentas_locales_2026_gestion_2025_nodo_sector_movilidad_distrital_0.pdf">Cronograma de Diálogos Ciudadanos de rendición de Cuentas Locales - 2026 Gestión 2025 - Nodo Sector Movilidad Distrital</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-    <details>
-        <summary>Informes de Rendición de Cuentas 2025</summary>
-        <div class="panel-body">
-            <ul>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-05/informe_rdc_teusaquillo_gestion_2025.pdf">Informe de Gestión 2025 Localidad Teusaquillo</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-05/informe_rdc_usaquen_gestion_2025.pdf">Informe de Gestión 2025 Localidad Usaquén</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/informe_rdc_santa_fe_gestion_2025.pdf">Informe de Gestión 2025 Localidad Santa Fe</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-23/informe_rdc_kennedy_gestion_2025.pdf">Informe de Gestión 2025 Localidad Kennedy</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-02/informe_rdc_fontibon_gestion_2025.pdf">Informe de Gestión 2025 Localidad Fontibón</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-10/informe_rdc_tunjuelito_gestion_2025%20%281%29.pdf">Informe de Gestión 2025 Localidad Tunjuelito</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-21/informe_rdc_chapinero_gestion_2025_0.pdf">Informe de Gestión 2025 Localidad Chapinero</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-21/informe_rdc_la_candelaria_gestion_2025.pdf">Informe de Gestión 2025 Localidad La Candelaria</a>
-                </li>
-                <li>
-                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-23/informe_rdc_suba_gestion_2025.pdf">Informe de Gestión 2025 Localidad Suba</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-    <details>
-        <summary>Invitaciones</summary>
-        <div class="panel-body">
-            <div class="videos-container" id="videos-audiencia">
-                <div class="video-item" data-fecha="2026-07-08">
-                    <p>Santa Fe</p>
-                    <p><span class="fecha-audiencia">8 de julio de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Santa Fe">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4">Descargar video Santa Fe</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-07-09">
-                    <p>Mujeres</p>
-                    <p><span class="fecha-audiencia">9 de julio de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Mujeres">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4">Descargar video Mujeres</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-07-22">
-                    <p>Chapinero</p>
-                    <p><span class="fecha-audiencia">22 de julio de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Chapinero">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4">Descargar video Chapinero</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-07-29">
-                    <p>Fontibón</p>
-                    <p><span class="fecha-audiencia">29 de julio de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Fontibón">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4">Descargar video Fontibón</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-07-15">
-                    <p>Kennedy</p>
-                    <p><span class="fecha-audiencia">15 de julio de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Kennedy">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4">Descargar video Kennedy</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-08-12">
-                    <p>La Candelaria</p>
-                    <p><span class="fecha-audiencia">12 de agosto de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - La Candelaria">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4">Descargar video La Candelaria</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-08-05">
-                    <p>Tunjuelito</p>
-                    <p><span class="fecha-audiencia">5 de agosto de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Tunjuelito">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/9.%20tunjuelito.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/9.%20tunjuelito.mp4">Descargar video Tunjuelito</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-04-24">
-                    <p>Niños</p>
-                    <p><span class="fecha-audiencia">24 de abril de 2026</span></p>
-                    <p>
-                        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/1.%20ninos.jpeg" alt="Imagen invitación audiencia pública - Niños" width="721" height="1280">
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-05-28">
-                    <p>Jóvenes y bicicleta</p>
-                    <p><span class="fecha-audiencia">28 de mayo de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Jóvenes y bicicleta">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4">Descargar video Jóvenes y bicicleta</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-06-24">
-                    <p>Usaquén</p>
-                    <p><span class="fecha-audiencia">24 de junio de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Usaquén">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4">Descargar video Usaquén</a>.
-                        </video>
-                    </p>
-                </div>
-                <div class="video-item" data-fecha="2026-07-01">
-                    <p>Teusaquillo</p>
-                    <p><span class="fecha-audiencia">1 de julio de 2026</span></p>
-                    <p>
-                        <video controls preload="metadata" aria-label="Video invitación audiencia pública - Teusaquillo">
-                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video.
-                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4">Descargar video Teusaquillo</a>.
-                        </video>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </details>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const contenedor = document.getElementById("videos-audiencia");
@@ -392,4 +42,1079 @@
             });
         });
     </script>
+    <style>
+        .rendicion-cuentas {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .rendicion-cuentas .seccion-rc {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .rendicion-cuentas .seccion-rc:last-child {
+            border-bottom: none;
+        }
+
+        .rendicion-cuentas .seccion-rc h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .rendicion-cuentas .intro-text {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .rendicion-cuentas details {
+            margin-bottom: 2px;
+        }
+
+        .rendicion-cuentas summary {
+            background-color: #A6B517 !important;
+            color: #000 !important;
+            font-weight: 600 !important;
+            font-size: 1rem !important;
+            padding: 0.85rem 1.25rem !important;
+            cursor: pointer;
+            list-style: none;
+            display: flex !important;
+            align-items: center;
+            justify-content: space-between;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .rendicion-cuentas summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .rendicion-cuentas summary::after {
+            content: "▼";
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .rendicion-cuentas details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .rendicion-cuentas details[open] summary {
+            background-color: #8a9a12 !important;
+        }
+
+        .rendicion-cuentas .panel-body {
+            background-color: #fff !important;
+            color: #252525 !important;
+            padding: 1.5rem !important;
+            font-size: 0.9rem !important;
+            line-height: 1.7 !important;
+            border: 1px solid #dee2e6;
+            border-top: none;
+        }
+
+        .rendicion-cuentas .panel-body p,
+        .rendicion-cuentas .panel-body ul,
+        .rendicion-cuentas .panel-body ol,
+        .rendicion-cuentas .panel-body li {
+            font-size: 0.9rem !important;
+            color: #252525 !important;
+            visibility: visible !important;
+        }
+
+        .rendicion-cuentas .panel-body a {
+            color: #004884 !important;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .rendicion-cuentas .panel-body a:hover {
+            color: #003366 !important;
+        }
+
+        .rendicion-cuentas .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .rendicion-cuentas .link-sdm {
+            background: #A6B517;
+            color: #000 !important;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            text-decoration: none !important;
+            font-size: 0.8rem;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 36px;
+            min-width: 44px;
+            line-height: 1.4;
+        }
+
+        .rendicion-cuentas .link-sdm:hover {
+            background: #8a9a12;
+            color: #000 !important;
+        }
+
+        .rendicion-cuentas .link-sdm:focus-visible {
+            outline: 3px solid #004884;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 3px rgba(0, 72, 132, 0.3);
+        }
+
+        .rendicion-cuentas .link-sdm:active {
+            background: #768f0f;
+        }
+
+        .rendicion-cuentas .videos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            justify-content: center;
+        }
+
+        .rendicion-cuentas .video-item {
+            flex: 0 1 280px;
+            text-align: center;
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+
+        .rendicion-cuentas .video-item p {
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+            color: #252525;
+        }
+
+        .rendicion-cuentas .video-item video,
+        .rendicion-cuentas .video-item img {
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .rendicion-cuentas .fecha-audiencia {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #555;
+            margin-top: -0.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rendicion-cuentas .video-item.vencido {
+            opacity: 0.55;
+            filter: grayscale(100%);
+        }
+
+        .rendicion-cuentas .video-item.vencido::after {
+            content: "Ya se realizó";
+            display: inline-block;
+            margin-top: 0.4rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            background-color: #6c757d;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .rendicion-cuentas .video-item.vencido.reproduciendo {
+            opacity: 1;
+            filter: none;
+        }
+
+        .rendicion-cuentas .video-item.vencido.reproduciendo::after {
+            content: "Reproduciendo";
+            background-color: #A6B517;
+            color: #000;
+        }
+
+        @media (max-width: 576px) {
+            .rendicion-cuentas .links-container {
+                gap: 0.4rem;
+            }
+
+            .rendicion-cuentas .link-sdm {
+                flex: 1 1 calc(50% - 0.4rem);
+                text-align: center;
+                font-size: 0.75rem;
+                padding: 0.5rem 0.75rem;
+            }
+
+            .rendicion-cuentas .video-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+    <hr>
+    <div class="accordion" data-accordion-id="ec8e52a595bd272a124b063adc709cff8">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <a class="accordion-button collapsed" href="#">Cronograma</a>
+            </div>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul>
+                        <li data-list-item-id="ed176bddb80211386b563c0ee92fe135a">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-04-08/cronograma_de_audiencias_publicas_de_rendicion_de_cuentas_locales_2026_gestion_2025_nodo_sector_movilidad_distrital_0.pdf">Cronograma
+                                de Audiencias Públicas de Rendición de Cuentas Locales - 2026 Gestión 2025 - Nodo Sector
+                                Movilidad Distrital</a>
+                        </li>
+                        <li data-list-item-id="e27189dc0a3e3a4feb3ce9b41b4007265">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-04-08/cronograma_de_dialogos_ciudadanos_de_rendicion_de_cuentas_locales_2026_gestion_2025_nodo_sector_movilidad_distrital_0.pdf">Cronograma
+                                de Diálogos Ciudadanos de rendición de Cuentas Locales - 2026 Gestión 2025 - Nodo Sector
+                                Movilidad Distrital</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <a class="accordion-button collapsed" href="#">Informes de Rendición de Cuentas 2025</a>
+            </div>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul>
+                        <li data-list-item-id="ea6ea099e8c04e5e68627dd7a3063614d">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-05/informe_rdc_teusaquillo_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Teusaquillo</a>
+                        </li>
+                        <li data-list-item-id="e22661a9690a568d2790348318b3f9e48">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-05/informe_rdc_usaquen_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Usaquén</a>
+                        </li>
+                        <li data-list-item-id="e5e5ee5386ca1b99a8457bd113d010e91">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/informe_rdc_santa_fe_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Santa Fe</a>
+                        </li>
+                        <li data-list-item-id="e70b85375d0233306e5ec905dc6cadbcc">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-23/informe_rdc_kennedy_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Kennedy</a>
+                        </li>
+                        <li data-list-item-id="e321500c93d574d4e1b8aa67bc02f2a29">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-02/informe_rdc_fontibon_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Fontibón</a>
+                        </li>
+                        <li data-list-item-id="ebc50bb44cf2d2f4d9f5ef2a16165ae62">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-10/informe_rdc_tunjuelito_gestion_2025%20%281%29.pdf">Informe
+                                de Gestión 2025 Localidad Tunjuelito</a>
+                        </li>
+                        <li data-list-item-id="ee0d14e650a65e1093c1672b62b43c78f">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-21/informe_rdc_chapinero_gestion_2025_0.pdf">Informe
+                                de Gestión 2025 Localidad Chapinero</a>
+                        </li>
+                        <li data-list-item-id="e7a9eff3bfb4abb766787ca77b5dd135a">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-21/informe_rdc_la_candelaria_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad La Candelaria</a>
+                        </li>
+                        <li data-list-item-id="ecfbe3aa47a68f0a85ce4bb363a255e0d">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-23/informe_rdc_suba_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Suba</a>
+                        </li>
+                        <li data-list-item-id="e40664efda7ed3a2bf569810c78575fee">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-18/informe_rdc_san_cristobal_gestion_2025_v4_2.pdf">Informe
+                                de Gestión 2025 Localidad San Cristóbal</a>
+                        </li>
+                        <li data-list-item-id="ee4b9a241b9909b50845ba2debaf76279">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-18/informe_rdc_puente_aranda_gestion_2025_v4_2.pdf">Informe
+                                de Gestión 2025 Localidad Puente Aranda</a>
+                        </li>
+                        <li data-list-item-id="e1a1c71d845592afaeb01206ddce7dbfd">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/informe_rdc_ciudad_bolivar_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Ciudad Bolívar</a>
+                        </li>
+                        <li data-list-item-id="e0fb54488efe6d54c318f410d22dcfbba">
+                            <a
+                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-31/informe_rdc_barrios_unidos_gestion_2025.pdf">Informe
+                                de Gestión 2025 Localidad Barrios Unidos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <a class="accordion-button collapsed" href="#">Invitaciones</a>
+            </div>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <div>
+                        <div class="videos-container" id="videos-audiencia">
+                            <!--
+                                                                                                                
+                                                                                    
+                                                        
+                            <div class="video-item" data-fecha="2026-xxx-xxx">
+                                                                                                                                                             
+                                                                
+                                <p>
+                                                                        tttttt                               
+                                                                    
+                                </p>
+                                                                                                                                                            
+                                                                
+                                <p>
+                                                                        <span class="fecha-audiencia">ffffffff</span>                               
+                                                                    
+                                </p>
+                                                                                                                                
+                                                                                                
+                                                                
+                                <p>
+                                                                        <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - tttttt">
+                                                                            <source src="lllllllll" type="video/mp4">
+                                                                            Tu navegador no soporta la reproducción de video.
+                                                                            <a href="lllllllll">Descargar video tttttt</a>
+                                                                        </video>                    
+                                                                    
+                                </p>
+                                                                                                                                                    
+                                                            
+                            </div>
+                                                    
+                                                        -->
+                            <div class="video-item" data-fecha="2026-09-23">
+                                <p>
+                                    Los Mártires
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">23 de septiembre de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Los Mártires">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-03/los%20_martires.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-03/los%20_martires.mp4">Descargar
+                                            video Los Mártires</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-xxx-xxx">
+                                <p>
+                                    Barrios Unidos
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">16 de septiembre</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Barrios Unidos">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/16.%20barrios%20unidos.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/16.%20barrios%20unidos.mp4">Descargar
+                                            video Barrios Unidos </a>
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-xxx-xxx">
+                                <p>
+                                    Ciudad Bolívar
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">9 de septiembre de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Ciudad Bolívar">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/15.%20ciudad%20bolivar.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/15.%20ciudad%20bolivar.mp4">Descargar
+                                            video Ciudad Bolívar</a>
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-09-02">
+                                <p>
+                                    San Cristóbal
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">2 de septiembre de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - San Cristóbal">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/san-cristobal-260805.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/san-cristobal-260805.mp4">Descargar
+                                            video San Cristóbal</a>
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-08-26">
+                                <p>
+                                    Puente Aranda
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">26 de agosto de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Puente Aranda">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/puente-aranda-260805.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/puente-aranda-260805.mp4">Descargar
+                                            video Puente Aranda</a>
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-08-19">
+                                <p>
+                                    Suba
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">19 de agosto de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Suba">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/suba-260805.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/suba-260805.mp4">Descargar
+                                            video Suba</a>
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-07-08">
+                                <p>
+                                    Santa Fe
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">8 de julio de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Santa Fe">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4">Descargar
+                                            video Santa Fe</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-07-09">
+                                <p>
+                                    Mujeres
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">9 de julio de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Mujeres">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4">Descargar
+                                            video Mujeres</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-07-22">
+                                <p>
+                                    Chapinero
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">22 de julio de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Chapinero">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4">Descargar
+                                            video Chapinero</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-07-29">
+                                <p>
+                                    Fontibón
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">29 de julio de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Fontibón">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4">Descargar
+                                            video Fontibón</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-07-15">
+                                <p>
+                                    Kennedy
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">15 de julio de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Kennedy">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4">Descargar
+                                            video Kennedy</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-08-12">
+                                <p>
+                                    La Candelaria
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">12 de agosto de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - La Candelaria">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4">Descargar
+                                            video La Candelaria</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-08-05">
+                                <p>
+                                    Tunjuelito
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">5 de agosto de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Tunjuelito">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-04/tunjuelito-260804.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-04/tunjuelito-260804.mp4">Descargar
+                                            video Tunjuelito</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-04-24">
+                                <p>
+                                    Niños
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">24 de abril de 2026</span>
+                                </p>
+                                <p>
+                                    <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/1.%20ninos.jpeg"
+                                        alt="Imagen invitación audiencia pública - Niños" width="721" height="1280">
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-05-28">
+                                <p>
+                                    Jóvenes y bicicleta
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">28 de mayo de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Jóvenes y bicicleta">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4">Descargar
+                                            video Jóvenes y bicicleta</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-06-24">
+                                <p>
+                                    Usaquén
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">24 de junio de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Usaquén">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4">Descargar
+                                            video Usaquén</a>.
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="video-item" data-fecha="2026-07-01">
+                                <p>
+                                    Teusaquillo
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">1 de julio de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata"
+                                        aria-label="Video invitación audiencia pública - Teusaquillo">
+                                        <source
+                                            src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4"
+                                            type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a
+                                            href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4">Descargar
+                                            video Teusaquillo</a>.
+                                    </video>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <a class="accordion-button collapsed" href="#">Presentaciones RDC Diálogos y Audiencias Públicas</a>
+            </div>
+            <div class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <div class="accordion" data-accordion-id="e9bbf58312e4022f6b3aa576a19bcdc7f">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <a class="accordion-button collapsed" href="#">Presentaciones Secretaría Distrital de
+                                    Movilidad</a>
+                            </div>
+                            <div class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li data-list-item-id="e8940c9138ef25510b5e6878c20224456">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20chapinero%20sdm%202025.pdf">Audiencia
+                                                Pública chapinero SDM 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e7781c251ce7268d43ac287e3e6f03b14">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20kennedy%20sdm%202025.pdf">Audiencia
+                                                Pública kennedy SDM 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e395f1fa79db28c741908ce0d2f92f05c">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20santa%20fe%20sdm%202025.pdf">Audiencia
+                                                Pública santa fe SDM 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ebadd1399574260a529d155c2fbc7f2cb">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20teusaquillo%20sdm%202025.pdf">Audiencia
+                                                Pública teusaquillo SDM 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e86f3db5311d20e84b902cc8b27c22990">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_tunjuelito_sdm_2025.pdf">audiencia_publica_tunjuelito_sdm_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e205c5a56e129b62d7f55bdb194112a1a">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_fontibon_sdm_2025.pdf">audiencia_publica_fontibon_sdm_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e89bab183a3fb46e143d9d6bc38c63543">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-26/audiencia_publica_la_candelaria_sdm_2025.pdf">audiencia_publica_la_candelaria_sdm_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e9d90ec55920a30abb948ef661d57d1bd">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-02/audiencia_publica_suba_sdm_2025.pdf">audiencia_publica_suba_sdm_2025</a>
+                                        </li>
+                                        <li data-list-item-id="eb74ebcfdb52c8365ad0f21c08184c0c6">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-02/audiencia_publica_puente_aranda_sdm_2025.pdf">audiencia_publica_puente_aranda_sdm_2025</a>
+                                        </li>
+                                        <li data-list-item-id="eeaa8ac62fb42e36c25c339943f4b0b91">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20jovenes%20y%20bicicleta_consejo%20de%20la%20bicicleta%20-%20sdm%202025.pdf">Dialogo
+                                                Ciudadano jóvenes &nbsp;y bicicleta_consejo de la bicicleta - SDM
+                                                2025</a>
+                                        </li>
+                                        <li data-list-item-id="e18671bb358cfd0e29177883804b75606">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20jovenes%20y%20bicicleta_la%20bici%20nos%20conecta%20sdm%202025.pdf">Dialogo
+                                                Ciudadano jóvenes &nbsp;y bicicleta_la bici nos conecta SDM 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e8dd2feeea12693968ac6d7310ef7b17d">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20jovenes%20y%20bicicleta_retos%20y%20oportunidades%20en%20la%20seguridad%20vial%20-%20sdm%202025.pdf">Dialogo
+                                                Ciudadano jóvenes &nbsp;y bicicleta_retos y oportunidades en la
+                                                seguridad vial - SDM 2025</a>
+                                        </li>
+                                        <li data-list-item-id="efdae54936081cc77373638ffef9edf09">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20mujer%20y%20medios%20de%20transporte%20alternativos%20sdm%202025_avances%20enfoque%20de%20genero.pdf">Dialogo
+                                                Ciudadano mujer y medios de transporte alternativos SDM 2025_avances
+                                                enfoque de genero</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <a class="accordion-button collapsed" href="#">Presentaciones Empresa Metro de
+                                    Bogotá</a>
+                            </div>
+                            <div class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li data-list-item-id="ed0ab6bccb6618dbb77a548b8d0a73071">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20chapinero%20emb%202025.pdf">Audiencia
+                                                Pública chapinero EMB 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e32456bf8c428ff30e12d50d58a7202ae">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20kennedy%20emb%202025.pdf">Audiencia
+                                                Pública kennedy EMB 2025</a>
+                                        </li>
+                                        <li data-list-item-id="eaf5cbcd7c42b4bfe0b92b73ce54c3682">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20santa%20fe%20emb%202025.pdf">Audiencia
+                                                Pública santa fe EMB 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e4fc0f3b15ff66820d629fe9abfed4141">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20teusaquillo%20emb%202025.pdf">Audiencia
+                                                Pública teusaquillo EMB 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e466a903725462b7f020d2b86b7d8e51b">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-26/audiencia_publica_suba_emb_2025.pdf.pdf">audiencia_publica_suba_emb_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e7ba97e8ca5fc3911ccf2c9ccac82c5ee">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-02/audiencia_publica_puente_aranda_emb_2025.pdf">audiencia_publica_puente_aranda_emb_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e47843120cb9f06a92959ecd915ab1fcb">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20mujer%20y%20medios%20de%20transporte%20alternativos%20emb%202025.pdf">Dialogo
+                                                Ciudadano mujer y medios de transporte alternativos EMB 2025</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <a class="accordion-button collapsed" href="#">Presentaciones IDU</a>
+                            </div>
+                            <div class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li data-list-item-id="e986ea827812c07ecf29f931de5c2f8f9">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20kennedy%20idu%202025.pdf">Audiencia
+                                                Pública kennedy IDU 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ebb4a472f5b509870460ff45fb3f17765">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20santa%20fe%20idu%202025.pdf">Audiencia
+                                                Pública santa fe IDU 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ee8234521035ec5ddf9db735fab83f622">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20teusaquillo%20idu%202025.pdf">Audiencia
+                                                Pública teusaquillo IDU 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e6d9fc9c17bcfd01609a76dd3aa827fc4">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20chapinero%20idu%202025.pdf">Audiencia
+                                                Pública chapinero IDU 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ea18da7b8238e6d1289fc45831e2e49d4">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_tunjuelito_idu_2025.pdf">audiencia_publica_tunjuelito_idu_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e9ccf7538bff5605114c86deb330d84da">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_fontibon_idu_2025.pdf">audiencia_publica_fontibon_idu_2025</a>
+                                        </li>
+                                        <li data-list-item-id="efe4aed0037c2cea821f3ef5806c1faa8">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20usaquen%20idu%202025.pdf">Audiencia
+                                                Pública usaquen IDU 2025</a>
+                                        </li>
+                                        <li data-list-item-id="eb29fc7de6646bfa5f6c262a470ba0712">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-26/audiencia_publica_suba_idu_2025.pdf.pdf">audiencia_publica_suba_idu_2025</a>
+                                        </li>
+                                        <li data-list-item-id="ed6a803734ac857381ae0fe303520cf65">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-26/audiencia_publica_la_candelaria_idu_2025.pdf">audiencia_publica_la_candelaria_idu_2025</a>
+                                        </li>
+                                        <li data-list-item-id="eda7cefcbd8a2d508ed364c8bf4e56763">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20mujer%20y%20medios%20de%20transporte%20alternativos%20idu%202025.pdf">Dialogo
+                                                Ciudadano mujer y medios de transporte alternativos IDU 2025</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <a class="accordion-button collapsed" href="#">Presentaciones La Rolita</a>
+                            </div>
+                            <div class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li data-list-item-id="efef116c945ed484e2bc1442a659a42cb">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20mujer%20y%20medios%20de%20transporte%20alternativos%20la%20rolita%202025.pdf">Dialogo
+                                                Ciudadano mujer y medios de transporte alternativos La Rolita 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e12dc552b263f9df777239f8dcc5a639d">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_tunjuelito_la_rolita_2025.pdf">audiencia_publica_tunjuelito_la_rolita_2025</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <a class="accordion-button collapsed" href="#">Presentaciones UMV</a>
+                            </div>
+                            <div class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li data-list-item-id="e5cc9b1b45c18076fcf4b05861f9b2fa0">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20santa%20fe%20umv%202025.pdf">Audiencia
+                                                Pública santa fe UMV 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e0e5016eaf282b3f44ce69e0e9e1359dc">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20kennedy%20umv%202025.pdf">Audiencia
+                                                Pública kennedy UMV 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e9874a5f86ea30b493d927e50a4ebe3c0">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20teusaquillo%20umv%202025.pdf">Audiencia
+                                                Pública teusaquillo UMV 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e09cad5bcfbb83938652bd97ef6129069">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20usaquen%20umv%202025.pdf">Audiencia
+                                                Pública usaquen UMV 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e0b79ccced27186e2bb78c085ddddce06">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_fontibon_umv_2025.pdf">audiencia_publica_fontibon_umv_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e69a60c3bfa63348c5b49f0dfe03b022a">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-26/audiencia_publica_tunjuelito_umv_2025.pdf">audiencia_publica_tunjuelito_umv_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e82040bda235953c98f4cdd8ebc6e59fc">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-02/audiencia_publica_suba_umv_2025.pdf">audiencia_publica_suba_umv_2025</a>
+                                        </li>
+                                        <li data-list-item-id="ec8e58bb78a9caa8843956c5b56b6b269">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20jovenes%20y%20bicicleta%20-%20%20umv%202025.pdf">Dialogo
+                                                Ciudadano jóvenes &nbsp;y bicicleta - UMV 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ee57a1a70ef8136c0d1413ccea46c7c48">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20mujer%20y%20medios%20de%20transporte%20alternativos%20umv%202025.pdf">Dialogo
+                                                Ciudadano mujer y medios de transporte alternativos UMV 2025</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <a class="accordion-button collapsed" href="#">Presentaciones Transmilenio</a>
+                            </div>
+                            <div class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li data-list-item-id="e9f2a97fbb4ff75a9433872907b403a50">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20chapinero%20transmilenio%202025.pdf">Audiencia
+                                                Pública chapinero transmilenio 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ef3450f42397a885b3d0903cc1e36a306">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20kennedy%20transmilenio%202025.pdf">Audiencia
+                                                Pública kennedy transmilenio 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e30852bf63c40646c95d8af4dba913be6">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20santa%20fe%20transmilenio%202025.pdf">Audiencia
+                                                Pública santa fe transmilenio 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ec35929697945083933b83ddc9e1b940a">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20teusaquillo%20transmilenio%202025.pdf">Audiencia
+                                                Pública teusaquillo transmilenio 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e2ed4a7b8b6d0258e59783ac9e662538c">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20usaquen%20transmilenio%202025.pdf">Audiencia
+                                                Pública usaquen transmilenio 2025</a>
+                                        </li>
+                                        <li data-list-item-id="ed65afa24a4033436a4c2b9e3c43a67b4">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_fontibon_transmilenio_2025.pdf">audiencia_publica_fontibon_transmilenio_2025</a>
+                                        </li>
+                                        <li data-list-item-id="ee730382fa8e0c707098ca3a1b2925066">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-13/audiencia_publica_tunjuelito_transmilenio_2025.pdf">audiencia_publica_tunjuelito_transmilenio_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e6a19a90de99580dbf9fada704a02842a">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-26/audiencia_publica_la_candelaria_transmilenio_2025.pdf">audiencia_publica_la_candelaria_transmilenio_2025</a>
+                                        </li>
+                                        <li data-list-item-id="e890a4babd50e4b28d1fa498b5e2429aa">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-26/audiencia_publica_tunjuelito_transmilenio_2025%20%281%29.pdf">audiencia_publica_tunjuelito_transmilenio_2025</a>
+                                        </li>
+                                        <li data-list-item-id="ea9dbb902bfc89decbe8bc48246e8e761">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-02/audiencia_publica_suba_transmilenio_2025.pdf">audiencia_publica_suba_transmilenio_2025</a>
+                                        </li>
+                                        <li data-list-item-id="ea6a287597d5f6fc49f5a7c8f3c629059">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20jovenes%20y%20bicicleta%20-%20transmilenio%202025.pdf">Dialogo
+                                                Ciudadano jóvenes &nbsp;y bicicleta - transmilenio 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e821831366059662493c727bf5d03a470">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20mujer%20y%20medios%20de%20transporte%20alternativos%20transmilenio%202025.pdf">Dialogo
+                                                Ciudadano mujer y medios de transporte alternativos transmilenio
+                                                2025</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <a class="accordion-button collapsed" href="#">Presentaciones La Terminal</a>
+                            </div>
+                            <div class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li data-list-item-id="ee1e7379590fc2c2f47e01a7e0579c082">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20chapinero%20la%20terminal%202025.pdf">Audiencia
+                                                Pública chapinero la terminal 2025</a>
+                                        </li>
+                                        <li data-list-item-id="eaa3df8125a35087425e11badab9b604b">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20kennedy%20la%20terminal%202025.pptx.pdf">Audiencia
+                                                Pública kennedy la terminal 2025</a>
+                                        </li>
+                                        <li data-list-item-id="eb02afde626d56547d11a0ed21dc13444">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20santa%20fe%20la%20terminal%202025.pptx.pdf">Audiencia
+                                                Pública santa fe la terminal 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e3f7f00ea0a674ce6825e5b2441a7cf42">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20teusaquillo%20la%20terminal%202025.pptx.pdf">Audiencia
+                                                Pública teusaquillo la terminal 2025</a>
+                                        </li>
+                                        <li data-list-item-id="eaccd3c72d2af72549f966aa9aee40c8c">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/audiencia%20publica%20usaquen%20la%20terminal%202025.pdf">Audiencia
+                                                Pública usaquen la terminal 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e436ee206d32ccc817cc283296d0d98f3">
+                                            audiencia_publica_fontibon_la_terminal_2025
+                                        </li>
+                                        <li data-list-item-id="ed409850a6e2568775c0c597337263a3a">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-02/audiencia_publica_suba_la_terminal_2025.pdf">audiencia_publica_suba_la_terminal_2025</a>
+                                        </li>
+                                        <li data-list-item-id="ed4eeeefc84782226e142a362d6cddab5">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-02/audiencia_publica_puente_aranda_la_terminal_2025.pptx.pdf">audiencia_publica_puente_aranda_la_terminal_2025</a>
+                                        </li>
+                                        <li data-list-item-id="efc4e766b213eb5ac2efc8ba6f39150ec">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20jovenes%20y%20bicicleta%20la%20terminal%202025.pdf">Dialogo
+                                                Ciudadano jóvenes &nbsp;y bicicleta la terminal 2025</a>
+                                        </li>
+                                        <li data-list-item-id="e50dd0b3df160f9aa4b42e566eb8ac7f3">
+                                            <a
+                                                href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-31/dialogo%20ciudadano%20mujer%20y%20medios%20de%20transporte%20alternativos%20la%20terminal%202025.pdf">Dialogo
+                                                Ciudadano mujer y medios de transporte alternativos la terminal 2025</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
