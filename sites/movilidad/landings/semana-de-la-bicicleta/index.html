@@ -1,0 +1,3268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIX Semana de la Bicicleta 2026 | Bogotá</title>
+    <meta name="description" content="Del 27 de septiembre al 1 de octubre, Bogotá celebra la XIX Semana de la Bicicleta con más de 20 actividades gratuitas. Consulta la agenda.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- css BDC -->
+    <link rel="icon" href="/sites/default/files/logo_bogota_favicon.png" type="image/png">
+    <!-- <link href="https://cdn.www.gov.co/layout/v4/all.css" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YM45VRL2EK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-YM45VRL2EK');
+    </script>
+
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            width: 100vw;
+            max-width: 100vw;
+            overflow-x: clip !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        /* WorkSans-Regular / Medium / SemiBold
+           (alias usados en todo el sitio; se sirven desde la misma fuente
+           variable de Work Sans vía CDN de Fontsource/jsDelivr) */
+        @font-face {
+            font-family: 'WorkSans-Regular';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/work-sans:vf@5.3.0/latin-wght-normal.woff2') format('woff2-variations');
+        }
+
+        @font-face {
+            font-family: 'WorkSans-Medium';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 500;
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/work-sans:vf@5.3.0/latin-wght-normal.woff2') format('woff2-variations');
+        }
+
+        @font-face {
+            font-family: 'WorkSans-SemiBold';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 600;
+            src: url('https://cdn.jsdelivr.net/fontsource/fonts/work-sans:vf@5.3.0/latin-wght-normal.woff2') format('woff2-variations');
+        }
+
+        html {
+            font-size: 100%;
+            /* 100% = 16px */
+            overflow-x: clip;
+            scroll-behavior: smooth;
+            scroll-padding-top: 4.5rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+        }
+    </style>
+
+    <style>
+        .navbar {
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 14px rgba(0, 0, 0, 0.45);
+            border-bottom: 2px solid rgba(252, 195, 36, 0.4);
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1030 !important;
+            background-color: #000000 !important;
+        }
+
+        .navbar .navbar-brand {
+            display: inline-flex;
+            align-items: center;
+            box-sizing: border-box;
+            max-width: calc(100% - 60px);
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .navbar-brand img {
+            height: 42px;
+            width: auto;
+        }
+
+        @media (min-width: 992px) {
+            .navbar .navbar-brand img {
+                height: 52px;
+            }
+        }
+
+        /* Debajo del breakpoint lg el toggler de Bootstrap se muestra: se saca la
+           marca+toggler del flex para que el wrapping sea en bloque simple, y el
+           toggler flota encima vía posicionamiento absoluto. */
+        @media (max-width: 991.98px) {
+            .navbar>.container {
+                display: block;
+                position: relative;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            .navbar .navbar-toggler {
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                transform: translateY(-50%);
+            }
+        }
+
+        .navbar .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 6px 12px !important;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        .navbar .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        #navbarNav {
+            justify-content: flex-end;
+        }
+
+        .navbar-nav {
+            position: relative;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: -2px;
+            height: 3px;
+            background-color: #fcc324;
+            border-radius: 2px;
+            opacity: 0;
+            pointer-events: none;
+            transition: left 0.3s ease, width 0.3s ease, opacity 0.25s ease;
+        }
+
+        @media (max-width: 991.98px) {
+            .nav-indicator {
+                display: none;
+            }
+
+            .navbar .nav-link {
+                border-left: 3px solid transparent;
+                border-radius: 0;
+            }
+
+            .navbar .nav-link:hover,
+            .navbar .nav-link:focus {
+                border-left-color: #fcc324;
+                outline: none;
+            }
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!--
+            <a class="navbar-brand" href="#">
+                <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/logo.png" alt="Logo Semana de la Bicicleta">
+            </a>
+            -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" id="navLinksList">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#1">Semana de la Bicicleta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#2">¿De qué hablamos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#3">Ubica las actividades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#4">Consulta la Agenda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#5">Nuestros aliados</a>
+                    </li>
+                    <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .cpnt-2 {
+            background-color: #F2F2F2;
+        }
+
+        .cpnt-2 .jumbotron {
+            position: relative;
+            overflow: hidden;
+            color: #FFFFFF;
+            text-align: center;
+            border-radius: 0.313rem;
+            height: 800px;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 100%;
+
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.42);
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-dates {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3%;
+            pointer-events: none;
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-dates span {
+            font-family: WorkSans-SemiBold;
+            font-size: 15rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.14);
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .cpnt-2 .jumbotron {
+                height: 600px;
+            }
+
+            .cpnt-2 .jumbotron .jumbotron-dates span {
+                font-size: 6rem;
+            }
+
+            .cpnt-2 .jumbotron h1 {
+                font-size: 2.6rem !important;
+                margin: 0 8px !important;
+            }
+
+        }
+
+        .cpnt-2 .jumbotron .text-1 {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-row {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 0 3rem;
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-logo {
+            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 16px;
+            padding: 18px;
+            box-sizing: border-box;
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-logo img {
+            display: block;
+            width: 360px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .cpnt-2 .jumbotron .jumbotron-row {
+                flex-direction: column;
+                justify-content: center;
+                gap: 1.2rem;
+                padding: 0 1rem;
+            }
+
+            .cpnt-2 .jumbotron .jumbotron-logo {
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            .cpnt-2 .jumbotron .jumbotron-logo img {
+                width: 130px;
+            }
+        }
+
+        .cpnt-2 .jumbotron h1 {
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            color: #FAD118;
+            font-size: 3.8rem;
+            line-height: 1.05;
+            max-width: 740px;
+            margin: 0;
+            text-shadow: 0.125rem 0.125rem 1rem #00000099;
+        }
+
+        .cpnt-2 .jumbotron .subtitulo {
+            font-family: WorkSans-Regular;
+            color: #FFFFFF;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            max-width: 520px;
+            margin: 0.9rem 0 0;
+            text-shadow: 0.09rem 0.09rem 0.6rem #00000099;
+        }
+
+        .cpnt-2 .jumbotron .destacado {
+            display: inline-block;
+            background-color: #FAD118;
+            color: #262019;
+            font-family: WorkSans-SemiBold;
+            font-weight: 800;
+            font-size: 1.15rem;
+            padding: 0.25rem 0.9rem;
+            margin-top: 0.9rem;
+            border-radius: 3px;
+            transform: rotate(-1.5deg);
+        }
+
+        .cpnt-2 .jumbotron .jumbotron-botones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.7rem;
+        }
+
+        .cpnt-2 .jumbotron .btn-jumbo {
+            display: inline-block;
+            text-decoration: none;
+            font-family: WorkSans-SemiBold;
+            font-size: 1rem;
+            padding: 0.75rem 1.6rem;
+            border-radius: 0.313rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .cpnt-2 .jumbotron .btn-jumbo-primario {
+            background-color: #FAD118;
+            color: #262019;
+        }
+
+        .cpnt-2 .jumbotron .btn-jumbo-primario:hover {
+            background-color: #e6b100;
+            transform: translateY(-2px);
+        }
+
+        .cpnt-2 .jumbotron .btn-jumbo-secundario {
+            background-color: transparent;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+        }
+
+        .cpnt-2 .jumbotron .btn-jumbo-secundario:hover {
+            background-color: #FFFFFF;
+            color: #262019;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .cpnt-2 .jumbotron .subtitulo {
+                font-size: 1rem;
+                margin: 0.7rem 8px 0;
+            }
+
+            .cpnt-2 .jumbotron .destacado {
+                font-size: 1rem;
+                padding: 0.2rem 0.7rem;
+            }
+
+            .cpnt-2 .jumbotron .jumbotron-botones {
+                margin: 1.3rem 8px 0;
+            }
+
+            .cpnt-2 .jumbotron .btn-jumbo {
+                font-size: 0.92rem;
+                padding: 0.65rem 1.3rem;
+            }
+        }
+    </style>
+    <div class="cpnt-2">
+        <div class="jumbotron">
+            <video class="jumbotron-video" autoplay muted loop playsinline aria-hidden="true">
+                <source src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-29/bg-header-bici.mp4" type="video/mp4">
+            </video>
+            <div class="jumbotron-overlay"></div>
+            <div class="jumbotron-row">
+                <div class="jumbotron-logo">
+                    <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-23/logo-semana-bicicleta-2026.png" alt="Logo Semana de la Bicicleta 2026">
+                </div>
+                <span class="text-1">
+                    <h1>¡Pedalea con nosotros entre el 27 de septiembre y el 1 de octubre!</h1>
+                    <p class="subtitulo">Cinco días de recorridos, festivales y encuentros.</p>
+                    <p class="destacado">Porque la bici nos integra.</p>
+                    <!--
+                    <div class="jumbotron-botones">
+                        <a href="#4" class="btn-jumbo btn-jumbo-primario">Consulta la agenda</a>
+                        <a href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/agenda.pdf" class="btn-jumbo btn-jumbo-secundario" target="_blank">Descarga la agenda</a>
+                    </div>
+                    -->
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .cpnt-3 {
+            position: relative;
+            overflow: hidden;
+            padding: 1.875rem 0;
+            padding-bottom: 140px;
+            background-color: #ffffff;
+        }
+
+        .cpnt-3 .ciclistas-strip {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 120px;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cpnt-3 .ciclistas-strip img {
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width: auto;
+        }
+
+        .cpnt-3 .ciclista-1 {
+            left: -260px;
+            animation: cpnt3-cross 14s linear infinite;
+        }
+
+        .cpnt-3 .ciclista-2 {
+            left: -260px;
+            height: 80px;
+            opacity: .85;
+            animation: cpnt3-cross 22s linear infinite;
+            animation-delay: -6s;
+        }
+
+        @keyframes cpnt3-cross {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(100vw + 260px)); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cpnt-3 .ciclistas-strip img {
+                animation: none !important;
+            }
+        }
+
+        .cpnt-3 .wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 65.875rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cpnt-3 .video {
+            margin-bottom: 1.875rem;
+            text-align: center;
+            box-shadow: 0 0.188rem 0.375rem #00000029;
+            border-radius: 0.313rem;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+
+        .cpnt-3 .video iframe {
+            aspect-ratio: 16 / 9;
+            width: 100% !important;
+        }
+
+        .cpnt-3 .texto {
+            padding: 0 1.875rem;
+        }
+
+        .cpnt-3 .texto h2 {
+            position: relative;
+            display: inline-block;
+            background: #FFCC33;
+            color: #262019;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1;
+            padding: 1.2rem 2.2rem 1.5rem;
+            margin: 0 0 1.875rem;
+            border-radius: 60px 60px 55px 20px / 50px 50px 45px 30px;
+            transform: rotate(-3deg);
+            box-shadow: 0 10px 0 -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .cpnt-3 .texto h2::after {
+            content: "";
+            position: absolute;
+            left: 38px;
+            bottom: -20px;
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent;
+            border-right: 34px solid transparent;
+            border-top: 24px solid #FFCC33;
+            transform: rotate(-8deg);
+        }
+
+        @media (max-width: 768px) {
+            .cpnt-3 .texto h2 {
+                font-size: 2.1rem;
+                padding: 1rem 1.5rem 1.3rem;
+            }
+        }
+
+        .cpnt-3 .texto p {
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @media(min-width:768px) {
+            .cpnt-3 .texto p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .cpnt-3 ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 1.875rem;
+            max-width: 65.875rem;
+            padding: 0 1.875rem;
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            line-height: 1.2;
+            color: #4D541F;
+        }
+
+        @media(min-width:768px) {
+            .cpnt-3 ul {
+                font-size: 1.1rem;
+                line-height: 1.5;
+            }
+        }
+
+        .cpnt-3 ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cpnt-3 ul li span {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 1.5rem;
+        }
+
+        .cpnt-3 ul li span.icon-1::before {
+            content: "";
+            background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/icon_1.png');
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .cpnt-3 ul li span.icon-2::before {
+            content: "";
+            background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/icon_2.png');
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .cpnt-3 ul li span.icon-3::before {
+            content: "";
+            background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/icon_3.png');
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .cpnt-3 ul strong {
+            display: block;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            color: #4D541F;
+            font-size: 2.4rem;
+            line-height: 1.15;
+            margin-top: 1.6rem;
+            padding-top: 1.1rem;
+            border-top: 3px dashed #fcc324;
+        }
+
+        @media (max-width: 768px) {
+            .cpnt-3 ul strong {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+    <div class="cpnt-3" id="1">
+        <div class="ciclistas-strip" aria-hidden="true">
+            <img class="ciclista-1" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-14/silueta-ciclista-1.png" alt="">
+            <img class="ciclista-2" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-23/silueta-ciclista-3.png" alt="">
+        </div>
+        <div class="wrapper">
+           
+            <!-- VIDEO OCULTO: pendiente de publicación. Descomentar cuando el video esté listo.
+            <div class="video video-1">
+                <iframe id="ytplayer" type="text/html" width="1200" height="675" src="https://www.youtube.com/embed/PnAAuLU8DV0?color=white" title="Video Semana de la Bicicleta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            -->
+
+         
+            <div class="texto">
+                <h2 class="title title-1">Semana de la Bicicleta</h2>
+                <p class="paragraph ph-1">La <b>Semana de la Bicicleta</b> llega a su edición número 19: un espacio anual de encuentro, participación y reconocimiento para quienes hacen de la bicicleta su medio de transporte, su pasatiempo y su forma de vida.</p>
+                <p class="paragraph ph-1">Este año, más de <b>20 actividades</b> gratuitas te invitan a redescubrir la ciudad sobre dos ruedas: recorridos urbanos, festivales, actividades de pedagogía en vía, entrega de reconocimientos, avances en ciclorrutas y muchas sorpresas más.</p>
+                <p class="paragraph ph-1">Bajo el lema <b>“La bici nos integra”</b>, queremos mostrar que la bicicleta no va sola: se conecta con el transporte público, con el metro que llega, con los entornos escolares y con las empresas. Pedalear es hacer parte de un sistema de movilidad que acerca a las personas a sus oportunidades.</p>
+            </div>
+            <ul>
+                <p class="paragraph ph-1"><b>Aquí podrás:</b></p>
+                <li><span class="icon-1"></span>Consultar la agenda de eventos</li>
+                <li><span class="icon-2"></span>Conocer los puntos de encuentro y recorridos</li>
+                <li><span class="icon-3"></span>Participar en espacios de conversación y aprendizaje</li>
+                <strong>¡Súmate a la gran fiesta de la bici en Bogotá!</strong>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        .cpnt-4 {
+            position: relative;
+            overflow: hidden;
+            padding: 1.875rem 0;
+            background-color: #fcc324;
+        }
+
+        .cpnt-4 .bg-photo {
+            position: absolute;
+            top: -15%;
+            left: 0;
+            right: 0;
+            height: 130%;
+            background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-22/bg-de-que-hablamos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            will-change: transform;
+            z-index: 0;
+        }
+
+        .cpnt-4 .bg-tint {
+            position: absolute;
+            inset: 0;
+            background: rgba(252, 195, 36, 0);
+            z-index: 1;
+        }
+
+        .cpnt-4 .cards {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 75.875rem;
+            margin: 0 auto;
+        }
+
+        .cpnt-4 .card {
+            background-color: #FFFFFF;
+            border-radius: 1.313rem;
+            padding: 1.5rem;
+            text-align: center;
+            width: 30%;
+            margin-bottom: 1.875rem;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .cpnt-4 .card .icono {
+            width: 100px;
+            /* Adjust as needed */
+            height: auto;
+            /* Maintain aspect ratio */
+            padding: 0px;
+            margin-top: 16px;
+        }
+
+        @media(min-width:768px) {
+            .cpnt-4 .card .icono {
+                width: 190px;
+                /* Adjust as needed */
+                height: auto;
+                /* Maintain aspect ratio */
+                margin-bottom: 1rem;
+                padding: 16px;
+            }
+        }
+
+        .cpnt-4 .card h3 {
+            font-family: WorkSans-SemiBold;
+            font-size: 1.25rem;
+            margin-top: 1rem;
+            color: #fcc324;
+        }
+
+        .cpnt-4 .card p {
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            line-height: 1.2;
+            padding: 0.5rem;
+        }
+
+        @media(min-width:768px) {
+            .cpnt-4 .card p {
+                font-family: WorkSans-Regular;
+                font-size: 1rem;
+                line-height: 1.4;
+                padding: 1rem;
+            }
+        }
+
+        .cpnt-4 .title-2-wrap {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .cpnt-4 .title-2 {
+            position: relative;
+            background: #FFCC33;
+            color: #262019;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1;
+            padding: 1.2rem 2.2rem 1.5rem;
+            margin: 0;
+            border-radius: 60px 60px 55px 20px / 50px 50px 45px 30px;
+            transform: rotate(-3deg);
+            box-shadow: 0 10px 0 -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .cpnt-4 .title-2::after {
+            content: "";
+            position: absolute;
+            left: 38px;
+            bottom: -20px;
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent;
+            border-right: 34px solid transparent;
+            border-top: 24px solid #FFCC33;
+            transform: rotate(-8deg);
+        }
+
+        @media (max-width: 768px) {
+            .cpnt-4 .title-2 {
+                font-size: 2.1rem;
+                padding: 1rem 1.5rem 1.3rem;
+            }
+        }
+
+
+
+        @media (max-width: 768px) {
+            .cpnt-4 .cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.875rem;
+                padding: 12px;
+            }
+
+            .cpnt-4 .card {
+                width: 100%;
+                background-color: #FFFFFF;
+                border-radius: 1.313rem;
+                padding: 0.5rem;
+                text-align: center;
+                margin-bottom: 1.875rem;
+                margin: auto;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media(min-width:768px) {
+            .zoom {
+                transition: 0.5s ease;
+                -moz-transition: 0.5s ease;
+                /* Firefox */
+                -webkit-transition: 0.5s ease;
+                /* Chrome - Safari */
+                -o-transition: 0.5s ease;
+                /* Opera */
+                -ms-transition: 0.5s ease;
+                /* IE9 */
+            }
+        }
+
+        .zoom:hover {
+            transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            /* Firefox */
+            -webkit-transform: scale(1.05);
+            /* Chrome - Safari */
+            -o-transform: scale(1.05);
+            /* Opera */
+            -ms-transform: scale(1.05);
+            /* IE9 */
+        }
+    </style>
+    <div class="cpnt-4" id="2">
+        <div class="bg-photo" aria-hidden="true"></div>
+        <div class="bg-tint" aria-hidden="true"></div>
+        <div class="title-2-wrap">
+            <h2 class="title title-2">¿De qué hablamos?</h2>
+        </div>
+        <div class="cards">
+            <div class="card card-1">
+                <img class="icono icono-1 img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/iconos-semanas_check.png" alt="icono">
+                <h3 class="title title-3">Integración urbana y regional a través de la bicicleta</h3>
+                <p class="paragraph ph-2">La bicicleta rompe fronteras y se conecta con los demás modos. Más de 4 millones de viajes diarios unen a Bogotá con los municipios cercanos, y cada vez más personas combinan la bici con TransMilenio, Rolita y, muy pronto, con el metro. Ya sea por trabajo, estudio o recreación, este vehículo nos une con oportunidades, con las personas y con el territorio.</p>
+            </div>
+            <div class="card card-2">
+                <img class="icono icono-2 img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/iconos-semanas_logro.png" alt="icono">
+                <h3 class="title title-3">Seguridad, educación y cuidado en la vía</h3>
+                <p class="paragraph ph-2">La seguridad empieza con cada uno de nosotros. Promover el autocuidado, el respeto y la corresponsabilidad en la vía es fundamental para proteger la vida de quienes se mueven en bicicleta. La educación y la conciencia ciudadana son claves para fortalecer una movilidad segura, solidaria y sostenible.</p>
+            </div>
+            <div class="card card-3">
+                <img class="icono icono-3 img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/iconos-semanas_seguridad.png" alt="icono">
+                <h3 class="title title-3">Cultura, salud, recreación y deporte</h3>
+                <p class="paragraph ph-2">La bicicleta es mucho más que un medio de transporte: es una herramienta de salud, deporte, bienestar y libertad. Pedalear transforma nuestra relación con la ciudad, nos conecta con lo esencial y enriquece nuestra vida cotidiana. Su uso es parte del patrimonio inmaterial de Bogotá y refleja una ciudad más inclusiva y humana.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Efecto parallax del fondo en el módulo "¿De qué hablamos?"
+        (function () {
+            var bgPhoto = document.querySelector('.cpnt-4 .bg-photo');
+            var section = document.querySelector('.cpnt-4');
+            if (!bgPhoto || !section) return;
+
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) return;
+
+            var ticking = false;
+
+            function updateParallax() {
+                var rect = section.getBoundingClientRect();
+                var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+                if (rect.bottom > 0 && rect.top < viewportHeight) {
+                    var progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+                    var offset = (progress - 0.5) * 90;
+                    bgPhoto.style.transform = 'translateY(' + offset + 'px)';
+                }
+                ticking = false;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateParallax();
+        })();
+    </script>
+
+    <style>
+        .cpnt-5 {
+            position: relative;
+            background-color: #F2F2F2;
+            background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/image11.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 1.875rem 0;
+            background-color: #F2F2F2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .cpnt-5 .title-2 {
+            flex: 0 0 100%;
+            font-family: WorkSans-SemiBold;
+            font-size: 1.35rem;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #fcc324;
+            width: 100%;
+            max-width: 75.875rem;
+        }
+
+        .cpnt-5 .subtitulo-mapa {
+            flex: 0 0 100%;
+            width: 100%;
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: center;
+            color: #FFFFFF;
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+            padding: 0 1.5rem;
+            text-shadow: 0.09rem 0.09rem 0.5rem #00000099;
+        }
+
+        .cpnt-5 .imagen {
+            text-align: center;
+            margin-bottom: 1.875rem;
+            padding: 32px 10%;
+        }
+
+        .cpnt-5 img {
+            max-width: 100%;
+            height: auto;
+            margin: auto
+        }
+
+        .cpnt-5 .mapa-div {
+            position: relative;
+            max-width: 75.875rem;
+            width: 100%;
+        }
+
+
+        .cpnt-5 .mapa-div path:hover {
+            fill: #fcc324 !important;
+            stroke: #FFFFFF !important;
+            stroke-width: 2px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            transition: fill 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .cpnt-5 .region-info {
+            position: absolute;
+            display: block;
+            transition: all 0.5s ease-in-out;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        @media(min-width:768px) {
+            .cpnt-5 .region-info {
+                font-size: 3rem;
+            }
+        }
+
+        .cpnt-5 .region-info.active {
+            text-align: center;
+            font-family: WorkSans-SemiBold;
+            margin-bottom: 1.875rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            top: 5%;
+            right: 5%;
+            text-shadow: 0.125rem 0.125rem 1rem #ffffff99;
+        }
+    </style>
+
+    <div class="cpnt-5" id="3">
+        <h2 class="title title-2">Selecciona una localidad en el mapa</h2>
+        <p class="subtitulo-mapa">Encuentra las actividades de la Semana de la Bicicleta cerca de ti: festivales, recorridos, jornadas de mantenimiento y puntos de pedagogía en toda la ciudad.</p>
+        <div class="mapa-div">
+            <span class="region-info"></span>
+            <svg version="1.1" id="svg1" viewBox="0 0 1257.2307 813.33401" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs id="defs1">
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath17">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-730.54972,-3129.9002)"
+                            id="path17" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath19">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-778.70244,-3224.4542)"
+                            id="path19" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath21">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-696.40031,-2941.5877)"
+                            id="path21" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath23">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-913.3579,-3054.3895)"
+                            id="path23" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath25">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-964.18405,-2867.2582)"
+                            id="path25" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath27">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1412.1918,-3081.6859)"
+                            id="path27" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath29">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1129.9521,-3150.961)"
+                            id="path29" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath31">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1280.5356,-2942.756)"
+                            id="path31" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath33">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1069.1563,-3060.6256)"
+                            id="path33" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath35">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-810.9769,-3265.5301)"
+                            id="path35" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath37">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1069.3581,-2851.3811)"
+                            id="path37" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath39">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-888.829,-3085.3834)"
+                            id="path39" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath41">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1232.8677,-3006.3431)"
+                            id="path41" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath43">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-891.7378,-3165.5035)"
+                            id="path43" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath45">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1190.0356,-3040.65)"
+                            id="path45" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath47">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1013.2107,-3178.5209)"
+                            id="path47" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath49">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-988.3663,-3140.6976)"
+                            id="path49" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath51">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1081.2474,-3048.013)"
+                            id="path51" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath53">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1392.6765,-3155.815)"
+                            id="path53" />
+                    </clipPath>
+                    <clipPath
+                        clipPathUnits="userSpaceOnUse"
+                        id="clipPath55">
+                        <path
+                            d="M 0,6502 H 1920 V 0 H 0 Z"
+                            transform="translate(-1045.5247,-3199.4374)"
+                            id="path55" />
+                    </clipPath>
+                </defs>
+                <g id="layer-MC0" transform="translate(-651.38466,-4176.047)">
+                    <path
+                        id="path16"
+                        data-name="Suba"
+                        data-id="11"
+                        d="m 0,0 c 10.793,0.799 21.625,1.054 32.438,1.607 2.176,0.111 5.073,-0.127 6.368,1.118 5.711,5.49 10.958,11.463 17.495,18.463 H 43.062 c -0.212,1.792 -0.418,3.041 -0.498,4.297 -1.229,19.226 -2.507,38.449 -3.602,57.683 -0.22,3.865 -1.324,5.585 -5.617,6.267 -76.958,12.218 -153.88,24.666 -230.814,37.038 -6.579,1.058 -13.19,1.929 -19.92,2.907 0,-8.219 0.675,-15.621 -0.137,-22.856 -1.863,-16.592 3.109,-30.926 12.409,-44.33 2.118,-3.053 4.005,-4.517 7.832,-4.477 18.915,0.2 37.851,-0.376 56.746,0.283 9.692,0.338 17.44,-2.482 25.531,-7.561 7.901,-4.96 9.267,-12.403 12.274,-19.929 -1.393,-0.342 -2.074,-0.62 -2.77,-0.664 -18.13,-1.136 -36.255,-2.945 -54.396,-3.132 -13.372,-0.138 -24.96,-3.259 -35.611,-11.474 -8.343,-6.436 -17.531,-11.775 -26.617,-17.782 5.237,-5.811 9.996,-11.14 14.809,-16.42 4.782,-5.247 9.619,-10.445 14.497,-15.737 4.064,2.422 7.545,4.878 11.358,6.597 1.757,0.792 4.694,0.971 6.195,0.014 15.162,-9.665 30.21,-19.516 45.072,-29.635 1.817,-1.237 3.235,-4.31 3.335,-6.597 0.385,-8.8 0.521,-17.644 0.073,-26.438 -0.634,-12.443 1.306,-24.506 4.37,-36.44 0.437,-1.706 2.103,-4.03 3.57,-4.345 3.114,-0.67 6.472,-0.205 10.295,-0.205 0,10.11 -0.151,19.613 0.118,29.105 0.058,2.082 1.07,4.684 2.548,6.099 32.615,31.224 65.323,62.351 98.165,93.336 C -5.807,-1.4 -2.666,-0.198 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,974.06627,4496.1332)"
+                        clip-path="url(#clipPath17)" />
+                    <path
+                        id="path18"
+                        data-name="Usaquén"
+                        data-id="1"
+                        d="m 0,0 c 3.613,-0.609 5.366,0.29 7.184,3.042 3.032,4.59 6.012,9.29 9.628,13.404 4.905,5.581 6.457,11.4 4.334,18.627 -1.495,5.087 -0.917,9.665 2.479,14.8 5.237,7.918 11.269,12.528 20.823,12.182 1.062,-0.038 2.136,0.245 3.416,0.406 2.098,8.672 -3.7,13.914 -7.069,20.009 -0.388,0.702 -1.834,1.026 -2.835,1.148 -9.609,1.169 -9.609,1.146 -12.128,10.744 -0.558,2.129 -0.827,4.416 -1.821,6.32 -0.682,1.307 -2.322,2.858 -3.647,2.97 -15.068,1.271 -30.09,5.395 -45.298,1.107 -0.65,-0.184 -1.397,-0.024 -2.336,-0.024 -1.232,3.846 -2.231,7.55 -3.653,11.084 -0.501,1.247 -1.973,2.867 -3.11,2.958 -4.322,0.348 -8.689,0.14 -13.279,0.14 -0.225,-4.152 -0.41,-7.569 -0.565,-10.414 -6.337,0 -12.161,-0.072 -17.982,0.025 -4.204,0.07 -8.609,-0.385 -12.569,0.696 -13.124,3.584 -26.088,7.757 -39.947,11.958 0,5.028 -0.311,11.446 0.099,17.817 0.322,5.018 -1.203,6.612 -6.376,6.507 -14.968,-0.304 -14.973,-0.076 -19.397,-14.231 -2.384,-7.627 -2.384,-7.627 -11.241,-5.935 0,3.658 1.017,7.869 -0.281,11.167 -1.345,3.414 -4.938,5.941 -7.666,8.99 -1.387,-1.231 -2.343,-1.837 -2.981,-2.683 -4.862,-6.458 -13.484,-10.832 -11.671,-21.075 0.123,-0.695 -1.3,-2.105 -2.276,-2.484 -9.594,-3.726 -19.185,-2.195 -24.09,7.973 -4.354,9.025 -4.87,8.762 -14.475,6.468 -0.648,-0.155 -1.391,0.091 -2.331,0.171 -0.213,3.765 -0.417,7.353 -0.622,10.967 -8.012,1.336 -14.596,1.305 -19.355,-6.612 -2.646,-4.4 -4.661,-8.293 -4.452,-13.562 0.355,-8.984 0.118,-17.994 0.075,-26.993 -0.007,-1.499 -0.287,-2.997 -0.404,-4.14 -4.193,2.447 -7.805,5.971 -11.87,6.608 -6.812,1.069 -13.916,0.445 -20.89,0.256 -6.09,-0.165 -11.51,-5.962 -11.514,-11.928 -0.009,-11.755 0.107,-23.51 -0.069,-35.261 -0.055,-3.647 1.084,-4.964 4.841,-5.569 25.703,-4.133 51.347,-8.631 77.027,-12.907 C -138.86,23.165 -69.409,11.703 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1038.2699,4370.0612)"
+                        clip-path="url(#clipPath19)" />
+                    <path
+                        id="path20"
+                        data-name="Engativá"
+                        data-id="10"
+                        d="m 0,0 c 27.431,31.872 54.401,63.208 82.685,96.07 6.335,-7.489 12.017,-14.207 17.8,-21.045 29.933,20.847 58.709,40.89 87.891,61.213 -29.364,24.649 -58.096,48.766 -86.503,72.612 -8.975,-8.765 -17.358,-17.258 -26.144,-25.312 -2.172,-1.992 -5.607,-3.466 -8.539,-3.609 -9.341,-0.456 -18.722,-0.038 -28.079,-0.275 -2.155,-0.055 -4.813,-0.797 -6.337,-2.202 -32.237,-29.727 -64.35,-59.589 -96.453,-89.461 -1.157,-1.076 -2.727,-2.489 -2.799,-3.814 -0.309,-5.741 -0.132,-11.507 -0.132,-18.001 8.554,2.845 16.109,5.644 23.851,7.762 2.395,0.655 5.502,-0.044 7.912,-1.029 2.831,-1.157 5.324,-3.211 7.845,-5.039 3.932,-2.85 3.052,-14.956 -1.49,-16.421 -5.004,-1.614 -5.282,-4.353 -4.237,-8.712 1.401,-5.852 3.766,-12.328 -4.713,-15.29 -0.232,-0.081 -0.31,-0.605 -0.617,-1.255 3.498,-7.202 7.178,-14.566 10.659,-22.023 2.095,-4.491 3.646,-9.423 10.883,-7.337 -1.594,-11.508 6.814,-23.852 -6.722,-32.341 10.974,-4.337 10.973,-4.337 15.27,5.449 0.59,1.343 1.334,2.636 1.764,4.026 0.931,3.008 2.647,4.729 5.989,4.084 5.408,-1.045 8.372,1.255 8.567,6.651 0.076,2.097 -0.291,4.531 -1.346,6.273 C 5.137,-5.937 2.59,-3.26 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,928.53373,4747.2165)"
+                        clip-path="url(#clipPath21)" />
+                    <path
+                        id="path22"
+                        data-name="Fontibón"
+                        data-id="9"
+                        d="m 0,0 c 0.974,1.155 1.734,2.164 2.603,3.069 7.121,7.415 14.331,14.746 21.331,22.272 1.195,1.285 2.351,3.519 2.088,5.071 -0.721,4.243 -2.209,8.356 -3.556,13.096 -46.261,-30.254 -91.998,-60.166 -138.009,-90.257 -6.371,4.85 -12.603,9.594 -19.169,14.593 -22.887,-27.556 -45.495,-54.776 -68.355,-82.3 5.5,-4.212 7.989,-9.155 3.641,-15.852 4.429,-1.303 8.047,-2.512 11.742,-3.406 2.83,-0.684 3.902,-2.07 3.514,-5.041 -0.707,-5.423 -1.111,-10.885 -1.642,-16.33 0.493,0.262 0.985,0.525 1.477,0.788 2.156,-2.176 4.808,-4.047 6.368,-6.589 3.421,-5.574 5.787,-11.31 14.002,-12.07 7.92,-0.734 7.815,-1.626 8.177,-10.007 0.052,-1.202 0.439,-2.388 0.62,-3.317 9.022,-1.363 16.821,-0.657 21.731,8.03 0.769,1.362 2.744,2.58 4.336,2.854 10.683,1.835 13.251,0.561 19.045,-8.763 2.033,-3.273 3.966,-6.614 6.149,-9.783 0.731,-1.062 2.061,-2.334 3.18,-2.398 4.679,-0.267 9.382,-0.113 14.487,-0.113 v 13.02 c 5.798,0.825 11.199,1.823 16.645,2.286 3.559,0.303 4.731,1.789 4.594,5.224 -0.204,5.135 -0.046,10.283 -0.048,15.426 -0.004,10.355 -0.301,8.648 8.348,8.869 10.192,0.261 14.814,5.122 14.769,15.91 -2.987,-1.549 -5.768,-2.99 -9.033,-4.682 0,6.833 -2.163,14.25 0.517,18.837 3.832,6.557 2.61,10.975 -0.523,16.388 -1.465,2.531 -2.743,5.211 -3.734,7.958 -0.499,1.383 -0.781,3.421 -0.12,4.557 6.129,10.535 11.679,21.107 22.857,28.102 18.323,11.466 35.705,24.437 53.68,36.909 C 14.356,-18.281 7.229,-9.205 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1217.8105,4596.8141)"
+                        clip-path="url(#clipPath23)" />
+                    <path
+                        id="path24"
+                        data-name="Kennedy"
+                        data-id="8"
+                        d="m 0,0 c 3.271,1.463 6.587,2.827 10.039,4.303 3.42,-5.95 6.283,-11.504 9.737,-16.66 1.358,-2.028 3.826,-3.847 6.158,-4.578 5.69,-1.78 11.596,-2.869 17.608,-4.282 -1.632,-7.458 -4.641,-14.324 -4.164,-20.939 0.487,-6.745 4.401,-13.243 6.951,-20.223 3.33,2.171 6.05,3.947 8.707,5.679 -5.926,12.828 -3.961,20.705 7.158,29.053 7.484,5.619 14.856,11.454 22.755,16.436 7.562,4.769 1.955,10.909 2.634,16.35 0.48,3.841 -2.182,4.416 -5.255,4.508 -0.631,0.019 -1.783,1.127 -1.759,1.693 0.295,6.999 -2.183,14.271 2.095,20.895 7.463,11.556 14.905,23.126 22.219,34.777 1.221,1.945 2.302,4.278 2.497,6.515 0.668,7.671 0.75,15.394 1.394,23.068 0.301,3.596 -0.773,5.649 -4.044,7.347 -10.25,5.32 -20.134,11.374 -30.53,16.374 -8.512,4.093 -15.085,9.331 -17.299,18.932 -0.261,1.134 -1.149,2.122 -1.855,3.371 -6.678,-3.344 -13.139,-6.392 -19.405,-9.796 -3.06,-1.664 -5.625,-1.645 -8.722,-0.098 -13.77,6.879 -27.685,13.471 -41.438,20.382 -3.003,1.509 -5.147,1.465 -7.949,-0.511 -9.747,-6.87 -19.713,-13.429 -29.579,-20.129 -9.966,-6.768 -19.913,-13.564 -30.417,-20.722 4.941,-3.948 9.705,-7.105 13.665,-11.066 6.575,-6.579 13.673,-9.278 22.576,-5.343 3.588,1.586 5.876,0.2 7.112,-3.358 1.658,-4.773 4.559,-7.583 10.093,-6.972 3.84,0.425 5.748,-1.549 6.602,-5.486 1.942,-8.947 4.051,-17.889 6.769,-26.624 1.578,-5.073 0.379,-8.075 -3.793,-11.054 -4.452,-3.179 -10.719,-6.516 -11.837,-10.896 -1.089,-4.268 3.331,-9.943 5.333,-15 0.135,-0.342 0.216,-0.719 0.416,-1.018 1.89,-2.824 0.912,-4.933 -1.284,-7.192 -4.842,-4.98 -9.446,-10.19 -14.302,-15.475 7.115,-4.254 13.533,-6.255 21.178,-1.494 C -13.765,-5.392 -6.692,-2.994 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1285.5787,4846.3225)"
+                        clip-path="url(#clipPath25)" />
+                    <path
+                        id="path26"
+                        data-name="Usme"
+                        data-id="5"
+                        d="m 0,0 c -0.918,0 -1.851,0.104 -2.753,-0.016 -12.798,-1.697 -24.326,1.348 -34.426,9.391 -3.859,3.074 -7.941,2.977 -12.421,1.982 -5.285,-1.173 -10.652,-1.979 -15.987,-2.945 v 16.592 c 3.014,0.199 5.526,0.365 8.491,0.561 0.433,4.368 0.854,8.618 1.489,15.024 5.31,-10.881 13.863,-10.378 22.96,-10.72 V 68.94 c -3.695,-0.406 -7.328,-0.842 -10.969,-1.197 -6.958,-0.68 -14.453,-0.554 -14.279,-10.887 -3.319,0.375 -5.954,0.672 -9.004,1.016 -0.782,-4.812 -1.65,-9.288 -2.194,-13.802 -0.377,-3.124 -1.48,-4.398 -4.919,-4.02 -6.926,0.761 -13.918,0.912 -20.859,1.569 -3.702,0.351 -6.015,-0.515 -7.75,-4.214 -3.109,-6.628 -7.077,-12.85 -10.317,-19.422 -1.663,-3.373 -3.401,-4.797 -7.505,-4.35 -10.893,1.186 -21.857,1.718 -33.631,2.57 0.749,-7.265 -2.595,-11.435 -7.69,-14.746 -2.759,-1.793 -5.012,-4.416 -7.865,-5.993 -2.185,-1.208 -5.084,-2.206 -7.438,-1.84 -10.5,1.632 -20.917,3.802 -31.369,5.75 -4.761,0.888 -15.471,-4.639 -15.673,-8.416 -0.324,-6.044 -0.179,-12.12 -0.025,-18.176 0.027,-1.088 0.775,-2.576 1.662,-3.157 7.263,-4.753 13.909,-10.422 23.845,-9.29 8.433,0.962 17.061,0.199 26.13,0.199 v -20.457 c 11.348,0 22.156,-0.175 32.953,0.089 4.103,0.1 6.815,-0.879 7.481,-5.18 1.168,-7.543 5.376,-12.065 12.952,-13.426 1.063,-0.192 2.054,-0.774 3.078,-1.178 9.989,-3.947 10.142,-4.046 15.906,5.019 2.237,3.518 4.531,4.347 8.576,3.372 6.757,-1.629 13.692,-2.528 20.561,-3.681 7.898,-1.326 15.806,-2.595 23.448,-3.845 0.542,0.98 0.818,1.28 0.872,1.617 0.118,0.721 0.263,1.483 0.149,2.188 -1.514,9.406 1.787,17.195 7.965,24.048 0.487,0.54 0.937,1.159 1.231,1.82 1.473,3.31 3.823,3.624 7.114,2.752 9.171,-2.429 18.422,-4.555 28.424,-6.991 0,8.145 0.495,15.681 -0.147,23.118 -0.577,6.677 1.195,10.94 8.056,12.328 4.027,0.815 4.858,3.399 4.789,7.229 C 10.72,-0.003 10.881,0 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1882.9224,4560.4189)"
+                        clip-path="url(#clipPath27)" />
+                    <path
+                        id="path28"
+                        data-name="San Cristóbal"
+                        data-id="4"
+                        d="m 0,0 c -1.101,-0.627 -2.017,-1.584 -3.006,-2.402 -8.434,-6.97 -16.864,-13.943 -25.604,-21.169 20.016,-14.764 39.22,-29.535 59.117,-43.304 7.837,-5.423 12.73,-10.976 10.796,-20.825 -0.127,-0.648 0.171,-1.379 0.28,-2.135 h 11.922 c -5.219,12.461 1.988,19.286 10.464,25.529 0.147,0.108 0.256,0.308 0.415,0.354 1.956,0.56 4,1.756 5.863,1.523 6.718,-0.836 13.338,-2.541 20.066,-3.198 8.647,-0.845 17.61,-6.129 25.819,2.336 2.71,2.794 4.776,5.187 5.195,9.027 0.312,2.852 0.938,5.67 1.465,8.746 12.23,-0.913 23.922,-1.612 35.569,-2.759 3.519,-0.346 5.361,0.651 6.855,3.704 2.897,5.922 5.981,11.761 9.212,17.509 1.365,2.429 1.449,4.043 -0.716,6.174 -7.06,6.946 -13.793,14.226 -20.848,21.179 -1.426,1.406 -3.628,2.516 -5.608,2.792 -13.979,1.941 -28.004,3.55 -41.989,5.451 -3.846,0.522 -6.365,-0.145 -6.838,-4.489 -0.444,-4.077 -2.839,-5.369 -6.821,-5.064 -4.197,0.32 -8.438,0.081 -12.659,0.081 -17.055,0.001 -17.195,0.003 -16.893,17.017 0.094,5.269 1.012,10.442 -5.905,12.694 6.081,0.906 12.163,1.813 19.758,2.946 -7.064,4.904 -12.771,9.213 -18.845,12.921 -2.636,1.609 -5.971,2.295 -9.086,2.856 C 39.443,49.027 32.304,46.248 26.066,40.272 22.774,37.118 18.996,34.409 15.187,31.876 12.108,29.828 10.458,27.391 11.13,23.699 13.05,13.14 9.296,5.296 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1506.6027,4468.0521)"
+                        clip-path="url(#clipPath29)" />
+                    <path
+                        id="path30"
+                        data-name="Ciudad Bolívar"
+                        data-id="19"
+                        d="m 0,0 c 1.584,5.514 0.436,9.151 -4.794,11.944 -6.937,3.705 -13.152,8.764 -20.099,12.446 -5.475,2.902 -8.026,6.666 -6.688,12.634 0.559,2.495 1.425,5.266 3.06,7.103 3.892,4.376 8.079,8.573 12.61,12.275 4.619,3.772 5.654,8.126 4.022,13.943 -8.749,-3.02 -17.319,-6.172 -26.025,-8.889 -3.633,-1.133 -5.236,-2.99 -4.551,-6.683 0.962,-5.185 -1.618,-7.745 -6.062,-10.045 -39.068,-20.219 -77.998,-40.703 -117.041,-60.97 -3.675,-1.908 -5.312,-4.218 -5.629,-8.414 -0.629,-8.342 -1.931,-16.632 -3.003,-25.34 h -30.667 c 0,-15.122 -1.169,-29.891 0.438,-44.35 0.968,-8.715 2.824,-19.303 15.764,-22.319 0.774,6.148 3.515,12.813 1.787,17.986 -2.203,6.597 -1.436,10.519 3.573,14.487 1.424,1.127 2.759,2.49 3.778,3.987 6.002,8.819 14.963,4.763 22.683,4.734 2.39,-0.01 4.763,-4.293 7.675,-7.138 9.468,0.489 11.179,10.781 17.36,17.032 0.434,-2.229 0.848,-3.936 1.08,-5.667 0.245,-1.817 0.213,-3.672 0.484,-5.482 0.597,-3.992 6.554,-7.238 9.329,-4.973 2.928,2.389 5.557,5.144 8.391,7.808 -6.027,10.42 -12.783,19.942 -13.788,31.975 -0.109,1.301 -2.151,2.718 -3.594,3.583 -9.165,5.492 -9.245,5.464 -5.981,15.169 0.4,1.192 1.696,2.942 2.62,2.968 10.346,0.3 21.522,5.708 30.323,-4.481 0.175,-0.202 0.635,-0.16 1.251,-0.296 2.178,1.996 4.358,4.238 6.808,6.13 1.148,0.887 2.871,1.66 4.241,1.527 11.122,-1.073 18.861,-6.838 23.159,-17.472 -3.006,-2.75 -6.065,-5.548 -9.208,-8.423 4.85,-6.703 9.357,-12.932 14.939,-20.647 3.736,15.45 15.938,10.182 25.503,11.414 -2.709,9.48 -7.851,14.712 -17.755,12.043 -1.218,9.986 -1.202,10.64 7.136,10.43 5.096,-0.128 10.133,-2.638 15.781,-4.246 1.011,7.342 7.46,5.874 13.231,5.837 0.735,-0.005 1.469,-0.001 2.203,-0.001 11.6,0.003 17.471,6.916 15.596,18.648 -2.215,0.257 -4.507,0.525 -6.967,0.811 C -6.335,-4.182 -6.326,0.562 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1707.3807,4745.6588)"
+                        clip-path="url(#clipPath31)" />
+                    <path
+                        id="path32"
+                        data-name="Puente Aranda"
+                        data-id="16"
+                        d="m 0,0 c -17.929,15.712 -35.723,31.579 -53.565,47.391 -8.898,7.886 -17.804,15.763 -26.812,23.738 -14.083,-8.703 -27.83,-17.122 -41.437,-25.761 -1.016,-0.645 -1.751,-3.072 -1.392,-4.318 1.57,-5.444 3.444,-10.815 5.503,-16.097 1.223,-3.139 0.853,-5.194 -1.882,-7.509 -7.965,-6.74 -15.627,-13.838 -23.874,-21.213 6.808,-8.188 13.072,-16.099 19.788,-23.606 2.585,-2.889 5.916,-5.437 9.396,-7.14 11.514,-5.633 23.311,-10.685 34.864,-16.241 3.416,-1.642 6.146,-1.875 9.68,-0.133 8.961,4.417 18.177,8.315 26.853,12.223 3.146,-6.638 4.892,-13.617 9.136,-18.362 4.35,-4.866 11.145,-7.544 16.869,-11.182 4.794,-3.049 9.586,-6.101 14.377,-9.154 2.205,-1.405 4.406,-2.814 6.475,-4.136 v 10.917 c 0,20.552 -0.101,41.104 0.089,61.653 C 4.103,-5.059 2.851,-2.499 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1425.5417,4588.4993)"
+                        clip-path="url(#clipPath33)" />
+                    <path
+                        id="path34"
+                        data-name="Chapinero"
+                        data-id="2"
+                        d="m 0,0 c 1.975,-13.839 -1.525,-26.439 -9.245,-38.013 -1.438,-2.155 -2.213,-4.75 -3.476,-7.545 60.673,-10.799 120.484,-21.443 180.481,-32.121 v 43.396 c -9.082,2.454 -10.695,2.353 -13.481,-0.732 -6.126,-6.782 -6.063,-6.579 -14.912,-3.829 -4.062,1.263 -6.53,2.926 -5.68,7.595 0.871,4.791 -1.608,6.202 -5.969,5.772 -1.814,-0.179 -3.717,0.333 -5.495,0.031 -6.89,-1.17 -10.633,2.049 -13.584,8.047 -4.035,8.204 -7.706,9.436 -16.686,7.149 -2.303,-0.587 -4.506,-1.699 -6.831,-2.019 -1.57,-0.216 -3.891,-0.036 -4.801,0.955 -2.809,3.059 -5.996,2.991 -9.533,2.279 -2.077,-0.419 -4.177,-0.724 -7.042,-1.212 C 64.992,-1.857 61.84,4.118 56.384,9.46 54.62,5.411 53.017,1.732 50.75,-3.468 48.567,2.61 47.048,7.494 44.998,12.145 44.389,13.526 42.314,15.099 40.868,15.142 29.534,15.474 18.339,15.621 7.397,10.992 1.762,8.608 -0.888,6.224 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1081.3025,4315.2933)"
+                        clip-path="url(#clipPath35)" />
+                    <path
+                        id="path36"
+                        data-name="Bosa"
+                        data-id="7"
+                        d="m 0,0 c 0.325,21.842 0.115,43.691 0.097,65.537 -0.002,1.477 -0.202,2.955 -0.408,5.786 -4.055,-7.371 -7.616,-13.355 -10.674,-19.587 -1.843,-3.756 -3.142,-7.834 -4.21,-11.892 -0.499,-1.897 -0.243,-4.199 0.318,-6.129 1.566,-5.382 3.323,-10.721 5.271,-15.977 4.55,-12.274 0.511,-20.166 -11.063,-26.171 -9.153,-4.748 -17.237,-11.557 -25.708,-17.39 7.841,-16.199 6.062,-21.114 -9.614,-27.898 -0.672,-0.291 -1.386,-0.88 -2.015,-0.801 -1.853,0.232 -4.306,0.111 -5.398,1.229 -5.112,5.239 -8.002,11.414 -8.227,19.075 -0.243,8.27 -3.103,16.572 2.17,24.862 -6.71,1.606 -12.81,4.809 -18.324,4.003 -9.643,-1.408 -18.927,-5.28 -28.636,-8.202 3.051,-7.229 5.767,-14.008 8.789,-20.648 1.2,-2.637 0.818,-4.2 -1.42,-6.047 -5.799,-4.788 -11.261,-9.985 -17.084,-14.741 -2.322,-1.896 -2.705,-3.529 -1.302,-6.046 1.494,-2.68 2.726,-5.506 4.352,-8.843 7.361,6.582 14.276,12.762 21.984,19.653 3.495,-12.933 6.855,-24.716 9.785,-36.605 0.894,-3.624 2.543,-4.565 6.044,-4.544 22.947,0.133 45.896,0.195 68.841,-0.04 4.006,-0.041 5.413,1.49 6.384,4.945 4.856,17.279 9.996,34.48 14.721,51.794 0.757,2.773 0.726,6.307 -0.331,8.927 C 0.979,-17.418 -0.133,-8.953 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1425.8107,4867.4919)"
+                        clip-path="url(#clipPath37)" />
+                    <path
+                        id="path38"
+                        data-name="Teusaquillo"
+                        data-id="13"
+                        d="m 0,0 c 2.804,-2.204 4.67,-2.268 7.613,-0.415 25.613,16.131 51.291,32.158 77.055,48.046 2.93,1.807 3.87,3.814 3.822,7.086 -0.16,11.016 -0.331,22.044 0.05,33.048 0.194,5.611 -0.635,9.208 -7.327,8.95 -2.692,-0.105 -5.42,0.811 -8.137,1.228 -20.08,3.079 -40.161,6.15 -61.056,9.349 C 11.714,101.295 10.737,95.616 11.287,90.089 12.395,78.94 8.238,72.104 -1.795,66.566 -17.627,57.825 -32.501,47.346 -48.1,37.4 c 1.291,-1.136 2.188,-2.022 3.18,-2.784 C -29.932,23.095 -14.859,11.684 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1185.1053,4555.4889)"
+                        clip-path="url(#clipPath39)" />
+                    <path
+                        id="path40"
+                        data-name="Tunjuelito"
+                        data-id="6"
+                        d="M 0,0 C 6.291,1.85 12.469,4.082 18.695,6.154 18.567,6.529 18.439,6.902 18.312,7.277 6.633,8.107 -5.096,8.51 -16.709,9.892 -27.494,11.176 -37.222,9.854 -46.316,3.434 c -5.058,-3.57 -11.033,-5.812 -16.33,-9.082 -3.501,-2.161 -6.745,-2.651 -10.26,-0.623 -6.344,3.658 -12.318,2.82 -18.68,-0.439 -9.594,-4.915 -19.509,-9.204 -29.8,-13.997 -5.562,9.149 -11.049,18.177 -16.78,27.604 -7.082,-11.021 -15.894,-20.39 -14.478,-34.531 0.63,-6.299 -0.721,-12.79 -1.115,-19.198 -1.147,-18.642 -2.264,-37.284 -3.419,-56.363 h 25.497 c 0,6.971 0.255,13.727 -0.095,20.452 -0.213,4.078 1.244,6.197 4.846,8.035 39.193,20 78.268,40.231 117.486,60.183 3.683,1.874 5.495,3.916 4.741,7.932 C -5.432,-2.712 -3.528,-1.038 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1643.8235,4660.876)"
+                        clip-path="url(#clipPath41)" />
+                    <path
+                        id="path42"
+                        data-name="Barrios Unidos"
+                        data-id="12"
+                        d="m 0,0 c 0.227,9.126 0.122,18.261 0.122,28.16 -36.058,6.445 -72.394,12.942 -109.195,19.52 V -5.249 c 1.868,-0.54 3.581,-1.213 5.358,-1.522 10.387,-1.803 19.297,-6.16 26.853,-13.752 5.419,-5.444 11.749,-9.97 17.529,-15.07 2.109,-1.86 3.73,-2.108 6.197,-0.512 16.787,10.869 33.69,21.556 50.484,32.412 C -1.439,-2.909 -0.031,-1.272 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1188.9837,4448.6621)"
+                        clip-path="url(#clipPath43)" />
+                    <path
+                        id="path44"
+                        data-name="Rafael Uribe Uribe"
+                        data-id="18"
+                        d="m 0,0 c -5.903,6.277 -11.439,13.669 -21.985,11.508 -0.714,-0.146 -2.714,2.165 -2.795,3.419 -0.329,5.12 0.11,10.292 -0.288,15.403 -0.141,1.798 -1.444,4.167 -2.945,5.089 -7.965,4.889 -16.239,9.275 -24.239,14.11 -2.928,1.77 -4.479,0.882 -6.434,-1.384 -6.952,-8.058 -13.93,-16.103 -21.206,-23.865 -2.886,-3.079 -3.843,-6.251 -3.808,-10.353 0.103,-11.849 1.533,-23.905 -4.248,-35.082 -0.454,-0.878 -0.597,-2.356 -0.168,-3.184 3.84,-7.413 7.841,-14.743 11.839,-22.178 10.485,4.646 20.391,8.559 29.831,13.385 6.331,3.236 11.888,3.977 17.595,-0.666 2.812,-2.288 5.164,-1.415 7.774,0.67 6.021,4.808 12.401,9.174 18.332,14.085 3.689,3.053 7.383,3.869 12.122,3.329 10.119,-1.153 20.315,-1.621 30.728,-2.388 V -6.739 C 29.996,-6.05 20.494,-5.16 10.974,-4.858 6.439,-4.715 3.141,-3.34 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1586.7141,4615.1335)"
+                        clip-path="url(#clipPath45)" />
+                    <path
+                        id="path46"
+                        data-name="Santafé"
+                        data-id="3"
+                        d="m 0,0 c 9.368,-6.762 18.925,-13.262 28.415,-19.855 14.891,-10.344 29.785,-20.682 44.921,-31.191 13.961,12.067 27.715,23.893 41.349,35.855 1.068,0.938 1.741,2.783 1.865,4.268 1.308,15.596 1.268,15.602 -11.861,24.05 -2.157,1.388 -4.277,2.849 -6.517,4.09 -1.044,0.579 -2.448,1.209 -3.495,0.969 -6.204,-1.423 -12.351,-3.094 -18.997,-4.806 1.254,-8.685 2.602,-16.974 3.558,-25.309 0.268,-2.335 0.059,-5.232 -1.128,-7.116 -2.003,-3.177 -4.962,-5.751 -7.174,-8.196 -14.192,9.132 -13.262,22.521 -12.197,36.236 -8.302,1.184 -16.031,2.616 -23.826,3.284 -5.421,0.465 -8.931,2.484 -10.116,7.917 -0.905,4.145 -3.468,5.592 -7.576,4.953 C 7.583,23.651 -0.572,26.772 -8.208,32.653 -13.93,37.06 -20.347,40.564 -27,44.819 v -51.59 c 6.569,2.657 12.864,5.025 18.995,7.76 C -4.94,2.356 -2.69,1.942 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1350.9476,4431.3056)"
+                        clip-path="url(#clipPath47)" />
+                    <path
+                        id="path48"
+                        data-name="Los Mártires"
+                        data-id="14"
+                        d="m 0,0 c 7.967,-6.722 16.278,-13.042 24.147,-19.873 12.874,-11.173 25.496,-22.636 38.781,-34.472 10.482,11.981 20.479,23.406 30.707,35.097 -2.253,1.675 -4.125,3.104 -6.035,4.48 C 71.066,-2.864 53.81,8.175 38.225,21.212 26.749,30.813 15.975,33.734 2.785,26.566 2.151,26.221 1.165,26.289 0.754,25.811 -0.386,24.489 -2.088,23.025 -2.179,21.534 -2.522,15.861 -2.475,10.148 -2.215,4.467 -2.145,2.924 -1.184,1 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1317.8217,4481.7367)"
+                        clip-path="url(#clipPath49)" />
+                    <path
+                        id="path50"
+                        data-name="Antonio Nariño"
+                        data-id="15"
+                        d="m 0,0 c -0.402,-3.955 0.415,-8.032 0.677,-12.055 0.557,-8.537 1.111,-17.075 1.665,-25.612 4.863,7.648 11.342,14.244 10.227,24.164 -0.591,5.254 0.302,10.668 -0.206,15.939 -0.666,6.906 1.04,12.323 6.599,16.852 4.091,3.333 7.442,7.576 11.115,11.419 6.025,6.304 12.043,12.615 18.435,19.311 C 35.977,58.042 24.141,65.619 11.911,73.448 0.163,59.992 -11.377,46.772 -23.326,33.086 -17.597,26.831 -12.399,20.92 -6.935,15.267 -2.76,10.948 0.677,6.651 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1441.6632,4605.3161)"
+                        clip-path="url(#clipPath51)" />
+                    <path
+                        id="path52"
+                        data-name="Sumapaz"
+                        data-id="20"
+                        d="m 0,0 c -3.904,-0.885 -4.843,-2.632 -4.8,-6.343 0.181,-15.411 0.063,-30.826 0.096,-46.24 0.003,-1.57 0.286,-3.14 0.45,-4.825 H 38.785 V 9.599 C 25.505,6.273 12.805,2.904 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1856.902,4461.5801)"
+                        clip-path="url(#clipPath53)" />
+                    <path
+                        id="path54"
+                        data-name="La Candelaria"
+                        data-id="17"
+                        d="m 0,0 c 8.113,-1.063 16.609,-2.314 25.142,-3.225 3.457,-0.369 5.301,-1.525 5.605,-5.251 0.596,-7.31 1.343,-14.622 2.448,-21.869 0.43,-2.814 1.995,-5.455 3.043,-8.174 8.665,11.581 -0.338,22.77 1.096,34.264 7.569,2.609 15.281,5.267 23.317,8.036 -1.931,3.766 -3.776,6.936 -5.212,10.281 -1.567,3.654 -3.861,5.07 -8.007,4.946 -10.826,-0.325 -21.668,-0.111 -32.504,-0.111 -17.421,0 -17.421,0 -15.484,-17.783 C -0.538,0.943 -0.398,0.785 0,0"
+                        style="fill:#f3f6db;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                        transform="matrix(1.3333333,0,0,-1.3333333,1394.0329,4403.4169)"
+                        clip-path="url(#clipPath55)" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <style>
+        .cpnt-6 {
+            padding: 1.875rem 0;
+            background-color: #f3f6dbff;
+            position: relative;
+        }
+
+        .cpnt-6 .texto {
+            max-width: 65.875rem;
+            margin: 0 auto;
+            padding: 0 1.875rem;
+        }
+
+        .cpnt-6 .texto h2 {
+            position: relative;
+            display: block;
+            width: fit-content;
+            background: #FFCC33;
+            color: #262019;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1;
+            padding: 1.2rem 2.2rem 1.5rem;
+            margin: 0 auto 1.875rem;
+            border-radius: 60px 60px 55px 20px / 50px 50px 45px 30px;
+            transform: rotate(-3deg);
+            box-shadow: 0 10px 0 -4px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .cpnt-6 .texto h2::after {
+            content: "";
+            position: absolute;
+            left: 38px;
+            bottom: -20px;
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent;
+            border-right: 34px solid transparent;
+            border-top: 24px solid #FFCC33;
+            transform: rotate(-8deg);
+        }
+
+        .cpnt-6 .texto p {
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .cpnt-6 .texto .enfasis-t1 {
+            font-family: WorkSans-SemiBold;
+            color: #000;
+            font-size: 1.2rem;
+        }
+
+        .cpnt-6 .desplegables {
+            margin-top: 1.875rem;
+            max-width: 65.875rem;
+            margin: 0 auto;
+        }
+
+        .cpnt-6 .boton {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.875rem;
+            background-color: #f3f6dbff;
+        }
+
+        .cpnt-6 .btn-download {
+            text-align: center;
+            padding: 0 1.875rem;
+            background-color: #f3f6dbff;
+            z-index: 1;
+        }
+
+        .cpnt-6 .btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: #df1010;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 0.313rem;
+            font-family: WorkSans-SemiBold;
+            font-size: 1rem;
+            margin-top: 1.875rem;
+
+        }
+
+        .cpnt-6 .btn:hover {
+            background-color: #000;
+        }
+
+        .cpnt-6 .btn:focus {
+            outline: 0.125rem solid #000000;
+            outline-offset: 0.125rem;
+        }
+
+        .cpnt-6 .btn .icono-descarga {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .cpnt-6 .btn .icono-descarga::before {
+            content: "";
+            background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/descarga.png');
+            width: 1.5rem;
+            height: 1.5rem;
+            display: inline-block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+
+        @media (max-width: 768px) {
+            .cpnt-6 .texto h2 {
+                font-size: 1.5rem;
+            }
+
+            .cpnt-6 .texto p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .line {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 0.250rem;
+            background-color: #df1010;
+            margin-top: 1.875rem;
+            bottom: 50px;
+        }
+    </style>
+    <div class="cpnt-6" id="4">
+        <div class="texto">
+            <h2 class="title title-4">¡Únete a la celebración de la bicicleta!</h2>
+            <p class="paragraph ph-3">La XIX Semana de la Bicicleta ha llegado, y te invitamos a ser parte de esta gran fiesta sobre ruedas. Hemos preparado una agenda llena de eventos para ciclistas de todas las edades y habilidades, para que disfrutes y te conectes con la ciudad.</p>
+            <p class="paragraph ph-3">¿Quieres saber qué tenemos preparado? Puedes explorar la agenda navegando por el menú que encontrarás a continuación y descubrir los eventos día a día, o descarga la agenda completa en formato PDF haciendo clic en el botón de descarga y llévala contigo a todas partes.</p>
+            <p class="paragraph ph-3"><span class="enfasis-t1">¡Te esperamos para pedalear juntos!</span></p>
+        </div>
+
+        <div class="desplegables">
+
+            <div class="accordion-govco" id="accordionAgenda">
+
+            </div>
+        </div>
+
+        <div class="boton">
+            <div class="btn-download">
+                <a href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-10/agenda-actividades-semana-bici.pdf" class="btn" role=" button" target="_blank">Descargar Agenda<span class="icono-descarga"></span></a>
+            </div>
+        </div>
+        <span class="line"></span>
+    </div>
+
+    <style>
+        .cpnt-7 {
+            padding: 1.875rem 0;
+            background-color: #ffffff;
+            text-align: center;
+            max-width: 75.875rem;
+            margin: 0 auto;
+        }
+
+        .cpnt-7 h2 {
+            max-width: 65.875rem;
+            margin: 0 auto 1.5rem auto;
+            color: #fcc324;
+        }
+
+
+
+        .cpnt-7 .logos-marquee-wrap {
+            overflow: hidden;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .cpnt-7 .logos-marquee-wrap::before,
+        .cpnt-7 .logos-marquee-wrap::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .cpnt-7 .logos-marquee-wrap::before {
+            left: 0;
+            background: linear-gradient(90deg, #ffffff, transparent);
+        }
+
+        .cpnt-7 .logos-marquee-wrap::after {
+            right: 0;
+            background: linear-gradient(270deg, #ffffff, transparent);
+        }
+
+        .cpnt-7 .logos {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            width: max-content;
+            animation: cpnt7-marquee 40s linear infinite;
+        }
+
+        .cpnt-7 .logos-set {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cpnt-7 .logos-marquee-wrap:hover .logos {
+            animation-play-state: paused;
+        }
+
+        @keyframes cpnt7-marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .cpnt-7 .logo-bg {
+            background-color: #F2F2F2;
+            border-radius: 20rem;
+            padding: 1.3rem;
+            box-shadow: 0 0.188rem 0.375rem #00000029;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 128px;
+            height: 128px;
+            flex-shrink: 0;
+            transition: transform 0.25s;
+        }
+
+        .cpnt-7 .logo-bg:hover {
+            transform: scale(1.08);
+        }
+
+        .cpnt-7 .logo-bg:hover .logo {
+            filter: grayscale(0%);
+        }
+
+        .cpnt-7 .logo {
+            max-width: 78px;
+            max-height: 78px;
+            width: auto;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cpnt-7 .logos {
+                animation: none;
+                width: auto;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .cpnt-7 .logos-set[aria-hidden="true"] {
+                display: none;
+            }
+        }
+
+        .cpnt-7 .title-5 {
+            position: relative;
+            display: block;
+            width: fit-content;
+            background: #FFCC33;
+            color: #262019;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 3rem;
+            line-height: 1;
+            padding: 1.2rem 2.2rem 1.5rem;
+            margin: 0 auto 1.875rem;
+            border-radius: 60px 60px 55px 20px / 50px 50px 45px 30px;
+            transform: rotate(-3deg);
+            box-shadow: 0 10px 0 -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .cpnt-7 .title-5::after {
+            content: "";
+            position: absolute;
+            left: 38px;
+            bottom: -20px;
+            width: 0;
+            height: 0;
+            border-left: 14px solid transparent;
+            border-right: 34px solid transparent;
+            border-top: 24px solid #FFCC33;
+            transform: rotate(-8deg);
+        }
+
+        .cpnt-7 .paragraph.ph-1 {
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .cpnt-7 .boton {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.875rem;
+            background-color: #ffffff;
+        }
+
+        .cpnt-7 .btn-download {
+            text-align: center;
+            padding: 0 1.875rem;
+            background-color: #ffffff;
+            z-index: 1;
+        }
+
+        .cpnt-7 .btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            background-color: #fcc324;
+            color: #262019;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: WorkSans-SemiBold;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 1.05rem 2.3rem;
+            border-radius: 999px;
+            margin-top: 1.875rem;
+            box-shadow: 0 8px 22px rgba(252, 195, 36, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            animation: cpnt7-cta-breathe 2.4s ease-in-out infinite;
+        }
+
+        .cpnt-7 .btn:hover {
+            background-color: #e6b100;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 14px 30px rgba(252, 195, 36, 0.5);
+            animation-play-state: paused;
+        }
+
+        @keyframes cpnt7-cta-breathe {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 22px rgba(252, 195, 36, 0.35);
+            }
+
+            50% {
+                box-shadow: 0 8px 28px rgba(252, 195, 36, 0.65), 0 0 0 8px rgba(252, 195, 36, 0.12);
+            }
+        }
+
+        .cpnt-7 .btn .icono-aliado {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            order: 2;
+            animation: cpnt7-hand-tap 1.8s ease-in-out infinite;
+            transform-origin: 70% 85%;
+        }
+
+        @keyframes cpnt7-hand-tap {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            12% {
+                transform: translateY(4px) rotate(-6deg);
+            }
+
+            24% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .cpnt-7 .btn .icono-aliado .lineas {
+            opacity: 0;
+            animation: cpnt7-lineas-fade 1.8s ease-in-out infinite;
+        }
+
+        @keyframes cpnt7-lineas-fade {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            30% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cpnt-7 .btn {
+                animation: none;
+            }
+
+            .cpnt-7 .btn .icono-aliado,
+            .cpnt-7 .btn .icono-aliado .lineas {
+                animation: none;
+            }
+        }
+    </style>
+    <!-- aliados -->
+    <div class="cpnt-7" id="5">
+        <h2 class="title title-5">Conoce a nuestros aliados</h2>
+        <p class="paragraph ph-1">La Semana de la Bicicleta no sería posible sin el compromiso y la colaboración de nuestros aliados. Gracias a cada una de las organizaciones, empresas e instituciones que se sumaron a esta iniciativa, aportando su experiencia, recursos y entusiasmo para promover la movilidad sostenible y el uso de la bicicleta en Bogotá, nuestra ciudad, nuestra casa.</p>
+        <div class="logos-marquee-wrap">
+            <div class="logos">
+                <div class="logos-set">
+                    <div class="logo-bg">
+                        <img class="logo img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/logo-3m_0.png" alt="Logo 3M">
+                    </div>
+                    <div class="logo-bg">
+                        <img class="logo img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/logo-yale.png" alt="Logo Yale">
+                    </div>
+                    <div class="logo-bg">
+                        <img class="logo img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/cc-av-chile.png" alt="Logo CC Avenida Chole">
+                    </div>
+                </div>
+                <div class="logos-set" aria-hidden="true">
+                    <div class="logo-bg">
+                        <img class="logo img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/logo-3m_0.png" alt="Logo 3M">
+                    </div>
+                    <div class="logo-bg">
+                        <img class="logo img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/logo-yale.png" alt="Logo Yale">
+                    </div>
+                    <div class="logo-bg">
+                        <img class="logo img-responsive" src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/cc-av-chile.png" alt="Logo CC Avenida Chole">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="boton">
+            <div class="btn-download">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScjhmlxHhhAGK8tvTFZFPlNTITK4d-Tx6PoCBaFvvME90PS6A/viewform" class="btn" role="button" target="_blank">
+                    Conviértete en aliado
+                    <svg class="icono-aliado" aria-hidden="true" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#262019" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <g class="lineas">
+                            <path d="M6 10 L11 12" />
+                            <path d="M4 18 L10 18" />
+                            <path d="M7 26 L12 24" />
+                        </g>
+                        <path d="M20 22 V10.5 a2.5 2.5 0 0 1 5 0 V21" />
+                        <path d="M25 21 V8.5 a2.5 2.5 0 0 1 5 0 V21" />
+                        <path d="M30 21 V11.5 a2.5 2.5 0 0 1 5 0 V23" />
+                        <path
+                            d="M35 23 V16.5 a2.5 2.5 0 0 1 5 0 V29 c0 7 -4.5 12 -11 12 h-3 c-4 0 -6.5 -1.5 -9 -5 l-6.5 -9 a2.6 2.6 0 0 1 4 -3.3 L15 29" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .cpnt-8 {
+            background-color: #040404;
+            padding: 1.875rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.875rem;
+            max-width: 65.875rem;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .text-footer {
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            color: #333333;
+            margin: 0.5rem 0;
+        }
+
+        .text-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .redes {
+            margin-bottom: 1rem;
+        }
+
+        .redes a {
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+
+        .redes a i.bi {
+            display: inline-block;
+            vertical-align: middle;
+            color: #ffffff;
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+
+        .redes a:hover i.bi {
+            color: #df1010;
+        }
+
+        .footer .text-footer {
+            color: #FFFFFF;
+        }
+
+        .footer .logo-movilidad {
+            margin: auto;
+        }
+
+        .footer .logo-movilidad img {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+    <!-- pie de pagina -->
+    <div class="cpnt-8">
+        <footer class="footer">
+            <div>
+                <div class="redes">
+                    <a href="https://www.facebook.com/movilidadbogota" target="_blank" aria-label="Facebook" class="me-3">
+                        <i class="bi bi-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/movilidadbogota" target="_blank" aria-label="Twitter" class="me-3">
+                        <i class="bi bi-twitter-x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/movilidadbogota/" target="_blank" aria-label="Instagram" class="me-3">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.youtube.com/user/MovilidadBogota" target="_blank" aria-label="YouTube" class="me-3">
+                        <i class="bi bi-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="enlaces">
+                    <p class="text-footer">© 2026 Semana de la Bicicleta. Todos los derechos reservados. · Secretaría Distrital de Movilidad — Alcaldía Mayor de Bogotá</p>
+                </div>
+            </div>
+            <div class="logo-movilidad">
+                <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-13/movilidad.png" alt="Logo Movilidad Bogotá" width="250">
+            </div>
+
+
+        </footer>
+    </div>
+    <style>
+        .modal .modal-header {
+            background: #fcc324;
+            color: #000;
+            border-bottom: none;
+            padding: 1rem 1.5rem;
+            border-top-left-radius: 0.313rem;
+            border-top-right-radius: 0.313rem;
+            box-shadow: 0 0.188rem 0.375rem rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .modal .modal-title {
+            font-family: WorkSans-SemiBold;
+            font-size: 1.5rem;
+            text-shadow: #00000029 0.125rem 0.125rem 0.25rem;
+
+        }
+
+        .modal .modal-body,
+        .accordion-govco .accordion-body {
+            font-family: WorkSans-Regular;
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #000000;
+            background-color: #e5e5e5;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 0;
+
+        }
+
+        @media(min-width:768px) {
+            .accordion-body {
+                padding: 1rem 1.25rem;
+            }
+        }
+
+        .modal .modal-body h4,
+        .accordion-govco .accordion-body h4 {
+            font-family: WorkSans-SemiBold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4D541F;
+            text-align: center;
+        }
+
+        .modal .modal-body ul,
+        .accordion-govco .accordion-body ul {
+            list-style-type: none;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-left: 0 !important;
+            margin-right: 0;
+            padding-left: 0px;
+        }
+
+        @media(min-width:768px) {
+
+            .modal .modal-body ul,
+            .accordion-govco .accordion-body ul {
+                list-style-type: none;
+                margin: 0;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                /* max-height: 300px; */
+                padding: 0 32px;
+            }
+
+        }
+
+        .modal .modal-body li,
+        .accordion-govco .accordion-body li {
+            margin-bottom: 1rem;
+            background-color: #ffffff;
+            padding: 8px;
+            border-radius: 0.313rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+        }
+
+        @media(min-width:768px) {
+
+            .modal .modal-body li,
+            .accordion-govco .accordion-body li {
+                padding: 1rem;
+            }
+        }
+
+        .modal .modal-body li h5,
+        .accordion-govco .accordion-body li h5 {
+            font-family: WorkSans-SemiBold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #df1010;
+        }
+
+        .modal .modal-body li p,
+        .accordion-govco .accordion-body li p {
+            font-family: WorkSans-Regular;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #000000;
+            margin: 0.25rem 0;
+        }
+
+        @media(min-width:768px) {
+
+            .modal .modal-body li p,
+            .accordion-govco .accordion-body li p {
+                font-family: WorkSans-Regular;
+                font-size: 1rem;
+                line-height: 1.4;
+                color: #000000;
+                margin: 0.25rem 0;
+            }
+        }
+
+        .modal .modal-body li [class^="act-"]::before,
+        .accordion-govco .accordion-body li [class^="act-"]::before,
+        .modal .modal-body .act-details::before,
+        .accordion-govco .accordion-body .act-details::before {
+            font-family: "bootstrap-icons" !important;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+            color: #df1010;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+        }
+
+        .modal .modal-body li .act-time::before,
+        .accordion-govco .accordion-body li .act-time::before {
+            content: "\f293";
+            /* bi-clock */
+        }
+
+        .modal .modal-body li .act-location::before,
+        .accordion-govco .accordion-body li .act-location::before {
+            content: "\f3e8";
+            /* bi-geo-alt */
+        }
+
+        .modal .modal-body li .act-link::before,
+        .accordion-govco .accordion-body li .act-link::before {
+            content: "\f470";
+            /* bi-link-45deg */
+        }
+
+        .modal .modal-body li .act-org::before,
+        .accordion-govco .accordion-body li .act-org::before {
+            content: "\f4d0";
+            /* bi-people */
+            margin-left: 1.875rem;
+        }
+
+        .modal .modal-body li .act-region::before,
+        .accordion-govco .accordion-body li .act-region::before {
+            content: "\f64c";
+            /* bi-pin-map */
+        }
+
+        .modal .modal-body li .act-direction::before,
+        .accordion-govco .accordion-body li .act-direction::before {
+            content: "\f549";
+            /* bi-signpost-split */
+        }
+
+        .modal .modal-body .act-details,
+        .accordion-govco .accordion-body .act-details {
+            display: block;
+            margin-left: 1.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .modal .modal-body .act-details::before,
+        .accordion-govco .accordion-body .act-details::before {
+            content: "\f431";
+            /* bi-info-circle */
+        }
+
+        .modal .modal-body dd,
+        .accordion-govco .accordion-body dd {
+            font-family: WorkSans-SemiBold;
+            color: #4D541F;
+        }
+
+        .modal .modal-body dd dl,
+        .accordion-govco .accordion-body dd dl {
+            margin-left: 1.875rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0px !important;
+            padding: 0;
+        }
+
+        .modal .modal-body ul li strong,
+        .accordion-govco .accordion-body ul li strong {
+            font-family: WorkSans-SemiBold;
+            color: #000;
+        }
+
+        .modal .modal-footer,
+        .accordion-govco .accordion-footer {
+            background: #fcc324;
+            border-top: none;
+            padding: 1rem 1.5rem;
+            border-bottom-left-radius: 0.313rem;
+            border-bottom-right-radius: 0.313rem;
+            box-shadow: 0 -0.188rem 0.375rem rgba(0, 0, 0, 0.29);
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .modal .modal-footer .btn-secondary {
+            background-color: #df1010;
+            color: #fff;
+            border: none;
+        }
+
+        .accordion-govco .accordion-header button {
+            background-color: #fcc324;
+            color: #000000;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        @media(min-width:768px) {
+
+            .accordion-govco .accordion-header button {
+                background-color: #fcc324;
+                color: #000000;
+                border: none;
+                font-weight: 600;
+                font-size: 1.25rem;
+            }
+        }
+
+        .accordion-govco .accordion-header button:hover {
+            background-color: #df1010;
+            color: #fff;
+        }
+
+        .accordion-govco .accordion-header button:focus {
+            outline: 0.125rem solid #000000;
+            outline-offset: 0.125rem;
+            background-color: #df1010;
+            color: #fff;
+        }
+
+        .accordion-govco .accordion-header button::after {
+            color: #000000;
+        }
+
+        .modal .modal-footer .btn-secondary:hover {
+            background-color: #000;
+        }
+
+        .modal .modal-footer .btn-secondary:focus {
+            outline: 0.125rem solid #000000;
+            outline-offset: 0.125rem;
+        }
+
+        .accordion-govco .item-accordion-govco {
+            background: none;
+        }
+
+        .accordion-govco .button-accordion-govco {
+            background: #ffffff;
+            color: #4D541F;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            font-family: WorkSans-SemiBold;
+            font-size: 1.25rem;
+            cursor: pointer;
+            position: relative;
+            border-radius: 0.313rem;
+            margin-bottom: 1.025rem;
+            box-shadow: 0 0.188rem 0.375rem rgba(0, 0, 0, 0.29);
+        }
+
+        .accordion-govco .button-accordion-govco:hover {
+            background: #5A5A3D;
+        }
+
+        .accordion-govco .button-accordion-govco:hover .text-button-accordion-govco {
+            color: #ffffff;
+        }
+
+        .accordion-govco .button-accordion-govco:focus {
+            outline: 0.125rem solid #000000;
+            outline-offset: 0.125rem;
+            background: #5A5A3D;
+        }
+
+        .accordion-govco .text-button-accordion-govco {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            color: #4D541F;
+        }
+
+        .accordion-govco .button-accordion-govco:focus .text-button-accordion-govco {
+            color: #000000;
+        }
+
+        .accordion-govco .button-accordion-govco::after {
+            color: #4D541F;
+        }
+
+        .accordion-govco .button-accordion-govco:hover::after {
+            color: #ffffff;
+        }
+
+        .accordion-govco .button-accordion-govco:focus::after {
+            color: #000000;
+        }
+
+        .accordion-govco .body-accordion-govco {
+            background: #879225;
+            border-radius: 0.313rem;
+            margin-bottom: 1.025rem;
+        }
+
+        .accordion-govco .body-accordion-govco .activity {
+            margin-bottom: 1rem;
+            background-color: #F3F6DB;
+            padding: 1rem;
+            border-radius: 0.313rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-govco .activity .title-two-accordion-govco {
+            font-family: WorkSans-SemiBold;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            margin-top: 0.8rem;
+            color: #fcc324;
+        }
+
+        .accordion-govco .text-one-accordion-govco {
+            color: #000000;
+            font-size: 0.9rem;
+            font-family: WorkSans-Regular;
+            margin-left: 0.875rem;
+            margin-top: 0.338rem;
+            margin-bottom: 0;
+            display: block;
+            line-height: 1.5rem;
+        }
+
+        @media(min-width:768px) {
+            .accordion-govco .text-one-accordion-govco {
+                color: #000000;
+                font-size: 16px;
+                font-family: WorkSans-Regular;
+                margin-left: 0.875rem;
+                margin-top: 0.338rem;
+                margin-bottom: 0;
+                display: block;
+                line-height: 1.5rem;
+            }
+        }
+
+        .accordion-govco a {
+            overflow-wrap: break-word;
+        }
+    </style>
+
+    <!-- Datos agenda con los siguentes datos: Fecha, Hora, Título, Descripción, Lugar, Enlace de inscripción (si aplica), Organizador, Público objetivo, localidad -->
+    <script>
+        const activities = [
+            {
+                title: "Salida MTB Alto de la Viga",
+                description: "Salida de ciclomontañismo para disfrutar la bicicleta, promover la actividad física, la recreación y el deporte.\nVen a disfrutar, explorar y activar tu cuerpo",
+                site: {
+                    time: "7:00 a.m - 2:00 p.m",
+                    location: "Parque Renacimiento",
+                    direction: "Av. El Dorado #19b-35, Los Mártires",
+                    urlmap: "https://maps.app.goo.gl/5gtTrch7Kb1mr7LM6",
+                    registrationLink: "https://www.facebook.com/share/1RPEw98vLL/",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Instituto Distrital de Recreación y Deporte",
+                date: "2026-09-27"
+            },
+            {
+                title: "Bicirrecorrido hasta la Biblioteca Julio Mario Santodomingo",
+                description: "Una experiencia nocturna para encontrarnos alrededor de la palabra y la bicicleta. La jornada iniciará con un círculo de la palabra en el parque, junto a la Huerta Pacari, un espacio para compartir, dialogar y fortalecer los lazos con el territorio. Posteriormente, realizaremos un recorrido en bicicleta por la ciclorruta hasta el Teatro Julio Mario Santo Domingo, donde disfrutaremos de una obra de teatro programada en su cartelera.",
+                site: {
+                    time: "7:30 a.m - 11:00 a.m",
+                    location: "Parque Recreo de los Frailes",
+                    direction: "Carrera 53A con Calle 122",
+                    urlmap: "https://maps.app.goo.gl/gmuuTLpwkq47NGzE9",
+                    regionId: "11",
+                    regionName: "Suba"
+                },
+                organizer: "Comité de Deportes, Junta de Acción Comunal Recreo de los fraies",
+                date: "2026-09-27"
+            },
+            {
+                title: "Cronoescalada",
+                description: "Pon a prueba tus límites sobre dos ruedas! \nUn reto que medirá la resistencia, fuerza y determinación de cada ciclista en un recorrido de aproximadamente 4 kilómetros de ascenso, por la zona rural baja de Usme.\nCada participante partirá desde un punto establecido y deberá superar el recorrido hasta llegar a la meta. Durante el desafío se realizará el registro oficial del tiempo mediante cronómetro y evidencia fotográfica, permitiendo conocer el desempeño de cada ciclista.\n¿Estás listo para aceptar el reto, conquistar la subida y demostrar de qué estás hecho?\n¡Pedalea, resiste y llega a la meta!",
+                site: {
+                    time: "7:30 a.m - 12:30 p.m",
+                    location: "Calle 137d sur #12-03",
+                    direction: "Calle 137d sur #12-03",
+                    urlmap: "https://maps.app.goo.gl/y4u6Jq9tFLv7oao18?g_st=aw",
+                    registrationLink: "Sihttps://docs.google.com/forms/d/e/1FAIpQLScNgZh8oZGq34npeARAESR6aSjojl9BBPDRFunWID0vaSkF_g/viewform?usp=header",
+                    regionId: "5",
+                    regionName: "Usme"
+                },
+                organizer: "Consejo Local Usme",
+                date: "2026-09-27"
+            },
+            {
+                title: "Bici recorrido por la paz",
+                description: "Bici recorrido en la localidad con la finalidad de mejorar la cultura ciudadana y su comportamientos en las vias y uso de las ciclorutas",
+                site: {
+                    time: "8:00 a.m - 12:00 p.m",
+                    location: "Colegio de la bici",
+                    direction: "CRA 81a. # 58-61 Bosa",
+                    urlmap: "https://maps.app.goo.gl/F79xdTLZghmK1TYCA",
+                    registrationLink: "https://forms.gle/fcWfjKgFdN9MZWJr7",
+                    regionId: "7",
+                    regionName: "Bosa"
+                },
+                organizer: "Consejo local de la bicicleta de Bosa",
+                date: "2026-09-27"
+            },
+            {
+                title: "Ciclovía Activa",
+                description: "Espacio orientado a promover el uso y la seguridad responsable de la bicicleta, así como a fortalecer la participación ciudadana en el uso de espacios públicos para la recreación y la movilidad sostenible. Tendremos activiades de Registro de bicicleta, Sensibilización frente al hurto de bicicletas, Actividades lúdicas y recreativas para la ciudadanía, Puntos ciegos y vans de personalización de tarjeta tu llave.",
+                site: {
+                    time: "8:00 a.m - 12:00 p.m",
+                    location: "Calle 18 sur N 5A - 54",
+                    direction: "Calle 18 sur N 5A - 54",
+                    urlmap: "https://maps.app.goo.gl/HfRZBTNvmNy99xfo6?g_st=iw",
+                    regionId: "4",
+                    regionName: "San Cristóbal"
+                },
+                organizer: "Consejo Local de la Bicicleta San Cristobal",
+                date: "2026-09-27"
+            },
+            {
+                title: "Ciclovía Te Cuida",
+                description: "Un espacio lúdico y recreativo con el fin de fortalecer cuerpo y mente, en donde se encuentran actividades físicas, cognitivas, juegos didácticos y dinámicas grupales, para toda la población en general. Su objetivo es fomentar el uso y disfrute de la Ciclovía por parte de las familias.",
+                site: {
+                    time: "8:00 a.m - 12:30 p.m",
+                    location: "Parque Renacimiento",
+                    direction: "Av. El Dorado #19b-35, Los Mártires",
+                    urlmap: "https://maps.app.goo.gl/5gtTrch7Kb1mr7LM6",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Instituto Distrital de Recreación y Deporte",
+                date: "2026-09-27"
+            },
+            {
+                title: "Ciclopaseo a ciegas",
+                description: "Vivir, sensibilizar y compartir la experiencia de montar en bicicleta doble o \"\"tándem\"\" como una persona con discapacidad visual y aprender sobre inclusión y empatía.",
+                site: {
+                    time: "8:00 a.m - 12:30 p.m",
+                    location: "Parque Renacimiento",
+                    direction: "Av. El Dorado #19b-35, Los Mártires",
+                    urlmap: "https://maps.app.goo.gl/5gtTrch7Kb1mr7LM6",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Instituto Distrital de Recreación y Deporte",
+                date: "2026-09-27"
+            },
+            {
+                title: "Festival la bici nos integra",
+                description: "El Festival de la Bicicleta es un espacio de encuentro ciudadano que celebra la bicicleta como medio de transporte, herramienta de transformación social, deporte y estilo de vida. A través de actividades recreativas, culturales, deportivas y educativas ubicadas en diferentes zonas y stands, el festival promoverá la movilidad sostenible, la seguridad vial y el disfrute del espacio público, invitando a personas de todas las edades a vivir y compartir la pasión por la bicicleta.",
+                site: {
+                    time: "8:00 a.m - 2:00 p.m",
+                    location: "Parque Renacimiento",
+                    direction: "Av. El Dorado #19b-35, Los Mártires",
+                    urlmap: "https://maps.app.goo.gl/5gtTrch7Kb1mr7LM6",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-27"
+            },
+            {
+                title: "Apertura Semana de la Bicicleta y Semana de la Seguridad vial",
+                description: "Evento protocolario en el cual se llevará a cabo la apertura de la Semana de la Bicicleta y la Semana de la Seguridad Vial con un recorrido en bicicleta. Este espacio contará con la presencia Secretaria de Movilidad, Secretario de Cultura, Recreación y Deporte, Director del  Instituto Distrital de Recreación y Deporte. La Semana de la Bici ofrecerá actividades gratuitas para ciclistas de todo tipo (urbanos, recreativos, deportivos) en Bogotá.",
+                site: {
+                    time: "8:30 a.m - 9:30 a.m",
+                    location: "Lugar de salida: plazoleta costado sur sentido occidente - oriente\n\nLugar llegada: Parque Renacimiento",
+                    direction: "Cl. 26 con  cr. 50  \n\nAv. El Dorado #19b-35, Los Mártires",
+                    urlmap: "https://maps.app.goo.gl/vi9u5W3zoF22EqVBA\n\n\nhttps://maps.app.goo.gl/5gtTrch7Kb1mr7LM6",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-27"
+            },
+            {
+                title: "Ruta y Mecánica: Puente Aranda en Bici",
+                description: "Recorrido en bicicleta por lugares emblemáticos de la localidad, junto a los Consejeros de la Bicicleta y la ciudadanía, para conocer el territorio, fortalecer el sentido de pertenencia y promover la participación comunitaria. La jornada se complementará con un taller de mecánica básica, en articulación con el IDRD, para aprender sobre el cuidado y mantenimiento de la bicicleta.",
+                site: {
+                    time: "8:30 a.m - 11:30 a.m",
+                    location: "Alcaldía local de puente Aranda",
+                    direction: "Cl. 4 #31D-30",
+                    urlmap: "https://maps.app.goo.gl/yrnKVYwq5LPhKkgbA?g_st=iw",
+                    regionId: "16",
+                    regionName: "Puente Aranda"
+                },
+                organizer: "Consejo local de la bicicleta de Puente Aranda",
+                date: "2026-09-27"
+            },
+            {
+                title: "Ciclopaseo Patrimonial",
+                description: "Un recorrido en bicicleta para descubrir y conectar con la historia, la cultura y el patrimonio de nuestro territorio.",
+                site: {
+                    time: "9:00 a.m - 1:00 p.m",
+                    location: "Parque Renacimiento",
+                    direction: "Av. El Dorado #19b-35, Los Mártires",
+                    urlmap: "https://maps.app.goo.gl/5gtTrch7Kb1mr7LM6",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Consejo Local de la Bicicleta Los Martires",
+                date: "2026-09-27"
+            },
+            {
+                title: "Movibicifest Barrios Unidos",
+                description: "Mega actividad orientada a fomentar el uso de la bicicleta y la movilidad activa en la localidad de Barrios Unidos. Esto incluye una feria de emprendimientos, actividades de sensibilización sobre los diferentes actores viales y las prácticas seguras en vía, acceso a la oferta institucional y comunitaria disponible en el sector y actividades de empoderamiento y autonomía en la bicicleta a través de talleres de mecánica básica y habilidades en bicicleta.",
+                site: {
+                    time: "9:00 a.m - 2:00 p.m",
+                    location: "Parque San Fernando",
+                    direction: "Carrera 57A con Calle 72 / Avenida Chile.",
+                    urlmap: "https://maps.app.goo.gl/VrF6JpLTaQJ6TH2A9",
+                    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSebhgmDPBu_2UK7qqIND4hpVGKqPckSNAAG-tJDfvAe9lh-rQ/viewform",
+                    regionId: "12",
+                    regionName: "Barrios Unidos"
+                },
+                organizer: "Consejo Local de la Bicicleta de Barrios Unidos",
+                date: "2026-09-27"
+            },
+            {
+                title: "Carrera de observación Urbana en Bici — Edición Semana de la Bicicleta",
+                description: "En el marco de la Semana de la Bicicleta, esta carrera de observación invita a recorrer Los Mártires de una manera diferente: pedaleando, descubriendo y reconociendo su historia, patrimonio y transformación. Una experiencia recreodeportiva que combina movilidad sostenible, cultura, trabajo en equipo y apropiación del espacio público, convirtiendo cada recorrido en una oportunidad para conocer y disfrutar el territorio.",
+                site: {
+                    time: "9:30 a.m - 12:30 p.m",
+                    location: "Parque Renacimiento",
+                    direction: "Av. El Dorado #19b-35, Los Mártires",
+                    urlmap: "https://maps.app.goo.gl/5gtTrch7Kb1mr7LM6",
+                    registrationLink: "https://forms.gle/4C5tU34Zh2GDVqFaA",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Bike Kontrol",
+                date: "2026-09-27"
+            },
+            {
+                title: "Feria de emprendimiento bici Bosa crece",
+                description: "En esta actividad la finalidad es que nuestros emprendedores sean visibles para comunidad ciclista y demas generando mas empleo para los emprendedores de nuestra localidad bosuna.",
+                site: {
+                    time: "10:00 a.m - 5:00 p.m",
+                    location: "Centro comercial metro recreo",
+                    direction: "Cra. 97c #69A-08 Sur",
+                    urlmap: "https://maps.app.goo.gl/7VQykTrb5HrBBkXAA",
+                    regionId: "7",
+                    regionName: "Bosa"
+                },
+                organizer: "Consejo Local de la Bicicleta de Bosa",
+                date: "2026-09-27"
+            },
+            {
+                title: "Recorrido mantenimiento de cicloinfraestructura",
+                description: "Recorrido por la cicloinfraestrucutra de la Avenida Suba entre la Calle 128B y la Calle 86A para presentar las intervenciones de mantenimiento adelantadas por la SDM, el IDU y la UMV, orientadas a mejorar sus condiciones de operación, seguridad y servicio para los ciclistas. Además, se darán a conocer los nuevos mecanismos de reporte y participación ciudadana para priorizar el mejoramiento de la cicloinfraestructura.",
+                site: {
+                    time: "6:00 a.m- 8:00 a.m",
+                    location: "Avenida Suba entre Avenida Boyacá y Calle 86A",
+                    direction: "Avenida Suba con Calle 128 B (Costado occidental)",
+                    urlmap: "https://maps.app.goo.gl/Rv44SQBu2DTJrxGK6?g_st=ic",
+                    regionId: "11",
+                    regionName: "Suba"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-28"
+            },
+            {
+                title: "A la olla en bici por las mujeres",
+                description: "En conmemoración del primer año de la Ruta de Mujeres Ciclistas, se realizara un recorrido en bicicleta y una jornada de integración comunitaria, un espacio para celebrar, compartir experiencias y fortalecer los lazos entre las mujeres que recorren y transforman la ciudad sobre dos ruedas. Te esperamos.",
+                site: {
+                    time: "7:00 am - 12:00 m",
+                    location: "Calle 70 sur  11b-13",
+                    direction: "Calle 70 sur 11 b 07 este",
+                    urlmap: "https://maps.app.goo.gl/GKnnXpNyPtvtR26w6",
+                    regionId: "4",
+                    regionName: "San Cristóbal"
+                },
+                organizer: "Consejo Local de la Bicicleta San Cristobal",
+                date: "2026-09-28"
+            },
+            {
+                title: "Manos a la Bici",
+                description: "Actividad práctica y participativa dirigida a fortalecer los conocimientos básicos de mecánica de bicicletas, enfocada en el proceso de despinche y cambio de neumático. Durante el taller, los participantes aprenderán a identificar las causas más comunes de un pinchazo, el uso adecuado de herramientas básicas, revisión de la llanta y neumático, parcheo o cambio de la cámara, así como recomendaciones para el mantenimiento preventivo de la bicicleta.",
+                site: {
+                    time: "9:00 am - 10:00 a.m",
+                    location: "Jardín Botánico José Celestino Mutis",
+                    direction: "Ac 63 #68-95",
+                    urlmap: "https://maps.app.goo.gl/tNN4wzdHsbs8y5S76",
+                    registrationLink: "https://forms.cloud.microsoft/r/fR5sQfjF7s",
+                    regionId: "10",
+                    regionName: "Engativá"
+                },
+                organizer: "Jardín Botánico José Celestino Mutis",
+                date: "2026-09-28"
+            },
+            {
+                title: "Reconocer y visibilizar a los ciclistas urbanos",
+                description: "Una actividad para reconocer, visibilizar y rendir homenaje a los ciclistas urbanos que, día a día, pedalean y transforman la ciudad: trabajadores, obreros, vigilantes y ciudadanos que encuentran en la bicicleta una forma de movilizarse, trabajar y construir una Bogotá más activa y sostenible.",
+                site: {
+                    time: "10:00 a.m a 12:00 p.m",
+                    location: "PENDIENTE",
+                    direction: "PENDIENTE",
+                    urlmap: "PENDIENTE",
+                    regionId: "1",
+                    regionName: "Usaquén"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-28"
+            },
+            {
+                title: "Ciclorrutas de fiesta",
+                description: "Actividad de apropiación del espacio público que transforma las ciclorrutas de mayor afluencia en escenarios de encuentro, cultura y bienestar para la ciudadanía. A través de estaciones temáticas, servicios para ciclistas, actividades recreativas y la participación de marcas y aliados, se promueve el uso de la bicicleta, la seguridad vial y el sentido de pertenencia por la red de ciclorrutas de la ciudad.",
+                site: {
+                    time: "4:00 p.m a 7:00 p.m",
+                    location: "Alameda el Porvenir \n\n\n\nAvenida José Celestino Mutis (AC 63)",
+                    direction: "Entre CL 6 D y CL 59 Sur 4,5, km \n\n\n\nEntre AK 68 y AK 86 3,1 km",
+                    urlmap: "No Aplica enlace",
+                    regionId: "7",
+                    regionName: "Bosa"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-28"
+            },
+            {
+                title: "Acompañamiento ruta niñas y niños ACB y BiciParceros",
+                description: "Recorrido niños y niños Al Colegio en  Bici Mochuelo Alto, saliendo desde la Ferreteria ubicada en la Cr. 18F con CL 91B Sur  Mochuelo alto para conocer en territorio el impacto de Al Colegio en Bici y Bici Parceros, proyectos que hacen del viaje escolar una experiencia segura, formativa y sostenible en dos ruedas. Acompáñanos en este recorrido pedagógico para pedalear junto a los estudiantes de la ruralidad, compartir sus rutas de confianza y descubrir cómo la bici enseña convivencia, cuidado colectivo y apropiación del espacio público desde las aulas hasta las calles.",
+                site: {
+                    time: "6:00 a.m- 7:30 a.m",
+                    location: "Ferreteria",
+                    direction: "Cr. 18F con CL 91B Sur",
+                    urlmap: "https://maps.app.goo.gl/Da3N1FZ3k6aALXhe8",
+                    regionId: "19",
+                    regionName: "Ciudad Bolívar"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-29"
+            },
+            {
+                title: "Lanzamiento señales de rutas escolares seguras (Tibabuyes)",
+                description: "Recorrido para conocer las nuevas intervenciones de señalización y adecuaciones operativas que fortalecen la seguridad de las rutas de Al Colegio en Bici, Ciempiés y BiciParceros. \nDurante el trayecto se evidenciarán elementos que facilitan la orientación, priorizan la movilidad peatonal y ciclista y permiten organizar de manera segura los grupos de niñas, niños y adolescentes, fortaleciendo la apropiación del territorio y la construcción de entornos escolares más seguros.",
+                site: {
+                    time: "11:00 a.m a 12:30 p.m",
+                    location: "Suba Tibabuyes",
+                    direction: "CL 136 A con CRA 154",
+                    urlmap: "https://maps.app.goo.gl/KWF1cY2HYgUmzWg17",
+                    regionId: "11",
+                    regionName: "Suba"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-29"
+            },
+            {
+                title: "Moviparque",
+                description: "El Moviparque es una herramienta pedagógica de la Secretaría Distrital de Movilidad, diseñada para desarrollar experiencias de aprendizaje relacionadas con la seguridad vial, la movilidad sostenible y la cultura para la movilidad; dirigida a niñas y niños entre los 3 y los 10 años de edad.",
+                site: {
+                    time: "PENDIENTE",
+                    location: "PENDIENTE",
+                    direction: "PENDIENTE",
+                    urlmap: "PENDIENTE",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-29"
+            },
+            {
+                title: "Jornada mantenimiento preventivo y correctivo, y entrega de cascos con BiciParceros",
+                description: "Jornada dirigida a los BiciParceros, que contará con actividades de mantenimiento preventivo y correctivo de sus bicicletas, orientadas a fortalecer el cuidado y las condiciones de seguridad de las bicicletas. Como complemento, se realizará la entrega de cascos, promoviendo el uso adecuado de elementos de protección y una movilidad más segura y responsable",
+                site: {
+                    time: "6:00 a.m a 6:00 p.m",
+                    location: "PENDIENTE",
+                    direction: "PENDIENTE",
+                    urlmap: "PENDIENTE",
+                    regionId: "XX",
+                    regionName: "Chapinero"
+                },
+                organizer: "Secretaría de Movilidad",
+                date: "2026-09-29"
+            },
+            {
+                title: "Foro Rodando al cambio nuevas generaciones",
+                description: "Actividad de sensibilización y movilidad sostenible con estudiantes del colegio con finalidad de lograr un acercamiento y cambio de la mentalidad estudiantil frente a los temas de la movilidad sostenible y uso de la misma en la cotidianidad.",
+                site: {
+                    time: "2:30 p.m - 5:00 p.m",
+                    location: "Colegio esmeralda arboleda cadavid",
+                    direction: "Cl. 71a Sur #83-20",
+                    urlmap: "https://maps.app.goo.gl/JdgxqnVPSwGEC7RZ9",
+                    regionId: "7",
+                    regionName: "Bosa"
+                },
+                organizer: "Consejo local de la bicicleta de bosa",
+                date: "2026-09-29"
+            },
+            {
+                title: "Prevención de violencias a la mujer ciclista (acoso callejero)",
+                description: "Activación pedagógica en espacio público dirigida a ciclistas, con información para la prevención del acoso callejero y las violencias contra las mujeres, así como para la prevención de delitos que afectan a las personas ciclistas.",
+                site: [
+                    {
+                        time: "3:00 p.m - 6:00 p.m",
+                        location: "Monumento 21 Ángeles",
+                        direction: "Av. Suba con calle 76",
+                        urlmap: "https://maps.app.goo.gl/ird6FPfcbcZssvR16",
+                        regionId: "11",
+                        regionName: "Suba",
+                        date: "2026-09-29"
+                    },
+                    {
+                        time: "3:00 p.m - 6:00 p.m",
+                        location: "Entorno Estación de TM Venecia",
+                        direction: "Autopista Sur con Calle 44 bis A Sur",
+                        urlmap: "https://maps.app.goo.gl/LKjr7JqkpJ7uxC278",
+                        regionId: "8",
+                        regionName: "Kennedy",
+                        date: "2026-09-30"
+                    }
+                ],
+                organizer: "Secretaria de Seguridad Convivencia y Justicia"
+            },
+            {
+                title: "Punto Seguro Regional",
+                description: "Es un espacio pedagógico donde varias entidades brindan orientación a conductores, motociclistas, ciclistas y peatones sobre seguridad vial, pausas activas, convivencia en la vía y revisión preventiva del vehículo, con el objetivo de prevenir siniestros bajo el lema “Velando por la seguridad vial en la Región Metropolitana”.",
+                site: {
+                    time: "6:00 a.m - 11:00 a.m.",
+                    location: "Bahia Coliseo Med Plus Via cota",
+                    direction: "Vía Cota, Calle 80 #Km 1,5, Vda. Vuelta Grande",
+                    urlmap: "https://maps.app.goo.gl/3JKQcZH9xMka96Mu5",
+                    regionId: "7",
+                    regionName: "Bosa"
+                },
+                organizer: "Agencia Regional de Movilidad \nGobernación\nSecretaria de Movilidad",
+                date: "2026-09-30"
+            },
+            {
+                title: "Certificación Sello Oro TransMiBici Portal Norte",
+                description: "Certificación con el Sello de Calidad Oro del cicloparqueadero del Portal Norte de TransMilenio  iniciara con un recorrido en bicicleta para llegar a las instalaciones del cicloparqueadero del Portal Norte, costado oriental (Autopista Norte con Calle 174, frente al parque éxito 170), con esta distinción, buscamos reconocer la gestión y el arduo trabajo realizado en este espacio, el cual resulta fundamental para la movilidad de nuestra ciudad. Estos cicloparqueaderos son pilares de la intermodalidad urbana y actúan como elementos alimentadores esenciales del sistema, cumpliendo con los más altos estándares de accesibilidad, capacidad, seguridad y confort para la ciudadanía.",
+                site: {
+                    time: "6:00 a.m - 8:00 a.m",
+                    location: "Cicloparqueadero Portal Norte",
+                    direction: "Autopista norte emtre calle 172 y 174",
+                    urlmap: "https://maps.app.goo.gl/eHXBsV95gbChsRmT6",
+                    regionId: "1",
+                    regionName: "Usaquén"
+                },
+                organizer: "Secretaria de Movilidad",
+                date: "2026-09-30"
+            },
+            {
+                title: "Carrera de modos",
+                description: "La Carrera de Modos propone un desafío urbano en el que distintos medios de transporte recorren simultáneamente una misma ruta para demostrar que la movilidad va más allá de la velocidad. La actividad permite a los participantes vivir la ciudad desde diferentes perspectivas, comparando tiempos de desplazamiento, costos, seguridad, comodidad y sostenibilidad. Esta experiencia busca sensibilizar a la ciudadanía sobre la importancia de elegir modos de transporte más seguros y sostenibles, fortaleciendo una cultura de movilidad responsable y resaltando el papel de la bicicleta como un medio eficiente, saludable y transformador para Bogotá.",
+                site: {
+                    time: "6:00 a.m - 8:00 a.m",
+                    location: "Plazoleta cc Av Chile",
+                    direction: "Calle 72 con carrera 11",
+                    urlmap: "https://maps.app.goo.gl/Lfr8cxbunp8Wc3fZ7",
+                    regionId: "2",
+                    regionName: "Chapinero"
+                },
+                organizer: "Secretaria de Movilidad",
+                date: "2026-09-30"
+            },
+            {
+                title: "La Ciudad es cultura, se Recorre en Bici",
+                description: "Recorrido experiencial, en el marco del Plan Especial de Salvaguardia (PES) de la Cultura bogotana de los usos y disfrutes de la bicicleta, que invita a conocer y vivir de cerca las acciones, proyectos y transformaciones que se impulsan alrededor de la bicicleta en Bogotá. A través de diferentes paradas, las y los participantes podrán descubrir cómo la bici conecta territorios, personas e iniciativas, promoviendo una movilidad más sostenible, segura e incluyente. La actividad iniciará en el Park Way y finalizará en el Museo de Bogotá, donde se realizará una activación relacionada con la exposición “Rodar Juntas”.",
+                site: {
+                    time: "8:00 am - 12:00 pm",
+                    location: "Park Way frente a la estatua de Prudencio Pradilla",
+                    direction: "Cra. 24, Teusaquillo",
+                    urlmap: "https://maps.app.goo.gl/krXpxdcs8VKf8NSs6",
+                    registrationLink: "https://idpc.gov.co/eventos/pedaleando-el-patrimonio/",
+                    regionId: "13",
+                    regionName: "Teusaquillo"
+                },
+                organizer: "Instituto Distrital de Patrimonio Cultural",
+                date: "2026-09-30"
+            },
+            {
+                title: "Pedaleando entre Gigantes Verdes",
+                description: "Busca promover el reconocimiento, la valoración y la conservación de los árboles patrimoniales de la ciudad a través de un recorrido en bicicleta. Durante la jornada, los participantes conocerán diferentes especies emblemáticas, su importancia ambiental, histórica y cultural, así como los beneficios ecosistémicos que aportan al entorno urbano, tales como la captura de carbono, regulación de temperatura, conservación de biodiversidad y mejora de la calidad del aire.",
+                site: {
+                    time: "9:00 am - 12:00 p.m",
+                    location: "Jardín Botánico José Celestino Mutis",
+                    direction: "Ac 63 #68-95",
+                    urlmap: "https://maps.app.goo.gl/jKLK7cCfcYwr6uTX8",
+                    registrationLink: "https://forms.cloud.microsoft/r/zTQR64wvji",
+                    regionId: "10",
+                    regionName: "Engativá"
+                },
+                organizer: "Jardín Botánico José Celestino Mutis",
+                date: "2026-09-30"
+            },
+            {
+                title: "Pedaleando por el Ambiente EAAB- ESP",
+                description: "Recorre Bogotá en bicicleta junto a tus compañeros y únete a una jornada de siembra que promueve el bienestar, la movilidad sostenible y el cuidado del medio ambiente. ¡Pedaleemos juntos por una ciudad más verde!",
+                site: {
+                    time: "9:30 a.m. a 1:00 p.m.",
+                    location: "Central de Operaciones",
+                    direction: "Avenida calle 24 No. 37-15",
+                    urlmap: "https://maps.app.goo.gl/uyPi1HvwmaFHx3v3A?g_st=ic",
+                    registrationLink: "https://bit.ly/4zw3GOY",
+                    regionId: "13",
+                    regionName: "Teusaquillo"
+                },
+                organizer: "Empresa de Acueducto y Alcantarillado de Bogotá",
+                date: "2026-09-30"
+            },
+            {
+                title: "Foro, cicloturismo en el pais de la belleza",
+                description: "3er FORO LOCAL \"CICLOTURISMO EN EL PAÍS DE LA BELLEZA\" Un espacio de encuentro y conversación para explorar las oportunidades del cicloturismo, promover el territorio y descubrir la bicicleta como una forma sostenible de conocer, conectar y disfrutar nuevos destinos.",
+                site: {
+                    time: "10:00 a.m - 12:00 p.m",
+                    location: "Esquina Redonda del BRONX Distrito Creativo",
+                    direction: "Cra 15 #9-1",
+                    urlmap: "https://maps.app.goo.gl/5LV6Vt2eQh22ffug9",
+                    regionId: "14",
+                    regionName: "Los Mártires"
+                },
+                organizer: "Cicloviajeros colombia",
+                date: "2026-09-30"
+            },
+            {
+                title: "Premios al Trabajo en Bici y Bienal de Cicloparqueaderos",
+                description: "Espacio de reconocimiento a entidades distritales que promueven el uso de la bicicleta y a diferentes establecimientos que se destacan por tener cicloparqueaderos con altos estándares de servicio y calidad.",
+                site: {
+                    time: "4:00 p.m - 6:00 p.m",
+                    location: "Plazoleta cc Av Chile",
+                    direction: "Calle 72 con carrera 11",
+                    urlmap: "https://maps.app.goo.gl/Lfr8cxbunp8Wc3fZ7",
+                    regionId: "2",
+                    regionName: "Chapinero"
+                },
+                organizer: "Secretaria de Movilidad",
+                date: "2026-09-30"
+            },
+            {
+                title: "Bicirodadas de telenovelas",
+                description: "¿Quieres conocer las locaciones donde se filmaron algunas de las telenovelas colombianas que fueron parte de nuestra diversión?  Es la oportunidad, gracias a este recorrido podrás conocer espacios como la Mansión de los Reyes, Pensión La Caridad, y finalizará donde Betty La Fea. Los esperamos",
+                site: {
+                    time: "6:30 p.m - 9:45 p.m",
+                    location: "Carulla Country",
+                    direction: "Ac. 85 #15-23",
+                    urlmap: "https://maps.app.goo.gl/59HZeV5qEo2RtRMi7",
+                    regionId: "2",
+                    regionName: "Chapinero"
+                },
+                organizer: "Bicirodadas Bogotanas",
+                date: "2026-09-30"
+            },
+            {
+                title: "Fonti Sobre Ruedas",
+                description: "Disfruta un recorrido nocturno en bicicleta por algunos de los principales corredores y espacios de Fontibón. Una experiencia para pedalear, conocer el territorio y vivir la ciudad sobre dos ruedas.\n\nRuta: Hayuelos – Huerta Hayuelos – Ciclorruta de la Av. Ferrocarril – Puente San Antonio de la Zanja – Estación de Bomberos – Carrera 97 – Ciclorruta de la Variante – Huerta Tesla – Borde del río – Parque Zona Franca – Carrera 103 – Ciclorruta – Parque Principal de Fontibón.",
+                site: {
+                    time: "7:00 p.m - 9:00 p.m",
+                    location: "Plazoleta CC HAYUELOS",
+                    direction: "Cl 20 #82 - 52",
+                    urlmap: "https://maps.app.goo.gl/htG9ybqgQzjPa8Ns8",
+                    regionId: "9",
+                    regionName: "Fontibón"
+                },
+                organizer: "Consejo local de la bicicleta de Fontibon",
+                date: "2026-09-30"
+            },
+            {
+                title: "Rutas seguras \nPatios, Verjón, Sabana",
+                description: "Invitamos a las y los ciclistas a recorrer las rutas de Patios, El Verjón y Vuelta a la Sabana, y a sumarse a Rutas Seguras, una iniciativa que promueve recorridos más seguros y sostenibles en bicicleta. Durante el recorrido, encontrarán diferentes puntos con actividades y acompañamiento para disfrutar y vivir la ciudad sobre dos ruedas.",
+                site: {
+                    time: "6:00 a.m - 9:00 a.m",
+                    location: "Rutas Verjon, Patios y vuelta a la Sabana",
+                    direction: "Patios: Recorido entre el puente de Beisario y el Peaje de Patios.\n\nVerjon: Desde el cerro de Monserrate u el Km 0\n\n\nSabana: Inicio desde Estación Heroes y vuelta a la Sabana hasta llegar al peaje de patios."
+                },
+                organizer: "Secretaria de seguirdad en articulación con la Secretaria de Movilidad, Secretaria de Mujer y el instituto Distrital de Recreación y Deporte",
+                date: "2026-10-01"
+            },
+            {
+                title: "Recorrido Nocturno \nAscenso al cerro Guadalupe",
+                description: "¡Anímate a conquistar Guadalupe sobre dos ruedas! Te invitamos a disfrutar de este recorrido nocturno, una iniciativa de la Alcaldía Local de Santa Fe y la Secretaria de Movilidad que promueve el encuentro, el esparcimiento y el disfrute de Bogotá en bicicleta. Una subida emblemática que se ha convertido en una de las rutas favoritas de las y los ciclistas bogotanos.\n\n¡Ven a pedalear, disfrutar y vivir la ciudad de noche!",
+                site: {
+                    time: "5:00 p.m - 9:00 p.m\n\n6:00 p.m Inicio del recorrido",
+                    location: "Parque Santander",
+                    direction: "Cra. 7 con Cll. 13",
+                    urlmap: "https://maps.app.goo.gl/PXCSboUPc1h1Hr4g6",
+                    registrationLink: "https://forms.gle/9D4M4fn8z8SmYgrL7",
+                    regionId: "3",
+                    regionName: "Santafé"
+                },
+                organizer: "Alcaldia Local de Santa Fe\nSecretaria de Movilidad",
+                date: "2026-10-01"
+            }
+        ];
+
+        // cargar activities a accordionAgenda por fechas
+        document.addEventListener("DOMContentLoaded", function() {
+            const accordionAgenda = document.getElementById("accordionAgenda");
+
+            // Agrupar actividades por fecha evitando duplicados
+            const activitiesPorFecha = {};
+
+            activities.forEach(activity => {
+                // Determinar fechas para cada actividad
+                let fechas = [];
+                if (Array.isArray(activity.site)) {
+                    // Si site es array y tiene fechas diferentes
+                    fechas = activity.site.map(s => s.date || activity.date).filter(Boolean);
+                } else {
+                    fechas = [activity.date].filter(Boolean);
+                }
+
+                // Si no hay fecha, omitir
+                if (fechas.length === 0) return;
+
+                fechas.forEach(fecha => {
+                    if (!activitiesPorFecha[fecha]) {
+                        activitiesPorFecha[fecha] = [];
+                    }
+
+                    // Evitar duplicados por título y fecha
+                    const exists = activitiesPorFecha[fecha].some(a => a.title === activity.title);
+
+                    if (!exists) {
+                        // Si site es array y hay varias fechas, filtrar site por la fecha actual
+                        let newActivity = {
+                            ...activity
+                        };
+                        if (Array.isArray(activity.site)) {
+                            newActivity.site = activity.site.filter(s => (s.date || activity.date) === fecha);
+                        }
+                        activitiesPorFecha[fecha].push(newActivity);
+                    }
+                });
+            });
+
+            // Ordenar fechas
+            const fechasOrdenadas = Object.keys(activitiesPorFecha).sort();
+
+            fechasOrdenadas.forEach((fecha, index) => {
+                const activities = activitiesPorFecha[fecha];
+                const fechaObj = new Date(fecha);
+                const opcionesFecha = {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                };
+
+                // Corregir la fecha agregando 1 día
+                fechaObj.setDate(fechaObj.getDate() + 1);
+                // Formatear la fecha
+                const fechaFormateada = fechaObj.toLocaleDateString('es-ES', opcionesFecha);
+                // Crear item del acordeón para cada fecha
+                const accordionItem = document.createElement("div");
+                accordionItem.classList.add("accordion-item");
+
+                const accordionHeader = document.createElement("h2");
+                accordionHeader.classList.add("accordion-header");
+                accordionHeader.id = `heading${index}`;
+
+                const accordionButton = document.createElement("button");
+                accordionButton.classList.add("accordion-button");
+                if (index !== 0) {
+                    accordionButton.classList.add("collapsed");
+                }
+                accordionButton.type = "button";
+                accordionButton.setAttribute("data-bs-toggle", "collapse");
+                accordionButton.setAttribute("data-bs-target", `#collapse${index}`);
+                accordionButton.setAttribute("aria-expanded", index === 0 ? "true" : "false");
+                accordionButton.setAttribute("aria-controls", `collapse${index}`);
+                accordionButton.textContent = fechaFormateada;
+
+                accordionHeader.appendChild(accordionButton);
+                accordionItem.appendChild(accordionHeader);
+
+                const accordionCollapse = document.createElement("div");
+                accordionCollapse.id = `collapse${index}`;
+                accordionCollapse.classList.add("accordion-collapse", "collapse");
+                if (index === 0) {
+                    accordionCollapse.classList.add("show");
+                }
+                accordionCollapse.setAttribute("aria-labelledby", `heading${index}`);
+                accordionCollapse.setAttribute("data-bs-parent", "#accordionAgenda");
+
+                const accordionBody = document.createElement("div");
+                accordionBody.classList.add("accordion-body");
+
+                const ul = document.createElement("ul");
+                accordionBody.appendChild(ul);
+
+                activities.forEach(function(activity) {
+                    const activityDiv = document.createElement("li");
+                    activityDiv.classList.add("activity");
+
+                    // Título
+                    const title = document.createElement("div");
+                    title.classList.add("title-two-accordion-govco");
+                    title.textContent = activity.title || "";
+                    activityDiv.appendChild(title);
+
+                    // Descripción
+                    const desc = document.createElement("div");
+                    desc.classList.add("text-one-accordion-govco");
+                    desc.innerHTML = activity.description || "";
+                    activityDiv.appendChild(desc);
+
+                    // Hora
+                    if (activity.time) {
+                        const time = document.createElement("pstr");
+                        time.innerHTML = "<strong>Hora:</strong> " + activity.time;
+                        activityDiv.appendChild(time);
+                    }
+
+                    // Lugar
+                    if (activity.location) {
+                        const loc = document.createElement("pstr");
+                        loc.innerHTML = "<strong>Lugar:</strong> " + activity.location;
+                        activityDiv.appendChild(loc);
+                    }
+
+                    // Manejo de site/location (puede ser objeto o array)
+                    const sites = Array.isArray(activity.site) ? activity.site : activity.site ? [activity.site] : [];
+                    sites.forEach((site, idx) => {
+                        if (!site) return;
+
+                        let detalles = [];
+                        detalles.push(`<h5>Detalles de la actividad ${sites.length > 1 ? idx + 1 : ' </h5>'}`);
+                        if (site.description) detalles.push(site.description);
+                        if (site.time) detalles.push(`<p class="act-time"><strong>Hora:</strong> ${site.time}</p>`);
+                        if (site.location) detalles.push(`<p class="act-location"><strong>Lugar:</strong> ${site.location}</p>`);
+                        if (site.direction) {
+                            let dir = `<p class="act-direction"><strong>Dirección:</strong> ${site.direction}`;
+                            if (site.urlmap) {
+                                dir += `&nbsp; <a href="${site.urlmap}" target="_blank" rel="noopener" aria-label="Abrir mapa en nueva pestaña">Ver en el mapa</a>`;
+                            }
+                            dir += `</p>`;
+                            detalles.push(dir);
+                        }
+                        if (site.regionName) detalles.push(`<p class="act-region"><strong>Localidad:</strong> ${site.regionName}</p>`);
+                        if (site.registrationLink) detalles.push(`<p class="act-link"><strong>Inscripción:</strong> <a href="${site.registrationLink}" target="_blank" rel="noopener" aria-label="Abrir inscripción en nueva pestaña">${site.registrationLink}</a></p>`);
+
+                        if (detalles.length) {
+                            const p = document.createElement("div");
+                            p.classList.add("act-details");
+                            p.innerHTML = detalles.join("");
+                            activityDiv.appendChild(p);
+                        }
+
+                        if (sites.length > 1 && idx < sites.length - 1) {
+                            const hr = document.createElement("hr");
+                            activityDiv.appendChild(hr);
+                        }
+                    });
+
+                    // Si registrationLink está en activity
+                    if (activity.registrationLink) {
+                        const reg = document.createElement("div");
+                        reg.innerHTML = '<p class="act-link"><strong>Inscripción: </strong><a href="' + activity.registrationLink + '" target="_blank" rel="noopener" aria-label="Abrir inscripción en nueva pestaña">' + activity.registrationLink + '</a></p>';
+                        activityDiv.appendChild(reg);
+                    }
+
+                    // Organizador
+                    if (activity.organizer) {
+                        const org = document.createElement("div");
+                        org.innerHTML = "<p class='act-org'><strong>Organiza:</strong> " + activity.organizer + "</p>";
+                        activityDiv.appendChild(org);
+                    }
+
+
+                    ul.appendChild(activityDiv);
+                });
+
+                accordionCollapse.appendChild(accordionBody);
+                accordionItem.appendChild(accordionCollapse);
+                accordionAgenda.appendChild(accordionItem);
+            });
+        });
+
+        // Función que carga los nombres de las localidadades en el span del mapa
+        document.addEventListener('DOMContentLoaded', function() {
+            const paths = document.querySelectorAll('.mapa-div path');
+
+            paths.forEach(path => {
+                path.addEventListener('mouseover', function() {
+                    const regionName = this.getAttribute('data-name') || 'Región Desconocida';
+                    document.querySelector('.region-info').textContent = regionName;
+                    document.querySelector('.region-info').className = "region-info active";
+                });
+
+                path.addEventListener('mouseout', function() {
+                    document.querySelector('.region-info').className = "region-info";
+                    document.querySelector('.region-info').textContent = "";
+                });
+            });
+        });
+
+        // Función que carga el modal con la información de las actividades por región
+        // Modal para mostrar actividades por región
+        document.addEventListener('DOMContentLoaded', function() {
+            // Crear el modal si no existe
+            let modal = document.getElementById('regionModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'regionModal';
+                modal.className = 'modal fade';
+                modal.tabIndex = -1;
+                modal.setAttribute('aria-hidden', 'true');
+                modal.innerHTML = `
+                <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+                </div>
+            `;
+                document.body.appendChild(modal);
+            }
+
+            // Evento click en cada región del mapa
+            document.querySelectorAll('.mapa-div path').forEach(function(path) {
+                path.addEventListener('click', function() {
+                    const regionId = this.getAttribute('data-id');
+                    const regionName = this.getAttribute('data-name') || 'Localidad';
+
+                    // Filtrar actividades por regionId
+                    const actividadesRegion = activities.filter(function(act) {
+                        // Puede estar en site (array u objeto) o en activity.regionId
+                        if (act.regionId === regionId) return true;
+                        if (Array.isArray(act.site)) {
+                            return act.site.some(s => s.regionId === regionId);
+                        } else if (act.site && act.site.regionId === regionId) {
+                            return true;
+                        }
+                        return false;
+                    });
+
+                    // Modal title
+                    modal.querySelector('.modal-title').textContent = `Actividades en ${regionName}`;
+
+                    // Modal body
+                    const body = modal.querySelector('.modal-body');
+                    body.innerHTML = '';
+                    if (actividadesRegion.length === 0) {
+                        body.innerHTML = '<p>No hay actividades programadas para esta localidad.</p>';
+                    } else {
+                        const ul = document.createElement('ul');
+                        actividadesRegion.forEach(function(act) {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<h5>${act.title || ''}</h5>
+                    <p>${act.description || ''}</p>`;
+
+                            // Mostrar fecha
+                            if (act.date) {
+                                const fechaObj = new Date(act.date);
+                                fechaObj.setDate(fechaObj.getDate() + 1);
+                                li.innerHTML += `<p><strong>Fecha:</strong> ${fechaObj.toLocaleDateString('es-ES', {year:'numeric',month:'long',day:'numeric'})}</p>`;
+                            }
+
+                            // Mostrar hora/lugar
+                            if (act.time) {
+                                li.innerHTML += `<p class="act-time"><strong>Hora:</strong> ${act.time}</p>`;
+                            }
+                            if (act.location) {
+                                li.innerHTML += `<p class="act-location"><strong>Lugar:</strong> ${act.location}</p>`;
+                            }
+                            if (act.direction) {
+                                li.innerHTML += `<p class="act-location"><strong>Dirección:</strong> ${act.direction}</p>`;
+                            }
+                            if (act.urlmap) {
+                                li.innerHTML += `<p><a href="${act.urlmap}" target="_blank" rel="noopener" class="act-link">Ver en el mapa</a></p>`;
+                            }
+
+                            // Si site es array u objeto
+                            const sites = Array.isArray(act.site) ? act.site : act.site ? [act.site] : [];
+                            sites.forEach(function(site, idx) {
+                                if (site.regionId !== regionId) return;
+                                li.innerHTML += `<hr><strong>Detalles de la actividad ${sites.length > 1 ? idx + 1 : ''}</strong>`;
+                                if (site.description) li.innerHTML += `<p>${site.description}</p>`;
+                                if (site.time) li.innerHTML += `<p class="act-time"><strong>Hora:</strong> ${site.time}</p>`;
+                                if (site.location) li.innerHTML += `<p class="act-location"><strong>Lugar:</strong> ${site.location}</p>`;
+                                if (site.direction) li.innerHTML += `<p class="act-direction"><strong>Dirección:</strong> ${site.direction}</p>`;
+                                if (site.urlmap) li.innerHTML += `<p><a href="${site.urlmap}" target="_blank" rel="noopener">Ver en el mapa</a></p>`;
+                                if (site.registrationLink) li.innerHTML += `<p class="act-link"><a href="${site.registrationLink}" target="_blank" rel="noopener"> Inscribirse</a></p>`;
+                            });
+
+                            // Inscripción
+                            if (act.registrationLink) {
+                                li.innerHTML += `<p class="act-link"><a href="${act.registrationLink}" target="_blank" rel="noopener" class="act-link"> Inscribirse</a></p>`;
+                            }
+
+                            // Organizador
+                            if (act.organizer) {
+                                li.innerHTML += `<p class="act-org"><strong>Organizador:</strong> ${act.organizer}</p>`;
+                            }
+
+                            ul.appendChild(li);
+                        });
+                        body.appendChild(ul);
+                    }
+
+                    // Mostrar el modal
+                    const bsModal = new bootstrap.Modal(modal);
+                    bsModal.show();
+                });
+            });
+        });
+    </script>
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script src="https://cdn.www.gov.co/layout/v4/script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Indicador deslizante del menú de navegación
+        document.addEventListener('DOMContentLoaded', function () {
+            var navList = document.getElementById('navLinksList');
+            var indicator = document.getElementById('navIndicator');
+            if (!navList || !indicator) return;
+
+            var links = navList.querySelectorAll('.nav-link');
+
+            function moveIndicator(el) {
+                var linkRect = el.getBoundingClientRect();
+                var listRect = navList.getBoundingClientRect();
+                indicator.style.left = (linkRect.left - listRect.left) + 'px';
+                indicator.style.width = linkRect.width + 'px';
+                indicator.style.opacity = '1';
+            }
+
+            links.forEach(function (link) {
+                link.addEventListener('mouseenter', function () { moveIndicator(link); });
+                link.addEventListener('focus', function () { moveIndicator(link); });
+            });
+
+            navList.addEventListener('mouseleave', function () {
+                indicator.style.opacity = '0';
+            });
+
+            navList.addEventListener('focusout', function (e) {
+                if (!navList.contains(e.relatedTarget)) {
+                    indicator.style.opacity = '0';
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                indicator.style.opacity = '0';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
