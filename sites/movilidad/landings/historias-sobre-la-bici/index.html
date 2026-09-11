@@ -1,270 +1,1623 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Historias sobre la bici | Secretaría Distrital de Movilidad de Bogotá</title>
-  <meta name="description" content="Un archivo vivo de relatos y experiencias ciudadanas que muestran cómo la bicicleta mueve historias en Bogotá.">
-  <!-- TODO: canonical y OpenGraph definitivos (ver config.js). No inventar URL de producción. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Historias sobre la bici. Un archivo vivo de relatos y experiencias ciudadanas que muestran cómo la bicicleta mueve historias en Bogotá.">
+    <title>Historias sobre la bici - Secretaría Distrital de Movilidad</title>
+    <link rel="icon" href="/sites/default/files/logo_bogota_favicon.png" type="image/png">
 
-  <!-- CDN GOV.CO v5 -->
-  <link rel="stylesheet" href="https://cdn.www.gov.co/layout-govco-v5/all.css">
-  <!-- Bootstrap 5 (grillas y utilidades) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Overrides compartidos y estilos propios de la landing -->
-  <link rel="stylesheet" href="../../../../shared/styles/gov-co-overrides.css">
-  <link rel="stylesheet" href="./styles.css">
+    <!-- Bootstrap 5 (igual que fotodetección) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos base del micrositio de Movilidad (navbar, hero, footer) -->
+    <link rel="stylesheet"
+        href="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-07-30/styles_0.css">
+
+    <style>
+        /* ================================================== */
+        /* OVERRIDE DE PALETA DEL CSS REMOTO                  */
+        /* Redefine las variables --fd-* (azul institucional) */
+        /* por la paleta de marca: rojo #e4032e y amarillo    */
+        /* #fab62d. Elimina cualquier azul de la gama.        */
+        /* ================================================== */
+        :root {
+            --fd-primary: #e4032e;
+            --fd-primary-light: #f04a5f;
+            --fd-primary-dark: #b80226;
+        }
+
+        /* El rojo de marca SIEMPRE debe ser sólido, nunca degradado.
+           El CSS remoto usa un degradado rojo->rojo claro en el banner
+           previo al footer; lo forzamos a color plano. */
+        .cta-banner-fd {
+            background: #e4032e !important;
+        }
+
+        /* El CSS remoto pinta un patrón SVG decorativo (azul) en todo el
+           fondo mediante body::after. No corresponde a este landing: se
+           elimina. */
+        body::after {
+            content: none !important;
+            background-image: none !important;
+        }
+
+        /* ================================================== */
+        /* NAVBAR / HERO (ajustes locales, patrón fotodetección) */
+        /* ================================================== */
+        .site-header.navbar-transparent {
+            background: transparent !important;
+            border-bottom-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .site-header.navbar-transparent.is-solid {
+            background: #ffffff !important;
+            border-bottom-color: #dee2e6 !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .site-header.navbar-transparent.is-solid .site-nav a {
+            color: #333333 !important;
+        }
+
+        .site-header.navbar-transparent.is-solid .site-nav a:hover,
+        .site-header.navbar-transparent.is-solid .site-nav a:focus {
+            color: #e4032e !important;
+        }
+
+        .site-header.navbar-transparent.is-solid .site-menu-toggle span {
+            background-color: #e4032e !important;
+        }
+
+        .hero-carousel {
+            height: 66vh !important;
+            min-height: 350px !important;
+            max-height: 600px !important;
+        }
+
+        .hero-slide__content h1,
+        .hero-slide__content p {
+            background-color: transparent;
+            display: block;
+            padding: 0;
+        }
+
+        .hero-slide__content h1 {
+            color: #fab62d;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-slide__content p {
+            color: #ffffff;
+        }
+
+        .hero-slide__content {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 0;
+            padding: 2.5rem 3rem 2.5rem 5%;
+            max-width: 45%;
+            margin: 0;
+            border-left: none;
+        }
+
+        @media (max-width: 991.98px) {
+            .hero-slide__content {
+                max-width: 70%;
+                padding: 2rem 2rem 2rem 5%;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .hero-slide__content {
+                max-width: 100%;
+                padding: 1.5rem 1.5rem 6rem;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+                align-items: flex-start;
+                text-align: left;
+                justify-content: flex-end;
+            }
+
+            .hero-slide__content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .hero-slide__content p {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                line-height: 1.5;
+            }
+
+            .hero-carousel {
+                height: 70vh !important;
+                min-height: 420px !important;
+                max-height: none !important;
+            }
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hero-slide__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1.25rem;
+            min-height: 48px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background: #fab62d;
+            color: #1f2328;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid #c78e00;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-slide__cta:hover,
+        .hero-slide__cta:focus-visible {
+            background: #e0a100;
+            color: #1f2328;
+            transform: translateY(-1px);
+        }
+
+        /* ================================================== */
+        /* BASE / ACCESIBILIDAD                                */
+        /* ================================================== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        body {
+            font-family: "Work Sans", "Nunito Sans", sans-serif;
+            color: #151515;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* ================================================== */
+        /* ANIMACIONES DE ENTRADA                             */
+        /* ================================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Aparición escalonada de tarjetas */
+        .reveal-stagger>* {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .reveal-stagger.is-visible>* {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Pulso sutil del CTA del hero para invitar al clic */
+        @keyframes lat-pulse {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .hero-slide.active .hero-slide__cta {
+            animation: lat-pulse 2.4s ease-in-out 1.2s infinite;
+        }
+
+        .hero-slide__cta span {
+            transition: transform 0.25s ease;
+        }
+
+        .hero-slide__cta:hover span {
+            transform: translateY(3px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal,
+            .reveal-stagger>* {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+
+            .hero-slide.active .hero-slide__cta {
+                animation: none;
+            }
+        }
+
+        /* ================================================== */
+        /* CIFRAS                                             */
+        /* ================================================== */
+        .cpnt-cifras {
+            background: #ffffff;
+            padding: 56px 20px;
+        }
+
+        .cpnt-cifras .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cpnt-cifras h2 {
+            font-size: 2.2em;
+            color: #e4032e;
+            margin-bottom: 8px;
+        }
+
+        .cpnt-cifras .subtitulo {
+            color: #4C4C4C;
+            font-size: 1.1em;
+            margin-bottom: 36px;
+        }
+
+        .cpnt-cifras .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .cpnt-cifras .card-cifra {
+            position: relative;
+            background: #faf7f0;
+            border: 1px solid #e4ddcf;
+            border-radius: 10px;
+            padding: 24px 16px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Barra de acento superior que se despliega en hover */
+        .cpnt-cifras .card-cifra::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #fab62d;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+
+        .cpnt-cifras .card-cifra:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(228, 3, 46, 0.12);
+            border-color: #fab62d;
+        }
+
+        .cpnt-cifras .card-cifra:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cpnt-cifras .card-cifra .icono {
+            font-size: 2em;
+            color: #fab62d;
+            margin-bottom: 12px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .cpnt-cifras .card-cifra:hover .icono {
+            transform: scale(1.18) rotate(-4deg);
+        }
+
+        .cpnt-cifras .card-cifra .numero {
+            font-size: 1.9em;
+            font-weight: 700;
+            color: #e4032e;
+            line-height: 1.1;
+        }
+
+        .cpnt-cifras .card-cifra .etiqueta {
+            font-size: 0.95em;
+            color: #5f5f5f;
+            margin-top: 6px;
+        }
+
+        .cpnt-cifras .fuente {
+            margin-top: 28px;
+            font-size: 0.85em;
+            color: #7e7e7e;
+        }
+
+        /* ================================================== */
+        /* HISTORIAS                                          */
+        /* ================================================== */
+        .cpnt-historias {
+            background: #f4f4f4;
+            padding: 56px 20px;
+        }
+
+        .cpnt-historias .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cpnt-historias .encabezado {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .cpnt-historias h2 {
+            font-size: 2.2em;
+            color: #e4032e;
+            margin-bottom: 8px;
+        }
+
+        .cpnt-historias .descripcion {
+            color: #4C4C4C;
+            max-width: 62ch;
+        }
+
+        .cpnt-historias .filtro {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cpnt-historias .filtro label {
+            font-weight: 600;
+            color: #4C4C4C;
+        }
+
+        .cpnt-historias .filtro select {
+            min-height: 44px;
+            padding: 8px 12px;
+            border: 1px solid #c4c4c4;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #151515;
+        }
+
+        .cpnt-historias .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card-historia {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #e2e2e2;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-historia:hover,
+        .card-historia:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(228, 3, 46, 0.14);
+            border-color: #fab62d;
+        }
+
+        .card-historia .foto {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: #ededed;
+            overflow: hidden;
+        }
+
+        .card-historia .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+
+        .card-historia:hover .foto img,
+        .card-historia:focus-within .foto img {
+            transform: scale(1.06);
+        }
+
+        /* Barra de acento inferior que aparece sobre la foto en hover */
+        .card-historia .foto::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: #e4032e;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+
+        .card-historia:hover .foto::after,
+        .card-historia:focus-within .foto::after {
+            transform: scaleX(1);
+        }
+
+        .card-historia .cuerpo {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-historia .nombre {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #1f1f1f;
+            margin-bottom: 4px;
+        }
+
+        .card-historia .perfil {
+            font-size: 0.9em;
+            color: #e4032e;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-historia .resumen {
+            font-size: 0.95em;
+            color: #5f5f5f;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .btn-historia {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #e4032e;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95em;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-historia:hover,
+        .btn-historia:focus-visible {
+            background: #c40228;
+        }
+
+        .cpnt-historias .ver-mas {
+            display: flex;
+            justify-content: center;
+            margin-top: 36px;
+        }
+
+        .btn-vermas {
+            min-height: 46px;
+            padding: 12px 28px;
+            border: 1px solid #e4032e;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #e4032e;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-vermas:hover,
+        .btn-vermas:focus-visible {
+            background: #e4032e;
+            color: #ffffff;
+        }
+
+        /* ================================================== */
+        /* MODAL DE HISTORIA                                  */
+        /* ================================================== */
+        .modal-historia__perfil {
+            color: #e4032e;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: block;
+        }
+
+        .btn-modal {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-modal--video {
+            background: #e4032e;
+            color: #ffffff;
+            border: 1px solid #b80226;
+        }
+
+        .btn-modal--video:hover,
+        .btn-modal--video:focus-visible {
+            background: #c40228;
+            color: #ffffff;
+        }
+
+        .btn-modal--pdf {
+            background: #fab62d;
+            color: #1f2328;
+            border: 1px solid #c78e00;
+        }
+
+        .btn-modal--pdf:hover,
+        .btn-modal--pdf:focus-visible {
+            background: #e0a100;
+            color: #1f2328;
+        }
+
+        /* ================================================== */
+        /* FORMULARIO DE PARTICIPACIÓN                        */
+        /* ================================================== */
+        .cpnt-form {
+            background: #ffffff;
+            padding: 56px 20px;
+        }
+
+        .cpnt-form .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cpnt-form h2 {
+            font-size: 2.2em;
+            color: #e4032e;
+            margin-bottom: 8px;
+        }
+
+        .cpnt-form .intro {
+            color: #4C4C4C;
+            margin-bottom: 32px;
+            max-width: 62ch;
+        }
+
+        .cpnt-form label {
+            display: block;
+            font-weight: 600;
+            color: #4C4C4C;
+            margin-bottom: 6px;
+        }
+
+        .cpnt-form .requerido {
+            color: #e4032e;
+        }
+
+        .cpnt-form input,
+        .cpnt-form select,
+        .cpnt-form textarea {
+            width: 100%;
+            min-height: 46px;
+            padding: 10px 12px;
+            border: 1px solid #c4c4c4;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #151515;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .cpnt-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .cpnt-form .campo {
+            margin-bottom: 20px;
+        }
+
+        .cpnt-form .check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .cpnt-form .check input {
+            width: auto;
+            min-height: auto;
+            margin-top: 5px;
+        }
+
+        .cpnt-form .check label {
+            font-weight: 400;
+            color: #4C4C4C;
+            margin: 0;
+        }
+
+        .cpnt-form .btn-enviar {
+            min-height: 48px;
+            padding: 12px 32px;
+            border: 1px solid #c78e00;
+            border-radius: 8px;
+            background: #fab62d;
+            color: #1f2328;
+            font-weight: 700;
+            font-size: 1.05em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .cpnt-form .btn-enviar:hover,
+        .cpnt-form .btn-enviar:focus-visible {
+            background: #e0a100;
+            transform: translateY(-1px);
+        }
+
+        .cpnt-form .mensaje-ok {
+            margin-top: 20px;
+            padding: 14px 18px;
+            border-radius: 8px;
+            background: #e6f4ef;
+            border: 1px solid #158361;
+            color: #0d5a41;
+            display: none;
+        }
+
+        .cpnt-form .mensaje-ok.visible {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
-  <a class="skip-to-content" href="#contenido">Saltar al contenido</a>
 
-  <!-- CABECERA GOV.CO -->
-  <!-- CABECERA INSTITUCIONAL — Secretaría Distrital de Movilidad de Bogotá (identidad distrital) -->
-  <header class="sdm-header">
-    <div class="sdm-header__bar">
-      <a class="sdm-header__gov" href="https://www.gov.co/" aria-label="Ir al portal GOV.CO">GOV.CO</a>
-    </div>
-    <div class="sdm-header__brand-bar">
-      <a class="sdm-header__brand" href="https://www.movilidadbogota.gov.co/"
-         aria-label="Secretaría Distrital de Movilidad de Bogotá — ir al sitio institucional">
-        <!-- TODO: reemplazar por el logotipo oficial suministrado (marca Bogotá / SDM). -->
-        <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
-             alt="Secretaría Distrital de Movilidad de Bogotá" height="48"
-             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'sdm-header__brand-fallback',textContent:'Bogotá · Secretaría Distrital de Movilidad'}))">
-      </a>
-    </div>
-  </header>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main-content"
+        class="visually-hidden-focusable position-absolute top-0 start-0 p-3 bg-white fw-bold"
+        style="z-index:9999;color:#e4032e;">Saltar al contenido principal</a>
 
-  <!-- NAVEGACIÓN DEL MICROSITIO (anclas) -->
-  <nav class="micrositio-nav" aria-label="Navegación del micrositio">
-    <div class="container micrositio-nav__inner">
-      <span class="micrositio-nav__brand">Historias sobre la bici</span>
-      <button class="micrositio-nav__toggle only-icon-btn-govco btn-govco" type="button"
-              aria-expanded="false" aria-controls="nav-anclas" aria-label="Abrir menú">
-        <span class="govco-svg govco-menu" aria-hidden="true"></span>
-      </button>
-      <ul class="micrositio-nav__list" id="nav-anclas">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#historias">Historias</a></li>
-        <li><a href="#cifras">Cifras</a></li>
-        <li><a href="#participa">Participa</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main id="contenido">
-    <!-- HERO -->
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6 hero__copy">
-            <p class="hero__eyebrow text3-govco">HISTORIAS SOBRE LA BICI</p>
-            <h1 class="hero__title" id="hero-title">Más personas, mejores ciudades</h1>
-            <!-- TODO: reemplazar por el copy introductorio oficial del documento. -->
-            <p class="hero__lead text2-govco">
-              Un archivo vivo de relatos, experiencias y miradas ciudadanas que muestran
-              cómo la bicicleta mueve historias en Bogotá.
-            </p>
-            <a class="btn-govco icon-btn-govco fill-btn-govco hero__cta" href="#historias">
-              <span>Conoce las historias</span>
-              <span class="govco-svg govco-arrow-down" aria-hidden="true"></span>
+    <!-- ============================================================ -->
+    <!-- HEADER / NAVBAR (patrón fotodetección)                      -->
+    <!-- ============================================================ -->
+    <header class="site-header navbar-transparent" id="siteHeader" role="banner">
+        <div class="site-header__inner container">
+            <a class="site-brand" href="#inicio" aria-label="Ir al inicio">
+                <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-05-20/logo.png"
+                    alt="Alcaldía Mayor de Bogotá D.C. y Secretaría de Movilidad">
             </a>
-          </div>
-          <div class="col-lg-6">
-            <!-- TODO: fotografía o pieza audiovisual oficial de ciclistas reales. -->
-            <div class="hero__media" role="img"
-                 aria-label="Espacio reservado para fotografía o video de ciclistas de Bogotá">
-              <span class="hero__media-note">Foto o video destacado</span>
+            <nav class="site-nav" id="site-primary-menu" aria-label="Navegación principal">
+                <a href="#historias">Historias</a>
+                <a href="#cifras">Cifras</a>
+                <a href="#participa">Participa</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="site-header__actions">
+                <a class="header-cta" href="#participa"
+                    aria-label="Comparte tu historia">
+                    <span>Comparte tu historia</span>
+                    <span class="btn-icon-circle" aria-hidden="true">→</span>
+                </a>
+                <button class="site-menu-toggle" type="button" aria-controls="site-primary-menu"
+                    aria-expanded="false" aria-label="Abrir menú principal">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- CIFRAS -->
-    <section class="stats" id="cifras" aria-labelledby="stats-title">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="section-title" id="stats-title">La bici también transforma en cifras</h2>
-          <p class="section-subtitle text2-govco">Datos que reflejan una ciudad que se mueve.</p>
-        </div>
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3" id="stats-grid">
-          <!-- StatCards renderizadas por JS -->
-        </div>
-        <p class="stats__source text-center text3-govco mt-3" id="stats-source"></p>
-      </div>
-    </section>
+    <main id="main-content">
+        <!-- ======================================================== -->
+        <!-- HERO CARRUSEL (patrón fotodetección)                    -->
+        <!-- ======================================================== -->
+        <section class="hero-carousel" id="inicio" aria-roledescription="carrusel"
+            aria-label="Información destacada sobre Historias sobre la bici">
+            <div class="hero-carousel__track" aria-live="off">
+                <!-- Slide 1 -->
+                <div class="hero-slide active" role="group" aria-roledescription="diapositiva" aria-label="1 de 2">
+                    <div class="hero-slide__bg"
+                        style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/cs%20-%20secretaria%20de%20movilidad-10.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="hero-slide__content">
+                        <h1>Más personas, mejores ciudades</h1>
+                        <p><strong>Un archivo vivo de relatos que muestran cómo la bicicleta mueve historias en
+                                Bogotá.</strong></p>
+                        <a class="hero-slide__cta" href="#historias">Conoce las historias
+                            <span aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="hero-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 2">
+                    <div class="hero-slide__bg"
+                        style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/cs%20-%20secretaria%20de%20movilidad-18.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="hero-slide__content">
+                        <h1>20 personas, 20 formas de vivir la bici</h1>
+                        <p><strong>Cada trayecto cuenta una historia. Descubre las que mueven a la
+                                ciudad.</strong></p>
+                        <a class="hero-slide__cta" href="#historias">Ver historias
+                            <span aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Controles -->
+            <div class="hero-carousel__controls">
+                <button class="hero-carousel__btn hero-carousel__btn--prev" type="button"
+                    aria-label="Diapositiva anterior">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="hero-carousel__indicators" role="tablist" aria-label="Seleccionar diapositiva">
+                    <button role="tab" aria-selected="true" aria-label="Diapositiva 1"
+                        class="hero-carousel__dot active" data-slide="0"></button>
+                    <button role="tab" aria-selected="false" aria-label="Diapositiva 2" class="hero-carousel__dot"
+                        data-slide="1"></button>
+                </div>
+                <button class="hero-carousel__btn hero-carousel__btn--next" type="button"
+                    aria-label="Diapositiva siguiente">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="hero-carousel__pause" type="button" aria-label="Pausar rotación automática"
+                    aria-pressed="false">
+                    <svg class="pause-icon" width="14" height="14" viewBox="0 0 14 14" fill="currentColor"
+                        aria-hidden="true">
+                        <rect x="2" y="1" width="3.5" height="12" rx="1" />
+                        <rect x="8.5" y="1" width="3.5" height="12" rx="1" />
+                    </svg>
+                    <svg class="play-icon" width="14" height="14" viewBox="0 0 14 14" fill="currentColor"
+                        aria-hidden="true" style="display:none;">
+                        <path d="M3 1.5v11l9-5.5L3 1.5z" />
+                    </svg>
+                </button>
+            </div>
+        </section>
 
-    <!-- HISTORIAS -->
-    <section class="stories" id="historias" aria-labelledby="stories-title">
-      <div class="container">
-        <div class="mb-4">
-          <h2 class="section-title" id="stories-title">Historias que nos mueven</h2>
-          <p class="section-subtitle text2-govco">
-            20 personas. 20 maneras de vivir la bici. Conoce sus historias, mira sus videos y
-            descubre cómo la bicicleta hace parte de sus vidas en Bogotá.
-          </p>
-          <!-- TODO (post-MVP): filtro por perfil y "Ver más historias" (según wireframe, fuera de MVP). -->
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4" id="stories-grid">
-          <!-- StoryCards renderizadas por JS -->
-        </div>
-      </div>
-    </section>
+        <!-- ======================================================== -->
+        <!-- CIFRAS DE LA CIUDAD                                      -->
+        <!-- ======================================================== -->
+        <section class="cpnt-cifras reveal" id="cifras" aria-labelledby="cifras-titulo">
+            <div class="wrapper">
+                <h2 id="cifras-titulo">La bici también transforma en cifras</h2>
+                <p class="subtitulo">Datos que reflejan una ciudad que se mueve.</p>
 
-    <!-- PARTICIPA -->
-    <section class="participate" id="participa" aria-labelledby="participate-title">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-5">
-            <h2 class="section-title" id="participate-title">Comparte tu historia</h2>
-            <p class="section-subtitle text2-govco">
-              La ciudad también se construye con tus relatos. Cuéntanos cómo la bicicleta
-              hace parte de tu vida.
-            </p>
-          </div>
-          <div class="col-lg-7">
-            <form class="story-form row g-4" id="story-form" novalidate>
-              <div class="col-md-4">
-                <div class="entradas-de-texto-govco">
-                  <label for="f-nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
-                  <div class="input-container">
-                    <input type="text" id="f-nombre" name="nombre" required
-                           autocomplete="name" aria-invalid="false" aria-describedby="err-nombre">
-                  </div>
-                  <span class="error-text-govco" id="err-nombre" role="alert" style="display:none;"></span>
+                <div class="grid reveal-stagger">
+                    <div class="card-cifra">
+                        <span class="icono govco-users" aria-hidden="true"></span>
+                        <div class="numero" data-count="880000" data-suffix="">880.000</div>
+                        <div class="etiqueta">viajes diarios en bicicleta</div>
+                    </div>
+                    <div class="card-cifra">
+                        <span class="icono govco-road" aria-hidden="true"></span>
+                        <div class="numero" data-count="661" data-suffix=" km">661 km</div>
+                        <div class="etiqueta">de cicloinfraestructura</div>
+                    </div>
+                    <div class="card-cifra">
+                        <span class="icono govco-bicycle" aria-hidden="true"></span>
+                        <div class="numero" data-count="867245" data-suffix="">867.245</div>
+                        <div class="etiqueta">bicis en Registro Bici</div>
+                    </div>
+                    <div class="card-cifra">
+                        <span class="icono govco-parking" aria-hidden="true"></span>
+                        <div class="numero" data-count="20978" data-suffix="">20.978</div>
+                        <div class="etiqueta">cicloparqueaderos en la ciudad</div>
+                    </div>
+                    <div class="card-cifra">
+                        <span class="icono govco-graduation-cap" aria-hidden="true"></span>
+                        <div class="numero" data-count="115000" data-suffix="">115.000</div>
+                        <div class="etiqueta">estudiantes beneficiados</div>
+                    </div>
+                    <div class="card-cifra">
+                        <span class="icono govco-shield-alt" aria-hidden="true"></span>
+                        <div class="numero" data-count="7722" data-suffix="">7.722</div>
+                        <div class="etiqueta">bicicletas recuperadas</div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="entradas-de-texto-govco">
-                  <label for="f-email">Correo electrónico <span class="req" aria-hidden="true">*</span></label>
-                  <div class="input-container">
-                    <input type="email" id="f-email" name="email" required
-                           autocomplete="email" aria-invalid="false" aria-describedby="err-email">
-                  </div>
-                  <span class="error-text-govco" id="err-email" role="alert" style="display:none;"></span>
+
+                <p class="fuente">Fuente: Secretaría Distrital de Movilidad. Junio de 2026.</p>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- HISTORIAS QUE NOS MUEVEN                                 -->
+        <!-- ======================================================== -->
+        <section class="cpnt-historias reveal" id="historias" aria-labelledby="historias-titulo">
+            <div class="wrapper">
+                <div class="encabezado">
+                    <div>
+                        <h2 id="historias-titulo">Historias que nos mueven</h2>
+                        <p class="descripcion">20 personas. 20 maneras de vivir la bici. Conoce sus historias,
+                            mira sus videos y descubre cómo la bicicleta hace parte de sus vidas en Bogotá.</p>
+                    </div>
+                    <div class="filtro">
+                        <label for="filtro-perfil">Filtrar por perfil</label>
+                        <select id="filtro-perfil">
+                            <option value="todos">Todos</option>
+                            <option value="trabajo">Trabajo</option>
+                            <option value="deportivo">Deportivo y recreativo</option>
+                            <option value="cuidado">Cuidado</option>
+                            <option value="escolar">Escolar</option>
+                            <option value="compartida">Bici compartida</option>
+                        </select>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="entradas-de-texto-govco">
-                  <label for="f-telefono">Teléfono / WhatsApp <span class="req" aria-hidden="true">*</span></label>
-                  <div class="input-container">
-                    <input type="tel" id="f-telefono" name="telefono" required
-                           autocomplete="tel" aria-invalid="false" aria-describedby="err-telefono">
-                  </div>
-                  <span class="error-text-govco" id="err-telefono" role="alert" style="display:none;"></span>
+
+                <ul class="grid reveal-stagger" id="grid-historias" style="list-style:none;padding:0;margin:0;">
+                    <li class="card-historia" data-perfil="trabajo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/1.jpg"
+                                loading="lazy"
+                                alt="Retrato de Mauricio Jiménez, quien trabaja en temas relacionados con la bicicleta.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Mauricio Jiménez</p>
+                            <p class="perfil">Trabaja en temas relacionados con la bicicleta</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Mauricio Jiménez"
+                                data-perfil="Trabaja en temas relacionados con la bicicleta"
+                                data-material="https://drive.google.com/file/d/12YkQ5KhJNEw3kUSGgwDb_4vJ6iqfuhqY/view?usp=drive_link"
+                                data-articulo="https://docs.google.com/document/d/1_byKb6BEjO1sQLUNAI2sc3BmPBeoANiF/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="trabajo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/2.jpg"
+                                loading="lazy"
+                                alt="Retrato de Jorge Monroy.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Jorge Monroy</p>
+                            <p class="perfil">Trabaja en temas relacionados con la bicicleta</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Jorge Monroy" data-perfil="Trabaja en temas relacionados con la bicicleta"
+                                data-material="https://drive.google.com/drive/folders/1it2zs7W7BaOGVnm4Six5ms1raQAU5y2q?usp=drive_link"
+                                data-articulo="https://docs.google.com/document/d/1wElK8qtF2i_wAedJz9onsYsTWxX3xs0k/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="deportivo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/3.jpg"
+                                loading="lazy"
+                                alt="Retrato de Luz Marina Ramírez, deportista que usa la bicicleta.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Luz Marina Ramírez</p>
+                            <p class="perfil">Deportista</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Luz Marina Ramírez"
+                                data-perfil="Deportista"
+                                data-material="https://drive.google.com/drive/folders/1xLnlB2_R2Y5q9XO5bJJXV5trS-FL7WUf"
+                                data-articulo="https://docs.google.com/document/d/1H8f44o1MsF8cdfDbc6UWXSWvCQ6_UNsh/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="deportivo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/4.jpg"
+                                loading="lazy"
+                                alt="Retrato de José Luis Díaz.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">José Luis Díaz</p>
+                            <p class="perfil">Deportista</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="José Luis Díaz" data-perfil="Deportista"
+                                data-material="https://drive.google.com/drive/folders/1gtj6p2fmL7jlUurKOyePJluZ8EdMHTpd?usp=sharing"
+                                data-articulo="https://docs.google.com/document/d/1mkgGKnUQVSvju5HQwi08cto4jWgMUa4N/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="trabajo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/5.jpg"
+                                loading="lazy"
+                                alt="Retrato de Bryan Garzón, trabajador que usa la bicicleta.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Bryan Garzón</p>
+                            <p class="perfil">Trabajador</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Bryan Garzón" data-perfil="Trabajador"
+                                data-material="https://drive.google.com/drive/folders/1cBCxUBCw9YcdLUKZdWRGOeRVtDZ1pCHD"
+                                data-articulo="https://docs.google.com/document/d/1h61p1q31cYyPkZ87ida1tJKd60z-Qf-c/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="trabajo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Adrián Chávez Andrade.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Adrián Chávez Andrade</p>
+                            <p class="perfil">Trabajador</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Adrián Chávez Andrade"
+                                data-perfil="Trabajador"
+                                data-material="https://drive.google.com/drive/folders/1TZs6yjCsscBpRi_xYoD831QZ_wdCC65f?usp=drive_link"
+                                data-articulo="https://docs.google.com/document/d/1_UV18s0UPW0FV1SzwzvS35OLk4BypbNI/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="cuidado">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Eliana González, cuidadora que se moviliza en bicicleta.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Eliana González</p>
+                            <p class="perfil">Cuidadoras</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Eliana González" data-perfil="Cuidadoras"
+                                data-material="https://drive.google.com/drive/folders/1gtj6p2fmL7jlUurKOyePJluZ8EdMHTpd"
+                                data-articulo="https://docs.google.com/document/d/1qlDrzlV1jDuWPahlE99Qj1lIZehFbswT/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="cuidado">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Carolina Castro.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Carolina Castro</p>
+                            <p class="perfil">Cuidadoras</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Carolina Castro" data-perfil="Cuidadoras"
+                                data-material="https://drive.google.com/drive/u/0/folders/17b18lDAFiArFgL8RYgaq82_FIAyBnCL5"
+                                data-articulo="https://docs.google.com/document/d/1QRI4Fyb2MvJ8RGVBaihuEVH-OTbwKnPW/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="trabajo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Lorena Nieto, quien usa la bici como herramienta de trabajo.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Lorena Nieto</p>
+                            <p class="perfil">Bici como herramienta de trabajo</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Lorena Nieto"
+                                data-perfil="Bici como herramienta de trabajo"
+                                data-material="https://drive.google.com/drive/folders/1DgjoTOWDmkz4ghBNsqm0aWdqeCRIXcgH"
+                                data-articulo="https://docs.google.com/document/d/1m38C2W28gKG-WFtAlqm0Jc0O6K_d6MVQ/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="trabajo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Diego Rodríguez.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Diego Rodríguez</p>
+                            <p class="perfil">Bici como herramienta de trabajo</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Diego Rodríguez" data-perfil="Bici como herramienta de trabajo"
+                                data-material="https://drive.google.com/drive/folders/1rbQWGcZZXINQV7_ChILf4gIKq7o_VOND"
+                                data-articulo="https://docs.google.com/document/d/1F2U9VD24FGEFlEdLHsh-375yUfQernQR/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="deportivo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Óscar Jesús Murillo, ciclista recreativo.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Óscar Jesús Murillo</p>
+                            <p class="perfil">Recreativo</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Óscar Jesús Murillo" data-perfil="Recreativo"
+                                data-material="https://drive.google.com/drive/folders/1FPczjoGuGwja8TpI2UVzgmAYuCTlQMVc"
+                                data-articulo="https://docs.google.com/document/d/1rU_sZrwpJUJwieBOar6YxueZvXlGjt2c/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="deportivo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Juan David Quitián.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Juan David Quitián</p>
+                            <p class="perfil">Recreativo</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Juan David Quitián" data-perfil="Recreativo"
+                                data-material="https://drive.google.com/drive/folders/16mz24rck2QRHx3JnOIEWxLHqhxB-oH0r"
+                                data-articulo="https://docs.google.com/document/d/12Mf-OEnM51jZuqaLcvrO6rQcIS9sAxNL/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="escolar">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Julián Sierra, guía escolar en bicicleta.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Julián Sierra</p>
+                            <p class="perfil">Guía escolar</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Julián Sierra" data-perfil="Guía escolar"
+                                data-material="https://drive.google.com/drive/folders/1E4mfwSjfM4shnS6Oi4w41x7wVQjJkrYo"
+                                data-articulo="https://docs.google.com/document/d/1LSyDYv1RnxRHz68rt4lui6CCxe7hmgwR/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="escolar">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Dayana Villalobos.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Dayana Villalobos</p>
+                            <p class="perfil">Guía escolar</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Dayana Villalobos" data-perfil="Guía escolar"
+                                data-material="https://drive.google.com/drive/folders/1tOunqFjLZno37GXtzGND7BpAczP-iv0T"
+                                data-articulo="https://docs.google.com/document/d/1SUsqqnTe77u1laBagBwfmqzknmwWHFke/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="escolar">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Oriana Barreto, ciclista escolar.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Oriana Barreto</p>
+                            <p class="perfil">Ciclista escolar</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Oriana Barreto" data-perfil="Ciclista escolar"
+                                data-material="https://drive.google.com/drive/folders/1wM_TUtLWCxt5IEFBPz571FO1wCT2W7MN"
+                                data-articulo="https://docs.google.com/document/d/1fkZ-ugOaRfP-dy8O6-e1Wi3fyt_d2h_T/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="escolar">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de David Torres.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">David Torres</p>
+                            <p class="perfil">Ciclista escolar</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="David Torres" data-perfil="Ciclista escolar"
+                                data-material="https://drive.google.com/drive/folders/1Eka21qXIuiUIBz7vgLB9b9Br6yEzwgtM?usp=drive_link"
+                                data-articulo="https://docs.google.com/document/d/16kBwZS3cF9LQCKCpe3FBNrzpNk6t_thk/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="deportivo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Andrés Gómez, ciclista ocasional.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Andrés Gómez</p>
+                            <p class="perfil">Ciclista ocasional</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Andrés Gómez" data-perfil="Ciclista ocasional"
+                                data-material="https://drive.google.com/drive/folders/1HBdl8mGBX19FJt55zUPxnkfGepO2_aLa"
+                                data-articulo="">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="deportivo">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Diana Piraquive.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Diana Piraquive</p>
+                            <p class="perfil">Ciclista ocasional</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Diana Piraquive" data-perfil="Ciclista ocasional"
+                                data-material="https://drive.google.com/drive/u/1/folders/13Wjx0ppI8czhOG3xbA_J-Tjg0X7rvaRW"
+                                data-articulo="https://docs.google.com/document/d/1CjJd9-LXs1jVhLqYz0KKn3-ZiTrAeifh/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="compartida">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Tomás Villescas, usuario de bici compartida.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Tomás Villescas</p>
+                            <p class="perfil">Bici compartida</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Tomás Villescas" data-perfil="Bici compartida"
+                                data-material="https://drive.google.com/drive/folders/19xv2IrzrSzXZcPZ3A-oXmX3KjnXXhEti?usp=drive_link"
+                                data-articulo="https://docs.google.com/document/d/1tUK8o7qwEgo9Qo4rQhQml5rW9Tr3dmnw/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="card-historia" data-perfil="compartida">
+                        <div class="foto">
+                            <img src="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_mesa_de_trabajo_1_copia.png"
+                                alt="Retrato de Juan Felipe Lamus.">
+                        </div>
+                        <div class="cuerpo">
+                            <p class="nombre">Juan Felipe Lamus</p>
+                            <p class="perfil">Bici compartida</p>
+                            <p class="resumen">Su historia sobre cómo la bicicleta hace parte de su vida en Bogotá.</p>
+                            <button type="button" class="btn-historia" data-nombre="Juan Felipe Lamus" data-perfil="Bici compartida"
+                                data-material="https://drive.google.com/drive/folders/1IdYX3I8SFx5YYBfWaF8BX-ZECuRJUv0l"
+                                data-articulo="https://docs.google.com/document/d/1Cop2v-YJfKFodDu5TzXYm1aG65BIWs8n/edit?usp=drive_link&ouid=117059705345234584191&rtpof=true&sd=true">
+                                Conoce su historia
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+
+                <p class="fuente" style="margin-top:24px;font-size:.85em;color:#7e7e7e;">Cada historia incluye el
+                    material audiovisual y el artículo completo. Los enlaces abren en Google Drive.</p>
+            </div>
+        </section>
+
+        <!-- ======================================================== -->
+        <!-- FORMULARIO DE PARTICIPACIÓN                              -->
+        <!-- ======================================================== -->
+        <section class="cpnt-form reveal" id="participa" aria-labelledby="participa-titulo">
+            <div class="wrapper">
+                <h2 id="participa-titulo">Comparte tu historia</h2>
+                <p class="intro">La ciudad también se construye con tus relatos.
+                    Cuéntanos cómo la bicicleta hace parte de tu vida.</p>
+
+                <form id="form-historia" novalidate>
+                    <div class="row">
+                        <div class="col-md-4 campo">
+                            <label for="nombre">Nombre completo <span class="requerido">*</span></label>
+                            <input type="text" id="nombre" name="nombre" required autocomplete="name">
+                        </div>
+                        <div class="col-md-4 campo">
+                            <label for="correo">Correo electrónico <span class="requerido">*</span></label>
+                            <input type="email" id="correo" name="correo" required autocomplete="email">
+                        </div>
+                        <div class="col-md-4 campo">
+                            <label for="telefono">Teléfono / WhatsApp</label>
+                            <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 campo">
+                            <label for="localidad">Localidad</label>
+                            <select id="localidad" name="localidad">
+                                <option value="">Selecciona</option>
+                                <option>Usaquén</option>
+                                <option>Chapinero</option>
+                                <option>Santa Fe</option>
+                                <option>San Cristóbal</option>
+                                <option>Usme</option>
+                                <option>Tunjuelito</option>
+                                <option>Bosa</option>
+                                <option>Kennedy</option>
+                                <option>Fontibón</option>
+                                <option>Engativá</option>
+                                <option>Suba</option>
+                                <option>Barrios Unidos</option>
+                                <option>Teusaquillo</option>
+                                <option>Los Mártires</option>
+                                <option>Antonio Nariño</option>
+                                <option>Puente Aranda</option>
+                                <option>La Candelaria</option>
+                                <option>Rafael Uribe Uribe</option>
+                                <option>Ciudad Bolívar</option>
+                                <option>Sumapaz</option>
+                            </select>
+                        </div>
+                        <div class="col-md-8 campo">
+                            <label for="historia">Cuéntanos tu historia <span class="requerido">*</span></label>
+                            <textarea id="historia" name="historia" required
+                                placeholder="Escribe un breve resumen de tu historia..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="check">
+                        <input type="checkbox" id="autorizacion" name="autorizacion" required>
+                        <label for="autorizacion">Autorizo el tratamiento de mis datos personales según la Ley 1581
+                            de 2012 y la política de la Secretaría Distrital de Movilidad. <span
+                                class="requerido">*</span></label>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar historia</button>
+
+                    <div class="mensaje-ok" id="mensaje-ok" role="status" aria-live="polite">
+                        Gracias por compartir tu historia. La revisaremos y nos pondremos en contacto contigo.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- MODAL DE HISTORIA (Bootstrap, patrón fotodetección)         -->
+    <!-- ============================================================ -->
+    <div class="modal fade" id="modalHistoria" tabindex="-1" aria-labelledby="modalHistoriaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0">
+                <div class="modal-header border-0">
+                    <div>
+                        <h5 class="modal-title" id="modalHistoriaLabel">Historia</h5>
+                        <span class="modal-historia__perfil" id="modalHistoriaPerfil"></span>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="entradas-de-texto-govco">
-                  <label for="f-localidad">Localidad de Bogotá</label>
-                  <div class="input-container">
-                    <select id="f-localidad" name="localidad" class="form-select">
-                      <option value="">Selecciona</option>
-                      <option>Usaquén</option><option>Chapinero</option><option>Santa Fe</option>
-                      <option>San Cristóbal</option><option>Usme</option><option>Tunjuelito</option>
-                      <option>Bosa</option><option>Kennedy</option><option>Fontibón</option>
-                      <option>Engativá</option><option>Suba</option><option>Barrios Unidos</option>
-                      <option>Teusaquillo</option><option>Los Mártires</option><option>Antonio Nariño</option>
-                      <option>Puente Aranda</option><option>La Candelaria</option><option>Rafael Uribe Uribe</option>
-                      <option>Ciudad Bolívar</option><option>Sumapaz</option>
-                    </select>
-                  </div>
+                <div class="modal-body">
+                    <p id="modalHistoriaTexto" class="mb-4">Conoce esta historia a través del material audiovisual
+                        y del artículo completo.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="btn-modal btn-modal--video" id="modalHistoriaMaterialLink" href="#" target="_blank"
+                            rel="noopener noreferrer">Ver material (fotos y video)
+                            <span class="sr-only">(se abre en una nueva pestaña)</span></a>
+                        <a class="btn-modal btn-modal--pdf" id="modalHistoriaArticuloLink" href="#" target="_blank"
+                            rel="noopener noreferrer">Leer el artículo
+                            <span class="sr-only">(se abre en una nueva pestaña)</span></a>
+                    </div>
                 </div>
-              </div>
-              <div class="col-12">
-                <div class="entradas-de-texto-govco">
-                  <label for="f-historia">Cuéntanos tu historia sobre la bici <span class="req" aria-hidden="true">*</span></label>
-                  <div class="input-container">
-                    <textarea id="f-historia" name="historia" rows="4" required
-                              class="form-control" aria-invalid="false"
-                              aria-describedby="err-historia counter-historia"></textarea>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <span class="error-text-govco" id="err-historia" role="alert" style="display:none;"></span>
-                    <span class="char-counter text3-govco" id="counter-historia" aria-live="polite">0 / 500</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="checkbox-seleccion-govco">
-                  <input type="checkbox" id="f-autorizacion" name="autorizacion" required
-                         aria-describedby="err-autorizacion">
-                  <label for="f-autorizacion">
-                    Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012
-                    y a la Política de Tratamiento de Datos Personales de la Secretaría Distrital de
-                    Movilidad. <span class="req" aria-hidden="true">*</span>
-                    <span id="policy-link-slot"></span>
-                  </label>
-                </div>
-                <span class="error-text-govco" id="err-autorizacion" role="alert" style="display:none;"></span>
-              </div>
-              <div class="col-12">
-                <button class="btn-govco fill-btn-govco" type="submit" id="form-submit">Enviar historia</button>
-              </div>
-              <div class="col-12">
-                <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- PIE DE PÁGINA — identidad distrital (Secretaría Distrital de Movilidad de Bogotá) -->
-  <footer class="sdm-footer">
-    <div class="container">
-      <div class="sdm-footer__top">
-        <nav class="sdm-footer__links" aria-label="Enlaces de pie de página">
-          <a href="https://www.movilidadbogota.gov.co/manual-y-politicas-de-seguridad-de-la-informacion"
-             target="_blank" rel="noopener noreferrer">Políticas de privacidad</a>
-          <a href="https://www.movilidadbogota.gov.co/atencion-servicios/puntos-atencion"
-             target="_blank" rel="noopener noreferrer">Atención a la ciudadanía</a>
-          <!-- TODO: URL oficial de la Política de Tratamiento de Datos (Ley 1581/2012). No inventar; ver config.js. -->
-          <a href="#participa">Comparte tu historia</a>
-        </nav>
-        <div class="sdm-footer__social" aria-label="Redes sociales de la Secretaría Distrital de Movilidad">
-          <a href="https://www.facebook.com/SectorMovilidad" target="_blank" rel="noopener noreferrer" aria-label="Facebook de la Secretaría de Movilidad" title="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-          </a>
-          <a href="https://twitter.com/SectorMovilidad" target="_blank" rel="noopener noreferrer" aria-label="X de la Secretaría de Movilidad" title="X">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/saboramovilidad" target="_blank" rel="noopener noreferrer" aria-label="Instagram de la Secretaría de Movilidad" title="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@SecretariaMovilidadBogota" target="_blank" rel="noopener noreferrer" aria-label="YouTube de la Secretaría de Movilidad" title="YouTube">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="sdm-footer__contact">
-        <p class="sdm-footer__name"><strong>Secretaría Distrital de Movilidad</strong> · Alcaldía Mayor de Bogotá D.C.</p>
-        <ul class="sdm-footer__data">
-          <li><span aria-hidden="true">📍</span> Calle 13 # 37-35, Bogotá D.C., Colombia</li>
-          <li><span aria-hidden="true">📞</span> Línea de atención: <a href="tel:+601195">(601) 195</a></li>
-          <li><span aria-hidden="true">🌐</span> <a href="https://www.movilidadbogota.gov.co/" target="_blank" rel="noopener noreferrer">www.movilidadbogota.gov.co</a></li>
-          <!-- TODO: código postal, horario de atención y correos institucionales/judiciales oficiales. No inventar. -->
-        </ul>
-      </div>
-
-      <div class="sdm-footer__gov">
-        <a href="https://www.gov.co/" target="_blank" rel="noopener noreferrer" aria-label="Portal GOV.CO">GOV.CO</a>
-      </div>
-      <p class="sdm-footer__note">Secretaría Distrital de Movilidad de Bogotá &copy; 2026</p>
     </div>
-  </footer>
 
-  <button type="button" class="btn-govco only-icon-btn-govco fill-btn-govco back-to-top"
-          id="back-to-top" aria-label="Volver arriba" hidden>
-    <span class="govco-svg govco-arrow-up" aria-hidden="true"></span>
-  </button>
+    <!-- ============================================================ -->
+    <!-- FOOTER (patrón fotodetección)                               -->
+    <!-- ============================================================ -->
+    <footer class="site-footer" id="contacto" role="contentinfo">
+        <div class="site-footer__inner container">
+            <div class="site-footer__top">
+                <nav class="footer-links" aria-label="Enlaces de pie de página">
+                    <a href="https://www.movilidadbogota.gov.co/manual-y-politicas-de-seguridad-de-la-informacion">Políticas
+                        de privacidad</a>
+                    <a href="#" aria-label="Términos y condiciones (próximamente)">Términos y condiciones</a>
+                    <a href="#participa">Comparte tu historia</a>
+                    <a href="https://www.movilidadbogota.gov.co/atencion-servicios/puntos-atencion">Atención a la
+                        ciudadanía</a>
+                </nav>
+                <div class="social-links" aria-label="Redes sociales">
+                    <a href="https://www.facebook.com/SectorMovilidad" aria-label="Facebook" title="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/SectorMovilidad" aria-label="X" title="X">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/saboramovilidad" aria-label="Instagram" title="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@SecretariaMovilidadBogota" aria-label="YouTube" title="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p><strong>Secretaría Distrital de Movilidad</strong> · Alcaldía Mayor de Bogotá D.C.</p>
+                <p>Dirección de la Bicicleta y el Peatón · Correo:
+                    <a href="mailto:bicicleta@movilidadbogota.gov.co">bicicleta@movilidadbogota.gov.co</a>
+                </p>
+                <p>Calle 13 # 37-35, Bogotá · Línea de atención: (601) 195</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- CDN GOV.CO v5 JS -->
-  <script src="https://cdn.www.gov.co/layout-govco-v5/script.js"></script>
-  <!-- Lógica del micrositio -->
-  <script type="module" src="./scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ===== Navbar: transparente -> sólida al hacer scroll =====
+        (function () {
+            var header = document.querySelector('.site-header.navbar-transparent');
+            if (!header) return;
+            function onScroll() { header.classList.toggle('is-solid', window.scrollY > 50); }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+
+        // ===== Menú hamburguesa (móvil) =====
+        (function () {
+            var toggle = document.querySelector('.site-menu-toggle');
+            var nav = document.querySelector('.site-nav');
+            var header = document.querySelector('.site-header');
+            if (!toggle || !nav) return;
+            toggle.addEventListener('click', function () {
+                var open = nav.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', open);
+                if (header) header.classList.toggle('is-menu-open', open);
+            });
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    if (header) header.classList.remove('is-menu-open');
+                });
+            });
+        })();
+
+        // ===== Hero carrusel =====
+        (function () {
+            var carousel = document.querySelector('.hero-carousel');
+            if (!carousel) return;
+            var slides = carousel.querySelectorAll('.hero-slide');
+            var dots = carousel.querySelectorAll('.hero-carousel__dot');
+            var prevBtn = carousel.querySelector('.hero-carousel__btn--prev');
+            var nextBtn = carousel.querySelector('.hero-carousel__btn--next');
+            var pauseBtn = carousel.querySelector('.hero-carousel__pause');
+            var track = carousel.querySelector('.hero-carousel__track');
+            var current = 0, timer = null, paused = false;
+            var INTERVAL = 6000;
+            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function goTo(i) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                dots[current].setAttribute('aria-selected', 'false');
+                current = (i + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+                dots[current].setAttribute('aria-selected', 'true');
+            }
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+            function start() {
+                if (paused || prefersReduced) return;
+                stop();
+                timer = setInterval(next, INTERVAL);
+                if (track) track.setAttribute('aria-live', 'off');
+            }
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
+                if (track) track.setAttribute('aria-live', 'polite');
+            }
+            prevBtn.addEventListener('click', function () { prev(); stop(); });
+            nextBtn.addEventListener('click', function () { next(); stop(); });
+            dots.forEach(function (dot, i) { dot.addEventListener('click', function () { goTo(i); stop(); }); });
+            pauseBtn.addEventListener('click', function () {
+                paused = !paused;
+                pauseBtn.setAttribute('aria-pressed', paused);
+                pauseBtn.setAttribute('aria-label', paused ? 'Reanudar rotación automática' : 'Pausar rotación automática');
+                pauseBtn.querySelector('.pause-icon').style.display = paused ? 'none' : '';
+                pauseBtn.querySelector('.play-icon').style.display = paused ? '' : 'none';
+                if (paused) stop(); else start();
+            });
+            carousel.addEventListener('mouseenter', stop);
+            carousel.addEventListener('focusin', stop);
+            carousel.addEventListener('mouseleave', function () { if (!paused) start(); });
+            carousel.addEventListener('focusout', function (e) { if (!carousel.contains(e.relatedTarget) && !paused) start(); });
+            carousel.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') { prev(); stop(); }
+                if (e.key === 'ArrowRight') { next(); stop(); }
+            });
+            start();
+        })();
+
+        // ===== Filtro por perfil =====
+        (function () {
+            var filtro = document.getElementById('filtro-perfil');
+            var tarjetas = document.querySelectorAll('.card-historia');
+            if (!filtro) return;
+            filtro.addEventListener('change', function () {
+                var valor = this.value;
+                tarjetas.forEach(function (card) {
+                    var perfil = card.getAttribute('data-perfil');
+                    card.style.display = (valor === 'todos' || perfil === valor) ? '' : 'none';
+                });
+            });
+        })();
+
+        // ===== Modal de historia =====
+        (function () {
+            var modalEl = document.getElementById('modalHistoria');
+            var titleEl = document.getElementById('modalHistoriaLabel');
+            var perfilEl = document.getElementById('modalHistoriaPerfil');
+            var materialLink = document.getElementById('modalHistoriaMaterialLink');
+            var articuloLink = document.getElementById('modalHistoriaArticuloLink');
+            if (!modalEl) return;
+            var modal = new bootstrap.Modal(modalEl);
+
+            document.querySelectorAll('.btn-historia').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var material = btn.getAttribute('data-material') || '';
+                    var articulo = btn.getAttribute('data-articulo') || '';
+                    titleEl.textContent = btn.getAttribute('data-nombre') || 'Historia';
+                    perfilEl.textContent = btn.getAttribute('data-perfil') || '';
+
+                    // Enlace de material
+                    if (material) {
+                        materialLink.href = material;
+                        materialLink.style.display = '';
+                    } else {
+                        materialLink.style.display = 'none';
+                    }
+
+                    // Enlace de artículo (algunas historias no tienen)
+                    if (articulo) {
+                        articuloLink.href = articulo;
+                        articuloLink.style.display = '';
+                    } else {
+                        articuloLink.style.display = 'none';
+                    }
+
+                    modal.show();
+                });
+            });
+        })();
+
+        // ===== Formulario =====
+        (function () {
+            var form = document.getElementById('form-historia');
+            var mensaje = document.getElementById('mensaje-ok');
+            if (!form) return;
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!form.checkValidity()) { form.reportValidity(); return; }
+                mensaje.classList.add('visible');
+                form.reset();
+                if (mensaje.focus) mensaje.focus();
+            });
+        })();
+
+        // ===== Animaciones de entrada al hacer scroll =====
+        (function () {
+            var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var revelables = document.querySelectorAll('.reveal, .reveal-stagger');
+
+            // Conteo animado de un número
+            function animarConteo(el) {
+                var destino = parseInt(el.getAttribute('data-count'), 10);
+                var sufijo = el.getAttribute('data-suffix') || '';
+                if (isNaN(destino)) return;
+                var duracion = 1400;
+                var inicio = null;
+
+                function fmt(n) {
+                    return n.toLocaleString('es-CO') + sufijo;
+                }
+                function paso(ts) {
+                    if (!inicio) inicio = ts;
+                    var avance = Math.min((ts - inicio) / duracion, 1);
+                    // easing suave (easeOutCubic)
+                    var eased = 1 - Math.pow(1 - avance, 3);
+                    el.textContent = fmt(Math.floor(eased * destino));
+                    if (avance < 1) {
+                        requestAnimationFrame(paso);
+                    } else {
+                        el.textContent = fmt(destino);
+                    }
+                }
+                requestAnimationFrame(paso);
+            }
+
+            if (prefersReduced || !('IntersectionObserver' in window)) {
+                revelables.forEach(function (el) { el.classList.add('is-visible'); });
+                return;
+            }
+
+            // Escalonar la aparición de los hijos (tarjetas)
+            function aplicarStagger(contenedor) {
+                var hijos = contenedor.children;
+                for (var i = 0; i < hijos.length; i++) {
+                    hijos[i].style.transitionDelay = (i * 60) + 'ms';
+                }
+            }
+            document.querySelectorAll('.reveal-stagger').forEach(aplicarStagger);
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-visible');
+
+                    // Si contiene cifras, animar el conteo
+                    entry.target.querySelectorAll('[data-count]').forEach(function (num) {
+                        if (!num.dataset.contado) {
+                            num.dataset.contado = '1';
+                            animarConteo(num);
+                        }
+                    });
+
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.15 });
+
+            revelables.forEach(function (el) { observer.observe(el); });
+        })();
+    </script>
 </body>
+
 </html>

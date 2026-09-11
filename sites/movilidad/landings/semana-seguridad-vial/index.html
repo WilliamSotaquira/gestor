@@ -1,0 +1,3479 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XX Semana de la Seguridad Vial</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"
+    crossorigin="anonymous">
+
+  <!-- css BDC -->
+  <link rel="icon" href="https://www.movilidadbogota.gov.co/sites/default/files/logo_bogota_favicon.png"
+    type="image/png">
+  <link href="https://cdn.www.gov.co/layout/v4/all.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Kalam:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YM45VRL2EK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-YM45VRL2EK');
+  </script>
+
+</head>
+
+<body>
+
+  <style>
+    html,
+    body {
+      width: 100vw;
+      max-width: 100vw;
+      overflow-x: clip !important;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    p {
+      font-size: 1.4rem;
+      font-family: 'Work Sans', sans-serif;
+      line-height: 1.4;
+      font-weight: 400;
+      text-align: justify;
+    }
+
+    /* Sistema de revelado progresivo al hacer scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.4, 2, .3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-scale.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .reveal,
+      .reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    .navbar {
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 14px rgba(0, 0, 0, 0.45);
+      border-bottom: 2px solid rgba(250, 182, 46, 0.4);
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      background-color: #000000 !important;
+    }
+
+    .navbar .navbar-brand {
+      display: inline-flex;
+      align-items: center;
+      box-sizing: border-box;
+      max-width: calc(100% - 60px);
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      padding: 6px 16px 6px 6px;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+      transition: transform 0.3s cubic-bezier(.4, 2, .3, 1), box-shadow 0.3s;
+      max-width: 100%;
+    }
+
+    .nav-cta:hover,
+    .nav-cta:focus {
+      transform: scale(1.04);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+      outline: none;
+      text-decoration: none;
+    }
+
+    .nav-cta-icon {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #df1010;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: nav-cta-tap 1.6s ease-in-out infinite;
+    }
+
+    @keyframes nav-cta-tap {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-2px, 2px);
+      }
+    }
+
+    .nav-cta-icon i {
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    .nav-cta-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.25;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .nav-cta-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #2c2c2a;
+      white-space: nowrap;
+    }
+
+    .nav-cta-subtitle {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #6b6b6b;
+      white-space: normal;
+    }
+
+    .nav-cta-arrow {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      color: #df1010;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .nav-cta {
+        gap: 8px;
+        padding: 5px 12px 5px 5px;
+        max-width: calc(100vw - 100px);
+      }
+
+      .nav-cta-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .nav-cta-icon i {
+        font-size: 0.85rem;
+      }
+
+      .nav-cta-title {
+        font-size: 0.78rem;
+      }
+
+      .nav-cta-subtitle {
+        font-size: 0.62rem;
+      }
+
+      .nav-cta-arrow {
+        display: none;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .nav-cta-subtitle {
+        display: none;
+      }
+    }
+
+    /* Below the lg breakpoint Bootstrap's toggler is visible: drop the
+           brand+toggler out of flex so text wrapping is plain block layout,
+           and float the toggler on top via absolute positioning. */
+    @media (max-width: 991.98px) {
+      .navbar>.container {
+        display: block;
+        position: relative;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      .navbar .navbar-toggler {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .nav-cta {
+        padding: 7px 20px 7px 7px;
+      }
+
+      .nav-cta-icon {
+        width: 34px;
+        height: 34px;
+      }
+
+      .nav-cta-icon i {
+        font-size: 1.1rem;
+      }
+
+      .nav-cta-title {
+        font-size: 1rem;
+      }
+
+      .nav-cta-subtitle {
+        font-size: 0.78rem;
+      }
+    }
+
+    .navbar .nav-link {
+      color: #ffffff !important;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 12px !important;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .navbar .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    #navbarNav {
+      justify-content: flex-end;
+    }
+
+    .navbar-nav {
+      position: relative;
+    }
+
+    .nav-indicator {
+      position: absolute;
+      bottom: -2px;
+      height: 3px;
+      background-color: #fab62e;
+      border-radius: 2px;
+      opacity: 0;
+      pointer-events: none;
+      transition: left 0.3s ease, width 0.3s ease, opacity 0.25s ease;
+    }
+
+    @media (max-width: 991.98px) {
+      .nav-indicator {
+        display: none;
+      }
+
+      .navbar .nav-link {
+        border-left: 3px solid transparent;
+        border-radius: 0;
+      }
+
+      .navbar .nav-link:hover,
+      .navbar .nav-link:focus {
+        border-left-color: #fab62e;
+        outline: none;
+      }
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a target="_blank" class="navbar-brand" href="https://forms.gle/KaNCX3jA55Dcwjaq5">
+        <span class="nav-cta">
+          <span class="nav-cta-icon"><i class="bi bi-hand-index-thumb" aria-hidden="true"></i></span>
+          <span class="nav-cta-text">
+            <span class="nav-cta-title">Inscríbete aquí</span>
+            <span class="nav-cta-subtitle">al XX Seminario Internacional de Seguridad Vial</span>
+          </span>
+          <span class="nav-cta-arrow"><i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="navLinksList">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seminario">Seminario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#agenda">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aliados">Aliados</a>
+          </li>
+          <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <style>
+    .cpnt-1 {
+      position: relative;
+      width: 100%;
+      height: 40rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-color: #1a1a1a;
+    }
+
+    .cpnt-1 .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .capa1 {
+      position: relative;
+      width: 100%;
+      height: 40rem;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.75) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .logo-ppal {
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 180px;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 14px;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .logo-ppal {
+        width: 360px;
+        padding: 16px;
+      }
+    }
+
+    /* Ajuste responsive para móviles */
+    @media (max-width: 576px) {
+
+      .cpnt-1,
+      .capa1 {
+        height: 18rem;
+      }
+
+      .logo-ppal {
+        width: 150px;
+        padding: 8px;
+        border-radius: 8px;
+      }
+    }
+
+    .hero-slogan {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 560px;
+      z-index: 2;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.35);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+
+    .hero-slogan .slogan-title {
+      font-family: 'Kalam', cursive;
+      font-weight: 700;
+      color: #fab62e;
+      font-size: 2.1rem;
+      line-height: 1.25;
+      margin: 0 0 12px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-slogan .slogan-subtitle {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 0 0 18px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-slogan .slogan-highlight {
+      display: inline-block;
+      position: relative;
+      font-family: 'Kalam', cursive;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.4rem;
+      line-height: 1.4;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-slogan .slogan-highlight svg {
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 10px;
+      overflow: visible;
+    }
+
+    .hero-slogan .slogan-highlight svg path {
+      stroke: #fab62e;
+      stroke-width: 3;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    @media (max-width: 991.98px) {
+      .hero-slogan {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cpnt-1 .hero-video {
+        display: none;
+      }
+
+      .cpnt-1 {
+        background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-hero-ssv.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  </style>
+  <div class="cpnt-1">
+    <video class="hero-video" autoplay muted loop playsinline
+      poster="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-hero-ssv.jpg"
+      aria-hidden="true">
+      <source
+        src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/cabezote-ssv.mp4"
+        type="video/mp4">
+    </video>
+    <div class="capa1">
+      <div class="logo logo-ppal">
+        <img class="img-responsive w-100"
+          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-10/logo-semana-seguridad-vial-blanco-amarillo.png"
+          alt="logo Semana de la Seguridad Vial">
+      </div>
+      <div class="hero-slogan">
+        <h2 class="slogan-title">Cuando Bogotá se integra, todos nos movemos mejor</h2>
+        <p class="slogan-subtitle">Súmate a esta conversación de ciudad por la vida en las vías entre el 28 de
+          septiembre y el 3 de octubre.</p>
+        <span class="slogan-highlight">Cuidar la vida nos integra.
+          <svg viewBox="0 0 220 10" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2,5 Q12,1 22,5 T42,5 T62,5 T82,5 T102,5 T122,5 T142,5 T162,5 T182,5 T202,5 T218,5" />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .cpnt-3 {
+      background-color: #f8f9fa;
+    }
+
+    .cpnt-3 .title {
+      background-color: #fab62e;
+      padding: 16px 16px 26px;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+
+    .cpnt-3 .title h2 {
+      color: #f8f9fa;
+      margin: 0;
+      font-family: 'Kalam', cursive;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .cpnt-3 h2,
+    .cpnt-3 p {
+      color: #2c2c2a;
+    }
+
+    .texto p {
+      font-size: 1.4rem;
+    }
+
+    /* Responsive <p> size for mobile and tablets */
+    @media (max-width: 991px) {
+
+      .cpnt-3 p,
+      .cpnt-3 .container .texto .paragrafo p,
+      .texto p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+
+      .cpnt-3 p,
+      .cpnt-3 .container .texto .paragrafo p,
+      .texto p {
+        font-size: 0.95rem;
+      }
+    }
+
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background-color: #000;
+    }
+
+    .video-responsive video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cpnt-3 .container .texto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cpnt-3-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .cpnt-3-ornament span {
+      display: block;
+      width: 44px;
+      height: 1px;
+      background-color: #fab62e;
+    }
+
+    .cpnt-3-ornament i {
+      font-size: 1.1rem;
+      color: #fab62e;
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-3-ornament i {
+        font-size: 2rem;
+      }
+    }
+
+    .cpnt-3-divider {
+      width: 44px;
+      height: 1px;
+      background-color: #fab62e;
+      margin: 20px auto 0;
+    }
+
+    .cpnt-3 .container .texto .paragrafo {
+      max-width: 700px;
+    }
+
+    .cpnt-3 .container .texto .paragrafo p {
+      text-align: center;
+      color: #2c2c2a;
+    }
+
+    /* Responsive title size for mobile and tablets */
+    @media (max-width: 991px) {
+      .cpnt-3 .title h2 {
+        font-size: 1.3rem;
+        padding: 8px 4vw;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-3 .title h2 {
+        font-size: 1rem;
+        padding: 6px 2vw;
+      }
+    }
+  </style>
+  <div class="cpnt-3">
+    <div class="title reveal">
+      <h2>¿Qué es la XX Semana de Seguridad Vial?</h2>
+    </div>
+    <div class="container mt-5">
+      <!--
+            <div class="video-responsive my-4 text-center reveal-scale" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FSSNQsios3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+            -->
+      <div class="texto mt-4 reveal" style="transition-delay: 0.15s;">
+        <div class="cpnt-3-ornament" aria-hidden="true">
+          <span></span>
+          <i class="bi bi-signpost-split" aria-hidden="true"></i>
+          <span></span>
+        </div>
+        <div class="paragrafo">
+          <p>
+            La XX Semana de la Seguridad Vial es un espacio de ciudad que reúne a expertos nacionales e internacionales,
+            entidades distritales y ciudadanía, para el intercambio de conocimientos y buenas prácticas, el diálogo
+            constructivo y la difusión de tendencias internacionales que aporten a la construcción de una movilidad
+            segura y protectora de la vida.
+          </p>
+        </div>
+        <div class="cpnt-3-divider" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .cpnt-3-actors-strip {
+      background-color: #f8f9fa;
+      padding-top: 0;
+      padding-bottom: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cpnt-3-actors-strip .actor-lane {
+      position: relative;
+      height: 60px;
+    }
+
+    .cpnt-3-actors-strip .actor-icon {
+      position: absolute;
+      bottom: 0;
+      height: 42px;
+      width: auto;
+      animation-name: actor-drive;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .cpnt-3-actors-strip .actor-icon.icon-bus {
+      height: 58px;
+      animation-duration: 17s;
+    }
+
+    .cpnt-3-actors-strip .actor-icon.icon-carro {
+      height: 42px;
+      animation-duration: 11s;
+      animation-delay: 1.5s;
+    }
+
+    .cpnt-3-actors-strip .actor-icon.icon-moto {
+      height: 45px;
+      animation-duration: 12.5s;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes actor-drive {
+      0% {
+        left: -12%;
+      }
+
+      100% {
+        left: 112%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-3-actors-strip .actor-lane {
+        height: 42px;
+      }
+
+      .cpnt-3-actors-strip .actor-icon.icon-bus {
+        height: 40px;
+      }
+
+      .cpnt-3-actors-strip .actor-icon.icon-carro {
+        height: 30px;
+      }
+
+      .cpnt-3-actors-strip .actor-icon.icon-moto {
+        height: 32px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cpnt-3-actors-strip .actor-icon {
+        animation: none;
+        position: static;
+        display: inline-block;
+        margin: 0 1.5rem;
+        vertical-align: bottom;
+      }
+
+      .cpnt-3-actors-strip .actor-lane {
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 0.5rem;
+      }
+    }
+  </style>
+  <div class="cpnt-3-actors-strip" aria-hidden="true">
+    <div class="actor-lane">
+      <img class="actor-icon icon-bus"
+        src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-26/icon-bus.png" alt="">
+      <img class="actor-icon icon-carro"
+        src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-26/icon-carro.png"
+        alt="">
+      <img class="actor-icon icon-moto"
+        src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-26/icon-moto.png" alt="">
+    </div>
+  </div>
+
+  <style>
+    .cpnt-4 {
+      background-color: #ffffff;
+      margin-bottom: 100px;
+    }
+
+    .cpnt-4 .title {
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .cpnt-4 .title h2 {
+      display: inline-block;
+      color: #f8f9fa;
+      background-color: #fab62e;
+      margin: 0;
+      font-family: 'Kalam', cursive;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.8rem;
+      padding: 16px 32px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 700px;
+      box-sizing: border-box;
+    }
+
+    .cpnt-4 h2,
+    .cpnt-4 p {
+      color: rgba(77, 84, 31, 1);
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+      position: relative;
+      background: #fff;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: #fff;
+    }
+
+    .card-img {
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .card-img-gradient {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70%;
+      pointer-events: none;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
+      border-radius: 0 0 15px 15px;
+    }
+
+    .card-title-gradient {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 3;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 16px 0;
+      pointer-events: none;
+      background: transparent;
+      margin: 0;
+      border-radius: 0 0 15px 15px;
+    }
+
+    .card-img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: rgba(255, 255, 255, 1);
+      color: #4d541f;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      border-radius: 15px;
+      text-align: center;
+      z-index: 4;
+    }
+
+    .card:hover .card-img-overlay,
+    .card:focus-within .card-img-overlay {
+      opacity: 1;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      background: #fab62e;
+      color: #fff;
+      margin: 0;
+      padding: 16px 0;
+      border-radius: 15px 15px 0px 0px;
+      text-align: center;
+      width: 100%;
+      align-self: stretch;
+    }
+
+    .card-text {
+      font-size: 1.2rem;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 210px;
+      text-align: center !important;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* Mejoras de accesibilidad y lectura en dispositivos táctiles */
+    @media (max-width: 991px) {
+
+      .cpnt-4 .title h2 {
+        font-size: 1.15rem;
+        padding: 10px 5vw;
+        max-width: 95vw;
+      }
+
+      .card-title-gradient,
+      .card-title {
+        font-size: 1.15rem;
+        padding: 12px 0;
+      }
+
+      .card-text {
+        font-size: 1.05rem;
+        padding: 14px;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 576px) {
+
+      .cpnt-4 .title h2 {
+        font-size: 1.1rem;
+        padding: 8px 2vw;
+        max-width: 98vw;
+      }
+
+      .card-title-gradient,
+      .card-title {
+        font-size: 1.1rem;
+        padding: 10px 0;
+      }
+
+      .card-text {
+        font-size: 0.95rem;
+        padding: 10px;
+        height: 200px;
+      }
+    }
+  </style>
+  <div class="cpnt-4" style="display: none;">
+    <!-- tres imagenes (ejes) Overlay Slide in bottom -->
+    <div class="title">
+      <h2>Ejes que nos mueven</h2>
+    </div>
+    <div class="container my-5">
+      <div class="row my-4">
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark text-white position-relative" tabindex="0">
+            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-12/eje1b.png"
+              class="card-img" alt="Eje 1">
+            <div class="card-img-gradient"></div>
+            <div class="card-title-gradient">En la calle</div>
+            <div class="card-img-overlay">
+              <h5 class="card-title">En la calle</h5>
+              <p class="card-text">Intervenimos el espacio público con infraestructura segura y acciones pedagógicas
+                para proteger la vida.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark text-white position-relative" tabindex="0">
+            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-12/eje2b.png"
+              class="card-img" alt="Eje 2">
+            <div class="card-img-gradient"></div>
+            <div class="card-title-gradient">A toda hora</div>
+            <div class="card-img-overlay">
+              <h5 class="card-title">A toda hora</h5>
+              <p class="card-text">Con controles en vía y presencia institucional, de día y de noche, protegemos la
+                vida. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark text-white position-relative" tabindex="0">
+            <img src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-12/eje3b.png"
+              class="card-img" alt="Eje 3">
+            <div class="card-img-gradient"></div>
+            <div class="card-title-gradient">Con la gente</div>
+            <div class="card-img-overlay">
+              <h5 class="card-title">Con la gente</h5>
+              <p class="card-text">Trabajamos por la gente y con ella, porque su voz es clave para construir una
+                movilidad segura. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .cpnt-5 {
+      background-color: #f8f9fa;
+      background-image: url("https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-12/image1.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 460px;
+      background-attachment: fixed;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .cpnt-5 .filter {
+      background-color: rgba(0, 0, 0, 0.62);
+      width: 100%;
+      min-height: 460px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 48px 12px;
+      box-sizing: border-box;
+    }
+
+    .cpnt-5 .seminario-eyebrow {
+      display: inline-block;
+      color: #412402;
+      background-color: #fab62e;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+
+    .cpnt-5 .seminario-title {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 1.25;
+      letter-spacing: 0.01em;
+      margin: 0 auto;
+      max-width: 760px;
+    }
+
+    .cpnt-5 .seminario-underline {
+      width: 70px;
+      height: 4px;
+      background-color: #df1010;
+      border-radius: 2px;
+      margin: 22px auto 26px;
+    }
+
+    .cpnt-5 p {
+      color: #f1efe8;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .seminario-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #df1010;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: left;
+      line-height: 1.3;
+      padding: 16px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      margin-top: 34px;
+      transition: transform 0.3s cubic-bezier(.4, 2, .3, 1), background-color 0.3s;
+    }
+
+    .seminario-cta:hover,
+    .seminario-cta:focus {
+      background-color: #af0d0d;
+      transform: scale(1.04);
+      color: #ffffff;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .seminario-cta i {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 991px) {
+      .cpnt-5 {
+        min-height: 380px;
+      }
+
+      .cpnt-5 .filter {
+        min-height: 380px;
+        padding: 36px 12px;
+      }
+
+      .cpnt-5 .seminario-title {
+        font-size: 1.7rem;
+        max-width: 92vw;
+      }
+
+      .cpnt-5 p {
+        font-size: 1.05rem;
+        max-width: 92vw;
+      }
+
+      .seminario-cta {
+        font-size: 0.9rem;
+        padding: 14px 22px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-5 {
+        min-height: 300px;
+        background-attachment: scroll;
+      }
+
+      .cpnt-5 .filter {
+        min-height: 300px;
+        padding: 28px 12px;
+      }
+
+      .cpnt-5 .seminario-eyebrow {
+        font-size: 0.7rem;
+        padding: 5px 14px;
+      }
+
+      .cpnt-5 .seminario-title {
+        font-size: 1.3rem;
+      }
+
+      .cpnt-5 p {
+        font-size: 0.9rem;
+      }
+
+      .seminario-cta {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+  <div class="cpnt-5" id="seminario">
+    <div class="filter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 col-12">
+            <span class="seminario-eyebrow reveal">Evento académico insignia</span>
+            <h2 class="seminario-title reveal" style="transition-delay: 0.1s;">XX Seminario Internacional de Seguridad
+              Vial</h2>
+            <div class="seminario-underline"></div>
+            <p class="reveal" style="transition-delay: 0.2s;">
+              El XX Seminario Internacional de Seguridad Vial es el principal encuentro académico de expertos nacionales
+              e internacionales, instituciones y ciudadanía, enfocado en compartir conocimientos, experiencias y
+              tendencias innovadoras que impulsan una movilidad segura y protectora de la vida en Bogotá y el mundo. ¡Sé
+              parte de la transformación vial y contribuye al futuro de la seguridad vial!
+            </p>
+            <div class="reveal" style="transition-delay: 0.3s;">
+              <a class="seminario-cta" href="https://forms.gle/KaNCX3jA55Dcwjaq5" target="_blank" rel="noopener">
+                <span>Inscríbete aquí al XX Seminario Internacional de Seguridad Vial</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .cpnt-7 {
+      background-color: #ffffff;
+    }
+
+    .cpnt-7 .title {
+      background-color: #fab62e;
+      padding: 16px 16px 26px;
+      margin-bottom: 20px;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+
+    .cpnt-7 .title h2 {
+      color: #fff;
+      margin: 0;
+      font-family: 'Kalam', cursive;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 991px) {
+      .cpnt-7 .title h2 {
+        font-size: 1.3rem;
+        padding: 8px 4vw;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-7 .title h2 {
+        font-size: 1.1rem;
+        padding: 6px 2vw;
+      }
+    }
+
+    .texto p {
+      font-size: 1.4rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .texto h3,
+    .texto .title-3 {
+      color: #fff;
+    }
+
+    .texto {
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cpnt-7 img {
+      max-width: 300px;
+    }
+
+    .set-tabs {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Nav-tabs full width and single row on tablets/desktop */
+    .nav-tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      border-bottom: 1px solid #dee2e6;
+      overflow-x: auto;
+    }
+
+    .nav-tabs .nav-item {
+      flex: 1 1 0;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .nav-tabs .nav-link {
+      width: 100%;
+    }
+
+    @media (max-width: 767.98px) {
+      .nav-tabs {
+        flex-wrap: wrap;
+      }
+
+      .nav-tabs .nav-item {
+        min-width: 80px;
+        flex-basis: 50%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .nav-tabs .nav-item {
+        min-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+
+    .actividad {
+      position: relative;
+    }
+
+    .actividad .actividad-bg {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .actividad .actividad-bg::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 70%;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.0) 100%);
+      z-index: 1;
+    }
+
+    .actividad-bg-mancha {
+      position: absolute;
+      top: 0;
+      z-index: 3;
+      width: 130px;
+      height: auto;
+      pointer-events: none;
+    }
+
+    .actividad-bg-mancha.mancha-left {
+      left: 0;
+    }
+
+    .actividad-bg-mancha.mancha-right {
+      right: 0;
+    }
+
+    @media (max-width: 576px) {
+      .actividad-bg-mancha {
+        width: 80px;
+      }
+    }
+
+    .actividad .texto {
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: 90%;
+      background: transparent;
+      padding: 0;
+    }
+
+    .actividad .texto h3,
+    .actividad .texto .title-3 {
+      color: #fff;
+      font-size: 1.8rem;
+      margin: 0 0 10px 0;
+      font-weight: 600;
+    }
+
+    @media (max-width: 576px) {
+      .actividad .actividad-bg {
+        min-height: 250px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .actividad .texto h3,
+      .actividad .texto .title-3 {
+        color: #fff;
+        font-size: 1.1rem;
+        margin: 0 0 10px 0;
+        font-weight: 600;
+      }
+
+      .actividad .texto {
+        bottom: 10px;
+        font-size: 1rem;
+      }
+    }
+
+    .actividad .actividad-desc {
+      padding: 1.5rem;
+      background: #e0e0e0ff;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media(min-width:768px) {
+      .actividad .actividad-desc {
+        padding: 3rem 6rem;
+        background: #e0e0e0ff;
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .actividad .actividad-desc p {
+      margin: 0;
+      color: #2d2d2d;
+      text-align: justify;
+      font-weight: 400;
+      line-height: 1.5;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 991px) {
+      .actividad .actividad-desc p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .actividad .actividad-inv {
+      padding: 20px 18px;
+      background: rgba(250, 182, 46, 0.7);
+      margin-top: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+
+    }
+
+    @media(min-width:968px) {
+      .actividad .actividad-inv {
+        padding: 32px 64px;
+        background: rgba(250, 182, 46, 0.7);
+        margin-top: 16px;
+        margin-bottom: 16px;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        justify-content: flex-start;
+      }
+    }
+
+    @media(min-width:368px) and (max-width:967px) {
+      .actividad .actividad-inv {
+        flex-direction: column;
+      }
+    }
+
+    .actividad .actividad-inv .hora {
+      min-width: 200px;
+      max-width: 300px;
+      text-align: center;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-right: none;
+      border-top: 1.5px solid #606060;
+      margin-left: 16px;
+    }
+
+    @media(min-width:968px) {
+      .actividad .actividad-inv .hora {
+        width: 260px;
+        min-width: 260px;
+        max-width: 260px;
+        flex: 0 0 260px;
+      }
+    }
+
+    .actividad .actividad-inv .hora span {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: .9rem;
+      line-height: 1.3;
+    }
+
+    @media(min-width:968px) {
+      .actividad .actividad-inv .hora {
+        border-right: 2px solid #606060 !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        margin-left: 0;
+        padding-right: 48px;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    @media(min-width:368px) and (max-width:967px) {
+      .actividad .actividad-inv .hora {
+        border-right: none;
+        border-bottom: 1.5px solid #606060;
+        margin-left: 0;
+        padding-right: 0;
+        align-items: center;
+        justify-content: flex-start;
+        padding-bottom: 16px;
+      }
+    }
+
+    .actividad .actividad-inv .hora p {
+      margin: 0 0 16px 0;
+      font-size: 1.5rem;
+      color: #4d541f;
+      font-weight: 600;
+      padding-top: 24px;
+      text-align: left;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 991px) {
+      .actividad .actividad-inv .hora p {
+        font-size: 1.2rem;
+        margin: 0 0 12px 0;
+        padding-top: 16px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .actividad .actividad-inv .hora p {
+        font-size: 1rem;
+        margin: 0 0 8px 0;
+        padding-top: 8px;
+      }
+    }
+
+    .actividad .actividad-inv .invitados {
+      min-width: 300px;
+      max-width: 750px;
+      padding: 0;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .actividad .actividad-inv .invitados-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      flex: 1 1 auto;
+    }
+
+    @media(min-width:768px) {
+      .actividad .actividad-inv .invitados {
+        min-width: 300px;
+        max-width: 750px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .actividad .actividad-inv .invitados h4 {
+      margin: 0 0 16px 0;
+      font-size: 1.2rem;
+      color: #454545;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    @media (max-width: 991px) {
+      .actividad .actividad-inv .invitados h4 {
+        font-size: 1.5rem;
+        margin: 0 0 12px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .actividad .actividad-inv .invitados h4 {
+        font-size: 1.2rem;
+        margin: 16px 0 16px 0;
+      }
+    }
+
+    .actividad .actividad-inv .invitados .bustos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .actividad .actividad-inv .invitados .bustos .busto {
+      box-sizing: border-box;
+      flex: 1 1 140px;
+      max-width: 180px;
+      min-width: 140px;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .actividad .actividad-inv .invitados .bustos .busto {
+        flex: 0 0 20%;
+        max-width: 20%;
+        min-width: 140px;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .actividad .actividad-inv .invitados .bustos .busto {
+        flex: 0 0 48%;
+        max-width: 48%;
+        min-width: 140px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .actividad .actividad-inv .invitados .bustos .busto {
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-width: 140px;
+      }
+    }
+
+    .actividad .actividad-inv .invitados .bustos .busto img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 8px;
+      max-width: 100%;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .busto.has-bio:hover img,
+    .busto.has-bio:focus img {
+      transform: scale(1.08);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .actividad .actividad-inv .invitados .bustos p {
+      color: #606060;
+      font-size: 1.2rem;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    @media (max-width: 991px) {
+      .actividad .actividad-inv .invitados .bustos p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .actividad .actividad-inv .invitados .bustos p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .actividad .actividad-inv .invitados .bustos .busto {
+      text-align: center;
+      max-width: 140px;
+      position: relative;
+    }
+
+    .busto.has-bio {
+      cursor: help;
+    }
+
+    .busto-tooltip {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      width: 260px;
+      max-width: 80vw;
+      background-color: #2c2c2a;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left;
+      padding: 14px 16px;
+      border-radius: 10px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 20;
+    }
+
+    .busto-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #2c2c2a;
+    }
+
+    .busto.has-bio:hover .busto-tooltip,
+    .busto.has-bio:focus-within .busto-tooltip,
+    .busto.has-bio:focus .busto-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 576px) {
+      .busto-tooltip {
+        width: 220px;
+        font-size: 0.78rem;
+        padding: 10px 12px;
+      }
+    }
+
+    .actividad .actividad-inv .invitados .bustos .busto img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 8px;
+    }
+
+    .actividad .actividad-inv .invitados .bustos .busto p {
+      margin: 0;
+      font-size: .85rem;
+      color: #2d2d2d;
+      font-weight: 400;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .actividad-1 .actividad-inv .invitados .bustos .busto p strong {
+      font-weight: 600;
+    }
+
+    .actividad .actividad-inv .invitados .bustos .busto span {
+      font-size: .7rem;
+    }
+
+    .coffee-break {
+      background: #e0e0e0ff;
+      text-align: center;
+      color: #2d2d2d;
+      margin-top: 20px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .coffee-break p {
+      color: #606060ff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      margin: 0;
+    }
+  </style>
+  <div class="cpnt-7" id="agenda">
+    <div class="title reveal">
+      <h2>Agéndate entre el 28 de septiembre y el 3 de octubre</h2>
+    </div>
+    <div class="container">
+      <div class="set-tabs reveal" style="transition-delay: 0.15s;">
+        <ul class="nav nav-tabs mb-2" id="ssvTabs" role="tablist" aria-label="Agenda por días">
+
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link active" id="dialun-tab" data-bs-toggle="tab" data-bs-target="#dialun" type="button"
+              role="tab" aria-controls="dialun" aria-selected="true" aria-label="Lunes 28 de septiembre">
+              <span class="fw-bold">Día 1</span>
+              <span class="separador"> | </span>
+              <span>Lunes 28 de septiembre</span>
+            </button>
+          </li>
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link" id="diamie-tab" data-bs-toggle="tab" data-bs-target="#diamie" type="button"
+              role="tab" aria-controls="diamie" aria-selected="false" aria-label="Miércoles 30 de septiembre">
+              <span class="fw-bold">Día 2</span>
+              <span class="separador"> | </span>
+              <span>Miércoles 30 de septiembre</span>
+            </button>
+          </li>
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link" id="dia1-tab" data-bs-toggle="tab" data-bs-target="#dia1" type="button"
+              role="tab" aria-controls="dia1" aria-selected="false" aria-label="Jueves 1° de octubre">
+              <span class="fw-bold">Día 3</span>
+              <span class="separador"> | </span>
+              <span>Jueves 1° de octubre</span>
+            </button>
+          </li>
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link" id="dia2-tab" data-bs-toggle="tab" data-bs-target="#dia2" type="button" role="tab"
+              aria-controls="dia2" aria-selected="false" aria-label="Viernes 2 de octubre">
+              <span class="fw-bold">Día 4</span>
+              <span class="separador"> | </span>
+              <span>Viernes 2 de octubre</span>
+            </button>
+          </li>
+
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link" id="dia3-tab" data-bs-toggle="tab" data-bs-target="#dia3" type="button" role="tab"
+              aria-controls="dia3" aria-selected="false" aria-label="Sábado 3 de Octubre">
+              <span class="fw-bold">Día 5</span>
+              <span class="separador"> | </span>
+              <span>Sábado 3 de Octubre</span>
+            </button>
+          </li>
+          <!--
+                    <li class="nav-item flex-fill" role="presentation">
+                        <button class="nav-link"
+                            id="dia4-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#dia4"
+                            type="button"
+                            role="tab"
+                            aria-controls="dia4"
+                            aria-selected="false"
+                            aria-label="Sábado 4 de Octubre">
+                            <span class="fw-bold">Día 4</span>
+                            <span class="separador"> | </span>
+                            <span>Sábado 4 de Octubre</span>
+                        </button>
+                    </li>
+                    -->
+        </ul>
+        <div class="tab-content" id="ssvTabsContent">
+          <div class="tab-pane fade show active" id="dialun" role="tabpanel" aria-labelledby="dialun-tab">
+            <div class="actividades">
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/webinar.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">Webinar ‘Conectados avanzamos: Conducción segura - Prevención del consumo de
+                      sustancias psicoactivas (SPA)’</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">¿Qué pasa cuando las sustancias psicoactivas llegan al volante?<br>Expertos
+                    en toxicología clínica explicarán cómo el alcohol y las sustancias psicoactivas afectan la atención,
+                    el tiempo de reacción, la coordinación motriz y la percepción, y por qué conducir bajo sus efectos
+                    pone en riesgo la vida. </p>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>9:00 a. m.<br><span>a 11:00 a. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Modalidad virtual con transmisión simultánea.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="diamie" role="tabpanel" aria-labelledby="diamie-tab">
+            <div class="actividades">
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-11/miercoles.jpg'); background-size: cover; background-position: bottom; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">Reconocimiento a concesionarios y operadores del SITP</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">Reconocemos a quienes hacen de la seguridad vial una prioridad.<br>TRANSMILENIO
+                    S.A. reconoce el compromiso y desempeño de concesionarios y operadores del SITP que trabajan por una
+                    operación más segura, destacando las buenas prácticas y resultados que contribuyen a cuidar la vida
+                    en las vías. </p>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>9:00 a. m.<br><span>a 11:00 a. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Auditorio principal - Instituto Distrital de Recreación y Deporte.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="dia1" role="tabpanel" aria-labelledby="dia1-tab">
+            <div class="actividades">
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-seminario-internacional.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">XX Seminario Internacional de Seguridad Vial</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">¿Cómo estamos transformando la movilidad en Bogotá para cuidar la vida?
+                    <br>Expertos nacionales e internacionales se reúnen para hablar de datos, tecnología e innovación y
+                    compartir las estrategias que están cambiando la seguridad vial en las ciudades. </p>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>8:00 a. m.<br><span>a 5:30 p. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Universidad Nacional.</h4>
+                  </div>
+                </div>
+                <!--
+                                <div class="actividad-inv">
+                                    <div class="hora">
+                                        <p>hhhhhh <br><span> ppppp </span></p>
+                                    </div>
+                                    <div class="invitados">
+                                        <h4>dddddddd</h4>
+                                        <div class="bustos">
+                                            <div class="busto has-bio" tabindex="0" aria-describedby="bio-nnnnnnnnnnn">
+                                                <img src="iiiii" alt="Busto 2">
+                                                <p><strong>nnnnnn</strong><br><span> cccccccc </span></p>
+                                                <div class="busto-tooltip" id="bio-nnnnnnnnnnn" role="tooltip">
+                                                    bbbbbbbb
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                -->
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>8:00 - 8:30 a. m. <br><span>Palabras de apertura </span></p>
+                  </div>
+                  <div class="invitados-stack">
+                    <div class="invitados">
+                      <h4>Discurso de apertura: Secretaria Distrital de Movilidad</h4>
+                      <div class="bustos">
+                        <div class="busto has-bio" tabindex="0" aria-describedby="bio-maria-fernanda">
+                          <img
+                            src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/maria-fernanda-ortiz.jpg"
+                            alt="Busto 2">
+                          <p><strong>María Fernanda Ortiz Carrascal</strong><br><span>Secretaria Distrital de
+                              Movilidad</span></p>
+                          <div class="busto-tooltip" id="bio-maria-fernanda" role="tooltip">
+                            María Fernanda Ortiz Carrascal es Ingeniera Civil con dos maestrías: una en Ingeniería de
+                            Transportes de la Universidad de los Andes y otra en Ciudades Inteligentes y Analítica
+                            Urbana de University College London. Cuenta con más de 15 años de experiencia en la
+                            estructuración, desarrollo e implementación de proyectos de infraestructura y transporte,
+                            tanto en el sector público como privado.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="invitados">
+                      <h4>Palabras de Apertura: Ministerio de Transporte</h4>
+                      <div class="bustos">
+                        <div class="busto has-bio" tabindex="0" aria-describedby="bio-elsa">
+                          <img
+                            src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/elsa-noguera.jpg"
+                            alt="Busto 2">
+                          <p><strong>Elsa Noguera</strong><br><span> Ministra de Transporte </span></p>
+                          <div class="busto-tooltip" id="bio-elsa" role="tooltip">
+                            Economista con MBA y más de 25 años de experiencia en el sector público, privado y en
+                            consultoría estratégica. Reconocida por liderar transformaciones de alto impacto en
+                            infraestructura, desarrollo urbano, sostenibilidad y finanzas, con resultados que han
+                            beneficiado a millones de ciudadanos y posicionado a los territorios como referentes de
+                            competitividad y desarrollo.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="invitados">
+                      <h4>Como referente internacional Daniela, presentará el panorama mundial en Seguridad Vial,
+                        campañas de comunicación y cambios de comportamiento.</h4>
+                      <div class="bustos">
+                        <div class="busto has-bio" tabindex="0" aria-describedby="bio-daniela-bar">
+                          <img
+                            src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/daniela-barbariol.jpg"
+                            alt="Busto 2">
+                          <p><strong>Daniela Barbariol</strong><br><span> Gerente de Comunicación de Vital Strategies en
+                              Argentina. </span></p>
+                          <div class="busto-tooltip" id="bio-daniela-bar" role="tooltip">
+                            Profesional en Comunicación Social y Publicidad, con un posgrado en Comunicaciones Aplicadas
+                            al Marketing. Con más de 20 años de experiencia en comunicación estratégica y una amplia
+                            trayectoria trabajando con agencias de publicidad. Es especialista en comunicación digital y
+                            en la integración de estrategias digitales en campañas de salud pública. Desde 2022 trabaja
+                            con la Iniciativa Bloomberg para la Seguridad Vial Global, apoyando a ciudades en el
+                            desarrollo e implementación de campañas para promover comportamientos seguros en las vías.
+                            Ha liderado campañas multimedia en Córdoba y Buenos Aires, adaptando experiencias y buenas
+                            prácticas regionales al contexto argentino.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>8:30 - 9:50 a. m. <br><span> Panel 1: <br>Decisiones que salvan vidas </span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>El uso de datos ha sido una herramienta fundamental para la toma de decisiones que en Bogotá y
+                      otras ciudades ha dado resultados positivos, fortaleciendo la confianza ciudadana en las
+                      intervenciones y ha permitido consolidar las estrategias de Seguridad Vial.</h4>
+                    <div class="bustos">
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-ismael-iba">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/ismael-ibarra.jpeg"
+                          alt="Busto 2">
+                        <p><strong>Ismael Ibarra</strong><br><span> Asesor Técnico Regional en Lesiones por Siniestros
+                            de Tráfico- Vital Strategies </span></p>
+                        <div class="busto-tooltip" id="bio-ismael-iba" role="tooltip">
+                          Investigador y consultor en salud pública con más de 6 años de experiencia en el sector
+                          público, gubernamental y académico. Apoya a organizaciones, desde universidades y gobiernos
+                          hasta organizaciones sin fines de lucro, a incrementar su producción científica, fortalecer
+                          sus sistemas de datos y vigilancia de la salud pública, y utilizar los datos para orientar
+                          políticas y programas estratégicos e innovadores.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-diego-var">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/diego-vargas.png"
+                          alt="Busto 2">
+                        <p><strong>Diego Vargas</strong><br><span> Asesor técnico regional de vigilancia de datos -
+                            Vital Strategies </span></p>
+                        <div class="busto-tooltip" id="bio-diego-var" role="tooltip">
+                          Ingeniero de Sistemas con Maestría en Ingeniería de Transporte de la Universidad Nacional de
+                          Colombia, con más de 20 años de experiencia en trabajos relacionados con bases de datos y
+                          sistemas de información aplicados a áreas de tránsito, transporte, planes de movilidad y
+                          componentes de seguridad vial (ITS). Actualmente trabaja en vigilancia de datos para seguridad
+                          vial en el marco de la Iniciativa mundial para la seguridad vial de Bloomberg Philanthropies a
+                          los gobiernos de Argentina, Colombia, Ecuador y República Dominicana y ciudades como Bogotá,
+                          Buenos Aires, Cali, Córdoba (ARG), Guayaquil, Medellín, Quito y Santo Domingo.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-julian-gonzalez">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/julian-gonzalez.jpg"
+                          alt="Busto 2">
+                        <p><strong>Julián González </strong><br><span> Jefe de la Oficina de Seguridad Vial - Secretaría
+                            Distrital de Movilidad </span></p>
+                        <div class="busto-tooltip" id="bio-julian-gonzalez" role="tooltip">
+                          Julian Andres Gonzalez Flechas, Ingeniero de Transporte y Vías de la Universidad Pedagógica y
+                          Tecnológica de Colombia (UPTC) de Tunja, especialista en Gerencia, Magíster en Ingeniería de
+                          la Universidad de La Salle, y Magíster en Gestión del Transporte de la Universidad de los
+                          Hemisferios (Ecuador).<br>Cuenta con más de 15 años de experiencia profesional en movilidad y
+                          seguridad vial, trabajando con entidades públicas como la Secretaría de Movilidad de Bogotá,
+                          TransMilenio S.A. y la Agencia Nacional de Seguridad Vial. Ha participado en proyectos de
+                          tránsito y movilidad sostenible con organismos multilaterales como el Banco Interamericano de
+                          Desarrollo (BID), el Banco Mundial, la CAF y GDCI, aportando su conocimiento en la
+                          planificación, gestión y mejora de sistemas de transporte urbano.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-olga-lucia">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/olga%20sarmiento.png"
+                          alt="Busto 2">
+                        <p><strong>Olga Lucía Sarmiento</strong><br><span> Profesora Titular de Salud Pública y
+                            directora del grupo de Epidemiología - Universidad de los Andes </span></p>
+                        <div class="busto-tooltip" id="bio-olga-lucia" role="tooltip">
+                          Profesora Titular del área de Salud Pública de la Facultad de Medicina y es la directora del
+                          grupo de Epidemiología de la Universidad de los Andes, EPIANDES. Realiza investigaciones en el
+                          área de ambiente y salud. Incluyendo el ambiente físico construido la actividad física y la
+                          obesidad en poblaciones de Latino América. Hace parte de la redes de IPEN, Urban Health Health
+                          Network of Latin America and the Caribbean y CRA. Dirige el componente de actividad física de
+                          la Encuesta Nacional de la Situación Nutricional de los Colombianos 2010 y 2015.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-ernesto-cortes">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/ernesto-cortes.jpg"
+                          alt="Busto 2">
+                        <p><strong>Ernesto Cortes</strong><br><span> Redactor General - El Tiempo </span></p>
+                        <div class="busto-tooltip" id="bio-ernesto-cortes" role="tooltip">
+                          Periodista y comunicador social con más de 30 años de trayectoria en EL TIEMPO Casa Editorial,
+                          donde ha sido subeditor político, editor de la sección Ciudad y actualmente Editor General.
+                          Lideró la puesta en marcha del sistema informativo de Citytv y creó el semanario MI ZONA, con
+                          enfoque en periodismo ciudadano. Es magíster en Periodismo de la Universidad de Miami y
+                          profesor de periodismo urbano y de opinión en la Universidad Javeriana.<br>Ha recibido
+                          importantes reconocimientos, entre ellos dos premios Rey de España (1996 y 2012), el premio de
+                          periodismo Álvaro Gómez Hurtado por su columna dominical Voy y vuelvo, y el premio SIP (2015)
+                          por el cubrimiento de la Cumbre Mundial de Ciudades. Hoy coordina el Grupo de Diarios América
+                          (GDA) capítulo Colombia y forma parte del equipo estratégico que impulsa el modelo de
+                          convergencia y multimedia en EL TIEMPO.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="coffee-break">
+                  <p>9:50 - 10:10 a. m. - Coffee Break</p>
+                </div>
+
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>10:10 - 10:40 a. m. <br><span> Análisis: Deudas saldadas y pendientes en Seguridad Vial </span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Como líder de la Sociedad Civil, Mary expondrá el estado actual de la Seguridad Vial, enmarcando
+                      los logros en la materia y el camino que aún queda por recorrer para proteger a los actores viales
+                      en la movilidad. </h4>
+                    <div class="bustos">
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-mary-bota">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/mary-bottagisio.jpg"
+                          alt="Busto 2">
+                        <p><strong>Mary Bottagisio</strong><br><span> Fundadora y Directora de la Liga contra la
+                            Violencia Vial </span></p>
+                        <div class="busto-tooltip" id="bio-mary-bota" role="tooltip">
+                          Líder y activista de la seguridad vial en Colombia y la región por más de 15 años. Fundadora
+                          de la Liga contra la Violencia Vial donde ha impulsado planes y proyectos multisectoriales
+                          para una movilidad segura y sostenible. Conferencista ante la ONU y el BID, es además
+                          fundadora de la Alianza Global de Organizaciones no Gubernamentales por la Seguridad vial.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>10:40 a. m. - 12:00 m. <br><span> Panel 2: <br>Implementar contra la corriente </span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>¿Cómo implementar estrategias impopulares que salvan vidas? El abordaje del Sistema Seguro en
+                      Seguridad Vial incluye medidas nuevas y controversiales, como la reducción de la velocidad y el
+                      control enfocado en puntos críticos, entre otros, implementarlas representa un gran reto que ha
+                      requerido de la innovación del gobierno y ha demostrado resultados al reducir siniestros viales.
+                    </h4>
+                    <div class="bustos">
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-monica-rueda">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/monica-rueda.jpg"
+                          alt="Busto 2">
+                        <p><strong>Mónica Rueda</strong><br><span> Directora de la Unidad de Mantenimiento Vial de
+                            Bogotá </span></p>
+                        <div class="busto-tooltip" id="bio-monica-rueda" role="tooltip">
+                          Mónica Rueda Peña es Ingeniera Civil egresada de la Universidad Pedagógica y Tecnológica de
+                          Colombia, especialista de la Corporación Universitaria Minuto de Dios y magister la
+                          Universidad Piloto de Colombia, ambos posgrados en Gerencia de Proyectos. Con más de 15 años
+                          de experiencia en el sector público, ha ocupado cargos estratégicos en entidades como la
+                          Empresa de Desarrollo Urbano (EDU) y el Instituto de Desarrollo Urbano (IDU), donde se
+                          desempeñó como directora técnica de Conservación de la Infraestructura. Desde estos espacios,
+                          ha liderado iniciativas clave para el mantenimiento de la malla vial de Bogotá.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-ana-monterio">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/ana-monteiro.jpeg"
+                          alt="Busto 2">
+                        <p><strong>Ana Monteiro</strong><br><span> Especialista líder en transporte - Banco
+                            Interamericano de Desarrollo </span></p>
+                        <div class="busto-tooltip" id="bio-ana-monterio" role="tooltip">
+                          Ingeniera Industrial de la Pontificia Universidad Católica de Río de Janeiro y Magíster en
+                          Ingeniería de Transporte de la Universidad de California Berkeley, cuenta con más de 25 años
+                          de experiencia en planificación estratégica, desarrollo de mercado y negocios, y análisis de
+                          inversiones en mercados internacionales. Ha brindado gestión integral de proyectos en
+                          iniciativas de transporte y logística de alto nivel para los sectores público y privado.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-matilde-lopez">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/matilde-lopez.png"
+                          alt="Busto 2">
+                        <p><strong>Matilde López</strong><br><span> Subdirectora General de Ingeniería de Tránsito
+                            Ciudad de México. </span></p>
+                        <div class="busto-tooltip" id="bio-matilde-lopez" role="tooltip">
+                          Ingeniera cuenta con experiencia en el análisis, procesamiento y gestión de información
+                          relacionada con movilidad, tránsito y hechos viales, así como en la generación de indicadores
+                          para apoyar la toma de decisiones y fortalecer las estrategias de seguridad vial. En su labor,
+                          participa en proyectos orientados a la prevención de hechos de tránsito, análisis estadístico
+                          de información, generación de indicadores y mejora de la movilidad urbana, promoviendo el uso
+                          de herramientas tecnológicas y datos para generar soluciones que contribuyan a una ciudad más
+                          segura y eficiente.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-melissa-rod">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/melissa-rodriguez.jpeg"
+                          alt="Busto 2">
+                        <p><strong>Melissa Rodriguez</strong><br><span> Coordinadora Seguridad Vial - Observatorio de
+                            Movilidad - Medellín </span></p>
+                        <div class="busto-tooltip" id="bio-melissa-rod" role="tooltip">
+                          Ingeniera Electricista con Maestría en Ingeniería y más de 8 años de experiencia liderando
+                          proyectos estratégicos en movilidad sostenible, sistemas inteligentes de transporte (ITS) y
+                          transformación digital en entornos urbanos complejos. Actualmente dirige el Centro Integrado
+                          de Tráfico y Transporte (CITRA) y el Observatorio de Movilidad de Medellín, donde lidera
+                          equipos multidisciplinarios y estructura iniciativas de alto impacto basadas en analítica de
+                          datos e inteligencia artificial. Ha gestionado proyectos de cooperación internacional con
+                          actores como KOICA (Corea) y Bloomberg Philanthropies, logrando la implementación de proyectos
+                          estratégicos en seguridad vial y movilidad inteligente.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-ezequiel-da">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/ezequiel-dantas.jpg"
+                          alt="Busto 2">
+                        <p><strong>Ezequiel Dantas</strong><br><span> Director Global de Vigilancia de Datos de
+                            Seguridad Vial - VITAL STRATEGIES </span></p>
+                        <div class="busto-tooltip" id="bio-ezequiel-da" role="tooltip">
+                          Ingeniero civil, cuenta con una maestría en Ingeniería de Transporte. Antes de unirse a Vital
+                          Strategies, se desempeñó como planificador de transporte en la ciudad de Fortaleza,
+                          colaborando con la transformación del sistema de movilidad urbana de Fortaleza hacia
+                          soluciones más sostenibles. Desde su rol supervisa el seguimiento de datos de todas las
+                          ciudades que pertenecen a la Iniciativa Bloomberg para la Seguridad Vial Mundial (BIGRS).
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="coffee-break">
+                  <p>12:00 m. - 2:00 p. m. - Almuerzo libre</p>
+                </div>
+
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>2:00 - 3:00 p. m. <br><span> Panel 3: <br> La próxima generación de cicloinfraestructura: <br>más
+                        allá de construir kilómetros</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Para desarrollar una mejor infraestructura para ciclistas, es necesario contrastar experiencias
+                      globales y regionales para identificar ideas que fortalezcan la planificación, el diseño y la
+                      seguridad de la red de cicloinfraestructura de la ciudad, pensando en calidad y experiencia, más
+                      allá de sólo kilómetros.</h4>
+                    <div class="bustos">
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-orlando-molano">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/orlando-molano.PNG"
+                          alt="Busto 2">
+                        <p><strong>Orlando Molano</strong><br><span> Director del Instituto de Desarrollo Urbano </span>
+                        </p>
+                        <div class="busto-tooltip" id="bio-orlando-molano" role="tooltip">
+                          Orlando Molano Pérez, con más 24 años de experiencia profesional en las diferentes fases de
+                          diseño, gestión y coordinación de proyectos. Amplio conocimiento de la gestión pública y
+                          privada; ha estado vinculado como Director General de Parque Nacionales Naturales de Colombia
+                          y el Instituto de Distrital de Recreación y Deporte, Asesor de Proyectos en el FONADE, Asesor
+                          de Proyectos y Técnico en el Departamento Administrativo de Acción Comunal del Distrito y como
+                          Arquitecto en SAVICOL.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-sergio-ave">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/sergio-avellaneda.jpeg"
+                          alt="Busto 2">
+                        <p><strong>Sergio Avelleda</strong><br><span> Consultor en Movilidad Urbana - Banco
+                            Interamericano de Desarrollo </span></p>
+                        <div class="busto-tooltip" id="bio-sergio-ave" role="tooltip">
+                          Abogado con un MBA en Dirección Ejecutiva. Fue Secretario de Movilidad y Transporte de la
+                          ciudad de São Paulo cuando esta se unió a Visión Cero. Fue presidente del Metro y de la
+                          Compañía Metropolitana de Trenes de São Paulo, director de Movilidad Urbana en el Centro WRI
+                          Ross para Ciudades Sostenibles en Washington, y miembro del Consejo de Administración de la
+                          Alianza para el Transporte Sostenible y Bajo en Carbono. Es Coordinador del Centro de
+                          Movilidad Urbana del Laboratorio de Ciudades y consultor del Banco Interamericano de
+                          Desarrollo, además de columnista de la Revista Ferroviária y otras publicaciones
+                          especializadas.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-diana-pira">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/usuario.png"
+                          alt="Busto 2">
+                        <p><strong>Diana Piraquive</strong><br><span> Consejera de la Bici de USME </span></p>
+                        <div class="busto-tooltip" id="bio-diana-pira" role="tooltip">
+
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-ana-lassen">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/anna-lassen.png"
+                          alt="Busto 2">
+                        <p><strong>Anna Lassen</strong><br><span> Planificadora de movilidad estratégica en la ciudad de
+                            Copenhague </span></p>
+                        <div class="busto-tooltip" id="bio-ana-lassen" role="tooltip">
+                          Anna Lassen se especializa en infraestructura ciclista en la ciudad de Copenhague. Urbanista
+                          de formación y cuenta con más de 20 años de experiencia en movilidad estratégica tanto en
+                          Dinamarca como en Suiza. Recientemente, Anna ha estado desarrollando "Infraestructura Amigable
+                          con la Bicicleta 2024", la guía de diseño de Copenhague para la infraestructura ciclista. Anna
+                          también ha participado en la colaboración estratégica sectorial entre Bogotá y Copenhague,
+                          donde ha apoyado la promoción y el desarrollo de iniciativas de movilidad sostenible. Desde
+                          2021, Anna es miembro de la junta directiva de la Asociación Danesa de Planificadores de
+                          Cicloinfraestructura, que promueve la colaboración en la planificación ciclista entre los
+                          municipios daneses.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-tatiana-gordillo">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/usuario.png"
+                          alt="Busto 2">
+                        <p><strong>Tatiana Gordillo</strong><br><span> Asesora Alcalde y ex-periodista Caracol temas
+                            Bici </span></p>
+                        <div class="busto-tooltip" id="bio-tatiana-gordillo" role="tooltip">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>3:00 - 3:20 p. m. <br><span> Lightning talks: Innovación en Seguridad Vial </span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Desde su experiencia como Asesor Regional para Latinoamérica, Oscar brindará una charla sobre
+                      los últimos avances en tecnología e innovación para la seguridad vial </h4>
+                    <div class="bustos">
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-oscar-diaz">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/oscar-diaz.png"
+                          alt="Busto 2">
+                        <p><strong>Oscar Díaz </strong><br><span> Asesor Regional para Latinoamérica FIA Foundation
+                          </span></p>
+                        <div class="busto-tooltip" id="bio-oscar-diaz" role="tooltip">
+                          Licenciado en Finanzas de la Universidad Externado de Colombia y Magíster en Asuntos
+                          Internacionales de la Universidad de Columbia, en Nueva York. Su carrera de 22 años ha sido
+                          dedicada a la planificación urbana, el transporte y la seguridad vial. Es reconocido por
+                          liderar la planificación e implementación de proyectos de transporte, incluidos sistemas de
+                          autobús de tránsito rápido (BRT) e infraestructura segura para transporte no motorizado en
+                          ciudades de América, África y Asia. Ha trabajado dos veces como Asesor Especial del Alcalde de
+                          Bogotá, Enrique Peñalosa, en el último mandato trabajó en un nuevo modelo de negocio para la
+                          renovación del sistema de autobuses BRT de la ciudad. Oscar realiza consultoría para
+                          organizaciones multilaterales y otros socios de la Fundación FIA, como ITDP y C40. Se
+                          incorporó a la Fundación FIA en abril de 2021 como Asesor para América Latina.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="coffee-break">
+                  <p>3:20 - 3:40 p. m. - Coffee Break</p>
+                </div>
+
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>3:40 - 5:00 p. m. <br><span> Panel 4:<br>Compromisos en movilidad Regional y Nacional </span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Colombia, Bogotá y la Región tienen retos conjuntos en seguridad vial como el creciente número
+                      de motociclistas, la articulación del transporte de carga y la intermodalidad. En conjunto se deben
+                      articular estrategias y tomar decisiones para avanzar en la agenda por la Seguridad Vial. </h4>
+                    <div class="bustos">
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-claudia-mercado">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/claudia-mercado.jpg"
+                          alt="Busto 2">
+                        <p><strong>Claudia Janeth Mercado Velandia</strong><br><span> Directora General Agencia Regional
+                            de Movilidad </span></p>
+                        <div class="busto-tooltip" id="bio-claudia-mercado" role="tooltip">
+                          Ingeniera civil, especialista en Tráfico, Diseño y Seguridad Vial; y en Gobierno, Gerencia y
+                          Asuntos Públicos, también es magíster en Ingeniería del Transporte de la Universidad Nacional
+                          de Colombia. Cuenta con más de quince años de experiencia en el diseño, planeación y gestión
+                          de políticas públicas de movilidad urbana y regional. Ha ocupado cargos técnicos y directivos
+                          en el Departamento Nacional de Planeación, la Secretaría Distrital de Movilidad de Bogotá,
+                          TransMilenio S.A. y la Agencia Nacional de Seguridad Vial, donde lideró estrategias orientadas
+                          a la integración del transporte, la seguridad vial y la sostenibilidad.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-alexa-ace">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/alexandra-acelas.jpg"
+                          alt="Busto 2">
+                        <p><strong>Alexandra Acelas Rodríguez</strong><br><span> Directora de la Agencia Nacional de
+                            Seguridad Vial </span></p>
+                        <div class="busto-tooltip" id="bio-alexa-ace" role="tooltip">
+                          Es abogada, especialista en Derecho Público, Derecho Contractual y Teoría de la
+                          Responsabilidad y actualmente adelanta una maestría en Gestión Pública en la Universidad de
+                          los Andes, cuenta con más de 10 años de experiencia en el sector público y una trayectoria que
+                          combina formación académica, conocimiento técnico y vocación de servicio.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-clarita-gar">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/clarita-garcia.jpg"
+                          alt="Busto 2">
+                        <p><strong>Clarita García</strong><br><span> Directora - Defencarga </span></p>
+                        <div class="busto-tooltip" id="bio-clarita-gar" role="tooltip">
+                          Abogada de la Universidad de Medellín, antes de entrar al gremio trabajó en la Fiscalía
+                          General de la Nación. Hace quince años empezó como Directora Jurídica de la asociación y en
+                          2004 asumió la dirección ejecutiva, desde ese momento dedica sus días a defender el sector
+                          “por el que pasa el desarrollo del país”.
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-mariana-san">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/usuario.png"
+                          alt="Busto 2">
+                        <p><strong>Mariana Sanguinetti</strong><br><span> Gerente Operativa del Observatorio de
+                            Movilidad y Seguridad Vial de la ciudad de Buenos Aires </span></p>
+                        <div class="busto-tooltip" id="bio-mariana-san" role="tooltip">
+
+                        </div>
+                      </div>
+                      <div class="busto has-bio" tabindex="0" aria-describedby="bio-juan-pablo">
+                        <img
+                          src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-06/juan-bocarejo.jpg"
+                          alt="Busto 2">
+                        <p><strong>Juan Pablo Bocarejo</strong><br><span> Director del Departamento de Ingeniería Civil
+                            y Ambiental - Universidad de Los Andes </span></p>
+                        <div class="busto-tooltip" id="bio-juan-pablo" role="tooltip">
+                          Juan Pablo Bocarejo es ingeniero civil de la Universidad de los Andes, magíster en Estudios
+                          Avanzados en Transporte y Ph.D. en Transporte de la Universidad de París. Su experiencia se
+                          refleja en más de 100 investigaciones y proyectos, que abordan temáticas cruciales como
+                          movilidad urbana, seguridad vial, economía del transporte, cambio climático y desigualdades,
+                          entre otras. Ha liderado numerosas iniciativas orientadas a la generación de conocimiento, que
+                          han contribuido significativamente al entendimiento y resolución de problemas en áreas clave
+                          como movilidad, transporte, ciudad y bienestar, desde una perspectiva innovadora y sostenible.
+                          Bocarejo ha participado en proyectos significativos como el diseño del primer cable urbano en
+                          Medellín, el Transmetro en Barranquilla, así como diversos estudios de metro y proyectos de
+                          transporte no motorizado. Entre los años 2016 y 2019, ocupó el cargo de secretario de
+                          Movilidad de Bogotá.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="dia2" role="tabpanel" aria-labelledby="dia2-tab">
+            <div class="actividades">
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-encuentro-promotores.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">Encuentro de Promotores Escolares</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">Los más pequeños también están transformando la movilidad en Bogotá.
+                    <br>Estudiantes y docentes de Bogotá pondrán a prueba su creatividad, liderazgo y conocimientos para
+                    proponer nuevas formas de hacer más seguros nuestros entornos y nuestras vías. </p>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>7:00 a. m.<br><span>a 12:00 m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Politécnico Grancolombiano - Sede Circunvalar.</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-reconocimiento-buenas.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">Reconocimientos en Buenas Prácticas en Seguridad Vial</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">La movilidad segura es un compromiso que a todos nos une.<br> Conoce y
+                    celebra a las organizaciones y colectivos que están convirtiendo el compromiso con la vida en
+                    acciones concretas para una movilidad más segura. </p>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>7:30 a. m.<br><span>a 12:00 m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Hotel Tequendama, Salón Rojo.</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-taller-datos.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">Taller ‘Los datos hablan: ¿Dónde intervenir para salvar más vidas?’</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">¿Qué está pasando en las vías de Bogotá? ¡Descúbrelo tú mismo!<br>Conoce una
+                    nueva herramienta para explorar datos de seguridad vial, identificar zonas de riesgo y entender cómo
+                    la información puede ayudarnos a tomar mejores decisiones para proteger la vida. </p>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>9:00 a. m.<br><span>a 12:00 m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Universidad de los Andes.</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-taller-planeacion.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">Taller ‘De la planeación a la acción: ¿Cómo construir e implementar un Plan de
+                      Gestión de Velocidad?’</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">Gestionar la velocidad es salvar vidas.<br>En este taller conocerás
+                    herramientas y pasos prácticos para diseñar planes que respondan a las necesidades de cada
+                    territorio y permitan gestionar la velocidad como una estrategia para salvar vidas en las vías. </p>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>2:00 p. m.<br><span>a 5:00 p. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Universidad de los Andes.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="dia3" role="tabpanel" aria-labelledby="dia3-tab">
+            <div class="actividades">
+              <div class="actividad">
+                <div class="actividad-bg"
+                  style="aspect-ratio: 50/9; width: 100%; max-width: 100%; height: auto; background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/bg-dia-motociclista.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+                  <div class="texto">
+                    <h3 class="title-3">Día del Motociclista</h3>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <p class="paragraph ph-1">Ser un buen motociclista también es saber que la vida, siempre, va primero.
+                    <br>Un día para fortalecer tus conocimientos, compartir con quienes comparten tu pasión y poner a
+                    prueba habilidades de conducción segura, autocuidado y convivencia en las vías con actividades
+                    exclusivas para ti, que te mueves en moto, como:</p>
+                  <ul class="moto-actividades">
+                    <li>Gran final del reto ‘Más lento, más pro’</li>
+                    <li>Experiencias de seguridad vial</li>
+                    <li>Charla ‘Detección temprana del consumo de sustancias psicoactivas (SPA)’ a cargo de TransMilenio.
+                    </li>
+                    <li>¡Y muchas más!</li>
+                  </ul>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>9:00 a. m.<br><span>a 3:00 p. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Centro Ride Pro.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="dia4" role="tabpanel" aria-labelledby="dia4-tab">
+            <div class="actividades">
+
+
+              <div class="actividad" id="actividad-18">
+                <div class="actividad-bg"
+                  style="background-image: url('https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-12/actividad_13_bg.png');">
+                  <div class="texto">
+                    <h3 class="title-3">Día del Motociclista</h3>
+                  </div>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>7:30 a. m.<br><span>a 4:00 p. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Lugar: Casa de la Cultura Ciudad Bolívar.</h4>
+                  </div>
+                </div>
+                <div class="actividad-desc">
+                  <div class="invitados">
+                    <div class="bustos">
+                      <p>Fomentar una cultura para la movilidad segura y convivencia responsable entre los motociclistas
+                        y hacía los demás usuarios de las vías. Este día busca ser un espacio de reconocimiento y
+                        aprendizaje donde los participantes puedan disfrutar de actividades recreativas, informativas y
+                        de sensibilización enfocadas en seguridad vial. En la jornada se realizará un curso
+                        teórico-práctico para motociclistas en la mañana, acompañado durante el día por una feria de
+                        servicios y el concurso “Reto Más Lento, Más Pro”, que premia el mayor dominio de la moto en una
+                        pista de habilidades. En la tarde se llevará a cabo un reconocimiento a clubes motociclistas
+                        comprometidos con la seguridad vial, quienes compartirán sus experiencias para inspirar mejores
+                        comportamientos en la vía. Finalmente, con este evento se espera dar cumplimiento al Acuerdo 550
+                        de 2014 del Concejo de Bogotá mediante el cual se establece el día distrital de los
+                        motociclistas.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>7:30 a. m.<br><span>a 11:30 a. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Curso Teórico Práctico de Conducción para Motociclistas</h4>
+                    <div class="bustos">
+                      <p>Aprende técnicas de conducción, normatividad y seguridad vial.</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 d-flex justify-content-center align-items-center">
+                        <a href="https://forms.gle/1japkZHtvoUK8fEZA" class="inscripcion-cta">
+                          <span>¡Inscríbete aquí!</span>
+                          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <style>
+                    .inscripcion-cta {
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 8px;
+                      background-color: #2c2c2a;
+                      color: #ffffff;
+                      font-weight: 700;
+                      font-size: 0.95rem;
+                      padding: 12px 26px;
+                      border-radius: 24px;
+                      text-decoration: none;
+                      transition: transform 0.3s cubic-bezier(.4, 2, .3, 1), background-color 0.3s;
+                    }
+
+                    .inscripcion-cta:hover,
+                    .inscripcion-cta:focus {
+                      transform: scale(1.05);
+                      background-color: #1a1a1a;
+                      color: #ffffff;
+                      text-decoration: none;
+                      outline: none;
+                    }
+
+                    .inscripcion-cta i {
+                      font-size: 1.05rem;
+                      display: inline-block;
+                      animation: inscripcion-arrow-slide 1.2s ease-in-out infinite;
+                    }
+
+                    @keyframes inscripcion-arrow-slide {
+
+                      0%,
+                      100% {
+                        transform: translateX(0);
+                      }
+
+                      50% {
+                        transform: translateX(5px);
+                      }
+                    }
+                  </style>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>10:00 a. m.<br><span>a 4:00 p. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Feria de Servicios para Motociclistas</h4>
+                    <div class="bustos">
+                      <p>Información sobre mantenimiento preventivo, diagnóstico de emisiones, orientación en trámites y
+                        mucho más.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>10:00 a. m.<br><span>a 4:00 p. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Reto &lsquo;Más lento, más pro&rsquo;</h4>
+                    <div class="bustos">
+                      <p>El concurso "Reto &lsquo;Más lento, más pro&rsquo;" es una competencia diseñada para evaluar y
+                        premiar las habilidades de control y equilibrio de los motociclistas en una pista de
+                        habilidades. Los participantes deberán completar un recorrido a baja velocidad, demostrando su
+                        destreza para maniobrar la moto sin perder el equilibrio ni tocar el suelo con los pies. El
+                        objetivo del concurso es fomentar la práctica de técnicas de conducción segura y promover la
+                        importancia del control del vehículo en situaciones de tráfico. Los ganadores serán reconocidos
+                        por su habilidad y se les otorgarán premios que incentiven su compromiso con la seguridad vial.
+                      </p>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 d-flex justify-content-center align-items-center">
+                        <a href="https://forms.gle/bPhxWCXoFp44TGxD6" class="inscripcion-cta">
+                          <span>¡Inscríbete aquí!</span>
+                          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="actividad-inv">
+                  <div class="hora">
+                    <p>2:00 p. m.<br><span>a 3:00 p. m.</span></p>
+                  </div>
+                  <div class="invitados">
+                    <h4>Reconocimiento a Clubes Motociclistas Comprometidos con la Seguridad Vial: Un homenaje a quienes
+                      están más comprometidos con la seguridad vial</h4>
+                    <div class="bustos">
+                      <p>Este reconocimiento tiene como objetivo destacar y celebrar el compromiso de los clubes
+                        motociclistas que han demostrado un liderazgo ejemplar en la promoción de la seguridad vial.
+                        Durante el evento, se reconocerán las iniciativas y acciones llevadas a cabo por estos clubes
+                        para fomentar prácticas seguras entre sus miembros y la comunidad en general. Los clubes serán
+                        invitados a compartir sus experiencias y estrategias exitosas, inspirando a otros a seguir su
+                        ejemplo. Este reconocimiento busca fortalecer la colaboración entre los motociclistas y las
+                        autoridades de tránsito para mejorar la seguridad en las vías.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .set-tabs .nav-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        border-bottom: 1px solid #dee2e6;
+        overflow-x: clip;
+      }
+
+      .set-tabs .nav-item {
+        flex: 1 1 0;
+        text-align: center;
+        min-width: 120px;
+      }
+
+      .set-tabs .nav-link {
+        width: 100%;
+        padding: 0.75rem 0.25rem;
+        font-size: 1rem;
+        min-width: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      @media (max-width: 767.98px) {
+        .set-tabs .nav-tabs {
+          flex-wrap: wrap;
+        }
+
+        .set-tabs .nav-item {
+          min-width: 80px;
+          flex-basis: 50%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .set-tabs .nav-link {
+          font-size: 0.85rem;
+          padding: 0.5rem 0.1rem;
+        }
+
+        .set-tabs .nav-tabs {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        .set-tabs .nav-item {
+          min-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+
+      .set-tabs .nav-link .fw-bold {
+        font-size: 1.3rem;
+        color: #fab62e;
+      }
+
+      .set-tabs .nav-link .separador {
+        color: #fab62e;
+      }
+
+      .set-tabs .nav-link span {
+        font-size: 1rem;
+        color: #7f7a7a;
+      }
+
+      .set-tabs .nav-link.active {
+        background-color: #fab62e !important;
+        color: #fff !important;
+        border-radius: 0;
+      }
+
+      .set-tabs .nav-link.active .fw-bold,
+      .set-tabs .nav-link.active .separador,
+      .set-tabs .nav-link.active span {
+        color: #fff !important;
+      }
+
+      .moto-actividades {
+        margin: 16px auto 0;
+        max-width: 700px;
+        padding-left: 1.4rem;
+        color: #2d2d2d;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 1.2rem;
+        text-align: left;
+      }
+
+      .moto-actividades li {
+        margin-bottom: 8px;
+      }
+
+      @media (max-width: 991px) {
+        .moto-actividades {
+          font-size: 0.9rem;
+        }
+      }
+
+      .tab-content .texto {
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .tab-content .texto h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .tab-content .texto p {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 576px) {
+        .tab-content .texto {
+          padding: 12px;
+        }
+
+        .tab-content .texto h3 {
+          font-size: 1rem;
+        }
+
+        .tab-content .texto p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </div>
+
+
+  <style>
+    .cpnt-8 {
+      background-color: #dfdfddff;
+      padding-bottom: 50px;
+    }
+
+    .cpnt-8 .title-container {
+      background-color: #fab62e;
+      padding: 16px 16px 26px;
+      margin-bottom: 20px;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+
+    .cpnt-8 .title-container h2 {
+      color: #fff;
+      margin: 0;
+      font-family: 'Kalam', cursive;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 991px) {
+      .cpnt-8 .title-container h2 {
+        font-size: 1.3rem;
+        padding: 8px 4vw;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-8 .title-container h2 {
+        font-size: 1.1rem;
+        padding: 6px 2vw;
+      }
+    }
+
+    .cpnt-8 .desc-wrapper {
+      position: relative;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      max-width: 700px;
+      margin: 0 auto 44px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      animation: aliados-bubble-bob 3s ease-in-out infinite;
+    }
+
+    .cpnt-8 .desc-wrapper::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -14px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 14px solid #ffffff;
+    }
+
+    @keyframes aliados-bubble-bob {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cpnt-8 .desc-wrapper {
+        animation: none;
+      }
+    }
+
+    .cpnt-8 .desc {
+      color: #2c2c2a;
+      font-size: 1.25rem;
+      text-align: justify;
+      margin: 0;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 991px) {
+      .cpnt-8 .desc {
+        font-size: 1.05rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-8 .desc {
+        font-size: 0.9rem;
+      }
+    }
+
+    .cpnt-8 .logos-marquee-wrap {
+      overflow: hidden;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .cpnt-8 .logos-marquee-wrap::before,
+    .cpnt-8 .logos-marquee-wrap::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cpnt-8 .logos-marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, #dfdfddff, transparent);
+    }
+
+    .cpnt-8 .logos-marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(270deg, #dfdfddff, transparent);
+    }
+
+    .cpnt-8 .logos {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      width: max-content;
+      animation: cpnt8-marquee 40s linear infinite;
+    }
+
+    .cpnt-8 .logos-set {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .cpnt-8 .logos-marquee-wrap:hover .logos {
+      animation-play-state: paused;
+    }
+
+    @keyframes cpnt8-marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .cpnt-8 .logo-bg {
+      background-color: #ffffff;
+      border-radius: 20rem;
+      padding: 1.3rem;
+      box-shadow: 0 0.188rem 0.375rem #00000029;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 128px;
+      height: 128px;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .cpnt-8 .logo-bg:hover {
+      transform: scale(1.08);
+    }
+
+    .cpnt-8 .logo-bg:hover .logo {
+      filter: grayscale(0%);
+    }
+
+    .cpnt-8 .logo {
+      max-width: 78px;
+      max-height: 78px;
+      width: auto;
+      height: auto;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cpnt-8 .logos {
+        animation: none;
+        width: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cpnt-8 .logos-set[aria-hidden="true"] {
+        display: none;
+      }
+    }
+
+    .cpnt-8 .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      background-color: #fcc324;
+      color: #262019;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 1.05rem 2.3rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(252, 195, 36, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      animation: cpnt8-cta-breathe 2.4s ease-in-out infinite;
+    }
+
+    .cpnt-8 .btn:hover,
+    .cpnt-8 .btn:focus {
+      background-color: #e6b100;
+      color: #262019;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 30px rgba(252, 195, 36, 0.5);
+      animation-play-state: paused;
+      text-decoration: none;
+      outline: none;
+    }
+
+    @keyframes cpnt8-cta-breathe {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 22px rgba(252, 195, 36, 0.35);
+      }
+
+      50% {
+        box-shadow: 0 8px 28px rgba(252, 195, 36, 0.65), 0 0 0 8px rgba(252, 195, 36, 0.12);
+      }
+    }
+
+    .cpnt-8 .btn .icono-aliado {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      order: 2;
+      animation: cpnt8-hand-tap 1.8s ease-in-out infinite;
+      transform-origin: 70% 85%;
+    }
+
+    @keyframes cpnt8-hand-tap {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      12% {
+        transform: translateY(4px) rotate(-6deg);
+      }
+
+      24% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    .cpnt-8 .btn .icono-aliado .lineas {
+      opacity: 0;
+      animation: cpnt8-lineas-fade 1.8s ease-in-out infinite;
+    }
+
+    @keyframes cpnt8-lineas-fade {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      30% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cpnt-8 .btn {
+        animation: none;
+      }
+
+      .cpnt-8 .btn .icono-aliado,
+      .cpnt-8 .btn .icono-aliado .lineas {
+        animation: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cpnt-8 .btn {
+        font-size: 0.95rem;
+        padding: 0.9rem 1.8rem;
+      }
+    }
+  </style>
+  <div class="cpnt-8" id="aliados">
+    <div class="title-container reveal">
+      <h2>Nuestros aliados</h2>
+    </div>
+    <div class="container">
+      <div class="desc-wrapper reveal" style="transition-delay: 0.1s;">
+        <p class="desc">
+          Durante el desarrollo de la XX Semana de la Seguridad Vial, contamos con el apoyo de diferentes empresas,
+          organizaciones nacionales e internacionales que nos acompañan en los eventos y lanzamientos de la semana, y
+          que velan por la seguridad vial. A todos, un agradecimiento especial.
+        </p>
+      </div>
+      <div class="logos-marquee-wrap reveal" style="transition-delay: 0.2s;">
+        <div class="logos">
+          <div class="logos-set">
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-cesv.jpg"
+                alt="Logo CESV">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-hero.png"
+                alt="Logo Hero">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-honda.png"
+                alt="Logo Honda">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-suzuki.png"
+                alt="Logo Suzuki">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-akt.png"
+                alt="Logo AKT">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-allianz.png"
+                alt="Logo Allianz">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-andi-motocicletas.jpg"
+                alt="Logo ANDI Motocicletas">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-defencarga.jpeg"
+                alt="Logo Defencarga">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-movemos-colombia-andi.png"
+                alt="Logo Movemos Colombia ANDI">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-yamaha.png"
+                alt="Logo Yamaha">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/logo-3m.png"
+                alt="Logo 3M">
+            </div>
+          </div>
+          <div class="logos-set" aria-hidden="true">
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-cesv.jpg"
+                alt="Logo CESV">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-hero.png"
+                alt="Logo Hero">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-honda.png"
+                alt="Logo Honda">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-suzuki.png"
+                alt="Logo Suzuki">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-akt.png"
+                alt="Logo AKT">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-allianz.png"
+                alt="Logo Allianz">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-andi-motocicletas.jpg"
+                alt="Logo ANDI Motocicletas">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-defencarga.jpeg"
+                alt="Logo Defencarga">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-movemos-colombia-andi.png"
+                alt="Logo Movemos Colombia ANDI">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-25/logo-yamaha.png"
+                alt="Logo Yamaha">
+            </div>
+            <div class="logo-bg">
+              <img class="logo img-responsive"
+                src="https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-09-09/logo-3m.png"
+                alt="Logo 3M">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center my-4">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScjhmlxHhhAGK8tvTFZFPlNTITK4d-Tx6PoCBaFvvME90PS6A/viewform"
+          class="btn" role="button" target="_blank">
+          Vincúlate como aliado
+          <svg class="icono-aliado" aria-hidden="true" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+            fill="none" stroke="#262019" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <g class="lineas">
+              <path d="M6 10 L11 12" />
+              <path d="M4 18 L10 18" />
+              <path d="M7 26 L12 24" />
+            </g>
+            <path d="M20 22 V10.5 a2.5 2.5 0 0 1 5 0 V21" />
+            <path d="M25 21 V8.5 a2.5 2.5 0 0 1 5 0 V21" />
+            <path d="M30 21 V11.5 a2.5 2.5 0 0 1 5 0 V23" />
+            <path
+              d="M35 23 V16.5 a2.5 2.5 0 0 1 5 0 V29 c0 7 -4.5 12 -11 12 h-3 c-4 0 -6.5 -1.5 -9 -5 l-6.5 -9 a2.6 2.6 0 0 1 4 -3.3 L15 29" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <style>
+    footer {
+      background-color: #000;
+      color: #f8f9fa !important;
+      padding: 50px 0;
+    }
+
+    footer a {
+      color: #f8f9fa;
+      text-decoration: none;
+      transition: transform 0.2s, filter 0.2s;
+      display: inline-block;
+      margin: 0 18px;
+      /* Aumenta la distancia entre los logos */
+    }
+
+    footer a:hover img {
+      transform: scale(1.2);
+      filter: brightness(0) sepia(1) hue-rotate(60deg) saturate(5) invert(0.2);
+    }
+
+    footer img {
+      filter: brightness(0) invert(1);
+      transition: transform 0.2s, filter 0.2s;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      text-align: center;
+      color: #f8f9fa !important;
+
+    }
+  </style>
+  <footer>
+    <div class="container">
+      <div class="d-flex flex-column align-items-center" style="gap: 18px;">
+        <div class="d-flex justify-content-center">
+          <a href="https://www.facebook.com/secretariamovilidadbogota" class="mx-2" aria-label="Facebook">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"
+              width="30">
+          </a>
+          <a href="https://twitter.com/SectorMovilidad" class="mx-2" aria-label="Twitter">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" width="30">
+          </a>
+          <a href="https://www.instagram.com/sectormovilidad/" class="mx-2" aria-label="Instagram">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"
+              width="30">
+          </a>
+          <a href="https://www.youtube.com/user/secretariamovilidad?feature=guide" class="mx-2" aria-label="YouTube">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="30">
+          </a>
+        </div>
+        <p>&copy; 2026 Secretaría Distrital de Movilidad - Bogotá, D.C. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.www.gov.co/layout/v4/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    // Indicador deslizante compartido del menú de navegación
+    document.addEventListener('DOMContentLoaded', function () {
+      var navList = document.getElementById('navLinksList');
+      var indicator = document.getElementById('navIndicator');
+      if (!navList || !indicator) return;
+
+      var links = navList.querySelectorAll('.nav-link');
+
+      function moveIndicator(el) {
+        var linkRect = el.getBoundingClientRect();
+        var listRect = navList.getBoundingClientRect();
+        indicator.style.left = (linkRect.left - listRect.left) + 'px';
+        indicator.style.width = linkRect.width + 'px';
+        indicator.style.opacity = '1';
+      }
+
+      links.forEach(function (link) {
+        link.addEventListener('mouseenter', function () { moveIndicator(link); });
+        link.addEventListener('focus', function () { moveIndicator(link); });
+      });
+
+      navList.addEventListener('mouseleave', function () {
+        indicator.style.opacity = '0';
+      });
+
+      navList.addEventListener('focusout', function (e) {
+        if (!navList.contains(e.relatedTarget)) {
+          indicator.style.opacity = '0';
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        indicator.style.opacity = '0';
+      });
+    });
+  </script>
+  <script>
+    // Revelado progresivo de módulos al hacer scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+      if (!revealEls.length) return;
+
+      // Si el navegador no soporta IntersectionObserver, mostrar todo directamente
+      if (!('IntersectionObserver' in window)) {
+        revealEls.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -60px 0px'
+      });
+
+      revealEls.forEach(function (el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+  <script>
+    // Ícono decorativo de esquina (izquierda o derecha, aleatorio) sobre cada imagen de actividad
+    document.addEventListener('DOMContentLoaded', function () {
+      var manchaIzquierda = 'https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-26/mancha-izquierda.png';
+      var manchaDerecha = 'https://www.movilidadbogota.gov.co/sites/default/files/micrositios/assets/2026-08-26/mancha-derecha.png';
+
+      document.querySelectorAll('.actividad .actividad-bg').forEach(function (bgEl) {
+        var esIzquierda = Math.random() < 0.5;
+        var mancha = document.createElement('img');
+        mancha.src = esIzquierda ? manchaIzquierda : manchaDerecha;
+        mancha.alt = '';
+        mancha.setAttribute('aria-hidden', 'true');
+        mancha.className = 'actividad-bg-mancha ' + (esIzquierda ? 'mancha-left' : 'mancha-right');
+        bgEl.appendChild(mancha);
+      });
+    });
+  </script>
+</body>
+
+</html>

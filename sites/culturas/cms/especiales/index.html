@@ -3,14 +3,27 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
     padding: 0 !important;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    box-shadow: none;
   }
   #especiales-grid .card.card-news:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border-color: #C9C9C9;
+  }
+  /* Encabezado de grupo: Información histórica */
+  #especiales-historico-titulo {
+    color: #4C4C4C;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  #especiales-historico-descripcion {
+    color: #7E7E7E;
+    font-size: 0.9rem;
+    margin-bottom: 0;
   }
   #especiales-grid .card.card-news > a:first-child {
     display: block;
@@ -19,11 +32,18 @@
     margin: 0 !important;
   }
   #especiales-grid .card.card-news .card-news-img {
-    height: 200px;
+    height: 110px;
     object-fit: cover;
     width: 100%;
     display: block;
     border-radius: 0 !important;
+    filter: grayscale(60%);
+    opacity: 0.85;
+    transition: filter 0.25s ease, opacity 0.25s ease;
+  }
+  #especiales-grid .card.card-news:hover .card-news-img {
+    filter: grayscale(0%);
+    opacity: 1;
   }
   #especiales-grid .card.card-news .card-body {
     flex: 1;
@@ -39,8 +59,10 @@
     text-overflow: unset !important;
     -webkit-line-clamp: unset !important;
     display: block !important;
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: none;
+    margin-bottom: 0.4rem;
   }
   #especiales-grid .card.card-news .card-body p,
   #especiales-grid .card.card-news .card-body p.txt-card-temas {
@@ -51,8 +73,9 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     flex: 1;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.4;
     margin-bottom: 0.5rem;
   }
@@ -61,6 +84,12 @@
     margin-top: auto;
     margin-bottom: 0 !important;
     text-align: left !important;
+    font-size: 0.8rem;
+    opacity: 0.75;
+    transition: opacity 0.25s ease;
+  }
+  #especiales-grid .card.card-news:hover .card-body a.btn-main {
+    opacity: 1;
   }
   #especiales-grid .col-md-6.col-12.col-xl-3 > .p-3 {
     height: 100%;
@@ -68,6 +97,16 @@
 </style>
 
 <div class="container mt-5">
+
+  <!--INICIO INFORMACIÓN HISTÓRICA-->
+  <div class="row">
+    <div class="col-12">
+      <h2 id="especiales-historico-titulo">Información histórica</h2>
+      <p id="especiales-historico-descripcion">Repositorio de especiales digitales desarrollados en periodos de gobierno anteriores. Contenido de consulta y memoria institucional.</p>
+      <hr />
+    </div>
+  </div>
+
   <div class="row" id="especiales-grid">
     <!--INICIO TARJETA-->
     <div class="col-md-6 col-12 col-xl-3">
