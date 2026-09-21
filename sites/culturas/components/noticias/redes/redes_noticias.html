@@ -1,0 +1,121 @@
+<!-- Redes -->
+
+<div class="btn-group" role="group" aria-label="Compartir en redes sociales">
+
+	<a class="btn" href="javascript:void(0);" role="button" id="getlink" aria-label="Copiar enlace de la noticia">
+		<img src="/_catalogs/masterpage/Gobierno/img/icons/icon-share.png" alt="Compartir">
+	</a>
+
+	<!--<a class="btn" href="#" id="share-instagram" role="button"><img src="/_catalogs/masterpage/Gobierno/img/icons/purpura/icon-instagram-purpura.png" alt="Compartir en Instagram"></a>-->
+	<a class="btn" href="javascript:void(0);" id="share-facebook" role="button" aria-label="Compartir en Facebook">
+		<img src="/_catalogs/masterpage/Gobierno/img/icons/purpura/icon-facebook-purpura.png" alt="Compartir en Facebook">
+	</a>
+	<a class="btn" href="javascript:void(0);" id="share-x" role="button" aria-label="Compartir en X">
+		<img src="/_catalogs/masterpage/Gobierno/img/icons/purpura/icon-twitter-purpura.png" alt="Compartir en X">
+	</a>
+	<a class="btn" href="javascript:void(0);" id="share-whatsapp" role="button" aria-label="Compartir en WhatsApp">
+		<img src="/_catalogs/masterpage/Gobierno/img/icons/purpura/icon-wa-violeta-contorno.png" alt="Compartir en WhatsApp">
+	</a>
+
+</div>
+
+<script>
+(function () {
+	// URL limpia de la noticia (sin query ni hash)
+	function getUrlLimpia() {
+		return window.location.href.split('?')[0].split('#')[0];
+	}
+
+	// Aviso temporal tipo toast
+	function mostrarAviso(mensaje) {
+		var aviso = document.createElement('div');
+		aviso.setAttribute('role', 'status');
+		aviso.style.cssText = [
+			'position:fixed',
+			'z-index:9999999',
+			'left:50%',
+			'bottom:32px',
+			'transform:translateX(-50%) translateY(12px)',
+			'display:flex',
+			'align-items:center',
+			'gap:10px',
+			'padding:12px 20px',
+			'background:#0943B5',
+			'color:#ffffff',
+			'border-radius:8px',
+			'box-shadow:0 4px 16px rgba(0,0,0,0.18)',
+			'font-family:"Nunito Sans", Verdana, sans-serif',
+			'font-size:15px',
+			'font-weight:600',
+			'opacity:0',
+			'transition:opacity .2s ease, transform .2s ease'
+		].join(';');
+		aviso.innerHTML = '<span aria-hidden="true" style="font-size:18px; line-height:1;">&#10003;</span>' +
+			'<span></span>';
+		aviso.lastChild.textContent = mensaje;
+		document.body.appendChild(aviso);
+
+		// Forzar el reflow para que la transición de entrada se aplique
+		requestAnimationFrame(function () {
+			aviso.style.opacity = '1';
+			aviso.style.transform = 'translateX(-50%) translateY(0)';
+		});
+
+		setTimeout(function () {
+			aviso.style.opacity = '0';
+			aviso.style.transform = 'translateX(-50%) translateY(12px)';
+			setTimeout(function () {
+				if (aviso.parentNode) {
+					aviso.parentNode.removeChild(aviso);
+				}
+			}, 200);
+		}, 2000);
+	}
+
+	// Copiar enlace al portapapeles
+	var botonCopiar = document.getElementById('getlink');
+	if (botonCopiar) {
+		botonCopiar.addEventListener('click', function () {
+			var url = getUrlLimpia();
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(url).then(function () {
+					mostrarAviso('URL copiada');
+				}).catch(function () {
+					alert('No fue posible copiar el enlace.');
+				});
+			} else {
+				alert('Tu navegador no soporta la función de copiar.');
+			}
+		});
+	}
+
+	// Compartir en redes sociales
+	function abrirVentana(url) {
+		window.open(url, '_blank', 'noopener,noreferrer,width=600,height=500');
+	}
+
+	var enlace = encodeURIComponent(getUrlLimpia());
+	var titulo = encodeURIComponent(document.title || '');
+
+	var botonFacebook = document.getElementById('share-facebook');
+	if (botonFacebook) {
+		botonFacebook.addEventListener('click', function () {
+			abrirVentana('https://www.facebook.com/sharer/sharer.php?u=' + enlace);
+		});
+	}
+
+	var botonX = document.getElementById('share-x');
+	if (botonX) {
+		botonX.addEventListener('click', function () {
+			abrirVentana('https://twitter.com/intent/tweet?url=' + enlace + '&text=' + titulo);
+		});
+	}
+
+	var botonWhatsapp = document.getElementById('share-whatsapp');
+	if (botonWhatsapp) {
+		botonWhatsapp.addEventListener('click', function () {
+			abrirVentana('https://api.whatsapp.com/send?text=' + titulo + '%20' + enlace);
+		});
+	}
+})();
+</script>
