@@ -1,225 +1,225 @@
 <div class="set-wrapper rendicion-cuentas">
     <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const contenedor = document.getElementById("videos-audiencia");
-                if (!contenedor) return;
-                const hoy = new Date();
-                hoy.setHours(0, 0, 0, 0);
-                const items = Array.from(contenedor.querySelectorAll(".video-item"));
-                items.forEach(function (item) {
-                    const fechaTexto = item.getAttribute("data-fecha");
-                    const fecha = new Date(fechaTexto + "T00:00:00");
-                    if (fecha < hoy) {
-                        item.classList.add("vencido");
-                    } else {
-                        item.classList.remove("vencido");
-                    }
-                    const video = item.querySelector("video");
-                    if (video) {
-                        video.addEventListener("play", function () {
-                            item.classList.add("reproduciendo");
-                        });
-                        video.addEventListener("pause", function () {
-                            item.classList.remove("reproduciendo");
-                        });
-                        video.addEventListener("ended", function () {
-                            item.classList.remove("reproduciendo");
-                        });
-                    }
+                document.addEventListener("DOMContentLoaded", function () {
+                    const contenedor = document.getElementById("videos-audiencia");
+                    if (!contenedor) return;
+                    const hoy = new Date();
+                    hoy.setHours(0, 0, 0, 0);
+                    const items = Array.from(contenedor.querySelectorAll(".video-item"));
+                    items.forEach(function (item) {
+                        const fechaTexto = item.getAttribute("data-fecha");
+                        const fecha = new Date(fechaTexto + "T00:00:00");
+                        if (fecha < hoy) {
+                            item.classList.add("vencido");
+                        } else {
+                            item.classList.remove("vencido");
+                        }
+                        const video = item.querySelector("video");
+                        if (video) {
+                            video.addEventListener("play", function () {
+                                item.classList.add("reproduciendo");
+                            });
+                            video.addEventListener("pause", function () {
+                                item.classList.remove("reproduciendo");
+                            });
+                            video.addEventListener("ended", function () {
+                                item.classList.remove("reproduciendo");
+                            });
+                        }
+                    });
+                    items.sort(function (a, b) {
+                        const fechaA = new Date(a.getAttribute("data-fecha") + "T00:00:00");
+                        const fechaB = new Date(b.getAttribute("data-fecha") + "T00:00:00");
+                        const aYaRealizado = fechaA < hoy;
+                        const bYaRealizado = fechaB < hoy;
+                        if (aYaRealizado !== bYaRealizado) {
+                            return aYaRealizado ? 1 : -1;
+                        }
+                        return fechaA - fechaB;
+                    });
+                    items.forEach(function (item) {
+                        contenedor.appendChild(item);
+                    });
                 });
-                items.sort(function (a, b) {
-                    const fechaA = new Date(a.getAttribute("data-fecha") + "T00:00:00");
-                    const fechaB = new Date(b.getAttribute("data-fecha") + "T00:00:00");
-                    const aYaRealizado = fechaA < hoy;
-                    const bYaRealizado = fechaB < hoy;
-                    if (aYaRealizado !== bYaRealizado) {
-                        return aYaRealizado ? 1 : -1;
-                    }
-                    return fechaA - fechaB;
-                });
-                items.forEach(function (item) {
-                    contenedor.appendChild(item);
-                });
-            });
-        </script><style>
-            .rendicion-cuentas {
-                font-size: 0.95rem;
-                line-height: 1.7;
-            }
-            .rendicion-cuentas .seccion-rc {
-                padding: 1.5rem 0;
-                border-bottom: 1px solid #dee2e6;
-            }
-            .rendicion-cuentas .seccion-rc:last-child {
-                border-bottom: none;
-            }
-            .rendicion-cuentas .seccion-rc h5 {
-                font-size: 1.1rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-            }
-            .rendicion-cuentas .intro-text {
-                padding: 1.5rem 0;
-                border-bottom: 1px solid #dee2e6;
-            }
-            .rendicion-cuentas details {
-                margin-bottom: 2px;
-            }
-            .rendicion-cuentas summary {
-                background-color: #A6B517 !important;
-                color: #000 !important;
-                font-weight: 600 !important;
-                font-size: 1rem !important;
-                padding: 0.85rem 1.25rem !important;
-                cursor: pointer;
-                list-style: none;
-                display: flex !important;
-                align-items: center;
-                justify-content: space-between;
-                visibility: visible !important;
-                opacity: 1 !important;
-            }
-            .rendicion-cuentas summary::-webkit-details-marker {
-                display: none;
-            }
-            .rendicion-cuentas summary::after {
-                content: "▼";
-                font-size: 0.7rem;
-                transition: transform 0.3s;
-            }
-            .rendicion-cuentas details[open] summary::after {
-                transform: rotate(180deg);
-            }
-            .rendicion-cuentas details[open] summary {
-                background-color: #8a9a12 !important;
-            }
-            .rendicion-cuentas .panel-body {
-                background-color: #fff !important;
-                color: #252525 !important;
-                padding: 1.5rem !important;
-                font-size: 0.9rem !important;
-                line-height: 1.7 !important;
-                border: 1px solid #dee2e6;
-                border-top: none;
-            }
-            .rendicion-cuentas .panel-body p,
-            .rendicion-cuentas .panel-body ul,
-            .rendicion-cuentas .panel-body ol,
-            .rendicion-cuentas .panel-body li {
-                font-size: 0.9rem !important;
-                color: #252525 !important;
-                visibility: visible !important;
-            }
-            .rendicion-cuentas .panel-body a {
-                color: #004884 !important;
-                font-weight: 600;
-                text-decoration: underline;
-            }
-            .rendicion-cuentas .panel-body a:hover {
-                color: #003366 !important;
-            }
-            .rendicion-cuentas .links-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-            }
-            .rendicion-cuentas .link-sdm {
-                background: #A6B517;
-                color: #000 !important;
-                font-weight: 600;
-                padding: 0.5rem 1rem;
-                border-radius: 30px;
-                text-decoration: none !important;
-                font-size: 0.8rem;
-                transition: background 0.3s ease, box-shadow 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                min-height: 36px;
-                min-width: 44px;
-                line-height: 1.4;
-            }
-            .rendicion-cuentas .link-sdm:hover {
-                background: #8a9a12;
-                color: #000 !important;
-            }
-            .rendicion-cuentas .link-sdm:focus-visible {
-                outline: 3px solid #004884;
-                outline-offset: 2px;
-                box-shadow: 0 0 0 3px rgba(0, 72, 132, 0.3);
-            }
-            .rendicion-cuentas .link-sdm:active {
-                background: #768f0f;
-            }
-            .rendicion-cuentas .videos-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1.25rem;
-                justify-content: center;
-            }
-            .rendicion-cuentas .video-item {
-                flex: 0 1 280px;
-                text-align: center;
-                transition: opacity 0.3s ease, filter 0.3s ease;
-            }
-            .rendicion-cuentas .video-item p {
-                font-weight: 600;
-                margin-bottom: 0.4rem;
-                font-size: 0.85rem;
-                color: #252525;
-            }
-            .rendicion-cuentas .video-item video,
-            .rendicion-cuentas .video-item img {
-                border-radius: 4px;
-                width: 100%;
-            }
-            .rendicion-cuentas .fecha-audiencia {
-                display: block;
-                font-size: 0.78rem;
-                font-weight: 500;
-                color: #555;
-                margin-top: -0.2rem;
-                margin-bottom: 0.5rem;
-            }
-            .rendicion-cuentas .video-item.vencido {
-                opacity: 0.55;
-                filter: grayscale(100%);
-            }
-            .rendicion-cuentas .video-item.vencido::after {
-                content: "Ya se realizó";
-                display: inline-block;
-                margin-top: 0.4rem;
-                padding: 0.2rem 0.6rem;
-                border-radius: 20px;
-                background-color: #6c757d;
-                color: #fff;
-                font-size: 0.72rem;
-                font-weight: 600;
-            }
-            .rendicion-cuentas .video-item.vencido.reproduciendo {
-                opacity: 1;
-                filter: none;
-            }
-            .rendicion-cuentas .video-item.vencido.reproduciendo::after {
-                content: "Reproduciendo";
-                background-color: #A6B517;
-                color: #000;
-            }
-            @media (max-width: 576px) {
+            </script><style>
+                .rendicion-cuentas {
+                    font-size: 0.95rem;
+                    line-height: 1.7;
+                }
+                .rendicion-cuentas .seccion-rc {
+                    padding: 1.5rem 0;
+                    border-bottom: 1px solid #dee2e6;
+                }
+                .rendicion-cuentas .seccion-rc:last-child {
+                    border-bottom: none;
+                }
+                .rendicion-cuentas .seccion-rc h5 {
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                }
+                .rendicion-cuentas .intro-text {
+                    padding: 1.5rem 0;
+                    border-bottom: 1px solid #dee2e6;
+                }
+                .rendicion-cuentas details {
+                    margin-bottom: 2px;
+                }
+                .rendicion-cuentas summary {
+                    background-color: #A6B517 !important;
+                    color: #000 !important;
+                    font-weight: 600 !important;
+                    font-size: 1rem !important;
+                    padding: 0.85rem 1.25rem !important;
+                    cursor: pointer;
+                    list-style: none;
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: space-between;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+                .rendicion-cuentas summary::-webkit-details-marker {
+                    display: none;
+                }
+                .rendicion-cuentas summary::after {
+                    content: "▼";
+                    font-size: 0.7rem;
+                    transition: transform 0.3s;
+                }
+                .rendicion-cuentas details[open] summary::after {
+                    transform: rotate(180deg);
+                }
+                .rendicion-cuentas details[open] summary {
+                    background-color: #8a9a12 !important;
+                }
+                .rendicion-cuentas .panel-body {
+                    background-color: #fff !important;
+                    color: #252525 !important;
+                    padding: 1.5rem !important;
+                    font-size: 0.9rem !important;
+                    line-height: 1.7 !important;
+                    border: 1px solid #dee2e6;
+                    border-top: none;
+                }
+                .rendicion-cuentas .panel-body p,
+                .rendicion-cuentas .panel-body ul,
+                .rendicion-cuentas .panel-body ol,
+                .rendicion-cuentas .panel-body li {
+                    font-size: 0.9rem !important;
+                    color: #252525 !important;
+                    visibility: visible !important;
+                }
+                .rendicion-cuentas .panel-body a {
+                    color: #004884 !important;
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+                .rendicion-cuentas .panel-body a:hover {
+                    color: #003366 !important;
+                }
                 .rendicion-cuentas .links-container {
-                    gap: 0.4rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
                 }
                 .rendicion-cuentas .link-sdm {
-                    flex: 1 1 calc(50% - 0.4rem);
-                    text-align: center;
-                    font-size: 0.75rem;
-                    padding: 0.5rem 0.75rem;
+                    background: #A6B517;
+                    color: #000 !important;
+                    font-weight: 600;
+                    padding: 0.5rem 1rem;
+                    border-radius: 30px;
+                    text-decoration: none !important;
+                    font-size: 0.8rem;
+                    transition: background 0.3s ease, box-shadow 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 36px;
+                    min-width: 44px;
+                    line-height: 1.4;
+                }
+                .rendicion-cuentas .link-sdm:hover {
+                    background: #8a9a12;
+                    color: #000 !important;
+                }
+                .rendicion-cuentas .link-sdm:focus-visible {
+                    outline: 3px solid #004884;
+                    outline-offset: 2px;
+                    box-shadow: 0 0 0 3px rgba(0, 72, 132, 0.3);
+                }
+                .rendicion-cuentas .link-sdm:active {
+                    background: #768f0f;
+                }
+                .rendicion-cuentas .videos-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1.25rem;
+                    justify-content: center;
                 }
                 .rendicion-cuentas .video-item {
-                    flex: 1 1 100%;
+                    flex: 0 1 280px;
+                    text-align: center;
+                    transition: opacity 0.3s ease, filter 0.3s ease;
                 }
-            }
-        </style>
+                .rendicion-cuentas .video-item p {
+                    font-weight: 600;
+                    margin-bottom: 0.4rem;
+                    font-size: 0.85rem;
+                    color: #252525;
+                }
+                .rendicion-cuentas .video-item video,
+                .rendicion-cuentas .video-item img {
+                    border-radius: 4px;
+                    width: 100%;
+                }
+                .rendicion-cuentas .fecha-audiencia {
+                    display: block;
+                    font-size: 0.78rem;
+                    font-weight: 500;
+                    color: #555;
+                    margin-top: -0.2rem;
+                    margin-bottom: 0.5rem;
+                }
+                .rendicion-cuentas .video-item.vencido {
+                    opacity: 0.55;
+                    filter: grayscale(100%);
+                }
+                .rendicion-cuentas .video-item.vencido::after {
+                    content: "Ya se realizó";
+                    display: inline-block;
+                    margin-top: 0.4rem;
+                    padding: 0.2rem 0.6rem;
+                    border-radius: 20px;
+                    background-color: #6c757d;
+                    color: #fff;
+                    font-size: 0.72rem;
+                    font-weight: 600;
+                }
+                .rendicion-cuentas .video-item.vencido.reproduciendo {
+                    opacity: 1;
+                    filter: none;
+                }
+                .rendicion-cuentas .video-item.vencido.reproduciendo::after {
+                    content: "Reproduciendo";
+                    background-color: #A6B517;
+                    color: #000;
+                }
+                @media (max-width: 576px) {
+                    .rendicion-cuentas .links-container {
+                        gap: 0.4rem;
+                    }
+                    .rendicion-cuentas .link-sdm {
+                        flex: 1 1 calc(50% - 0.4rem);
+                        text-align: center;
+                        font-size: 0.75rem;
+                        padding: 0.5rem 0.75rem;
+                    }
+                    .rendicion-cuentas .video-item {
+                        flex: 1 1 100%;
+                    }
+                }
+            </style>
     <hr>
     <div class="accordion" data-accordion-id="ec8e52a595bd272a124b063adc709cff8">
         <div class="accordion-item">
@@ -288,6 +288,12 @@
                         <li data-list-item-id="ed6cb0335661b21417758082cac66a12c">
                             <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-08/informe_rdc_los_martires.pdf">Informe de Gestión 2025 Localidad Los Mártires</a>
                         </li>
+                        <li data-list-item-id="ed2e14765df0c249495e0b911eb9b62ca">
+                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-11/informe_rdc_usme_gestion_2025.pdf">Informe de Gestión 2025 Localidad Usme</a>
+                        </li>
+                        <li data-list-item-id="e56beeff88818433963c007860be76e68">
+                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-24/informe_rdc_bosa_gestion_2025_0.pptx">Informe de Gestión 2025 Localidad Bosa</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -300,47 +306,71 @@
                 <div class="accordion-body">
                     <div>
                         <div class="videos-container" id="videos-audiencia">
+                            <div class="video-item" data-fecha="2026-10-14">
+                                <p>
+                                    Bosa
+                                </p>
+                                <p>
+                                    <span class="fecha-audiencia">14 de octubre de 2026</span>
+                                </p>
+                                <p>
+                                    <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Bosa">
+                                        <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-24/rdcbosa%20-caro.mp4" type="video/mp4">
+                                        Tu navegador no soporta la reproducción de video.
+                                        <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-24/rdcbosa%20-caro.mp4">Descargar
+                                            video Bosa</a>
+                                    </video>
+                                </p>
+                            </div>
                             <!--
+                                                                                                                                                                        
                                                                                                                                             
                                                                                                                 
                                                                                     
                                                         
                             <div class="video-item" data-fecha="2026-xxx-xxx">
-                                                                                                                                                                                             
+                                                                                                                                                                                                                             
+                                                                                                                                
                                                                                                 
                                                                 
                                 <p>
-                                                                                                            tttttt                               
+                                                                                                                                                tttttt                               
+                                                                                                                                            
                                                                                                         
                                                                     
                                 </p>
-                                                                                                                                                                                            
+                                                                                                                                                                                                                            
+                                                                                                                                
                                                                                                 
                                                                 
                                 <p>
-                                                                                                            <span class="fecha-audiencia">ffffffff</span>                               
+                                                                                                                                                <span class="fecha-audiencia">ffffffff</span>                               
+                                                                                                                                            
                                                                                                         
                                                                     
                                 </p>
+                                                                                                                                                                                                
                                                                                                                                                                 
                                                                                                                                 
                                                                                                 
                                                                 
                                 <p>
-                                                                                                            <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - tttttt">
-                                                                                                                <source src="lllllllll" type="video/mp4">
-                                                                                                                Tu navegador no soporta la reproducción de video.
-                                                                                                                <a href="lllllllll">Descargar video tttttt</a>
-                                                                                                            </video>                    
+                                                                                                                                                <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - tttttt">
+                                                                                                                                                    <source src="lllllllll" type="video/mp4">
+                                                                                                                                                    Tu navegador no soporta la reproducción de video.
+                                                                                                                                                    <a href="lllllllll">Descargar video tttttt</a>
+                                                                                                                                                </video>                    
+                                                                                                                                            
                                                                                                         
                                                                     
                                 </p>
-                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+                                                                                                                            
                                                                                             
                                                             
                             </div>
-                                                                                
-                                                                                    -->
+                                                                                                            
+                                                                                                                -->
                             <div class="video-item" data-fecha="2026-09-30">
                                 <p>
                                     Usme
@@ -350,11 +380,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Usme">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-10/18.%20usme.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-10/18.%20usme.mp4">Descargar
-                                                                                video Usme</a>
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-10/18.%20usme.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-10/18.%20usme.mp4">Descargar
+                                                                                                                    video Usme</a>
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-09-23">
@@ -366,11 +396,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Los Mártires">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-03/los%20_martires.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-03/los%20_martires.mp4">Descargar
-                                                                                video Los Mártires</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-03/los%20_martires.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-09-03/los%20_martires.mp4">Descargar
+                                                                                                                    video Los Mártires</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-09-16">
@@ -382,11 +412,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Barrios Unidos">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/16.%20barrios%20unidos.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/16.%20barrios%20unidos.mp4">Descargar
-                                                                                video Barrios Unidos </a>
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/16.%20barrios%20unidos.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/16.%20barrios%20unidos.mp4">Descargar
+                                                                                                                    video Barrios Unidos </a>
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-09-09">
@@ -398,11 +428,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Ciudad Bolívar">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/15.%20ciudad%20bolivar.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/15.%20ciudad%20bolivar.mp4">Descargar
-                                                                                video Ciudad Bolívar</a>
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/15.%20ciudad%20bolivar.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-21/15.%20ciudad%20bolivar.mp4">Descargar
+                                                                                                                    video Ciudad Bolívar</a>
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-09-02">
@@ -414,11 +444,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - San Cristóbal">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/san-cristobal-260805.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/san-cristobal-260805.mp4">Descargar
-                                                                                video San Cristóbal</a>
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/san-cristobal-260805.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/san-cristobal-260805.mp4">Descargar
+                                                                                                                    video San Cristóbal</a>
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-08-26">
@@ -430,11 +460,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Puente Aranda">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/puente-aranda-260805.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/puente-aranda-260805.mp4">Descargar
-                                                                                video Puente Aranda</a>
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/puente-aranda-260805.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/puente-aranda-260805.mp4">Descargar
+                                                                                                                    video Puente Aranda</a>
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-08-19">
@@ -446,11 +476,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Suba">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/suba-260805.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/suba-260805.mp4">Descargar
-                                                                                video Suba</a>
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/suba-260805.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-05/suba-260805.mp4">Descargar
+                                                                                                                    video Suba</a>
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-07-08">
@@ -462,11 +492,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Santa Fe">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4">Descargar
-                                                                                video Santa Fe</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/5.%20santa%20fe.mp4">Descargar
+                                                                                                                    video Santa Fe</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-07-09">
@@ -478,11 +508,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Mujeres">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4">Descargar
-                                                                                video Mujeres</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/6.%20mujeres.mp4">Descargar
+                                                                                                                    video Mujeres</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-07-22">
@@ -494,11 +524,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Chapinero">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4">Descargar
-                                                                                video Chapinero</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/7.%20chapinero.mp4">Descargar
+                                                                                                                    video Chapinero</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-07-29">
@@ -510,11 +540,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Fontibón">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4">Descargar
-                                                                                video Fontibón</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/8.%20fontibon.mp4">Descargar
+                                                                                                                    video Fontibón</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-07-15">
@@ -526,11 +556,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Kennedy">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4">Descargar
-                                                                                video Kennedy</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-14/10.%20kennedy.mp4">Descargar
+                                                                                                                    video Kennedy</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-08-12">
@@ -542,11 +572,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - La Candelaria">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4">Descargar
-                                                                                video La Candelaria</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-25/candelaria.mp4">Descargar
+                                                                                                                    video La Candelaria</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-08-05">
@@ -558,11 +588,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Tunjuelito">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-04/tunjuelito-260804.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-04/tunjuelito-260804.mp4">Descargar
-                                                                                video Tunjuelito</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-04/tunjuelito-260804.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-08-04/tunjuelito-260804.mp4">Descargar
+                                                                                                                    video Tunjuelito</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-04-24">
@@ -585,11 +615,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Jóvenes y bicicleta">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4">Descargar
-                                                                                video Jóvenes y bicicleta</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-07-06/2.%20jovenes%20y%20bicicleta.mp4">Descargar
+                                                                                                                    video Jóvenes y bicicleta</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-06-24">
@@ -601,11 +631,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Usaquén">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4">Descargar
-                                                                                video Usaquén</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/usaquen.mp4">Descargar
+                                                                                                                    video Usaquén</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                             <div class="video-item" data-fecha="2026-07-01">
@@ -617,11 +647,11 @@
                                 </p>
                                 <p>
                                     <video controls="" preload="metadata" aria-label="Video invitación audiencia pública - Teusaquillo">
-                                                                            <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4" type="video/mp4">
-                                                                            Tu navegador no soporta la reproducción de video.
-                                                                            <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4">Descargar
-                                                                                video Teusaquillo</a>.
-                                                                        </video>
+                                                                                                                <source src="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4" type="video/mp4">
+                                                                                                                Tu navegador no soporta la reproducción de video.
+                                                                                                                <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-06-19/teusaquillo.mp4">Descargar
+                                                                                                                    video Teusaquillo</a>.
+                                                                                                            </video>
                                 </p>
                             </div>
                         </div>
