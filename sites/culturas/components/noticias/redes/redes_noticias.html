@@ -21,6 +21,13 @@
 
 <script>
 (function () {
+	// Guarda anti doble ejecución: si el bloque se renderiza más de una vez
+	// (comportamiento típico del gestor de contenidos), no volvemos a inicializar.
+	if (window.__redesNoticiasInit) {
+		return;
+	}
+	window.__redesNoticiasInit = true;
+
 	// URL limpia de la noticia (sin query ni hash)
 	function getUrlLimpia() {
 		return window.location.href.split('?')[0].split('#')[0];
@@ -72,50 +79,93 @@
 		}, 2000);
 	}
 
-	// Copiar enlace al portapapeles
-	var botonCopiar = document.getElementById('getlink');
-	if (botonCopiar) {
-		botonCopiar.addEventListener('click', function () {
-			var url = getUrlLimpia();
-			if (navigator.clipboard && navigator.clipboard.writeText) {
-				navigator.clipboard.writeText(url).then(function () {
-					mostrarAviso('URL copiada');
-				}).catch(function () {
-					alert('No fue posible copiar el enlace.');
-				});
-			} else {
-				alert('Tu navegador no soporta la función de copiar.');
-			}
-		});
+	// Copiado con fallback para navegadores/contextos sin Clipboard API
+	function copiarTexto(texto) {
+		if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(texto).then(function () {
+				mostrarAviso('URL copiada');
+			}).catch(function () {
+				copiarConFallback(texto);
+			});
+		} else {
+			copiarConFallback(texto);
+		}
 	}
 
-	// Compartir en redes sociales
+	function copiarConFallback(texto) {
+		var campo = document.createElement('textarea');
+		campo.value = texto;
+		campo.setAttribute('readonly', '');
+		campo.style.position = 'absolute';
+		campo.style.left = '-9999px';
+		document.body.appendChild(campo);
+		campo.select();
+		var ok = false;
+		try {
+			ok = document.execCommand('copy');
+		} catch (e) {
+			ok = false;
+		}
+		document.body.removeChild(campo);
+		mostrarAviso(ok ? 'URL copiada' : 'No fue posible copiar el enlace');
+	}
+
+	// Registra un handler de click en un botón, descartando cualquier listener
+	// previo. Clonar el nodo elimina los listeners heredados de scripts legados
+	// (p. ej. el bloque "Compartir redes1" de la plantilla), evitando que el
+	// clic dispare dos ventanas.
+	function enlazarLimpio(id, manejador) {
+		var boton = document.getElementById(id);
+		if (!boton || boton.dataset.redesBind === '1') {
+			return;
+		}
+		// Reemplaza el botón por un clon sin listeners y opera sobre el clon.
+		var limpio = boton.cloneNode(true);
+		boton.parentNode.replaceChild(limpio, boton);
+		limpio.dataset.redesBind = '1';
+		limpio.addEventListener('click', manejador);
+	}
+
+	// Abre una única ventana de compartir
 	function abrirVentana(url) {
 		window.open(url, '_blank', 'noopener,noreferrer,width=600,height=500');
 	}
 
-	var enlace = encodeURIComponent(getUrlLimpia());
-	var titulo = encodeURIComponent(document.title || '');
+	function inicializar() {
+		// Copiar enlace al portapapeles
+		enlazarLimpio('getlink', function () {
+			copiarTexto(getUrlLimpia());
+		});
 
-	var botonFacebook = document.getElementById('share-facebook');
-	if (botonFacebook) {
-		botonFacebook.addEventListener('click', function () {
+		// Compartir en redes: se leen URL y título en el momento del clic
+		enlazarLimpio('share-facebook', function () {
+			var enlace = encodeURIComponent(getUrlLimpia());
 			abrirVentana('https://www.facebook.com/sharer/sharer.php?u=' + enlace);
 		});
-	}
 
-	var botonX = document.getElementById('share-x');
-	if (botonX) {
-		botonX.addEventListener('click', function () {
+		enlazarLimpio('share-x', function () {
+			var enlace = encodeURIComponent(getUrlLimpia());
+			var titulo = encodeURIComponent(document.title || '');
 			abrirVentana('https://twitter.com/intent/tweet?url=' + enlace + '&text=' + titulo);
 		});
-	}
 
-	var botonWhatsapp = document.getElementById('share-whatsapp');
-	if (botonWhatsapp) {
-		botonWhatsapp.addEventListener('click', function () {
+		enlazarLimpio('share-whatsapp', function () {
+			var enlace = encodeURIComponent(getUrlLimpia());
+			var titulo = encodeURIComponent(document.title || '');
 			abrirVentana('https://api.whatsapp.com/send?text=' + titulo + '%20' + enlace);
 		});
+	}
+
+	// El script legado engancha sus listeners en DOMContentLoaded. Ejecutamos
+	// la inicialización DESPUÉS de ese evento para que el clonado descarte esos
+	// listeners heredados. Si el DOM ya está listo, se corre al instante.
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', function () {
+			// setTimeout(0) asegura correr tras los demás handlers de DOMContentLoaded
+			setTimeout(inicializar, 0);
+		});
+	} else {
+		setTimeout(inicializar, 0);
 	}
 })();
 </script>
