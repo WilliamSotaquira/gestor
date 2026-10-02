@@ -94,6 +94,13 @@
           "localPath": "sites/culturas/landings/ejemplo-landing/index.html",
           "publicPath": "/ejemplo-landing",
           "description": "Ejemplo de landing page para Culturas"
+        },
+        {
+          "slug": "intranet",
+          "type": "landings",
+          "localPath": "sites/culturas/landings/intranet/index.html",
+          "publicPath": "/intranet",
+          "description": "Intranet del Ministerio de las Culturas, las Artes y los Saberes - Home (maqueta interna, SharePoint)"
         }
       ]
     },

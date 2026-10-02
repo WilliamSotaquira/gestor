@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Intranet - Ministerio de las Culturas, las Artes y los Saberes</title>
+    <meta name="description" content="Intranet del Ministerio de las Culturas, las Artes y los Saberes. Acceso interno a noticias, aplicativos y servicios de la entidad.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- ============================================================
+         1. ENCABEZADO
+         Logo + menú principal + zona derecha (buscador, waffle, perfil)
+         ============================================================ -->
+    <header class="site-header" role="banner">
+        <div class="container site-header__inner">
+            <!-- Logo institucional (placeholder en baja fidelidad) -->
+            <a class="site-header__brand" href="#" aria-label="Intranet - Ministerio de las Culturas, las Artes y los Saberes">
+                <span class="site-header__logo" aria-hidden="true">LOGO</span>
+                <span class="site-header__brand-text">
+                    Ministerio de las Culturas,<br>las Artes y los Saberes
+                </span>
+            </a>
+
+            <!-- Botón hamburguesa (móvil) -->
+            <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú de navegación">
+                <span class="site-header__toggle-bar" aria-hidden="true"></span>
+                <span class="site-header__toggle-bar" aria-hidden="true"></span>
+                <span class="site-header__toggle-bar" aria-hidden="true"></span>
+            </button>
+
+            <!-- Navegación principal -->
+            <nav class="site-nav" id="menu-principal" aria-label="Navegación principal">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="#" aria-current="page">Inicio</a>
+                    </li>
+                    <li class="site-nav__item site-nav__item--has-menu">
+                        <a class="site-nav__link" href="#" aria-haspopup="true" aria-expanded="false">
+                            La entidad
+                            <span class="site-nav__caret" aria-hidden="true">▾</span>
+                        </a>
+                        <ul class="site-nav__submenu">
+                            <li><a href="#">Misión y visión</a></li>
+                            <li><a href="#">Organigrama</a></li>
+                            <li><a href="#">Dependencias</a></li>
+                            <li><a href="#">Sedes y direcciones</a></li>
+                            <li><a href="#">Directorio</a></li>
+                        </ul>
+                    </li>
+                    <li class="site-nav__item site-nav__item--has-menu">
+                        <a class="site-nav__link" href="#" aria-haspopup="true" aria-expanded="false">
+                            Aplicativos
+                            <span class="site-nav__caret" aria-hidden="true">▾</span>
+                        </a>
+                        <ul class="site-nav__submenu">
+                            <li><a href="#">Sistema 1</a></li>
+                            <li><a href="#">Sistema 2</a></li>
+                            <li><a href="#">Sistema 3</a></li>
+                            <li><a href="#">Ver todas</a></li>
+                        </ul>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="#">Sala de prensa</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="#">Ética y transparencia</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Zona derecha: buscador + waffle + perfil -->
+            <div class="site-header__actions">
+                <button class="site-header__action" type="button" aria-label="Buscar en la intranet">
+                    <span class="site-header__icon" aria-hidden="true">🔍</span>
+                </button>
+                <button class="site-header__action" type="button" aria-label="Accesos a aplicativos" aria-haspopup="true" aria-expanded="false">
+                    <span class="site-header__icon site-header__icon--waffle" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                    </span>
+                </button>
+                <button class="site-header__action site-header__profile" type="button" aria-label="Perfil de usuario" aria-haspopup="true" aria-expanded="false">
+                    <span class="site-header__avatar" aria-hidden="true">MA</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         CONTENIDO PRINCIPAL (se completa en tasks siguientes)
+         ============================================================ -->
+    <main id="contenido" role="main">
+
+        <!-- ============================================================
+             2. ACTUALIDAD (ventana a Sala de prensa)
+             Carrusel de destacadas (izquierda) + lista de 3 recientes (derecha)
+             ============================================================ -->
+        <section class="section section--actualidad" aria-labelledby="actualidad-titulo">
+            <div class="container">
+                <div class="section__head">
+                    <h2 class="section__title" id="actualidad-titulo">Actualidad</h2>
+                </div>
+
+                <div class="actualidad">
+                    <!-- Destacada: carrusel -->
+                    <div class="actualidad__destacada">
+                        <div class="carrusel" data-carrusel="destacadas" aria-roledescription="carrusel" aria-label="Noticias destacadas">
+                            <div class="carrusel__viewport">
+                                <ul class="carrusel__track">
+                                    <li class="carrusel__slide" aria-roledescription="diapositiva" aria-label="1 de 3">
+                                        <article class="destacada">
+                                            <div class="destacada__media placeholder" aria-hidden="true"></div>
+                                            <div class="destacada__body">
+                                                <span class="etiqueta">Sala de prensa</span>
+                                                <h3 class="destacada__title">La cultura nos une en los territorios</h3>
+                                                <p class="destacada__text">El Ministerio continúa fortaleciendo los procesos culturales en todas las regiones del país.</p>
+                                                <a class="btn btn--primary" href="#">Ver noticia completa</a>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="carrusel__slide" aria-roledescription="diapositiva" aria-label="2 de 3" hidden>
+                                        <article class="destacada">
+                                            <div class="destacada__media placeholder" aria-hidden="true"></div>
+                                            <div class="destacada__body">
+                                                <span class="etiqueta">Sala de prensa</span>
+                                                <h3 class="destacada__title">Segunda noticia destacada (placeholder)</h3>
+                                                <p class="destacada__text">Texto ilustrativo de la segunda destacada del carrusel.</p>
+                                                <a class="btn btn--primary" href="#">Ver noticia completa</a>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="carrusel__slide" aria-roledescription="diapositiva" aria-label="3 de 3" hidden>
+                                        <article class="destacada">
+                                            <div class="destacada__media placeholder" aria-hidden="true"></div>
+                                            <div class="destacada__body">
+                                                <span class="etiqueta">Sala de prensa</span>
+                                                <h3 class="destacada__title">Tercera noticia destacada (placeholder)</h3>
+                                                <p class="destacada__text">Texto ilustrativo de la tercera destacada del carrusel.</p>
+                                                <a class="btn btn--primary" href="#">Ver noticia completa</a>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="carrusel__controls">
+                                <button class="carrusel__btn" type="button" data-carrusel-prev aria-label="Noticia anterior">‹</button>
+                                <div class="carrusel__dots" role="tablist" aria-label="Seleccionar diapositiva">
+                                    <button class="carrusel__dot is-active" type="button" aria-label="Ir a la diapositiva 1" data-carrusel-dot="0"></button>
+                                    <button class="carrusel__dot" type="button" aria-label="Ir a la diapositiva 2" data-carrusel-dot="1"></button>
+                                    <button class="carrusel__dot" type="button" aria-label="Ir a la diapositiva 3" data-carrusel-dot="2"></button>
+                                </div>
+                                <button class="carrusel__btn" type="button" data-carrusel-next aria-label="Noticia siguiente">›</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lista de recientes -->
+                    <div class="actualidad__recientes">
+                        <ul class="noticias">
+                            <li class="noticia">
+                                <a class="noticia__link" href="#">
+                                    <span class="noticia__thumb placeholder" aria-hidden="true"></span>
+                                    <span class="noticia__info">
+                                        <span class="etiqueta etiqueta--sm">Destacada</span>
+                                        <span class="noticia__title">MinCulturas fortalece los procesos culturales en los territorios</span>
+                                        <span class="noticia__fecha">10 de octubre de 2026</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="noticia">
+                                <a class="noticia__link" href="#">
+                                    <span class="noticia__thumb placeholder" aria-hidden="true"></span>
+                                    <span class="noticia__info">
+                                        <span class="etiqueta etiqueta--sm">Institucional</span>
+                                        <span class="noticia__title">Convocatorias internas de formación</span>
+                                        <span class="noticia__fecha">07 de octubre de 2026</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="noticia">
+                                <a class="noticia__link" href="#">
+                                    <span class="noticia__thumb placeholder" aria-hidden="true"></span>
+                                    <span class="noticia__info">
+                                        <span class="etiqueta etiqueta--sm">Bienestar</span>
+                                        <span class="noticia__title">Así vivimos la Semana del Bienestar</span>
+                                        <span class="noticia__fecha">03 de octubre de 2026</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="actualidad__ver-todas" href="#">Ver todas las noticias</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             3. AVISO INSTITUCIONAL
+             Banda delgada full-width, varios avisos rotando
+             ============================================================ -->
+        <aside class="aviso" aria-label="Avisos institucionales" data-aviso-rotador data-aviso-intervalo="7000">
+            <div class="container">
+                <div class="aviso__inner">
+                <span class="aviso__badge">
+                    <span class="aviso__icon" aria-hidden="true">📣</span>
+                    Aviso institucional
+                </span>
+                <ul class="aviso__list" aria-live="polite">
+                    <li class="aviso__item" data-aviso-item>
+                        <span class="aviso__msg">Mantenimiento programado en el gestor documental este sábado 12 de octubre.</span>
+                        <a class="aviso__link" href="#">Ver detalles</a>
+                    </li>
+                    <li class="aviso__item" data-aviso-item hidden>
+                        <span class="aviso__msg">Nueva política de teletrabajo disponible para consulta (placeholder).</span>
+                        <a class="aviso__link" href="#">Ver detalles</a>
+                    </li>
+                </ul>
+                <div class="aviso__controls">
+                    <button class="aviso__btn" type="button" data-aviso-prev aria-label="Aviso anterior">‹</button>
+                    <button class="aviso__btn" type="button" data-aviso-pausa aria-label="Pausar rotación de avisos" aria-pressed="false">⏸</button>
+                    <button class="aviso__btn" type="button" data-aviso-next aria-label="Aviso siguiente">›</button>
+                </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ============================================================
+             4. CAMPAÑAS
+             Tarjetas con fondo propio; texto al 60% izquierdo; tarjeta clicable.
+             Una o varias (grilla ajustable).
+             ============================================================ -->
+        <section class="section section--campanas" aria-labelledby="campanas-titulo">
+            <div class="container">
+                <div class="section__head">
+                    <h2 class="section__title" id="campanas-titulo">Campañas</h2>
+                    <a class="section__link" href="#">Ver todas</a>
+                </div>
+
+                <!-- Tarjetas de campaña: fondo propio por tarjeta, texto al 60% izquierdo,
+                     toda la tarjeta es clicable. Una o varias (grilla ajustable). -->
+                <ul class="campanas">
+                    <li>
+                        <a class="campana-card campana-card--a" href="#">
+                            <span class="campana-card__body">
+                                <span class="etiqueta">Bienestar</span>
+                                <span class="campana-card__title">Es tiempo de cuidarnos</span>
+                                <span class="campana-card__text">Salud mental y equilibrio laboral para la entidad.</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="campana-card campana-card--b" href="#">
+                            <span class="campana-card__body">
+                                <span class="etiqueta">Territorios</span>
+                                <span class="campana-card__title">La cultura transforma territorios</span>
+                                <span class="campana-card__text">Las iniciativas culturales llegan a las regiones.</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="campana-card campana-card--c" href="#">
+                            <span class="campana-card__body">
+                                <span class="etiqueta">Diversidad</span>
+                                <span class="campana-card__title">Diversidad que nos une</span>
+                                <!-- El párrafo descriptivo es opcional: esta tarjeta no lo incluye -->
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             5. APLICATIVOS
+             Fila de accesos ícono + nombre, cantidad ajustable
+             ============================================================ -->
+        <section class="section section--aplicativos" aria-labelledby="aplicativos-titulo">
+            <div class="container">
+                <div class="section__head">
+                    <div>
+                        <h2 class="section__title" id="aplicativos-titulo">Aplicativos</h2>
+                        <p class="section__subtitle">Accede rápidamente a los sistemas y aplicaciones de la entidad.</p>
+                    </div>
+                    <a class="section__link" href="#">Ver todas</a>
+                </div>
+
+                <ul class="aplicativos">
+                    <li>
+                        <a class="aplicativo" href="#">
+                            <span class="aplicativo__icon placeholder" aria-hidden="true"></span>
+                            <span class="aplicativo__name">Sistema 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="aplicativo" href="#">
+                            <span class="aplicativo__icon placeholder" aria-hidden="true"></span>
+                            <span class="aplicativo__name">Sistema 2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="aplicativo" href="#">
+                            <span class="aplicativo__icon placeholder" aria-hidden="true"></span>
+                            <span class="aplicativo__name">Sistema 3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="aplicativo" href="#">
+                            <span class="aplicativo__icon placeholder" aria-hidden="true"></span>
+                            <span class="aplicativo__name">Sistema 4</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="aplicativo" href="#">
+                            <span class="aplicativo__icon placeholder" aria-hidden="true"></span>
+                            <span class="aplicativo__name">Sistema 5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="aplicativo" href="#">
+                            <span class="aplicativo__icon placeholder" aria-hidden="true"></span>
+                            <span class="aplicativo__name">Sistema 6</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             6. FILA DE DOS COLUMNAS: La entidad + Próximos eventos (Agenda)
+             ============================================================ -->
+        <section class="section section--dos-col" aria-label="La entidad y próximos eventos">
+            <div class="container dos-col">
+
+                <!-- La entidad: imagen izquierda + lista -->
+                <article class="bloque bloque--entidad" aria-labelledby="entidad-titulo">
+                    <div class="bloque__head">
+                        <div>
+                            <h2 class="section__title" id="entidad-titulo">La entidad</h2>
+                            <p class="section__subtitle">Conoce nuestra organización.</p>
+                        </div>
+                        <a class="section__link" href="#">Ver más</a>
+                    </div>
+                    <div class="entidad">
+                        <div class="entidad__media placeholder" aria-hidden="true"></div>
+                        <ul class="lista-accesos">
+                            <li><a href="#"><span class="lista-accesos__icon placeholder" aria-hidden="true"></span><span>Misión y visión</span><span class="lista-accesos__arrow" aria-hidden="true">›</span></a></li>
+                            <li><a href="#"><span class="lista-accesos__icon placeholder" aria-hidden="true"></span><span>Organigrama</span><span class="lista-accesos__arrow" aria-hidden="true">›</span></a></li>
+                            <li><a href="#"><span class="lista-accesos__icon placeholder" aria-hidden="true"></span><span>Dependencias</span><span class="lista-accesos__arrow" aria-hidden="true">›</span></a></li>
+                            <li><a href="#"><span class="lista-accesos__icon placeholder" aria-hidden="true"></span><span>Sedes y direcciones</span><span class="lista-accesos__arrow" aria-hidden="true">›</span></a></li>
+                            <li><a href="#"><span class="lista-accesos__icon placeholder" aria-hidden="true"></span><span>Directorio</span><span class="lista-accesos__arrow" aria-hidden="true">›</span></a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Próximos eventos (Agenda) -->
+                <article class="bloque bloque--agenda" aria-labelledby="agenda-titulo">
+                    <div class="bloque__head">
+                        <div>
+                            <h2 class="section__title" id="agenda-titulo">Próximos eventos</h2>
+                            <p class="section__subtitle">Conoce y participa en nuestras actividades.</p>
+                        </div>
+                        <a class="section__link" href="#">Ver todas</a>
+                    </div>
+                    <ul class="agenda">
+                        <li class="evento">
+                            <a class="evento__link" href="#">
+                                <span class="evento__fecha" aria-hidden="true">
+                                    <span class="evento__dia">15</span>
+                                    <span class="evento__mes">OCT</span>
+                                </span>
+                                <span class="evento__info">
+                                    <span class="evento__title">Encuentro de gestores culturales</span>
+                                    <span class="evento__lugar">Bogotá D.C.</span>
+                                </span>
+                                <span class="lista-accesos__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="evento">
+                            <a class="evento__link" href="#">
+                                <span class="evento__fecha" aria-hidden="true">
+                                    <span class="evento__dia">22</span>
+                                    <span class="evento__mes">OCT</span>
+                                </span>
+                                <span class="evento__info">
+                                    <span class="evento__title">Taller de innovación cultural</span>
+                                    <span class="evento__lugar">Virtual</span>
+                                </span>
+                                <span class="lista-accesos__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li class="evento">
+                            <a class="evento__link" href="#">
+                                <span class="evento__fecha" aria-hidden="true">
+                                    <span class="evento__dia">29</span>
+                                    <span class="evento__mes">OCT</span>
+                                </span>
+                                <span class="evento__info">
+                                    <span class="evento__title">Conversatorio: culturas vivas y territorios</span>
+                                    <span class="evento__lugar">Medellín</span>
+                                </span>
+                                <span class="lista-accesos__arrow" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             7. ÉTICA Y TRANSPARENCIA + 8. SOPORTE Y AYUDA
+             Banda ancha de accesos + bloque de soporte contiguo
+             ============================================================ -->
+        <section class="section section--cierre" aria-label="Ética y transparencia, soporte y ayuda">
+            <div class="container cierre">
+
+                <!-- Ética y transparencia -->
+                <div class="etica" aria-labelledby="etica-titulo">
+                    <div class="etica__intro">
+                        <span class="etica__icon placeholder" aria-hidden="true"></span>
+                        <div>
+                            <h2 class="section__title" id="etica-titulo">Ética y transparencia</h2>
+                            <p class="section__subtitle">Trabajamos con integridad por un sector cultura más transparente.</p>
+                        </div>
+                    </div>
+                    <ul class="etica__accesos">
+                        <li><a href="#"><span class="etica__acceso-icon placeholder" aria-hidden="true"></span><span>Canal ético y denuncias</span></a></li>
+                        <li><a href="#"><span class="etica__acceso-icon placeholder" aria-hidden="true"></span><span>Transparencia y acceso a la información</span></a></li>
+                        <li><a href="#"><span class="etica__acceso-icon placeholder" aria-hidden="true"></span><span>Integridad y buen gobierno</span></a></li>
+                        <li><a href="#"><span class="etica__acceso-icon placeholder" aria-hidden="true"></span><span>Lineamientos y normativa</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Soporte y ayuda -->
+                <div class="soporte" aria-labelledby="soporte-titulo">
+                    <span class="soporte__icon placeholder" aria-hidden="true"></span>
+                    <h2 class="section__title" id="soporte-titulo">Soporte y ayuda</h2>
+                    <p class="soporte__text">¿Necesitas asistencia?</p>
+                    <a class="btn btn--outline" href="#">Ir a mesa de ayuda</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         9. FOOTER institucional
+         ============================================================ -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container site-footer__inner">
+            <div class="site-footer__brand">
+                <span class="site-header__logo" aria-hidden="true">LOGO</span>
+                <span class="site-footer__brand-text">
+                    Ministerio de las Culturas,<br>las Artes y los Saberes
+                </span>
+            </div>
+
+            <nav class="site-footer__links" aria-label="Enlaces del pie de página">
+                <a href="#">Términos de uso</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Mapa del sitio</a>
+            </nav>
+
+            <ul class="site-footer__social" aria-label="Redes sociales">
+                <li><a href="#" aria-label="X (Twitter)"><span class="placeholder" aria-hidden="true"></span></a></li>
+                <li><a href="#" aria-label="Instagram"><span class="placeholder" aria-hidden="true"></span></a></li>
+                <li><a href="#" aria-label="Facebook"><span class="placeholder" aria-hidden="true"></span></a></li>
+                <li><a href="#" aria-label="YouTube"><span class="placeholder" aria-hidden="true"></span></a></li>
+                <li><a href="#" aria-label="LinkedIn"><span class="placeholder" aria-hidden="true"></span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="module" src="./scripts.js"></script>
+</body>
+
+</html>

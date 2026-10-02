@@ -1,0 +1,1159 @@
+/* ============================================================
+   Intranet Ministerio de las Culturas, las Artes y los Saberes
+   Maqueta del Home — ETAPA BAJA FIDELIDAD
+   Paleta neutra (grises) para validar composición y jerarquía.
+   La identidad del Ministerio se aplica en la etapa de alta fidelidad.
+   ============================================================ */
+
+/* ---------- Tokens base (neutros, provisionales) ---------- */
+:root {
+    /* Grises de maqueta */
+    --c-ink: #2b2b2b;
+    --c-muted: #6b6b6b;
+    --c-line: #d8d8d8;
+    --c-surface: #ffffff;
+    --c-surface-soft: #f3f3f3;
+    --c-surface-mute: #e9e9e9;
+    --c-placeholder: #cfcfcf;
+    --c-accent: #555555;         /* provisional, sustituye color de marca */
+    --c-accent-soft: #ededed;
+
+    /* Tipografía: stack tipo SharePoint moderno (Segoe UI) */
+    --font-base: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+
+    /* Medidas */
+    --container-max: 1200px;
+    --radius: 8px;
+    --radius-sm: 4px;
+    --gap: 1.5rem;
+    --header-h: 64px;
+}
+
+/* ---------- Reset ligero ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* El atributo [hidden] siempre debe ocultar, incluso sobre elementos
+   con display explícito (p. ej. .aviso__item usa display:flex). */
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-base);
+    color: var(--c-ink);
+    background: var(--c-surface-soft);
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Accesibilidad: foco visible */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--c-ink);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* ---------- Contenedor centrado ---------- */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+}
+
+/* ============================================================
+   1. ENCABEZADO
+   ============================================================ */
+.site-header {
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: var(--header-h);
+}
+
+/* Marca / logo */
+.site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.site-header__logo {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: var(--c-placeholder);
+    color: var(--c-muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+}
+
+.site-header__brand-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--c-ink);
+}
+
+/* Navegación principal */
+.site-nav {
+    flex: 1;
+}
+
+.site-nav__list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.site-nav__item {
+    position: relative;
+}
+
+.site-nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--c-ink);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+.site-nav__link:hover {
+    background: var(--c-surface-soft);
+}
+
+.site-nav__link[aria-current="page"] {
+    color: var(--c-ink);
+    border-bottom: 3px solid var(--c-accent);
+    border-radius: 0;
+}
+
+.site-nav__caret {
+    font-size: 0.7rem;
+}
+
+/* Submenú desplegable */
+.site-nav__submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 0.4rem;
+    display: none;
+    z-index: 110;
+}
+
+.site-nav__item--has-menu:hover .site-nav__submenu,
+.site-nav__item--has-menu:focus-within .site-nav__submenu,
+.site-nav__submenu.is-open {
+    display: block;
+}
+
+.site-nav__submenu li a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    color: var(--c-ink);
+}
+
+.site-nav__submenu li a:hover {
+    background: var(--c-surface-soft);
+}
+
+/* Zona derecha: acciones */
+.site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+}
+
+.site-header__action {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--c-muted);
+}
+
+.site-header__action:hover {
+    background: var(--c-surface-soft);
+}
+
+.site-header__icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+/* Waffle (grid 3x3) */
+.site-header__icon--waffle {
+    display: grid;
+    grid-template-columns: repeat(3, 4px);
+    grid-template-rows: repeat(3, 4px);
+    gap: 2px;
+}
+
+.site-header__icon--waffle span {
+    width: 4px;
+    height: 4px;
+    background: var(--c-muted);
+    border-radius: 1px;
+}
+
+/* Perfil */
+.site-header__avatar {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    background: var(--c-placeholder);
+    color: var(--c-ink);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+/* Toggle hamburguesa (oculto en desktop) */
+.site-header__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    margin-left: auto;
+}
+
+.site-header__toggle-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--c-ink);
+    border-radius: 2px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .site-header__toggle {
+        display: flex;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--c-surface);
+        border-bottom: 1px solid var(--c-line);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        display: none;
+    }
+
+    .site-nav.is-open {
+        display: block;
+    }
+
+    .site-nav__list {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 1.25rem 1rem;
+    }
+
+    .site-nav__link {
+        width: 100%;
+    }
+
+    .site-nav__submenu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding-left: 1rem;
+    }
+
+    .site-header__brand-text {
+        display: none;
+    }
+}
+
+/* ============================================================
+   UTILIDADES COMUNES DE SECCIÓN
+   ============================================================ */
+.section {
+    padding-block: 2.25rem;
+}
+
+.section__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.section__title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.section__link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--c-accent);
+    white-space: nowrap;
+}
+
+.section__link:hover {
+    text-decoration: underline;
+}
+
+/* Placeholder visual (cajas grises de imagen) */
+.placeholder {
+    background: var(--c-placeholder);
+    background-image: linear-gradient(135deg, var(--c-surface-mute) 25%, transparent 25%, transparent 50%, var(--c-surface-mute) 50%, var(--c-surface-mute) 75%, transparent 75%, transparent);
+    background-size: 16px 16px;
+    border-radius: var(--radius-sm);
+}
+
+/* Etiquetas / categorías */
+.etiqueta {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--c-muted);
+    background: var(--c-accent-soft);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+}
+
+.etiqueta--sm {
+    font-size: 0.65rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.btn--primary {
+    background: var(--c-accent);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--c-ink);
+}
+
+.btn--outline {
+    background: transparent;
+    border-color: var(--c-line);
+    color: var(--c-ink);
+}
+
+.btn--outline:hover {
+    background: var(--c-surface-soft);
+}
+
+/* ============================================================
+   2. ACTUALIDAD
+   ============================================================ */
+.actualidad {
+    display: grid;
+    grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+    gap: var(--gap);
+    align-items: stretch;
+}
+
+.actualidad__destacada,
+.actualidad__recientes {
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* Carrusel */
+.carrusel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.carrusel__viewport {
+    flex: 1;
+}
+
+.carrusel__track {
+    height: 100%;
+}
+
+.destacada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    min-height: 300px;
+}
+
+.destacada__media {
+    min-height: 240px;
+}
+
+.destacada__body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destacada__title {
+    margin: 0 0 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.destacada__text {
+    margin: 0 0 1.1rem;
+    color: var(--c-muted);
+    font-size: 0.95rem;
+}
+
+.carrusel__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.6rem;
+    border-top: 1px solid var(--c-line);
+}
+
+.carrusel__btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--c-line);
+    background: var(--c-surface);
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--c-ink);
+}
+
+.carrusel__btn:hover {
+    background: var(--c-surface-soft);
+}
+
+.carrusel__dots {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.carrusel__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--c-placeholder);
+    padding: 0;
+}
+
+.carrusel__dot.is-active {
+    background: var(--c-accent);
+}
+
+/* Lista de recientes */
+.actualidad__recientes {
+    padding: 0.5rem;
+}
+
+.noticia__link {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+}
+
+.noticia + .noticia .noticia__link {
+    border-top: 1px solid var(--c-line);
+    border-radius: 0;
+}
+
+.noticia__link:hover {
+    background: var(--c-surface-soft);
+}
+
+.noticia__thumb {
+    flex-shrink: 0;
+    width: 72px;
+    height: 56px;
+}
+
+.noticia__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.noticia__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.noticia__fecha {
+    font-size: 0.78rem;
+    color: var(--c-muted);
+    margin-top: 0.25rem;
+}
+
+/* Botón "Ver todas las noticias" debajo de la lista de recientes */
+.actualidad__ver-todas {
+    display: block;
+    margin: 0.5rem 0.75rem 0.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--c-line);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--c-accent);
+}
+
+.actualidad__ver-todas:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   3. AVISO INSTITUCIONAL
+   ============================================================ */
+/* El aviso es un bloque dentro del cuerpo (no una banda full-width).
+   La caja vive en .aviso__inner, contenida al ancho del container. */
+.aviso {
+    padding-block: 0.5rem 0;
+}
+
+.aviso__inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 48px;
+    padding: 0.6rem 1rem;
+    background: var(--c-accent-soft);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+}
+
+.aviso__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--c-ink);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.aviso__list {
+    flex: 1;
+    min-width: 0;
+}
+
+.aviso__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.aviso__msg {
+    font-size: 0.9rem;
+    color: var(--c-ink);
+}
+
+.aviso__link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c-accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.aviso__link:hover {
+    text-decoration: underline;
+}
+
+/* Controles del aviso (accesibilidad: anterior / pausa / siguiente) */
+.aviso__controls {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.aviso__btn {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--c-line);
+    background: var(--c-surface);
+    font-size: 0.9rem;
+    line-height: 1;
+    color: var(--c-ink);
+}
+
+.aviso__btn:hover {
+    background: var(--c-surface-soft);
+}
+
+.aviso__btn[aria-pressed="true"] {
+    background: var(--c-accent);
+    color: #fff;
+    border-color: var(--c-accent);
+}
+
+/* ---------- Responsive de secciones ---------- */
+@media (max-width: 900px) {
+    .actualidad {
+        grid-template-columns: 1fr;
+    }
+
+    .destacada {
+        grid-template-columns: 1fr;
+    }
+
+    .destacada__media {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .aviso__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aviso__item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
+
+/* ============================================================
+   4. CAMPAÑAS (tarjetas con fondo propio, texto al 60% izquierdo)
+   ============================================================ */
+.campanas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap);
+}
+
+.campana-card {
+    display: block;
+    position: relative;
+    min-height: 190px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    /* Fondo provisional por tarjeta; se sustituye por imagen real luego */
+    background: var(--c-placeholder);
+    background-size: cover;
+    background-position: center;
+}
+
+.campana-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* El texto ocupa solo el 60% izquierdo de la tarjeta; el resto respira el fondo */
+.campana-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 60%;
+    height: 100%;
+    min-height: 190px;
+    padding: 1.25rem;
+    gap: 0.4rem;
+    /* Degradado para legibilidad del texto sobre el fondo */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 60%, rgba(255, 255, 255, 0) 100%);
+}
+
+.campana-card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--c-ink);
+}
+
+.campana-card__text {
+    font-size: 0.88rem;
+    color: var(--c-muted);
+}
+
+/* Variantes de fondo provisionales (se reemplazan por imágenes de campaña) */
+.campana-card--a { background-color: #d7d2de; }
+.campana-card--b { background-color: #d9ddd0; }
+.campana-card--c { background-color: #cfd8dd; }
+
+/* ============================================================
+   5. APLICATIVOS
+   ============================================================ */
+.section__subtitle {
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: var(--c-muted);
+}
+
+.aplicativos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+.aplicativo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.1rem 0.75rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    text-align: center;
+    height: 100%;
+}
+
+.aplicativo:hover {
+    border-color: var(--c-accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.aplicativo__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+}
+
+.aplicativo__name {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ---------- Responsive campañas + aplicativos ---------- */
+@media (max-width: 1000px) {
+    .aplicativos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    /* En móvil el texto de la campaña usa todo el ancho para legibilidad */
+    .campana-card__body {
+        width: 100%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 80%, rgba(255, 255, 255, 0.6) 100%);
+    }
+}
+
+@media (max-width: 520px) {
+    .aplicativos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   6. FILA DE DOS COLUMNAS: La entidad + Próximos eventos
+   ============================================================ */
+.dos-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    align-items: stretch;
+}
+
+.bloque {
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bloque__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.bloque__head .section__title {
+    font-size: 1.25rem;
+}
+
+/* La entidad: imagen + lista */
+.entidad {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.1rem;
+    align-items: stretch;
+}
+
+.entidad__media {
+    min-height: 220px;
+    border-radius: var(--radius-sm);
+}
+
+/* Lista de accesos reutilizable (La entidad) */
+.lista-accesos li + li a {
+    border-top: 1px solid var(--c-line);
+}
+
+.lista-accesos a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lista-accesos a:hover {
+    background: var(--c-surface-soft);
+    border-radius: var(--radius-sm);
+}
+
+.lista-accesos__icon {
+    width: 26px;
+    height: 26px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.lista-accesos__arrow {
+    margin-left: auto;
+    color: var(--c-muted);
+    font-size: 1.1rem;
+}
+
+/* Agenda / próximos eventos */
+.evento + .evento .evento__link {
+    border-top: 1px solid var(--c-line);
+}
+
+.evento__link {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.8rem 0.5rem;
+}
+
+.evento__link:hover {
+    background: var(--c-surface-soft);
+    border-radius: var(--radius-sm);
+}
+
+.evento__fecha {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background: var(--c-accent-soft);
+    border-radius: var(--radius-sm);
+    line-height: 1;
+}
+
+.evento__dia {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.evento__mes {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--c-muted);
+    letter-spacing: 0.05em;
+}
+
+.evento__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.evento__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.evento__lugar {
+    font-size: 0.78rem;
+    color: var(--c-muted);
+    margin-top: 0.15rem;
+}
+
+/* ---------- Responsive dos columnas ---------- */
+@media (max-width: 900px) {
+    .dos-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .entidad {
+        grid-template-columns: 1fr;
+    }
+
+    .entidad__media {
+        min-height: 160px;
+    }
+}
+
+/* ============================================================
+   7. ÉTICA Y TRANSPARENCIA + 8. SOPORTE Y AYUDA
+   ============================================================ */
+.cierre {
+    display: grid;
+    grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr);
+    gap: var(--gap);
+    align-items: stretch;
+}
+
+.etica,
+.soporte {
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+/* Ética */
+.etica__intro {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.1rem;
+}
+
+.etica__icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: var(--radius-sm);
+}
+
+.etica__intro .section__title {
+    font-size: 1.25rem;
+}
+
+.etica__accesos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+.etica__accesos a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-sm);
+}
+
+.etica__accesos a:hover {
+    background: var(--c-surface-soft);
+    border-color: var(--c-accent);
+}
+
+.etica__acceso-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: var(--radius-sm);
+}
+
+/* Soporte */
+.soporte {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.soporte__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
+}
+
+.soporte .section__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.soporte__text {
+    margin: 0 0 1rem;
+    color: var(--c-muted);
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   9. FOOTER
+   ============================================================ */
+.site-footer {
+    background: var(--c-ink);
+    color: #fff;
+    margin-top: 2rem;
+    padding-block: 1.75rem;
+}
+
+.site-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.site-footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.site-footer__brand-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.site-footer__links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.site-footer__links a {
+    font-size: 0.85rem;
+    color: #d9d9d9;
+}
+
+.site-footer__links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.site-footer__social {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.site-footer__social a {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+}
+
+.site-footer__social .placeholder {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+/* ---------- Responsive cierre + footer ---------- */
+@media (max-width: 900px) {
+    .cierre {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .etica__accesos {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
