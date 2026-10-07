@@ -1,0 +1,615 @@
+[
+  {
+    "slug": "lara-lookabaugh",
+    "categoria": "internacional",
+    "pais": "Estados Unidos",
+    "foto": "img/lara-lookabaugh.jpg",
+    "fotoPendiente": false,
+    "nombre": "Lara Lookabaugh",
+    "nombreCard": "Lara Lookabaugh",
+    "alt": "Retrato de Lara Lookabaugh",
+    "categoriaFicha": "Invitada internacional · Estados Unidos",
+    "categoriaCard": "Internacional · Estados Unidos",
+    "resumen": "Bibliotecaria y curadora de estudios latinoamericanos; geógrafa feminista especializada en memoria y futuros políticos.",
+    "bio": [
+      "Lara Lookabaugh es bibliotecaria y curadora de estudios latinoamericanos, ibéricos y latinx en las Bibliotecas de la Universidad de Vanderbilt. Es una geógrafa feminista interdisciplinaria especializada en la memoria y los futuros políticos; su agenda de investigación se centra en un trabajo de memoria colaborativo y basado en las artes con un colectivo de mujeres mayas mam en Guatemala, así como en el examen de las políticas temporales de los archivos.",
+      "Su trabajo busca comprender cómo las comunidades de América Latina y el sur de Estados Unidos imaginan y construyen futuros alternativos en el contexto de la colonización, el capitalismo neoliberal y los regímenes políticos cambiantes. Es miembro fundador del colectivo editorial y de escritura Desirable Futures.",
+      "Posee un doctorado en Geografía por la Universidad de Carolina del Norte en Chapel Hill, una maestría en Estudios Latinoamericanos por la Universidad de Florida y una maestría en Bibliotecología y Ciencias de la Información por la Universidad Estatal de Florida."
+    ]
+  },
+  {
+    "slug": "monique-martinez",
+    "categoria": "internacional",
+    "pais": "Francia",
+    "foto": "img/monique-martinez.jpg",
+    "fotoPendiente": false,
+    "nombre": "Monique Martínez Thomas",
+    "nombreCard": "Monique Martínez Thomas",
+    "alt": "Retrato de Monique Martínez Thomas",
+    "categoriaFicha": "Invitada internacional · Francia",
+    "categoriaCard": "Internacional · Francia",
+    "resumen": "Profesora en la Universidad Toulouse Jean Jaurès, especialista en teatro, cine y literatura en lengua española.",
+    "bio": [
+      "Monique Martínez Thomas es profesora en la Universidad Toulouse Jean Jaurès en Francia. Especialista en teatro, cine y literatura en lengua española, ha desarrollado desde 1988 una intensa labor de difusión del teatro contemporáneo en lengua española en Francia mediante la compañía Les Anachroniques, la colección teatral Nouvelles Scènes y una colección en Bélgica (Hispania).",
+      "Ha creado y dirigido la Escuela Doctoral de Toulouse, que reúne 15 Escuelas Doctorales, y ha fundado dos redes nacionales. Dirigió el programa europeo TransMigrARTS, donde se desarrollaron metodologías de Investigación Creación Aplicada. Junto con Flore Garcin creó el primer Máster en Teatro Aplicado de Francia.",
+      "Es profesora invitada en el doctorado de Investigación-Creación de la Universidad Distrital de Bogotá desde su creación. Ha sido distinguida como Caballera en la Orden Nacional del Mérito y Oficial de la Orden de las Palmas Académicas."
+    ]
+  },
+  {
+    "slug": "pedro-vilela",
+    "categoria": "internacional",
+    "pais": "Brasil / Portugal",
+    "foto": "img/pedro-vilela.jpg",
+    "fotoPendiente": false,
+    "nombre": "Pedro Vilela",
+    "nombreCard": "Pedro Vilela",
+    "alt": "Retrato de Pedro Vilela",
+    "categoriaFicha": "Invitado internacional · Brasil / Portugal",
+    "categoriaCard": "Internacional · Brasil / Portugal",
+    "resumen": "Investigador y curador en artes escénicas con enfoque en pensamiento descolonial y cuestiones identitarias y raciales.",
+    "bio": [
+      "Pedro Vilela (Recife, 1985) desarrolla su trayectoria científica y artística en las artes escénicas, articulando curaduría, creación escénica e investigación académica con un enfoque en el pensamiento descolonial, las políticas latinoamericanas y las cuestiones identitarias y raciales. Doctor en Educación Artística por la Universidad de Oporto y máster en Artes Escénicas por la Universidad Federal de Bahía, trabaja entre Brasil y Portugal.",
+      "Dirige el Trema! Festival desde 2012 y fue programador de CRL – Central Eléctrica entre 2019 y 2025. En 2023 concibió el Quilombo_TREMA!, dedicado a artistas negros, racializados e indígenas. Fundador de TREMA! Revista, colabora con plataformas críticas transnacionales como Performing Borders."
+    ],
+    "secciones": [
+      {
+        "titulo": "Ponencia: ¿Desde hace cuánto tiempo no estamos aquí?",
+        "subtitulo": "Notas sobre ausencia, ruina y reexistencia como prácticas de permanencia en las artes escénicas portuguesas",
+        "parrafos": [
+          "Esta intervención resulta de la reelaboración de una parte de la investigación desarrollada en la tesis doctoral del autor, en el marco de la Beca Magaly Muguercia del Programa Iberescena. Desde una perspectiva situada, interroga la permanencia de la colonialidad como régimen activo de organización del presente.",
+          "El concepto de performar la ruptura constituye el eje central de la reflexión: una práctica corporal, temporal y política que interviene en las formas de ver, sentir, narrar y validar la experiencia histórica y social. Propone pensar la curaduría como una práctica de mediación, confrontación y reparación simbólica."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "julieta-infantino",
+    "categoria": "internacional",
+    "pais": "Argentina",
+    "foto": "img/julieta-infantino.jpg",
+    "fotoPendiente": false,
+    "nombre": "Julieta Infantino",
+    "nombreCard": "Julieta Infantino",
+    "alt": "Retrato de Julieta Infantino",
+    "categoriaFicha": "Invitada internacional · Argentina",
+    "categoriaCard": "Internacional · Argentina",
+    "resumen": "Doctora del CONICET y la Universidad de Buenos Aires; investiga artes circenses y políticas culturales en América Latina.",
+    "bio": [
+      "Julieta Infantino es profesora, licenciada y doctora en Ciencias Antropológicas por la Facultad de Filosofía y Letras de la Universidad de Buenos Aires (UBA), donde también se desempeña como profesora de grado y posgrado. Es investigadora independiente del Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET) y dirige proyectos de investigación en la UBA y el CONICET. Forma parte del Equipo de Antropología de la Cultura y el Patrimonio (EACUP) y de CircaInvestigAcción, Círculo de Investigación en Circo y Género.",
+      "Sus líneas de investigación se vinculan con las prácticas artísticas populares, las políticas culturales y los procesos de politización de la cultura desde la antropología. Es especialista en los estudios de las artes del circo en Argentina y Latinoamérica, abordando sus dimensiones estéticas, identitarias y políticas. Entre sus publicaciones destacan <em>El arte del circo en América del Sur</em> (2024), <em>Pedagogías circenses</em> (2021) y <em>Disputar la cultura. Arte y transformación social</em> (2019)."
+    ],
+    "secciones": [
+      {
+        "titulo": "Ponencia (Eje 3: Gobernanza y sostenibilidad cultural)",
+        "subtitulo": "Saberes situados, prácticas circenses y políticas culturales en América Latina",
+        "parrafos": [
+          "La ponencia propone reflexionar sobre las formas en que las prácticas artísticas y los procesos de organización colectiva producen saberes situados capaces de incidir en la construcción, gestión y transformación de las políticas culturales, a partir de una trayectoria de investigación centrada en las artes circenses en Argentina y América Latina.",
+          "El circo atraviesa un proceso de reactivación y diversificación en la escena cultural latinoamericana, ocupando plazas, calles, salas teatrales y espacios de enseñanza. La presentación ofrece un panorama sobre la constitución actual del campo circense en Latinoamérica y sobre los avances y limitaciones en las políticas públicas para el sector."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "martin-inthamoussu",
+    "categoria": "internacional",
+    "pais": "Uruguay",
+    "foto": "img/martin-inthamoussu.jpg",
+    "fotoPendiente": false,
+    "nombre": "Martín Inthamoussu",
+    "nombreCard": "Martín Inthamoussu",
+    "alt": "Retrato de Martín Inthamoussu",
+    "categoriaFicha": "Invitado internacional · Uruguay",
+    "categoriaCard": "Internacional · Uruguay",
+    "resumen": "Gestor cultural y coreógrafo uruguayo; curador adjunto del Programa de Arte del Banco Mundial e investigador en economía creativa.",
+    "bio": [
+      "Martín Inthamoussu es gestor cultural, coreógrafo, docente e investigador uruguayo. Es doctorando en Desarrollo Inclusivo y Sostenible en la Universidad Loyola Andalucía y magíster en Comunicación y MBA por la Universidad Católica del Uruguay. Fue seleccionado como Yale World Fellow y realizó el programa de gestión de las artes del DeVos Institute.",
+      "Actualmente es curador adjunto del Programa de Arte del Banco Mundial. Fue consultor del Banco Interamericano de Desarrollo y presidente del SODRE en Uruguay, y desarrolla su actividad docente en la Universidad Católica del Uruguay. Sus líneas de investigación articulan la cultura y el desarrollo sostenible en el MERCOSUR, las políticas culturales, la economía creativa y la gestión de las artes. Entre sus publicaciones destacan <em>Políticas públicas para las industrias culturales y creativas: de la teoría a la práctica</em> (BID, 2024) e <em>Industrias creativas y patrimonio: manual de políticas para la gestión sostenible</em> (BID, 2025)."
+    ]
+  },
+  {
+    "slug": "pilar-riano-alcala",
+    "categoria": "internacional",
+    "pais": "Canadá",
+    "foto": "img/pilar-riano-alcala.jpg",
+    "fotoPendiente": false,
+    "nombre": "Pilar Riaño Alcalá",
+    "nombreCard": "Pilar Riaño Alcalá",
+    "alt": "Retrato de Pilar Riaño Alcalá",
+    "categoriaFicha": "Invitada internacional · Canadá",
+    "categoriaCard": "Internacional · Canadá",
+    "resumen": "Antropóloga de la Universidad de Columbia Británica; codirige la Red Internacional de Memoria Transformativa.",
+    "bio": [
+      "Pilar Riaño-Alcalá es profesora del Instituto de Justicia Social de la Universidad de Columbia Británica (Canadá) y codirectora de la Red Internacional de Memoria Transformativa. Es antropóloga y académica interdisciplinaria. Su investigación examina las experiencias humanas y no humanas de la violencia; los paisajes, las huellas y las prácticas cotidianas de la memoria y la reparación social; y las ecologías de la ausencia y la presencia.",
+      "Es autora de <em>Re-membering the Fragmented. Guerra, Memoria y Violencia en Colombia</em>; <em>Avanzar a tientas: Memorias, violencias y producción de conocimiento</em>; y <em>Jóvenes, memoria y violencia en Medellín. Una antropología del recuerdo y el olvido</em>, entre otros. Ha llevado a cabo una amplia labor de investigación colaborativa con diversas organizaciones sociales e iniciativas de memoria. Fue investigadora del Grupo de Memoria Histórica (2008-2013) y asesora del Museo de Memoria Histórica de Colombia (2015-2018)."
+    ]
+  },
+  {
+    "slug": "blanca-botero",
+    "categoria": "nacional",
+    "foto": "img/blanca-botero.jpg",
+    "fotoPendiente": false,
+    "nombre": "Blanca Botero",
+    "nombreCard": "Blanca Botero",
+    "alt": "Retrato de Blanca Botero",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Artista visual interdisciplinar e investigadora en creación; trabaja el dibujo expandido entre materia, territorio y memoria.",
+    "bio": [
+      "Blanca Botero es artista visual interdisciplinar e investigadora en creación. Su práctica se articula en torno al dibujo expandido como herramienta de observación, conocimiento y traducción entre materia, territorio, memoria y tecnologías de percepción. Su trabajo surge de experiencias de campo en la Orinoquía y la Amazonía colombianas, los Everglades, el desierto del Sahara y el Altiplano Cundiboyacense.",
+      "Es Maestra en Artes Plásticas, Electrónicas y del Tiempo de la Universidad de los Andes y LL.M. de la University of Virginia. Ha realizado residencias en AIRIE (Everglades National Park) y LABVERDE (Manaos). Su obra integra colecciones como Everglades National Park, el Congreso de la República de Colombia y FENALCO. Actualmente colabora como Artist for the Amazon."
+    ]
+  },
+  {
+    "slug": "carolina-chacon-bernal",
+    "categoria": "nacional",
+    "foto": "img/carolina-chacon-bernal.jpg",
+    "fotoPendiente": false,
+    "nombre": "Carolina Chacón Bernal",
+    "nombreCard": "Carolina Chacón Bernal",
+    "alt": "Retrato de Carolina Chacón Bernal",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Curadora y docente; aborda la curaduría como práctica performativa y situada desde perspectivas descoloniales del Sur.",
+    "bio": [
+      "Curadora y docente. Magíster en Historia del Arte Contemporáneo y Cultura Visual de la Universidad Complutense (Madrid) y artista plástica de la Universidad Distrital Francisco José de Caldas. Su trabajo aborda la curaduría como una práctica performativa, de mediación y situada, desde perspectivas descoloniales del Sur.",
+      "Fue curadora adjunta del Museo de Antioquia y co-curadora del 47 Salón Nacional de Artistas de Colombia: Kauka, Asamblea de mundos posibles. Actualmente es profesora auxiliar de la Universidad Nacional de Colombia, Sede Medellín."
+    ]
+  },
+  {
+    "slug": "catalina-del-castillo",
+    "categoria": "nacional",
+    "foto": "img/catalina-del-castillo.jpg",
+    "fotoPendiente": false,
+    "nombre": "Catalina Del Castillo Silva",
+    "nombreCard": "Catalina Del Castillo Silva",
+    "alt": "Retrato de Catalina Del Castillo Silva",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Artista escénica, docente e investigadora; integra somática, danza contemporánea, teatro físico y circo.",
+    "bio": [
+      "Artista escénica, docente e investigadora: su trabajo integra la somática, la danza contemporánea, el teatro físico y el circo. Profesora de tiempo completo en la Pontificia Universidad Javeriana desde 2009, ha sido directora del Departamento de Artes Escénicas y líder de investigación y creación.",
+      "Su formación incluye una licenciatura en danza contemporánea, un MA en Performance Making del Goldsmiths College (University of London) y un Doctorado en Humanidades de la Universitat Pompeu Fabra. Obras como Feroz, Carmen Buffa, Hermana República y Planeta Rojo han recibido reconocimientos y becas del Ministerio de Cultura, Iberescena, Idartes y la Pontificia Universidad Javeriana."
+    ]
+  },
+  {
+    "slug": "eider-yangana",
+    "categoria": "nacional",
+    "foto": "img/eider-yangana.jpg",
+    "fotoPendiente": false,
+    "nombre": "Eider Yangana",
+    "nombreCard": "Eider Yangana",
+    "alt": "Retrato de Eider Yangana",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Maestro en artes plásticas; director de la plataforma Yanacroma de procesos pedagógicos y de co-creación itinerantes.",
+    "bio": [
+      "Maestro en Artes Plásticas de la Universidad del Cauca y Magíster en Estudios Interdisciplinarios del Desarrollo. Sus principales áreas de investigación-creación son las artes integradas. Su obra ha sido expuesta en La Cité Internationale des Arts (París), The Box Gallery (Los Ángeles) y Bienal Sur (Argentina), y en el Salón Nacional de Artistas.",
+      "Es director de la plataforma Yanacroma, que moviliza procesos pedagógicos y de co-creación itinerantes teniendo como eje el cuerpo colectivo, con un programa de residencias en el Resguardo Yanakuna de Rioblanco Sotará, territorio al que pertenece el artista."
+    ]
+  },
+  {
+    "slug": "maria-teresa-garcia-schlegel",
+    "categoria": "nacional",
+    "foto": "img/maria-teresa-garcia-schlegel.jpg",
+    "fotoPendiente": false,
+    "nombre": "María Teresa García Schlegel",
+    "nombreCard": "María Teresa García Schlegel",
+    "alt": "Retrato de María Teresa García Schlegel",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Bailarina, filósofa y doctora en Antropología; profesora titular de la Universidad Distrital Francisco José de Caldas.",
+    "bio": [
+      "Bailarina del Ballet de Camagüey (Cuba) y del Ballet Nacional de Colombia. Directora de ARTBALLET (Bogotá) y Maestra Ilustre del Premio Compartir al Maestro 2005. Filósofa (Universidad de los Andes), Especialista en Gestión y Gerencia Cultural (Universidad del Rosario), Magíster en Docencia Universitaria (UPN) y Doctora en Antropología (Universidad Nacional).",
+      "Co-creadora y maestra del Arte Danzario, la Maestría en Estudios Artísticos y el Doctorado en Estudios Artísticos de la Universidad Distrital Francisco José de Caldas, donde es profesora titular. Integra la Línea de Investigación en Estudios Críticos de las Corporeidades, Sensibilidades y Performatividades."
+    ]
+  },
+  {
+    "slug": "ramiro-osorio",
+    "categoria": "nacional",
+    "foto": "img/ramiro-osorio.jpg",
+    "fotoPendiente": false,
+    "nombre": "Ramiro Osorio Fonseca",
+    "nombreCard": "Ramiro Osorio Fonseca",
+    "alt": "Retrato de Ramiro Osorio Fonseca",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Primer ministro de Cultura de Colombia y director general del Teatro Mayor Julio Mario Santo Domingo; gestor cultural con cinco décadas de trayectoria.",
+    "bio": [
+      "Ramiro Osorio Fonseca es maestro en Letras Españolas de la Universidad de Guanajuato, director y maestro de teatro que ha dirigido más de 30 obras, tanto clásicas como contemporáneas. Con una trayectoria de cinco décadas en la gestión y promoción cultural, ha liderado prestigiosos certámenes internacionales, destacándose como fundador y director del Festival Iberoamericano de Teatro de Bogotá y del Festival Internacional de Teatro de San José por la Paz en Costa Rica, además de dirigir el Festival Internacional Cervantino y el Gran Festival Ciudad de México.",
+      "En el ámbito público e institucional se desempeñó como el primer ministro de Cultura de Colombia, tras haber sido director general de Colcultura, embajador en México y asesor del presidente de la República en la Ley General de Cultura. Fue director de Cultura de la Secretaría General Iberoamericana en Madrid —donde impulsó la creación de programas multilaterales como Iberescena e Ibermuseos— y, desde 2010, ejerce como director general del Teatro Mayor Julio Mario Santo Domingo en Bogotá.",
+      "Su perfil se complementa con una amplia labor académica, ensayística y de consultoría para organismos internacionales como la UNESCO, la OEI y el BID, así como con la docencia de cátedra en universidades de México y Colombia. Ha recibido elevadas condecoraciones nacionales e internacionales, entre ellas la Gran Cruz de la Orden de Boyacá, la Legión de Honor de Francia, la Orden de Isabel la Católica de España y un Doctorado Honoris Causa de la Universidad Soka de Japón."
+    ]
+  },
+  {
+    "slug": "ritzy-medina",
+    "categoria": "nacional",
+    "foto": "img/ritzy-medina.jpg",
+    "fotoPendiente": false,
+    "nombre": "Ritzy Katherine Medina Cuentas",
+    "nombreCard": "Ritzy Katherine Medina Cuentas",
+    "alt": "Retrato de Ritzy Katherine Medina Cuentas",
+    "altCard": "Retrato de Ritzy Medina",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Antropóloga; investiga cultura, territorio, memoria y saberes comunitarios en el Caribe colombiano.",
+    "bio": [
+      "Antropóloga de la Universidad de Caldas, con formación en Desarrollo y Cultura y en Educación. Su trayectoria se ha desarrollado en torno a la investigación sobre cultura, territorio, memoria, identidad y saberes comunitarios, con especial interés en el Caribe colombiano y las poblaciones afrodescendientes.",
+      "Es fundadora de la Fundación Cultural Orígenes y creadora de Libro Playa: un mar de saberes, experiencia de lectura infantil desarrollada en las playas de Tolú, orientada al reconocimiento de saberes locales y al autorreconocimiento étnico y cultural de niñas y niños."
+    ]
+  },
+  {
+    "slug": "sandra-camacho-lopez",
+    "categoria": "nacional",
+    "foto": "img/sandra-camacho-lopez.jpg",
+    "fotoPendiente": false,
+    "nombre": "Sandra Camacho López",
+    "nombreCard": "Sandra Camacho López",
+    "alt": "Retrato de Sandra Camacho López",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Artista escénica e investigadora docente de la Universidad de Antioquia; trabaja dramaturgias contemporáneas y memoria.",
+    "bio": [
+      "Artista escénica e investigadora docente vinculada a la Facultad de Artes de la Universidad de Antioquia. Realizó su estancia postdoctoral en el laboratorio LLA-CRÉATIS de la Universidad de Toulouse. Es Doctora y Magíster en Teatro y Artes del Espectáculo de la Universidad Sorbonne-Nouvelle (París 3) y Maestra en Artes Escénicas de la Facultad de Artes ASAB.",
+      "Sus intereses por las dramaturgias contemporáneas y la investigación-creación se han encaminado por temas como lo trágico, el desarraigo, la migración y la memoria. Fue investigadora del proyecto TransMigrARTS. Ha publicado libros como Poéticas del desarraigo y artículos en revistas como Calle 14 y Corpo-Grafías."
+    ]
+  },
+  {
+    "slug": "alvaro-hernandez",
+    "categoria": "nacional",
+    "foto": "img/alvaro-hernandez.jpg",
+    "fotoPendiente": false,
+    "nombre": "Álvaro Hernández",
+    "nombreCard": "Álvaro Hernández",
+    "alt": "Retrato de Álvaro Hernández",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Profesor de la Facultad de Artes ASAB; investiga performance y ecología, y modos de hacer más que humanos.",
+    "bio": [
+      "Profesor de la Facultad de Artes ASAB de la Universidad Distrital, en los programas de Artes Escénicas, la Maestría y el Doctorado en Estudios Artísticos. Director del grupo Dramaturgias del Cuerpo y Escrituras del Espacio y director artístico de Entrópico Teatro. Doctor en Estudios del Performance por la Universidad de California, Davis.",
+      "Investiga modos de hacer ecológicos que involucran sensorios otros que humanos frente a la crisis ecológica. Fue investigador principal del proyecto RISE TransmigrArts (2021-2025) y dirige Prácticas artísticas para una Colombia más que humana. Coordina el programa de Artes Escénicas de la Facultad de Artes ASAB."
+    ]
+  },
+  {
+    "slug": "oscar-hernandez-salgar",
+    "categoria": "nacional",
+    "foto": "img/oscar-hernandez-salgar.jpg",
+    "fotoPendiente": false,
+    "nombre": "Óscar Hernández Salgar",
+    "nombreCard": "Óscar Hernández Salgar",
+    "alt": "Retrato de Óscar Hernández Salgar",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Músico y doctor en Ciencias Sociales; director del Instituto Pensar de la Pontificia Universidad Javeriana.",
+    "bio": [
+      "Maestro en Música, Magíster en Estudios Culturales y Doctor en Ciencias Sociales y Humanas por la Pontificia Universidad Javeriana. Ganador del Premio de Musicología Casa de las Américas 2014 con el libro Los mitos de la música nacional.",
+      "Fue miembro de la Mesa de Investigación-Creación del Ministerio de Ciencia, Tecnología e Innovación (2013-2024). En 2026 publicó El fin de la técnica. Ensayos sobre cultura e inteligencia artificial. Actualmente es director del Instituto de Estudios Sociales y Culturales Pensar de la Universidad Javeriana."
+    ]
+  },
+  {
+    "slug": "gabriel-velez",
+    "categoria": "nacional",
+    "foto": "img/gabriel-velez.jpg",
+    "fotoPendiente": false,
+    "nombre": "Gabriel Vélez",
+    "nombreCard": "Gabriel Vélez",
+    "alt": "Retrato de Gabriel Vélez",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Artista, docente e investigador; presidente de la Asociación Colombiana de Facultades de Arte.",
+    "bio": [
+      "Gabriel Marío Vélez es artista, docente universitario e investigador. Docente de la Facultad de Artes de la Universidad de Antioquia y líder del grupo de investigación de Teoría, Práctica e Historia del Arte en Colombia. Sus proyectos artísticos han sido expuestos en distintos eventos de alcance nacional e internacional, entre ellos Transeúntes Medellín. Entre sus publicaciones se pueden mencionar los libros <em>La Fotografía como Dispositivo Mágico</em>, publicado en Medellín, y <em>La Huella Digital. Del Efecto Sujeto en la Génesis Digital</em>, publicado en Córdoba, Argentina.",
+      "Entre 2016 y 2025 ejerció como decano de la Facultad de Artes de la Universidad de Antioquia. Actualmente se desempeña como presidente de la Asociación Colombiana de Facultades de Arte y es uno de los comisionados de la Sala Conaces de Arte y Humanidades del Ministerio de Educación. Su más reciente exposición se realizó en São Paulo (Brasil) con el proyecto Transeuntis Mundi, en colaboración con la artista brasileña Cândida Borges."
+    ]
+  },
+  {
+    "slug": "pedro-pablo-gomez",
+    "categoria": "nacional",
+    "foto": "img/pedro-pablo-gomez.jpg",
+    "fotoPendiente": false,
+    "nombre": "Pedro Pablo Gómez",
+    "nombreCard": "Pedro Pablo Gómez",
+    "alt": "Retrato de Pedro Pablo Gómez",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Doctor en Estudios Culturales; docente de la Facultad de Artes ASAB y director de la revista Calle14.",
+    "bio": [
+      "Es doctor en Estudios Culturales Latinoamericanos por la Universidad Andina Simón Bolívar, sede Ecuador; magíster en Filosofía por la Pontificia Universidad Javeriana y maestro en Bellas Artes por la Universidad Nacional de Colombia. Es docente titular en la Facultad de Artes ASAB de la Universidad Distrital Francisco José de Caldas, en Bogotá, donde ejerce la cátedra en Artes Plásticas y Visuales, en la Maestría y el Doctorado en Estudios Artísticos, y dirige el grupo de investigación «Poiesis XXI». Es docente invitado en varias universidades de Colombia y de América Latina, y ha participado como jurado de tesis de maestría y doctorado en México, Ecuador y Brasil.",
+      "Entre sus publicaciones se encuentran los libros <em>El surrealismo: pensamiento del objeto y construcción de mundo</em>; <em>Avatares de la investigación-creación</em>; <em>Arte y etnografía</em>; <em>La investigación en Arte y el Arte como investigación</em>; <em>Estéticas y opción decolonial</em>; <em>Estéticas fronterizas</em> y <em>Reconstitución estética decolonial</em>, este último en coautoría con Walter Mignolo. Su actividad artística incluye curadurías y exposiciones individuales y colectivas. Es director de Calle14, revista de investigación sobre arte, coordinador del Doctorado en Estudios Artísticos y editor de la revista <em>Estudios artísticos: revista de investigación creadora</em>."
+    ]
+  },
+  {
+    "slug": "tania-delgado",
+    "categoria": "nacional",
+    "foto": "img/tania-delgado.jpg",
+    "fotoPendiente": false,
+    "nombre": "Tania Delgado",
+    "nombreCard": "Tania Delgado",
+    "alt": "Retrato de Tania Delgado",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Consultora en Investigación + Creación; impulsa políticas e instrumentos para el sector creativo y cultural.",
+    "bio": [
+      "Consultora con amplia experiencia en el diseño, gestión y evaluación de iniciativas que promueven la generación, circulación y apropiación social del conocimiento a través de la Investigación + Creación. Su trayectoria integra el trabajo con comunidades académicas, artísticas y creativas en procesos de cocreación, así como la formulación e implementación de políticas e instrumentos para fortalecer el sector creativo y cultural.",
+      "En los sectores público y privado ha impulsado el posicionamiento de las prácticas y oficios de la creación como formas de experimentación, indagación y pensamiento que, integradas a la investigación, generan conocimiento capaz de trascender el contexto académico. Fue representante nacional de la Red Académica de Diseño en la Mesa de Investigación + Creación de Colciencias, un espacio que posicionó la Creación Artística en el Sistema Nacional de Ciencia, Tecnología e Innovación. Es editora académica del libro <em>Ética en la creación: hacia una práctica íntegra y responsable</em>."
+    ]
+  },
+  {
+    "slug": "carlos-sepulveda",
+    "categoria": "nacional",
+    "foto": "img/carlos-sepulveda.jpg",
+    "fotoPendiente": false,
+    "nombre": "Carlos Sepúlveda",
+    "nombreCard": "Carlos Sepúlveda",
+    "alt": "Retrato de Carlos Sepúlveda",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Doctor en Filosofía y director de teatro; investiga las poéticas teatrales contemporáneas y la relación entre arte y política.",
+    "bio": [
+      "Profesor de la Licenciatura en Artes Escénicas, con espacios en la Maestría en Artes, Educación y Cultura y en el Doctorado Interinstitucional en Educación. Doctor en Filosofía con distinción Magna Cum Laude, magíster en Teatro y Artes Vivas, especialista en Educación Artística, con pregrados en Dirección Escénica y Filosofía y Licenciatura en Educación Artística.",
+      "Artista escénico de amplia trayectoria que ha concebido su trabajo creativo de manera integral e interdisciplinaria, articulando la creación con una investigación teórica y pedagógica permanente y reconociendo que el teatro contemporáneo se cruza con el diseño sonoro, plástico y visual, el cine, la danza y las nuevas tecnologías. Es parte del equipo que fundó el Teatro Occidente. Su trabajo se ha centrado en la dirección de al menos 70 montajes de diversos autores, géneros y momentos de la historia del teatro.",
+      "Ha sido profesor universitario en pregrado y posgrado durante más de 25 años en diversas instituciones. Su investigación se ha centrado en las poéticas teatrales contemporáneas y en la relación entre arte y política."
+    ]
+  },
+  {
+    "slug": "juan-alejandro-chindoy",
+    "categoria": "nacional",
+    "foto": "img/juan-alejandro-chindoy.jpg",
+    "fotoPendiente": false,
+    "nombre": "Juan Alejandro Chindoy",
+    "nombreCard": "Juan Alejandro Chindoy",
+    "alt": "Retrato de Juan Alejandro Chindoy",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Ph.D. en Filosofía e integrante del pueblo kamëntšá; profesor de la Universidad Nacional de Colombia.",
+    "bio": [
+      "Ph.D. en Filosofía y Máster en Filosofía por la Southern Illinois University, Carbondale (Estados Unidos), y profesional en Filosofía y Letras por la Universidad de Caldas, Manizales. Fue asistente posdoctoral en el Departamento de Filosofía de la Universidad de los Andes y actualmente es profesor asistente de tiempo completo en el Departamento de Filosofía de la Universidad Nacional de Colombia, sede Bogotá.",
+      "Ha sido profesor de filosofía en distintas universidades de Colombia, principalmente en las áreas de filosofía política, derecho y filosofía latinoamericana, como integrante del pueblo indígena kamëntšá, tanto en Sibundoy como en Bogotá. Su más reciente libro, lanzado en la Feria del Libro de Bogotá 2026, se titula <em>Pensar desde Tierras Indígenas</em> y fue publicado por la editorial Herder de Barcelona. Antes había publicado el libro en inglés <em>Time, Beauty and Spirit in Kamëntšá Culture</em> (2020)."
+    ]
+  },
+  {
+    "slug": "consejo-ancestral-willka-yaku",
+    "categoria": "nacional",
+    "foto": "img/consejo-ancestral-willka-yaku.jpg",
+    "fotoPendiente": false,
+    "nombre": "Consejo Ancestral Willka Yaku",
+    "nombreCard": "Consejo Ancestral Willka Yaku",
+    "alt": "Retrato del Consejo Ancestral Willka Yaku",
+    "categoriaFicha": "Colectivo · Nacional",
+    "categoriaCard": "Colectivo · Nacional",
+    "resumen": "Colectivo artístico, curatorial y comunitario que trabaja la memoria y la decolonialidad desde el territorio.",
+    "bio": [
+      "Colectivo artístico, curatorial y comunitario integrado por Eyder Fabio Calambás y Phuyu Uma Jennifer Ávila, que aborda la curaduría y la creación como herramientas situadas para la decolonialidad orgánica de la memoria, las luchas y los procesos creativos colectivos, mambeando la vida y sanando las heridas coloniales a través del tejido entre el ser humano y los ciclos de la Jallapamama Madre Tierra.",
+      "Su trabajo curatorial e investigativo incluye hitos como la cocuraduría de la renovación del Museo del Oro Calima del Banco de la República, el equipo curatorial del 47 Salón Nacional de Artistas Kauka y del 18 Salón Regional de Artistas Pacífico, así como la curaduría con el Colectivo de Participación e Investigación Social CPAIS desde la verdad, memoria y resistencia del pueblo Nasa, y diversas asesorías para el Museo de Arte Moderno de Medellín. Como ponentes y creadores han expuesto en Berlín, Nueva York y Montreal, con obras en las colecciones del Museo de Arte Moderno La Tertulia de Cali, el Museo de Arte Moderno de Bucaramanga y el Museo de Bellas Artes de Montreal.",
+      "Desde el territorio actúan como docentes solidarios en Ala Kusreik Ya Misak Universidad, en Wampia, y en la gestión cultural comunitaria en el Valle, Cauca y Putumayo, a través de mingas muralistas, celebraciones ancestrales andinas y recorridos territoriales en defensa del agua sagrada."
+    ]
+  },
+  {
+    "slug": "valentina-ruiz",
+    "categoria": "nacional",
+    "foto": "img/valentina-ruiz.jpg",
+    "fotoPendiente": false,
+    "nombre": "Valentina Ruiz",
+    "nombreCard": "Valentina Ruiz",
+    "alt": "Retrato de Valentina Ruiz",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Artista, docente y curadora; investiga el residuo de la imagen contemporánea entre lo digital y lo físico.",
+    "bio": [
+      "Valentina Ruíz es artista, docente, investigadora y curadora colombiana, con una década de trayectoria en el arte contemporáneo. Su práctica articula la investigación sobre el residuo de la imagen contemporánea mediante instalaciones, esculturas, objetos cinéticos, videoinstalaciones y estructuras proto y posfotográficas. Explora la relación entre la materia digital y la imagen física, abordando la degradación de los datos, la oxidación de los circuitos y la transformación de lo inmaterial en ceniza, pólvora, grasa, fuego y fantasmagorías.",
+      "Es Magíster en Artes Plásticas, Electrónicas y del Tiempo por la Universidad de los Andes, con tesis meritoria y grado Cum Laude (2022), y Maestra en Artes Plásticas por la Universidad Jorge Tadeo Lozano (2019). Es fundadora de Proyecto_555 junto con Juan David Mora Lozano. Su trayectoria incluye Artecámara-ARTBO, Galería Santa Fe, VOLTAJE, MAMU-El Parqueadero, Casa Hoffmann, Fragmentos y el Festival Internacional de la Imagen. En 2024 obtuvo el segundo lugar en el XI Premio Uniandino a las Artes."
+    ]
+  },
+  {
+    "slug": "edgar-puentes",
+    "categoria": "nacional",
+    "foto": "img/edgar-puentes.jpg",
+    "fotoPendiente": false,
+    "nombre": "Edgar Puentes",
+    "nombreCard": "Edgar Puentes",
+    "alt": "Retrato de Edgar Puentes",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Perfil multidisciplinar entre arte, ciencia y tecnología; impulsó el «Concierto Cerebro» con Rodolfo Llinás.",
+    "bio": [
+      "Edgar Leonardo Puentes es un perfil multidisciplinar que integra arte, ciencia, tecnología y educación. Es licenciado en Pedagogía Musical, pianista, compositor e ingeniero de sonido, con formación en programación, neurociencia y gestión directiva. A lo largo de su trayectoria ha liderado iniciativas transdisciplinares de gran impacto nacional e internacional, entre ellas la coordinación del Foco de Industrias Creativas y Culturales en la Misión Internacional de Sabios (2019) y su labor en la Orquesta Filarmónica de Bogotá durante más de 29 años, donde concibió el «Concierto Cerebro» junto a Rodolfo Llinás y dirigió el programa <em>Construcción de Comunidad</em>.",
+      "Su trabajo ha sido pionero en el desarrollo de metodologías de aprendizaje y de políticas públicas, en articulación con entidades como el Ministerio de Ciencias, el Ministerio de Educación y diversas universidades internacionales. Como pedagogo e investigador cocreó la Maleta Pedagógica «Viajeros de la Música» e impulsó proyectos de experimentación sonora con tecnologías no convencionales, posicionándose como un referente en la integración del patrimonio cultural y el conocimiento científico en Colombia."
+    ]
+  },
+  {
+    "slug": "eliecer-arenas",
+    "categoria": "nacional",
+    "foto": "img/eliecer-arenas.jpg",
+    "fotoPendiente": false,
+    "nombre": "Eliécer Arenas",
+    "nombreCard": "Eliécer Arenas",
+    "alt": "Retrato de Eliécer Arenas",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Profesor e investigador de la Universidad Pedagógica Nacional; estudia música, cultura y educación.",
+    "bio": [
+      "Eliecer Arenas Monsalve es profesor de planta e investigador en la Universidad Pedagógica Nacional, con una destacada trayectoria dedicada a profundizar en las relaciones entre la música, la cultura y la educación en Colombia. Cuenta con estudios avanzados en Antropología Social en la Universidad Complutense de Madrid, así como formación en Psicología (Pontificia Universidad Javeriana) y en Pedagogía Musical. Actualmente adelanta su Doctorado Interinstitucional en Educación y orienta sus búsquedas hacia una educación musical centrada en el cuidado, el empoderamiento y el desarrollo de las capacidades del músico.",
+      "A lo largo de su carrera ha sido conferencista principal en múltiples congresos nacionales e internacionales de educación y música, y participó como relator académico en la Misión Internacional de Sabios de 2019, en el foco de Industrias Culturales y Creativas. Es miembro del grupo de investigación Cuestionarte (Categoría A en el Ministerio de Ciencias), coautor de diversas publicaciones sobre música popular, políticas y memorias culturales en Bogotá, y cofundador de Sonido Colectivo, una comunidad de conocimiento dedicada a reflexionar sobre la función social de la música."
+    ]
+  },
+  {
+    "slug": "camila-camacho",
+    "categoria": "nacional",
+    "foto": "img/camila-camacho.jpg",
+    "fotoPendiente": false,
+    "nombre": "Camila Camacho",
+    "nombreCard": "Camila Camacho",
+    "alt": "Retrato de Camila Camacho",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Antropóloga, artista visual y documentalista; articula investigación comunitaria y creación audiovisual.",
+    "bio": [
+      "Antropóloga, artista visual y documentalista. Su trabajo articula la investigación comunitaria, la creación audiovisual y la gestión cultural. Ha liderado y acompañado procesos de investigación y creación colectiva, de educación popular e incidencia política con comunidades, especialmente con mujeres diversas y en contextos rurales, en torno a temas como la memoria, los afectos, el género, el territorio y la representación."
+    ]
+  },
+  {
+    "slug": "victor-capador",
+    "categoria": "nacional",
+    "foto": "img/victor-capador.jpg",
+    "fotoPendiente": false,
+    "nombre": "Víctor Capador",
+    "nombreCard": "Víctor Capador",
+    "alt": "Retrato de Víctor Capador",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Psicólogo social; lidera el «Mapa de Sabedores de Expresiones Artísticas» del Ministerio de las Culturas.",
+    "bio": [
+      "Profesional en psicología social, con posgrado en desarrollo integral de la infancia y la adolescencia, y trayectoria en investigación social, cultural y comunitaria en territorios afectados por el conflicto armado. Lidera el proyecto «Mapa de Sabedores de Expresiones Artísticas» del Ministerio de las Culturas, una apuesta por la identificación, visibilización y preservación del patrimonio cultural inmaterial y de los saberes asociados a diversas expresiones artísticas y comunitarias.",
+      "Su experiencia articula la investigación cualitativa y cuantitativa, la lectura territorial, la sistematización y el análisis de experiencias, así como la documentación y la producción audiovisual. Ha participado en la dirección de documentales orientados a la construcción de memoria y a la visibilización de narrativas comunitarias. Sus líneas de interés comprenden la memoria social y cultural, el patrimonio inmaterial, el territorio y la comunidad, las expresiones artísticas, las narrativas audiovisuales, los derechos humanos, los enfoques diferenciales y la participación comunitaria."
+    ]
+  },
+  {
+    "slug": "paola-wilches",
+    "categoria": "nacional",
+    "foto": "img/paola-wilches.jpg",
+    "fotoPendiente": false,
+    "nombre": "Paola Wilches",
+    "nombreCard": "Paola Wilches",
+    "alt": "Retrato de Paola Wilches",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Antropóloga y magíster en Estudios Políticos; trabaja educación, arte y diversidad cultural en la primera infancia.",
+    "bio": [
+      "Antropóloga y Magíster en Estudios Políticos. Su vida profesional ha girado en torno a la educación, el arte y la diversidad cultural, a través de ejercicios de investigación, pedagogías diversas y propias, y aportes a políticas públicas como la Política de Cero a Siempre. Durante cuatro años se formó realizando etnografía con infancias, lo que le ha permitido profundizar en la observación, la escritura y el diálogo como formas de construcción de conocimiento. Ha realizado numerosos procesos de sistematización de proyectos artísticos, culturales y pedagógicos.",
+      "Coordinó el Programa Nidos: Arte en Primera Infancia y fue consultora para Unicef en la creación de la Ruta Integral de Atención para la Primera Infancia en Emergencia. Su interés por la diversidad cultural y el arte la ha llevado a participar en procesos de construcción de conocimiento sobre formación musical y sobre la relación entre arte y paz, con el Ministerio de las Culturas, las Artes y los Saberes, en el Plan Nacional de Música para la Convivencia y en la coordinación del programa Artes y Saberes del PDET."
+    ]
+  },
+  {
+    "slug": "jaime-ceron-silva",
+    "categoria": "nacional",
+    "foto": "img/jaime-ceron-silva.jpg",
+    "fotoPendiente": false,
+    "nombre": "Jaime Cerón Silva",
+    "nombreCard": "Jaime Cerón Silva",
+    "alt": "Retrato de Jaime Cerón Silva",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Curador y crítico de arte independiente; trabaja la crítica, la curaduría y la investigación teórica desde 1994.",
+    "bio": [
+      "Estudió artes plásticas en la Universidad Nacional de Colombia, donde cursó la Maestría en Historia y Teoría del Arte. Su trabajo se ha centrado en la docencia, la crítica, la curaduría, la investigación teórica y la gestión cultural desde 1994. Entre sus proyectos de investigación curatorial se destacan Materialismos - proyecto Pentágono (Ministerio de Cultura, 2000), MDE07 Espacios de Hospitalidad (2007), Casa de citas (2010), Pasado tiempo futuro, arte colombiano en el siglo XXI (Medellín, 2019), Humboldt, Traspasar el Mito (Quito, 2019), 46SNA Inaudito Magdalena (2022) y Bog25 Ensayos sobre la felicidad (2025).",
+      "Entre sus publicaciones se destacan <em>Desbordando la objetividad</em> (Fotográfica Bogotá, 2007), <em>Doce artistas colombianos</em> (Enfoques, 2008), <em>Contraindicaciones del discurso</em> (Errata 2, 2010), <em>Sueños con Álvaro Barrios</em> (2011), <em>Colombia y sus modernidades artísticas</em> (2016), <em>El espectador como escritor</em> (Museo Nacional, 2017) y textos sobre Miler Lagos (2021) y Carlos Motta (2024). Actualmente es curador y crítico de arte independiente."
+    ]
+  },
+  {
+    "slug": "natalia-castellanos",
+    "categoria": "nacional",
+    "foto": "img/natalia-castellanos.jpg",
+    "fotoPendiente": false,
+    "nombre": "Natalia Castellanos",
+    "nombreCard": "Natalia Castellanos",
+    "alt": "Retrato de Natalia Castellanos",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Maestra en música y magíster en Filosofía; investiga archivos, memoria social y conocimiento sensible.",
+    "bio": [
+      "Natalia Castellanos Camacho es maestra en música y magíster en Filosofía por la Pontificia Universidad Javeriana, y doctoranda en Formación en la Sociedad del Conocimiento de la Universidad de Salamanca. Su trayectoria académica y profesional se ha concentrado en la investigación en artes, la Investigación + Creación y la educación artística y cultural, con especial interés en las formas de producción, organización y circulación del conocimiento sensible. Ha trabajado en universidades como la PUJ, la Universidad Central y la UPN, el Ministerio de Ciencia, Tecnología e Innovación y el Ministerio de las Culturas, las Artes y los Saberes, liderando procesos de investigación, memoria social y gestión del conocimiento.",
+      "Su trabajo reciente incorpora perspectivas de las humanidades digitales y la integración de sistemas de información para pensar los archivos, repositorios y observatorios no solo como dispositivos de conservación, sino también como espacios para relacionar memorias, saberes, prácticas y territorios. Es autora y editora académica de diversas publicaciones sobre investigación artística, música, educación y producción de conocimiento."
+    ]
+  },
+  {
+    "slug": "carlos-duenas",
+    "categoria": "nacional",
+    "foto": "img/carlos-duenas.jpg",
+    "fotoPendiente": false,
+    "nombre": "Carlos Dueñas",
+    "nombreCard": "Carlos Dueñas",
+    "alt": "Retrato de Carlos Dueñas",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "resumen": "Licenciado en Pedagogía Musical y comunicador social; coordinador académico del Congreso.",
+    "bio": [
+      "Licenciado en Pedagogía Musical por la Universidad Pedagógica Nacional y comunicador social-periodista por la Universidad Jorge Tadeo Lozano. Especialista en Comunicación-Educación y Magíster en Investigación en Problemas Sociales Contemporáneos de la Universidad Central. Docente en las áreas de la comunicación y las artes en pregrado y asesor de proyectos de grado en pregrado y maestría en las universidades Pedagógica Nacional, Javeriana, Jorge Tadeo Lozano y Politécnico Grancolombiano. Investigador en líneas de identidad, usos y consumos de medios y tecnologías de la información y la comunicación.",
+      "Exdecano de la Facultad de Artes de la Universidad Pedagógica Nacional y director del Departamento de Educación Musical de la misma universidad. Es docente de planta en la Facultad de Comunicación Social de la Universidad Jorge Tadeo Lozano y asesor en Educación Artística de la Dirección de Artes del Ministerio de las Culturas, las Artes y los Saberes durante los últimos 11 años. Actualmente se desempeña como coordinador académico del Primer Congreso Nacional e Internacional de Investigación Artística. Cantante lírico, fue solista de la Fundación Arte Lírico (1993-2002), integrante del Conjunto Vocal Instrumental Impromptus de música andina colombiana y director del Grupo Lírico Fusión (2000-2002)."
+    ]
+  },
+  {
+    "slug": "jeffrey-amador",
+    "categoria": "nacional",
+    "foto": "img/pendiente-foto.svg",
+    "fotoPendiente": true,
+    "nombre": "Jeffrey Amador",
+    "nombreCard": "Jeffrey Amador",
+    "alt": "Fotografía pendiente de Jeffrey Amador",
+    "altCard": "Fotografía pendiente de Jeffrey Amador",
+    "categoriaFicha": "Invitado nacional",
+    "categoriaCard": "Nacional",
+    "comentarioFicha": "PENDIENTE: falta fotografía. Solicitar al comité organizador.",
+    "comentarioCard": "PENDIENTE: falta fotografía de Jeffrey Amador (solicitar al comité)",
+    "resumen": "Tecnólogo audiovisual; desarrolla cartografía social y audiovisual sobre memoria, territorio e historias de vida.",
+    "bio": [
+      "Jeffrey Amador Carillo es tecnólogo en Producción Audiovisual Multimedia y estudiante de Administración Pública Territorial en la Escuela Superior de Administración Pública (ESAP). Su trayectoria profesional se ha construido en torno a la fotografía, el lenguaje audiovisual, la memoria social, el territorio y las historias de vida.",
+      "Desde hace una década ha desarrollado una propuesta de cartografía social y audiovisual que sitúa a las personas en el centro para visibilizar sus entornos a través de sus relatos, saberes, oficios y vínculos con los lugares que habitan. Su trabajo busca visibilizar particularidades y realidades locales que suelen omitirse en las representaciones generales, las estadísticas o las agendas informativas, concibiendo su labor fundamentalmente como un ejercicio de escucha, aprendizaje y circulación de conocimientos que valoran el aporte de las comunidades en la construcción de la sociedad."
+    ]
+  },
+  {
+    "slug": "nubia-florez",
+    "categoria": "nacional",
+    "foto": "img/pendiente-foto.svg",
+    "fotoPendiente": true,
+    "nombre": "Nubia Flórez",
+    "nombreCard": "Nubia Flórez",
+    "alt": "Fotografía pendiente de Nubia Leonor Flórez Forero",
+    "altCard": "Fotografía pendiente de Nubia Leonor Flórez Forero",
+    "categoriaFicha": "Invitada nacional",
+    "categoriaCard": "Nacional",
+    "comentarioFicha": "PENDIENTE: falta fotografía. Solicitar al comité organizador.",
+    "comentarioCard": "PENDIENTE: falta fotografía de Nubia Flórez (solicitar al comité)",
+    "resumen": "Antropóloga y gestora cultural; investiga la danza como archivo vivo de memoria en el Caribe colombiano.",
+    "bio": [
+      "Nubia Leonor Flórez Forero es antropóloga, investigadora y gestora cultural con más de 20 años de trayectoria. Formada en la Universidad Nacional de Colombia y con una maestría en Investigación Social Interdisciplinaria, concibe el cuerpo como un archivo vivo donde convergen memoria, identidad y creación, enfocándose en el Caribe colombiano. Ha ejercido como docente e investigadora en la Universidad del Atlántico, consolidando los estudios académicos en danza.",
+      "En el sector público destacó en la Coordinación Nacional de Danza del Ministerio de Cultura, la dirección del Centro Cultural Jorge Eliécer Gaitán y la Jefatura de Formación del Instituto Distrital de Cultura y Turismo de Barranquilla. Autora de <em>El cuerpo desatado</em> y líder del proyecto Archivos D, ha investigado la historiografía dancística regional y publicado sobre expresiones como el fandango y los bailes zapateados en Colombia. Su labor, respaldada por becas y ponencias internacionales en Madrid, Riverside (Los Ángeles) y Nueva York, le ha permitido posicionar la danza como espacio de resistencia y construcción de memoria."
+    ]
+  },
+  {
+    "slug": "manuel-garcia-conno",
+    "categoria": "moderacion",
+    "foto": "img/manuel-garcia-conno.jpg",
+    "fotoPendiente": false,
+    "nombre": "Manuel Fernando García García",
+    "nombreCard": "Manuel Fernando García García",
+    "alt": "Retrato de Manuel Fernando García García",
+    "categoriaFicha": "Moderación",
+    "categoriaCard": "Moderación",
+    "resumen": "Antropólogo y magíster en Estudios Artísticos; líder del componente de investigación del grupo de danza del Ministerio.",
+    "bio": [
+      "Antropólogo y especialista en Educación Integral de la Universidad Nacional de Colombia, magíster en Estudios Artísticos de la Universidad Distrital Francisco José de Caldas y estudiante de doctorado en Artes de la Universidad de Antioquia. Desde 2016 es docente del Proyecto Curricular de Arte Danzario de la Facultad de Artes ASAB.",
+      "Desde 2024 se desempeña como líder del componente de investigación del grupo de danza del Ministerio de las Culturas, las Artes y los Saberes. Dirige el GrupLAC de Investigación MOT y participa como coinvestigador en INNOVATEC (Minciencias)."
+    ]
+  },
+  {
+    "slug": "olga-lucia-olaya",
+    "categoria": "moderacion",
+    "foto": "img/olga-lucia-olaya.jpg",
+    "fotoPendiente": false,
+    "nombre": "Olga Lucía Olaya Parra",
+    "nombreCard": "Olga Lucía Olaya Parra",
+    "alt": "Retrato de Olga Lucía Olaya Parra",
+    "categoriaFicha": "Moderación",
+    "categoriaCard": "Moderación",
+    "resumen": "Especialista en historia, teoría y crítica del arte; asesora en educación y formación artística y cultural.",
+    "bio": [
+      "Licenciada en Bellas Artes, Especialista en Historia y Teoría del Arte, Especialista en Crítica del Arte y Magíster en Educación; realizó estudios doctorales en Ciencias del Arte. Asesora, consultora y conferencista internacional en educación artística desde 1985.",
+      "Coordinó el equipo artístico-pedagógico del Proyecto Tejedores de Vida del Instituto Distrital de las Artes. Es miembro honorario del Consejo Latinoamericano de Educación por el Arte (CLEA). Actualmente acompaña la formulación de la política pública interministerial de la Ley 2555 de 2025, Artes al Aula."
+    ]
+  },
+  {
+    "slug": "ana-maria-arango",
+    "categoria": "moderacion",
+    "foto": "img/ana-maria-arango.jpg",
+    "fotoPendiente": false,
+    "nombre": "Ana María Arango",
+    "nombreCard": "Ana María Arango",
+    "alt": "Retrato de Ana María Arango",
+    "categoriaFicha": "Moderación",
+    "categoriaCard": "Moderación",
+    "resumen": "Antropóloga e investigadora en el Chocó; cofundadora del centro de investigaciones «Corporaloteca».",
+    "bio": [
+      "Antropóloga de la Universidad de los Andes, DEA en Antropología Social de la Universidad de Barcelona, magíster en Gestión Cultural y estudiante del doctorado en Diseño, Arte y Ciencia de la Universidad Jorge Tadeo Lozano. Desde 2008 vive en el Chocó, donde se desempeña como investigadora de ASINCH y docente del programa de Educación Artística de la Universidad Tecnológica del Chocó. Allí mismo, en 2010, creó junto con Leonidas Valencia el centro de investigaciones «Corporaloteca».",
+      "Entre sus libros e investigaciones se encuentran <em>Velo qué bonito: prácticas sonoro-corporales de la primera infancia en poblaciones afrochocoanas</em> (2014), <em>Renacientes: arte, verdad y reparación</em> (2017), <em>Catiá, catiadora, cantos de río y selva</em> (2010), <em>La Tambora Mágica: sentipensando la gestión cultural en el departamento del Chocó</em> (2022) y <em>Cocorobé, cantos y arrullos del Pacífico colombiano</em> (Libro al Viento, IDARTES, 2013), entre otros."
+    ]
+  }
+]

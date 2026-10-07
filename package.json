@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:cms": "node scripts/build-cms.js",
+    "build:invitados": "node scripts/build-invitados.js",
     "lint:a11y": "node scripts/lint-accessibility.js",
     "new:content": "node scripts/new-content.js"
   },
