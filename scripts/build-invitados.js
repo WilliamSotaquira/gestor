@@ -237,7 +237,7 @@ function renderIndex(invitados) {
       <a href="../presentacion/index.html" class="btn-govco link-btn-govco">Presentación</a>
       <a href="index.html" class="btn-govco link-btn-govco" aria-current="page">Invitados</a>
       <span class="btn-govco link-btn-govco disabled" aria-disabled="true">Convocatoria (en preparación)</span>
-      <span class="btn-govco link-btn-govco disabled" aria-disabled="true">Programación (en preparación)</span>
+      <a href="../programacion/index.html" class="btn-govco link-btn-govco">Programación</a>
       <span class="btn-govco link-btn-govco disabled" aria-disabled="true">Publicaciones y memorias (en preparación)</span>
     </nav>
 
