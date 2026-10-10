@@ -1,0 +1,7 @@
+{
+  "task_id": "task-invitados-modal-sin-js",
+  "task_description": "Reconstruir la pagina de invitados del congreso (portal de Culturas / SharePoint) para que los 36 perfiles se abran en un MODAL sin JavaScript (patron :target via un unico <style> scoped bajo #contenido-cms), reemplazando los acordeones <details> actuales y preservando TODO el contenido textual verbatim. Sin JS, sin CDN, sin <link>, sin <dialog>, sin onclick; estilos inline salvo el bloque <style> de reglas :target.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null
+}

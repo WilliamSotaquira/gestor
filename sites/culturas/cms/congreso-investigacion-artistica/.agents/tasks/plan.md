@@ -1,98 +1,150 @@
-# Plan de implementación — Montaje de perfiles del Congreso de Investigación Artística
+# Plan de implementación — Alineación al TEXTO OFICIAL
 
-Micrositio Culturas (SharePoint). Raíz de trabajo: `e:\gestor`. Todas las rutas `cms` son identificadores fijos del sistema: NO renombrarlas.
+Tarea de edición de contenido HTML (micrositio GOV.CO del portal de Culturas, publicado sobre SharePoint). Se edita directamente en el workspace, sin worktree.
 
-## Contexto verificado durante la exploración
+## Fuente de verdad
 
-- **Fuente de datos:** `e:\gestor\sites\culturas\cms\congreso-investigacion-artistica\PERFILES PARTICIPANTES.md` (8,4 MB; tabla Markdown `EJE | Participación | Perfil | Fotografía`). No cargar entero: usar `Select-String -Pattern '^\|'` o lectura por secciones.
-- **Herramientas disponibles (confirmado en `package.json` y `node_modules`):** `sharp` ^0.35.3, `axe-core` ^4.9.0, `jsdom` ^29.1.1. Scripts: `npm run lint:a11y` → `node scripts/lint-accessibility.js`; `scripts/optimizar-fotos-invitados.js` (recorta 800×533, mozjpeg, respalda en `invitados/img/_originales/`, borra el `.png` origen tras generar `.jpg`). `package.json` tiene `"type": "module"`.
-- **Patrón de ficha (leído):** `invitados/perfil-blanca-botero.html`. Estructura: DOCTYPE, head con CDN GOV.CO v5 + Bootstrap 5.3.3, `#contenido-cms` con comentario de plantilla, `<main id="contenido-principal">`, breadcrumb (Inicio `../index.html` / Invitados `index.html` / Nombre), `div.row.g-4.py-3` con `col-12 col-md-4` (imagen `img-fluid rounded`) + `col-12 col-md-8` (`span.text3-govco` categoría, `<h1>`, 1-3 `<p>`), botón `a.btn-govco.outline-btn-govco` "Volver a Invitados", scripts CDN. Una ficha (`perfil-julieta-infantino.html`) añade un `<section class="py-3">` opcional con ponencia; no es obligatorio para las nuevas.
-- **Patrón de tarjeta (leído en `invitados/index.html`):** `div.col > a.tarjeta-govco.vertical-tarjeta-govco.w-100 > div.container-img-tarjeta-govco (img.image-tarjeta-govco) + div.body-tarjeta-govco (span categoría, h3.h5 nombre, p resumen 1-2 líneas)`. Secciones existentes: "Invitados internacionales", "Invitados nacionales", "Moderación". Las tarjetas pendientes usan comentario `<!-- PENDIENTE... -->` y `src="img/pendiente-foto.svg"`.
-- **Reglas de contenido (steering):** usar componentes GOV.CO v5 exactos; toda imagen con `alt` descriptivo; jerarquía de encabezados; no inventar clases. Solo el contenido dentro de `#contenido-cms` se publica.
+El **TEXTO OFICIAL** incluido en el encargo es la fuente de verdad definitiva (duda ya resuelta por el usuario). El informe `analisis-presentacion.md` se usa solo como mapa de ubicaciones y diferencias, no como fuente de contenido.
 
-### Mapa de filas de la fuente (verificado con detección de firma de bytes)
+## Restricciones de edición (aplican a TODAS las ediciones)
 
-El prefijo del data URI siempre dice `image/png`, pero los bytes reales son JPEG en casi todas las filas. **Detectar extensión por cabecera de bytes**, no por el prefijo: `FF D8 FF` → `.jpg`; `89 50 4E 47` (base64 empieza con `iVBOR`) → `.png`.
+- Formato APLANADO de SharePoint: estilos inline (`style="..."`) y acordeones nativos `<details>`/`<summary>`.
+- NO introducir clases GOV.CO nuevas, ni `<link>`, `<script>` o CDN. Cualquier markup nuevo va inline, replicando los estilos ya presentes en el mismo archivo.
+- Solo se publica el HTML dentro de `<div id="contenido-cms">`. No tocar nada fuera de ahí.
+- `node` no está instalado: no ejecutar builds ni npm.
+- NO ejecutar `git commit` ni `push`.
+- Conservar las entidades `&#160;` y el espaciado del archivo tal como aparecen alrededor de los bloques editados (son parte del aplanado de SharePoint).
+- La cadena `cms` en rutas es un identificador fijo del sistema; no renombrarla.
 
-- **Filas NUEVAS con imagen base64 (17):** Gabriel Vélez (JPEG), Pedro Pablo Gómez (JPEG), Tania Delgado (JPEG), Carlos Sepúlveda (JPEG), Juan Alejandro Chindoy (JPEG), Martín Inthamoussu (JPEG, internacional), Consejo Ancestral Willka Yaku (JPEG, colectivo), Valentina Ruiz (JPEG), Edgar Puentes (JPEG), Eliécer Arenas (JPEG), Pilar Riaño Alcalá (JPEG, internacional), Camila Camacho (JPEG), Víctor Capador (JPEG), Paola Wilches (JPEG), Jaime Cerón Silva (JPEG), Natalia Castellanos (JPEG), Carlos Dueñas (JPEG).
-- **Filas NUEVAS sin imagen base64 (2) → placeholder:** Jeffrey Amador (bio presente, sin foto), Nubia Flórez (bio presente, celda Fotografía sin base64). Confirmado: ninguna de las dos filas contiene `data:image`.
-- **Filas con placeholder que AHORA traen base64 real (3):** Julieta Infantino (bytes JPEG), Ramiro Osorio (bytes **PNG**), Ana María Arango (bytes JPEG). Su base64 reemplaza el placeholder.
-- **Filas ya montadas con foto (no sobrescribir salvo que sea placeholder):** Blanca Botero, Carolina Chacón, Catalina del Castillo, Eider Yangana, María Teresa García Schlegel, Ritzy Medina, Sandra Camacho, Álvaro Hernández, Óscar Hernández Salgar, Lara Lookabaugh, Monique Martínez, Pedro Vilela, Manuel Fernando García (bytes PNG), Olga Lucía Olaya.
-- **Filas EXCLUIDAS (POR CONFIRMAR, sin bio) — no crear nada:** Relato Expandido 1/2/4, Mesa de Saberes (Victoria Uriana, Jhon Jairo Chota, Omaira Anacona), Wilfran Barrios, Javier Machicado, Adriana González Hassig, Carolina Correa.
+## Método de verificación (sin build)
 
-### Tabla nombre → slug (usar EXACTAMENTE)
-
-Nuevos: Gabriel Vélez→`gabriel-velez`; Pedro Pablo Gómez→`pedro-pablo-gomez`; Tania Delgado→`tania-delgado`; Carlos Sepúlveda→`carlos-sepulveda`; Juan Alejandro Chindoy→`juan-alejandro-chindoy`; Martín Inthamoussu→`martin-inthamoussu`; Consejo Ancestral Willka Yaku→`consejo-ancestral-willka-yaku`; Valentina Ruiz→`valentina-ruiz`; Edgar Puentes→`edgar-puentes`; Eliécer Arenas→`eliecer-arenas`; Pilar Riaño Alcalá→`pilar-riano-alcala`; Camila Camacho→`camila-camacho`; Víctor Capador→`victor-capador`; Paola Wilches→`paola-wilches`; Nubia Flórez→`nubia-florez`; Jaime Cerón Silva→`jaime-ceron-silva`; Jeffrey Amador→`jeffrey-amador`; Natalia Castellanos→`natalia-castellanos`; Carlos Dueñas→`carlos-duenas`.
-Placeholder→foto real: Julieta Infantino→`julieta-infantino`; Ramiro Osorio→`ramiro-osorio`; Ana María Arango→`ana-maria-arango`.
+Como no hay toolchain, cada ítem se verifica por **lectura**:
+- Releer el bloque editado y confirmar que el texto coincide carácter por carácter con el TEXTO OFICIAL (incluida la puntuación).
+- Conteo balanceado de etiquetas del bloque tocado: cada `<p>`/`</p>`, `<ul>`/`</ul>`, `<li>`/`</li>`, `<h3>`/`</h3>`, `<h4>`/`</h4>`, `<details>`/`</details>`, `<summary>`/`</summary>`, `<div>`/`</div>` abre y cierra.
+- Confirmar que el `<div id="contenido-cms">` sigue abriendo una sola vez al inicio y cerrando una sola vez al final (sin `</div>` de más ni de menos).
+- Herramienta sugerida para apoyo: `grep` sobre el archivo para confirmar que los textos viejos ya no existen y los nuevos sí.
 
 ---
 
-## Pasos
+# ARCHIVO 1: `presentacion/index.html`
 
-- [ ] 1. **Crear el script temporal de extracción** `e:\gestor\scripts\_extraer-fotos-perfiles.mjs`.
-      El script (ES module): lee `sites/culturas/cms/congreso-investigacion-artistica/PERFILES PARTICIPANTES.md` como texto; parte en líneas y toma solo las que empiezan con `|`; por fila toma la 2.ª celda (nombre, limpiando `**`, enlaces Markdown y texto pegado) y la 4.ª celda (Fotografía); si la celda de Fotografía contiene `data:image/...;base64,<payload>`, decodifica el payload a Buffer; **detecta la extensión por los primeros bytes del Buffer** (`FF D8 FF` → `.jpg`; `89 50 4E 47` → `.png`; otro → avisar y omitir); mapea el nombre al slug con una tabla embebida (la de arriba); escribe `sites/culturas/cms/congreso-investigacion-artistica/invitados/img/<slug>.<ext>`. Omite filas sin imagen o `POR CONFIRMAR`. Para evitar sobrescribir fotos ya optimizadas: escribir SOLO los slugs nuevos + los tres que pasan de placeholder a foto (`julieta-infantino`, `ramiro-osorio`, `ana-maria-arango`); NO escribir slugs de la lista "ya montadas con foto". Imprime cada archivo escrito con su tamaño en bytes y un resumen final (cuántos escritos, cuántos omitidos y por qué).
-      Archivos: `e:\gestor\scripts\_extraer-fotos-perfiles.mjs` (crear).
-      Verificar: `node scripts/_extraer-fotos-perfiles.mjs` desde `e:\gestor` corre sin excepción e imprime el listado (paso 2 confirma el resultado en disco).
+Orden recomendado dentro del archivo: trabajar de arriba hacia abajo (Parte 1 → Parte 4). Las Partes 1, 2, 3 y 4 son independientes entre sí a nivel de bloque; se agrupan por archivo para una sola pasada de verificación.
 
-- [ ] 2. **Ejecutar la extracción.** Correr `node scripts/_extraer-fotos-perfiles.mjs` desde `e:\gestor`.
-      Archivos: genera `invitados/img/<slug>.jpg|.png` para los 17 nuevos + 2 (Jeffrey Amador y Nubia Flórez NO generan imagen; quedarán con placeholder) + 3 de placeholder a foto. Esperado: `ramiro-osorio.png` y los demás `.jpg`/`.png` según firma.
-      Verificar: `Get-ChildItem sites/culturas/cms/congreso-investigacion-artistica/invitados/img` lista los nuevos slugs; confirmar que NO existen `jeffrey-amador.*` ni `nubia-florez.*` (van con placeholder) y que las 14 fotos previas conservan su tamaño original (no fueron tocadas).
+- [ ] 1. **(Parte 1a) Quitar el subtítulo "La soberanía de los saberes…" del `<h1>` y del primer párrafo.**
+      El `<h1>` ya es correcto ("Primer Congreso Nacional e Internacional de Investigación Artística") y NO lleva subtítulo: dejarlo igual. En el párrafo 1 de la sección Presentación (el que empieza "El Ministerio de las Culturas…"), eliminar el fragmento final del título largo de modo que termine en "…el Primer Congreso Nacional e Internacional de Investigación Artística." sin ": La soberanía de los saberes culturales y los conocimientos sensibles del Sur Global.". Esta eliminación queda absorbida por el ítem 2 (que reescribe el párrafo 1 completo); se lista aparte solo para dejar explícito el requisito.
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: `grep` del archivo NO debe devolver ninguna aparición de "Sur Global" ni de "soberanía de los saberes" dentro de `#contenido-cms`.
 
-- [ ] 3. **Optimizar las fotos.** Correr `node scripts/optimizar-fotos-invitados.js` desde `e:\gestor`.
-      Archivos: convierte todas las imágenes de `invitados/img/` a `.jpg` 800×533 mozjpeg, respalda originales nuevos en `invitados/img/_originales/`, elimina los `.png` origen (p. ej. `ramiro-osorio.png` → `ramiro-osorio.jpg`).
-      Verificar: la salida del script muestra cada archivo con su reducción de tamaño; tras correr, `invitados/img/` contiene `<slug>.jpg` para cada perfil nuevo con foto y para los tres rescatados; no quedan `.png` sueltos (salvo en `_originales/`).
+- [ ] 2. **(Parte 1b) Reescribir los 7 párrafos de la sección "Presentación" al TEXTO OFICIAL, con las 4 modalidades como lista `<ul>` inline.**
+      El HTML actual tiene 8 `<p>` entre el `<h2>Presentación</h2>` y el `<h2>¿A qué público…</h2>`. Consolidar a los 7 párrafos del TEXTO OFICIAL (sección 1). El párrafo 4 incluye la lista de 4 modalidades. El párrafo publicado 6 ("…reconocer el conocimiento de las comunidades territoriales como capital… protocolos bioéticos…") NO está en el oficial: se elimina. No inventar un 8.º párrafo.
+      Reemplazar el bloque completo de los 8 `<p>` por exactamente estos 7 (respetando el patrón ` <p> …texto… </p> ` con los espacios del aplanado):
+      - P1: `El Ministerio de las Culturas, las Artes y los Saberes, a través de la Dirección de Artes, en el marco del Convenio de Asociación No. 0968-2026 suscrito con la Fundación Arteria, y en alianza con la Universidad de Antioquia, la Universidad del Atlántico, la Universidad Distrital Francisco José de Caldas, la Pontificia Universidad Javeriana, la Universidad Tecnológica del Chocó y el Instituto Universitario de la Paz, realizará del 3 al 6 de noviembre de 2026 el Primer Congreso Nacional e Internacional de Investigación Artística.` (nota: "en alianza con", NO "en asocio con"; quitar "(UNIPAZ)"; quitar el subtítulo).
+      - P2: `Este espacio está orientado a fortalecer el diálogo colaborativo para la apropiación social del conocimiento artístico mediante la circulación de reflexiones y resultados provenientes de experiencias de investigación, con miras a consolidar el posicionamiento de las prácticas artísticas y culturales como formas legítimas de producción de conocimiento.`
+      - P3: `En este marco, el Congreso busca dinamizar la articulación intersectorial e interinstitucional entre el Ministerio de las Culturas, las Artes y los Saberes, el Ministerio de Ciencia, Tecnología e Innovación y el Ministerio de Educación Nacional, en consonancia con las políticas públicas que promueven el fomento y el reconocimiento de la investigación artística desde una perspectiva local, nacional e internacional.`
+      - P4: `El Congreso promueve una comprensión amplia de la investigación artística y cultural, cuyo potencial creativo radica en la diversidad de lenguajes, comunidades, territorios, formatos, técnicas y metodologías. En este sentido, el encuentro acoge las diversas modalidades de trabajo del sector, tales como:` seguido INMEDIATAMENTE (dentro del mismo bloque, tras cerrar el `<p>`) de una lista `<ul>` inline con 4 `<li>`, usando el mismo estilo visual que las otras listas del archivo (ver la `<ul style="list-style: none; padding-left: 0px;">` de la ficha superior y las `<ul>` simples de "Aliados"; para esta lista usar viñeta estándar con sangría, p. ej. `<ul style="padding-left: 1.25rem;">` para mantener coherencia con listas de contenido). Los 4 `<li>` con el nombre en `<strong>` y la glosa exacta:
+        - `<li><strong>Investigación + Creación (I+C):</strong> según los marcos del Sistema Nacional de Ciencia, Tecnología e Innovación (MinCiencias).</li>`
+        - `<li><strong>Investigación por, en y a través de las artes:</strong> como ejercicio de indagación disciplinar e interinstitucional.</li>`
+        - `<li><strong>Creación investigadora:</strong> orientada a los intercambios interdisciplinares y a la experiencia estética.</li>`
+        - `<li><strong>Investigación y creación aplicada:</strong> enfocada en la transformación y el aporte a las realidades territoriales.</li>`
+      - P5: `Este espacio fomentará la reflexión metodológica sobre los procesos de realización, registro, sistematización e interpretación de la investigación artística. Con ello, se busca consolidar memorias y documentos accesibles para su circulación, la comunicación de resultados y la apropiación social, respondiendo a la complejidad de las prácticas artísticas contemporáneas y a la necesidad de articular acciones entre las artes, la ciencia y la gobernanza cultural.`
+      - P6: `En la prospectiva, el Congreso busca consolidar una línea de continuidad que reactive el debate académico y sectorial sobre la investigación artística a nivel nacional e internacional. De igual forma, permitirá trazar un panorama actualizado del estado del arte que abarque las dimensiones de las artes expandidas, los aportes del campo estético, el diálogo entre los conocimientos formales y los saberes locales, y el papel de las artes en la cohesión social.`
+      - P7: `Estos enfoques se enmarcan en los ejes estratégicos del Plan Nacional de Cultura (2024-2038), articulando criterios territoriales, diferenciales, de equidad e intersectoriales para el desarrollo sostenible y el bienestar colectivo.`
+      Nota de dato: la ficha superior (`<ul>` con Entidad/Fecha/Lugar) y el bloque "Aliados institucionales" NO se tocan en este ítem (ver ítem de alcance al final del archivo).
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: releer la sección Presentación y confirmar 7 `<p>` + 1 `<ul>` con 4 `<li>`; `grep` NO debe hallar "en asocio con", "saberes sensibles", "protocolos bioéticos", "cocrear"; sí debe hallar "en alianza con" e "Investigación + Creación (I+C)". Conteo balanceado de `<ul>`/`</ul>` y `<li>`/`</li>` del nuevo bloque.
 
-- [ ] 4. **Borrar el script temporal** `e:\gestor\scripts\_extraer-fotos-perfiles.mjs`.
-      Archivos: eliminar `e:\gestor\scripts\_extraer-fotos-perfiles.mjs`.
-      Verificar: `Test-Path scripts/_extraer-fotos-perfiles.mjs` devuelve `False`; `Get-ChildItem scripts` ya no lo lista.
+- [ ] 3. **(Parte 1c) Reescribir el párrafo de "¿A qué público está dirigido este encuentro?" al TEXTO OFICIAL (sección 2).**
+      Reemplazar el único `<p>` bajo ese `<h2>` por el texto oficial, en dos oraciones:
+      `Invitamos a investigadores, gestores culturales, artistas, educadores, estudiantes, redes académicas y organizaciones sociales y culturales a participar en las áreas temáticas del Congreso como asistentes y ponentes. El encuentro concibe la investigación artística como un campo abierto, situado y contextualizado que articula la creación, la memoria, el territorio, la gobernanza y el diálogo intercultural a través de dimensiones teóricas, prácticas e históricas.`
+      Debe incluir "redes académicas" y "asistentes y ponentes"; usar "campo abierto" (no "expandido") y "diálogo intercultural" (no "diversidad intercultural"). Quitar "del sector artístico y cultural internacional" y "acoge un amplio espectro de trayectorias".
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: `grep` NO debe hallar "campo expandido", "diversidad intercultural", "participantes activos", "amplio espectro de trayectorias"; sí "redes académicas", "campo abierto", "diálogo intercultural", "asistentes y ponentes".
 
-- [ ] 5. **Crear fichas NUEVAS de invitados nacionales con foto** (14 fichas) siguiendo EXACTAMENTE el patrón de `invitados/perfil-blanca-botero.html`.
-      Para cada uno: `title='<Nombre> - Invitados del Congreso de Investigación Artística'`; breadcrumb Inicio/Invitados/`<Nombre>`; `img src="img/<slug>.jpg"` `alt="Retrato de <Nombre>"`; `span.text3-govco`="Invitado nacional" o "Invitada nacional" según género; `<h1>` con el nombre; cuerpo = texto de la columna **Perfil** VERBATIM en lo sustancial, repartido en 1-3 `<p>`, limpiando artefactos de copiado (nombre/cargo pegados al inicio, URLs safelinks de Outlook, asteriscos sueltos, dobles espacios). No inventar datos.
-      Participantes y slugs: Gabriel Vélez→`gabriel-velez` (Invitado nacional; es presidente de ACOFARTES / charla inaugural, SÍ lleva ficha), Pedro Pablo Gómez→`pedro-pablo-gomez`, Tania Delgado→`tania-delgado` (Invitada), Carlos Sepúlveda→`carlos-sepulveda`, Juan Alejandro Chindoy→`juan-alejandro-chindoy`, Valentina Ruiz→`valentina-ruiz` (Invitada), Edgar Puentes→`edgar-puentes`, Eliécer Arenas→`eliecer-arenas`, Camila Camacho→`camila-camacho` (Invitada), Víctor Capador→`victor-capador`, Paola Wilches→`paola-wilches` (Invitada), Jaime Cerón Silva→`jaime-ceron-silva`, Natalia Castellanos→`natalia-castellanos` (Invitada), Carlos Dueñas→`carlos-duenas`.
-      Archivos: crear `invitados/perfil-<slug>.html` para cada uno de los 14.
-      Verificar: cada archivo existe y su `img src` apunta a un `invitados/img/<slug>.jpg` existente (confirmar con `Test-Path`); el linter de a11y del paso 11 debe pasar sobre ellos.
+- [ ] 4. **(Parte 2 — EJE 1) Renombrar temas del Eje 1 y alinear sus descripciones al oficial.**
+      Dentro del `<details>` del "Eje 1: Diversidad y diálogo intercultural" (NO cambiar el título del eje; solo normalizar capitalización si hiciera falta — ya está correcto). Para cada tema, reemplazar el texto del `<h4>` y el `<p>` de descripción que le sigue:
+      - `<h4>Perspectivas ecológicas: agencias posibles de los ecosistemas</h4>` → `<h4>…>Perspectivas ecológicas</h4>` (conservar el `style` inline del `<h4>`). Descripción → `Concibe la investigación artística como un campo de producción de conocimiento para la preservación ambiental, el desarrollo biocultural y la sostenibilidad de los ecosistemas.`
+      - `Justicia epistémica: saberes otros` → `Diálogo de saberes y equidad del conocimiento`. Descripción → `Analiza la investigación artística desde enfoques críticos y contextualizados, promoviendo la escucha, la reciprocidad y el reconocimiento entre los saberes locales, tradicionales y los sistemas formales de conocimiento.`
+      - `Cuerpos, movimiento, sensibilidades y afectos` → `Cuerpos, movimiento y lenguajes sensibles`. Descripción → `Explora el cuerpo como espacio de inscripción de memorias, expresiones e identidades. Comprende la memoria corporal como un proceso relacional activado por vínculos, gestos y dinámicas colectivas.`
+      - `Artes, culturas y memoria` → `Artes, culturas y memoria comunitaria`. Descripción → `Indaga el papel del arte y la cultura en contextos de transformación social y en escenarios complejos. Analiza las respuestas artísticas ante el impacto en los derechos culturales, así como los procesos de resistencia, resiliencia y reconstrucción del tejido social.`
+      Conservar en todos los `<h4>` el atributo `style="color: #0943b5; font-size: 1rem; margin-top: 1rem;"` existente, y mantener los `&#160;&#160;` finales de cada `<p>` tal como están.
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: `grep` dentro del Eje 1 NO debe hallar "agencias posibles", "saberes otros", "sensibilidades y afectos", ni "Artes, culturas y memoria<"; sí los 4 nombres oficiales. Confirmar que siguen siendo 4 `<h4>` + 4 `<p>` dentro del `<details>` del Eje 1.
 
-- [ ] 6. **Crear ficha del colectivo Consejo Ancestral Willka Yaku** → `invitados/perfil-consejo-ancestral-willka-yaku.html`.
-      Reglas específicas: `<h1>Consejo Ancestral Willka Yaku</h1>`; `span.text3-govco`="Colectivo · Nacional"; `alt="Retrato del Consejo Ancestral Willka Yaku"`; `img src="img/consejo-ancestral-willka-yaku.jpg"`; cuerpo verbatim de la columna Perfil (mencionando a Eyder Fabio Calambás y Phuyu Uma Jennifer Ávila como integrantes, sin inventar).
-      Archivos: crear `invitados/perfil-consejo-ancestral-willka-yaku.html`.
-      Verificar: existe y referencia `img/consejo-ancestral-willka-yaku.jpg` (existente tras el paso 3).
+- [ ] 5. **(Parte 2 — EJE 2) Renombrar temas del Eje 2 y alinear descripciones.**
+      Dentro del `<details>` del "Eje 2: Memoria y creación":
+      - `Pedagogías situadas: la producción de sentido en los territorios` → `Pedagogías situadas y formación artística`. Descripción → `Investiga modelos pedagógicos e itinerarios formativos en artes que emergen de las dinámicas territoriales y dialogan con las prácticas socioculturales regionales.`
+      - `Archivo y memoria viva: resistencias y contrarrelatos` → `Archivo, patrimonio y memoria viva`. Descripción → `Propone una noción ampliada del archivo como insumo para la creación y la investigación. Aborda la preservación y la reactivación de documentos, artefactos y testimonios orales, transformándolos en experiencias compartidas.`
+      - `Curadurías críticas: mediación social para la producción de sentido` → `Curadurías críticas y mediación cultural`. Descripción → `Analiza las prácticas curatoriales que trascienden la exhibición para constituirse en dispositivos de mediación social, de producción de conocimiento y de articulación entre lenguajes y comunidades.`
+      Conservar estilos inline de `<h4>` y los `&#160;&#160;` finales.
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: `grep` NO debe hallar "producción de sentido en los territorios", "resistencias y contrarrelatos", "mediación social para la producción de sentido"; sí los 3 nombres oficiales. 3 `<h4>` + 3 `<p>` en el Eje 2.
 
-- [ ] 7. **Crear fichas NUEVAS de invitados internacionales** (2 fichas).
-      Martín Inthamoussu→`martin-inthamoussu`: `span.text3-govco`="Invitado internacional · Uruguay"; `alt="Retrato de Martín Inthamoussu"`; `img src="img/martin-inthamoussu.jpg"`.
-      Pilar Riaño Alcalá→`pilar-riano-alcala`: `span.text3-govco`="Invitada internacional · Canadá"; `alt="Retrato de Pilar Riaño Alcalá"`; `img src="img/pilar-riano-alcala.jpg"`. Al limpiar su Perfil, eliminar las URLs safelinks de Outlook y el cargo pegado ("Professor | Graduate Co-Chair…"), dejando prosa legible.
-      Archivos: crear `invitados/perfil-martin-inthamoussu.html` y `invitados/perfil-pilar-riano-alcala.html`.
-      Verificar: ambos existen y referencian sus `img/<slug>.jpg` existentes.
+- [ ] 6. **(Parte 2 — EJE 3) Renombrar temas del Eje 3 y alinear descripciones.**
+      Dentro del `<details>` del "Eje 3: Gobernanza y sostenibilidad cultural":
+      - `Conocimiento sensible como bien público` → `Conocimiento artístico como bien público`. Descripción → `Aborda la dimensión pública del conocimiento generado por las artes y su impacto en la legislación, las políticas públicas y el fortalecimiento de la ciudadanía.`
+      - `Economías creativas y culturales basadas en las artes` → `Economías creativas, culturales y sostenibilidad`. Descripción → `Investiga modelos de gestión, fomento y sostenibilidad financiera, social y organizativa que garanticen el bienestar de los artistas, creadores y agentes del ecosistema cultural.`
+      - `Inteligencia relacional e investigación artística en la era generativa` → `Inteligencia Relacional`. Descripción → `Analiza las dinámicas de la creación y la investigación artísticas en la era digital y de la inteligencia artificial, abordando sus dimensiones éticas, estéticas, normativas y técnicas en la interacción humano-tecnología.`
+      - `Ética de la investigación: conocimiento situado y territorio` → `Ética de la investigación`. Descripción → `Examina las pautas éticas, los derechos de autor y las buenas prácticas en la gestión del conocimiento local y en la investigación colaborativa, a fin de prevenir la apropiación indebida y promover la coautoría.`
+      Conservar estilos inline de `<h4>` y los `&#160;&#160;` finales.
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: `grep` NO debe hallar "Conocimiento sensible como bien público", "basadas en las artes", "era generativa" (dentro del `<h4>`), "conocimiento situado y territorio"; sí los 4 nombres oficiales. 4 `<h4>` + 4 `<p>` en el Eje 3.
 
-- [ ] 8. **Crear fichas NUEVAS sin foto (placeholder)** (2 fichas) replicando el patrón de ficha pendiente (comentario `<!-- PENDIENTE: ... -->` sobre la imagen y `src="img/pendiente-foto.svg"`).
-      Jeffrey Amador→`jeffrey-amador`: `span.text3-govco`="Invitado nacional"; `alt="Fotografía pendiente de Jeffrey Amador"`; cuerpo = bio real de la columna Perfil (la fila SÍ trae bio; solo falta la foto).
-      Nubia Flórez→`nubia-florez`: `span.text3-govco`="Invitada nacional"; `alt="Fotografía pendiente de Nubia Leonor Flórez Forero"`; cuerpo = bio real de la columna Perfil. (Confirmado en la fuente: su celda Fotografía no trae base64.)
-      Archivos: crear `invitados/perfil-jeffrey-amador.html` y `invitados/perfil-nubia-florez.html`.
-      Verificar: ambos existen y referencian `img/pendiente-foto.svg` (existente).
+- [ ] 7. **(Parte 3) Añadir la atribución del Plan Nacional de Cultura a la cita introductoria de cada eje.**
+      Cada `<details>` de eje abre su `<div style="padding…">` con un `<p>` que es una cita del Plan sin atribución. Formatear como cita: envolver el texto existente entre comillas tipográficas (« » o " ", de forma coherente; el archivo usa comillas tipográficas «…» en Programación, pero en Presentación no hay precedente — usar comillas latinas «…» para consistencia con el proyecto) y añadir al final, antes del cierre `</p>` (y antes de los `&#160;&#160;`), la referencia:
+      - Eje 1: ` (Plan Nacional de Cultura, 2024, p. 62)`
+      - Eje 2: ` (Plan Nacional de Cultura, 2024, p. 92)`
+      - Eje 3: ` (Plan Nacional de Cultura, 2024, p. 122)`
+      No alterar el texto de la cita salvo el entrecomillado. Decisión: se mantiene el texto de la cita tal como está publicado (coincide en lo esencial con el oficial); solo se agrega comillas + atribución, que es lo que pide la Parte 3.
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: `grep` debe hallar las 3 cadenas "Plan Nacional de Cultura, 2024, p. 62/92/122", cada una exactamente una vez. Confirmar que cada cita quedó entre comillas.
 
-- [ ] 9. **Completar las 3 fichas que pasaron de placeholder a foto real.** Los archivos ya existen: `invitados/perfil-julieta-infantino.html`, `invitados/perfil-ramiro-osorio.html`, `invitados/perfil-ana-maria-arango.html`.
-      Para cada una: cambiar `img src` a `img/<slug>.jpg`, actualizar `alt` a `"Retrato de <Nombre>"`, quitar el comentario `<!-- PENDIENTE... -->`. Reemplazar el texto provisional por la bio real de la columna Perfil del `.md` (verbatim en lo sustancial, limpiando artefactos). Julieta Infantino: conservar/ajustar su `<section>` de ponencia existente si el `.md` la respalda; mantener `span`="Invitada internacional · Argentina". Ramiro Osorio: `span`="Invitado nacional", `<h1>Ramiro Osorio Fonseca</h1>`. Ana María Arango: `span`="Moderación".
-      Archivos: modificar los 3 archivos citados.
-      Verificar: ninguno contiene ya `pendiente-foto.svg` ni comentarios `PENDIENTE`; cada `img src` apunta a su `img/<slug>.jpg` existente.
+- [ ] 8. **(Parte 4) Corregir el salto de jerarquía h2 → h4 convirtiendo el título de cada eje en `<h3>`.**
+      Hoy el título del eje vive como `<span style="flex: 1 1 auto; font-weight: 700; font-size: 1.05rem; line-height: 1.3; color: #ffffff;">Eje N: …</span>` dentro del `<summary>`, y el número va en un `<span aria-hidden="true" …>N</span>`. Cambio: envolver el texto del eje en un `<h3>` con los MISMOS estilos inline que tenía el `<span>` de título, más `margin: 0px;` para que no rompa el layout flex del `<summary>`. Es decir, reemplazar ese `<span>` de título por `<h3 style="flex: 1 1 auto; font-weight: 700; font-size: 1.05rem; line-height: 1.3; color: #ffffff; margin: 0px;">Eje N: …</h3>`. Conservar intacto el `<span aria-hidden="true">` del número. Hacerlo en los 3 ejes. Los temas siguen siendo `<h4>`, de modo que la jerarquía queda h1 > h2 (Ejes temáticos) > h3 (eje) > h4 (tema), sin saltos. No alterar `<details>`/`<summary>` ni su funcionamiento.
+      Decisión de diseño: se usa `<h3>` dentro del `<summary>` (en vez de migrar al acordeón GOV.CO del design system) porque el requisito es mantener el formato aplanado de SharePoint y no introducir clases/JS nuevos; un `<h3>` inline resuelve `heading-order` sin cambiar el patrón del archivo.
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/presentacion/index.html`
+      Verify: releer los 3 `<summary>` y confirmar que cada uno contiene `<span aria-hidden="true">N</span>` + `<h3 …>Eje N: …</h3>`; `grep` NO debe hallar el `<span>` de título de eje con `font-size: 1.05rem` sin `aria-hidden`; conteo balanceado `<h3>`/`</h3>` (3 nuevos pares, más el `<h3>Logos de los aliados</h3>` ya existente). Confirmar que no hay ningún `<h4>` sin un `<h3>` previo en el flujo del documento.
 
-- [ ] 10. **Actualizar el listado** `invitados/index.html` (leerlo completo antes de editar).
-      a) En "Invitados internacionales": agregar tarjetas de Martín Inthamoussu (span "Internacional · Uruguay") y Pilar Riaño Alcalá (span "Internacional · Canadá"), con `href="perfil-<slug>.html"`, `img src="img/<slug>.jpg"`, `alt="Retrato de <Nombre>"`, `h3.h5` nombre y `p` resumen de 1-2 líneas redactado a partir de la bio (no la bio entera).
-      b) En "Invitados nacionales": agregar tarjetas (span "Nacional") de Gabriel Vélez, Pedro Pablo Gómez, Tania Delgado, Carlos Sepúlveda, Juan Alejandro Chindoy, Consejo Ancestral Willka Yaku (span "Colectivo · Nacional"), Valentina Ruiz, Edgar Puentes, Eliécer Arenas, Camila Camacho, Víctor Capador, Paola Wilches, Jaime Cerón Silva, Natalia Castellanos, Carlos Dueñas — cada una con su `img/<slug>.jpg`. Añadir también Jeffrey Amador y Nubia Flórez como tarjetas PENDIENTE (comentario `<!-- PENDIENTE... -->` + `src="img/pendiente-foto.svg"`).
-      c) Actualizar las tarjetas de Julieta Infantino, Ramiro Osorio y Ana María Arango: cambiar `src` a `img/<slug>.jpg`, quitar el comentario PENDIENTE, mejorar el `<p>` resumen.
-      Archivos: modificar `invitados/index.html`.
-      Verificar: todos los `href` de tarjetas nuevas apuntan a `perfil-*.html` existentes (confirmar con `Test-Path` por cada href); todos los `img src` de tarjetas con foto apuntan a `img/*.jpg` existentes; el HTML sigue bien formado (sin `<div>` sin cerrar).
+---
 
-- [ ] 11. **Validar accesibilidad.** Correr `node scripts/lint-accessibility.js sites/culturas/cms/congreso-investigacion-artistica/invitados` desde `e:\gestor` y corregir toda violación reportada en los archivos nuevos/editados (típicamente `alt`, orden de encabezados o contraste).
-      Archivos: según hallazgos del linter (fichas y/o `index.html`).
-      Verificar: el linter termina con "Problemas encontrados: 0" para la carpeta `invitados` (exit code 0).
+# ARCHIVO 2: `programacion/index.html`
 
-- [ ] 12. **Verificación final de integridad.**
-      Archivos: ninguno (solo comprobaciones).
-      Verificar: (a) `Test-Path scripts/_extraer-fotos-perfiles.mjs` → `False`; (b) por cada `invitados/perfil-*.html` nuevo o editado, su `img src` existe en `invitados/img/` o es `img/pendiente-foto.svg`; (c) cada `href="perfil-*.html"` de `invitados/index.html` corresponde a un archivo existente; (d) re-correr `node scripts/lint-accessibility.js sites/culturas/cms/congreso-investigacion-artistica/invitados` y confirmar 0 problemas.
+Criterio CONSERVADOR: cambiar SOLO los `<h3>` cuyo texto ES exactamente el nombre del tema/eje. No tocar títulos de ponencias, nombres de personas, entidades, descripciones, horas ni badges de modalidad (Virtual/Presencial). Cada reemplazo es sobre el contenido textual del `<h3>`; conservar íntegro el atributo `style` del `<h3>`.
 
-## Notas y supuestos
+- [ ] 9. **(Parte 5) Homogeneizar los `<h3>` que nombran el tema del eje a su nombre OFICIAL.**
+      Aplicar estos reemplazos exactos (ubicaciones aproximadas confirmadas por grep):
+      - Línea ~138, `<h3>`: `Cuerpos, movimiento, sensibilidades y afectos` → `Cuerpos, movimiento y lenguajes sensibles` (encuentro cuyo título ES el tema → cambiar).
+      - Línea ~246, `<h3>`: `Artes, culturas y memoria` → `Artes, culturas y memoria comunitaria`.
+      - Línea ~293, `<h3>`: `Conocimiento sensible como bien público` → `Conocimiento artístico como bien público`.
+      - Línea ~396, `<h3>`: `Conocimiento sensible como bien público — espacio de conversación interinstitucional` → `Conocimiento artístico como bien público — espacio de conversación interinstitucional` (conservar " — espacio de conversación interinstitucional" y el separador `—` tal cual).
+      - Línea ~304, `<h3>`: `Economías culturales basadas en las artes` → `Economías creativas, culturales y sostenibilidad`.
+      - Línea ~191, `<h3>`: `Inteligencia relacional e investigación artística en la era generativa` → `Inteligencia Relacional`.
+      - Línea ~347, `<h3>`: `Archivo y memoria viva` → `Archivo, patrimonio y memoria viva`.
+      - Línea ~335, `<h3>`: `Curadurías críticas` (texto exacto del `<h3>`) → `Curadurías críticas y mediación cultural`.
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/programacion/index.html`
+      Verify: `grep` tras editar: NO deben quedar en NINGÚN `<h3>` las cadenas "Conocimiento sensible", "Economías culturales basadas", "Archivo y memoria viva<", ni "Cuerpos, movimiento, sensibilidades y afectos<" (nótese el `<` que marca fin de `<h3>`, para no confundir con la ponencia de la línea ~224). Confirmar presencia de los 8 nombres oficiales. Hacer cada reemplazo con contexto suficiente (incluir parte del `style` o el cierre `</h3>`) para no afectar otras apariciones.
 
-- Jeffrey Amador y Nubia Flórez son perfiles NUEVOS con bio pero **sin** foto en la fuente: se montan con placeholder (verificado: sus filas no contienen `data:image`).
-- El prefijo del data URI (`image/png`) no es fiable; la extensión real sale de la firma de bytes. Dos imágenes son PNG real (Manuel García —ya montado— y Ramiro Osorio); el resto JPEG.
-- No se tocan las 14 fotos ya optimizadas ni sus fichas, salvo las tres de placeholder→foto.
-- Solo el contenido dentro de `#contenido-cms` se publica en SharePoint; mantener los comentarios de plantilla y los scripts CDN como en las fichas existentes.
-- La columna Perfil se transcribe verbatim en lo sustancial; limpiar artefactos de copiado pero no reescribir ni inventar credenciales.
+- [ ] 10. **(Parte 5 — exclusiones, verificación de que NO se tocaron) Confirmar que los títulos propios quedaron intactos.**
+      Verificar explícitamente que NO se modificaron:
+      - Línea ~80: `Justicia epistémica y ética de la investigación` (título propio de actividad del Día 1).
+      - Línea ~149: `Pedagogías situadas — Proyecto TransMigrARTS (Fondos UE-H2020 No. 101007587)` (título de actividad concreta).
+      - Línea ~179: `Perspectivas ecológicas` (ya coincide con el oficial → se deja igual).
+      - Línea ~224: `Cuerpos, movimiento, sensibilidades y afectos: ¿Desde hace cuánto tiempo no estamos aquí? …` (ponencia individual con subtítulo propio → NO cambiar, pese a empezar con el nombre del tema; el criterio conservador solo toca los `<h3>` cuyo texto ES el nombre del tema).
+      Files: `sites/culturas/cms/congreso-investigacion-artistica/programacion/index.html` (solo lectura/verificación)
+      Verify: `grep` debe seguir hallando esas 4 cadenas sin cambios. Confirmar que las badges "Virtual"/"Presencial", horas, personas y entidades alrededor de los `<h3>` editados en el ítem 9 permanecen idénticas.
+
+---
+
+# Verificación final (ambos archivos)
+
+- [ ] 11. **Chequeo estructural de cierre.**
+      En cada archivo, confirmar que `<div id="contenido-cms">` abre exactamente una vez y que el documento cierra con el `</div>` correspondiente seguido del `​<br/>` final que ya existía; que no se agregó ni perdió ningún `</div>`. Releer de principio a fin los dos archivos para detectar texto residual de la versión "Sur Global" dentro de `#contenido-cms`.
+      Files: ambos.
+      Verify: conteo global de `<div>` vs `</div>` igualado en cada archivo (respecto al conteo original, que no debe cambiar salvo por el `<ul>` de modalidades, que no añade `<div>`); `grep` final de "Sur Global" y "saberes sensibles" en `presentacion/index.html` → 0 resultados.
+
+---
+
+## Notas / supuestos
+
+- **Aliados institucionales (fuera de alcance del encargo):** el TEXTO OFICIAL nombra 7 entidades; el HTML publica 8 (añade "Teatro Mayor Julio Mario Santo Domingo" y la sigla "UNIPAZ" en lugar del nombre completo). El encargo (Parte 1) solo pide alinear el párrafo 1 de Presentación, no la lista de aliados ni los logos. Supuesto: NO se modifica la sección "Aliados institucionales" ni los logos. Si el equipo quiere reconciliarla, es una decisión de contenido aparte.
+- **Comillas de las citas (Parte 3):** se usan comillas latinas «…» por coherencia con el uso en Programación; si el equipo prefiere comillas rectas, es un ajuste trivial.
+- **Ficha superior de Presentación** (Entidad/Fecha/Lugar): los datos ya coinciden con el oficial; no se tocan.
