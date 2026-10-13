@@ -20,7 +20,7 @@
    *     (es contenido editorial sin interacción, controlado por el dato).
    * ============================================================ */
 
-  var BASE = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/";
+  var BASE = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/congreso/";
 
   /* 1) DATOS — 36 objetos: internacional (6) -> nacional (27) -> moderacion (3) */
   const INVITADOS = [
@@ -530,6 +530,7 @@
       return;
     }
     var css = [
+      /* Tarjetas y grilla: viven DENTRO de #contenido-cms -> conservan el prefijo */
       "#contenido-cms .inv-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;}",
       "#contenido-cms .inv-card{display:flex;align-items:center;gap:0.75rem;flex:0 1 320px;text-align:left;text-decoration:none;border:1px solid #d1d1d1;border-radius:6px;background:#ffffff;padding:0.75rem 1rem;font-family:'nunito sans',verdana,sans-serif;cursor:pointer;color:#4c4c4c;}",
       "#contenido-cms .inv-card:hover,#contenido-cms .inv-card:focus-visible{border-color:#0943b5;outline:2px solid #0943b5;outline-offset:1px;}",
@@ -537,16 +538,19 @@
       "#contenido-cms .inv-card__text{display:flex;flex-direction:column;}",
       "#contenido-cms .inv-card__name{font-weight:700;color:#0943b5;}",
       "#contenido-cms .inv-card__tag{font-size:0.85rem;color:#7e7e7e;}",
-      "#contenido-cms .inv-overlay{display:none;position:fixed;inset:0;z-index:1000;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto;background:rgba(0,0,0,0.6);}",
-      "#contenido-cms .inv-overlay.is-open{display:flex;}",
-      "#contenido-cms .inv-panel{position:relative;z-index:1;max-width:640px;width:100%;background:#ffffff;border:1px solid #d1d1d1;border-radius:8px;padding:1.5rem 1.5rem 1.75rem;margin:auto;font-family:'nunito sans',verdana,sans-serif;}",
-      "#contenido-cms .inv-close{position:absolute;top:0.5rem;right:0.75rem;font-size:1.5rem !important;line-height:1 !important;color:#0943b5;background:transparent;border:0;cursor:pointer;font-weight:700;}",
-      "#contenido-cms .inv-panel img{max-width:180px;width:100%;height:auto;border-radius:6px;margin-bottom:0.75rem;}",
-      "#contenido-cms .inv-panel h3{color:#0943b5 !important;font-size:1.3rem !important;line-height:1.3 !important;margin:0 0 0.25rem !important;font-family:'nunito sans',verdana,sans-serif;}",
-      "#contenido-cms .inv-panel h3.inv-ponencia-tit{font-size:1rem !important;margin-top:1rem !important;}",
-      "#contenido-cms .inv-panel .inv-ficha{color:#7e7e7e;font-weight:600;}",
-      "#contenido-cms .inv-panel .inv-bio{color:#4c4c4c;line-height:1.6;}",
-      "#contenido-cms .inv-grid h2,#contenido-cms h2{font-size:1.6rem !important;}"
+      "#contenido-cms h2{font-size:1.6rem !important;}",
+      /* Modal: se agrega a <body>, FUERA de #contenido-cms -> SIN prefijo
+       * (si llevara el prefijo, el selector nunca lo alcanzaría y el modal
+       * se vería como contenido plano al final de la pagina). */
+      ".inv-overlay{display:none;position:fixed;inset:0;top:0;left:0;right:0;bottom:0;z-index:100000;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto;background:rgba(0,0,0,0.6);}",
+      ".inv-overlay.is-open{display:flex;}",
+      ".inv-panel{position:relative;z-index:1;max-width:640px;width:100%;box-sizing:border-box;background:#ffffff;border:1px solid #d1d1d1;border-radius:8px;padding:1.5rem 1.5rem 1.75rem;margin:auto;font-family:'nunito sans',verdana,sans-serif;}",
+      ".inv-close{position:absolute;top:0.5rem;right:0.75rem;font-size:1.5rem !important;line-height:1 !important;color:#0943b5;background:transparent;border:0;cursor:pointer;font-weight:700;}",
+      ".inv-panel img{max-width:180px;width:100%;height:auto;border-radius:6px;margin-bottom:0.75rem;}",
+      ".inv-panel h3{color:#0943b5 !important;font-size:1.3rem !important;line-height:1.3 !important;margin:0 0 0.25rem !important;font-family:'nunito sans',verdana,sans-serif;}",
+      ".inv-panel h3.inv-ponencia-tit{font-size:1rem !important;margin-top:1rem !important;}",
+      ".inv-panel .inv-ficha{color:#7e7e7e;font-weight:600;}",
+      ".inv-panel .inv-bio{color:#4c4c4c;line-height:1.6;}"
     ].join("");
     var style = document.createElement("style");
     style.id = "inv-estilos-js";

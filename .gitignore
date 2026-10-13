@@ -18,6 +18,10 @@ Thumbs.db
 # Artefactos de trabajo de agentes (planes, reviews, tareas)
 .agents/
 
+# Temporales de optimizacion de imagenes
+**/img/_optimizadas-*/
+**/img/_optimizadas-*.zip
+
 # Archivos grandes
 *.7z
 *.mp4
