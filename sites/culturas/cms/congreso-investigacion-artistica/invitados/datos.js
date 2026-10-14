@@ -21,6 +21,7 @@
    * ============================================================ */
 
   var BASE = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/congreso/";
+  var BASE_ACADEMICO = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/academico/";
 
   /* 1) DATOS — 36 objetos: internacional (6) -> nacional (27) -> moderacion (3) */
   const INVITADOS = [
@@ -516,6 +517,116 @@
         "Antropóloga de la Universidad de los Andes, DEA en Antropología Social de la Universidad de Barcelona, magíster en Gestión Cultural y estudiante del doctorado en Diseño, Arte y Ciencia de la Universidad Jorge Tadeo Lozano. Desde 2008 vive en el Chocó, donde se desempeña como investigadora de ASINCH y docente del programa de Educación Artística de la Universidad Tecnológica del Chocó. Allí mismo, en 2010, creó junto con Leonidas Valencia el centro de investigaciones «Corporaloteca».&#160;&#160;",
         "Entre sus libros e investigaciones se encuentran \n            <em>Velo qué bonito: prácticas sonoro-corporales de la primera infancia en poblaciones afrochocoanas</em> (2014), \n            <em>Renacientes: arte, verdad y reparación</em> (2017), \n            <em>Catiá, catiadora, cantos de río y selva</em> (2010), \n            <em>La Tambora Mágica: sentipensando la gestión cultural en el departamento del Chocó</em> (2022) y \n            <em>Cocorobé, cantos y arrullos del Pacífico colombiano</em> (Libro al Viento, IDARTES, 2013), entre otros.&#160;&#160;"
       ]
+    },
+
+    /* ---------- COMITÉ ACADÉMICO (8) ---------- */
+    {
+      slug: "lina-maria-villegas-hincapie",
+      categoria: "academico",
+      nombre: "Lina María Villegas Hincapié",
+      etiquetaFicha: "Universidad de Antioquia&#160;&#160;",
+      etiquetaCard: "Universidad de Antioquia",
+      foto: BASE_ACADEMICO + "lina-maria-villegas-hincapie.jpg",
+      alt: "Retrato de Lina María Villegas Hincapié",
+      bio: [
+        "Decana de la Facultad de Artes de la Universidad de Antioquia, docente de planta e integrante fundadora de la Licenciatura en Danza. Antropóloga (2000), Especialista en Artes (2005), Magíster en Dramaturgia y Dirección (2012, Tesis Meritoria) y Doctora en Artes (2024, Tesis Meritoria) por la UdeA. Integra los grupos de investigación \n            <em>Laboratorio de Investigación en Danza</em> y \n            <em>Artes Escénicas y del Espectáculo</em>. Ha liderado proyectos del área, ganando la Beca de Investigación de la Alcaldía de Medellín (2013), la Beca de Investigación en Danza del Ministerio de Cultura (2022) y la Beca de Investigación-Publicación de la Bienal de Danza de Cali (2022).&#160;&#160;",
+        "En gestión académica, fue Coordinadora de Investigación de la Facultad de Artes (2012-2015 / 2023-2024), jefa del Departamento de Artes Escénicas, editora de la \n            <em>Colección de textos sobre pensamiento y creación en artes</em>, Par Académico del Ministerio de Educación Nacional y delegada de la ministra en el Consejo Nacional de Danza (2023-2025). Desde 2001 imparte docencia en pregrados de danza y teatro, así como en posgrados de Artes, Comunicaciones, y Motricidad y Desarrollo Humano.&#160;&#160;",
+        "Como creadora e investigadora, ha organizado eventos académicos, participado como ponente y dirigido obras coreográficas (\n            <em>Enleche-ser</em>, \n            <em>Bálsamo</em>, \n            <em>Blanco sobre blanco</em>, \n            <em>Irene Calle/76</em>) y videodanzas (\n            <em>La Orilla</em>). Sus publicaciones abordan la creación en danza contemporánea, los registros, la investigación artística y la construcción de conocimiento.&#160;&#160;",
+        "Entre sus proyectos de investigación se destacan: “Historia de la danza en Medellín en las décadas 70 y 80, y su influencia en la producción artística” (2013) en el marco de la Beca de Investigación de la Alcaldía de Medellín y CODI UdeA. De otra parte, \"Reelaboración y recontextualización de referentes simbólicos. Rituales de migrantes de la ciudad de Medellín” (2001), encabezado por el Instituto de Estudios Regionales. Además, entre sus publicaciones se subraya el libro “Relatos no contados. Historia de la danza en Medellín, 1930-1990\" (2023) o “A propósito de la dramaturgia para danza. Entrevista a Juliana Reyes” (2024).&#160;&#160;"
+      ]
+    },
+    {
+      slug: "eduardo-sanchez-medina",
+      categoria: "academico",
+      nombre: "Eduardo Sánchez Medina",
+      etiquetaFicha: "Universidad de Antioquia&#160;&#160;",
+      etiquetaCard: "Universidad de Antioquia",
+      foto: BASE_ACADEMICO + "eduardo-sanchez-medina.jpg",
+      alt: "Retrato de Eduardo Sánchez Medina",
+      bio: [
+        "Realizó estudios de actuación en la Escuela de Teatro de la Facultad de Artes de la Universidad de Antioquia (1983-1986). Es Director de Teatro Drama y Máster \n            <em>of Fine Arts</em> por el Instituto de Teatro, Música y Cinematografía «Cherkasov» de San Petersburgo, Rusia (1986-1992). Es Especialista en Dramaturgia (1999-2000), título obtenido con mención honorífica; Magíster en Dramaturgia y Dirección (2010-2012), con mención sobresaliente; y Doctor en Artes, graduado \n            <em>Summa cum laude</em> (2022), todos ellos estudios realizados en la Facultad de Artes de la Universidad de Antioquia.&#160;&#160;",
+        "Es creador del laboratorio de creación e investigación \n            <em>Ópera Urbana</em> en Medellín (2005) y socio fundador del proyecto cultural \n            <em>Cruzando la Frontera</em>, dedicado al pensamiento y la dirección escénica. Actualmente se desempeña como docente titular del Departamento de Artes Escénicas de la Facultad de Artes de la Universidad de Antioquia.&#160;&#160;",
+        "Es autor de diversos artículos y textos dramatúrgicos publicados en revistas y medios especializados como \n            <em>Paso de Gato</em> (México), \n            <em>Papel en Escena</em> (Cali), \n            <em>Gestus</em> (Bogotá) y \n            <em>A Teatro</em> (Medellín), entre otras publicaciones.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "anibal-maldonado-currea",
+      categoria: "academico",
+      nombre: "Aníbal Maldonado Currea",
+      etiquetaFicha: "Universidad del Atlántico&#160;&#160;",
+      etiquetaCard: "Universidad del Atlántico",
+      foto: BASE_ACADEMICO + "anibal-maldonado-currea.jpg",
+      alt: "Retrato de Aníbal Maldonado Currea",
+      bio: [
+        "Artista visual y educador colombiano cuyo trabajo explora las intersecciones entre el dibujo y la pedagogía. Sus investigaciones y creaciones se caracterizan por su compromiso con la exploración del papel del arte en contextos sociales, haciendo hincapié en la importancia de las metodologías participativas y el poder transformador de la expresión creativa. Posee una maestría en Artes Visuales por la Universidad Nacional de Colombia, donde también cursó sus estudios de pregrado en Artes Plásticas, con especialización en historia y teoría del arte. Su práctica artística y académica profundiza en el potencial expresivo del dibujo, abordando a menudo temas como el espacio urbano, la memoria y la presencia del cuerpo en contextos públicos.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "sonia-castillo-ballen",
+      categoria: "academico",
+      nombre: "Sonia Castillo Ballen",
+      etiquetaFicha: "Universidad Distrital Francisco José de Caldas&#160;&#160;",
+      etiquetaCard: "Universidad Distrital Francisco José de Caldas",
+      foto: BASE_ACADEMICO + "sonia-castillo-ballen.jpg",
+      alt: "Retrato de Sonia Castillo Ballen",
+      bio: [
+        "Es investigadora, artista y formadora en estudios feministas de la Eco performance, la acción plástica y los modos de los relacionamientos corporales sensibles y sintientes de lo viviente. Doctora en Ciencias del Arte, Historia, Teoría y Crítica. Profesora del Doctorado y la Maestría en Estudios Artísticos de la Universidad Distrital Francisco José de Caldas (UDFJC); dirige la Línea de Investigación en Estudios Críticos de las Corporeidades, las Sensibilidades y las Performatividades el Grupo de Investigación para la Creación Artística y el proyecto Escuela de Performance y Performatividades: Pasarela. Cocreadora de la Revista Corpo-Grafías; miembro del Comité Organizador de la Red Nacional del Giro Corporal y del Comité Académico de la Red Latinoamericana de Investigación De y Desde los Cuerpos. Responsable científico por la UDFJC del proyecto TransMigrARTS/UE.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "claudia-salamanca",
+      categoria: "academico",
+      nombre: "Claudia Salamanca",
+      etiquetaFicha: "Pontificia Universidad Javeriana&#160;&#160;",
+      etiquetaCard: "Pontificia Universidad Javeriana",
+      foto: BASE_ACADEMICO + "claudia-salamanca.jpg",
+      alt: "Retrato de Claudia Salamanca",
+      bio: [
+        "Claudia Salamanca es artista visual y escritora, y crítica de arte, política, geografía geopolítica y nuevos medios. Actualmente es profesora asociada y decana de la Facultad de Artes de la Pontificia Universidad Javeriana, Colombia. Además, ha sido docente en la Universidad Jorge Tadeo Lozano, Arkansas State University y la Universidad Nacional de Colombia, y artista y docente invitada en la Universidad de Zúrich, el Instituto de Estudios Latinoamericanos, el ITESO, la Universidad Católica Portuguesa, la Pontificia Universidad Católica del Perú, la Universidad del Valle, la Universidad del Cauca y la Universidad de Nariño, en Colombia. Su interés académico se da en la intersección entre los estudios visuales y la teoría política, como, por ejemplo, el análisis de los modos de percepción y de puesta en escena del territorio colombiano en el marco del conflicto y del posconflicto colombianos, y del espíritu de la juventud en este mismo contexto desde un giro pedagógico.&#160;&#160;",
+        "Como investigadora y creadora en la Pontificia Universidad Javeriana, examina la imagen operativa y el archivo como campos de disputa. Su obra explora cómo las narrativas visuales de la guerra configuran la memoria colectiva, cuestionando los mecanismos de administración de la violencia y la representación del trauma en el contexto latinoamericano contemporáneo. Como docente, está interesada en los procesos de escritura desde las artes y puede, desde ellos —siguiendo a Trinh T. Minh-ha—, surgir formas de creación que hablan con la imagen y no sobre ella. Es doctora en Filosofía en Retórica, con énfasis en Nuevos Medios, de la Universidad de California, Berkeley, y egresada de la Universidad de Rutgers, con una maestría en ciencia, tecnología y cultura, realizada con una beca Fulbright y con el apoyo de la Pontificia Universidad Javeriana.&#160;&#160;",
+        "Ha sido beneficiaria en dos ocasiones de la beca de investigación curatorial Zona Centro, como co-curadora del 12.º y del 16.º Salón Regional de Artistas Zona Centro. Entre sus curadurías están los procesos de investigación en las artes visuales desde la academia, con la exposición “Artistas al Tablero” en el marco de la II Bienal de Arte y Creatividad, Universidad Javeriana (2016), y la más reciente, “Latitudes”, exposición de Rosario López, Clemencia Echeverri y Eulalia de Valdenebro (2020), entre otras. En 2014, mediante las Becas de Monografía de Artistas Colombianos otorgadas por el Ministerio de Cultura, escribió un libro sobre la obra del artista François Bucher y los fenómenos de percepción conocidos como apofenia y pareidolia. En el 2006 fue premiada con el IV Premio Ensayo Crítico, Histórico o Teórico, del IDCT, con el texto “Me veo y me reflejo, me ves y me refracto.” Su obra audiovisual se ha exhibido internacionalmente en Canadá, Estados Unidos, Alemania, España, Francia, Argentina, Suiza, Inglaterra y Brasil, entre otros, y también ha publicado en revistas académicas y ha desarrollado comisiones artísticas.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "monica-marcell-romero-sanchez",
+      categoria: "academico",
+      nombre: "Mónica Marcell Romero Sánchez",
+      etiquetaFicha: "Pontificia Universidad Javeriana&#160;&#160;",
+      etiquetaCard: "Pontificia Universidad Javeriana",
+      foto: BASE_ACADEMICO + "monica-marcell-romero-sanchez.jpg",
+      alt: "Retrato de Mónica Marcell Romero Sánchez",
+      bio: [
+        "Artista, docente, investigadora, mamá. Doctora en Artes y Educación. Profesora de planta, actual Directora del Departamento Artes Visuales, Pontificia Universidad Javeriana (Bogotá). Se vincula a proyectos colaborativos de investigación/creación con artistas de distintas disciplinas abordando relaciones críticas y poéticas entre el arte, las comunidades, la educación y la gestión de los afectos, desde perspectivas no coloniales y feministas.&#160;&#160;",
+        "Participa en redes de investigación que amplían, cuestionan y potencian las relaciones entre arte y educación: Another Roadmap School; Red ReSonar (Doctores en Artes y Educación) y KReporters en alianza con la Comisión Europea. Ha participado en el diseño e implementación de planes, proyectos y programas de política educativa y cultural como laboratorios de investigación-creación en artes visuales, el Plan Nacional de Educación Artística del Ministerio de Cultura y el actual Sistema de Formación Artística en el Distrito en Idartes.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "carlos-alberto-vasquez-rodriguez",
+      categoria: "academico",
+      nombre: "Carlos Alberto Vasquez Rodríguez",
+      etiquetaFicha: "Instituto Universitario de la Paz&#160;&#160;",
+      etiquetaCard: "Instituto Universitario de la Paz",
+      foto: BASE_ACADEMICO + "carlos-alberto-vasquez-rodriguez.jpg",
+      alt: "Retrato de Carlos Alberto Vasquez Rodríguez",
+      bio: [
+        "Doctor en Gerencia de Proyectos Culturales, Magíster en Investigación Creación, Arte/Contexto, Especialista en Educación, Cultura y Política, Comunicador Social con énfasis en Comunicación Comunitaria y Licenciado en Educación Básica con énfasis en Educación Artística. Es docente universitario, investigador, director, escritor y jurado en eventos regionales y nacionales de danza, teatro y literatura.&#160;&#160;",
+        "Su trayectoria docente y creativa se centra en la formación del actor-bailarín y en la investigación-creación con un profundo arraigo territorial. Ha liderado el rescate de las danzas tradicionales y cantos de tambora de los pueblos ribereños del río Magdalena, así como la reconstrucción de tradiciones centenarias como la fiesta del \n            <em>Corpus Christi</em> en San Vicente de Chucurí (cordillera de los Yariguíes).&#160;&#160;",
+        "Cuenta con más de diez obras de creación escénica y cinco becas de investigación-creación del Ministerio de las Culturas, las Artes y los Saberes. Es autor de diversos textos y sistematizaciones sobre fiestas patronales, comparsas y saberes populares. Entre sus trabajos recientes de investigación-creación destaca la obra \n            <em>La Miguelina la forastera</em>, enfocada en explorar el universo simbólico y la memoria de las mujeres cantadoras del territorio.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "leonidas-valencia-valencia",
+      categoria: "academico",
+      nombre: "Leonidas Valencia Valencia",
+      etiquetaFicha: "Universidad Tecnológica del Chocó&#160;&#160;",
+      etiquetaCard: "Universidad Tecnológica del Chocó",
+      foto: BASE_ACADEMICO + "leonidas-valencia-valencia.jpg",
+      alt: "Retrato de Leonidas Valencia Valencia",
+      bio: [
+        "Leonidas es músico, investigador, docente y gestor cultural chocoano, vinculado a la Universidad Tecnológica del Chocó Diego Luis Córdoba (UTCH), donde se desempeña en la Licenciatura en Educación Artística y participa en procesos académicos, curriculares y de investigación. Asimismo, desarrolla actividades de investigación, formación, documentación y salvaguardia cultural desde la Corporaloteca UTCH y la Asociación para las Investigaciones Culturales del Chocó (ASINCH).&#160;&#160;",
+        "Sus principales líneas de investigación se centran en las músicas tradicionales del Pacífico colombiano, la chirimía chocoana, el patrimonio cultural y biocultural, la memoria musical afrocolombiana, la educación artística y los procesos de investigación-creación. Su trayectoria articula investigación académica, práctica musical, formación comunitaria y gestión del patrimonio.&#160;&#160;",
+        "Entre sus trabajos editoriales se destacan estudios sobre la funcionalidad de las músicas, bailes y sonoridades del Pacífico colombiano, la influencia de instrumentos musicales africanos, la chirimía chocoana, la educación musical y la vida y obra de músicos representativos del Chocó.&#160;&#160;"
+      ]
     }
   ];
 
@@ -725,7 +836,7 @@
     inyectarEstilos();
     construirModal();
 
-    var categorias = ["internacional", "nacional", "moderacion"];
+    var categorias = ["internacional", "nacional", "moderacion", "academico"];
     for (var c = 0; c < categorias.length; c++) {
       var cat = categorias[c];
       var cont = document.querySelector('#contenido-cms [data-invitados="' + cat + '"]');
