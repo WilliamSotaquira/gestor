@@ -10,22 +10,18 @@
       "fechaCorta": "3 nov",
       "bloques": [
         {
-          "inicio": "07:00",
-          "fin": "08:00",
-          "tipo": "montaje",
-          "paralelo": false,
-          "actividades": [
-            { "titulo": "Montaje" }
-          ]
-        },
-        {
           "inicio": "08:00",
           "fin": "09:00",
           "tipo": "registro",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Registro y bienvenida" }
-          ]
+            {
+              "titulo": "Registro y bienvenida"
+            }
+          ],
+          "modalidad": null,
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "08:30",
@@ -33,8 +29,13 @@
           "tipo": "relato",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Relato expandido" }
-          ]
+            {
+              "titulo": "Relato expandido"
+            }
+          ],
+          "modalidad": null,
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "09:15",
@@ -48,17 +49,38 @@
                 {
                   "entidad": "Protocolo",
                   "personas": [
-                    { "nombre": "Ana María Abello", "rol": "Viceministerio de las Artes y la Economía Cultural y Creativa" },
-                    { "nombre": "Paola Viviana Londoño", "rol": "Dirección de Artes" },
-                    { "nombre": "Gabriel Jaime Vélez", "rol": "Presidente ACOFARTES" },
-                    { "nombre": "Claudia Salamanca", "rol": "Decana de Artes" },
-                    { "nombre": "Mónica Marcel Romero", "rol": "Directora del Departamento de Artes Visuales" },
-                    { "nombre": "Nelly Peñaranda", "rol": "Directora Fundación Arteria" }
+                    {
+                      "nombre": "Ana María Abello",
+                      "rol": "Viceministerio de las Artes y la Economía Cultural y Creativa"
+                    },
+                    {
+                      "nombre": "Paola Viviana Londoño",
+                      "rol": "Dirección de Artes"
+                    },
+                    {
+                      "nombre": "Gabriel Jaime Vélez",
+                      "rol": "Presidente ACOFARTES"
+                    },
+                    {
+                      "nombre": "Claudia Salamanca",
+                      "rol": "Decana de Artes"
+                    },
+                    {
+                      "nombre": "Mónica Marcel Romero",
+                      "rol": "Directora del Departamento de Artes Visuales"
+                    },
+                    {
+                      "nombre": "Nelly Peñaranda",
+                      "rol": "Directora Fundación Arteria"
+                    }
                   ]
                 }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "10:00",
@@ -66,8 +88,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "10:15",
@@ -78,12 +105,24 @@
             {
               "titulo": "Charla inaugural: El estado de la investigación artística en Colombia 2010-2026",
               "personas": [
-                { "nombre": "Gabriel Jaime Vélez", "rol": "Presidente de ACOFARTES" },
-                { "nombre": "Oswaldo Hernández", "rol": "Decano IDBA (Cali)" },
-                { "nombre": "Andrea Lozano", "rol": "Facultad de Artes y Humanidades, Universidad de los Andes" }
+                {
+                  "nombre": "Gabriel Jaime Vélez",
+                  "rol": "Presidente de ACOFARTES"
+                },
+                {
+                  "nombre": "Oswaldo Hernández",
+                  "rol": "Decano IDBA (Cali)"
+                },
+                {
+                  "nombre": "Andrea Lozano",
+                  "rol": "Facultad de Artes y Humanidades, Universidad de los Andes"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "11:30",
@@ -94,16 +133,34 @@
             {
               "titulo": "Justicia epistémica y ética de la investigación",
               "personas": [
-                { "nombre": "Juan Alejandro Chindoy Chindoy", "rol": "Universidad Nacional de Colombia" },
-                { "nombre": "Ritzi Medina", "rol": "Ministerio de las Culturas, las Artes y los Saberes" },
-                { "nombre": "Carlos Sepúlveda", "rol": "Universidad Pedagógica" },
-                { "nombre": "Pedro Pablo Gómez", "rol": "Universidad Distrital Francisco José de Caldas" }
+                {
+                  "nombre": "Juan Alejandro Chindoy Chindoy",
+                  "rol": "Universidad Nacional de Colombia"
+                },
+                {
+                  "nombre": "Ritzi Medina",
+                  "rol": "Ministerio de las Culturas, las Artes y los Saberes"
+                },
+                {
+                  "nombre": "Carlos Sepúlveda",
+                  "rol": "Universidad Pedagógica"
+                },
+                {
+                  "nombre": "Pedro Pablo Gómez",
+                  "rol": "Universidad Distrital Francisco José de Caldas"
+                }
               ],
               "moderacion": [
-                { "nombre": "Tania Delgado", "rol": "Pontificia Universidad Javeriana" }
+                {
+                  "nombre": "Tania Delgado",
+                  "rol": "Pontificia Universidad Javeriana"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "13:15",
@@ -111,8 +168,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "14:45",
@@ -120,8 +182,13 @@
           "tipo": "poster",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Reel de pósteres" }
-          ]
+            {
+              "titulo": "Reel de pósteres"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "14:55",
@@ -130,13 +197,22 @@
           "paralelo": false,
           "actividades": [
             {
-              "titulo": "Ponencias",
+              "titulo": "Ponencia",
               "ponencias": [
-                { "autor": "Fernando Montes", "titulo": "Exhumación Bailable: Archivo y Creación del Teatro Varasanta" },
-                { "autor": "María Alejandra Valencia", "titulo": "Narrativas familiares, un proyecto con perspectiva migratoria en el preescolar" }
+                {
+                  "autor": "Fernando Montes",
+                  "titulo": "Exhumación Bailable: Archivo y Creación del Teatro Varasanta"
+                },
+                {
+                  "autor": "María Alejandra Valencia",
+                  "titulo": "Narrativas familiares, un proyecto con perspectiva migratoria en el preescolar"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "15:55",
@@ -144,8 +220,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "16:05",
@@ -157,10 +238,16 @@
             {
               "titulo": "Cuerpos, movimiento, sensibilidades y afectos — Conferencia: ¿Desde hace cuánto tiempo no estamos aquí? Notas sobre ausencia, ruina y reexistencia como prácticas de permanencia en las artes escénicas portuguesas",
               "personas": [
-                { "nombre": "Pedro Vilela", "rol": "Trema Festival, Portugal" }
+                {
+                  "nombre": "Pedro Vilela",
+                  "rol": "Trema Festival, Portugal"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Virtual",
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "17:05",
@@ -169,14 +256,26 @@
           "paralelo": false,
           "actividades": [
             {
-              "titulo": "Ponencias",
+              "titulo": "Ponencia",
               "ponencias": [
-                { "autor": "María Camila Roso Guata (Bucaramanga)", "titulo": "Montaña, amiga mía. Escritura literaria e imaginación política para la construcción de afectos comunitarios y tejido social en el Municipio de Los Santos" },
-                { "autor": "Paola Andrea Cruz Jiménez", "titulo": "Del Pueblo Blanco al Salón de las Artes: 43 años sembrando memoria, creando territorio" },
-                { "autor": "Francisco Alexander Llerena Avendaño", "titulo": "Investigación-creación Lo imperdonable: conocimiento sensible, memoria, territorio" }
+                {
+                  "autor": "María Camila Roso Guata (Bucaramanga)",
+                  "titulo": "Montaña, amiga mía. Escritura literaria e imaginación política para la construcción de afectos comunitarios y tejido social en el Municipio de Los Santos"
+                },
+                {
+                  "autor": "Paola Andrea Cruz Jiménez",
+                  "titulo": "Del Pueblo Blanco al Salón de las Artes: 43 años sembrando memoria, creando territorio"
+                },
+                {
+                  "autor": "Francisco Alexander Llerena Avendaño",
+                  "titulo": "Investigación-creación Lo imperdonable: conocimiento sensible, memoria, territorio"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         }
       ]
     },
@@ -188,15 +287,6 @@
       "fechaCorta": "4 nov",
       "bloques": [
         {
-          "inicio": "07:00",
-          "fin": "09:00",
-          "tipo": "montaje",
-          "paralelo": false,
-          "actividades": [
-            { "titulo": "Montaje" }
-          ]
-        },
-        {
           "inicio": "09:00",
           "fin": "10:00",
           "tipo": "conferencia",
@@ -206,14 +296,26 @@
             {
               "titulo": "Cuerpos, movimiento, sensibilidades y afectos",
               "personas": [
-                { "nombre": "Wilfran Barrios", "rol": "Corporación Cultural Atabaques" },
-                { "nombre": "Eider Yangana", "rol": "«Yanacroma» cuerpo colectivo" }
+                {
+                  "nombre": "Wilfran Barrios",
+                  "rol": "Corporación Cultural Atabaques"
+                },
+                {
+                  "nombre": "Eider Yangana",
+                  "rol": "«Yanacroma» cuerpo colectivo"
+                }
               ],
               "moderacion": [
-                { "nombre": "Manuel García-Conno Tisoy", "rol": "Moderación" }
+                {
+                  "nombre": "Manuel García-Conno Tisoy",
+                  "rol": "Moderación"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Virtual",
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "10:00",
@@ -224,11 +326,20 @@
             {
               "titulo": "Ponencias",
               "ponencias": [
-                { "autor": "Rafael Adolfo Llano Parias", "titulo": "Auris Corpus: el cuerpo aural en la investigación-creación: decolonialidad del oído y performatividad somática en la música contemporánea" },
-                { "autor": "Santiago Sepúlveda González (Manizales)", "titulo": "Cine vivo: exploraciones fónicas y visuales con el cine mudo y personas sordas a propósito de Manizal city, una geoficción" }
+                {
+                  "autor": "Rafael Adolfo Llano Parias",
+                  "titulo": "Auris Corpus: el cuerpo aural en la investigación-creación: decolonialidad del oído y performatividad somática en la música contemporánea"
+                },
+                {
+                  "autor": "Santiago Sepúlveda González (Manizales)",
+                  "titulo": "Cine vivo: exploraciones fónicas y visuales con el cine mudo y personas sordas a propósito de Manizal city, una geoficción"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "11:00",
@@ -236,8 +347,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "11:15",
@@ -248,16 +364,25 @@
             {
               "titulo": "Perspectivas ecológicas",
               "personas": [
-                { "nombre": "Blanca Botero", "rol": "Artist for Amazonía" }
+                {
+                  "nombre": "Blanca Botero",
+                  "rol": "Artist for Amazonía"
+                }
               ]
             },
             {
               "titulo": "Cuerpos, movimiento, sensibilidades y afectos",
               "personas": [
-                { "nombre": "Catalina del Castillo", "rol": "Pontificia Universidad Javeriana" }
+                {
+                  "nombre": "Catalina del Castillo",
+                  "rol": "Pontificia Universidad Javeriana"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "12:30",
@@ -268,11 +393,20 @@
             {
               "titulo": "Ponencias",
               "ponencias": [
-                { "autor": "Gloria Ocampo Ramírez (Medellín)", "titulo": "Re-escribir la huella: investigación-creación y ficcionalización del archivo fotográfico familiar como resistencia transgeneracional" },
-                { "autor": "Valeríe Osorio Restrepo", "titulo": "Investigaciones académicas liminales, la praxis de la imaginación y la condición plástica de la investigación sobre la memoria: análisis de casos" }
+                {
+                  "autor": "Gloria Ocampo Ramírez (Medellín)",
+                  "titulo": "Re-escribir la huella: investigación-creación y ficcionalización del archivo fotográfico familiar como resistencia transgeneracional"
+                },
+                {
+                  "autor": "Valeríe Osorio Restrepo",
+                  "titulo": "Investigaciones académicas liminales, la praxis de la imaginación y la condición plástica de la investigación sobre la memoria: análisis de casos"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "13:30",
@@ -280,8 +414,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "14:30",
@@ -289,8 +428,13 @@
           "tipo": "poster",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Reel de pósteres" }
-          ]
+            {
+              "titulo": "Reel de pósteres"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "14:45",
@@ -302,15 +446,30 @@
             {
               "titulo": "Artes, culturas y memoria",
               "personas": [
-                { "nombre": "Pilar Riaño Alcalá", "rol": "The University of British Columbia, Vancouver" },
-                { "nombre": "Camila Camacho", "rol": "Investigadora independiente" }
+                {
+                  "nombre": "Pilar Riaño Alcalá",
+                  "rol": "The University of British Columbia, Vancouver"
+                },
+                {
+                  "nombre": "Camila Camacho",
+                  "rol": "Investigadora independiente"
+                }
               ],
               "moderacion": [
-                { "nombre": "Víctor Capador", "rol": "Moderación" },
-                { "nombre": "Paola Wilches", "rol": "Moderación" }
+                {
+                  "nombre": "Víctor Capador",
+                  "rol": "Moderación"
+                },
+                {
+                  "nombre": "Paola Wilches",
+                  "rol": "Moderación"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Virtual",
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "15:45",
@@ -321,14 +480,32 @@
             {
               "titulo": "Pedagogías situadas — Proyecto TransMigrARTS: Transformar la Migración por las Artes (Fondos UE-H2020 No. 101007587)",
               "personas": [
-                { "nombre": "Monique Martínez Thomas", "rol": "Coordinadora de proyecto, Universidad Toulouse Jean Jaurès, Francia" },
-                { "nombre": "Sonia Castillo", "rol": "Responsable científica, Universidad Distrital Francisco José de Caldas" },
-                { "nombre": "María Teresa García Schlegel", "rol": "Investigadora, Universidad Distrital Francisco José de Caldas" },
-                { "nombre": "Álvaro Hernández", "rol": "Investigador, Universidad Distrital Francisco José de Caldas" },
-                { "nombre": "Sandra Camacho", "rol": "Investigadora, Universidad de Antioquia" }
+                {
+                  "nombre": "Monique Martínez Thomas",
+                  "rol": "Coordinadora de proyecto, Universidad Toulouse Jean Jaurès, Francia"
+                },
+                {
+                  "nombre": "Sonia Castillo",
+                  "rol": "Responsable científica, Universidad Distrital Francisco José de Caldas"
+                },
+                {
+                  "nombre": "María Teresa García Schlegel",
+                  "rol": "Investigadora, Universidad Distrital Francisco José de Caldas"
+                },
+                {
+                  "nombre": "Álvaro Hernández",
+                  "rol": "Investigador, Universidad Distrital Francisco José de Caldas"
+                },
+                {
+                  "nombre": "Sandra Camacho",
+                  "rol": "Investigadora, Universidad de Antioquia"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         }
       ]
     },
@@ -340,15 +517,6 @@
       "fechaCorta": "5 nov",
       "bloques": [
         {
-          "inicio": "07:00",
-          "fin": "09:00",
-          "tipo": "montaje",
-          "paralelo": false,
-          "actividades": [
-            { "titulo": "Montaje" }
-          ]
-        },
-        {
           "inicio": "09:00",
           "fin": "10:00",
           "tipo": "encuentro",
@@ -358,21 +526,45 @@
               "titulo": "Conocimiento sensible como bien público",
               "virtual": true,
               "personas": [
-                { "nombre": "Julieta Infantino", "rol": "Universidad de Buenos Aires, Argentina" },
-                { "nombre": "Nubia Leonor Flórez", "rol": "Universidad del Atlántico" }
+                {
+                  "nombre": "Julieta Infantino",
+                  "rol": "Universidad de Buenos Aires, Argentina"
+                },
+                {
+                  "nombre": "Nubia Leonor Flórez",
+                  "rol": "Universidad del Atlántico"
+                }
               ],
               "moderacion": [
-                { "nombre": "Olga Lucía Olaya", "rol": "Ministerio de las Culturas, las Artes y los Saberes" }
-              ]
+                {
+                  "nombre": "Olga Lucía Olaya",
+                  "rol": "Ministerio de las Culturas, las Artes y los Saberes"
+                }
+              ],
+              "modalidad": "Virtual",
+              "espacio": null,
+              "enlaceUbicacion": null
             },
             {
               "titulo": "Ponencias",
               "ponencias": [
-                { "autor": "Diego Germán Romero Bonilla", "titulo": "Ecosistemas artísticos sostenibles: formulación de proyectos, formalización y procesos de formación para la gobernanza e integración cultural" },
-                { "autor": "Ana María Arango Melo", "titulo": "Las esferas entrañables: ontologías del cuerpo-archivo desde la Corporaloteca (Chocó)" }
-              ]
+                {
+                  "autor": "Diego Germán Romero Bonilla",
+                  "titulo": "Ecosistemas artísticos sostenibles: formulación de proyectos, formalización y procesos de formación para la gobernanza e integración cultural"
+                },
+                {
+                  "autor": "Ana María Arango Melo",
+                  "titulo": "Las esferas entrañables: ontologías del cuerpo-archivo desde la Corporaloteca (Chocó)"
+                }
+              ],
+              "modalidad": "Presencial",
+              "espacio": "Ed. Fernando Barón, S.J., Auditorio Marino Troncoso",
+              "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
             }
-          ]
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "10:00",
@@ -380,8 +572,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "10:15",
@@ -392,22 +589,49 @@
             {
               "titulo": "Ponencias",
               "ponencias": [
-                { "autor": "Carolina Martínez Uzeta", "titulo": "De la inventio de la invención. [Intuición-Duración-Libertad]: un estudio sobre la estética de la denegación social" },
-                { "autor": "John Jairo Nomesqui Delgado", "titulo": "Árboltelarizar: tejerse con un árbol talado. Creación artística frente a la solastalgia" }
-              ]
+                {
+                  "autor": "Carolina Martínez Uzeta",
+                  "titulo": "De la inventio de la invención. [Intuición-Duración-Libertad]: un estudio sobre la estética de la denegación social"
+                },
+                {
+                  "autor": "John Jairo Nomesqui Delgado",
+                  "titulo": "Árboltelarizar: tejerse con un árbol talado. Creación artística frente a la solastalgia"
+                }
+              ],
+              "modalidad": "Presencial",
+              "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
+              "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
             },
             {
               "titulo": "Curadurías críticas",
               "personas": [
-                { "nombre": "Carolina Chacón", "rol": "Universidad Nacional de Colombia, Sede Medellín" },
-                { "nombre": "Ramiro Osorio", "rol": "Teatro Mayor Julio Mario Santo Domingo" },
-                { "nombre": "Phuyu Uma", "rol": "Consejo Ancestral Willka Yaku (Cali)" }
+                {
+                  "nombre": "Carolina Chacón",
+                  "rol": "Universidad Nacional de Colombia, Sede Medellín"
+                },
+                {
+                  "nombre": "Ramiro Osorio",
+                  "rol": "Teatro Mayor Julio Mario Santo Domingo"
+                },
+                {
+                  "nombre": "Phuyu Uma",
+                  "rol": "Consejo Ancestral Willka Yaku (Cali)"
+                }
               ],
               "moderacion": [
-                { "nombre": "Jaime Cerón Silva", "rol": "Curador independiente" }
-              ]
+                {
+                  "nombre": "Jaime Cerón Silva",
+                  "rol": "Curador independiente"
+                }
+              ],
+              "modalidad": "Virtual",
+              "espacio": null,
+              "enlaceUbicacion": null
             }
-          ]
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "11:15",
@@ -419,22 +643,49 @@
               "titulo": "Economías culturales basadas en las artes",
               "virtual": true,
               "personas": [
-                { "nombre": "Martín Inthamoussu", "rol": "Curador adjunto del Programa de Arte del Banco Mundial, Uruguay" },
-                { "nombre": "Javier Machicado", "rol": "Lado B" }
+                {
+                  "nombre": "Martín Inthamoussu",
+                  "rol": "Curador adjunto del Programa de Arte del Banco Mundial, Uruguay"
+                },
+                {
+                  "nombre": "Javier Machicado",
+                  "rol": "Lado B"
+                }
               ],
               "moderacion": [
-                { "nombre": "Adriana González Hassig", "rol": "Secretaría de Cultura, Recreación y Deporte, Bogotá" }
-              ]
+                {
+                  "nombre": "Adriana González Hassig",
+                  "rol": "Secretaría de Cultura, Recreación y Deporte, Bogotá"
+                }
+              ],
+              "modalidad": "Virtual",
+              "espacio": null,
+              "enlaceUbicacion": null
             },
             {
               "titulo": "Ponencias",
               "ponencias": [
-                { "autor": "Raúl Hernando Parra Gaitán", "titulo": "El Potro Azul: vestigios de una insurrección coreográfica" },
-                { "autor": "Mauricio Calle Cometa (Facatativá)", "titulo": "El saber práctico encarnado como insumo para la enseñanza, la composición y la interpretación de la danza en Cundinamarca" },
-                { "autor": "Jhon Alexander Barreto", "titulo": "JIESTA, y de la propagación matachinezca para el contagio de las experiencias festivas" }
-              ]
+                {
+                  "autor": "Raúl Hernando Parra Gaitán",
+                  "titulo": "El Potro Azul: vestigios de una insurrección coreográfica"
+                },
+                {
+                  "autor": "Mauricio Calle Cometa (Facatativá)",
+                  "titulo": "El saber práctico encarnado como insumo para la enseñanza, la composición y la interpretación de la danza en Cundinamarca"
+                },
+                {
+                  "autor": "Jhon Alexander Barreto",
+                  "titulo": "JIESTA, y de la propagación matachinezca para el contagio de las experiencias festivas"
+                }
+              ],
+              "modalidad": "Presencial",
+              "espacio": "Ed. Fernando Barón, S.J., Auditorio Marino Troncoso",
+              "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
             }
-          ]
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "12:15",
@@ -442,8 +693,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "14:00",
@@ -454,14 +710,26 @@
             {
               "titulo": "Archivo y memoria viva",
               "personas": [
-                { "nombre": "Lara Lookabaugh", "rol": "Universidad de Vanderbilt, EE.UU." },
-                { "nombre": "Jeffrey Amador", "rol": "A&S PDET (Valledupar)" }
+                {
+                  "nombre": "Lara Lookabaugh",
+                  "rol": "Universidad de Vanderbilt, EE.UU."
+                },
+                {
+                  "nombre": "Jeffrey Amador",
+                  "rol": "A&S PDET (Valledupar)"
+                }
               ],
               "moderacion": [
-                { "nombre": "Natalia Castellanos", "rol": "Ministerio de las Culturas, las Artes y los Saberes" }
+                {
+                  "nombre": "Natalia Castellanos",
+                  "rol": "Ministerio de las Culturas, las Artes y los Saberes"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Virtual",
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "15:00",
@@ -469,8 +737,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "15:15",
@@ -481,16 +754,34 @@
             {
               "titulo": "Inteligencia relacional e investigación artística en la era generativa",
               "personas": [
-                { "nombre": "Óscar Hernández Salgar", "rol": "Pontificia Universidad Javeriana - Instituto Pensar" },
-                { "nombre": "Valentina Ruiz", "rol": "Pontificia Universidad Javeriana" },
-                { "nombre": "Eliécer Arenas", "rol": "Universidad Pedagógica Nacional" },
-                { "nombre": "Edgar Puentes", "rol": "Orquesta Filarmónica de Bogotá" }
+                {
+                  "nombre": "Óscar Hernández Salgar",
+                  "rol": "Pontificia Universidad Javeriana - Instituto Pensar"
+                },
+                {
+                  "nombre": "Valentina Ruiz",
+                  "rol": "Pontificia Universidad Javeriana"
+                },
+                {
+                  "nombre": "Eliécer Arenas",
+                  "rol": "Universidad Pedagógica Nacional"
+                },
+                {
+                  "nombre": "Edgar Puentes",
+                  "rol": "Orquesta Filarmónica de Bogotá"
+                }
               ],
               "moderacion": [
-                { "nombre": "Gloria Zapata", "rol": "Moderación" }
+                {
+                  "nombre": "Gloria Zapata",
+                  "rol": "Moderación"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Ed. Fernando Barón, S.J., Auditorio Marino Troncoso",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         }
       ]
     },
@@ -502,15 +793,6 @@
       "fechaCorta": "6 nov",
       "bloques": [
         {
-          "inicio": "07:00",
-          "fin": "08:30",
-          "tipo": "montaje",
-          "paralelo": false,
-          "actividades": [
-            { "titulo": "Montaje" }
-          ]
-        },
-        {
           "inicio": "08:30",
           "fin": "09:55",
           "tipo": "conversatorio",
@@ -519,16 +801,34 @@
             {
               "titulo": "Conocimiento sensible como bien público",
               "personas": [
-                { "nombre": "Paola Viviana Londoño", "rol": "Dirección de Artes" },
-                { "nombre": "Lirka Ancines", "rol": "Grupo de Territorios Creativos, Bioculturales y de los Saberes, Dirección de Estrategia, Desarrollo y Emprendimiento" },
-                { "nombre": "Claudia Salamanca", "rol": "Decana Facultad de Artes, Pontificia Universidad Javeriana" },
-                { "nombre": "Gabriel Jaime Vélez", "rol": "Presidente ACOFARTES" }
+                {
+                  "nombre": "Paola Viviana Londoño",
+                  "rol": "Dirección de Artes"
+                },
+                {
+                  "nombre": "Lirka Ancines",
+                  "rol": "Grupo de Territorios Creativos, Bioculturales y de los Saberes, Dirección de Estrategia, Desarrollo y Emprendimiento"
+                },
+                {
+                  "nombre": "Claudia Salamanca",
+                  "rol": "Decana Facultad de Artes, Pontificia Universidad Javeriana"
+                },
+                {
+                  "nombre": "Gabriel Jaime Vélez",
+                  "rol": "Presidente ACOFARTES"
+                }
               ],
               "moderacion": [
-                { "nombre": "Nelly Peñaranda", "rol": "Directora Fundación Arteria" }
+                {
+                  "nombre": "Nelly Peñaranda",
+                  "rol": "Directora Fundación Arteria"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Edificio Corredor",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "09:55",
@@ -539,17 +839,38 @@
             {
               "titulo": "Reflexiones finales del Comité Académico: hacia un ecosistema de la investigación artística",
               "personas": [
-                { "nombre": "Mónica Romero", "rol": "Pontificia Universidad Javeriana" },
-                { "nombre": "Sonia Castillo", "rol": "Universidad Distrital Francisco José de Caldas" },
-                { "nombre": "Eduardo Sánchez", "rol": "Universidad de Antioquia" },
-                { "nombre": "Aníbal Maldonado", "rol": "Universidad del Atlántico" },
-                { "nombre": "Carlos Vázquez", "rol": "Instituto Universitario de la Paz UNIPAZ" }
+                {
+                  "nombre": "Mónica Romero",
+                  "rol": "Pontificia Universidad Javeriana"
+                },
+                {
+                  "nombre": "Sonia Castillo",
+                  "rol": "Universidad Distrital Francisco José de Caldas"
+                },
+                {
+                  "nombre": "Eduardo Sánchez",
+                  "rol": "Universidad de Antioquia"
+                },
+                {
+                  "nombre": "Aníbal Maldonado",
+                  "rol": "Universidad del Atlántico"
+                },
+                {
+                  "nombre": "Carlos Vázquez",
+                  "rol": "Instituto Universitario de la Paz UNIPAZ"
+                }
               ],
               "moderacion": [
-                { "nombre": "Carlos Dueñas", "rol": "Fundación Arteria" }
+                {
+                  "nombre": "Carlos Dueñas",
+                  "rol": "Fundación Arteria"
+                }
               ]
             }
-          ]
+          ],
+          "modalidad": "Presencial",
+          "espacio": "Edificio Corredor",
+          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
           "inicio": "11:20",
@@ -557,8 +878,13 @@
           "tipo": "receso",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Receso" }
-          ]
+            {
+              "titulo": "Receso"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         },
         {
           "inicio": "11:35",
@@ -566,8 +892,13 @@
           "tipo": "relato",
           "paralelo": false,
           "actividades": [
-            { "titulo": "Relato expandido" }
-          ]
+            {
+              "titulo": "Relato expandido"
+            }
+          ],
+          "modalidad": null,
+          "espacio": null,
+          "enlaceUbicacion": null
         }
       ]
     }

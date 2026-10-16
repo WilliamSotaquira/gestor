@@ -114,7 +114,6 @@
       ponencia: {
         titulo: "Ponencia (Eje 3: Gobernanza y sostenibilidad cultural)",
         parrafos: [
-          "\n            <em>Saberes situados, prácticas circenses y políticas culturales en América Latina</em>&#160;&#160;",
           "La ponencia propone reflexionar sobre las formas en que las prácticas artísticas y los procesos de organización colectiva producen saberes situados capaces de incidir en la construcción, gestión y transformación de las políticas culturales, a partir de una trayectoria de investigación centrada en las artes circenses en Argentina y América Latina.&#160;&#160;",
           "El circo atraviesa un proceso de reactivación y diversificación en la escena cultural latinoamericana, ocupando plazas, calles, salas teatrales y espacios de enseñanza. La presentación ofrece un panorama sobre la constitución actual del campo circense en Latinoamérica y sobre los avances y limitaciones en las políticas públicas para el sector.&#160;&#160;"
         ]
