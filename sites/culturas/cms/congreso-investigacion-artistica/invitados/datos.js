@@ -23,11 +23,32 @@
   var BASE = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/congreso/";
   var BASE_ACADEMICO = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/academico/";
 
+  /* MAPA DE EJES TEMÁTICOS
+   * Cada invitado referencia un eje por su clave (campo `eje`). Aquí se define
+   * el nombre visible y el color de la etiqueta. Los colores son tonos oscuros
+   * para que el texto BLANCO encima cumpla contraste AA (>= 4.5:1), según la
+   * regla de accesibilidad del repo. Un invitado sin `eje` (p. ej. comité
+   * académico) simplemente no muestra etiqueta de eje. */
+  var EJES = {
+    "estado-cuestion":        { nombre: "Estado de la cuestión",            color: "#0943B5" },
+    "justicia-epistemica":    { nombre: "Justicia epistémica / Ética",      color: "#6A1B9A" },
+    "cuerpos-movimiento":     { nombre: "Cuerpos, movimiento y afectos",    color: "#AD1457" },
+    "economias-culturales":   { nombre: "Economías culturales",            color: "#00695C" },
+    "perspectivas-ecologicas":{ nombre: "Perspectivas ecológicas",          color: "#2E7D32" },
+    "inteligencia-relacional":{ nombre: "Inteligencia relacional",          color: "#1565C0" },
+    "artes-culturas-memoria": { nombre: "Artes, culturas y memoria",        color: "#B23A00" },
+    "conocimiento-sensible":  { nombre: "Conocimiento sensible",            color: "#4527A0" },
+    "pedagogias-situadas":    { nombre: "Pedagogías situadas",              color: "#00838F" },
+    "curadurias-criticas":    { nombre: "Curadurías críticas",              color: "#C2185B" },
+    "archivo-memoria-viva":   { nombre: "Archivo y memoria viva",           color: "#5D4037" }
+  };
+
   /* 1) DATOS — 36 objetos: internacional (6) -> nacional (27) -> moderacion (3) */
   const INVITADOS = [
     /* ---------- INTERNACIONALES (6) ---------- */
     {
       slug: "lara-lookabaugh",
+      eje: "archivo-memoria-viva",
       categoria: "internacional",
       nombre: "Lara Lookabaugh",
       etiquetaFicha: "Invitada internacional · Estados Unidos&#160;&#160;",
@@ -42,6 +63,7 @@
     },
     {
       slug: "monique-martinez-thomas",
+      eje: "pedagogias-situadas",
       categoria: "internacional",
       nombre: "Monique Martínez Thomas",
       etiquetaFicha: "Invitada internacional · Francia&#160;&#160;",
@@ -56,6 +78,7 @@
     },
     {
       slug: "pedro-vilela",
+      eje: "cuerpos-movimiento",
       categoria: "internacional",
       nombre: "Pedro Vilela",
       etiquetaFicha: "Invitado internacional · Brasil / Portugal&#160;&#160;",
@@ -77,6 +100,7 @@
     },
     {
       slug: "julieta-infantino",
+      eje: "conocimiento-sensible",
       categoria: "internacional",
       nombre: "Julieta Infantino",
       etiquetaFicha: "Invitada internacional · Argentina&#160;&#160;",
@@ -98,6 +122,7 @@
     },
     {
       slug: "martin-inthamoussu",
+      eje: "economias-culturales",
       categoria: "internacional",
       nombre: "Martín Inthamoussu",
       etiquetaFicha: "Invitado internacional · Uruguay&#160;&#160;",
@@ -111,6 +136,7 @@
     },
     {
       slug: "pilar-riano-alcala",
+      eje: "artes-culturas-memoria",
       categoria: "internacional",
       nombre: "Pilar Riaño Alcalá",
       etiquetaFicha: "Invitada internacional · Canadá&#160;&#160;",
@@ -126,6 +152,7 @@
     /* ---------- NACIONALES (27) ---------- */
     {
       slug: "blanca-botero",
+      eje: "perspectivas-ecologicas",
       categoria: "nacional",
       nombre: "Blanca Botero",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -139,6 +166,7 @@
     },
     {
       slug: "carolina-chacon-bernal",
+      eje: "curadurias-criticas",
       categoria: "nacional",
       nombre: "Carolina Chacón Bernal",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -152,6 +180,7 @@
     },
     {
       slug: "catalina-del-castillo-silva",
+      eje: "cuerpos-movimiento",
       categoria: "nacional",
       nombre: "Catalina Del Castillo Silva",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -165,6 +194,7 @@
     },
     {
       slug: "eider-yangana",
+      eje: "curadurias-criticas",
       categoria: "nacional",
       nombre: "Eider Yangana",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -178,6 +208,7 @@
     },
     {
       slug: "maria-teresa-garcia-schlegel",
+      eje: "pedagogias-situadas",
       categoria: "nacional",
       nombre: "María Teresa García Schlegel",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -191,6 +222,7 @@
     },
     {
       slug: "ramiro-osorio-fonseca",
+      eje: "curadurias-criticas",
       categoria: "nacional",
       nombre: "Ramiro Osorio Fonseca",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -205,6 +237,7 @@
     },
     {
       slug: "ritzy-medina-cuentas",
+      eje: "justicia-epistemica",
       categoria: "nacional",
       nombre: "Ritzy Katherine Medina Cuentas",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -218,6 +251,7 @@
     },
     {
       slug: "sandra-camacho-lopez",
+      eje: "pedagogias-situadas",
       categoria: "nacional",
       nombre: "Sandra Camacho López",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -231,6 +265,7 @@
     },
     {
       slug: "alvaro-hernandez",
+      eje: "pedagogias-situadas",
       categoria: "nacional",
       nombre: "Álvaro Hernández",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -244,6 +279,7 @@
     },
     {
       slug: "oscar-hernandez-salgar",
+      eje: "inteligencia-relacional",
       categoria: "nacional",
       nombre: "Óscar Hernández Salgar",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -257,6 +293,7 @@
     },
     {
       slug: "gabriel-velez",
+      eje: "estado-cuestion",
       categoria: "nacional",
       nombre: "Gabriel Vélez",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -270,6 +307,7 @@
     },
     {
       slug: "pedro-pablo-gomez",
+      eje: "justicia-epistemica",
       categoria: "nacional",
       nombre: "Pedro Pablo Gómez",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -283,6 +321,7 @@
     },
     {
       slug: "tania-delgado",
+      eje: "justicia-epistemica",
       categoria: "nacional",
       nombre: "Tania Delgado",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -296,6 +335,7 @@
     },
     {
       slug: "carlos-sepulveda",
+      eje: "justicia-epistemica",
       categoria: "nacional",
       nombre: "Carlos Sepúlveda",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -310,6 +350,7 @@
     },
     {
       slug: "juan-alejandro-chindoy",
+      eje: "justicia-epistemica",
       categoria: "nacional",
       nombre: "Juan Alejandro Chindoy",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -323,6 +364,7 @@
     },
     {
       slug: "consejo-ancestral-willka-yaku",
+      eje: "perspectivas-ecologicas",
       categoria: "nacional",
       nombre: "Consejo Ancestral Willka Yaku",
       etiquetaFicha: "Colectivo · Nacional&#160;&#160;",
@@ -337,6 +379,7 @@
     },
     {
       slug: "valentina-ruiz",
+      eje: "inteligencia-relacional",
       categoria: "nacional",
       nombre: "Valentina Ruiz",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -350,6 +393,7 @@
     },
     {
       slug: "edgar-puentes",
+      eje: "inteligencia-relacional",
       categoria: "nacional",
       nombre: "Edgar Puentes",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -363,6 +407,7 @@
     },
     {
       slug: "eliecer-arenas",
+      eje: "inteligencia-relacional",
       categoria: "nacional",
       nombre: "Eliécer Arenas",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -376,6 +421,7 @@
     },
     {
       slug: "camila-camacho",
+      eje: "artes-culturas-memoria",
       categoria: "nacional",
       nombre: "Camila Camacho",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -388,6 +434,7 @@
     },
     {
       slug: "victor-capador",
+      eje: "artes-culturas-memoria",
       categoria: "nacional",
       nombre: "Víctor Capador",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -401,6 +448,7 @@
     },
     {
       slug: "paola-wilches",
+      eje: "artes-culturas-memoria",
       categoria: "nacional",
       nombre: "Paola Wilches",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -414,6 +462,7 @@
     },
     {
       slug: "jaime-ceron-silva",
+      eje: "curadurias-criticas",
       categoria: "nacional",
       nombre: "Jaime Cerón Silva",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
@@ -427,6 +476,7 @@
     },
     {
       slug: "natalia-castellanos",
+      eje: "archivo-memoria-viva",
       categoria: "nacional",
       nombre: "Natalia Castellanos",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
@@ -453,12 +503,13 @@
     },
     {
       slug: "jeffrey-amador",
+      eje: "archivo-memoria-viva",
       categoria: "nacional",
       nombre: "Jeffrey Amador",
       etiquetaFicha: "Invitado nacional&#160;&#160;",
       etiquetaCard: "Nacional",
-      foto: BASE + "pendiente-foto.svg",
-      alt: "Fotografía pendiente de Jeffrey Amador",
+      foto: BASE + "jeffrey-amador.png",
+      alt: "Retrato de Jeffrey Amador",
       bio: [
         "Jeffrey Amador Carillo es tecnólogo en Producción Audiovisual Multimedia y estudiante de Administración Pública Territorial en la Escuela Superior de Administración Pública (ESAP). Su trayectoria profesional se ha construido en torno a la fotografía, el lenguaje audiovisual, la memoria social, el territorio y las historias de vida.&#160;&#160;",
         "Desde hace una década ha desarrollado una propuesta de cartografía social y audiovisual que sitúa a las personas en el centro para visibilizar sus entornos a través de sus relatos, saberes, oficios y vínculos con los lugares que habitan. Su trabajo busca visibilizar particularidades y realidades locales que suelen omitirse en las representaciones generales, las estadísticas o las agendas informativas, concibiendo su labor fundamentalmente como un ejercicio de escucha, aprendizaje y circulación de conocimientos que valoran el aporte de las comunidades en la construcción de la sociedad.&#160;&#160;"
@@ -466,21 +517,64 @@
     },
     {
       slug: "nubia-florez",
+      eje: "conocimiento-sensible",
       categoria: "nacional",
       nombre: "Nubia Flórez",
       etiquetaFicha: "Invitada nacional&#160;&#160;",
       etiquetaCard: "Nacional",
-      foto: BASE + "pendiente-foto.svg",
-      alt: "Fotografía pendiente de Nubia Leonor Flórez Forero",
+      foto: BASE + "nubia-florez.png",
+      alt: "Retrato de Nubia Leonor Flórez Forero",
       bio: [
         "Nubia Leonor Flórez Forero es antropóloga, investigadora y gestora cultural con más de 20 años de trayectoria. Formada en la Universidad Nacional de Colombia y con una maestría en Investigación Social Interdisciplinaria, concibe el cuerpo como un archivo vivo donde convergen memoria, identidad y creación, enfocándose en el Caribe colombiano. Ha ejercido como docente e investigadora en la Universidad del Atlántico, consolidando los estudios académicos en danza.&#160;&#160;",
         "En el sector público destacó en la Coordinación Nacional de Danza del Ministerio de Cultura, la dirección del Centro Cultural Jorge Eliécer Gaitán y la Jefatura de Formación del Instituto Distrital de Cultura y Turismo de Barranquilla. Autora de \n            <em>El cuerpo desatado</em> y líder del proyecto Archivos D, ha investigado la historiografía dancística regional y publicado sobre expresiones como el fandango y los bailes zapateados en Colombia. Su labor, respaldada por becas y ponencias internacionales en Madrid, Riverside (Los Ángeles) y Nueva York, le ha permitido posicionar la danza como espacio de resistencia y construcción de memoria.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "adriana-gonzalez-hassig",
+      eje: "economias-culturales",
+      categoria: "nacional",
+      nombre: "Adriana González Hassig",
+      etiquetaFicha: "Invitada nacional&#160;&#160;",
+      etiquetaCard: "Nacional",
+      foto: BASE + "adriana-gonzalez-hassig.png",
+      alt: "Retrato de Adriana González Hassig",
+      bio: [
+        "Profesional en cine y televisión y magíster en gestión audiovisual. Se ha desempeñado en la coproducción, el montaje financiero, la producción de contenidos, la planeación estratégica, la dirección de publicidad y la selección musical en proyectos de largometrajes en Colombia y Europa. Ha sido coordinadora del Grupo de Emprendimiento Cultural del Viceministerio de Creatividad y Economía Naranja de Colombia, jefe de Industrias Culturales y Creativas de la Cámara de Comercio de Bogotá, programadora del Festival Centro y gerente del Concurso Internacional de Violín de Bogotá. Actualmente es la Gerente de la Bienal de Arte y Ciudad que organiza la Secretaría de Cultura, Recreación y Deporte de Bogotá.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "javier-machicado",
+      eje: "economias-culturales",
+      categoria: "nacional",
+      nombre: "Javier Machicado",
+      etiquetaFicha: "Invitado nacional&#160;&#160;",
+      etiquetaCard: "Nacional",
+      foto: BASE + "javier-machicado.png",
+      alt: "Retrato de Javier Machicado",
+      bio: [
+        "Javier Machicado es economista de la Universidad de los Andes y magíster en Estudios Iberoamericanos de la Universidad París X–Nanterre. Es cofundador y director asociado de Lado B, economía creativa, y cuenta con más de 20 años de experiencia en investigación, consultoría y formulación de políticas y estrategias para el sector cultural y creativo.&#160;&#160;",
+        "Su trayectoria se ha centrado en el análisis de las industrias culturales y creativas, con especial énfasis en sus dinámicas económicas, modelos de sostenibilidad, mercados, circulación y mecanismos de financiación. Sus líneas de investigación incluyen la economía de la cultura, las políticas públicas, el desarrollo de organizaciones culturales, la internacionalización y la evaluación de programas e instrumentos de fomento cultural.&#160;&#160;",
+        "Ha dirigido investigaciones, evaluaciones y proyectos estratégicos para entidades como el Ministerio de Cultura, Proimágenes Colombia, la Organización Mundial de la Propiedad Intelectual (OMPI), el British Council, la UNESCO, Comfama y la Secretaría de Cultura de Bogotá.&#160;&#160;"
+      ]
+    },
+    {
+      slug: "wilfran-barrios",
+      eje: "cuerpos-movimiento",
+      categoria: "nacional",
+      nombre: "Wilfran Barrios",
+      etiquetaFicha: "Invitado nacional&#160;&#160;",
+      etiquetaCard: "Nacional",
+      foto: BASE + "wilfran-barrios.png",
+      alt: "Retrato de Wilfran Barrios",
+      bio: [
+        "Licenciado en Educación Básica en Danza por la Universidad de Antioquia. Magíster en Estudios Teóricos de la Danza por la Universidad de las Artes ISA, Cuba. Su trabajo se ha caracterizado por la búsqueda constante de sus raíces afrocolombianas, lo que lo ha llevado a profundizar en diversas vertientes de la danza de nuestros litorales colombianos. Es director de la Corporación Cultural Atabaques de Cartagena y del colectivo Desaldabar, y cuenta con una amplia experiencia como maestro y coordinador en diversas instituciones y universidades, tanto privadas como públicas, nacionales e internacionales. Ha tenido una amplia participación como conferencista en seminarios y simposios. Asimismo, está comprometido con el trabajo popular y formativo junto a organizaciones sociales de sectores populares y ONG. Wilfran Barrios es reconocido por su trabajo de creación y producción, y es autor de un significativo repertorio de obras de danza afro contemporánea, como “Canto a la libertad”, “Homilía”, “Cuando alguien muere”, “Exilio”, “De piel a piel”, “El día es hoy”, “Revuelo”, “Animeros”, “Clasificadys”, “Mako: retorno sin fuego”, “Desalambrar”, “Azul” y “La tertulia”, entre otras. También es maestro asesor de las escuelas dotadas y comunitarias de danza en el país, dentro del programa Danza Viva y de la Expedición Sensorial de Montes de María del Ministerio de Cultura de Colombia (2013-2021), y es docente en el programa de Danza de la Universidad del Atlántico.&#160;&#160;"
       ]
     },
 
     /* ---------- MODERACIÓN (3) ---------- */
     {
       slug: "manuel-fernando-garcia-garcia",
+      eje: "cuerpos-movimiento",
       categoria: "moderacion",
       nombre: "Manuel Fernando García García",
       etiquetaFicha: "Moderación&#160;&#160;",
@@ -494,6 +588,7 @@
     },
     {
       slug: "olga-lucia-olaya-parra",
+      eje: "conocimiento-sensible",
       categoria: "moderacion",
       nombre: "Olga Lucía Olaya Parra",
       etiquetaFicha: "Moderación&#160;&#160;",
@@ -507,6 +602,7 @@
     },
     {
       slug: "ana-maria-arango",
+      eje: "perspectivas-ecologicas",
       categoria: "moderacion",
       nombre: "Ana María Arango",
       etiquetaFicha: "Moderación&#160;&#160;",
@@ -649,6 +745,12 @@
       "#contenido-cms .inv-card__text{display:flex;flex-direction:column;}",
       "#contenido-cms .inv-card__name{font-weight:700;color:#0943b5;}",
       "#contenido-cms .inv-card__tag{font-size:0.85rem;color:#7e7e7e;}",
+      /* Etiqueta de eje: estilo sobrio/empresarial. Sin relleno de color: el
+       * eje se nombra en texto, con un punto de color del eje como indicador y
+       * may\u00fasculas peque\u00f1as con tracking. El color del texto es gris oscuro
+       * (contraste AA sobre blanco); el punto aporta el c\u00f3digo de color. */
+      "#contenido-cms .inv-card__eje{display:inline-flex;align-items:center;gap:0.4rem;align-self:flex-start;margin-top:0.3rem;font-size:0.68rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#4c4c4c;}",
+      "#contenido-cms .inv-card__eje::before{content:'';flex:0 0 auto;width:0.5rem;height:0.5rem;border-radius:50%;background:var(--eje-color,#7e7e7e);}",
       "#contenido-cms h2{font-size:1.6rem !important;}",
       /* Modal: se agrega a <body>, FUERA de #contenido-cms -> SIN prefijo
        * (si llevara el prefijo, el selector nunca lo alcanzaría y el modal
@@ -661,6 +763,7 @@
       ".inv-panel h3{color:#0943b5 !important;font-size:1.3rem !important;line-height:1.3 !important;margin:0 0 0.25rem !important;font-family:'nunito sans',verdana,sans-serif;}",
       ".inv-panel h3.inv-ponencia-tit{font-size:1rem !important;margin-top:1rem !important;}",
       ".inv-panel .inv-ficha{color:#7e7e7e;font-weight:600;}",
+      ".inv-panel .inv-eje{display:inline-block;margin:0 0 0.9rem;padding:0.15rem 0 0.15rem 0.6rem;border-left:3px solid var(--eje-color,#7e7e7e);color:#4c4c4c;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}",
       ".inv-panel .inv-bio{color:#4c4c4c;line-height:1.6;}"
     ].join("");
     var style = document.createElement("style");
@@ -672,7 +775,7 @@
   /* 3) MODAL ÚNICO REUTILIZABLE
    * Decisión: UN solo modal en el DOM que se rellena al abrir, en vez de 36.
    * Centraliza focus-trap/escape/scroll-lock y evita duplicar subárboles. */
-  var overlay, panel, imgEl, nameEl, fichaEl, bodyEl, closeBtn, tituloId;
+  var overlay, panel, imgEl, nameEl, fichaEl, ejeEl, bodyEl, closeBtn, tituloId;
   var ultimoDisparador = null;
 
   function construirModal() {
@@ -700,12 +803,16 @@
     fichaEl = document.createElement("p");
     fichaEl.className = "inv-ficha";
 
+    ejeEl = document.createElement("span");
+    ejeEl.className = "inv-eje";
+
     bodyEl = document.createElement("div");
 
     panel.appendChild(closeBtn);
     panel.appendChild(imgEl);
     panel.appendChild(nameEl);
     panel.appendChild(fichaEl);
+    panel.appendChild(ejeEl);
     panel.appendChild(bodyEl);
     overlay.appendChild(panel);
     document.body.appendChild(overlay);
@@ -763,6 +870,16 @@
     imgEl.alt = inv.alt;                 // texto plano -> textContent del atributo
     nameEl.textContent = inv.nombre;     // texto plano
     fichaEl.innerHTML = inv.etiquetaFicha; // conserva "&#160;&#160;" verbatim
+
+    var ejeInfo = inv.eje ? EJES[inv.eje] : null;
+    if (ejeInfo) {
+      ejeEl.textContent = ejeInfo.nombre;        // texto plano
+      ejeEl.style.setProperty("--eje-color", ejeInfo.color);
+      ejeEl.style.display = "inline-block";
+    } else {
+      ejeEl.textContent = "";
+      ejeEl.style.display = "none";
+    }
 
     bodyEl.innerHTML = "";
     var i;
@@ -823,6 +940,16 @@
 
     wrap.appendChild(nombre);
     wrap.appendChild(tag);
+
+    var ejeInfo = inv.eje ? EJES[inv.eje] : null;
+    if (ejeInfo) {
+      var ejeTag = document.createElement("span");
+      ejeTag.className = "inv-card__eje";
+      ejeTag.textContent = ejeInfo.nombre;       // texto plano
+      ejeTag.style.setProperty("--eje-color", ejeInfo.color);
+      wrap.appendChild(ejeTag);
+    }
+
     card.appendChild(img);
     card.appendChild(wrap);
 

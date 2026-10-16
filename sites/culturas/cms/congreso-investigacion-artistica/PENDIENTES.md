@@ -10,7 +10,13 @@ variable JS en el cuerpo; nada de fetch ni archivos externos, porque SharePoint
 solo copia el HTML dentro de `#contenido-cms` y no admite muchas hojas sueltas).
 
 Flujo de trabajo:
-- Invitados: editar `invitados/invitados.json` → `npm run build:invitados` → sube `invitados/index.html`.
+- Invitados: editar `invitados/datos.js` (fuente de verdad). Ese archivo se publica
+  tal cual como `datosCongreso.js` en la biblioteca de estilos del portal
+  (`/Style Library/assets/js/datosCongreso.js`), que es lo que carga la página.
+  `invitados/index.html` solo contiene los contenedores `data-invitados` y el
+  `<script src>` que apunta a ese JS; NO se regenera. **OBSOLETO:** el flujo
+  anterior `invitados.json` + `npm run build:invitados` ya no aplica (el script
+  `scripts/build-invitados.js` fue retirado y el comando no existe en `package.json`).
 - Programación: editar `programacion/programacion.json` → `npm run build:programacion` → sube `programacion/index.html`.
 
 ## Listo y montado
@@ -24,10 +30,14 @@ Flujo de trabajo:
 - Logos pendientes (comentados en el HTML): UNIPAZ (solo hay versión blanca, invisible en fondo claro) y Teatro Mayor (sin archivo).
 - Versión en inglés: pendiente (solo español por ahora).
 
-**Invitados** `invitados/index.html` — UNA sola página autocontenida.
-- Datos en `invitados/invitados.json` (36 invitados: 6 internacionales, 27 nacionales incl. colectivo Willka Yaku, 3 moderación).
-- Generador `scripts/build-invitados.js` (`npm run build:invitados`). Variable embebida `const INVITADOS`.
-- Render en navegador: tarjetas GOV.CO + un modal Bootstrap por invitado con foto + bio completa.
+**Invitados** `invitados/index.html` — contenedores + script externo.
+- Fuente de verdad: `invitados/datos.js` (variable `const INVITADOS`), que se sube
+  como `datosCongreso.js` a `/Style Library/assets/js/` en el portal.
+- `index.html` solo trae los `<div data-invitados="internacional|nacional|moderacion|academico">`
+  y el `<script src=".../datosCongreso.js">`; el render (tarjetas GOV.CO + modal por
+  invitado con foto + bio) ocurre en el navegador. No hay paso de build.
+- `invitados.json` quedó como artefacto del flujo anterior (ver nota OBSOLETO arriba);
+  no es la fuente que consume la página.
 - Las antiguas fichas `perfil-*.html` fueron eliminadas (SharePoint no admite tantas hojas).
 - Fotos optimizadas en `invitados/img/` (800×533 JPG). Originales en `img/_originales/` (no publicar).
 
@@ -53,9 +63,11 @@ Flujo de trabajo:
 - Tenemos el PDF en inglés. Montar la versión EN cuando se decida (bilingüe o página aparte).
 
 ### Perfiles de invitados por completar (del correo de Susana)
-- Sin foto (ya montados con placeholder, solo falta la imagen): Jeffrey Amador, Nubia Flórez.
-- Sin bio ni foto (no montados, esperan material): Mesa de Saberes (Victoria Uriana, Jhon Jairo Chota, Omaira Anacona, y en programación: Irwin Cárdenas, Joaquín Prince, Hugo Jamioy); relatos expandidos 1/2/3; Wilfran Barrios; Javier Machicado; Adriana González Hassig; Carolina Correa; Víctor Manuel Rodríguez; Pilar Riaño (revisar); comité académico.
-- Cuando lleguen: agregar como objeto en el JSON correspondiente y correr el build.
+- COMPLETOS (foto + bio en `datos.js`, 06-10-2026): Jeffrey Amador, Nubia Flórez,
+  Adriana González Hassig, Javier Machicado, Wilfran Barrios.
+- Sin bio ni foto (no montados, esperan material): Mesa de Saberes (Victoria Uriana, Jhon Jairo Chota, Omaira Anacona, y en programación: Irwin Cárdenas, Joaquín Prince, Hugo Jamioy); relatos expandidos 1/2/3; Carolina Correa; Víctor Manuel Rodríguez; Pilar Riaño (revisar); 3–4 perfiles adicionales por confirmar (correo 06-10-2026).
+- Cuando lleguen: agregar como objeto en `invitados/datos.js` (array `INVITADOS`, con la
+  `categoria` correcta) y volver a publicar `datosCongreso.js`. Ya no hay paso de build.
 
 ### Programación — datos por confirmar
 - Nombres/títulos de los 16 ponentes seleccionados (hoy "Por confirmar").
