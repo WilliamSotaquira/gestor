@@ -27,6 +27,13 @@
       font-family: Verdana, Geneva, sans-serif !important;
       color: var(--sdm-color-soporte-gris-oscuro) !important;
       line-height: 1.6 !important;
+      /* Sistema de diseño: valores compartidos por todas las superficies */
+      --cmp-radius: 14px !important;
+      --cmp-border: 1px solid #E7EBD4 !important;
+      --cmp-shadow: 0 1px 3px rgba(76, 83, 31, 0.06), 0 4px 14px rgba(76, 83, 31, 0.07) !important;
+      --cmp-shadow-hover: 0 2px 6px rgba(76, 83, 31, 0.08), 0 10px 26px rgba(76, 83, 31, 0.12) !important;
+      --cmp-gap: 2.75rem !important;
+      --cmp-ease: 0.2s ease !important;
     }
 
     .set-wrapper.comparendos *,
@@ -38,31 +45,75 @@
     .set-wrapper.comparendos img {
       max-width: 100% !important;
       height: auto !important;
+      display: block !important;
+    }
+
+    /* Imagen de contenido centrada con tope de ancho */
+    .set-wrapper.comparendos .cmp-img {
+      max-width: 640px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      border-radius: var(--cmp-radius) !important;
+      box-shadow: var(--cmp-shadow) !important;
+    }
+
+    /* Imagen del hero: un poco más contenida y sin sombra */
+    .set-wrapper.comparendos .cmp-img-hero {
+      max-width: 420px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      box-shadow: none !important;
     }
 
     /* === TIPOGRAFÍA === */
     .set-wrapper.comparendos h1 {
       font-family: 'Nunito Sans', Verdana, sans-serif !important;
-      font-size: 1.75rem !important;
-      font-weight: 700 !important;
+      font-size: 2.5rem !important;
+      font-weight: 800 !important;
       color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
       margin-bottom: 1rem !important;
-      line-height: 1.3 !important;
+      line-height: 1.2 !important;
+      letter-spacing: -0.01em !important;
     }
 
     .set-wrapper.comparendos h2 {
       font-family: 'Nunito Sans', Verdana, sans-serif !important;
-      font-size: 1.35rem !important;
+      font-size: 1.75rem !important;
       font-weight: 700 !important;
       color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
-      margin-top: 2rem !important;
-      margin-bottom: 1rem !important;
+      margin-top: 2.5rem !important;
+      margin-bottom: 1.25rem !important;
       line-height: 1.3 !important;
+      padding-bottom: 0.5rem !important;
+      position: relative !important;
+    }
+
+    /* Acento inferior en los títulos de sección (discreto) */
+    .set-wrapper.comparendos h2::after {
+      content: "" !important;
+      display: block !important;
+      width: 40px !important;
+      height: 3px !important;
+      margin-top: 0.6rem !important;
+      border-radius: 3px !important;
+      background: var(--sdm-color-verde-principal) !important;
+    }
+
+    /* En secciones centradas, el acento también va centrado */
+    .set-wrapper.comparendos .cmp-text-center h2::after,
+    .set-wrapper.comparendos .cmp-highlight.cmp-text-center h2::after {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* El acento verde no aplica dentro de la caja de advertencia */
+    .set-wrapper.comparendos .cmp-warning h2::after {
+      display: none !important;
     }
 
     .set-wrapper.comparendos h3 {
       font-family: 'Nunito Sans', Verdana, sans-serif !important;
-      font-size: 1.1rem !important;
+      font-size: 1.35rem !important;
       font-weight: 700 !important;
       color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
       margin-top: 1.5rem !important;
@@ -71,7 +122,7 @@
     }
 
     .set-wrapper.comparendos p {
-      font-size: 0.938rem !important;
+      font-size: 1.0625rem !important;
       margin-bottom: 1rem !important;
       color: var(--sdm-color-soporte-gris-oscuro) !important;
     }
@@ -82,7 +133,7 @@
     }
 
     .set-wrapper.comparendos li {
-      font-size: 0.875rem !important;
+      font-size: 1.0625rem !important;
       margin-bottom: 0.5rem !important;
       color: var(--sdm-color-soporte-gris-oscuro) !important;
     }
@@ -93,6 +144,10 @@
       flex-wrap: wrap !important;
       margin-left: -12px !important;
       margin-right: -12px !important;
+    }
+
+    .set-wrapper.comparendos .cmp-row-middle {
+      align-items: center !important;
     }
 
     .set-wrapper.comparendos .cmp-row > [class*="cmp-col"] {
@@ -117,17 +172,18 @@
     .set-wrapper.comparendos a.cmp-btn-primary:link,
     .set-wrapper.comparendos a.cmp-btn-primary:visited {
       display: inline-block !important;
-      padding: 12px 24px !important;
+      padding: 13px 28px !important;
       background: var(--sdm-color-verde-principal) !important;
       color: var(--sdm-color-soporte-negro) !important;
-      border-radius: 20px !important;
+      border-radius: 24px !important;
       text-decoration: none !important;
-      font-weight: 600 !important;
-      font-size: 0.875rem !important;
+      font-weight: 700 !important;
+      font-size: 1rem !important;
       border: none !important;
       cursor: pointer !important;
       text-align: center !important;
-      transition: background 0.2s !important;
+      box-shadow: var(--cmp-shadow) !important;
+      transition: background var(--cmp-ease), transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
       line-height: 1.4 !important;
     }
 
@@ -136,6 +192,8 @@
       background: var(--sdm-color-verde-secundario-medio) !important;
       color: var(--sdm-color-soporte-negro) !important;
       text-decoration: none !important;
+      transform: translateY(-2px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
     }
 
     /* Secundario: fondo oliva oscuro + texto blanco (8.19:1) */
@@ -143,17 +201,17 @@
     .set-wrapper.comparendos a.cmp-btn-secondary:link,
     .set-wrapper.comparendos a.cmp-btn-secondary:visited {
       display: inline-block !important;
-      padding: 12px 24px !important;
+      padding: 13px 28px !important;
       background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
       color: var(--sdm-color-soporte-blanco) !important;
       border: 2px solid var(--sdm-color-verde-secundario-oliva-oscuro) !important;
-      border-radius: 20px !important;
+      border-radius: 24px !important;
       text-decoration: none !important;
-      font-weight: 600 !important;
-      font-size: 0.875rem !important;
+      font-weight: 700 !important;
+      font-size: 1rem !important;
       cursor: pointer !important;
       text-align: center !important;
-      transition: background 0.2s, color 0.2s !important;
+      transition: background var(--cmp-ease), color var(--cmp-ease), transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
       line-height: 1.4 !important;
     }
 
@@ -163,6 +221,8 @@
       color: var(--sdm-color-soporte-blanco) !important;
       border-color: var(--sdm-color-verde-secundario-oliva-medio) !important;
       text-decoration: none !important;
+      transform: translateY(-2px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
     }
 
     .set-wrapper.comparendos .cmp-btn-group {
@@ -175,22 +235,37 @@
     /* === SECCIONES === */
     .set-wrapper.comparendos .cmp-highlight {
       background: var(--sdm-color-verde-terciario-claro-4) !important;
-      border-radius: 12px !important;
-      padding: 2rem !important;
-      margin: 2rem 0 !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2.25rem !important;
+      margin: var(--cmp-gap) 0 !important;
     }
 
     .set-wrapper.comparendos .cmp-warning {
-      background: #FFF8E1 !important;
-      border-left: 4px solid var(--sdm-color-verde-secundario-medio) !important;
-      border-radius: 8px !important;
-      padding: 1.5rem 2rem !important;
-      margin: 2rem 0 !important;
+      background: var(--sdm-color-soporte-blanco) !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2rem 2.25rem !important;
+      margin: var(--cmp-gap) 0 !important;
+      box-shadow: var(--cmp-shadow) !important;
     }
 
+    /* Título de advertencia: icono + regla fina, sin barra lateral */
     .set-wrapper.comparendos .cmp-warning h2 {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.6rem !important;
       color: #A80521 !important;
       margin-top: 0 !important;
+      margin-bottom: 1rem !important;
+      padding-bottom: 0.9rem !important;
+      border-bottom: 1px solid rgba(168, 5, 33, 0.18) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-warning h2::before {
+      content: "\26A0" !important; /* signo de advertencia */
+      font-size: 1.35rem !important;
+      line-height: 1 !important;
     }
 
     /* === TARJETAS DE PASOS === */
@@ -199,61 +274,88 @@
       flex-direction: column !important;
       align-items: center !important;
       text-align: center !important;
-      padding: 1.5rem 1rem !important;
-      border: 1px solid var(--sdm-color-verde-terciario-claro-3) !important;
-      border-radius: 12px !important;
+      padding: 2rem 1.25rem 1.75rem !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
       height: 100% !important;
       background: var(--sdm-color-soporte-blanco) !important;
+      box-shadow: var(--cmp-shadow) !important;
+      transition: transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-step-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
     }
 
     .set-wrapper.comparendos .cmp-step-number {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      width: 44px !important;
-      height: 44px !important;
+      width: 52px !important;
+      height: 52px !important;
       background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
       color: var(--sdm-color-soporte-blanco) !important;
       border-radius: 50% !important;
-      font-weight: 700 !important;
-      font-size: 1.2rem !important;
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-weight: 800 !important;
+      font-size: 1.35rem !important;
       flex-shrink: 0 !important;
-      margin-bottom: 1rem !important;
+      margin-bottom: 1.1rem !important;
     }
 
     .set-wrapper.comparendos .cmp-step-card h3 {
       margin-top: 0 !important;
       margin-bottom: 0.5rem !important;
-      font-size: 1rem !important;
+      font-size: 1.2rem !important;
     }
 
     .set-wrapper.comparendos .cmp-step-card p {
-      font-size: 0.875rem !important;
+      font-size: 1rem !important;
       color: var(--sdm-color-soporte-gris-medio-oscuro) !important;
       margin: 0 !important;
     }
 
     /* === TARJETAS DE DESCUENTO === */
     .set-wrapper.comparendos .cmp-discount-card {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
       background: var(--sdm-color-soporte-blanco) !important;
-      border: 1px solid var(--sdm-color-verde-terciario-claro-3) !important;
-      border-radius: 12px !important;
-      padding: 1.5rem !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 1.75rem 1.5rem !important;
       text-align: center !important;
       height: 100% !important;
+      box-shadow: var(--cmp-shadow) !important;
+      transition: transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-discount-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
     }
 
     .set-wrapper.comparendos .cmp-discount-card .cmp-percent {
-      font-size: 2.5rem !important;
-      font-weight: 700 !important;
-      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
-      line-height: 1.2 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 92px !important;
+      height: 92px !important;
+      border-radius: 50% !important;
+      background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 1.9rem !important;
+      font-weight: 800 !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+      line-height: 1 !important;
+      margin-bottom: 1rem !important;
     }
 
     .set-wrapper.comparendos .cmp-discount-card p {
-      font-size: 0.875rem !important;
+      font-size: 1rem !important;
       color: var(--sdm-color-soporte-gris-oscuro) !important;
-      margin-top: 0.5rem !important;
+      margin-top: 0 !important;
       margin-bottom: 0 !important;
     }
 
@@ -261,22 +363,25 @@
     .set-wrapper.comparendos a.cmp-service-card,
     .set-wrapper.comparendos a.cmp-service-card:link,
     .set-wrapper.comparendos a.cmp-service-card:visited {
+      position: relative !important;
       display: flex !important;
       flex-direction: column !important;
-      padding: 1.5rem !important;
-      border: 1px solid var(--sdm-color-verde-terciario-claro-3) !important;
-      border-radius: 12px !important;
+      padding: 1.75rem !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
       height: 100% !important;
       background: var(--sdm-color-soporte-blanco) !important;
       text-decoration: none !important;
       color: var(--sdm-color-soporte-gris-oscuro) !important;
-      transition: box-shadow 0.2s, border-color 0.2s !important;
+      box-shadow: var(--cmp-shadow) !important;
+      transition: box-shadow var(--cmp-ease), border-color var(--cmp-ease), transform var(--cmp-ease) !important;
     }
 
     .set-wrapper.comparendos a.cmp-service-card:hover,
     .set-wrapper.comparendos a.cmp-service-card:focus {
       border-color: var(--sdm-color-verde-secundario-medio) !important;
-      box-shadow: 0 4px 12px rgba(165, 180, 23, 0.2) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
+      transform: translateY(-3px) !important;
       text-decoration: none !important;
       color: var(--sdm-color-soporte-gris-oscuro) !important;
     }
@@ -284,12 +389,29 @@
     .set-wrapper.comparendos .cmp-service-card h3 {
       margin-top: 0 !important;
       margin-bottom: 0.5rem !important;
-      font-size: 1rem !important;
+      font-size: 1.2rem !important;
     }
 
     .set-wrapper.comparendos .cmp-service-card p {
-      font-size: 0.875rem !important;
+      font-size: 1rem !important;
       margin: 0 !important;
+    }
+
+    /* Indicador de enlace externo en la esquina de la tarjeta */
+    .set-wrapper.comparendos a.cmp-service-card::after {
+      content: "\2197" !important; /* flecha diagonal */
+      position: absolute !important;
+      top: 1.1rem !important;
+      right: 1.25rem !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      color: var(--sdm-color-verde-secundario-oliva-medio) !important;
+      transition: transform 0.2s !important;
+    }
+
+    .set-wrapper.comparendos a.cmp-service-card:hover::after,
+    .set-wrapper.comparendos a.cmp-service-card:focus::after {
+      transform: translate(2px, -2px) !important;
     }
 
     /* === UTILIDADES === */
@@ -298,27 +420,127 @@
     }
 
     .set-wrapper.comparendos .cmp-mb {
-      margin-bottom: 2rem !important;
+      margin-bottom: var(--cmp-gap) !important;
+    }
+
+    /* === HERO === */
+    /* Fondo verde firma de Movilidad con texto negro: ancla institucional
+       (contraste negro/#BED000 ~ 12.2:1, AA holgado) */
+    .set-wrapper.comparendos .cmp-hero {
+      background: var(--sdm-color-verde-principal) !important;
+      border: none !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2.5rem !important;
+      margin-bottom: var(--cmp-gap) !important;
+      box-shadow: var(--cmp-shadow) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-hero h1 {
+      margin-top: 0 !important;
+      color: var(--sdm-color-soporte-negro) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-hero p {
+      font-size: 1.15rem !important;
+      max-width: 60ch !important;
+      color: var(--sdm-color-soporte-negro) !important;
+    }
+
+    /* Dentro del hero verde, el botón primario invierte a oliva oscuro/blanco
+       para destacar sobre el fondo de marca */
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-primary,
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-primary:link,
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-primary:visited {
+      background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-primary:hover,
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-primary:focus {
+      background: var(--sdm-color-soporte-gris-oscuro) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+    }
+
+    /* El botón secundario (ABECÉ) sobre verde: superficie blanca con texto oliva */
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-secondary,
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-secondary:link,
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-secondary:visited {
+      background: var(--sdm-color-soporte-blanco) !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      border-color: var(--sdm-color-soporte-blanco) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-secondary:hover,
+    .set-wrapper.comparendos .cmp-hero a.cmp-btn-secondary:focus {
+      background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+      border-color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+    }
+
+    @media (min-width: 768px) {
+      .set-wrapper.comparendos .cmp-hero {
+        padding: 3rem !important;
+      }
+    }
+
+    /* === FRANJAS DE SECCIÓN (ritmo de fondo alterno) === */
+    /* Bloque a todo el ancho del wrapper con fondo verde muy claro, para
+       romper la pared blanca y dar jerarquía institucional sin recargar */
+    .set-wrapper.comparendos .cmp-band {
+      background: var(--sdm-color-verde-terciario-claro-4) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2.25rem !important;
+      margin: var(--cmp-gap) 0 !important;
+    }
+
+    .set-wrapper.comparendos .cmp-band > :first-child {
+      margin-top: 0 !important;
+    }
+
+    .set-wrapper.comparendos .cmp-band > :last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* El título que abre una franja no necesita margen superior extra */
+    .set-wrapper.comparendos .cmp-band > h2:first-child {
+      margin-top: 0 !important;
+    }
+
+    @media (min-width: 768px) {
+      .set-wrapper.comparendos .cmp-band {
+        padding: 2.75rem !important;
+      }
     }
   </style>
 
   <!-- HERO / INTRODUCCIÓN -->
-  <h1>Consulta y pago de comparendos</h1>
-  <p>
-    Aquí podrás consultar con tu número de cédula o la placa del vehículo, los comparendos y acuerdos de pago que tengas pendientes. Consulta, paga y ponte al día de manera fácil y segura.
-  </p>
-
-  <div class="cmp-btn-group">
-    <a href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" class="cmp-btn-primary" target="_blank" rel="noopener">
-      Consulta aquí comparendos y acuerdos de pago
-    </a>
-    <a href="#abece" class="cmp-btn-secondary">
-      ABECÉ Consulta de comparendos
-    </a>
+  <div class="cmp-hero">
+    <div class="cmp-row cmp-row-middle">
+      <div class="cmp-col-md-6">
+        <h1>Consulta y pago de comparendos</h1>
+        <p>
+          Aquí podrás consultar con tu número de cédula o la placa del vehículo, los comparendos y acuerdos de pago que tengas pendientes. Consulta, paga y ponte al día de manera fácil y segura.
+        </p>
+        <div class="cmp-btn-group">
+          <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="cmp-btn-primary" target="_blank" rel="noopener">
+            Consulta aquí comparendos y acuerdos de pago
+          </a>
+          <a href="#abece" class="cmp-btn-secondary">
+            ABECÉ Consulta de comparendos
+          </a>
+        </div>
+      </div>
+      <div class="cmp-col-md-6 cmp-text-center">
+        <img class="cmp-img-hero" src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/imagen%202.png" alt="Ilustración de consulta de comparendos" loading="lazy">
+      </div>
+    </div>
   </div>
 
   <!-- SECCIÓN: Paga en canales oficiales -->
   <h2>Paga directamente en los canales oficiales de la Secretaría</h2>
+  <div class="cmp-text-center cmp-mb">
+    <img class="cmp-img" style="max-width:860px !important; box-shadow:none !important;" src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/imagen%203.png" alt="Canales oficiales de pago de la Secretaría Distrital de Movilidad" loading="lazy">
+  </div>
   <div class="cmp-highlight">
     <p><strong>Cuando realizas el pago directamente con nosotros:</strong></p>
     <ul>
@@ -329,37 +551,42 @@
   </div>
 
   <!-- SECCIÓN: Cómo consultar -->
-  <h2>Cómo consultar tus comparendos</h2>
-  <div class="cmp-row">
-    <div class="cmp-col-md-4">
-      <div class="cmp-step-card">
-        <span class="cmp-step-number" role="img" aria-label="Paso 1">1</span>
-        <h3>Consulta Comparendos</h3>
-        <p>Haz clic en "Consulta aquí comparendos y acuerdos de pago"</p>
+  <div class="cmp-band">
+    <h2>Cómo consultar tus comparendos</h2>
+    <div class="cmp-row">
+      <div class="cmp-col-md-4">
+        <div class="cmp-step-card">
+          <span class="cmp-step-number" role="img" aria-label="Paso 1">1</span>
+          <h3>Consulta Comparendos</h3>
+          <p>Haz clic en "Consulta aquí comparendos y acuerdos de pago"</p>
+        </div>
+      </div>
+      <div class="cmp-col-md-4">
+        <div class="cmp-step-card">
+          <span class="cmp-step-number" role="img" aria-label="Paso 2">2</span>
+          <h3>Ingresa tus Datos</h3>
+          <p>Selecciona tipo de documento y digita tu cédula o placa del vehículo</p>
+        </div>
+      </div>
+      <div class="cmp-col-md-4">
+        <div class="cmp-step-card">
+          <span class="cmp-step-number" role="img" aria-label="Paso 3">3</span>
+          <h3>Ver Detalles</h3>
+          <p>Desplázate hacia abajo y da clic en "ver detalle" para conocer los comparendos pendientes</p>
+        </div>
       </div>
     </div>
-    <div class="cmp-col-md-4">
-      <div class="cmp-step-card">
-        <span class="cmp-step-number" role="img" aria-label="Paso 2">2</span>
-        <h3>Ingresa tus Datos</h3>
-        <p>Selecciona tipo de documento y digita tu cédula o placa del vehículo</p>
-      </div>
+    <div class="cmp-text-center" style="margin-top:1.75rem !important;">
+      <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="cmp-btn-primary" target="_blank" rel="noopener">
+        Consulta aquí comparendos y acuerdos de pago
+      </a>
     </div>
-    <div class="cmp-col-md-4">
-      <div class="cmp-step-card">
-        <span class="cmp-step-number" role="img" aria-label="Paso 3">3</span>
-        <h3>Ver Detalles</h3>
-        <p>Desplázate hacia abajo y da clic en "ver detalle" para conocer los comparendos pendientes</p>
-      </div>
-    </div>
-  </div>
-  <div class="cmp-text-center cmp-mb">
-    <a href="https://www.movilidadbogota.gov.co/consulta-de-comparendos" class="cmp-btn-primary" target="_blank" rel="noopener">
-      Consulta aquí comparendos y acuerdos de pago
-    </a>
   </div>
 
   <!-- SECCIÓN: Evita sanciones -->
+  <div class="cmp-text-center cmp-mb">
+    <img class="cmp-img" src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/imagen%204.png" alt="Información sobre reincidencia en infracciones de tránsito" loading="lazy">
+  </div>
   <div class="cmp-warning" role="alert" aria-label="Advertencia sobre sanciones">
     <h2>¡Evita Sanciones!</h2>
     <ul>
@@ -370,66 +597,80 @@
   </div>
 
   <!-- SECCIÓN: Descuentos disponibles -->
-  <h2>Descuentos Disponibles</h2>
-  <p>Accede a descuentos realizando el Curso Pedagógico por infracción a las normas de tránsito.</p>
+  <div class="cmp-band">
+    <h2>Descuentos Disponibles</h2>
+    <p>Accede a descuentos realizando el Curso Pedagógico por infracción a las normas de tránsito.</p>
 
-  <h3>Comparendos en Vía</h3>
-  <div class="cmp-row">
-    <div class="cmp-col-md-6">
-      <div class="cmp-discount-card">
-        <div class="cmp-percent" aria-hidden="true">50%</div>
-        <p><strong>50% de descuento</strong> si realizas el curso y pago dentro de los 5 días hábiles siguientes a la imposición.</p>
+    <h3>Comparendos en Vía</h3>
+    <div class="cmp-text-center cmp-mb">
+      <img class="cmp-img" src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/imagen%205.png" alt="Descuentos para comparendos en vía" loading="lazy">
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-col-md-6">
+        <div class="cmp-discount-card">
+          <div class="cmp-percent" aria-hidden="true">50%</div>
+          <p><strong>50% de descuento</strong> si realizas el curso y pago dentro de los 5 días hábiles siguientes a la imposición.</p>
+        </div>
+      </div>
+      <div class="cmp-col-md-6">
+        <div class="cmp-discount-card">
+          <div class="cmp-percent" aria-hidden="true">25%</div>
+          <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 6° y 20° día hábil siguiente a la imposición.</p>
+        </div>
       </div>
     </div>
-    <div class="cmp-col-md-6">
-      <div class="cmp-discount-card">
-        <div class="cmp-percent" aria-hidden="true">25%</div>
-        <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 6° y 20° día hábil siguiente a la imposición.</p>
+
+    <h3>Comparendos Electrónicos</h3>
+    <div class="cmp-text-center cmp-mb">
+      <img class="cmp-img" src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/imagen%206.png" alt="Descuentos para comparendos electrónicos" loading="lazy">
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-col-md-6">
+        <div class="cmp-discount-card">
+          <div class="cmp-percent" aria-hidden="true">50%</div>
+          <p><strong>50% de descuento</strong> si realizas el curso y pago entre el 1° y 11° día hábil siguiente a la notificación.</p>
+        </div>
+      </div>
+      <div class="cmp-col-md-6">
+        <div class="cmp-discount-card">
+          <div class="cmp-percent" aria-hidden="true">25%</div>
+          <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 12° y 26° día hábil siguiente a la notificación.</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <h3>Comparendos Electrónicos</h3>
-  <div class="cmp-row">
-    <div class="cmp-col-md-6">
-      <div class="cmp-discount-card">
-        <div class="cmp-percent" aria-hidden="true">50%</div>
-        <p><strong>50% de descuento</strong> si realizas el curso y pago entre el 1° y 11° día hábil siguiente a la notificación.</p>
-      </div>
+    <p><strong>Ten en cuenta:</strong> Se debe realizar un curso pedagógico por cada infracción cometida.</p>
+
+    <div class="cmp-text-center" style="margin-top:1.75rem !important;">
+      <a href="https://vus.circulemosdigital.com.co/#/login" class="cmp-btn-primary" target="_blank" rel="noopener">
+        Agendar cita para curso
+      </a>
     </div>
-    <div class="cmp-col-md-6">
-      <div class="cmp-discount-card">
-        <div class="cmp-percent" aria-hidden="true">25%</div>
-        <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 12° y 26° día hábil siguiente a la notificación.</p>
-      </div>
-    </div>
-  </div>
-
-  <p><strong>Ten en cuenta:</strong> Se debe realizar un curso pedagógico por cada infracción cometida.</p>
-
-  <div class="cmp-text-center cmp-mb">
-    <a href="https://www.movilidadbogota.gov.co/agendamiento-de-citas" class="cmp-btn-primary" target="_blank" rel="noopener">
-      Agendar cita para curso
-    </a>
   </div>
 
   <!-- SECCIÓN: Servicios relacionados -->
   <h2>Servicios relacionados</h2>
   <div class="cmp-row">
-    <div class="cmp-col-md-4">
-      <a href="https://www.movilidadbogota.gov.co/acuerdos-de-pago" class="cmp-service-card" target="_blank" rel="noopener">
+    <div class="cmp-col-md-6">
+      <a href="https://movilidad.ucontactcloud.com/WebChat/SdmAcuerdosPago/" class="cmp-service-card" target="_blank" rel="noopener">
         <h3>Acuerdos de pago</h3>
         <p>Haz tu acuerdo de pago y ponte al día con Bogotá.</p>
       </a>
     </div>
-    <div class="cmp-col-md-4">
-      <a href="https://www.movilidadbogota.gov.co/tabla-autoliquidacion" class="cmp-service-card" target="_blank" rel="noopener">
+    <div class="cmp-col-md-6">
+      <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-01-03/tabla_autoliquidacion_2026.pdf" class="cmp-service-card" target="_blank" rel="noopener">
         <h3>Tabla de autoliquidación</h3>
         <p>Consulta aquí la tabla de autoliquidación de infracciones 2026.</p>
       </a>
     </div>
-    <div class="cmp-col-md-4">
-      <a href="https://www.movilidadbogota.gov.co/desembargos" class="cmp-service-card" target="_blank" rel="noopener">
+    <div class="cmp-col-md-6">
+      <a href="https://www.movilidadbogota.gov.co/canal-anticorrupcion" class="cmp-service-card" target="_blank" rel="noopener">
+        <h3>Sistema de gestión antisoborno</h3>
+        <p>Conoce el portal de Integridad, Antisoborno y Anticorrupción.</p>
+      </a>
+    </div>
+    <div class="cmp-col-md-6">
+      <a href="https://www.movilidadbogota.gov.co/abecedesembargos" class="cmp-service-card" target="_blank" rel="noopener">
         <h3>Abecé Desembargos</h3>
         <p>Conoce toda la información que necesitas sobre desembargos.</p>
       </a>
@@ -440,7 +681,7 @@
   <div id="abece" class="cmp-highlight cmp-text-center">
     <h2 style="margin-top:0 !important;">ABECÉ Consulta de comparendos</h2>
     <p>Descarga el documento con toda la información que necesitas saber sobre consulta y pago de comparendos en Bogotá.</p>
-    <a href="https://www.movilidadbogota.gov.co/sites/default/files/ABECE-Consulta-de-Comparendos-Feb2026.pdf" class="cmp-btn-primary" target="_blank" rel="noopener">
+    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/abece_consulta_de_comparendos_feb2026.pdf" class="cmp-btn-primary" target="_blank" rel="noopener">
       Descargar ABECÉ (PDF)
     </a>
   </div>
