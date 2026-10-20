@@ -33,13 +33,38 @@ Flujo de trabajo:
 **Invitados** `invitados/index.html` — contenedores + script externo.
 - Fuente de verdad: `invitados/datos.js` (variable `const INVITADOS`), que se sube
   como `datosCongreso.js` a `/Style Library/assets/js/` en el portal.
-- `index.html` solo trae los `<div data-invitados="internacional|nacional|moderacion|academico">`
+- `index.html` solo trae los `<div data-invitados="internacional|nacional|academico|posteres|ponencias">`
   y el `<script src=".../datosCongreso.js">`; el render (tarjetas GOV.CO + modal por
   invitado con foto + bio) ocurre en el navegador. No hay paso de build.
+- MODERACIÓN UNIFICADA (20-10-2026): la antigua sección/categoría "moderacion" se
+  eliminó. Los 3 moderadores (Manuel Fernando García García, Olga Lucía Olaya Parra,
+  Ana María Arango) pasaron a `categoria:"nacional"` por ser colombianos (los
+  extranjeros habrían ido a "internacional"). Se les cambió la etiqueta a "Nacional"
+  y se quitó "moderacion" del `index.html` y del array `categorias` del render.
 - `invitados.json` quedó como artefacto del flujo anterior (ver nota OBSOLETO arriba);
   no es la fuente que consume la página.
 - Las antiguas fichas `perfil-*.html` fueron eliminadas (SharePoint no admite tantas hojas).
 - Fotos optimizadas en `invitados/img/` (800×533 JPG). Originales en `img/_originales/` (no publicar).
+
+**Pósteres** (categoría nueva dentro de Invitados) — montada 20-10-2026.
+- 11 autores agregados a `invitados/datos.js` con `categoria: "posteres"` (fuente original: `D:\posteres_web_json_imagenes\posteres_web\autores.json`, textos verbatim sin verificación biográfica). Sin eje temático (como el Comité Académico).
+- Nueva constante en `datos.js`: `BASE_POSTERES = ".../PublishingImages/invitados/posteres/"`. "posteres" agregado al array `categorias` del render.
+- Sección "Pósteres" agregada en `invitados/index.html` (`<h2>` + `<div data-invitados="posteres">`) tras el Comité Académico.
+- Fotos en `invitados/img/posteres/` (originales en `posteres/_originales/`, no publicar):
+  - 8 retratos individuales 500×500 (cuadrado 1:1, el patrón que usa `datos.js`).
+  - 1 foto GRUPAL `grupoclaudiadanielmauricio.jpg` en 800×533 HORIZONTAL (la comparten Claudia Arias, Daniel Plata y Mauricio Hoyos): el recorte cuadrado perdía a la persona del centro, por eso se dejó apaisada.
+  - `andres-montoya-tobon.jpg` se recortó con anclaje superior (`position:'top'`) para no cortar la cabeza; el resto con recorte centrado/attention.
+- DISCREPANCIA PENDIENTE DE REVISIÓN (anotada como comentario en `datos.js`): los autores id 1–3 (Andrés Montoya-Tobón, Erika Imbett-Vargas, Fausto Zuleta-Montoya) venían en el Word bajo un único "Nombre del Autor": «Fausto Alonso Zuleta Montoya», pero con tres perfiles distintos. Se conservaron los tres nombres tal cual; verificar con la fuente.
+- AL PUBLICAR: crear en SharePoint la subcarpeta `PublishingImages/invitados/posteres/` y subir ahí las 9 fotos (coincide con `BASE_POSTERES`).
+
+**Ponencias seleccionadas** (categoría nueva dentro de Invitados) — montada 20-10-2026.
+- 15 autores agregados a `invitados/datos.js` con `categoria: "ponencias"` (fuente original: `D:\ponencias_web_json_imagenes\ponencias_web\autores.json`, textos verbatim sin corregir). Sin eje temático.
+- Nueva constante en `datos.js`: `BASE_PONENCIAS = ".../PublishingImages/invitados/ponencias/"`. "ponencias" agregado al array `categorias` del render (va después de "posteres").
+- Sección "Ponencias seleccionadas" agregada en `invitados/index.html` (`<h2>` + `<div data-invitados="ponencias">`) tras Pósteres.
+- Fotos en `invitados/img/ponencias/` (originales en `ponencias/_originales/`, no publicar): 15 retratos 500×500. Slugs sin el prefijo numérico `NN-` que traía el paquete; la `.jpeg` se normalizó a `.jpg`.
+- Caso especial: la foto de Diego Germán Romero Bonilla es GRUPAL (colectivo Oficina Tripalar, 5 personas); el recorte cuadrado 500×500 muestra bien al grupo, se dejó así. Su etiqueta y alt reflejan que es un colectivo.
+- DISCREPANCIAS PENDIENTES DE REVISIÓN (anotadas como comentario en `datos.js`, según el README del paquete): nombre del Word vs. nombre en la bio — John Jairo Nomesqui Delgado ("John Nomesqui"), María Camila Roso Guata ("Rosso Gauta"), Rafael Adolfo Llano Parias ("Llanos Parias"), Jhon Alexander Barreto ("Barreto Guerra"); además Diego Germán Romero Bonilla (perfil del colectivo Oficina Tripalar) y Fernando Montes (perfil de la Fundación Teatro Varasanta, no biografía individual).
+- AL PUBLICAR: crear en SharePoint la subcarpeta `PublishingImages/invitados/ponencias/` y subir ahí las 15 fotos (coincide con `BASE_PONENCIAS`).
 
 **Programación** `programacion/index.html` — UNA sola página autocontenida.
 - Datos en `programacion/programacion.json` (4 días, 3–6 nov 2026, 40 bloques).
@@ -88,3 +113,32 @@ Flujo de trabajo:
 - Solo se copia al gestor el contenido dentro de `#contenido-cms`.
 - Las fotos de `img/` deben subirse a la biblioteca de imágenes del portal y ajustar las rutas `src` a la ubicación final.
 - La cadena "cms" en las rutas es identificador fijo del sistema: no renombrar.
+
+## PENDIENTE DE PUBLICACIÓN (al 20-10-2026)
+
+El repo está actualizado pero el portal tiene una versión anterior (p. ej. en el
+portal Ponencias aún no se despliega y Programación aún muestra "Gabriel Jaime
+Vélez" / "Tania Delgado — Javeriana"). Para reflejar los últimos cambios hay que
+republicar TRES cosas:
+
+1. `datosCongreso.js` — subir `invitados/datos.js` (tal cual) a
+   `/Style Library/assets/js/datosCongreso.js`. Trae: las 15 ponencias nuevas
+   (categoría "ponencias", hoy no visibles en el portal), la unificación de
+   moderación en nacional, y las correcciones de nombres de invitados (Gabriel
+   Mario Vélez, María Camila Rosso Gauta, Oficina Tripaliar).
+2. Página **Invitados** — copiar el `#contenido-cms` de `invitados/index.html` a
+   la página de SharePoint. Trae el nuevo encabezado (3 párrafos), la sección
+   "Ponencias seleccionadas" y el retiro de la sección "Moderación".
+3. Página **Programación** — copiar el `#contenido-cms` de `programacion/index.html`.
+   Trae: Gabriel Mario Vélez (antes "Jaime"), Tania Delgado "Consultora
+   independiente" (antes Javeriana), ponencia de "Oficina Tripaliar" (antes
+   Diego Germán Romero Bonilla), y el retiro de los 2 bloques "Relato expandido"
+   y del receso 11:20–11:35 del Día 4.
+
+Subir además las fotos nuevas a las subcarpetas del portal:
+`PublishingImages/invitados/posteres/` (9) y `PublishingImages/invitados/ponencias/` (15).
+
+Nota: el bloque "Inauguración (protocolo)" del Día 1 no lista a sus autoridades
+en el HTML generado (el generador `build-programacion.js` no renderiza las
+`personas` dentro de `grupos` para ese tipo). El dato está correcto en el JSON;
+si se quiere mostrar, hay que ajustar el generador (pendiente aparte, no bloquea).

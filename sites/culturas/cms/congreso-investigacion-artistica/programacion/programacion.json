@@ -24,20 +24,6 @@
           "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
         },
         {
-          "inicio": "08:30",
-          "fin": "09:15",
-          "tipo": "relato",
-          "paralelo": false,
-          "actividades": [
-            {
-              "titulo": "Relato expandido"
-            }
-          ],
-          "modalidad": null,
-          "espacio": "Ed. Jorge Hoyos Vásquez, S.J.",
-          "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
-        },
-        {
           "inicio": "09:15",
           "fin": "10:00",
           "tipo": "inauguracion",
@@ -58,7 +44,7 @@
                       "rol": "Dirección de Artes"
                     },
                     {
-                      "nombre": "Gabriel Jaime Vélez",
+                      "nombre": "Gabriel Mario Vélez",
                       "rol": "Presidente ACOFARTES"
                     },
                     {
@@ -106,7 +92,7 @@
               "titulo": "Charla inaugural: El estado de la investigación artística en Colombia 2010-2026",
               "personas": [
                 {
-                  "nombre": "Gabriel Jaime Vélez",
+                  "nombre": "Gabriel Mario Vélez",
                   "rol": "Presidente de ACOFARTES"
                 },
                 {
@@ -153,7 +139,7 @@
               "moderacion": [
                 {
                   "nombre": "Tania Delgado",
-                  "rol": "Pontificia Universidad Javeriana"
+                  "rol": "Consultora independiente"
                 }
               ]
             }
@@ -549,8 +535,8 @@
               "titulo": "Ponencias",
               "ponencias": [
                 {
-                  "autor": "Diego Germán Romero Bonilla",
-                  "titulo": "Ecosistemas artísticos sostenibles: formulación de proyectos, formalización y procesos de formación para la gobernanza e integración cultural"
+                  "autor": "Oficina Tripaliar",
+                  "titulo": "Levantamiento y activación de archivos vivos en el proyecto de investigación-creación “Excrituras tripaliares autoficcionales. Investigar para sobrevivir”"
                 },
                 {
                   "autor": "Ana María Arango Melo",
@@ -814,7 +800,7 @@
                   "rol": "Decana Facultad de Artes, Pontificia Universidad Javeriana"
                 },
                 {
-                  "nombre": "Gabriel Jaime Vélez",
+                  "nombre": "Gabriel Mario Vélez",
                   "rol": "Presidente ACOFARTES"
                 }
               ],
@@ -871,34 +857,6 @@
           "modalidad": "Presencial",
           "espacio": "Edificio Corredor",
           "enlaceUbicacion": "https://www.javeriana.edu.co/nuestras-instalaciones"
-        },
-        {
-          "inicio": "11:20",
-          "fin": "11:35",
-          "tipo": "receso",
-          "paralelo": false,
-          "actividades": [
-            {
-              "titulo": "Receso"
-            }
-          ],
-          "modalidad": null,
-          "espacio": null,
-          "enlaceUbicacion": null
-        },
-        {
-          "inicio": "11:35",
-          "fin": "13:00",
-          "tipo": "relato",
-          "paralelo": false,
-          "actividades": [
-            {
-              "titulo": "Relato expandido"
-            }
-          ],
-          "modalidad": null,
-          "espacio": null,
-          "enlaceUbicacion": null
         }
       ]
     }

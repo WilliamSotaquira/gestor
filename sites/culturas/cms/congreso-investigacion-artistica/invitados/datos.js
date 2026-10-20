@@ -22,6 +22,8 @@
 
   var BASE = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/congreso/";
   var BASE_ACADEMICO = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/academico/";
+  var BASE_POSTERES = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/posteres/";
+  var BASE_PONENCIAS = "/especiales/primer-congreso-nacional-internacional-investigacion-artistica/PublishingImages/invitados/ponencias/";
 
   /* MAPA DE EJES TEMÁTICOS
    * Cada invitado referencia un eje por su clave (campo `eje`). Aquí se define
@@ -43,7 +45,8 @@
     "archivo-memoria-viva":   { nombre: "Archivo y memoria viva",           color: "#5D4037" }
   };
 
-  /* 1) DATOS — 36 objetos: internacional (6) -> nacional (27) -> moderacion (3) */
+  /* 1) DATOS — internacional (6) -> nacional (33, incluye los 3 que antes
+   *    eran "moderacion") -> academico (8) -> posteres (11) -> ponencias (15). */
   const INVITADOS = [
     /* ---------- INTERNACIONALES (6) ---------- */
     {
@@ -300,7 +303,7 @@
       foto: BASE + "gabriel-velez.jpg",
       alt: "Retrato de Gabriel Vélez",
       bio: [
-        "Gabriel Marío Vélez es artista, docente universitario e investigador. Docente de la Facultad de Artes de la Universidad de Antioquia y líder del grupo de investigación de Teoría, Práctica e Historia del Arte en Colombia. Sus proyectos artísticos han sido expuestos en distintos eventos de alcance nacional e internacional, entre ellos Transeúntes Medellín. Entre sus publicaciones se pueden mencionar los libros \n            <em>La Fotografía como Dispositivo Mágico</em>, publicado en Medellín, y \n            <em>La Huella Digital. Del Efecto Sujeto en la Génesis Digital</em>, publicado en Córdoba, Argentina.&#160;&#160;",
+        "Gabriel Mario Vélez es artista, docente universitario e investigador. Docente de la Facultad de Artes de la Universidad de Antioquia y líder del grupo de investigación de Teoría, Práctica e Historia del Arte en Colombia. Sus proyectos artísticos han sido expuestos en distintos eventos de alcance nacional e internacional, entre ellos Transeúntes Medellín. Entre sus publicaciones se pueden mencionar los libros \n            <em>La Fotografía como Dispositivo Mágico</em>, publicado en Medellín, y \n            <em>La Huella Digital. Del Efecto Sujeto en la Génesis Digital</em>, publicado en Córdoba, Argentina.&#160;&#160;",
         "Entre 2016 y 2025 ejerció como decano de la Facultad de Artes de la Universidad de Antioquia. Actualmente se desempeña como presidente de la Asociación Colombiana de Facultades de Arte y es uno de los comisionados de la Sala Conaces de Arte y Humanidades del Ministerio de Educación. Su más reciente exposición se realizó en São Paulo (Brasil) con el proyecto Transeuntis Mundi, en colaboración con la artista brasileña Cândida Borges.&#160;&#160;"
       ]
     },
@@ -570,14 +573,18 @@
       ]
     },
 
-    /* ---------- MODERACIÓN (3) ---------- */
+    /* ---------- MODERACIÓN — unificada con NACIONALES (3) ----------
+     * Antes eran categoria:"moderacion" con sección propia. Se fusionaron
+     * en "nacional" (los tres son colombianos); extranjeros habrían ido a
+     * "internacional". La sección "Moderación" se retiró de index.html y del
+     * array `categorias` del render. */
     {
       slug: "manuel-fernando-garcia-garcia",
       eje: "cuerpos-movimiento",
-      categoria: "moderacion",
+      categoria: "nacional",
       nombre: "Manuel Fernando García García",
-      etiquetaFicha: "Moderación&#160;&#160;",
-      etiquetaCard: "Moderación",
+      etiquetaFicha: "Invitado nacional&#160;&#160;",
+      etiquetaCard: "Nacional",
       foto: BASE + "manuel-garcia-conno.jpg",
       alt: "Retrato de Manuel Fernando García García",
       bio: [
@@ -588,10 +595,10 @@
     {
       slug: "olga-lucia-olaya-parra",
       eje: "conocimiento-sensible",
-      categoria: "moderacion",
+      categoria: "nacional",
       nombre: "Olga Lucía Olaya Parra",
-      etiquetaFicha: "Moderación&#160;&#160;",
-      etiquetaCard: "Moderación",
+      etiquetaFicha: "Invitada nacional&#160;&#160;",
+      etiquetaCard: "Nacional",
       foto: BASE + "olga-lucia-olaya.jpg",
       alt: "Retrato de Olga Lucía Olaya Parra",
       bio: [
@@ -602,10 +609,10 @@
     {
       slug: "ana-maria-arango",
       eje: "perspectivas-ecologicas",
-      categoria: "moderacion",
+      categoria: "nacional",
       nombre: "Ana María Arango",
-      etiquetaFicha: "Moderación&#160;&#160;",
-      etiquetaCard: "Moderación",
+      etiquetaFicha: "Invitada nacional&#160;&#160;",
+      etiquetaCard: "Nacional",
       foto: BASE + "ana-maria-arango.jpg",
       alt: "Retrato de Ana María Arango",
       bio: [
@@ -721,6 +728,343 @@
         "Leonidas es músico, investigador, docente y gestor cultural chocoano, vinculado a la Universidad Tecnológica del Chocó Diego Luis Córdoba (UTCH), donde se desempeña en la Licenciatura en Educación Artística y participa en procesos académicos, curriculares y de investigación. Asimismo, desarrolla actividades de investigación, formación, documentación y salvaguardia cultural desde la Corporaloteca UTCH y la Asociación para las Investigaciones Culturales del Chocó (ASINCH).&#160;&#160;",
         "Sus principales líneas de investigación se centran en las músicas tradicionales del Pacífico colombiano, la chirimía chocoana, el patrimonio cultural y biocultural, la memoria musical afrocolombiana, la educación artística y los procesos de investigación-creación. Su trayectoria articula investigación académica, práctica musical, formación comunitaria y gestión del patrimonio.&#160;&#160;",
         "Entre sus trabajos editoriales se destacan estudios sobre la funcionalidad de las músicas, bailes y sonoridades del Pacífico colombiano, la influencia de instrumentos musicales africanos, la chirimía chocoana, la educación musical y la vida y obra de músicos representativos del Chocó.&#160;&#160;"
+      ]
+    },
+
+    /* ---------- PÓSTERES (11) ---------- */
+    /* NOTA DE FUENTE (para revisión humana): en el JSON origen, los autores
+     * con id 1, 2 y 3 (Andrés Montoya-Tobón, Erika Imbett-Vargas y
+     * Fausto Zuleta-Montoya) traen la observación: «El campo "Nombre del Autor"
+     * de esta fila dice "Fausto Alonso Zuleta Montoya", aunque contiene tres
+     * perfiles diferentes.» Se conservan los nombres tal cual vienen; no se
+     * corrige ni se inventan datos. */
+    {
+      slug: "andres-montoya-tobon",
+      categoria: "posteres",
+      nombre: "Andrés Montoya-Tobón",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "andres-montoya-tobon.jpg",
+      alt: "Fotografía de Andrés Montoya-Tobón",
+      bio: [
+        "Ingeniero de Diseño de Producto y Magíster en Ingeniería. Docente e investigador universitario enfocado en manufactura avanzada, diseño paramétrico, automatización y desarrollo tecnológico sostenible."
+      ]
+    },
+    {
+      slug: "erika-imbett-vargas",
+      categoria: "posteres",
+      nombre: "Erika Imbett-Vargas",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "erika-imbett-vargas.jpg",
+      alt: "Fotografía de Erika Imbett-Vargas",
+      bio: [
+        "Ingeniera en Diseño Industrial, Magister en Estudios de CTS, Doctora en Complejidad. Jefa del Departamento de Diseño del ITM. Docente e investigadora en la Facultad de Artes y Humanidades. Actual vicepresidenta del consejo de la Red Académica de Diseño."
+      ]
+    },
+    {
+      slug: "fausto-zuleta-montoya",
+      categoria: "posteres",
+      nombre: "Fausto Zuleta-Montoya",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "fausto-zuleta-montoya.jpg",
+      alt: "Fotografía de Fausto Zuleta-Montoya",
+      bio: [
+        "Diseñador Industrial, PhD en Bioingeniería, Magíster en Ingeniería de Diseño, Especialista en Ergonomía; docente investigador enfocado en ingeniería de productos y materiales. Ha sido representante de Ministerio de Ciencias y MinCIT como delegado de la Red Académica de Diseño. Experiencia en la planificación y ejecución de proyectos en diversos campos disciplinares, especialmente en Investigación+Creación."
+      ]
+    },
+    {
+      slug: "maria-angelica-manosalva-sandoval",
+      categoria: "posteres",
+      nombre: "María Angélica Manosalva Sandoval",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "maria-angelica-manosalva-sandoval.jpg",
+      alt: "Fotografía de María Angélica Manosalva Sandoval",
+      bio: [
+        "Arquitecta, historiadora de la arquitectura de la Bartlett School of Architecture (UCL) e investigadora del Observatorio de Arquitectura Latinoamericana Contemporánea (ODALC), con más de 2 años de experiencia como profesora de cátedra en la Pontificia Universidad Javeriana y en la Universidad del Rosario. Especializada en historia y teoría de la arquitectura, e interesada en el análisis crítico del patrimonio arquitectónico del siglo XX y su interacción con contextos sociales, culturales y políticos. Reconocida por fomentar el pensamiento crítico y la transdisciplinariedad en sus proyectos."
+      ]
+    },
+    {
+      slug: "carmenza-roa-de-la-rosa",
+      categoria: "posteres",
+      nombre: "Carmenza Roa de la Rosa",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "carmenza-roa-de-la-rosa.jpg",
+      alt: "Fotografía de Carmenza Roa de la Rosa",
+      bio: [
+        "Carmenza Roa de la Rosa es representante legal de la Asociación de etnoeducadores del Municipio de Becerril – ASOETBEC, organización de base sin ánimo de lucro creada en 2012, que acompaña procesos de etnoeducación, fortalecimiento de la identidad cultural, memoria histórica, participación comunitaria y reconocimiento de los saberes de las comunidades afrodescendientes. Su trayectoria se ha desarrollado en procesos comunitarios orientados a la promoción de los derechos étnicos, culturales y humanos, así como a la recuperación y visibilización de conocimientos construidos desde el territorio. Ha participado en iniciativas culturales y artísticas relacionadas con la memoria, la oralidad, las prácticas tradicionales y la creación comunitaria. Entre sus experiencias se encuentran “De la Vista al Lente”, un proceso de creación y documentación audiovisual que contribuye a preservar y divulgar saberes afrodescendientes, y “La Mudanza Folclórica Recorre Nuestro Territorio”, orientado al reconocimiento y la circulación de expresiones culturales propias. Su trabajo articula la educación, la cultura, la memoria y la participación comunitaria."
+      ]
+    },
+    {
+      slug: "monica-andrea-velandia-poveda",
+      categoria: "posteres",
+      nombre: "Mónica Andrea Velandia Poveda",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "monica-andrea-velandia-poveda.jpg",
+      alt: "Fotografía de Mónica Andrea Velandia Poveda",
+      bio: [
+        "Mónica Andrea Velandia Poveda es maestra en Artes Plásticas y Visuales por la Universidad Distrital Francisco José de Caldas (ASAB) y cursante de la Maestría en Educación en la Universidad El Bosque. Cuenta con una trayectoria de más de ocho años en docencia artística, diseño curricular y gestión cultural en la región de Sabana Centro. Su labor ha sido reconocida al ganar el Programa Municipal de Estímulos de Zipaquirá y al ser nominada a la Orden al Mérito Guillermo Quevedo Zornoza.",
+        "Sus líneas de investigación y creación se centran en la articulación entre las artes plásticas, la pedagogía inclusiva y la salvaguarda de la memoria ancestral. Destacan sus proyectos de investigación-creación orientados al patrimonio arqueológico de El Abra y a la transformación de las prácticas educativas contemporáneas en la educación superior."
+      ]
+    },
+    {
+      slug: "angela-maria-moya-rodriguez",
+      categoria: "posteres",
+      nombre: "Angela María Moya Rodríguez",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "angela-maria-moya-rodriguez.jpg",
+      alt: "Fotografía de Angela María Moya Rodríguez",
+      bio: [
+        "Angela María Moya Rodríguez es licenciada en arte, folclor y cultura y magíster en pedagogía. Es docente universitaria de la Facultad de Bellas Artes de la Universidad Popular del Cesar, donde está vinculada desde 2016 y desarrolla procesos de docencia, investigación con acompañamiento académico. Su trayectoria se ha orientado hacia la educación artística, las artes escénicas, la pedagogía y la investigación, con experiencia en teatro, lenguaje corporal, práctica pedagógica, investigación y escritura creativa con expresión oral y corporal. Es tutora y líder del Semillero de Investigación Tras-Escena, acompañando procesos de formación investigativa y proyectos relacionados con la pedagogía y la didáctica de las artes, el patrimonio, la memoria, la identidad, así como con la cultura del Caribe colombiano. Cuenta con experiencia en investigación y creación, producción académica, acompañamiento de trabajos de grado, participación como jurado y evaluadora en procesos culturales y académicos."
+      ]
+    },
+    {
+      slug: "valeria-gissell-palacio-rico",
+      categoria: "posteres",
+      nombre: "Valeria Gissell Palacio Rico",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "valeria-gissell-palacio-rico.jpg",
+      alt: "Fotografía de Valeria Gissell Palacio Rico",
+      bio: [
+        "Valeria Gissell Palacio Rico es Licenciada en Artes, egresada de la Universidad Popular del Cesar, donde actualmente participa como investigadora activa y ha desarrollado su trayectoria en investigación aplicada a las artes y cultura. Se desempeña como artista formadora del programa Artes para la Paz, iniciativa del Ministerio de Cultura, las Artes y los Saberes que promueve procesos de formación artística orientados a la construcción de paz. Sus líneas de investigación se centran en preservación del patrimonio colombiano, codiseño y articulación entre arte, herramientas digitales con fortalecimiento cultural. En 2025 fue ganadora de la convocatoria Jóvenes por el Cambio con su colectivo Tejido Digital, propuesta que integra creación artística con tecnologías digitales."
+      ]
+    },
+    {
+      slug: "claudia-marcela-arias-mejia",
+      categoria: "posteres",
+      nombre: "Claudia Marcela Arias Mejia",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "grupoclaudiadanielmauricio.jpg",
+      alt: "Fotografía grupal de Claudia Marcela Arias Mejia, Daniel Plata Becerra, Mauricio Hoyos Gómez",
+      bio: [
+        "Claudia M. Arias Mejia es diseñadora gráfica Universidad Nacional de Colombia, Especialista en Pedagogía de la comunicación Universidad Distrital, Magister en educación Universidad Nacional de Colombia. Docente catedrática Universidad Jorge Tadeo Lozano, Investigadora en el grupo Designio, estudios de la imagen. Con trabajo investigativo y escritos en el área de la historia del Diseño Gráfico en Colombia, la identidad de marca y la educación en Diseño."
+      ]
+    },
+    {
+      slug: "daniel-plata-becerra",
+      categoria: "posteres",
+      nombre: "Daniel Plata Becerra",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "grupoclaudiadanielmauricio.jpg",
+      alt: "Fotografía grupal de Claudia Marcela Arias Mejia, Daniel Plata Becerra, Mauricio Hoyos Gómez",
+      bio: [
+        "Daniel Plata Becerra es diseñador gráfico de la Universidad Jorge Tadeo Lozano, magíster en Diseño Multimedia de la Universidad Nacional de Colombia, doctorante en Ciencias de la Información y la Comunicación de la Universidad Paris Nanterre. Su trabajo de investigación se focaliza en el fenómeno marcario, por un lado, en Colombia, con una aproximación desde la historiografía del diseño; y, por otro lado, en las condiciones e implicaciones de su implementación en las industrias creativas y culturales, con una aproximación comunicacional. Hace parte del grupo de Investigación de la Escuela Superior de Artes Decorativas de París GoDART, que emplea principalmente la investigación-creación y está enfocado en el estudio de Gameart. Ha trabajado como diseñador gráfico del Museo de Arte Moderno de Bogotá, la Ópera de Colombia y el Archivo General de la Nación, y como director de marca y comunicaciones de varias instituciones en Colombia y Francia."
+      ]
+    },
+    {
+      slug: "mauricio-hoyos-gomez",
+      categoria: "posteres",
+      nombre: "Mauricio Hoyos Gómez",
+      etiquetaFicha: "Póster",
+      etiquetaCard: "Póster",
+      foto: BASE_POSTERES + "grupoclaudiadanielmauricio.jpg",
+      alt: "Fotografía grupal de Claudia Marcela Arias Mejia, Daniel Plata Becerra, Mauricio Hoyos Gómez",
+      bio: [
+        "Mauricio Hoyos Gómez es docente investigador asociado de la Facultad de Diseño Gráfico de la Escuela de Arquitectura y Diseño. Magíster en Historia del Arte, Universidad de Antioquia; doctorante en Historia, Facultad de Ciencias Humanas y Económicas, Universidad Nacional de Colombia."
+      ]
+    },
+
+    /* ---------- PONENCIAS SELECCIONADAS (15) ---------- */
+    /* NOTA DE FUENTE (para revisión humana): las observaciones del README del
+     * paquete original señalan discrepancias entre el "Nombre del Autor" (columna
+     * del Word) y el nombre que aparece dentro de la biografía. Se conservan los
+     * nombres y las biografías tal cual; no se corrigen ni se inventan datos:
+     *   - John Jairo Nomesqui Delgado: la bio inicia como "John Nomesqui".
+     *   - María Camila Roso Guata: la bio dice "María Camila Rosso Gauta".
+     *   - Rafael Adolfo Llano Parias: la bio dice "Rafael Adolfo Llanos Parias".
+     *   - Jhon Alexander Barreto: la bio dice "Jhon Alexander Barreto Guerra".
+     *   - Diego Germán Romero Bonilla: el perfil describe al colectivo
+     *     "Oficina Tripalar" (foto grupal); validar la asociación.
+     *   - Fernando Montes: el perfil es de la "Fundación Teatro Varasanta",
+     *     no una biografía individual. */
+    {
+      slug: "mauricio-calle-cometa",
+      categoria: "ponencias",
+      nombre: "Mauricio Calle Cometa",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "mauricio-calle-cometa.jpg",
+      alt: "Fotografía de Mauricio Calle Cometa",
+      bio: [
+        "Mauricio Calle Cometa es maestro en Artes Escénicas, licenciado en Humanidades, especialista y magíster en Educación, y candidato a doctor en Educación. Cuenta con más de 31 años de trayectoria en los campos artístico, pedagógico, cultural e investigativo, especialmente en danza folclórica colombiana, educación artística, memoria cultural y patrimonio. Su trabajo articula la práctica corporal, la investigación cualitativa, la documentación de fuentes, la memoria oral, el territorio y la transmisión de saberes tradicionales. Ha participado en procesos de campo con el Patronato Colombiano de Artes y Ciencias para sistematizar saberes. Trabaja con metodologías de investigación como las historias de vida, la IAP, los estudios de caso y la fenomenología. Orienta foros de diálogo continuos y procura recopilar y documentar información mediante repositorios en su plataforma Folklore.Net. Entre sus escritos destacan el libro “Huellas de una pasión por el folclor” y los artículos sobre el vestuario en Cundinamarca, “Virtud o fama (en la danza)” y “Educación del folclore en el aula contemporánea”. Actualmente desarrolla la investigación “Pedagogía del saber encarnado para la enseñanza de la danza folclórica”, centrada en la relación entre el saber práctico, la experiencia, la memoria, el territorio y la formación."
+      ]
+    },
+    {
+      slug: "paola-andrea-cruz-jimenez",
+      categoria: "ponencias",
+      nombre: "Paola Andrea Cruz Jiménez",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "paola-andrea-cruz-jimenez.jpg",
+      alt: "Fotografía de Paola Andrea Cruz Jiménez",
+      bio: [
+        "Paola Andrea Cruz Jiménez es docente, investigadora y gestora de procesos de formación artística y cultural, con experiencia en pedagogía, danza, investigación y construcción curricular. Su trayectoria se ha orientado al reconocimiento de las artes como campos de conocimiento y herramientas para la preservación de la memoria y del patrimonio cultural. Es autora de la investigación “La importancia de la danza tradicional en la educación superior para preservar nuestro patrimonio cultural”, publicada en la revista Ciencia Latina Revista Científica Multidisciplinar en 2025, relacionada con la transformación académica y curricular del Instituto Popular de Cultura de Cali y de sus Escuelas de Danza y Música. Su experiencia articula educación, investigación artística y cultura popular, y actualmente proyecta estos aprendizajes hacia la ruralidad, promoviendo el reconocimiento del territorio como espacio pedagógico, creativo y de producción de conocimiento."
+      ]
+    },
+    {
+      slug: "carolina-martinez-uzeta",
+      categoria: "ponencias",
+      nombre: "Carolina Martínez Uzeta",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "carolina-martinez-uzeta.jpg",
+      alt: "Fotografía de Carolina Martínez Uzeta",
+      bio: [
+        "Estudiante doctoral en Estudios Sociales; Especialista en Desarrollo Humano (2017); Artista plástica (2001) y docente (2008 hasta hoy) [UD-FJC]; Magíster en Comunicación (2020) y Docente del Departamento de Estética (2008-2020) [PUJ]. Investiga la realidad social del desplazamiento forzado en Colombia. Libro –La invención del raspachín. Trashumancia de un conflicto: entre la tierra y el territorio (2021); ponencia y capítulo –Mut(u)ación del cuerpo cierto: escrituras del desarraigo– en –Viaje por el planeta de la paz. Miradas para un mundo mejor desde la investigación para la paz, Granada, España (2026). Ponencias en La Sapienza, Roma, y en la Universidad Jagellónica, Polonia. Colectivo artístico –Marca de Aqua–, premio –La koka no es cocaína– (2011) y mención –En el borde del limbo– (2013); Bienal Internacional de Arte –Desde Aquí–; práctica artística –Devenir pájaro: poéticas del desarraigo–; Congreso –Perspectivas críticas del cuidado y afirmación de la vida– (2023) y capítulo –Estudios Sociales del Cuidado: desafíos latinoamericanos–, CLACSO-DES-UD (2025)."
+      ]
+    },
+    {
+      slug: "diego-german-romero-bonilla",
+      categoria: "ponencias",
+      nombre: "Oficina Tripaliar",
+      etiquetaFicha: "Ponencia seleccionada · Colectivo",
+      etiquetaCard: "Ponencia · Colectivo",
+      foto: BASE_PONENCIAS + "diego-german-romero-bonilla.jpg",
+      alt: "Fotografía del colectivo Oficina Tripaliar",
+      bio: [
+        "Oficina Tripalar es un colectivo conformado por docentes y estudiantes de licenciatura en artes visuales de la Universidad Pedagógica Nacional, derivado de 'Excrituras Tripaliares Autoficcionales. Investigar para sobrevivir', un proyecto de investigación-creación apoyado por la Dirección de Investigaciones de la UPN durante 2026. Desde la Oficina Tripaliar creamos un espacio que investiga, crea y reflexiona sobre el trabajo intelectual, la tristeza burocrática, la desafección académica y la soledad institucional en el trabajo docente, investigativo y administrativo, en la búsqueda de experiencias de trabajo más humanas, afectivas y placenteras. Esto lo hacemos desde la exploración e innovación de modos de hacer propios de la investigación artística como levantamiento y activación de archivos vivos, work in progress,  reenactment, escritura expandida y la autoficción. Un ejemplo de nuestro interés en proponer otros modos de socializar el conocimiento artístico se encuentra el IV Congreso de Avatares."
+      ]
+    },
+    {
+      slug: "santiago-sepulveda-gonzalez",
+      categoria: "ponencias",
+      nombre: "Santiago Sepúlveda González",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "santiago-sepulveda-gonzalez.jpg",
+      alt: "Fotografía de Santiago Sepúlveda González",
+      bio: [
+        "Santiago Sepúlveda es un artista posdisciplinar con estudios en artes plásticas y en artes vivas. Ha construido su poética a partir de la relación entre el cuerpo, el espacio y la imagen cinematográfica. En este ámbito, se mueve por diferentes esferas de la creación artística: la fotografía, el teatro, el videoarte, la videoinstalación, la performance y el cine vivo, bajo la lente de las artes vivas. Desde 2009, hace parte del Laboratorio de artistas Mapa Teatro, con el que ha establecido una estrecha relación de pensamiento y creación. Actualmente, su trabajo personal se centra en las relaciones entre lo humano y lo otro viviente-no-humano en el marco de las posibilidades de la voz en situación de sordera congénita. Esto se ha materializado en un contra-dispositivo de cine vivo que cuestiona el tiempo de la imagen, su plasticidad, sus movimientos en el espacio y su relación con el cuerpo en vivo. Su trabajo ha sido invitado a diversos festivales y museos tanto a nivel nacional como internacional. Destaca su obra Una estación fisiomágica, seleccionada por la revista Gaceta como una de las cinco mejores obras de artes vivas del país en 2024. En paralelo a su trabajo artístico, Sepúlveda ha sido docente en diversas universidades del país. Actualmente está vinculado a la Maestría en Artes de la Universidad de Caldas, donde también es candidato a doctor en Diseño y creación."
+      ]
+    },
+    {
+      slug: "john-jairo-nomesqui-delgado",
+      categoria: "ponencias",
+      nombre: "John Jairo Nomesqui Delgado",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "john-jairo-nomesqui-delgado.jpg",
+      alt: "Fotografía de John Jairo Nomesqui Delgado",
+      bio: [
+        "John Nomesqui. Doctor en Estudios Artísticos, Mg. Ciencias de la Educación, Especialista en Docencia Universitaria y Maestro en Artes Plásticas (Universidad Nacional de Colombia). Su trayectoria articula la creación artística, la investigación y la educación, con interés en las relaciones entre el arte, el medio ambiente y los derechos de la Naturaleza. Su producción artística comprende exposiciones individuales y colectivas, con obras centradas en las relaciones entre la naturaleza, la materialidad y las prácticas contemporáneas. Ha participado como ponente en congresos nacionales e internacionales de educación artística y de educación superior. Entre sus publicaciones destacan Hacia una fenomenología de la praxis vital en el arte (2022), Sostenibilidad de la vida en la Casa Común (2025) y Árboltelarizar: tejerse con un árbol talado. Creación artística ante la solastalgia (2026), trabajos que consolidan su investigación sobre las posibilidades del arte frente a las problemáticas socioambientales contemporáneas."
+      ]
+    },
+    {
+      slug: "gloria-ocampo-ramirez",
+      categoria: "ponencias",
+      nombre: "Gloria Ocampo Ramírez",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "gloria-ocampo-ramirez.jpg",
+      alt: "Fotografía de Gloria Ocampo Ramírez",
+      bio: [
+        "Gloria Ocampo Ramírez es Maestra en Artes Plásticas y Doctora en Artes por la Universidad de Antioquia, así como Magíster en Estética por la Universidad Nacional de Colombia. Actualmente, se desempeña como profesora asociada en la Facultad de Artes de la Universidad de Antioquia, donde lidera la coordinación del área de fotografía.",
+        "Su enfoque investigativo aborda la estética fotográfica y la teoría de la imagen, explorando en profundidad las imbricaciones entre la memoria, el archivo personal, la epigenética y la fotografía híbrida o expandida. En este ámbito creativo y académico, se destaca como líder del semillero de investigación-creación \"Desenfocados\", adscrito al Grupo de Investigación Hipertrópico, que reúne arte y tecnología de la Universidad de Antioquia.",
+        "De su extensa producción bibliográfica destacan artículos sobre Diane Arbus y Duane Michals, así como capítulos recientes como \"Fotografía y memoria familiar. Reflexión desde la epigenética y el arte\" (2023) y \"Herencias invisibles: una revisión semiótica del álbum familiar\" (2025). A estos textos críticos se suman publicaciones detalladas como \"La fotografía en tiempos de pandemia: Posibilidad de creación o frustración ante el encierro\" (2023) y \"El sufrimiento como experiencia estética y proceso transformador: exploraciones desde la fotografía expandida\" (2025), en las que consolida sus aportes sobre las poéticas del archivo y el poder resignificado de la imagen."
+      ]
+    },
+    {
+      slug: "valerie-osorio-restrepo",
+      categoria: "ponencias",
+      nombre: "Valeríe Osorio Restrepo",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "valerie-osorio-restrepo.jpg",
+      alt: "Fotografía de Valeríe Osorio Restrepo",
+      bio: [
+        "Profesional en estudios literarios, magíster en Educación y magíster en Literatura de la Universidad Javeriana. Doctora en Lenguas y Culturas Ibéricas y Latinoamericanas de la Universidad de Texas en Austin. Especialista en literatura, cinematografía y dramaturgias latinoamericanas contemporáneas, teoría de los afectos, estudios de género y estudios de la vigilancia. Ha publicado artículos en revistas como Latin American Literary Review; Perífrasis, de la Universidad de los Andes; Cuadernos de Literatura, de la Universidad Javeriana; y la Revista Escrita, de la Pontificia Universidad Católica de Río. Ha participado en procesos de formación en el Teatro Occidente, donde es la coordinadora académica del Simposio Internacional de Investigación en Teatro. Actualmente es profesora de la Maestría en Arte, Educación y Cultura de la Universidad Pedagógica Nacional. Su libro Intimidades en red: narrativas de la internet y ciudadanías digitales será publicado en 2027 por la editorial de la Universidad Pedagógica."
+      ]
+    },
+    {
+      slug: "fernando-montes",
+      categoria: "ponencias",
+      nombre: "Fernando Montes",
+      etiquetaFicha: "Ponencia seleccionada · Fundación Teatro Varasanta",
+      etiquetaCard: "Ponencia · Entidad",
+      foto: BASE_PONENCIAS + "fernando-montes.jpg",
+      alt: "Fotografía de Fernando Montes",
+      bio: [
+        "La Fundación Teatro Varasanta, centro para la transformación del actor, creado en 1994, nació como un centro permanente de investigación y exploración de las artes escénicas. El trabajo desplegado por el Teatro Varasanta se fundamenta en el actor creador, con énfasis en el entrenamiento para ampliar la energía y modelarla en la obra de arte. En su experiencia de investigación destacan proyectos ganadores de estímulos distritales y nacionales, como Esculpir el presente: el legado vivo de las acciones físicas (2025), Cartografías a la deriva (2022), Núcleo de Investigación y Formación, Arte y Conocimiento (2020), El trabajo sobre sí: relaciones entre el arte y el ser (que, además, fue publicada físicamente en 2017) y El legado vivo de Grotowski (2015), entre otros. Asimismo, aportó a publicaciones como Jerzy Grotowski: lo que fue (Ministerio de Cultura, sin fecha)."
+      ]
+    },
+    {
+      slug: "francisco-alexander-llerena-avendano",
+      categoria: "ponencias",
+      nombre: "Francisco Alexander Llerena Avendaño",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "francisco-alexander-llerena-avendano.jpg",
+      alt: "Fotografía de Francisco Alexander Llerena Avendaño",
+      bio: [
+        "Francisco Alexánder Llerena Avendaño es actor, director, dramaturgo, investigador y profesor de teatro. Doctor en Educación por la Universidad Antonio Nariño, magíster en Escrituras Creativas por la Universidad Nacional de Colombia, especialista en Docencia Universitaria por la Universidad de San Buenaventura y maestro en Artes Escénicas de la Facultad de Artes ASAB de la Universidad Distrital Francisco José de Caldas. Es Investigador Asociado y par evaluador reconocido por Minciencias. Desde 1999 integra Polymnia Teatro y desde 2014 es coordinador académico del Departamento de Artes Escénicas de la Universidad Antonio Nariño, donde ha liderado la creación de los programas Profesional Universitario en Danza–Teatro y Maestría en Didáctica de las Artes Escénicas. Su trayectoria articula creación escénica, investigación-creación, dramaturgia y pedagogía artística. Entre sus publicaciones se encuentran los artículos Laboratorio de creación y pedagogía intercultural (2025), Consideraciones para una educación artística intercultural (2025), Coordenadas de la fiesta popular para una educación artística propia (2024) y La vivencia como principio artístico-pedagógico (2018). Es coautor de los libros de Polymnia Teatro: Escribir para atrás (2022), El Mal: Estéticas y Dramaturgias (2020) y Dramaturgia de Escenario (2016)."
+      ]
+    },
+    {
+      slug: "maria-camila-roso-guata",
+      categoria: "ponencias",
+      nombre: "María Camila Rosso Gauta",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "maria-camila-roso-guata.jpg",
+      alt: "Fotografía de María Camila Rosso Gauta",
+      bio: [
+        "María Camila Rosso Gauta es artista, gestora cultural y abogada, con formación posgradual en curso en Memorias Colectivas, Derechos Humanos y Resistencias (CLACSO) y en Derecho de Familia (UNAB). Su trabajo ha considerado los derechos humanos como un tema transversal a los análisis de género, del conflicto armado y de la cultura en Colombia. Actualmente cursa la maestría en Intervención Social en la Universidad Industrial de Santander. Coordina el proyecto La Montaña Lee, en el que indaga la relación territorial con las prácticas de memoria colectiva y, como resultado de uno de sus procesos, editó el libro “Cartas a la Montaña”. Ha publicado artículos científicos centrados en analizar el derecho desde nuevos enfoques descoloniales: «Constitucionalismo descolonial en la pluma y la resistencia de Ochy Curiel y Adriana Guzmán. Enfoques epistemológicos y metodológicos desde Abya Yala» y «La Pachamama o la naturaleza como sujeto de derechos. Asimetrías en el constitucionalismo del \"buen vivir\" de América Latina»."
+      ]
+    },
+    {
+      slug: "rafael-adolfo-llano-parias",
+      categoria: "ponencias",
+      nombre: "Rafael Adolfo Llano Parias",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "rafael-adolfo-llano-parias.jpg",
+      alt: "Fotografía de Rafael Adolfo Llano Parias",
+      bio: [
+        "Rafael Adolfo Llanos Parias es compositor, investigador y performer colombiano. Candidato a Doctor en Estudios Artísticos, su trabajo se sitúa en la intersección entre la investigación-creación, la genealogía de la escucha atenta e íntima, los paisajes sonoros expandidos y la performatividad somática. Es magíster en composición y licenciado en música, con una trayectoria enfocada en la composición contemporánea, experimental y electroacústica, la exploración vocal e instrumental, y la aplicación de prácticas meditativas y performativas en los procesos creativos con un alto componente de improvisación. Ha participado en diversos proyectos de investigación y difusión de la música contemporánea en América Latina y Europa, vinculándose a redes como el Círculo Colombiano de Música Contemporánea (CCMC) y el grupo “Investigación para la creación artística” de la Universidad Distrital. Su línea de indagación actual profundiza en el concepto del Cuerpo Aural (Auris Corpus), el cuerpo como un oído gigante que diluye el sentido de la escucha en múltiples dimensiones de lo intersensible."
+      ]
+    },
+    {
+      slug: "jhon-alexander-barreto",
+      categoria: "ponencias",
+      nombre: "Jhon Alexander Barreto",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "jhon-alexander-barreto.jpg",
+      alt: "Fotografía de Jhon Alexander Barreto",
+      bio: [
+        "Jhon Alexander Barreto Guerra es unx artista marica y campesinx, oriundx de Málaga, Santander, criadx por familias campesinas de la provincia de García Rovira. Performer, intérprete escénicx, gestor cultural e investigadore cultural, es Magíster en Artes (Universidad de Antioquia, 2024, tesis meritoria Cum Laude) y Licenciado en Educación Básica en Danza (2017). Su trabajo articula la danza, la investigación-creación y la gestión cultural desde una mirada situada en las prácticas festivas y populares del interior de Colombia, con énfasis en cuerpos disidentes y maricas. Es autor de la investigación Jiesta y de la Propagación Matachinezca para el contagio de las experiencias festivas (2024), ganadora de la Beca de Investigación en Danza de la Gobernación de Santander. Dirige el ecosistema creativo Rancho A Parte, desde el cual desarrolla procesos de investigación, creación y memoria en torno al Gran Carnaval del Oriente Colombiano y la figura de los matachines."
+      ]
+    },
+    {
+      slug: "maria-alejandra-valencia",
+      categoria: "ponencias",
+      nombre: "María Alejandra Valencia",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "maria-alejandra-valencia.jpg",
+      alt: "Fotografía de María Alejandra Valencia",
+      bio: [
+        "Egresada y actualmente docente de la Maestría en Educación Artística de la Universidad Nacional de Colombia, cuenta con 14 años de experiencia en diversos contextos educativos, editoriales y de evaluación. Su trabajo investigativo reúne una mirada sobre las narrativas contrahegemónicas que pueden construirse en comunidad como posibilidad de creación conjunta. Las infancias son el eje de su reflexión, así como la posibilidad de resignificar la experiencia en la escuela a través del arte, con la palabra como centro, materia de creación y espacio de reflexión. En este recorrido, cobra especial importancia el registro, entendido como la posibilidad de documentar y, a la vez, expandir las experiencias de creación en el rol de docente-artista, dentro de un entramado de construcción simbólica a partir del lenguaje. Cuenta con publicaciones conjuntas, entre ellas Exploraciones espaciales: reconfigurando realidades a través del arte, y presentó su experiencia en el Encuentro para la Prevención del Hostigamiento Escolar, organizado por la Secretaría de Educación de Bogotá en 2024, como una forma de reivindicar la capacidad de las profesionales que trabajan con niños y niñas para responder a los retos sociales y políticos contemporáneos."
+      ]
+    },
+    {
+      slug: "raul-hernando-parra-gaitan",
+      categoria: "ponencias",
+      nombre: "Raúl Hernando Parra Gaitán",
+      etiquetaFicha: "Ponencia seleccionada",
+      etiquetaCard: "Ponencia",
+      foto: BASE_PONENCIAS + "raul-hernando-parra-gaitan.jpg",
+      alt: "Fotografía de Raúl Hernando Parra Gaitán",
+      bio: [
+        "Bailarín, docente e investigador en historia cultural de la danza; Premio Nacional de Danza 2024; Doctorante en Artes (U. de Antioquia); Máster en Estética e Historia del Arte (U. Jorge Tadeo Lozano); Especialista y Licenciado en Artes del Espectáculo, mención en danza (U. París 8). Ha sido parte de las redes Cátedra de Historia de la Danza Latinoamericana y Red de Investigación Cuerpo Danza Movimiento, y es fundador del Congreso Nacional e Internacional de Danza. Ganador en varias ocasiones de becas de investigación en danza, ha publicado artículos en libros y revistas especializadas y, fruto de su investigación histórica, los libros: El potro azul: vestigios de una insurrección coreográfica (2015), Revelaciones: un siglo de la escena dancística colombiana (2019) y Ficción dorada: danza, folclorización e identidad (2023). Ha sido docente de la ASAB y de las universidades: Distrital Francisco José de Caldas, CENDA, del Atlántico, de Antioquia."
       ]
     }
   ];
@@ -962,7 +1306,7 @@
     inyectarEstilos();
     construirModal();
 
-    var categorias = ["internacional", "nacional", "moderacion", "academico"];
+    var categorias = ["internacional", "nacional", "academico", "posteres", "ponencias"];
     for (var c = 0; c < categorias.length; c++) {
       var cat = categorias[c];
       var cont = document.querySelector('#contenido-cms [data-invitados="' + cat + '"]');
