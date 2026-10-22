@@ -878,7 +878,8 @@
      * del Word) y el nombre que aparece dentro de la biografía. Se conservan los
      * nombres y las biografías tal cual; no se corrigen ni se inventan datos:
      *   - John Jairo Nomesqui Delgado: la bio inicia como "John Nomesqui".
-     *   - María Camila Roso Guata: la bio dice "María Camila Rosso Gauta".
+     *   - María Camila Rosso Gauta: CORREGIDO (20-10-2026) a "Rosso Gauta" por
+     *     indicación del solicitante; antes figuraba como "Roso Guata".
      *   - Rafael Adolfo Llano Parias: la bio dice "Rafael Adolfo Llanos Parias".
      *   - Jhon Alexander Barreto: la bio dice "Jhon Alexander Barreto Guerra".
      *   - Diego Germán Romero Bonilla: el perfil describe al colectivo
