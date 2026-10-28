@@ -36,3 +36,5 @@ ltm/runtime/*
 ltm/reports/*
 ltm/snapshots/*
 # --- /ltm-power ---
+# Notas de trabajo temporales
+.tmp-*/
