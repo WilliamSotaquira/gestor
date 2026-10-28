@@ -352,6 +352,12 @@
       margin-bottom: 1rem !important;
     }
 
+    .set-wrapper.comparendos .cmp-discount-card .cmp-percent .cmp-percent-sign {
+      font-size: 0.62em !important;
+      font-weight: 700 !important;
+      margin-left: 0.12em !important;
+    }
+
     .set-wrapper.comparendos .cmp-discount-card p {
       font-size: 1rem !important;
       color: var(--sdm-color-soporte-gris-oscuro) !important;
@@ -511,6 +517,139 @@
         padding: 2.75rem !important;
       }
     }
+
+    /* === BLOQUE DE PAGO (franja institucional) === */
+    /* Rótulo pequeño en mayúsculas, estilo editorial sobrio */
+    .set-wrapper.comparendos .cmp-eyebrow {
+      display: block !important;
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 0.8125rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+      color: var(--sdm-color-verde-secundario-oliva-medio) !important;
+      text-align: center !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .set-wrapper.comparendos .cmp-pay-subtitle {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 1.2rem !important;
+      font-weight: 700 !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      text-align: center !important;
+      margin: 0 0 0.35rem !important;
+    }
+
+    .set-wrapper.comparendos .cmp-pay-note {
+      text-align: center !important;
+      font-size: 0.95rem !important;
+      color: var(--sdm-color-soporte-gris-medio-oscuro) !important;
+      max-width: 60ch !important;
+      margin: 0 auto 1.25rem !important;
+    }
+
+    /* Separador fino entre PSE y puntos de pago */
+    .set-wrapper.comparendos .cmp-pay-divider {
+      border: 0 !important;
+      height: 1px !important;
+      background: #E7EBD4 !important;
+      max-width: 760px !important;
+      margin: 2.25rem auto !important;
+    }
+
+    /* === BOTÓN PSE (destacado) === */
+    .set-wrapper.comparendos .cmp-pse {
+      text-align: center !important;
+      margin: 0 auto 0.5rem !important;
+    }
+
+    .set-wrapper.comparendos a.cmp-pse-btn,
+    .set-wrapper.comparendos a.cmp-pse-btn:link,
+    .set-wrapper.comparendos a.cmp-pse-btn:visited {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.85rem !important;
+      padding: 1.75rem 2.5rem !important;
+      background: var(--sdm-color-soporte-blanco) !important;
+      border: 2px solid #E7EBD4 !important;
+      border-radius: var(--cmp-radius) !important;
+      box-shadow: var(--cmp-shadow) !important;
+      text-decoration: none !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      transition: transform var(--cmp-ease), box-shadow var(--cmp-ease), border-color var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos a.cmp-pse-btn:hover,
+    .set-wrapper.comparendos a.cmp-pse-btn:focus {
+      transform: translateY(-3px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
+      border-color: var(--sdm-color-verde-secundario-medio) !important;
+      text-decoration: none !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+    }
+
+    .set-wrapper.comparendos a.cmp-pse-btn img {
+      width: auto !important;
+      max-width: 100% !important;
+      max-height: 80px !important;
+      height: auto !important;
+    }
+
+    .set-wrapper.comparendos a.cmp-pse-btn .cmp-pse-label {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 1.05rem !important;
+    }
+
+    /* === GRILLA DE MEDIOS DE PAGO === */
+    .set-wrapper.comparendos .cmp-pay-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0 !important;
+      margin: 0 auto 1rem !important;
+      max-width: 760px !important;
+      list-style: none !important;
+      padding: 0 !important;
+    }
+
+    .set-wrapper.comparendos .cmp-pay-grid li {
+      margin: 0 !important;
+      font-size: inherit !important;
+    }
+
+    .set-wrapper.comparendos .cmp-pay-item {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      transition: transform var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-pay-item:hover {
+      transform: translateY(-3px) !important;
+    }
+
+    .set-wrapper.comparendos .cmp-pay-item img {
+      max-width: 100% !important;
+      max-height: 120px !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    /* Oculta el título del nodo que Drupal pinta en el bloque
+       "titulo de la pagina" (section.titulo), ya que el hero de esta
+       pagina ya trae su propio <h1>. Este <style> solo se carga en
+       este nodo, por lo que la regla solo afecta a esta pagina. */
+    section.section.titulo {
+      display: none !important;
+    }
   </style>
 
   <!-- HERO / INTRODUCCIÓN -->
@@ -525,7 +664,7 @@
           <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="cmp-btn-primary" target="_blank" rel="noopener">
             Consulta aquí comparendos y acuerdos de pago
           </a>
-          <a href="#abece" class="cmp-btn-secondary">
+          <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/abece_consulta_de_comparendos_feb2026.pdf" class="cmp-btn-secondary" target="_blank" rel="noopener">
             ABECÉ Consulta de comparendos
           </a>
         </div>
@@ -538,13 +677,86 @@
 
   <!-- SECCIÓN: Paga en canales oficiales -->
   <h2>Paga directamente en los canales oficiales de la Secretaría</h2>
-  <div class="cmp-text-center cmp-mb">
-    <img class="cmp-img" style="max-width:860px !important; box-shadow:none !important;" src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/imagen%203.png" alt="Canales oficiales de pago de la Secretaría Distrital de Movilidad" loading="lazy">
-  </div>
+  <p>
+    Realiza el pago de tus comparendos y acuerdos de pago a través de los canales autorizados por la Secretaría Distrital de Movilidad. Puedes pagar en línea de forma segura o de manera presencial en los puntos habilitados.
+  </p>
+
+  <div class="cmp-band">
+    <!-- Pago en línea (acción principal) -->
+    <span class="cmp-eyebrow">Pago en línea</span>
+    <p class="cmp-pay-subtitle">Paga de forma segura con PSE</p>
+    <p class="cmp-pay-note">Serás dirigido al portal oficial de pagos de la Secretaría Distrital de Movilidad.</p>
+    <div class="cmp-pse">
+      <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="cmp-pse-btn" target="_blank" rel="noopener" aria-label="Pagar en línea con PSE">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/logo-pse.jpg" alt="PSE - Pagos Seguros en Línea" loading="lazy">
+        <span class="cmp-pse-label">Paga en línea con PSE</span>
+      </a>
+    </div>
+
+    <hr class="cmp-pay-divider">
+
+    <!-- Puntos de pago autorizados -->
+    <span class="cmp-eyebrow">Pago presencial</span>
+    <p class="cmp-pay-subtitle">Puntos de pago autorizados</p>
+    <p class="cmp-pay-note">También puedes pagar en los siguientes bancos y puntos de recaudo autorizados.</p>
+    <ul class="cmp-pay-grid" aria-label="Puntos de pago autorizados">
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-02.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-03.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-04.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-05.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-06.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-07.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-08.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-09.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-10.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    <li>
+      <div class="cmp-pay-item">
+        <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-11.png" alt="Medio de pago habilitado" loading="lazy">
+      </div>
+    </li>
+    </ul>
+  </div><!-- /.cmp-band bloque de pago -->
+
   <div class="cmp-highlight">
     <p><strong>Cuando realizas el pago directamente con nosotros:</strong></p>
     <ul>
-      <li>Conoces el valor real y actualizado de tu obligación. (¡Evita saldos pendientes!).</li>
+      <li>Conoces el valor real y actualizado de tu obligación. Evita saldos pendientes.</li>
       <li>La actualización de tu pago se refleja más rápido en nuestros sistemas.</li>
       <li>Los procesos administrativos, como cobros o desembargos, pueden gestionarse con mayor agilidad.</li>
     </ul>
@@ -608,14 +820,14 @@
     <div class="cmp-row">
       <div class="cmp-col-md-6">
         <div class="cmp-discount-card">
-          <div class="cmp-percent" aria-hidden="true">50%</div>
-          <p><strong>50% de descuento</strong> si realizas el curso y pago dentro de los 5 días hábiles siguientes a la imposición.</p>
+          <div class="cmp-percent" aria-hidden="true">50<span class="cmp-percent-sign">%</span></div>
+          <p><strong>50&nbsp;% de descuento</strong> si realizas el curso y pago dentro de los 5 días hábiles siguientes a la imposición.</p>
         </div>
       </div>
       <div class="cmp-col-md-6">
         <div class="cmp-discount-card">
-          <div class="cmp-percent" aria-hidden="true">25%</div>
-          <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 6° y 20° día hábil siguiente a la imposición.</p>
+          <div class="cmp-percent" aria-hidden="true">25<span class="cmp-percent-sign">%</span></div>
+          <p><strong>25&nbsp;% de descuento</strong> si realizas el curso y pago entre el 6° y 20° día hábil siguiente a la imposición.</p>
         </div>
       </div>
     </div>
@@ -627,14 +839,14 @@
     <div class="cmp-row">
       <div class="cmp-col-md-6">
         <div class="cmp-discount-card">
-          <div class="cmp-percent" aria-hidden="true">50%</div>
-          <p><strong>50% de descuento</strong> si realizas el curso y pago entre el 1° y 11° día hábil siguiente a la notificación.</p>
+          <div class="cmp-percent" aria-hidden="true">50<span class="cmp-percent-sign">%</span></div>
+          <p><strong>50&nbsp;% de descuento</strong> si realizas el curso y pago entre el 1° y 11° día hábil siguiente a la notificación.</p>
         </div>
       </div>
       <div class="cmp-col-md-6">
         <div class="cmp-discount-card">
-          <div class="cmp-percent" aria-hidden="true">25%</div>
-          <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 12° y 26° día hábil siguiente a la notificación.</p>
+          <div class="cmp-percent" aria-hidden="true">25<span class="cmp-percent-sign">%</span></div>
+          <p><strong>25&nbsp;% de descuento</strong> si realizas el curso y pago entre el 12° y 26° día hábil siguiente a la notificación.</p>
         </div>
       </div>
     </div>
@@ -677,14 +889,6 @@
     </div>
   </div>
 
-  <!-- SECCIÓN: Enlace al ABECÉ -->
-  <div id="abece" class="cmp-highlight cmp-text-center">
-    <h2 style="margin-top:0 !important;">ABECÉ Consulta de comparendos</h2>
-    <p>Descarga el documento con toda la información que necesitas saber sobre consulta y pago de comparendos en Bogotá.</p>
-    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/abece_consulta_de_comparendos_feb2026.pdf" class="cmp-btn-primary" target="_blank" rel="noopener">
-      Descargar ABECÉ (PDF)
-    </a>
-  </div>
 
 </div><!-- /.set-wrapper -->
 

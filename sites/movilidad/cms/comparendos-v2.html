@@ -1,0 +1,998 @@
+<!-- === INICIO CONTENIDO PARA DRUPAL === -->
+
+<div class="set-wrapper comparendos-v2">
+  <style>
+    /* === TOKENS SDM === */
+    .set-wrapper.comparendos-v2 {
+      --sdm-color-verde-principal: #BED000;
+      --sdm-color-verde-secundario-medio: #A5B417;
+      --sdm-color-verde-secundario-oliva-medio: #818E26;
+      --sdm-color-verde-secundario-oliva-oscuro: #4C531F;
+      --sdm-color-verde-terciario-claro-3: #E2E8AC;
+      --sdm-color-verde-terciario-claro-4: #EFF2D8;
+      --sdm-color-soporte-negro: #000000;
+      --sdm-color-soporte-gris-oscuro: #1A1A1A;
+      --sdm-color-soporte-gris-medio-oscuro: #333333;
+      --sdm-color-soporte-blanco: #FFFFFF;
+    }
+
+    /* === BASE === */
+    .set-wrapper.comparendos-v2 {
+      max-width: 960px !important;
+      width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 0 16px !important;
+      box-sizing: border-box !important;
+      font-family: Verdana, Geneva, sans-serif !important;
+      color: var(--sdm-color-soporte-gris-oscuro) !important;
+      line-height: 1.6 !important;
+      /* Sistema de diseño: valores compartidos por todas las superficies */
+      --cmp-radius: 16px !important;
+      --cmp-border: 1px solid #E7EBD4 !important;
+      --cmp-rule: #E7EBD4 !important;
+      --cmp-shadow: 0 1px 3px rgba(76, 83, 31, 0.06), 0 4px 14px rgba(76, 83, 31, 0.07) !important;
+      --cmp-shadow-hover: 0 2px 6px rgba(76, 83, 31, 0.08), 0 10px 26px rgba(76, 83, 31, 0.12) !important;
+      --cmp-gap: 2.5rem !important;
+      --cmp-measure: 68ch !important;
+      --cmp-ease: 0.2s ease !important;
+    }
+
+    .set-wrapper.comparendos-v2 *,
+    .set-wrapper.comparendos-v2 *::before,
+    .set-wrapper.comparendos-v2 *::after {
+      box-sizing: border-box !important;
+    }
+
+    .set-wrapper.comparendos-v2 img {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    /* Imagen de contenido centrada con tope de ancho */
+    .set-wrapper.comparendos-v2 .cmp-img {
+      max-width: 640px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      border-radius: var(--cmp-radius) !important;
+      box-shadow: var(--cmp-shadow) !important;
+    }
+
+    /* Imagen del hero: contenida y sin sombra */
+    .set-wrapper.comparendos-v2 .cmp-img-hero {
+      max-width: 440px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      box-shadow: none !important;
+    }
+
+    /* === RÓTULO EDITORIAL (eyebrow) === */
+    /* Voz editorial unificada: pequeño rótulo en mayúsculas con línea corta */
+    .set-wrapper.comparendos-v2 .cmp-eyebrow {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.6rem !important;
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 0.8125rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      color: var(--sdm-color-verde-secundario-oliva-medio) !important;
+      margin-bottom: 0.75rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-eyebrow::before {
+      content: "" !important;
+      width: 26px !important;
+      height: 2px !important;
+      background: var(--sdm-color-verde-principal) !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* Eyebrow centrado (para secciones centradas) */
+    .set-wrapper.comparendos-v2 .cmp-text-center .cmp-eyebrow {
+      justify-content: center !important;
+    }
+
+    /* === TIPOGRAFÍA === */
+    .set-wrapper.comparendos-v2 h1 {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 2.6rem !important;
+      font-weight: 800 !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      margin: 0 0 1rem !important;
+      line-height: 1.15 !important;
+      letter-spacing: -0.015em !important;
+    }
+
+    .set-wrapper.comparendos-v2 h2 {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 1.9rem !important;
+      font-weight: 800 !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      margin: 0 0 1rem !important;
+      line-height: 1.25 !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .set-wrapper.comparendos-v2 h3 {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 1.35rem !important;
+      font-weight: 700 !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      margin: 2rem 0 0.75rem !important;
+      line-height: 1.3 !important;
+    }
+
+    .set-wrapper.comparendos-v2 p {
+      font-size: 1.0625rem !important;
+      margin: 0 0 1rem !important;
+      color: var(--sdm-color-soporte-gris-oscuro) !important;
+      max-width: var(--cmp-measure) !important;
+    }
+
+    /* Párrafo introductorio de sección: un punto más grande, tono sereno */
+    .set-wrapper.comparendos-v2 .cmp-lead {
+      font-size: 1.1875rem !important;
+      line-height: 1.65 !important;
+      color: var(--sdm-color-soporte-gris-medio-oscuro) !important;
+    }
+
+    .set-wrapper.comparendos-v2 ul {
+      padding-left: 1.5rem !important;
+      margin: 0 0 1rem !important;
+      max-width: var(--cmp-measure) !important;
+    }
+
+    .set-wrapper.comparendos-v2 li {
+      font-size: 1.0625rem !important;
+      margin-bottom: 0.5rem !important;
+      color: var(--sdm-color-soporte-gris-oscuro) !important;
+    }
+
+    /* === SECCIÓN EDITORIAL (ritmo y medida) === */
+    /* Cada sección de primer nivel respira con el mismo intervalo vertical */
+    .set-wrapper.comparendos-v2 .cmp-section {
+      margin: var(--cmp-gap) 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-section > :first-child {
+      margin-top: 0 !important;
+    }
+
+    /* Encabezado de sección centrado, con medida controlada */
+    .set-wrapper.comparendos-v2 .cmp-section-head {
+      max-width: var(--cmp-measure) !important;
+      margin: 0 auto 1.5rem !important;
+      text-align: center !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-section-head .cmp-eyebrow {
+      justify-content: center !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-section-head h2 {
+      margin-bottom: 0.75rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-section-head p {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* === GRILLA === */
+    .set-wrapper.comparendos-v2 .cmp-row {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      margin-left: -12px !important;
+      margin-right: -12px !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-row-middle {
+      align-items: center !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-row > [class*="cmp-col"] {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      margin-bottom: 1.5rem !important;
+      width: 100% !important;
+    }
+
+    @media (min-width: 768px) {
+      .set-wrapper.comparendos-v2 .cmp-row > .cmp-col-md-4 {
+        width: 33.333% !important;
+      }
+      .set-wrapper.comparendos-v2 .cmp-row > .cmp-col-md-6 {
+        width: 50% !important;
+      }
+    }
+
+    /* === BOTONES === */
+    /* Primario: fondo verde principal + texto negro (12.21:1) */
+    .set-wrapper.comparendos-v2 a.cmp-btn-primary,
+    .set-wrapper.comparendos-v2 a.cmp-btn-primary:link,
+    .set-wrapper.comparendos-v2 a.cmp-btn-primary:visited {
+      display: inline-block !important;
+      padding: 13px 28px !important;
+      background: var(--sdm-color-verde-principal) !important;
+      color: var(--sdm-color-soporte-negro) !important;
+      border-radius: 24px !important;
+      text-decoration: none !important;
+      font-weight: 700 !important;
+      font-size: 1rem !important;
+      border: none !important;
+      cursor: pointer !important;
+      text-align: center !important;
+      box-shadow: var(--cmp-shadow) !important;
+      transition: background var(--cmp-ease), transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
+      line-height: 1.4 !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-btn-primary:hover,
+    .set-wrapper.comparendos-v2 a.cmp-btn-primary:focus {
+      background: var(--sdm-color-verde-secundario-medio) !important;
+      color: var(--sdm-color-soporte-negro) !important;
+      text-decoration: none !important;
+      transform: translateY(-2px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
+    }
+
+    /* Secundario: fondo oliva oscuro + texto blanco (8.19:1) */
+    .set-wrapper.comparendos-v2 a.cmp-btn-secondary,
+    .set-wrapper.comparendos-v2 a.cmp-btn-secondary:link,
+    .set-wrapper.comparendos-v2 a.cmp-btn-secondary:visited {
+      display: inline-block !important;
+      padding: 13px 28px !important;
+      background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+      border: 2px solid var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      border-radius: 24px !important;
+      text-decoration: none !important;
+      font-weight: 700 !important;
+      font-size: 1rem !important;
+      cursor: pointer !important;
+      text-align: center !important;
+      transition: background var(--cmp-ease), color var(--cmp-ease), transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
+      line-height: 1.4 !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-btn-secondary:hover,
+    .set-wrapper.comparendos-v2 a.cmp-btn-secondary:focus {
+      background: var(--sdm-color-verde-secundario-oliva-medio) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+      border-color: var(--sdm-color-verde-secundario-oliva-medio) !important;
+      text-decoration: none !important;
+      transform: translateY(-2px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-btn-group {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.75rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* === HERO EDITORIAL === */
+    /* Composición con kicker, titular grande y bajada; fondo verde firma
+       (contraste negro/#BED000 ~ 12.2:1, AA holgado) */
+    .set-wrapper.comparendos-v2 .cmp-hero {
+      background: var(--sdm-color-verde-principal) !important;
+      border: none !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2rem !important;
+      margin-bottom: var(--cmp-gap) !important;
+      box-shadow: var(--cmp-shadow) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-hero .cmp-eyebrow {
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-hero .cmp-eyebrow::before {
+      background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-hero h1 {
+      margin-top: 0 !important;
+      color: var(--sdm-color-soporte-negro) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-hero p {
+      font-size: 1.1875rem !important;
+      max-width: 54ch !important;
+      color: var(--sdm-color-soporte-negro) !important;
+    }
+
+    /* Dentro del hero verde, el botón primario invierte a oliva oscuro/blanco */
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-primary,
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-primary:link,
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-primary:visited {
+      background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-primary:hover,
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-primary:focus {
+      background: var(--sdm-color-soporte-gris-oscuro) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+    }
+
+    /* El botón secundario (ABECÉ) sobre verde: superficie blanca con texto oliva */
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-secondary,
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-secondary:link,
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-secondary:visited {
+      background: var(--sdm-color-soporte-blanco) !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      border-color: var(--sdm-color-soporte-blanco) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-secondary:hover,
+    .set-wrapper.comparendos-v2 .cmp-hero a.cmp-btn-secondary:focus {
+      background: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      color: var(--sdm-color-soporte-blanco) !important;
+      border-color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+    }
+
+    @media (min-width: 768px) {
+      .set-wrapper.comparendos-v2 .cmp-hero {
+        padding: 2.75rem !important;
+      }
+    }
+
+    /* === FRANJAS DE SECCIÓN (ritmo de fondo alterno) === */
+    .set-wrapper.comparendos-v2 .cmp-band {
+      background: var(--sdm-color-verde-terciario-claro-4) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2rem !important;
+      margin: var(--cmp-gap) 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-band > :first-child {
+      margin-top: 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-band > :last-child {
+      margin-bottom: 0 !important;
+    }
+
+    @media (min-width: 768px) {
+      .set-wrapper.comparendos-v2 .cmp-band {
+        padding: 2.25rem !important;
+      }
+    }
+
+    /* === BLOQUE DE PAGO === */
+    .set-wrapper.comparendos-v2 .cmp-pay-subtitle {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 1.3rem !important;
+      font-weight: 700 !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      text-align: center !important;
+      margin: 0 0 0.4rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-pay-note {
+      text-align: center !important;
+      font-size: 0.975rem !important;
+      color: var(--sdm-color-soporte-gris-medio-oscuro) !important;
+      max-width: 54ch !important;
+      margin: 0 auto 1.5rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-pay-block {
+      text-align: center !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-pay-block .cmp-eyebrow {
+      justify-content: center !important;
+    }
+
+    /* Separador fino entre PSE y puntos de pago */
+    .set-wrapper.comparendos-v2 .cmp-pay-divider {
+      border: 0 !important;
+      height: 1px !important;
+      background: var(--cmp-rule) !important;
+      max-width: 760px !important;
+      margin: 1.75rem auto !important;
+    }
+
+    /* Botón PSE (destacado) */
+    .set-wrapper.comparendos-v2 .cmp-pse {
+      text-align: center !important;
+      margin: 0 auto !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-pse-btn,
+    .set-wrapper.comparendos-v2 a.cmp-pse-btn:link,
+    .set-wrapper.comparendos-v2 a.cmp-pse-btn:visited {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.85rem !important;
+      padding: 1.75rem 2.75rem !important;
+      background: var(--sdm-color-soporte-blanco) !important;
+      border: 2px solid var(--cmp-rule) !important;
+      border-radius: var(--cmp-radius) !important;
+      box-shadow: var(--cmp-shadow) !important;
+      text-decoration: none !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      transition: transform var(--cmp-ease), box-shadow var(--cmp-ease), border-color var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-pse-btn:hover,
+    .set-wrapper.comparendos-v2 a.cmp-pse-btn:focus {
+      transform: translateY(-3px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
+      border-color: var(--sdm-color-verde-secundario-medio) !important;
+      text-decoration: none !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-pse-btn img {
+      width: auto !important;
+      max-width: 100% !important;
+      max-height: 80px !important;
+      height: auto !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-pse-btn .cmp-pse-label {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 1.05rem !important;
+    }
+
+    /* Grilla de medios de pago */
+    .set-wrapper.comparendos-v2 .cmp-pay-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0 !important;
+      margin: 0 auto !important;
+      max-width: 760px !important;
+      list-style: none !important;
+      padding: 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-pay-grid li {
+      margin: 0 !important;
+      font-size: inherit !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-pay-item {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      transition: transform var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-pay-item:hover {
+      transform: translateY(-3px) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-pay-item img {
+      max-width: 100% !important;
+      max-height: 110px !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    /* === CAJA DE BENEFICIOS (lista editorial con check) === */
+    .set-wrapper.comparendos-v2 .cmp-benefits {
+      background: var(--sdm-color-soporte-blanco) !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 1.75rem 2rem !important;
+      margin: 1.5rem 0 0 !important;
+      box-shadow: var(--cmp-shadow) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-benefits > :first-child {
+      margin-top: 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-benefits ul {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-benefits li {
+      position: relative !important;
+      padding-left: 2rem !important;
+      margin-bottom: 0.85rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-benefits li:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-benefits li::before {
+      content: "\2713" !important; /* check */
+      position: absolute !important;
+      left: 0 !important;
+      top: 0.05rem !important;
+      font-weight: 800 !important;
+      color: var(--sdm-color-verde-secundario-oliva-medio) !important;
+    }
+
+    /* === TARJETAS DE PASOS === */
+    .set-wrapper.comparendos-v2 .cmp-step-card {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      padding: 2rem 1.5rem !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
+      height: 100% !important;
+      background: var(--sdm-color-soporte-blanco) !important;
+      box-shadow: var(--cmp-shadow) !important;
+      transition: transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-step-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
+    }
+
+    /* Número de paso editorial: cifra grande tipográfica, no círculo */
+    .set-wrapper.comparendos-v2 .cmp-step-number {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-weight: 800 !important;
+      font-size: 2.4rem !important;
+      line-height: 1 !important;
+      color: var(--sdm-color-verde-principal) !important;
+      margin-bottom: 0.75rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-step-card h3 {
+      margin: 0 0 0.5rem !important;
+      font-size: 1.2rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-step-card p {
+      font-size: 1rem !important;
+      color: var(--sdm-color-soporte-gris-medio-oscuro) !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+
+    /* === ADVERTENCIA (sanciones) === */
+    .set-wrapper.comparendos-v2 .cmp-warning {
+      background: var(--sdm-color-soporte-blanco) !important;
+      border: var(--cmp-border) !important;
+      border-left: 4px solid #A80521 !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2rem 2.25rem !important;
+      margin: var(--cmp-gap) 0 !important;
+      box-shadow: var(--cmp-shadow) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-warning h2 {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.6rem !important;
+      color: #A80521 !important;
+      font-size: 1.5rem !important;
+      margin: 0 0 1rem !important;
+      padding-bottom: 0.9rem !important;
+      border-bottom: 1px solid rgba(168, 5, 33, 0.18) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-warning h2::before {
+      content: "\26A0" !important;
+      font-size: 1.35rem !important;
+      line-height: 1 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-warning ul {
+      margin-bottom: 0 !important;
+      max-width: none !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-warning li:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* === DESCUENTOS (editorial sobrio) === */
+    /* Subtítulo con rótulo tipográfico en vez de bloque promocional */
+    .set-wrapper.comparendos-v2 .cmp-discount-group {
+      margin-top: 2.5rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-discount-group:first-of-type {
+      margin-top: 1.5rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-discount-label {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 1.15rem !important;
+      font-weight: 700 !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      padding-bottom: 0.6rem !important;
+      margin-bottom: 1.25rem !important;
+      border-bottom: 1px solid var(--cmp-rule) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-discount-card {
+      display: flex !important;
+      align-items: baseline !important;
+      gap: 1.25rem !important;
+      background: var(--sdm-color-soporte-blanco) !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 1.5rem 1.75rem !important;
+      height: 100% !important;
+      box-shadow: var(--cmp-shadow) !important;
+      transition: transform var(--cmp-ease), box-shadow var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-discount-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: var(--cmp-shadow-hover) !important;
+    }
+
+    /* Porcentaje como cifra tipográfica grande, no medallón */
+    .set-wrapper.comparendos-v2 .cmp-discount-card .cmp-percent {
+      font-family: 'Nunito Sans', Verdana, sans-serif !important;
+      font-size: 2.6rem !important;
+      font-weight: 800 !important;
+      line-height: 1 !important;
+      color: var(--sdm-color-verde-secundario-oliva-oscuro) !important;
+      flex-shrink: 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-discount-card p {
+      font-size: 1rem !important;
+      color: var(--sdm-color-soporte-gris-oscuro) !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+
+    /* === SERVICIOS RELACIONADOS (índice editorial) === */
+    .set-wrapper.comparendos-v2 .cmp-service-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: none !important;
+      border-top: 1px solid var(--cmp-rule) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-service-list li {
+      margin: 0 !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-service-row,
+    .set-wrapper.comparendos-v2 a.cmp-service-row:link,
+    .set-wrapper.comparendos-v2 a.cmp-service-row:visited {
+      display: flex !important;
+      align-items: center !important;
+      gap: 1.25rem !important;
+      padding: 1.5rem 0.5rem !important;
+      border-bottom: 1px solid var(--cmp-rule) !important;
+      text-decoration: none !important;
+      color: var(--sdm-color-soporte-gris-oscuro) !important;
+      transition: background var(--cmp-ease), padding var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-service-row:hover,
+    .set-wrapper.comparendos-v2 a.cmp-service-row:focus {
+      background: var(--sdm-color-verde-terciario-claro-4) !important;
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+      text-decoration: none !important;
+      color: var(--sdm-color-soporte-gris-oscuro) !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-service-row .cmp-service-text {
+      flex: 1 1 auto !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-service-row h3 {
+      margin: 0 0 0.25rem !important;
+      font-size: 1.2rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-service-row p {
+      margin: 0 !important;
+      font-size: 0.975rem !important;
+      color: var(--sdm-color-soporte-gris-medio-oscuro) !important;
+      max-width: none !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-service-row .cmp-service-arrow {
+      flex-shrink: 0 !important;
+      font-size: 1.4rem !important;
+      font-weight: 700 !important;
+      color: var(--sdm-color-verde-secundario-oliva-medio) !important;
+      transition: transform var(--cmp-ease) !important;
+    }
+
+    .set-wrapper.comparendos-v2 a.cmp-service-row:hover .cmp-service-arrow,
+    .set-wrapper.comparendos-v2 a.cmp-service-row:focus .cmp-service-arrow {
+      transform: translate(3px, -3px) !important;
+    }
+
+    /* === CIERRE / LLAMADO ABECÉ === */
+    .set-wrapper.comparendos-v2 .cmp-closing {
+      background: var(--sdm-color-verde-terciario-claro-4) !important;
+      border: var(--cmp-border) !important;
+      border-radius: var(--cmp-radius) !important;
+      padding: 2.25rem !important;
+      margin: var(--cmp-gap) 0 0 !important;
+      text-align: center !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-closing .cmp-eyebrow {
+      justify-content: center !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-closing h2 {
+      margin: 0 0 0.75rem !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-closing p {
+      margin: 0 auto 1.5rem !important;
+      max-width: 56ch !important;
+    }
+
+    /* === UTILIDADES === */
+    .set-wrapper.comparendos-v2 .cmp-text-center {
+      text-align: center !important;
+    }
+
+    .set-wrapper.comparendos-v2 .cmp-mb {
+      margin-bottom: 2rem !important;
+    }
+  </style>
+
+  <!-- HERO / INTRODUCCIÓN -->
+  <div class="cmp-hero">
+    <div class="cmp-row cmp-row-middle">
+      <div class="cmp-col-md-6">
+        <span class="cmp-eyebrow">Trámites &middot; Comparendos</span>
+        <h1>Consulta y pago de comparendos</h1>
+        <p>
+          Consulta con tu número de cédula o la placa del vehículo los comparendos y acuerdos de pago pendientes. Ponte al día de manera fácil y segura.
+        </p>
+        <div class="cmp-btn-group">
+          <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="cmp-btn-primary" target="_blank" rel="noopener">
+            Consulta aquí comparendos y acuerdos de pago
+          </a>
+          <a href="#abece" class="cmp-btn-secondary">
+            ABECÉ Consulta de comparendos
+          </a>
+        </div>
+      </div>
+      <div class="cmp-col-md-6 cmp-text-center">
+        <img class="cmp-img-hero" src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/imagen%202.png" alt="Ilustración de consulta de comparendos" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN: Paga en canales oficiales -->
+  <section class="cmp-section">
+    <div class="cmp-section-head">
+      <span class="cmp-eyebrow">Canales oficiales</span>
+      <h2>Paga directamente con la Secretaría</h2>
+      <p class="cmp-lead">
+        Realiza el pago de tus comparendos y acuerdos de pago a través de los canales autorizados por la Secretaría Distrital de Movilidad: en línea de forma segura o presencial en los puntos habilitados.
+      </p>
+    </div>
+
+    <div class="cmp-band">
+      <!-- Pago en línea (acción principal) -->
+      <div class="cmp-pay-block">
+        <span class="cmp-eyebrow">Pago en línea</span>
+        <p class="cmp-pay-subtitle">Paga de forma segura con PSE</p>
+        <p class="cmp-pay-note">Serás dirigido al portal oficial de pagos de la Secretaría Distrital de Movilidad.</p>
+        <div class="cmp-pse">
+          <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="cmp-pse-btn" target="_blank" rel="noopener" aria-label="Pagar en línea con PSE">
+            <img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/logo-pse.jpg" alt="PSE - Pagos Seguros en Línea" loading="lazy">
+            <span class="cmp-pse-label">Paga en línea con PSE</span>
+          </a>
+        </div>
+      </div>
+
+      <hr class="cmp-pay-divider">
+
+      <!-- Puntos de pago autorizados -->
+      <div class="cmp-pay-block">
+        <span class="cmp-eyebrow">Pago presencial</span>
+        <p class="cmp-pay-subtitle">Puntos de pago autorizados</p>
+        <p class="cmp-pay-note">También puedes pagar en los siguientes bancos y puntos de recaudo autorizados.</p>
+        <ul class="cmp-pay-grid" aria-label="Puntos de pago autorizados">
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-02.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-03.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-04.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-05.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-06.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-07.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-08.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-09.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-10.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+          <li><div class="cmp-pay-item"><img src="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-22/diseno%20volante%20de%20pago-11.png" alt="Medio de pago habilitado" loading="lazy"></div></li>
+        </ul>
+      </div>
+    </div><!-- /.cmp-band -->
+
+    <div class="cmp-benefits">
+      <p><strong>Cuando realizas el pago directamente con nosotros:</strong></p>
+      <ul>
+        <li>Conoces el valor real y actualizado de tu obligación (¡evita saldos pendientes!).</li>
+        <li>La actualización de tu pago se refleja más rápido en nuestros sistemas.</li>
+        <li>Los procesos administrativos, como cobros o desembargos, pueden gestionarse con mayor agilidad.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Cómo consultar -->
+  <section class="cmp-section">
+    <div class="cmp-section-head">
+      <span class="cmp-eyebrow">Paso a paso</span>
+      <h2>Cómo consultar tus comparendos</h2>
+      <p class="cmp-lead">En tres pasos puedes conocer el estado de tus comparendos y acuerdos de pago.</p>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-col-md-4">
+        <div class="cmp-step-card">
+          <span class="cmp-step-number" aria-hidden="true">01</span>
+          <h3>Consulta comparendos</h3>
+          <p>Haz clic en "Consulta aquí comparendos y acuerdos de pago".</p>
+        </div>
+      </div>
+      <div class="cmp-col-md-4">
+        <div class="cmp-step-card">
+          <span class="cmp-step-number" aria-hidden="true">02</span>
+          <h3>Ingresa tus datos</h3>
+          <p>Selecciona el tipo de documento y digita tu cédula o la placa del vehículo.</p>
+        </div>
+      </div>
+      <div class="cmp-col-md-4">
+        <div class="cmp-step-card">
+          <span class="cmp-step-number" aria-hidden="true">03</span>
+          <h3>Ver detalles</h3>
+          <p>Desplázate hacia abajo y da clic en "ver detalle" para conocer los comparendos pendientes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cmp-text-center" style="margin-top:2rem !important;">
+      <a href="https://webfenix.movilidadbogota.gov.co/#/consulta-pagos" class="cmp-btn-primary" target="_blank" rel="noopener">
+        Consulta aquí comparendos y acuerdos de pago
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Evita sanciones -->
+  <section class="cmp-section">
+    <div class="cmp-warning" role="alert" aria-label="Advertencia sobre sanciones">
+      <h2>Evita sanciones</h2>
+      <ul>
+        <li>Si cometes más de una infracción en seis meses, te pueden suspender la licencia de conducción.</li>
+        <li>Si vuelves a ser sancionado por reincidencia, la sanción se duplica.</li>
+        <li>Si conduces con la licencia suspendida, la pierdes de forma definitiva.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Descuentos disponibles -->
+  <section class="cmp-section">
+    <div class="cmp-section-head">
+      <span class="cmp-eyebrow">Beneficios</span>
+      <h2>Descuentos disponibles</h2>
+      <p class="cmp-lead">Accede a descuentos realizando el curso pedagógico por infracción a las normas de tránsito.</p>
+    </div>
+
+    <div class="cmp-discount-group">
+      <p class="cmp-discount-label">Comparendos en vía</p>
+      <div class="cmp-row">
+        <div class="cmp-col-md-6">
+          <div class="cmp-discount-card">
+            <span class="cmp-percent" aria-hidden="true">50%</span>
+            <p><strong>50% de descuento</strong> si realizas el curso y pago dentro de los 5 días hábiles siguientes a la imposición.</p>
+          </div>
+        </div>
+        <div class="cmp-col-md-6">
+          <div class="cmp-discount-card">
+            <span class="cmp-percent" aria-hidden="true">25%</span>
+            <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 6.º y 20.º día hábil siguiente a la imposición.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-discount-group">
+      <p class="cmp-discount-label">Comparendos electrónicos</p>
+      <div class="cmp-row">
+        <div class="cmp-col-md-6">
+          <div class="cmp-discount-card">
+            <span class="cmp-percent" aria-hidden="true">50%</span>
+            <p><strong>50% de descuento</strong> si realizas el curso y pago entre el 1.º y 11.º día hábil siguiente a la notificación.</p>
+          </div>
+        </div>
+        <div class="cmp-col-md-6">
+          <div class="cmp-discount-card">
+            <span class="cmp-percent" aria-hidden="true">25%</span>
+            <p><strong>25% de descuento</strong> si realizas el curso y pago entre el 12.º y 26.º día hábil siguiente a la notificación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem !important;"><strong>Ten en cuenta:</strong> se debe realizar un curso pedagógico por cada infracción cometida.</p>
+
+    <div class="cmp-text-center" style="margin-top:1.5rem !important;">
+      <a href="https://vus.circulemosdigital.com.co/#/login" class="cmp-btn-primary" target="_blank" rel="noopener">
+        Agendar cita para curso
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Servicios relacionados -->
+  <section class="cmp-section">
+    <div class="cmp-section-head">
+      <span class="cmp-eyebrow">También te puede servir</span>
+      <h2>Servicios relacionados</h2>
+    </div>
+    <ul class="cmp-service-list">
+      <li>
+        <a href="https://movilidad.ucontactcloud.com/WebChat/SdmAcuerdosPago/" class="cmp-service-row" target="_blank" rel="noopener">
+          <span class="cmp-service-text">
+            <h3>Acuerdos de pago</h3>
+            <p>Haz tu acuerdo de pago y ponte al día con Bogotá.</p>
+          </span>
+          <span class="cmp-service-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-01-03/tabla_autoliquidacion_2026.pdf" class="cmp-service-row" target="_blank" rel="noopener">
+          <span class="cmp-service-text">
+            <h3>Tabla de autoliquidación</h3>
+            <p>Consulta la tabla de autoliquidación de infracciones 2026.</p>
+          </span>
+          <span class="cmp-service-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.movilidadbogota.gov.co/canal-anticorrupcion" class="cmp-service-row" target="_blank" rel="noopener">
+          <span class="cmp-service-text">
+            <h3>Sistema de gestión antisoborno</h3>
+            <p>Conoce el portal de Integridad, Antisoborno y Anticorrupción.</p>
+          </span>
+          <span class="cmp-service-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.movilidadbogota.gov.co/abecedesembargos" class="cmp-service-row" target="_blank" rel="noopener">
+          <span class="cmp-service-text">
+            <h3>Abecé desembargos</h3>
+            <p>Conoce toda la información que necesitas sobre desembargos.</p>
+          </span>
+          <span class="cmp-service-arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CIERRE: Llamado al ABECÉ -->
+  <div id="abece" class="cmp-closing">
+    <span class="cmp-eyebrow">Documento guía</span>
+    <h2>ABECÉ Consulta de comparendos</h2>
+    <p>Descarga el documento con toda la información que necesitas sobre consulta y pago de comparendos en Bogotá.</p>
+    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-10-16/abece_consulta_de_comparendos_feb2026.pdf" class="cmp-btn-primary" target="_blank" rel="noopener">
+      Descargar ABECÉ (PDF)
+    </a>
+  </div>
+
+</div><!-- /.set-wrapper -->
+
+<!-- === FIN CONTENIDO PARA DRUPAL === -->
