@@ -1,0 +1,268 @@
+/* === homeDestacados.css — Destacados del home (pestañas) === */
+/* Pensado para la zona #zonaDestacados (fondo morado, texto claro).        */
+/* Todo va acotado a .destacados-tabs para no chocar con corev15.css.       */
+
+.destacados-tabs {
+    width: 100%;
+}
+
+/* Lista de pestañas */
+.destacados-tabs .destacados-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 0 0 16px 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.destacados-tabs .destacados-nav .nav-item {
+    flex: 1 1 0;
+    min-width: 0; /* permite que el texto se recorte dentro del flex */
+    margin: 0;
+}
+
+/* Reset de botones de SharePoint (corev15.css) + estilo de la pestaña */
+.destacados-tabs .destacados-nav .nav-link {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    min-width: 0 !important;
+    min-height: 56px !important;
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-bottom: none !important;
+    border-radius: 8px 8px 0 0 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: #f0f8ff !important;
+    font-family: inherit !important; /* hereda Nunito Sans del body */
+    font-size: 0.875rem !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+    cursor: pointer !important;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.destacados-tabs .destacados-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Pestaña activa: invertida para que sea evidente cuál se está viendo */
+.destacados-tabs .destacados-nav .nav-link.active {
+    background: #ffffff !important;
+    color: #4B3C8C !important;
+    border-color: #ffffff !important;
+    border-top: 4px solid #FFB800 !important; /* acento amarillo, igual al botón */
+}
+
+/* Foco visible para navegación con teclado */
+.destacados-tabs .destacados-nav .nav-link:focus-visible,
+.destacados-tabs .tab-pane:focus-visible {
+    outline: 3px solid #FFB800;
+    outline-offset: 2px;
+}
+
+/* Texto de la pestaña: máximo dos líneas, luego puntos suspensivos */
+.destacados-tabs .destacados-tab-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+/* Panel */
+.destacados-tabs .destacados-content {
+    width: 100%;
+}
+
+/* Pantallas pequeñas: pestañas apiladas para que el título se lea completo */
+@media (max-width: 575.98px) {
+    .destacados-tabs .destacados-nav {
+        flex-direction: column;
+        gap: 4px;
+        border-bottom: none;
+    }
+
+    .destacados-tabs .destacados-nav .nav-link {
+        min-height: 48px !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+        border-radius: 8px !important;
+    }
+}
+
+/* Respeta la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .destacados-tabs .destacados-nav .nav-link {
+        transition: none;
+    }
+
+    .destacados-tabs .tab-pane.fade {
+        transition: none;
+    }
+}
+
+/* Mensajes (sin contenidos / error al cargar) */
+.SetDestacados .destacados-mensaje {
+    margin: 16px 0;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0f8ff;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+/* ==========================================================================
+   Estilos del contenido de cada destacado (card)
+   Se imponen aquí con !important para que se vean igual aunque la página no
+   cargue los estilos globales home-destacados-*. Mismos valores que el sitio.
+   ========================================================================== */
+
+.SetDestacados {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #fff;
+}
+
+.SetDestacados .home-destacados-title {
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #fff !important;
+}
+
+.SetDestacados .home-destacados-date {
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    color: #fff !important;
+}
+
+.SetDestacados .home-destacados-resume {
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    height: auto !important;
+    color: #fff !important;
+}
+
+.SetDestacados .btn-vermas-informacion {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.SetDestacados .home-destacados-moreinformation {
+    display: inline-block;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
+    line-height: 27px !important;
+    background: #FFB800 !important;
+    color: #4B3C8C !important;
+    border-radius: 18px !important;
+    padding: 5px 12px !important;
+    text-decoration: none !important;
+}
+
+.SetDestacados .home-destacados-moreinformation:hover,
+.SetDestacados .btn-vermas-informacion a:hover {
+    background: #7730C1 !important;
+    color: #fff !important;
+}
+
+.SetDestacados .home-destacados-moreinformation:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (min-width: 1024px) {
+    .SetDestacados .home-destacados-title {
+        font-weight: 800 !important;
+        font-size: 28px !important;
+        line-height: 33px !important;
+    }
+
+    .SetDestacados .home-destacados-resume {
+        font-size: 18px !important;
+        line-height: 25px !important;
+        display: block !important;
+    }
+}
+
+/* Aire antes de las pestañas */
+
+.SetDestacados .destacados-tabs {
+    margin-top: 8px;
+}
+
+/* ==========================================================================
+   Encabezado de la sección (icono + "DESTACADOS")
+   Usa clases propias en el <p> de la web part, sin depender de estilos
+   heredados. Tamaño contenido (22 px / 26 px) y 28 px de aire arriba.
+   ========================================================================== */
+
+.destacados-encabezado {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 16px 0 !important;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    line-height: 26px !important;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+.destacados-encabezado img {
+    flex: none;
+    width: 44px;
+    height: auto;
+}
+
+@media (min-width: 1024px) {
+    .destacados-encabezado {
+        font-size: 26px !important;
+        line-height: 30px !important;
+    }
+}
+
+/* Respaldo: encuentra el mismo encabezado por su icono, aunque el <p> de la
+   web part aún no tenga la clase. Va en bloques separados para que un
+   navegador sin soporte de :has() no invalide las reglas de arriba. */
+p:has(> img[src*="icon-destacado"]) {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 16px 0 !important;
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    line-height: 26px !important;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+p:has(> img[src*="icon-destacado"]) > img {
+    flex: none;
+    width: 44px;
+    height: auto;
+}
+
+@media (min-width: 1024px) {
+    p:has(> img[src*="icon-destacado"]) {
+        font-size: 26px !important;
+        line-height: 30px !important;
+    }
+}
