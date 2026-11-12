@@ -1,37 +1,37 @@
 <!-- Menu de Navegacion -->
 <div class="sdm-navbar-container">
     <p>
-        <button class="sdm-boton-menu-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll" aria-expanded="true" aria-label="Toggle navigation">
+        <button class="sdm-boton-menu-navbar" type="button" aria-controls="navbarScroll" aria-expanded="false"
+            aria-label="Menú principal">
             <span>
-                <img src="/sites/default/files/2025-08/icono-menu.svg" alt="Icono menu">
+                <img src="/sites/default/files/2025-08/icono-menu.svg" alt="">
             </span>
         </button>
     </p>
-    <nav class="sdm-navbar" role="navigation" aria-label="Menú ejemplo entidad">
+    <nav class="sdm-navbar" id="navbarScroll" aria-label="Menú principal">
         <ul class="sdm-navbar-lista">
             <li class="sdm-nav-item" data-list-item-id="e0c6cde875caa996326f92986b0c54e6c">
                 <div class="sdm-item-con-menu">
-                    <a class="nav-link dir-menu-govco active" href="/" aria-current="page"><span>Inicio</span></a>
+                    <a class="nav-link dir-menu-govco active" href="/"><span>Inicio</span></a>
                 </div>
             </li>
             <li class="sdm-nav-item" data-list-item-id="e9a13f9b0fc3bb5901b0dc65738a17766">
                 <div class="sdm-item-con-menu">
-                    <a class="nav-link" href="/transparencia" aria-current="page"><span>Transparencia y acceso
+                    <a class="nav-link" href="/transparencia"><span>Transparencia y acceso
                             información pública</span></a>
                 </div>
             </li>
             <li class="sdm-nav-item" data-list-item-id="e7b65832afbff2867dda9619e50fcab45">
                 <div class="sdm-item-con-menu">
-                    <p>
+                    <button class="sdm-item-boton" type="button" aria-expanded="false" aria-controls="sdm-sub-atencion">
                         <span>Atención y Servicios a la ciudadanía</span>
-                    </p>
-                    <div class="sdm-icono-submenu">
-                        <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="Icono flecha menu"
-                            width="16" height="26">
-                    </div>
+                        <span class="sdm-icono-submenu" aria-hidden="true">
+                            <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="" width="16"
+                                height="26">
+                        </span>
+                    </button>
                 </div>
-                <div class="sdm-submenu-nav" role="menu">
+                <div class="sdm-submenu-nav" id="sdm-sub-atencion">
                     <div class="sdm-submenu-lista">
                         <div class="sdm-submenu-item">
                             <p class="sdm-titulo-submenu">
@@ -151,16 +151,16 @@
             </li>
             <li class="sdm-nav-item" data-list-item-id="eb68463fa6f9f5d9f46877e774b2e81f7">
                 <div class="sdm-item-con-menu">
-                    <p>
+                    <button class="sdm-item-boton" type="button" aria-expanded="false" aria-controls="sdm-sub-participa">
                         <span>Participa</span>
-                    </p>
-                    <div class="sdm-icono-submenu">
-                        <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="Icono flecha menu"
-                            width="16" height="26">
-                    </div>
+                        <span class="sdm-icono-submenu" aria-hidden="true">
+                            <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="" width="16"
+                                height="26">
+                        </span>
+                    </button>
                 </div>
-                <div class="sdm-submenu-nav sdm-submenu-nav-variante">
-                    <ul class="sdm-sublista" aria-labelledby="navbarDropdown">
+                <div class="sdm-submenu-nav sdm-submenu-nav-variante" id="sdm-sub-participa">
+                    <ul class="sdm-sublista">
                         <li data-list-item-id="e882f55798a44f4d8408a1382dc50b2fd">
                             <a class="dropdown-item"
                                 href="/participacion-para-la-identificacion-de-problemas-y-diagnostico-de-necesidades">Participación
@@ -196,15 +196,15 @@
             </li>
             <li class="sdm-nav-item" data-list-item-id="e026bd198f4bf76bf0986e11a06a7faf9">
                 <div class="sdm-item-con-menu">
-                    <p>
+                    <button class="sdm-item-boton" type="button" aria-expanded="false" aria-controls="sdm-sub-entidad">
                         <span>La Entidad</span>
-                    </p>
-                    <div class="sdm-icono-submenu">
-                        <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="Icono flecha menu"
-                            width="16" height="26">
-                    </div>
+                        <span class="sdm-icono-submenu" aria-hidden="true">
+                            <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="" width="16"
+                                height="26">
+                        </span>
+                    </button>
                 </div>
-                <div class="sdm-submenu-nav" role="menu">
+                <div class="sdm-submenu-nav" id="sdm-sub-entidad">
                     <div class="sdm-submenu-item">
                         <p class="sdm-titulo-submenu">
                             Información General
@@ -299,15 +299,15 @@
             </li>
             <li class="sdm-nav-item" data-list-item-id="ea5307ba3643408c48533085f62bfc74b">
                 <div class="sdm-item-con-menu">
-                    <p>
+                    <button class="sdm-item-boton" type="button" aria-expanded="false" aria-controls="sdm-sub-normatividad">
                         <span>Normatividad</span>
-                    </p>
-                    <div class="sdm-icono-submenu">
-                        <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="Icono flecha menu"
-                            width="16" height="26">
-                    </div>
+                        <span class="sdm-icono-submenu" aria-hidden="true">
+                            <img src="/sites/default/files/2025-08/flecha-icono-navbar.svg" alt="" width="16"
+                                height="26">
+                        </span>
+                    </button>
                 </div>
-                <div class="sdm-submenu-nav" role="menu" aria-labelledby="navbarDropdown5">
+                <div class="sdm-submenu-nav" id="sdm-sub-normatividad">
                     <div class="sdm-submenu-item">
                         <p class="sdm-titulo-submenu">
                             Notificaciones
@@ -384,7 +384,7 @@
             </li>
             <li class="sdm-nav-item" data-list-item-id="e80c98d4ff9f904ce14f62b2fd7ac985d">
                 <div class="sdm-item-con-menu">
-                    <a class="nav-link" href="/portal-infantil" aria-current="page"><span>Portal Infantil</span></a>
+                    <a class="nav-link" href="/portal-infantil"><span>Portal Infantil</span></a>
                 </div>
             </li>
         </ul>

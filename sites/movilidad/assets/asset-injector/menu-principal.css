@@ -1,0 +1,539 @@
+/*
+ * Menú principal de Movilidad - correcciones de móvil y accesibilidad
+ *
+ * Se carga con Asset Injector (CSS) DESPUÉS del tema custom_barrio.
+ * Va emparejado con menu-principal.js y con el HTML de sites/movilidad/cms/menu-principal.html
+ *
+ * Breakpoints del tema (se respetan):
+ *   < 1024px   -> menú móvil (botón hamburguesa)
+ *   >= 1024px  -> menú horizontal con submenú por hover
+ */
+
+/* ------------------------------------------------------------------ */
+/* Todos los anchos                                                    */
+/* ------------------------------------------------------------------ */
+
+/* Foco visible en todo el menú (el tema no define estilos :focus).
+   Doble anillo negro + blanco: se distingue sobre el gris #edeff0, el lima #bed000
+   y el oliva #515900 del hover (PRODUCT.md: "foco visible siempre"). */
+.sdm-navbar-container .sdm-boton-menu-navbar:focus-visible,
+.sdm-navbar-container .sdm-navbar a:focus-visible,
+.sdm-navbar-container .sdm-navbar button:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: -3px;
+  box-shadow: inset 0 0 0 6px #fff;
+}
+
+/* Los ítems con submenú ahora son <button>: se igualan al aspecto del <p> original */
+.sdm-navbar .sdm-item-boton {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Área mínima de clic en los enlaces de los submenús (WCAG 2.5.8) */
+.sdm-navbar .sdm-sublista a,
+.sdm-navbar .sdm-titulo-submenu a {
+  display: block;
+  min-height: 24px;
+}
+
+/* Espaciador que evita el salto de contenido cuando el tema fija la barra (position:fixed) */
+.sdm-navbar-spacer {
+  display: block;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Móvil / tablet vertical (< 1024px)                                  */
+/* ------------------------------------------------------------------ */
+@media (max-width: 1023px) {
+  /* Botón hamburguesa con área táctil de 44px */
+  .sdm-navbar-container .sdm-boton-menu-navbar {
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+  }
+
+  /* El tema lo muestra/oculta con style.display; aquí lo gobierna la clase .sdm-abierto */
+  .sdm-navbar-container .sdm-navbar {
+    display: none;
+    align-items: flex-start; /* con "center" lo que se desborda por arriba no se puede desplazar */
+    max-height: var(--sdm-menu-max-h, 70vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  .sdm-navbar-container .sdm-navbar.sdm-abierto {
+    display: flex;
+  }
+
+  /* Ítems de primer nivel: toda la fila es táctil (antes solo lo era el texto) */
+  .sdm-navbar .sdm-item-con-menu {
+    padding: 0;
+  }
+
+  .sdm-navbar .sdm-item-con-menu > a,
+  .sdm-navbar .sdm-item-boton {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 24px;
+  }
+
+  .sdm-navbar .sdm-item-boton {
+    align-items: center;
+  }
+
+  .sdm-navbar .sdm-icono-submenu {
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  .sdm-navbar .sdm-icono-submenu img {
+    top: 0;
+  }
+
+  .sdm-navbar .sdm-item-boton[aria-expanded="true"] .sdm-icono-submenu img {
+    transform: rotate(180deg);
+  }
+
+  /* Submenú: la apertura la controla .sdm-sub-abierto, no la clase .activo del tema
+     (el tema deja abierta la sección de la página actual y no se puede cerrar) */
+  .sdm-nav-item.activo:not(.sdm-sub-abierto) > .sdm-submenu-nav {
+    display: none;
+  }
+
+  .sdm-nav-item.sdm-sub-abierto > .sdm-submenu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .sdm-nav-item.sdm-sub-abierto > .sdm-item-con-menu {
+    background-color: var(--color-primario);
+  }
+
+  .sdm-navbar .sdm-submenu-nav,
+  .sdm-navbar .sdm-submenu-nav-variante {
+    width: 100%;
+    margin-top: 0;
+    padding: 8px 16px 16px;
+    left: 0;
+  }
+
+  .sdm-navbar .sdm-submenu-item {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sdm-navbar .sdm-sublista {
+    margin: 0;
+  }
+
+  /* Enlaces del submenú: mínimo 44px de alto */
+  .sdm-navbar .sdm-sublista a,
+  .sdm-navbar .sdm-titulo-submenu a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  /* Táctil: sin hover "pegado". En el tema el hover deja texto blanco sobre el verde lima
+     del ítem abierto (contraste ~1.5:1) */
+  @media (hover: none) {
+    .sdm-nav-item:hover .sdm-item-con-menu {
+      background-color: transparent;
+    }
+
+    .sdm-nav-item:hover span {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .sdm-nav-item:hover .sdm-icono-submenu img {
+      filter: none;
+    }
+
+    .sdm-nav-item.sdm-sub-abierto:hover > .sdm-item-con-menu,
+    .sdm-nav-item.activo:hover > .sdm-item-con-menu {
+      background-color: var(--color-primario);
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Escritorio (>= 1024px): hover + teclado/clic                        */
+/* ------------------------------------------------------------------ */
+@media (min-width: 1024px) {
+  /* Submenú abierto con Enter/Espacio (teclado, lector de pantalla, tablet) */
+  .sdm-nav-item.sdm-sub-abierto > .sdm-submenu-nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sdm-nav-item.sdm-sub-abierto > .sdm-item-con-menu {
+    background-color: var(--color-enlaces);
+  }
+
+  .sdm-nav-item.sdm-sub-abierto > .sdm-item-con-menu span {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .sdm-nav-item.sdm-sub-abierto .sdm-icono-submenu img {
+    filter: invert(1);
+  }
+
+  /* Escape / segundo clic: oculta aunque el puntero siga encima (WCAG 1.4.13) */
+  .sdm-nav-item.sdm-cerrado > .sdm-submenu-nav {
+    display: none !important;
+  }
+}
+
+/* Megamenú (>= 1024px): columnas alineadas a la izquierda con separación fija.
+   El tema usaba space-between y, con 3 columnas, dejaba huecos grandes entre ellas. */
+@media (min-width: 1024px) {
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-submenu-nav,
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-submenu-nav > .sdm-submenu-lista {
+    justify-content: flex-start !important;
+    column-gap: 24px !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* BLOQUE BLINDADO                                                     */
+/* En el portal publicado, alguna hoja de la página (o el orden de     */
+/* carga de Asset Injector) anula el relleno y el alto de los botones  */
+/* del menú. Este bloque repite solo las propiedades de layout con     */
+/* selectores muy específicos e !important para que no dependa de la   */
+/* especificidad ni del orden de carga.                                */
+/* ------------------------------------------------------------------ */
+
+/* Reset del <button> en todos los anchos (anula estilos globales de button) */
+.sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu > button.sdm-item-boton {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  display: flex !important;
+  flex: 1 1 auto !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  line-height: normal !important;
+  text-align: left !important;
+  text-transform: none !important;
+  cursor: pointer !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-item-boton > span:first-child {
+  flex: 1 1 auto !important;
+  text-align: left !important;
+}
+
+/* Foco visible: el reset de box-shadow no debe quitarlo */
+.sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu > button.sdm-item-boton:focus-visible {
+  outline: 3px solid #000 !important;
+  outline-offset: -3px !important;
+  box-shadow: inset 0 0 0 6px #fff !important;
+}
+
+@media (max-width: 1023px) {
+  /* Fila de primer nivel: sin relleno propio, lo pone el enlace o el botón */
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu {
+    display: flex !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Enlaces y botones de primer nivel: misma caja, 48px de alto y relleno igual */
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu > a,
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu > button.sdm-item-boton {
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 12px 24px !important;
+    margin: 0 !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-item-boton .sdm-icono-submenu {
+    position: relative !important;
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    flex: 0 0 16px !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-item-boton .sdm-icono-submenu img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Submenú: ancho completo, sin el margen superior de 40px del tema */
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-submenu-nav {
+    width: 100% !important;
+    margin: 0 !important;
+    left: 0 !important;
+    padding: 8px 16px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-submenu-nav .sdm-submenu-item {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Apertura del submenú: solo por la clase del script, nunca por .activo del tema */
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item:not(.sdm-sub-abierto) > .sdm-submenu-nav {
+    display: none !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item.sdm-sub-abierto > .sdm-submenu-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Escritorio: la hamburguesa no se muestra aunque otra hoja fuerce display en los button */
+  .sdm-navbar-container > p > button.sdm-boton-menu-navbar,
+  .sdm-navbar-container button.sdm-boton-menu-navbar {
+    display: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* TÍTULOS DE GRUPO DEL SUBMENÚ (Notificaciones, Contratación, ...)    */
+/* Antes se veían igual que un enlace más. Ahora son encabezados:      */
+/* más peso, verde oscuro #4C531F (~7:1 sobre #edeff0), barra lima     */
+/* decorativa a la izquierda y separación entre grupos.                */
+/* ------------------------------------------------------------------ */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item > .sdm-titulo-submenu {
+  position: relative !important;
+  box-sizing: border-box !important;
+  margin: 0 0 4px !important;
+  padding: 8px 4px 8px 14px !important;
+  border-bottom: 2px solid #4c531f !important;
+  color: #4c531f !important;
+  font-family: "Montserrat-SemiBold", "WorkSans-Medium", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.01em !important;
+  text-decoration: none !important;
+}
+
+/* Barra de acento (decorativa, no transmite información) */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item > .sdm-titulo-submenu::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 8px !important;
+  bottom: 8px !important;
+  width: 4px !important;
+  border-radius: 2px !important;
+  background-color: #bed000 !important;
+}
+
+/* Títulos que además son enlace (PQRSD, Histórico de Noticias): se mantiene el subrayado */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item > .sdm-titulo-submenu a,
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item > .sdm-titulo-submenu a strong {
+  color: #4c531f !important;
+  font: inherit !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+/* Enlaces del grupo: un poco más finos y sangrados para que se lean como "hijos" */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item .sdm-sublista {
+  margin: 0 !important;
+  padding: 0 0 0 14px !important;
+}
+
+/* Separador único para todos los enlaces de submenú, con o sin título de grupo
+   (incluye "Participa", que no tiene grupos y conservaba la línea negra del tema) */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-nav .sdm-sublista li {
+  border-bottom: 1px solid #c7cacc !important;
+}
+
+@media (max-width: 1023px) {
+  /* Separación clara entre un grupo y el siguiente */
+  .sdm-navbar-container nav.sdm-navbar .sdm-submenu-nav .sdm-submenu-item {
+    padding: 0 !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-submenu-nav .sdm-submenu-item + .sdm-submenu-item {
+    margin-top: 20px !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-submenu-lista {
+    gap: 0 !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* APILAMIENTO: el menú siempre por encima del resto del sitio          */
+/* El tema pone z-index:10 en línea mientras la barra no está fija, y   */
+/* quedaban encima «Prudencia» (1000), redes sociales, la barra de     */
+/* accesibilidad GOV.CO y otros bloques. !important gana al estilo en  */
+/* línea del tema. Única excepción: un modal abierto (Bootstrap 1050+), */
+/* que por definición debe quedar encima mientras se usa.              */
+/* ------------------------------------------------------------------ */
+.sdm-navbar-container {
+  z-index: 2147483000 !important;
+}
+
+body.modal-open .sdm-navbar-container {
+  z-index: 1040 !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* TÍTULOS DE GRUPO CON ALTURA IGUALADA (megamenú de escritorio)       */
+/* El JS envuelve el texto en .sdm-titulo-texto e iguala la altura de  */
+/* los títulos de una misma fila: las líneas inferiores quedan          */
+/* alineadas aunque un título tenga 1, 2 o 3 líneas. La barra lima pasa */
+/* al span para que mida lo mismo que el texto y no se estire.          */
+/* ------------------------------------------------------------------ */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item > .sdm-titulo-submenu.sdm-titulo-preparado {
+  padding-left: 0 !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item > .sdm-titulo-submenu.sdm-titulo-preparado::before {
+  content: none !important;
+  display: none !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-titulo-submenu .sdm-titulo-texto {
+  position: relative !important;
+  display: block !important;
+  padding-left: 14px !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-titulo-submenu .sdm-titulo-texto::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 1px !important;
+  bottom: 1px !important;
+  width: 4px !important;
+  border-radius: 2px !important;
+  background-color: #bed000 !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* ENLACE DESTACADO (p. ej. "Histórico de Noticias")                   */
+/* Es un enlace suelto, no un título de grupo: sin barra ni línea de   */
+/* encabezado. Se presenta como botón de contorno con flecha.          */
+/* #4C531F sobre blanco ~8,2:1; blanco sobre #4C531F en hover ~8,2:1.  */
+/* ------------------------------------------------------------------ */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  min-height: 0 !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu::before {
+  content: none !important;
+  display: none !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  box-sizing: border-box !important;
+  min-height: 44px !important;
+  padding: 8px 16px !important;
+  border: 2px solid #4c531f !important;
+  border-radius: 4px !important;
+  background-color: #fff !important;
+  color: #4c531f !important;
+  font-family: "Montserrat-SemiBold", "WorkSans-Medium", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a strong {
+  font: inherit !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Flecha dibujada con bordes: no la leen los lectores de pantalla */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a::after {
+  content: "" !important;
+  flex: 0 0 auto !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-top: 2px solid currentColor !important;
+  border-right: 2px solid currentColor !important;
+  transform: rotate(45deg) !important;
+}
+
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a:hover {
+  background-color: #4c531f !important;
+  color: #fff !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado {
+    padding-left: 14px !important;
+  }
+}
+
+/* El tema pone blanco + subrayado a todo span del ítem con hover (.sdm-nav-item:hover span).
+   El span del título de grupo no debe heredarlo: quedaba blanco sobre gris (~1,2:1). */
+.sdm-navbar-container nav.sdm-navbar .sdm-submenu-nav .sdm-titulo-submenu .sdm-titulo-texto,
+.sdm-navbar-container nav.sdm-navbar .sdm-nav-item:hover .sdm-submenu-nav .sdm-titulo-submenu .sdm-titulo-texto {
+  color: #4c531f !important;
+  text-decoration: none !important;
+}
