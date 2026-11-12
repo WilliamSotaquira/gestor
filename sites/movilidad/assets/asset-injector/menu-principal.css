@@ -477,23 +477,27 @@ body.modal-open .sdm-navbar-container {
   display: none !important;
 }
 
+/* Versión discreta: enlace de texto con flecha (sin caja), alineado con la fila de títulos.
+   Se distingue de los enlaces comunes por el peso y la flecha, sin competir con los grupos. */
 .sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 8px !important;
   box-sizing: border-box !important;
   min-height: 44px !important;
-  padding: 8px 16px !important;
-  border: 2px solid #4c531f !important;
-  border-radius: 4px !important;
-  background-color: #fff !important;
+  padding: 0 4px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
   color: #4c531f !important;
   font-family: "Montserrat-SemiBold", "WorkSans-Medium", sans-serif !important;
   font-size: 15px !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   line-height: 1.3 !important;
-  text-decoration: none !important;
-  transition: background-color 0.2s ease, color 0.2s ease !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 4px !important;
+  transition: none !important;
 }
 
 .sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a strong {
@@ -506,16 +510,25 @@ body.modal-open .sdm-navbar-container {
 .sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a::after {
   content: "" !important;
   flex: 0 0 auto !important;
-  width: 7px !important;
-  height: 7px !important;
+  width: 6px !important;
+  height: 6px !important;
   border-top: 2px solid currentColor !important;
   border-right: 2px solid currentColor !important;
   transform: rotate(45deg) !important;
 }
 
+/* Hover: subrayado más grueso, sin cambio de fondo */
 .sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu a:hover {
-  background-color: #4c531f !important;
-  color: #fff !important;
+  background-color: transparent !important;
+  color: #4c531f !important;
+  text-decoration-thickness: 2px !important;
+}
+
+/* Escritorio: el texto queda a la altura del texto de los títulos de grupo vecinos */
+@media (min-width: 1024px) {
+  .sdm-navbar-container nav.sdm-navbar .sdm-submenu-item.sdm-item-destacado > .sdm-titulo-submenu {
+    margin-top: -4px !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -536,4 +549,129 @@ body.modal-open .sdm-navbar-container {
 .sdm-navbar-container nav.sdm-navbar .sdm-nav-item:hover .sdm-submenu-nav .sdm-titulo-submenu .sdm-titulo-texto {
   color: #4c531f !important;
   text-decoration: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* BOTÓN DE MENÚ (móvil): ícono dibujado en CSS + texto "Menú"         */
+/* Reemplaza la imagen de barras grises del tema. Las barras pasan a X */
+/* cuando el menú está abierto. #4C531F sobre blanco ~8,2:1.           */
+/* ------------------------------------------------------------------ */
+@media (max-width: 1023px) {
+  .sdm-navbar-container button.sdm-boton-menu-navbar.sdm-boton-listo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    margin: 0 0 0 12px !important;
+    padding: 8px 14px !important;
+    border: 2px solid #4c531f !important;
+    border-radius: 4px !important;
+    background: #fff !important;
+    background-image: none !important;
+    color: #4c531f !important;
+    font-family: "Montserrat-SemiBold", "WorkSans-Medium", sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+  }
+
+  /* Abierto: relleno oscuro como indicador de estado (blanco sobre #4C531F ~8,2:1) */
+  .sdm-navbar-container button.sdm-boton-menu-navbar.sdm-boton-listo[aria-expanded="true"] {
+    background: #4c531f !important;
+    color: #fff !important;
+  }
+}
+
+/* Hover solo con puntero real: en pantallas táctiles el :hover queda "pegado" tras tocar */
+@media (max-width: 1023px) and (hover: hover) {
+  .sdm-navbar-container button.sdm-boton-menu-navbar.sdm-boton-listo:hover {
+    background: #4c531f !important;
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .sdm-navbar-container .sdm-hamburguesa {
+    position: relative !important;
+    display: inline-block !important;
+    flex: 0 0 22px !important;
+    width: 22px !important;
+    height: 16px !important;
+  }
+
+  .sdm-navbar-container .sdm-hamburguesa > span {
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2.5px !important;
+    border-radius: 2px !important;
+    background-color: currentColor !important;
+    transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease !important;
+  }
+
+  .sdm-navbar-container .sdm-hamburguesa > span:nth-child(1) { top: 0 !important; }
+  .sdm-navbar-container .sdm-hamburguesa > span:nth-child(2) { top: 6.75px !important; }
+  .sdm-navbar-container .sdm-hamburguesa > span:nth-child(3) { top: 13.5px !important; }
+
+  /* Abierto: X */
+  .sdm-navbar-container button.sdm-boton-menu-navbar[aria-expanded="true"] .sdm-hamburguesa > span:nth-child(1) {
+    top: 6.75px !important;
+    transform: rotate(45deg) !important;
+  }
+
+  .sdm-navbar-container button.sdm-boton-menu-navbar[aria-expanded="true"] .sdm-hamburguesa > span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .sdm-navbar-container button.sdm-boton-menu-navbar[aria-expanded="true"] .sdm-hamburguesa > span:nth-child(3) {
+    top: 6.75px !important;
+    transform: rotate(-45deg) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sdm-navbar-container .sdm-hamburguesa > span {
+    transition: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* BARRA DE ESCRITORIO: ítems y flechas centrados verticalmente        */
+/* Antes el texto y las flechas quedaban pegados arriba, y los ítems   */
+/* de una línea ("Inicio") no coincidían con los de dos líneas.        */
+/* ------------------------------------------------------------------ */
+@media (min-width: 1024px) {
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu {
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu > a {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-nav-item > .sdm-item-con-menu > button.sdm-item-boton {
+    align-items: center !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-item-boton .sdm-icono-submenu {
+    position: relative !important;
+    display: block !important;
+    align-self: center !important;
+    width: 16px !important;
+    height: 16px !important;
+    flex: 0 0 16px !important;
+  }
+
+  .sdm-navbar-container nav.sdm-navbar .sdm-item-boton .sdm-icono-submenu img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
 }

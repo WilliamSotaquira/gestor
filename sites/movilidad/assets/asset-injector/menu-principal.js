@@ -53,6 +53,27 @@
     if (!boton.getAttribute('aria-label')) {
       boton.setAttribute('aria-label', 'Menú principal');
     }
+
+    // Ícono propio (tres barras que pasan a X) + texto visible "Menú". Reemplaza la imagen del
+    // tema; se crea aquí porque el editor de Drupal elimina los <span> vacíos al guardar.
+    // El nombre accesible "Menú principal" contiene el texto visible "Menú" (WCAG 2.5.3).
+    if (!boton.querySelector('.sdm-hamburguesa')) {
+      while (boton.firstChild) {
+        boton.removeChild(boton.firstChild);
+      }
+      var icono = document.createElement('span');
+      icono.className = 'sdm-hamburguesa';
+      icono.setAttribute('aria-hidden', 'true');
+      for (var b = 0; b < 3; b++) {
+        icono.appendChild(document.createElement('span'));
+      }
+      var texto = document.createElement('span');
+      texto.className = 'sdm-hamburguesa-texto';
+      texto.textContent = 'Menú';
+      boton.appendChild(icono);
+      boton.appendChild(texto);
+      boton.classList.add('sdm-boton-listo');
+    }
     nav.style.removeProperty('display');
 
     var items = Array.prototype.slice

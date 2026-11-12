@@ -48,6 +48,7 @@ El HTML del bloque no trae estilos ni scripts propios. Los aporta el tema `custo
 - Agrupa cada lista bajo su título (`role="group"` + `aria-labelledby`).
 - Iguala la altura de los títulos de grupo que comparten fila en el megamenú.
 - Detecta enlaces sueltos sin lista (p. ej. «Histórico de Noticias») y los marca como enlace destacado.
+- Construye el ícono del botón de menú (barras + texto «Menú»). Se crea por JS porque el editor de Drupal elimina los `<span>` vacíos al guardar.
 - `aria-current="page"` en el enlace que coincide con la URL actual.
 
 ### CSS (`menu-principal.css`)
@@ -58,8 +59,10 @@ El HTML del bloque no trae estilos ni scripts propios. Los aporta el tema `custo
 - **Títulos de grupo** (Notificaciones, Contratación…): verde oscuro `#4C531F`, 15 px, negrita, línea inferior de 2 px y barra de acento lima `#BED000`; enlaces hijos con sangría de 14 px.
 - Separador único para todos los enlaces de submenú: 1 px gris `#C7CACC` (incluye «Participa»).
 - Megamenú de escritorio con columnas alineadas a la izquierda y 24 px entre columnas.
-- **Enlace destacado** («Histórico de Noticias»): botón de contorno de 2 px `#4C531F`, flecha dibujada en CSS (no la leen los lectores de pantalla), relleno al pasar el mouse, 44 px de alto.
+- **Enlace destacado** («Histórico de Noticias»): enlace de texto semibold, subrayado, en `#4C531F` (7,1:1 sobre el gris del menú), con flecha dibujada en CSS que no leen los lectores de pantalla; sin caja ni fondo para no competir con los grupos; alineado con la fila de títulos; 44 px de área táctil.
 - Los títulos de grupo no heredan el blanco subrayado que el tema aplica a todos los `span` al pasar el mouse.
+- **Botón de menú (móvil):** el JS reemplaza la imagen de barras grises del tema por un ícono dibujado en CSS (tres barras que pasan a X al abrir) y el texto visible «Menú». Borde de 2 px y texto `#4C531F` sobre blanco (8,2:1); abierto, se rellena en `#4C531F` con texto blanco. El hover solo aplica con puntero real, para que no quede pegado tras tocar. La animación se desactiva con «reducir movimiento». El nombre accesible «Menú principal» contiene el texto visible (WCAG 2.5.3). Si el JS no carga, se mantiene la imagen original.
+- **Barra de escritorio:** texto y flechas de todos los ítems centrados verticalmente en la fila, también los de una línea («Inicio», «Participa») junto a los de dos.
 
 ## Publicación
 
@@ -87,6 +90,9 @@ Pruebas automatizadas en Chrome sin interfaz, con la portada real del portal, el
 | Área táctil: filas 48 px, enlaces 44 px, botón 44 × 44 px | OK |
 | Títulos de grupo alineados por fila (clic y hover, 1024/1140/1280 px) | OK |
 | Separadores iguales en los cuatro submenús | OK |
+| Barra de escritorio: texto y flechas centrados (1024/1140/1280 px) | OK, desvío 0 px |
+| Botón de menú: 103 × 44 px, X al abrir, sin hover pegado tras tocar, nombre accesible contiene «Menú» | OK |
+| «Histórico de Noticias»: enlace de texto alineado con los títulos vecinos | OK, desvío 0,9 px |
 | Contraste de texto (incluido con hover): mínimo 7,1:1 | OK |
 | axe-core, reglas WCAG 2.0, 2.1 y 2.2 A/AA, menú cerrado y abierto | 0 violaciones |
 
