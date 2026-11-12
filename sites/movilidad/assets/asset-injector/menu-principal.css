@@ -557,6 +557,7 @@ body.modal-open .sdm-navbar-container {
 /* cuando el menú está abierto. #4C531F sobre blanco ~8,2:1.           */
 /* ------------------------------------------------------------------ */
 @media (max-width: 1023px) {
+  /* Misma identidad que los ítems de la barra: texto negro Work Sans sobre el gris, sin caja */
   .sdm-navbar-container button.sdm-boton-menu-navbar.sdm-boton-listo {
     display: inline-flex !important;
     align-items: center !important;
@@ -564,32 +565,32 @@ body.modal-open .sdm-navbar-container {
     box-sizing: border-box !important;
     min-width: 44px !important;
     min-height: 44px !important;
-    margin: 0 0 0 12px !important;
-    padding: 8px 14px !important;
-    border: 2px solid #4c531f !important;
-    border-radius: 4px !important;
-    background: #fff !important;
+    margin: 0 0 0 8px !important;
+    padding: 8px 12px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
     background-image: none !important;
-    color: #4c531f !important;
-    font-family: "Montserrat-SemiBold", "WorkSans-Medium", sans-serif !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
+    color: #000 !important;
+    font-family: "WorkSans-Medium", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
     line-height: 1 !important;
     cursor: pointer !important;
   }
 
-  /* Abierto: relleno oscuro como indicador de estado (blanco sobre #4C531F ~8,2:1) */
+  /* Abierto: lima institucional, igual que el ítem activo de la barra (negro sobre #BED000 ~12:1) */
   .sdm-navbar-container button.sdm-boton-menu-navbar.sdm-boton-listo[aria-expanded="true"] {
-    background: #4c531f !important;
-    color: #fff !important;
+    background: var(--color-primario, #bed000) !important;
+    color: #000 !important;
   }
 }
 
 /* Hover solo con puntero real: en pantallas táctiles el :hover queda "pegado" tras tocar */
 @media (max-width: 1023px) and (hover: hover) {
-  .sdm-navbar-container button.sdm-boton-menu-navbar.sdm-boton-listo:hover {
-    background: #4c531f !important;
-    color: #fff !important;
+  .sdm-navbar-container button.sdm-boton-menu-navbar.sdm-boton-listo:hover .sdm-hamburguesa-texto {
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
   }
 }
 
@@ -606,7 +607,7 @@ body.modal-open .sdm-navbar-container {
     position: absolute !important;
     left: 0 !important;
     width: 100% !important;
-    height: 2.5px !important;
+    height: 2px !important;
     border-radius: 2px !important;
     background-color: currentColor !important;
     transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease !important;

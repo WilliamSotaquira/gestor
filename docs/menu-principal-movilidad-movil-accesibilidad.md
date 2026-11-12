@@ -61,7 +61,7 @@ El HTML del bloque no trae estilos ni scripts propios. Los aporta el tema `custo
 - Megamenú de escritorio con columnas alineadas a la izquierda y 24 px entre columnas.
 - **Enlace destacado** («Histórico de Noticias»): enlace de texto semibold, subrayado, en `#4C531F` (7,1:1 sobre el gris del menú), con flecha dibujada en CSS que no leen los lectores de pantalla; sin caja ni fondo para no competir con los grupos; alineado con la fila de títulos; 44 px de área táctil.
 - Los títulos de grupo no heredan el blanco subrayado que el tema aplica a todos los `span` al pasar el mouse.
-- **Botón de menú (móvil):** el JS reemplaza la imagen de barras grises del tema por un ícono dibujado en CSS (tres barras que pasan a X al abrir) y el texto visible «Menú». Borde de 2 px y texto `#4C531F` sobre blanco (8,2:1); abierto, se rellena en `#4C531F` con texto blanco. El hover solo aplica con puntero real, para que no quede pegado tras tocar. La animación se desactiva con «reducir movimiento». El nombre accesible «Menú principal» contiene el texto visible (WCAG 2.5.3). Si el JS no carga, se mantiene la imagen original.
+- **Botón de menú (móvil):** el JS reemplaza la imagen de barras grises del tema por un ícono dibujado en CSS (tres barras que pasan a X al abrir) y el texto visible «Menú». Sigue la identidad de la barra: texto negro en Work Sans Medium 14 px sobre el gris, sin caja (18,2:1); abierto, fondo lima `#BED000` como el ítem activo (12,2:1). Con puntero real, el hover subraya el texto; en pantallas táctiles no hay hover para que no quede pegado tras tocar. La animación se desactiva con «reducir movimiento». El nombre accesible «Menú principal» contiene el texto visible (WCAG 2.5.3). Si el JS no carga, se mantiene la imagen original.
 - **Barra de escritorio:** texto y flechas de todos los ítems centrados verticalmente en la fila, también los de una línea («Inicio», «Participa») junto a los de dos.
 
 ## Publicación
@@ -91,7 +91,7 @@ Pruebas automatizadas en Chrome sin interfaz, con la portada real del portal, el
 | Títulos de grupo alineados por fila (clic y hover, 1024/1140/1280 px) | OK |
 | Separadores iguales en los cuatro submenús | OK |
 | Barra de escritorio: texto y flechas centrados (1024/1140/1280 px) | OK, desvío 0 px |
-| Botón de menú: 103 × 44 px, X al abrir, sin hover pegado tras tocar, nombre accesible contiene «Menú» | OK |
+| Botón de menú: 91 × 44 px, X al abrir, misma tipografía que los ítems, sin fondo pegado tras tocar, foco visible, nombre accesible contiene «Menú» | OK |
 | «Histórico de Noticias»: enlace de texto alineado con los títulos vecinos | OK, desvío 0,9 px |
 | Contraste de texto (incluido con hover): mínimo 7,1:1 | OK |
 | axe-core, reglas WCAG 2.0, 2.1 y 2.2 A/AA, menú cerrado y abierto | 0 violaciones |
