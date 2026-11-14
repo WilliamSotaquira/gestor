@@ -1,200 +1,154 @@
 <div class="container">
     <style>
-        .subastas-abandonados p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #4c4c4c;
-        }
-        .subastas-abandonados h2 {
-            color: #4D541F;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-        }
-        .subastas-abandonados h3 {
-            color: #4D541F;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .subastas-abandonados a {
-            color: #4D541F;
-            font-weight: 600;
-        }
-        .subastas-abandonados a:hover {
-            color: #A6B517;
-        }
+        .subastas-abandonados p { font-size: 1rem; line-height: 1.7; color: #4c4c4c; }
+        .subastas-abandonados h2 { color: #4D541F; font-size: 1.4rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .subastas-abandonados h3 { color: #4D541F; font-size: 1.2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 1rem; }
+        .subastas-abandonados a { color: #4D541F; font-weight: 600; }
+        .subastas-abandonados a:hover { color: #A6B517; }
 
         /* Timeline */
-        .timeline-pasos {
-            position: relative;
-            padding-left: 3.5rem;
-            margin: 1.5rem 0 2rem;
-        }
-        .timeline-pasos::before {
-            content: '';
-            position: absolute;
-            left: 1.25rem;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #BED000 0%, #4D541F 100%);
-            border-radius: 2px;
-        }
-        .timeline-paso {
-            position: relative;
-            margin-bottom: 2rem;
-            padding: 1.25rem 1.5rem;
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(77, 84, 31, 0.06);
-        }
-        .timeline-paso:last-child {
-            margin-bottom: 0;
-        }
-        .timeline-paso::before {
-            content: attr(data-step);
-            position: absolute;
-            left: -3.5rem;
-            top: 1.25rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            background: #BED000;
-            color: #1f1f1f;
-            font-weight: 800;
-            font-size: 1.1rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 6px rgba(190, 208, 0, 0.4);
-            z-index: 1;
-        }
-        .timeline-paso:nth-child(2)::before {
-            background: #A6B517;
-        }
-        .timeline-paso:nth-child(3)::before {
-            background: #8a9a12;
-            color: #fff;
-        }
-        .timeline-paso:last-child::before {
-            background: #4D541F;
-            color: #fff;
-        }
-        .timeline-paso__titulo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: #4D541F;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.01em;
-        }
-        .timeline-paso__desc {
-            font-size: 0.95rem;
-            color: #4c4c4c;
-            line-height: 1.6;
-            margin: 0;
-        }
-        .timeline-paso__desc a {
-            color: #4D541F;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-        .timeline-paso__desc a:hover {
-            color: #A6B517;
-        }
-        .btn-sdm {
-            display: inline-block;
-            background: #BED000;
-            color: #1f1f1f;
-            font-weight: 700;
-            font-size: 0.95rem;
-            padding: 0.7rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-top: 0.75rem;
-            transition: background 0.2s;
-        }
-        .btn-sdm:hover {
-            background: #A6B517;
-            color: #1f1f1f;
-            text-decoration: none;
-        }
+        .timeline-pasos { position: relative; padding-left: 3.5rem; margin: 1.5rem 0 2rem; }
+        .timeline-pasos::before { content: ''; position: absolute; left: 1.25rem; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #BED000 0%, #4D541F 100%); border-radius: 2px; }
+        .timeline-paso { position: relative; margin-bottom: 2rem; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; box-shadow: 0 2px 8px rgba(77, 84, 31, 0.06); }
+        .timeline-paso:last-child { margin-bottom: 0; }
+        .timeline-paso::before { content: attr(data-step); position: absolute; left: -3.5rem; top: 1.25rem; width: 2.5rem; height: 2.5rem; background: #BED000; color: #1f1f1f; font-weight: 800; font-size: 1.1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(190, 208, 0, 0.4); z-index: 1; }
+        .timeline-paso:nth-child(2)::before { background: #A6B517; }
+        .timeline-paso:nth-child(3)::before { background: #8a9a12; color: #fff; }
+        .timeline-paso:last-child::before { background: #4D541F; color: #fff; }
+        .timeline-paso__titulo { font-weight: 800; font-size: 1.2rem; color: #4D541F; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+        .timeline-paso__desc { font-size: 0.95rem; color: #4c4c4c; line-height: 1.6; margin: 0; }
+        .timeline-paso__desc a { color: #4D541F; font-weight: 600; text-decoration: underline; }
+        .timeline-paso__desc a:hover { color: #A6B517; }
+        .btn-sdm { display: inline-block; background: #BED000; color: #1f1f1f; font-weight: 700; font-size: 0.95rem; padding: 0.7rem 1.5rem; border-radius: 6px; text-decoration: none; margin-top: 0.75rem; transition: background 0.2s; }
+        .btn-sdm:hover { background: #A6B517; color: #1f1f1f; text-decoration: none; }
+        .alerta-no-intermediarios { background: #f8f9e8; border-left: 4px solid #BED000; padding: 1rem 1.25rem; margin-top: 2rem; border-radius: 0 6px 6px 0; }
+        .alerta-no-intermediarios p { margin: 0; font-size: 0.95rem; color: #1f1f1f; }
+        .timeline-paso__subtitulo { font-weight: 800; font-size: 1.05rem; color: #4D541F; margin: 1.25rem 0 0.5rem; }
+        .timeline-paso__lista { font-size: 0.95rem; color: #4c4c4c; line-height: 1.6; padding-left: 1.25rem; margin: 0 0 0.5rem; }
+        .timeline-paso__lista li { margin-bottom: 0.5rem; }
 
-        .alerta-no-intermediarios {
-            background: #f8f9e8;
-            border-left: 4px solid #BED000;
-            padding: 1rem 1.25rem;
-            margin-top: 2rem;
-            border-radius: 0 6px 6px 0;
-        }
-        .alerta-no-intermediarios p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #1f1f1f;
-        }
+        /* Desplegables (listados históricos) */
+        .subastas-abandonados details { margin: 0.75rem 0; border: 1px solid #e5e5e5; border-radius: 6px; overflow: hidden; }
+        .subastas-abandonados summary { background: #A6B517; color: #000; font-weight: 600; padding: 0.75rem 1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .subastas-abandonados summary::-webkit-details-marker { display: none; }
+        .subastas-abandonados summary::after { content: "\25BC"; font-size: 0.8rem; transition: transform 0.2s; }
+        .subastas-abandonados details[open] summary::after { transform: rotate(180deg); }
+        .subastas-abandonados summary:focus-visible { outline: 3px solid #1f1f1f; outline-offset: -3px; }
+        .subastas-abandonados .panel-body { background: #fff; padding: 1rem 1.25rem; }
     </style>
 
     <div class="subastas-abandonados">
         <p>
-            La Ley 1730 de 2014 faculta a la Secretaría Distrital de Movilidad para declarar el abandono de los vehículos inmovilizados, y que actualmente se encuentran en los patios de la entidad, cuyo ingreso se originó por la comisión de una infracción a las normas de tránsito y que, por su permanencia superior a un (1) año en los mismos; sin que el propietario y/o poseedor los hayan reclamados, pueden ser enajenados a través de subasta.
+            La Ley 1730 de 2014 faculta a la Secretaría Distrital de Movilidad para declarar en abandono aquellos vehículos inmovilizados en los patios de la entidad por infracciones a las normas de tránsito, que permanezcan allí por más de un (1) año sin ser reclamados. Una vez declarado el abandono, estos bienes pueden ser enajenados mediante subasta pública para labores de fundición y disposición final.
         </p>
 
         <div class="py-4">
             <img class="img-fluid" src="/sites/default/files/2025-08/imgi_36_abandonados_1.jpg" alt="Vehículos inmovilizados en patios de la Secretaría Distrital de Movilidad declarados en abandono" width="1920" height="855">
         </div>
 
-        <h2>Declaración de abandono</h2>
-        <p>
-            Para declarar los vehículos en abandono, la Secretaría Distrital de Movilidad publica por una sola vez en un periódico de amplia circulación nacional, el listado de los vehículos. Podrá consultarlas en el siguiente enlace:
-        </p>
-        <p>
-            <a href="/ley-1730-de-2014" class="btn-sdm">Consultar listado de vehículos →</a>
-        </p>
-        <p>
-            Dentro de los quince (15) días hábiles siguientes a la publicación, el propietario y/o poseedor del vehículo deberá presentarse para subsanar la causa que dio lugar a la inmovilización y cancelar lo adeudado por concepto de servicios de parqueadero y/o grúa.
-        </p>
-        <p>
-            Vencido el término de reclamación del vehículo, si el propietario y/o poseedor no ha subsanado la obligación, la ley autoriza al organismo de tránsito para que mediante acto administrativo declare en abandono el vehículo inmovilizado.
-        </p>
+        <h2>Proceso de declaratoria de abandono y subasta de vehículos inmovilizados</h2>
 
-        <h2>¿Cómo participar en la subasta?</h2>
-        <p>
-            Una vez el intermediario comercial dé apertura de la subasta, los ciudadanos podrán verificar los detalles del lote a subastar, hacer sus pujas y consultar en tiempo real el proceso de compra.
-        </p>
-        <p>
-            Con el dinero obtenido de la enajenación del bien, se cancelarán los valores generados por la misma, y lo adeudado por concepto de patios y/o servicio de grúas.
-        </p>
-        <p>
-            La implementación de la Ley 1730 de 2014 contribuye con el propósito 2 del Plan Distrital de Desarrollo 2020-2024, a través del cual la administración distrital busca mitigar el cambio climático. Del lote de vehículos declarados en abandono y que se encuentran próximos a subastar, se encuentran automóviles, camionetas, camperos y motocicletas. Estos vehículos deberán ser destinados para labores de fundición y disposición final de los residuos y, en consecuencia, no pueden ser usados para autopartes.
-        </p>
-
-        <h3>Siga estos pasos para participar</h3>
-
-        <div class="timeline-pasos" role="list" aria-label="Pasos para participar en la subasta">
+        <div class="timeline-pasos" role="list" aria-label="Etapas del proceso de declaratoria de abandono y subasta">
             <div class="timeline-paso" data-step="1" role="listitem">
-                <p class="timeline-paso__titulo">Regístrese en la plataforma</p>
-                <p class="timeline-paso__desc">Ingrese al sitio del intermediario comercial y complete su registro para poder participar en la subasta.</p>
-                <a href="https://naveltda.com.co/producto/mil-trescientos-sesenta-1-360-automotores-catalogados-como-chatarra-desintegracion-s-d-m/" target="_blank" rel="noopener noreferrer" class="btn-sdm">Ir a la Subasta 31 →</a>
+                <p class="timeline-paso__titulo">Publicación</p>
+                <p class="timeline-paso__desc">
+                    Para iniciar el trámite de declaratoria de abandono, la Secretaría Distrital de Movilidad publica por una sola vez, en un periódico de amplia circulación, el listado oficial de los vehículos inmovilizados.
+                </p>
+                <p>
+                    <a class="btn-sdm" href="/ley-1730-de-2014">Consultar listado de vehículos inmovilizados →</a>
+                </p>
             </div>
+
             <div class="timeline-paso" data-step="2" role="listitem">
-                <p class="timeline-paso__titulo">Habilítese para ofertar</p>
-                <p class="timeline-paso__desc">Complete los requisitos de habilitación solicitados por el intermediario comercial. Esto le permitirá realizar pujas dentro de la plataforma.</p>
+                <p class="timeline-paso__titulo">Declaratoria de abandono</p>
+                <p class="timeline-paso__desc">
+                    Dentro de los quince (15) días hábiles siguientes a la publicación, el propietario y/o poseedor del vehículo deberá presentarse para subsanar la causa que dio lugar a la inmovilización y cancelar lo adeudado por concepto de servicios de parqueadero y/o grúa.
+                </p>
+                <p class="timeline-paso__desc mt-2">
+                    Vencido el término de reclamación del vehículo, si el propietario y/o poseedor no ha subsanado la obligación, la ley autoriza al organismo de tránsito para que mediante acto administrativo declare en abandono el vehículo inmovilizado.
+                </p>
             </div>
+
             <div class="timeline-paso" data-step="3" role="listitem">
-                <p class="timeline-paso__titulo">Oferte por el lote de su interés</p>
-                <p class="timeline-paso__desc">Revise los lotes disponibles, elija el de su preferencia y realice su oferta económica directamente en la plataforma.</p>
+                <p class="timeline-paso__titulo">Notificación de la declaratoria de abandono</p>
+                <p class="timeline-paso__desc">
+                    Vencido el término de reclamación, sin que se haya subsanado la causa de inmovilización, la Secretaría Distrital de Movilidad expide los actos administrativos de declaratoria de abandono e imposición de título, conforme a lo establecido en el Código de Procedimiento Administrativo y de lo Contencioso Administrativo (Ley 1437 de 2011).
+                </p>
+                <p>
+                    <a class="btn-sdm" href="/patios_y_gruas">Consultar notificaciones de actos administrativos →</a>
+                </p>
             </div>
+
             <div class="timeline-paso" data-step="4" role="listitem">
-                <p class="timeline-paso__titulo">Espere el cierre de la subasta</p>
-                <p class="timeline-paso__desc">Esté pendiente el día de cierre. El intermediario le notificará si su oferta resultó ganadora y los pasos siguientes para el pago y retiro del lote.</p>
+                <p class="timeline-paso__titulo">Subasta pública de vehículos</p>
+                <p class="timeline-paso__desc">
+                    Una vez confirmada y notificada la declaratoria de abandono, los vehículos se subastan públicamente. De los recursos recaudados se deducen los costos de enajenación y el restante se envía a una cuenta especial a favor del propietario de cada vehículo, la cual puede ser objeto de cobro coactivo.
+                </p>
+
+                <h3 class="timeline-paso__subtitulo">1. Pliego de condiciones definitivo</h3>
+                <p class="timeline-paso__desc">
+                    Antes de cada proceso, se publica el pliego definitivo en el que se detallan las condiciones técnicas, jurídicas, financieras y los requisitos indispensables para participar.
+                </p>
+                <p class="timeline-paso__desc mt-2">
+                    <a href="https://www.movilidadbogota.gov.co/sites/default/files/2026-11-13/131126%20revisado%20pliego%20de%20condiciones%20minimas%20subasta34%20sdm%20nov2026.pdf" target="_blank" rel="noopener noreferrer">Pliego de condiciones definitivo Subasta Pública N.º 34 – Lote 1 (PDF)</a>
+                </p>
+                <!--
+                    PENDIENTE (propuesta del área): listado histórico de pliegos.
+                    Publicar cuando el área entregue los enlaces. Estructura sugerida:
+                    <details>
+                        <summary>Histórico de pliegos de condiciones definitivos</summary>
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="URL_DEL_PLIEGO">Pliego definitivo Subasta N.º XX</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                -->
+
+                <h3 class="timeline-paso__subtitulo">2. Pasos para participar en la subasta</h3>
+                <ol class="timeline-paso__lista">
+                    <li data-list-item-id="e4fb10b393d7a021cdb6ef35b1176fdb2">
+                        <strong>Registro:</strong> ingrese a la plataforma del intermediario comercial autorizado y complete sus datos.
+                        <!--
+                            Mostrar el siguiente botón SOLO mientras haya una subasta en curso; fuera de las fechas, mantenerlo comentado.
+                            <br>
+                            <a href="URL_DE_LA_SUBASTA_VIGENTE" target="_blank" rel="noopener noreferrer" class="btn-sdm">Ir a la subasta vigente →</a>
+                        -->
+                    </li>
+                    <li data-list-item-id="e1356bdce4dc01e84a75afde039897ca7">
+                        <strong>Habilitación para ofertar:</strong> cargue los documentos y cumpla con los requisitos solicitados para quedar habilitado en el sistema de pujas.
+                    </li>
+                    <li data-list-item-id="e44a4bf397e043f0f82f9584ec7698a66">
+                        <strong>Oferta:</strong> revise los lotes disponibles, seleccione el de su interés y formule su oferta económica en tiempo real.
+                    </li>
+                    <li data-list-item-id="e152132d8e4c8059c7f859d8254ac2b09">
+                        <strong>Cierre de la subasta:</strong> esté atento a la fecha y hora de cierre. Si su puja resultó ganadora durante el desarrollo de la subasta, podrá proceder con el pago y el retiro del lote.
+                    </li>
+                </ol>
+
+                <h3 class="timeline-paso__subtitulo">3. Acta de adjudicación</h3>
+                <p class="timeline-paso__desc">
+                    Al concluir la jornada de subasta, se emite y publica el acta oficial de adjudicación que formaliza el resultado de la puja y la asignación del lote a la oferta ganadora.
+                </p>
+                <!--
+                    PENDIENTE (propuesta del área): listado histórico de actas.
+                    Publicar cuando el área entregue los enlaces. Estructura sugerida:
+                    <details>
+                        <summary>Histórico de actas de adjudicación</summary>
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="URL_DEL_ACTA">Acta de adjudicación Subasta N.º XX</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                -->
             </div>
         </div>
 
-        <div class="alerta-no-intermediarios">
-            <p><strong>⚠️ No acepte intermediarios.</strong> Realice el proceso únicamente a través de los canales oficiales indicados en esta página.</p>
+        <div class="alerta-no-intermediarios" role="note">
+            <p>
+                <strong>⚠️ Aviso de seguridad:</strong> no acepte la intermediación de terceros, ni pague por formularios. Todo el proceso es público y se realiza únicamente a través de los canales oficiales habilitados por la Secretaría Distrital de Movilidad y el intermediario comercial designado.
+            </p>
         </div>
     </div>
 </div>
