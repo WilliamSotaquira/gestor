@@ -36,3 +36,7 @@ ltm/runtime/*
 ltm/reports/*
 ltm/snapshots/*
 # --- /ltm-power ---
+
+# Material temporal de solicitudes
+.tmp-solicitudes/
+.tmp-insumos-area-tecnica/
