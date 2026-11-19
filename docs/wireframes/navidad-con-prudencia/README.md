@@ -11,4 +11,4 @@ Doble clic sobre el archivo HTML (no requiere instalación ni compilación). Son
 | Propuesta | Archivo | Enfoque |
 |---|---|---|
 | A | `E:\gestor\docs\wireframes\navidad-con-prudencia\propuesta-a-tarjetas.html` | Página larga con menú superior fijo, portada con imagen grande y todo en tarjetas: perfiles, actividades y acciones numeradas. Visual, para explorar. |
-| B | `E:\gestor\docs\wireframes\navidad-con-prudencia\propuesta-b-lateral.html` | Menú lateral fijo (en móvil pasa a barra superior), portada textual, perfiles y acciones en acordeones, actividades en tabla comparativa (en móvil se apilan). Informativa y compacta. |
+| B | `E:\gestor\docs\wireframes\navidad-con-prudencia\propuesta-b-lateral.html` | Menú lateral fijo y delgado (en móvil pasa a barra superior), contenido a todo el ancho: portada en dos columnas (texto e ilustración), perfiles y acciones en acordeones dispuestos en columnas, actividades en tabla comparativa (en móvil se apilan). Informativa y compacta. |
