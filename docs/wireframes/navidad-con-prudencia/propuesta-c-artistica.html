@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wireframe C · Navidad con Prudencia · El camino de las luces</title>
+<style>
+:root{--verde:#BED000;--verde-medio:#A5B417;--oliva-medio:#818E26;--oliva-oscuro:#4C531F;--claro-3:#E2E8AC;--claro-4:#EFF2D8;--negro:#1A1A1A;--blanco:#FFFFFF}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.55 Georgia,"Times New Roman",serif;color:var(--negro);background:var(--claro-4);overflow-x:hidden;padding-bottom:84px}
+h1,h2,h3,.sans,nav,.test,dt,button{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif}
+h1,h2,h3{margin:0 0 .4rem;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--negro);outline-offset:3px}
+.test{display:inline-block;background:var(--claro-3);color:var(--negro);border:1px dashed var(--oliva-oscuro);font-size:12px;font-weight:700;letter-spacing:.04em;padding:2px 9px;border-radius:99px}
+.wrap{width:min(1280px,100%);margin:auto;padding:0 clamp(1rem,4vw,3rem)}
+.ph{background:repeating-linear-gradient(45deg,var(--claro-3),var(--claro-3) 8px,var(--claro-4) 8px,var(--claro-4) 16px);border:2px dashed var(--oliva-medio);display:flex;align-items:center;justify-content:center;text-align:center;font:13px "Trebuchet MS",sans-serif;color:#333}
+
+/* Dock de navegación */
+nav.dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:20;display:flex;gap:4px;background:var(--oliva-oscuro);padding:6px;border-radius:99px;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:calc(100% - 16px)}
+nav.dock a{display:flex;align-items:center;gap:.4rem;color:var(--blanco);text-decoration:none;font-weight:700;font-size:15px;padding:.6rem 1rem;border-radius:99px;white-space:nowrap}
+nav.dock a i{font-style:normal;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--verde);color:var(--negro);display:grid;place-items:center;font-size:12px}
+nav.dock a:hover,nav.dock a.on{background:var(--verde);color:var(--negro)}
+nav.dock a:hover i,nav.dock a.on i{background:var(--oliva-oscuro);color:var(--blanco)}
+@media(max-width:560px){nav.dock a span{display:none}nav.dock a{padding:.6rem .8rem}nav.dock a i{width:1.7rem;height:1.7rem;font-size:14px}}
+
+/* Portada */
+.portada{position:relative;background:var(--oliva-oscuro);color:var(--blanco);min-height:100vh;display:grid;align-items:center;overflow:hidden;padding:5rem 0 4rem}
+.portada .luces{position:absolute;top:0;left:0;width:100%;height:90px}
+.blob{position:absolute;border-radius:58% 42% 61% 39%/45% 55% 45% 55%}
+.b1{width:60vw;height:60vw;max-width:760px;max-height:760px;right:-12vw;top:12%;background:var(--verde)}
+.b2{width:28vw;height:28vw;max-width:340px;max-height:340px;right:30vw;bottom:-8%;background:var(--oliva-medio)}
+.b3{width:14vw;height:14vw;min-width:90px;min-height:90px;left:-4vw;bottom:14%;background:var(--claro-3)}
+.portada .wrap{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:2rem;align-items:center}
+.portada h1{font-size:clamp(3.2rem,11vw,9rem);letter-spacing:-.04em;font-weight:900}
+.portada h1 em{display:block;font-style:normal;color:var(--verde)}
+.portada p.lead{font-size:clamp(1.05rem,2vw,1.35rem);max-width:34em}
+.portada .test{margin-bottom:1rem}
+.cta{display:inline-block;margin-top:1rem;background:var(--verde);color:var(--negro);font:800 1.05rem "Trebuchet MS",sans-serif;text-decoration:none;padding:.9rem 1.6rem;border-radius:99px;border:3px solid var(--blanco)}
+.cta:hover{background:var(--blanco)}
+.arte{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;justify-self:center}
+.arte .ph{position:absolute;inset:12%;border-radius:50%;background:var(--claro-4);color:var(--negro);border-color:var(--oliva-oscuro);padding:1rem}
+.arte svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* Secciones */
+section{position:relative;padding:clamp(4rem,9vw,8rem) 0}
+.num-g{position:absolute;right:2vw;top:.5rem;font:900 clamp(8rem,28vw,24rem)/1 "Trebuchet MS",sans-serif;color:var(--claro-3);opacity:.7;pointer-events:none;user-select:none}
+.tit{position:relative}
+.tit h2{font-size:clamp(2.6rem,8vw,6.5rem);letter-spacing:-.03em;font-weight:900;color:var(--oliva-oscuro)}
+.tit p{max-width:42em;font-size:1.15rem}
+.ola{display:block;width:100%;height:60px;position:absolute;left:0;top:-59px}
+
+/* Recomendaciones */
+#reco{background:var(--claro-4)}
+.perfiles{display:grid;grid-template-columns:minmax(260px,1fr) 2fr;gap:clamp(1rem,3vw,3rem);margin-top:2.5rem;position:relative}
+.chips{display:flex;flex-direction:column;gap:.6rem}
+.chips button{cursor:pointer;text-align:left;font-weight:800;font-size:1.15rem;color:var(--negro);background:var(--blanco);border:3px solid var(--oliva-oscuro);padding:.8rem 1.2rem;border-radius:99px 24px 99px 24px;transition:transform .15s}
+.chips button:hover{transform:translateX(6px)}
+.chips button[aria-selected=true]{background:var(--oliva-oscuro);color:var(--blanco);transform:translateX(14px)}
+.escena{background:var(--verde);border:3px solid var(--oliva-oscuro);border-radius:48px 120px 48px 120px;padding:clamp(1.5rem,4vw,3.5rem);display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;min-height:300px;position:relative;overflow:hidden}
+.escena .ph{width:clamp(110px,18vw,220px);aspect-ratio:1;border-radius:50%;background:var(--claro-4);border-color:var(--oliva-oscuro)}
+.escena h3{font-size:clamp(1.8rem,4vw,3rem);color:var(--negro)}
+.escena p{font-size:clamp(1.15rem,2vw,1.6rem);margin:0;color:var(--negro)}
+.escena small{font:700 13px "Trebuchet MS",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.duo{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.panel{border:3px solid var(--oliva-oscuro);padding:1.6rem 2rem;position:relative}
+.panel.tp{background:var(--oliva-oscuro);color:var(--blanco);border-radius:30px 90px 30px 30px}
+.panel.tx{background:var(--blanco);border-radius:90px 30px 30px 30px}
+.panel h3{font-size:2rem}
+.panel ul{padding-left:1.1rem;margin:.6rem 0 0}.panel li{margin:.3rem 0}
+.panel .test{margin-left:.3rem}
+.qr{width:96px;height:96px;margin-top:.8rem;border-radius:12px}
+
+/* Actividades: boletos */
+#act{background:var(--oliva-oscuro);color:var(--blanco);overflow:hidden}
+#act .tit h2{color:var(--verde)}#act .num-g{color:var(--oliva-medio);opacity:.35}
+#act .tit p{color:var(--blanco)}
+.boletos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:2rem 1.5rem;margin-top:3rem;position:relative}
+.boleto{position:relative;background:var(--claro-4);color:var(--negro);border-radius:22px;display:flex;flex-direction:column;transition:transform .2s}
+.boleto:nth-child(4n+1){transform:rotate(-1.6deg)}.boleto:nth-child(4n+2){transform:translateY(22px) rotate(1.2deg)}.boleto:nth-child(4n+3){transform:rotate(1.6deg)}.boleto:nth-child(4n+4){transform:translateY(22px) rotate(-1.2deg)}
+.boleto:hover{transform:rotate(0) scale(1.03);z-index:2}
+.boleto .ph{height:120px;border-radius:22px 22px 0 0;border-width:0 0 2px}
+.boleto .cuerpo{padding:1rem 1.3rem 1.2rem}
+.boleto h3{font-size:1.4rem;color:var(--oliva-oscuro)}
+.boleto .corte{height:0;border-top:3px dotted var(--oliva-medio);margin:0 1.2rem;position:relative}
+.boleto .corte::before,.boleto .corte::after{content:"";position:absolute;top:-14px;width:26px;height:26px;border-radius:50%;background:var(--oliva-oscuro)}
+.boleto .corte::before{left:-2.1rem}.boleto .corte::after{right:-2.1rem}
+.boleto dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.25rem .8rem;font-size:15px}
+.boleto dt{font-weight:800;color:var(--oliva-oscuro)}.boleto dd{margin:0}
+.fecha{position:absolute;top:84px;right:14px;background:var(--verde);color:var(--negro);font:900 13px "Trebuchet MS",sans-serif;padding:.45rem .8rem;border-radius:99px;border:2px solid var(--oliva-oscuro)}
+#act .test{background:var(--verde);border-color:var(--blanco)}
+
+/* Acciones: señales */
+#acc{background:var(--claro-3)}
+.camino{position:relative;margin-top:3rem;display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem clamp(1rem,6vw,6rem)}
+.camino::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:0;border-left:6px dashed var(--oliva-oscuro);transform:translateX(-50%)}
+.senal{position:relative;display:flex;gap:1.1rem;align-items:flex-start;background:var(--blanco);border:3px solid var(--oliva-oscuro);padding:1.2rem 1.4rem;border-radius:26px}
+.senal:nth-child(even){margin-top:3rem}
+.disco{flex:none;width:68px;height:68px;border-radius:50%;background:var(--verde);border:5px solid var(--oliva-oscuro);display:grid;place-items:center;font:900 1.9rem "Trebuchet MS",sans-serif;color:var(--negro);outline:4px solid var(--blanco)}
+.senal:nth-child(3n+2) .disco{border-radius:14px;transform:rotate(45deg)}.senal:nth-child(3n+2) .disco b{transform:rotate(-45deg)}
+.senal h3{font-size:1.3rem;color:var(--oliva-oscuro)}
+.senal p{margin:.2rem 0 0;font-size:16px}
+
+footer{background:var(--negro);color:var(--blanco);text-align:center;padding:2rem 1rem;font:14px "Trebuchet MS",sans-serif}
+
+@media(max-width:900px){
+.portada .wrap,.perfiles,.duo{grid-template-columns:1fr}
+.arte{max-width:340px;order:-1}
+.chips{flex-direction:row;flex-wrap:wrap}.chips button{flex:1 1 auto;text-align:center}.chips button[aria-selected=true],.chips button:hover{transform:none}
+.camino{grid-template-columns:1fr}.camino::before{left:34px}.senal:nth-child(even){margin-top:0}
+.escena{grid-template-columns:1fr;border-radius:36px 80px 36px 80px;text-align:center}.escena .ph{margin:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body>
+<nav class="dock sans" aria-label="Secciones">
+<a href="#inicio" class="on"><i aria-hidden="true">★</i><span>Inicio</span></a>
+<a href="#reco"><i aria-hidden="true">1</i><span>Recomendaciones</span></a>
+<a href="#act"><i aria-hidden="true">2</i><span>Actividades</span></a>
+<a href="#acc"><i aria-hidden="true">3</i><span>Acciones</span></a>
+</nav>
+
+<main>
+<header id="inicio" class="portada">
+<svg class="luces" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q150 80 300 30 T600 30 T900 30 T1200 20" fill="none" stroke="#818E26" stroke-width="3"/>
+<g stroke="#4C531F" stroke-width="1"><circle cx="75" cy="48" r="9" fill="#BED000"/><circle cx="190" cy="58" r="9" fill="#E2E8AC"/><circle cx="300" cy="32" r="9" fill="#BED000"/><circle cx="450" cy="50" r="9" fill="#A5B417"/><circle cx="600" cy="32" r="9" fill="#E2E8AC"/><circle cx="750" cy="50" r="9" fill="#BED000"/><circle cx="900" cy="32" r="9" fill="#A5B417"/><circle cx="1050" cy="42" r="9" fill="#E2E8AC"/><circle cx="1160" cy="26" r="9" fill="#BED000"/></g></svg>
+<span class="blob b1" aria-hidden="true"></span><span class="blob b2" aria-hidden="true"></span><span class="blob b3" aria-hidden="true"></span>
+<div class="wrap">
+<div>
+<span class="test">DATOS DE PRUEBA</span>
+<p class="sans" style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0 0 .5rem">Secretaría de Movilidad</p>
+<h1>Navidad <em>con Prudencia</em></h1>
+<p class="lead">En diciembre la ciudad se llena de compras, novenas y viajes. Aquí las recomendaciones, actividades y acciones de la Secretaría de Movilidad para proteger su vida y la de los demás, y para que Bogotá se mueva seguro.</p>
+<a class="cta" href="#reco">Siga el camino de las luces →</a>
+</div>
+<div class="arte">
+<svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 380 C120 300 40 230 160 190 S330 150 370 20" fill="none" stroke="#4C531F" stroke-width="46" stroke-linecap="round"/><path d="M30 380 C120 300 40 230 160 190 S330 150 370 20" fill="none" stroke="#E2E8AC" stroke-width="5" stroke-dasharray="4 16" stroke-linecap="round"/></svg>
+<div class="ph">Ilustración principal: camino con luces y estrella navideña (espacio para arte final)</div>
+</div>
+</div>
+</header>
+
+<section id="reco">
+<svg class="ola" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 L0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 L1200 60Z" fill="#EFF2D8"/></svg>
+<div class="num-g" aria-hidden="true">1</div>
+<div class="wrap">
+<div class="tit"><h2>Recomendaciones</h2><p>Consejos para moverse en transporte público, parquear bien y volver a casa seguro. Elija cómo se mueve usted.</p></div>
+<div class="perfiles">
+<div class="chips" role="tablist" aria-label="Perfiles" id="chips"></div>
+<div class="escena" id="escena" role="tabpanel" aria-live="polite"></div>
+</div>
+<div class="duo">
+<article class="panel tp"><h3>Transporte público</h3><p style="margin:0">Horarios. <span class="test">DATOS DE PRUEBA</span></p><ul><li>Troncal de prueba T1: 4:30 a. m. a 11:00 p. m.</li><li>Ruta zonal de prueba Z25: 5:00 a. m. a 10:00 p. m.</li><li>Domingos y festivos de prueba: 6:00 a. m. a 9:00 p. m.</li></ul></article>
+<article class="panel tx"><h3>Taxis</h3><p style="margin:0">Zonas seguras y código QR. <span class="test">DATOS DE PRUEBA</span></p><ul><li>Zona segura de prueba 1: Centro comercial Ejemplo Norte</li><li>Zona segura de prueba 2: Terminal de ejemplo, Salitre</li></ul><div class="ph qr">QR (prueba)</div></article>
+</div>
+</div>
+</section>
+
+<section id="act">
+<svg class="ola" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 L0 20 Q300 70 600 25 T1200 25 L1200 60Z" fill="#4C531F"/></svg>
+<div class="num-g" aria-hidden="true">2</div>
+<div class="wrap">
+<div class="tit"><h2>Actividades</h2><p>Durante diciembre hay espacios para aprender, celebrar y moverse con prudencia. Estos son los horarios de cada actividad, ¡participe!</p><span class="test">DATOS DE PRUEBA</span></div>
+<div class="boletos">
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">6 DIC</span><div class="cuerpo"><h3>Ciclovía nocturna</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Sáb 6 dic 2025</dd><dt>Lugar</dt><dd>Av. Carrera 7 (tramo de prueba)</dd><dt>Horario</dt><dd>6:00 p. m. a 10:00 p. m.</dd></dl></div></article>
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">16 DIC</span><div class="cuerpo"><h3>Cultura en novenas navideñas</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Mar 16 dic 2025</dd><dt>Lugar</dt><dd>Parque de ejemplo, Chapinero</dd><dt>Horario</dt><dd>5:00 p. m. a 8:00 p. m.</dd></dl></div></article>
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">11 DIC</span><div class="cuerpo"><h3>Parche con Prudencia</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Jue 11 dic 2025</dd><dt>Lugar</dt><dd>Plaza de ejemplo, Kennedy</dd><dt>Horario</dt><dd>3:00 p. m. a 7:00 p. m.</dd></dl></div></article>
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">14 DIC</span><div class="cuerpo"><h3>Moviparque</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Dom 14 dic 2025</dd><dt>Lugar</dt><dd>Parque Ejemplo Norte</dd><dt>Horario</dt><dd>9:00 a. m. a 2:00 p. m.</dd></dl></div></article>
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">19 DIC</span><div class="cuerpo"><h3>Brindis por la vida</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Vie 19 dic 2025</dd><dt>Lugar</dt><dd>Punto de encuentro de prueba, Fontibón</dd><dt>Horario</dt><dd>7:00 p. m. a 9:00 p. m.</dd></dl></div></article>
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">13 DIC</span><div class="cuerpo"><h3>Curso teórico práctico para motociclistas</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Sáb 13 dic 2025</dd><dt>Lugar</dt><dd>Pista de ejemplo, Puente Aranda</dd><dt>Horario</dt><dd>8:00 a. m. a 12:00 m.</dd></dl></div></article>
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">21 DIC</span><div class="cuerpo"><h3>Registratón de bicis</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Dom 21 dic 2025</dd><dt>Lugar</dt><dd>Parque Ejemplo Sur</dd><dt>Horario</dt><dd>10:00 a. m. a 3:00 p. m.</dd></dl></div></article>
+<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">22 DIC</span><div class="cuerpo"><h3>Registro bici comercios</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Lun 22 dic 2025</dd><dt>Lugar</dt><dd>Centro comercial de prueba, Suba</dd><dt>Horario</dt><dd>11:00 a. m. a 6:00 p. m.</dd></dl></div></article>
+</div>
+</div>
+</section>
+
+<section id="acc">
+<svg class="ola" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 L0 30 Q200 -10 400 30 T800 30 T1200 20 L1200 60Z" fill="#E2E8AC"/></svg>
+<div class="num-g" aria-hidden="true" style="color:#EFF2D8">3</div>
+<div class="wrap">
+<div class="tit"><h2>Acciones</h2><p>Mientras la ciudadanía celebra y hace sus compras, la Secretaría trabaja en las vías para que moverse sea más ordenado y seguro. Estas son las acciones que se implementan durante este mes:</p><span class="test">DATOS DE PRUEBA</span></div>
+<ol class="camino" style="list-style:none;padding:0">
+<li class="senal"><span class="disco"><b>1</b></span><div><h3>Pico y placa regional</h3><p>Dato de prueba: aplica en corredores de ejemplo los días hábiles entre 5:30 a. m. y 9:00 a. m.</p></div></li>
+<li class="senal"><span class="disco"><b>2</b></span><div><h3>Pico y placa</h3><p>Dato de prueba: restricción por último dígito de placa, horario de ejemplo 6:00 a. m. a 9:00 p. m.</p></div></li>
+<li class="senal"><span class="disco"><b>3</b></span><div><h3>Horarios de atención en Centros de Servicios de Movilidad</h3><p>Dato de prueba: lunes a viernes 7:00 a. m. a 4:00 p. m.; sábados 8:00 a. m. a 12:00 m.</p></div></li>
+<li class="senal"><span class="disco"><b>4</b></span><div><h3>Horarios de atención concesiones y otros servicios</h3><p>Dato de prueba: lunes a sábado 8:00 a. m. a 5:00 p. m.; domingo y festivos cerrado.</p></div></li>
+<li class="senal"><span class="disco"><b>5</b></span><div><h3>Personal en vía</h3><p>Dato de prueba: 350 agentes de ejemplo desplegados en 20 puntos críticos.</p></div></li>
+<li class="senal"><span class="disco"><b>6</b></span><div><h3>Operativos de control</h3><p>Dato de prueba: operativos de alcoholimetría y documentos, viernes y sábados en la noche.</p></div></li>
+</ol>
+</div>
+</section>
+</main>
+<footer>Wireframe C · propuesta artística · baja fidelidad · contenido de prueba, no oficial</footer>
+
+<script>
+(function(){
+var P=[["Peatón","Usar los pasos seguros."],["Ciclista","Utilizar luces, elementos reflectivos y casco."],["Motociclista","Respetar los límites de velocidad y no conducir en estado de embriaguez."],["Conductor","Planear el recorrido antes de salir y parquear solo en lugares autorizados."],["Usuario de transporte público","Utilizar la app Transmi para planear el recorrido y tener cargada la tarjeta TuLlave."]];
+var chips=document.getElementById('chips'),esc=document.getElementById('escena'),bs=[];
+function sel(i){bs.forEach(function(b,j){b.setAttribute('aria-selected',j==i);b.tabIndex=j==i?0:-1});
+esc.innerHTML='<div class="ph">icono / ilustración</div><div><small>Si usted es…</small><h3></h3><p></p></div>';
+esc.querySelector('h3').textContent=P[i][0];esc.querySelector('p').textContent=P[i][1]}
+P.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=p[0];
+b.onclick=function(){sel(i)};b.onkeydown=function(e){var n=e.key=='ArrowDown'||e.key=='ArrowRight'?1:e.key=='ArrowUp'||e.key=='ArrowLeft'?-1:0;if(n){e.preventDefault();var k=(i+n+P.length)%P.length;sel(k);bs[k].focus()}};
+chips.appendChild(b);bs.push(b)});
+sel(0);
+var links=[].slice.call(document.querySelectorAll('nav.dock a'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+['inicio','reco','act','acc'].forEach(function(id){io.observe(document.getElementById(id))})}
+})();
+</script>
+</body></html>
