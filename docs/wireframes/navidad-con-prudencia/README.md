@@ -2,6 +2,9 @@
 
 Dos propuestas de baja fidelidad para el micrositio de una sola página (Inicio, Recomendaciones, Actividades, Acciones). Los accesos son anclas dentro de la misma página. Todo dato de fechas, lugares, horarios y cifras es de prueba y está marcado con la etiqueta amarilla "DATOS DE PRUEBA". No es el sitio final.
 
+## Paleta de colores
+Ambos wireframes usan solo la paleta de Movilidad definida en `sites/movilidad/cms/comparendos.html` (tokens `--sdm-color-*`): verde principal `#BED000`, verde secundario medio `#A5B417`, oliva medio `#818E26`, oliva oscuro `#4C531F`, verde claro `#E2E8AC` y `#EFF2D8`, y soporte `#000000`, `#1A1A1A`, `#333333` y `#FFFFFF`. El texto va en negro o blanco según el fondo para mantener contraste legible.
+
 ## Cómo abrirlos
 Doble clic sobre el archivo HTML (no requiere instalación ni compilación). Son responsive: para ver la versión móvil, reduzca la ventana o use las herramientas del navegador.
 
