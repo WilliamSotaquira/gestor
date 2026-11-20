@@ -68,23 +68,17 @@ section{position:relative;padding:clamp(4rem,9vw,8rem) 0}
 .panel .test{margin-left:.3rem}
 .qr{width:96px;height:96px;margin-top:.8rem;border-radius:12px}
 
-/* Actividades: boletos */
+/* Actividades: rejilla de tarjetas (estructura de A, estilo C) */
 #act{background:var(--oliva-oscuro);color:var(--blanco);overflow:hidden}
 #act .tit h2{color:var(--verde)}#act .num-g{color:var(--oliva-medio);opacity:.35}
 #act .tit p{color:var(--blanco)}
-.boletos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:2rem 1.5rem;margin-top:3rem;position:relative}
-.boleto{position:relative;background:var(--claro-4);color:var(--negro);border-radius:22px;display:flex;flex-direction:column;transition:transform .2s}
-.boleto:nth-child(4n+1){transform:rotate(-1.6deg)}.boleto:nth-child(4n+2){transform:translateY(22px) rotate(1.2deg)}.boleto:nth-child(4n+3){transform:rotate(1.6deg)}.boleto:nth-child(4n+4){transform:translateY(22px) rotate(-1.2deg)}
-.boleto:hover{transform:rotate(0) scale(1.03);z-index:2}
-.boleto .ph{height:120px;border-radius:22px 22px 0 0;border-width:0 0 2px}
-.boleto .cuerpo{padding:1rem 1.3rem 1.2rem}
-.boleto h3{font-size:1.4rem;color:var(--oliva-oscuro)}
-.boleto .corte{height:0;border-top:3px dotted var(--oliva-medio);margin:0 1.2rem;position:relative}
-.boleto .corte::before,.boleto .corte::after{content:"";position:absolute;top:-14px;width:26px;height:26px;border-radius:50%;background:var(--oliva-oscuro)}
-.boleto .corte::before{left:-2.1rem}.boleto .corte::after{right:-2.1rem}
-.boleto dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.25rem .8rem;font-size:15px}
-.boleto dt{font-weight:800;color:var(--oliva-oscuro)}.boleto dd{margin:0}
-.fecha{position:absolute;top:84px;right:14px;background:var(--verde);color:var(--negro);font:900 13px "Trebuchet MS",sans-serif;padding:.45rem .8rem;border-radius:99px;border:2px solid var(--oliva-oscuro)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:1.25rem;margin-top:2.5rem;position:relative}
+.tarjeta{background:var(--claro-4);color:var(--negro);border:3px solid var(--verde);border-radius:26px 26px 26px 64px;padding:1rem 1rem 1.3rem;transition:transform .2s}
+.tarjeta:hover{transform:translateY(-4px)}
+.tarjeta .ph{height:120px;margin-bottom:.8rem;border-radius:18px 18px 18px 18px;border:2px dashed var(--oliva-medio)}
+.tarjeta h3{font-size:1.3rem;color:var(--oliva-oscuro);margin-bottom:.6rem}
+.tarjeta dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.25rem .8rem;font-size:15px}
+.tarjeta dt{font-weight:800;color:var(--oliva-oscuro)}.tarjeta dd{margin:0}
 #act .test{background:var(--verde);border-color:var(--blanco)}
 
 /* Acciones: señales */
@@ -92,7 +86,6 @@ section{position:relative;padding:clamp(4rem,9vw,8rem) 0}
 .camino{position:relative;margin-top:3rem;display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem clamp(1rem,6vw,6rem)}
 .camino::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:0;border-left:6px dashed var(--oliva-oscuro);transform:translateX(-50%)}
 .senal{position:relative;display:flex;gap:1.1rem;align-items:flex-start;background:var(--blanco);border:3px solid var(--oliva-oscuro);padding:1.2rem 1.4rem;border-radius:26px}
-.senal:nth-child(even){margin-top:3rem}
 .disco{flex:none;width:68px;height:68px;border-radius:50%;background:var(--verde);border:5px solid var(--oliva-oscuro);display:grid;place-items:center;font:900 1.9rem "Trebuchet MS",sans-serif;color:var(--negro);outline:4px solid var(--blanco)}
 .senal:nth-child(3n+2) .disco{border-radius:14px;transform:rotate(45deg)}.senal:nth-child(3n+2) .disco b{transform:rotate(-45deg)}
 .senal h3{font-size:1.3rem;color:var(--oliva-oscuro)}
@@ -104,7 +97,7 @@ footer{background:var(--negro);color:var(--blanco);text-align:center;padding:2re
 .portada .wrap,.perfiles,.duo{grid-template-columns:1fr}
 .arte{max-width:340px;order:-1}
 .chips{flex-direction:row;flex-wrap:wrap}.chips button{flex:1 1 auto;text-align:center}.chips button[aria-selected=true],.chips button:hover{transform:none}
-.camino{grid-template-columns:1fr}.camino::before{left:34px}.senal:nth-child(even){margin-top:0}
+.camino{grid-template-columns:1fr}.camino::before{left:34px}
 .escena{grid-template-columns:1fr;border-radius:36px 80px 36px 80px;text-align:center}.escena .ph{margin:auto}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -158,15 +151,15 @@ footer{background:var(--negro);color:var(--blanco);text-align:center;padding:2re
 <div class="num-g" aria-hidden="true">2</div>
 <div class="wrap">
 <div class="tit"><h2>Actividades</h2><p>Durante diciembre hay espacios para aprender, celebrar y moverse con prudencia. Estos son los horarios de cada actividad, ¡participe!</p><span class="test">DATOS DE PRUEBA</span></div>
-<div class="boletos">
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">6 DIC</span><div class="cuerpo"><h3>Ciclovía nocturna</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Sáb 6 dic 2025</dd><dt>Lugar</dt><dd>Av. Carrera 7 (tramo de prueba)</dd><dt>Horario</dt><dd>6:00 p. m. a 10:00 p. m.</dd></dl></div></article>
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">16 DIC</span><div class="cuerpo"><h3>Cultura en novenas navideñas</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Mar 16 dic 2025</dd><dt>Lugar</dt><dd>Parque de ejemplo, Chapinero</dd><dt>Horario</dt><dd>5:00 p. m. a 8:00 p. m.</dd></dl></div></article>
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">11 DIC</span><div class="cuerpo"><h3>Parche con Prudencia</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Jue 11 dic 2025</dd><dt>Lugar</dt><dd>Plaza de ejemplo, Kennedy</dd><dt>Horario</dt><dd>3:00 p. m. a 7:00 p. m.</dd></dl></div></article>
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">14 DIC</span><div class="cuerpo"><h3>Moviparque</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Dom 14 dic 2025</dd><dt>Lugar</dt><dd>Parque Ejemplo Norte</dd><dt>Horario</dt><dd>9:00 a. m. a 2:00 p. m.</dd></dl></div></article>
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">19 DIC</span><div class="cuerpo"><h3>Brindis por la vida</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Vie 19 dic 2025</dd><dt>Lugar</dt><dd>Punto de encuentro de prueba, Fontibón</dd><dt>Horario</dt><dd>7:00 p. m. a 9:00 p. m.</dd></dl></div></article>
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">13 DIC</span><div class="cuerpo"><h3>Curso teórico práctico para motociclistas</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Sáb 13 dic 2025</dd><dt>Lugar</dt><dd>Pista de ejemplo, Puente Aranda</dd><dt>Horario</dt><dd>8:00 a. m. a 12:00 m.</dd></dl></div></article>
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">21 DIC</span><div class="cuerpo"><h3>Registratón de bicis</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Dom 21 dic 2025</dd><dt>Lugar</dt><dd>Parque Ejemplo Sur</dd><dt>Horario</dt><dd>10:00 a. m. a 3:00 p. m.</dd></dl></div></article>
-<article class="boleto"><div class="ph">imagen 16:9</div><span class="fecha">22 DIC</span><div class="cuerpo"><h3>Registro bici comercios</h3></div><div class="corte"></div><div class="cuerpo"><dl><dt>Fecha</dt><dd>Lun 22 dic 2025</dd><dt>Lugar</dt><dd>Centro comercial de prueba, Suba</dd><dt>Horario</dt><dd>11:00 a. m. a 6:00 p. m.</dd></dl></div></article>
+<div class="tarjetas">
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Ciclovía nocturna</h3><dl><dt>Fecha</dt><dd>Sáb 6 dic 2025</dd><dt>Lugar</dt><dd>Av. Carrera 7 (tramo de prueba)</dd><dt>Horario</dt><dd>6:00 p. m. a 10:00 p. m.</dd></dl></article>
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Cultura en novenas navideñas</h3><dl><dt>Fecha</dt><dd>Mar 16 dic 2025</dd><dt>Lugar</dt><dd>Parque de ejemplo, Chapinero</dd><dt>Horario</dt><dd>5:00 p. m. a 8:00 p. m.</dd></dl></article>
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Parche con Prudencia</h3><dl><dt>Fecha</dt><dd>Jue 11 dic 2025</dd><dt>Lugar</dt><dd>Plaza de ejemplo, Kennedy</dd><dt>Horario</dt><dd>3:00 p. m. a 7:00 p. m.</dd></dl></article>
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Moviparque</h3><dl><dt>Fecha</dt><dd>Dom 14 dic 2025</dd><dt>Lugar</dt><dd>Parque Ejemplo Norte</dd><dt>Horario</dt><dd>9:00 a. m. a 2:00 p. m.</dd></dl></article>
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Brindis por la vida</h3><dl><dt>Fecha</dt><dd>Vie 19 dic 2025</dd><dt>Lugar</dt><dd>Punto de encuentro de prueba, Fontibón</dd><dt>Horario</dt><dd>7:00 p. m. a 9:00 p. m.</dd></dl></article>
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Curso teórico práctico para motociclistas</h3><dl><dt>Fecha</dt><dd>Sáb 13 dic 2025</dd><dt>Lugar</dt><dd>Pista de ejemplo, Puente Aranda</dd><dt>Horario</dt><dd>8:00 a. m. a 12:00 m.</dd></dl></article>
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Registratón de bicis</h3><dl><dt>Fecha</dt><dd>Dom 21 dic 2025</dd><dt>Lugar</dt><dd>Parque Ejemplo Sur</dd><dt>Horario</dt><dd>10:00 a. m. a 3:00 p. m.</dd></dl></article>
+<article class="tarjeta"><div class="ph">imagen 16:9</div><h3>Registro bici comercios</h3><dl><dt>Fecha</dt><dd>Lun 22 dic 2025</dd><dt>Lugar</dt><dd>Centro comercial de prueba, Suba</dd><dt>Horario</dt><dd>11:00 a. m. a 6:00 p. m.</dd></dl></article>
 </div>
 </div>
 </section>
